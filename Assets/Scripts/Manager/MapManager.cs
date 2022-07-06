@@ -13,7 +13,7 @@ namespace Manager
         [SerializeField]
         private Tilemap tileMap;
     
-        private void Awake()
+        void Awake()
         {
             if (Instance == null)
             {
