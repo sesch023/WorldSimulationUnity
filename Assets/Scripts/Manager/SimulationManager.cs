@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Base;
 using Model;
 using UnityEngine;
 
 namespace Manager
 {
-    public class SimulationManager : MonoBehaviour
+    public sealed class SimulationManager : MonoBehaviour
     {
         public static SimulationManager Instance { get; private set; }
         
@@ -13,6 +14,8 @@ namespace Manager
 
         [SerializeField]
         private Map _map;
+        
+        private SimulationManager(){}
         
         void Awake()
         {

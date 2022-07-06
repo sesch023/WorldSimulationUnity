@@ -31,6 +31,8 @@ namespace Manager
             }
         }
         
+        protected TimeManager(){}
+        
         void Awake()
         {
             if (Instance == null)
@@ -56,13 +58,11 @@ namespace Manager
             var time = PassedTime;
             LastUpdateDuration = time - LastUpdateTime;
             LastUpdateTime = time;
-            Debug.Log("Hello");
             if (time >= LastTickTime + _tpsDeltaMilli)
             {
                 PassedTicks++;
                 TickPassed(time);
                 LastTickTime = time;
-                Debug.Log("Hello");
             }
         }
 

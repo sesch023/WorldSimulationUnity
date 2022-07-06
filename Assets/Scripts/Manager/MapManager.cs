@@ -4,7 +4,7 @@ using UnityEngine.Tilemaps;
 
 namespace Manager
 {
-    public class MapManager : MonoBehaviour
+    public sealed class MapManager : MonoBehaviour
     {
         public static MapManager Instance { get; private set; }
 
@@ -12,7 +12,9 @@ namespace Manager
         private MapTiles tiles;
         [SerializeField]
         private Tilemap tileMap;
-    
+        
+        private MapManager(){}
+        
         void Awake()
         {
             if (Instance == null)

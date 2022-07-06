@@ -3,12 +3,12 @@ using Util;
 
 namespace Manager
 {
-    public class VerboseTimeManager : TimeManager
+    public sealed class VerboseTimeManager : TimeManager
     {
         private const int MavgSize = 50;
         private readonly MovingAverageLong _mavg;
-
-        public VerboseTimeManager()
+        
+        private VerboseTimeManager()
         {
             _mavg = new MovingAverageLong(MavgSize);
         }

@@ -1,4 +1,4 @@
-﻿namespace Model
+﻿namespace Base
 {
     public abstract class ConditionalUpdate : IUpdatable
     {

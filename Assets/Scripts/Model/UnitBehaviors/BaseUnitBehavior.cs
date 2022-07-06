@@ -1,4 +1,6 @@
-﻿namespace Model.UnitBehaviors
+﻿using Base;
+
+namespace Model.UnitBehaviors
 {
     public abstract class BaseUnitBehavior : ConditionalUpdate, IUnitBehavior
     {
