@@ -152,9 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c369f0c92ee8d447963b32f5fe33861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _map:
-    _sizeX: 0
-    _sizeY: 0
 --- !u!4 &377461357
 Transform:
   m_ObjectHideFlags: 0
@@ -386,7 +383,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tiles: {fileID: 11400000, guid: c047b8477c3f6c84cbf3d3dadba7c87f, type: 2}
-  tileMap: {fileID: 1827302178}
+  <TileMap>k__BackingField: {fileID: 1827302178}
+  map:
+    <SizeX>k__BackingField: 1000
+    <SizeY>k__BackingField: 500
 --- !u!4 &900914461
 Transform:
   m_ObjectHideFlags: 0
@@ -561,6 +561,8 @@ GameObject:
   - component: {fileID: 1827302176}
   - component: {fileID: 1827302178}
   - component: {fileID: 1827302177}
+  - component: {fileID: 1827302180}
+  - component: {fileID: 1827302179}
   m_Layer: 0
   m_Name: Tiles
   m_TagString: Untagged
@@ -670,6 +672,34 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &1827302179
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827302175}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
+--- !u!114 &1827302180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827302175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2541aeccf8b4f169bee844db385df47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1827307495
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,7 +741,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1827307495}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f36d4911ebdb4688b6b5862d274e5d2c, type: 3}
+  m_Script: {fileID: 11500000, guid: 3229400c85c54f3dae3153dc88a2152b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1833542575

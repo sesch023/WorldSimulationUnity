@@ -46,7 +46,6 @@ namespace Base
 
         public override void Update()
         {
-            Debug.Log("Test");
             if (UpdateCondition()) TriggerSubscribers();
         }
     }

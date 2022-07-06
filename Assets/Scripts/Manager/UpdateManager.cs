@@ -70,7 +70,6 @@ namespace Manager
         
         void Update()
         {
-            Debug.Log("Hello2");
             foreach (var variableUpdatable in _updatables.ToList()) variableUpdatable.Update();
             RemovalRun();
         }

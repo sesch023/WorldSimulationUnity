@@ -8,12 +8,8 @@ namespace Manager
 {
     public sealed class SimulationManager : MonoBehaviour
     {
+        public Camera MainCamera { get; private set; }
         public static SimulationManager Instance { get; private set; }
-        
-        private static IList<IUpdatable> _updatables;
-
-        [SerializeField]
-        private Map _map;
         
         private SimulationManager(){}
         
@@ -32,35 +28,11 @@ namespace Manager
 
         private void Init()
         {
-            _updatables = new List<IUpdatable>();
-        }
-
-        public void RegisterUpdatable(IUpdatable updatable)
-        {
-            _updatables.Add(updatable);
-        }
-
-        public void UnregisterUpdatable(IUpdatable updatable)
-        {
-            _updatables.Remove(updatable);
-        }
-
-        public void ClearUpdatables()
-        {
-            _updatables.Clear();
-        }
-        
-        // Start is called before the first frame update
-        void Start()
-        {
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-            foreach(IUpdatable updatable in _updatables)
+            MainCamera = Camera.main;
+            if (MainCamera == null)
             {
-                updatable.Update();
+                throw new MissingReferenceException(
+                    "MissingReferenceException: Reference on MainCamera in SimulationManager missing!");
             }
         }
     }

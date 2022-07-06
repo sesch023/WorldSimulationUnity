@@ -1,3 +1,4 @@
+using Model;
 using ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -10,9 +11,12 @@ namespace Manager
 
         [SerializeField]
         private MapTiles tiles;
-        [SerializeField]
-        private Tilemap tileMap;
-        
+
+        [field: SerializeField] public Tilemap TileMap { get; private set; }
+
+        [SerializeField] 
+        private Map map;
+
         private MapManager(){}
         
         void Awake()
@@ -30,15 +34,23 @@ namespace Manager
         // Start is called before the first frame update
         void Start()
         {
+            /*
             tileMap.SetTile(new(1, 1, 0), tiles.TestTile);
             tileMap.SetTile(new(1, 2, 0), tiles.TestTile);
-            Debug.Log(tiles.TestTile);
+            */
+            for (var x = 0; x < map.SizeX; x++)
+            {
+                for (var y = 0; y < map.SizeY; y++)
+                {
+                    TileMap.SetTile(new(x, y, 0), tiles.TestTile);
+                }
+            }
         }
 
         // Update is called once per frame
         void Update()
         {
-            
+            map.Update();
         }
     }
 }

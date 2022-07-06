@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: MapTiles
   m_EditorClassIdentifier: 
   TestTile1Data:
-    sprite: {fileID: 21300000, guid: 1d8e0f1fadf2f9e4f9515ee828d67019, type: 3}
+    sprite: {fileID: 21300000, guid: 97b552bd75fb66b47b69ea3103bc97af, type: 3}
     color: {r: 1, g: 1, b: 1, a: 1}
   TestTile2Data:
-    sprite: {fileID: 21300000, guid: 1d8e0f1fadf2f9e4f9515ee828d67019, type: 3}
+    sprite: {fileID: 21300000, guid: 97b552bd75fb66b47b69ea3103bc97af, type: 3}
     color: {r: 1, g: 1, b: 1, a: 1}

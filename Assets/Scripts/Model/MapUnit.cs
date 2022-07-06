@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using Base;
 using JetBrains.Annotations;
 using Model.UnitBehaviors;
 using Unity.VisualScripting;
 
 namespace Model
 {
-    public class MapUnit
+    public class MapUnit : IUpdatable
     {
         public struct MapPosition
         {
-            public MapPosition(float longitude, float latitude, float elevation)
+            public MapPosition(float latitude, float longitude, float elevation)
             {
                 Longitude = longitude;
                 Latitude = latitude;
@@ -71,6 +72,11 @@ namespace Model
         public void ClearBehaviors()
         {
             Behaviors.Clear();
+        }
+
+        public void Update()
+        {
+            
         }
     }
 }
