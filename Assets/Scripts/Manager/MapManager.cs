@@ -52,5 +52,12 @@ namespace Manager
         {
             map.Update();
         }
+
+        public (MapUnit, Vector3Int) GetMapUnitByGlobalPosition(Vector3 pos)
+        {
+            // This is in Tile Units
+            Vector3Int tilemapPos = TileMap.WorldToCell(SimulationManager.Instance.MainCamera.ScreenToWorldPoint(pos));
+            return (map.MapUnits[tilemapPos.x, tilemapPos.y], tilemapPos);
+        }
     }
 }

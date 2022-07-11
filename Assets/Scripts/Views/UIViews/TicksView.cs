@@ -1,9 +1,8 @@
-﻿using System;
-using Manager;
+﻿using Manager;
 using TMPro;
 using UnityEngine;
 
-namespace Views
+namespace Views.UIViews
 {
     public class TicksView : MonoBehaviour
     {

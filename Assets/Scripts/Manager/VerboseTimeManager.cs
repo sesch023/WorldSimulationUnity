@@ -8,6 +8,9 @@ namespace Manager
         private const int MavgSize = 50;
         private readonly MovingAverageLong _mavg;
         
+        [field: SerializeField]
+        public bool EnableDebug { get; set; } = false;
+        
         private VerboseTimeManager()
         {
             _mavg = new MovingAverageLong(MavgSize);
@@ -18,7 +21,8 @@ namespace Manager
         protected override void TickPassed(long time)
         {
             _mavg.ComputeAverage(time - LastTickTime);
-            Debug.Log(this);
+            if(EnableDebug)
+                Debug.Log(this);
         }
 
         public float GetTps()

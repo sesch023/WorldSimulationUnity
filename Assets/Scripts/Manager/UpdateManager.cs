@@ -5,13 +5,13 @@ using UnityEngine;
 
 namespace Manager
 {
-    public sealed class UpdateManager : MonoBehaviour
+    public class UpdateManager : MonoBehaviour
     {
         private List<IUpdatable> _updatables;
-        private Queue<IUpdatable> _markedForRemoval;
+        protected Queue<IUpdatable> MarkedForRemoval;
         public static UpdateManager Instance { get; private set; }
 
-        private UpdateManager(){}
+        protected UpdateManager(){}
         
         void Awake()
         {
@@ -33,7 +33,7 @@ namespace Manager
         private void Init()
         {
             _updatables = new List<IUpdatable>();
-            _markedForRemoval = new Queue<IUpdatable>();
+            MarkedForRemoval = new Queue<IUpdatable>();
             InitUpdatables();
         }
         
@@ -74,15 +74,14 @@ namespace Manager
             RemovalRun();
         }
 
-        private void RemovalRun()
+        protected virtual void RemovalRun()
         {
-            foreach(var updatable in _markedForRemoval)
+            foreach(var updatable in MarkedForRemoval)
             {
-                Debug.Log("Clearing Updatable: " + updatable);
                 RemoveUpdatable(updatable);
             }
             
-            _markedForRemoval.Clear();
+            MarkedForRemoval.Clear();
         }
 
         public void RegisterUpdatable(IUpdatable updatable)
@@ -97,7 +96,7 @@ namespace Manager
 
         public void MarkUpdatableForRemoval(IUpdatable updatable)
         {
-            _markedForRemoval.Enqueue(updatable);
+            MarkedForRemoval.Enqueue(updatable);
         }
 
         public void MarkRemovableForRemoval(IManagedRemoval managedRemoval)

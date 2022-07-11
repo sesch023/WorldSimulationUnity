@@ -4,6 +4,7 @@ using Base;
 using JetBrains.Annotations;
 using Model.UnitBehaviors;
 using Unity.VisualScripting;
+using UnityEngine.Tilemaps;
 
 namespace Model
 {
@@ -43,19 +44,36 @@ namespace Model
 
         public MapUnit()
         {
-            Behaviors = new List<BaseUnitBehavior>();
+            Init();
         }
 
         public MapUnit(float temperature, float humidity, MapPosition position) : this()
+        {
+            Init(temperature, humidity, position);
+        }
+
+        public MapUnit(float temperature, float humidity, MapPosition position,
+            [NotNull] IList<BaseUnitBehavior> behaviors) : this(temperature, humidity, position)
+        {
+            Init(temperature, humidity, position, behaviors);
+        }
+
+        public void Init()
+        {
+            Behaviors = new List<BaseUnitBehavior>();
+        }
+        
+        public void Init(float temperature, float humidity, MapPosition position)
         {
             Temperature = temperature;
             Humidity = humidity;
             Position = position;
         }
 
-        public MapUnit(float temperature, float humidity, MapPosition position,
-            [NotNull] IList<BaseUnitBehavior> behaviors) : this(temperature, humidity, position)
+        public void Init(float temperature, float humidity, MapPosition position,
+            [NotNull] IList<BaseUnitBehavior> behaviors)
         {
+            Init(temperature, humidity, position);
             Behaviors.AddRange(behaviors);
         }
 
