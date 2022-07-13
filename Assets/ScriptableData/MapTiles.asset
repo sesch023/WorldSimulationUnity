@@ -12,9 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d00ebca27cf8f824191b73d9a2ea7099, type: 3}
   m_Name: MapTiles
   m_EditorClassIdentifier: 
-  TestTile1Data:
+  heightSteps:
+  - -8000
+  - -6000
+  - -4000
+  - -2000
+  - -1000
+  - -500
+  - -200
+  - -100
+  - -50
+  - 0
+  - 50
+  - 100
+  - 200
+  - 500
+  - 1000
+  - 2000
+  - 4000
+  - 6000
+  - 8000
+  minHeightColor: 100
+  testTile1Data:
     sprite: {fileID: 21300000, guid: 97b552bd75fb66b47b69ea3103bc97af, type: 3}
     color: {r: 1, g: 1, b: 1, a: 1}
-  TestTile2Data:
+  testTile2Data:
     sprite: {fileID: 21300000, guid: 97b552bd75fb66b47b69ea3103bc97af, type: 3}
     color: {r: 1, g: 1, b: 1, a: 1}

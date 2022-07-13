@@ -5,7 +5,7 @@ namespace Model.UnitBehaviors
     public abstract class BaseUnitBehavior : IUpdatable, IUnitBehavior
     {
         public abstract string GetBehaviorDescription();
-        public abstract string TriggerBehavior();
+        public abstract void TriggerBehavior();
 
         public virtual void Update()
         {

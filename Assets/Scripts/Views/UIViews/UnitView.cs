@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using Model;
 using TMPro;
 using UnityEngine;
@@ -18,6 +19,9 @@ namespace Views.UIViews
         [SerializeField]
         private TextMeshProUGUI humidityView;
 
+        [SerializeField] 
+        private TextMeshProUGUI behaviorView;
+
         [SerializeField]
         private GameObject tileHightlight;
 
@@ -36,6 +40,9 @@ namespace Views.UIViews
             if(tileHightlight == null)
                 throw new MissingReferenceException("MissingReferenceException: Illegal Unit View. TileHighlight Reference missing!");
             
+            if(behaviorView == null)
+                throw new MissingReferenceException("MissingReferenceException: Illegal Unit View. BehaviorView Reference missing!");
+            
             DisableUnit();
         }
 
@@ -45,6 +52,7 @@ namespace Views.UIViews
             positionView.enabled = false;
             temperatureView.enabled = false;
             humidityView.enabled = false;
+            behaviorView.gameObject.SetActive(false);
             _baseView.enabled = false;
             tileHightlight.SetActive(false);
         }
@@ -57,6 +65,7 @@ namespace Views.UIViews
             positionView.enabled = true;
             temperatureView.enabled = true;
             humidityView.enabled = true;
+            behaviorView.gameObject.SetActive(true);
             _baseView.enabled = true;
             tileHightlight.SetActive(true);
         }
@@ -66,6 +75,7 @@ namespace Views.UIViews
             SetPositionData();
             SetTemperatureData();
             SetHumidityData();
+            SetBehaviorData();
         }
 
         private void SetPositionData()
@@ -83,6 +93,24 @@ namespace Views.UIViews
         private void SetHumidityData()
         {
             humidityView.SetText($"Temperature: {_shownUnit.Humidity:0.00}");
+        }
+
+        private void SetBehaviorData()
+        {
+            StringBuilder behaviorString = new StringBuilder();
+            if (_shownUnit.Behaviors.Count > 0)
+            {
+                foreach (var behavior in _shownUnit.Behaviors)
+                {
+                    behaviorString.Append("\t" + behavior.GetBehaviorDescription() + ",\n");
+                }
+                behaviorString.Remove(behaviorString.Length - 1, 2);
+            }
+            else
+            {
+                behaviorString.Append("\tNone");
+            }
+            behaviorView.SetText(behaviorString);
         }
         
         private void Update()
