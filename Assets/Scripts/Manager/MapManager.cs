@@ -1,3 +1,4 @@
+using Controllers;
 using Model;
 using ScriptableObjects;
 using UnityEngine;
@@ -9,13 +10,8 @@ namespace Manager
     {
         public static MapManager Instance { get; private set; }
 
-        [SerializeField]
-        private MapTiles tiles;
-
-        [field: SerializeField] public Tilemap TileMap { get; private set; }
-
-        [SerializeField] 
-        private Map map;
+        [field: SerializeField]
+        public TileMapController MapController { get; private set; }
 
         private MapManager(){}
         
@@ -34,30 +30,13 @@ namespace Manager
         // Start is called before the first frame update
         void Start()
         {
-            /*
-            tileMap.SetTile(new(1, 1, 0), tiles.TestTile);
-            tileMap.SetTile(new(1, 2, 0), tiles.TestTile);
-            */
-            for (var x = 0; x < map.SizeX; x++)
-            {
-                for (var y = 0; y < map.SizeY; y++)
-                {
-                    TileMap.SetTile(new(x, y, 0), tiles.TestTile);
-                }
-            }
+            MapController.Init();
         }
 
         // Update is called once per frame
         void Update()
         {
-            map.Update();
-        }
-
-        public (MapUnit, Vector3Int) GetMapUnitByGlobalPosition(Vector3 pos)
-        {
-            // This is in Tile Units
-            Vector3Int tilemapPos = TileMap.WorldToCell(SimulationManager.Instance.MainCamera.ScreenToWorldPoint(pos));
-            return (map.MapUnits[tilemapPos.x, tilemapPos.y], tilemapPos);
+            MapController.Update();
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Util
 {
-    public class MathUtil
+    public static class MathUtil
     {
         public static bool AlmostEquals(double double1, double double2, double precision)
         {

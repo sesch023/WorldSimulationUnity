@@ -1,4 +1,6 @@
 using System;
+using JetBrains.Annotations;
+using Model;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -39,6 +41,9 @@ namespace ScriptableObjects
             Debug.Log(TestTile);
         }
 
-        
+        public Tile GetTileByMapUnit([NotNull] MapUnit mapUnit)
+        {
+            return TestTile2;
+        }
     }
 }
