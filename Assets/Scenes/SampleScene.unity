@@ -435,8 +435,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9d9add5e0a14c93a02852ce082d66a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraSpeed: 10
+  cameraSpeed: 2
   borderCameraSpan: 0.2
+  maxZoom: 2
+  minZoom: 200
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -580,8 +582,8 @@ MonoBehaviour:
     <TileMap>k__BackingField: {fileID: 1827302178}
     tiles: {fileID: 11400000, guid: c047b8477c3f6c84cbf3d3dadba7c87f, type: 2}
     <UnitMap>k__BackingField:
-      <SizeX>k__BackingField: 1000
-      <SizeY>k__BackingField: 500
+      <SizeX>k__BackingField: 2000
+      <SizeY>k__BackingField: 1000
 --- !u!4 &900914461
 Transform:
   m_ObjectHideFlags: 0

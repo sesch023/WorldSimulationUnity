@@ -8,8 +8,8 @@ namespace Model
     [Serializable]
     public class Map : IUpdatable
     {
-        [field: SerializeField] public uint SizeX { get; private set; } = 1000;
-        [field: SerializeField] public uint SizeY { get; private set; } = 500;
+        [field: SerializeField] public uint SizeX { get; private set; } = 2000;
+        [field: SerializeField] public uint SizeY { get; private set; } = 1000;
 
         public MapUnit[,] MapUnits { get; private set; }
 
