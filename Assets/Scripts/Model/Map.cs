@@ -22,7 +22,7 @@ namespace Model
                 for (var y = 0; y < MapUnits.GetLength(1); y++)
                 {
                     (float lat, float lon) latLong = CalculateLatLong(x, y);
-                    MapUnits[x, y] = new MapUnit(0.0f, 0.0f, new MapUnit.MapPosition(latLong.lat, latLong.lon, 0.0f));
+                    MapUnits[x, y] = new MapUnit(0.0f, 0.0f, new MapUnit.MapPosition(latLong.lat, latLong.lon, -8000.0f));
                 }
             }
         }
