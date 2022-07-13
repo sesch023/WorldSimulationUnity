@@ -40,7 +40,8 @@ namespace Controllers
                 for (var y = 0; y < UnitMap.SizeY; y++)
                 {
                     MapUnit unit = UnitMap.MapUnits[x, y];
-                    TileMap.SetTile(new(x, y, 0), tiles.GetTileByMapUnit(unit));
+                    Tile tile = tiles.GetTileByMapUnit(unit);
+                    TileMap.SetTile(new(x, y, 0), tile);
                 }
             }
         }

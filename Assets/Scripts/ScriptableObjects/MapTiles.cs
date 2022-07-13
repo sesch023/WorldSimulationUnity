@@ -1,6 +1,8 @@
 using System;
+using System.Linq;
 using JetBrains.Annotations;
 using Model;
+using Unity.VisualScripting.FullSerializer;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -38,7 +40,9 @@ namespace ScriptableObjects
         };
 
         [SerializeField]
-        private float minHeightColor = 100f;
+        private float minHeightColor = 0.3f;
+
+        private float _colorStep;
 
         private Tile[] TestTile { get; set; }
         private Tile[] TestTile2 { get; set; }
@@ -53,33 +57,49 @@ namespace ScriptableObjects
             TestTile = new Tile[heightSteps.Length];
             TestTile2 = new Tile[heightSteps.Length];
 
-            float colorStep = (255f - minHeightColor) / (heightSteps.Length - 1);
+            _colorStep = (1.0f - minHeightColor) / (heightSteps.Length - 1);
             
             for (int i = 0; i < heightSteps.Length; i++)
             {
-                float colorValue = colorStep * i + minHeightColor;
-                Color newColor = new Color(colorValue, colorValue, colorValue, 255);
+                float colorValue = _colorStep * i + minHeightColor;
+                Color newColor = new Color(colorValue, colorValue, colorValue, 1.0f);
                 Tile newTile = CreateInstance<Tile>();
+                newTile.flags = TileFlags.None;
                 TileData.SetTileData(newTile, new TileData(testTile1Data.sprite, newColor));
                 TestTile[i] = newTile;
                 
                 newTile = CreateInstance<Tile>();
+                newTile.flags = TileFlags.None;
                 TileData.SetTileData(newTile, new TileData(testTile2Data.sprite, newColor));
                 TestTile2[i] = newTile;
             }
         }
 
-        public Tile GetTileByMapUnit([NotNull] MapUnit mapUnit)
+        public Color GetTileColorOffsetByElevation(float elevation)
         {
             for (int i = 0; i < heightSteps.Length; i++)
             {
-                if (heightSteps[i] <= mapUnit.Position.Elevation)
+                if (heightSteps[i] > elevation)
                 {
-                    return TestTile2[i];
+                    float colorValue = _colorStep * Math.Max(i - 1, 0) + minHeightColor;
+                    return new Color(colorValue, colorValue, colorValue, 1.0f);
                 }
             }
 
-            return TestTile2[0];
+            return new Color(1.0f, 1.0f, 1.0f);
+        }
+        
+        public Tile GetTileByMapUnit([NotNull] MapUnit mapUnit)
+        {
+            for (int i = 0; i < heightSteps.GetLength(0); i++)
+            {
+                if (heightSteps[i] > mapUnit.Position.Elevation)
+                {
+                    int take = Math.Max(i - 1, 0);
+                    return TestTile[take];
+                }
+            }
+            return TestTile[0];
         }
     }
 }

@@ -362,17 +362,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 496630555}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1161668987}
-  m_RootOrder: 3
+  m_Father: {fileID: 1911220910}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 200, y: -105}
+  m_AnchoredPosition: {x: 200, y: 10}
   m_SizeDelta: {x: 400, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &496630557
@@ -717,8 +717,8 @@ MonoBehaviour:
     <TileMap>k__BackingField: {fileID: 1827302178}
     tiles: {fileID: 11400000, guid: c047b8477c3f6c84cbf3d3dadba7c87f, type: 2}
     <UnitMap>k__BackingField:
-      <SizeX>k__BackingField: 2000
-      <SizeY>k__BackingField: 1000
+      <SizeX>k__BackingField: 1025
+      <SizeY>k__BackingField: 1025
 --- !u!4 &900914461
 Transform:
   m_ObjectHideFlags: 0
@@ -852,7 +852,6 @@ RectTransform:
   - {fileID: 1943994654}
   - {fileID: 1485739668}
   - {fileID: 391159098}
-  - {fileID: 496630556}
   - {fileID: 1911220910}
   m_Father: {fileID: 1681955413}
   m_RootOrder: 3
@@ -877,7 +876,7 @@ MonoBehaviour:
   positionView: {fileID: 1943994655}
   temperatureView: {fileID: 1485739669}
   humidityView: {fileID: 391159099}
-  behaviorView: {fileID: 0}
+  behaviorView: {fileID: 1911220911}
   tileHightlight: {fileID: 1036452470}
 --- !u!114 &1161668989
 MonoBehaviour:
@@ -1813,9 +1812,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 496630556}
   m_Father: {fileID: 1161668987}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -1842,7 +1842,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "testBehavior,\n\ttestBehavior,\n\ttestBehavior "
+  m_text: "\ttestBehavior,\n\ttestBehavior,\n\ttestBehavior "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1869,8 +1869,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

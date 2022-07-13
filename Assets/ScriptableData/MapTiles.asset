@@ -32,10 +32,10 @@ MonoBehaviour:
   - 4000
   - 6000
   - 8000
-  minHeightColor: 100
+  minHeightColor: 0.3
   testTile1Data:
     sprite: {fileID: 21300000, guid: 97b552bd75fb66b47b69ea3103bc97af, type: 3}
     color: {r: 1, g: 1, b: 1, a: 1}
   testTile2Data:
     sprite: {fileID: 21300000, guid: 97b552bd75fb66b47b69ea3103bc97af, type: 3}
-    color: {r: 1, g: 1, b: 1, a: 1}
+    color: {r: 1, g: 1, b: 1, a: 0}
