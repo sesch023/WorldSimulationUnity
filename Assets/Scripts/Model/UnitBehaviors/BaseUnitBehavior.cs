@@ -2,11 +2,14 @@
 
 namespace Model.UnitBehaviors
 {
-    public abstract class BaseUnitBehavior : ConditionalUpdate, IUnitBehavior
+    public abstract class BaseUnitBehavior : IUpdatable, IUnitBehavior
     {
-        public override bool Condition()
+        public abstract string GetBehaviorDescription();
+        public abstract string TriggerBehavior();
+
+        public virtual void Update()
         {
-            return true;
+            TriggerBehavior();
         }
     }
 }
