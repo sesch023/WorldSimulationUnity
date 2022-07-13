@@ -17,7 +17,7 @@ namespace Model
 
         public Map()
         {
-            float[,] diamondSquare = new DiamondSquare(SizeX - 1, 1e+10, DateTime.Now.Ticks).getData();
+            float[,] diamondSquare = DiamondSquare.CalculateValues(SizeX, 1024, DateTime.Now.Millisecond);
             float min = diamondSquare.Cast<float>().Min();
             float max = diamondSquare.Cast<float>().Max();
 

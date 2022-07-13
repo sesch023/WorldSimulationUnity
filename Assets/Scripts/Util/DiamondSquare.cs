@@ -3,105 +3,62 @@
 namespace Util
 {
     // https://gist.github.com/awilki01/83b65ad852a0ab30192af07cda3d7c0b
-    public class DiamondSquare {
-
-        private int _terrainPoints;
-        private double _roughness;
-        private double _seed; // an initial seed value for the corners of the data
-
-        public DiamondSquare(int terrainPoints, double roughness, double seed) {
-            this._terrainPoints = terrainPoints;
-            this._roughness = roughness;
-            this._seed = seed;
-        }
-
-        public float[,] getData() {
-            return diamondSquareAlgorithm();
-        }
-
-        private float[,] diamondSquareAlgorithm() {
-            //size of grid to generate, note this must be a
-            //value 2^n+1
-            int DATA_SIZE = _terrainPoints + 1;  // must be a power of two plus one e.g. 33, 65, 128, etc
-                                                 
-            float[,] data = new float[DATA_SIZE, DATA_SIZE];
-            data[0, 0] = data[0, DATA_SIZE - 1] = data[DATA_SIZE - 1, 0] =
-              data[DATA_SIZE - 1, DATA_SIZE - 1] = (float) _seed;
-
-            double h = _roughness;//the range (-h -> +h) for the average offset - affects roughness
-            Random r = new Random();//for the new value in range of h
-                                    //side length is distance of a single square side
-                                    //or distance of diagonal in diamond
-
-            for (int sideLength = DATA_SIZE - 1;
-                //side length must be >= 2 so we always have
-                //a new value (if its 1 we overwrite existing values
-                //on the last iteration)
-                sideLength >= 2;
-                //each iteration we are looking at smaller squares
-                //diamonds, and we decrease the variation of the offset
-                sideLength /= 2, h /= 2.0) {
-                //half the length of the side of a square
-                //or distance from diamond center to one corner
-                //(just to make calcs below a little clearer)
-                int halfSide = sideLength / 2;
-
-                //generate the new square values
-                for (int x = 0; x < DATA_SIZE - 1; x += sideLength) {
-                    for (int y = 0; y < DATA_SIZE - 1; y += sideLength) {
-                        //x, y is upper left corner of square
-                        //calculate average of existing corners
-                        float avg = data[x, y] + //top left
-                        data[x + sideLength, y] +//top right
-                        data[x, y + sideLength] + //lower left
-                        data[x + sideLength, y + sideLength];//lower right
-                        avg /= 4.0f;
-
-                        //center is average plus random offset
-                        //We calculate random value in range of 2h
-                        //and then subtract h so the end value is
-                        //in the range (-h, +h)
-                        data[x + halfSide, y + halfSide] = (float) (avg + (r.NextDouble() * 2 * h) - h);
-                    }
-                }
-                //generate the diamond values
-                //since the diamonds are staggered we only move x
-                //by half side
-                //NOTE: if the data shouldn't wrap then x < DATA_SIZE
-                //to generate the far edge values
-                for (int x = 0; x < DATA_SIZE - 1; x += halfSide) {
-                    //and y is x offset by half a side, but moved by
-                    //the full side length
-                    //NOTE: if the data shouldn't wrap then y < DATA_SIZE
-                    //to generate the far edge values
-                    for (int y = (x + halfSide) % sideLength; y < DATA_SIZE - 1; y += sideLength) {
-                        //x, y is center of diamond
-                        //note we must use mod  and add DATA_SIZE for subtraction 
-                        //so that we can wrap around the array to find the corners
-                        float avg =
-                          data[(x - halfSide + DATA_SIZE) % DATA_SIZE, y] + //left of center
-                          data[(x + halfSide) % DATA_SIZE, y] + //right of center
-                          data[x, (y + halfSide) % DATA_SIZE] + //below center
-                          data[x, (y - halfSide + DATA_SIZE) % DATA_SIZE]; //above center
-                        avg /= 4.0f;
-
-                        //new value = average plus random offset
-                        //We calculate random value in range of 2h
-                        //and then subtract h so the end value is
-                        //in the range (-h, +h)
-                        avg = (float) (avg + (r.NextDouble() * 2 * h) - h);
-                        //update value for center of diamond
-                        data[x, y] = avg;
-
-                        //wrap values on the edges, remove
-                        //this and adjust loop condition above
-                        //for non-wrapping values.
-                        if (x == 0) data[DATA_SIZE - 1, y] = avg;
-                        if (y == 0) data[x, DATA_SIZE - 1] = avg;
-                    }
-                }
-            }
-            return data;
-        }
-    }
+    public static class DiamondSquare
+	{
+		// Diese Methode berechnet die Werte mit dem Diamond-square Algorithmus
+		// Gegen ist die Seitenlänge des Quadrats, der Bereich für die zufälligen Werte und der Wert für die 4 Ecken des Quadrats
+		public static float[,] CalculateValues(int length, float roughness, float seed)
+		{
+			// Initialisiert den Wert der 4 Ecken des Quadrats
+			float[,] values = new float[length, length]; // Initialisiert das zweidimensionale Array für die Werte des quadratischen Rasters
+			values[0, 0] = seed; // Wert der Ecke links oben
+			values[0, length - 1] = seed; // Wert der Ecke links unten
+			values[length - 1, 0] = seed; // Wert der Ecke rechts oben
+			values[length - 1, length - 1] = seed; // Wert der Ecke rechts unten
+			Random random = new Random(); // Initialisiert den Zufallsgenerator
+			// Diese for-Schleife definiert die Iterationsschritte des Algorithmus
+			// In jedem Iterationsschritt wird die Seitenlänge der Teilquadrate und der Bereich für die zufälligen Werte halbiert, bis die Seitenlänge kleiner als 2 ist
+			for (int sideLength = length - 1; sideLength >= 2; sideLength /= 2, roughness /= 2.0f)
+			{
+				int halfLength = sideLength / 2;
+				// In diesen zwei for-Schleifen werden die Werte für den Karoschritt berechnet
+				for (int x = 0; x < length - 1; x += sideLength)
+				{
+					for (int y = 0; y < length - 1; y += sideLength)
+					{
+						// Berechnet den Mittelwert der 4 Ecken des Teilquadrats
+						float average = (values[x, y] // Wert der Ecke links oben
+						                  + values[x, y + sideLength] // Wert der Ecke links unten
+						                  + values[x + sideLength, y] // Wert der Ecke rechts oben
+						                  + values[x + sideLength, y + sideLength]) / 4.0f; // Wert der Ecke rechts unten
+						average += (2 * roughness * (float)random.NextDouble()) - roughness; // Addiert einen zufälligen Wert im Bereich von -roughness bis +roughness zum Mittelwert
+						values[x + halfLength, y + halfLength] = average; // Setzt den Wert für den Mittelpunkt des Teilquadrats
+					}
+				}
+				// In diesen zwei for-Schleifen werden die Werte für den Quadratschritt berechnet
+				for (int x = 0; x < length - 1; x += halfLength)
+				{
+					for (int y = (x + halfLength) % sideLength; y < length - 1; y += sideLength)
+					{
+						// Berechnet den Mittelwert der 4 Ecken des Karos
+						float average = (values[(x - halfLength + length) % length, y] // Wert der linken Ecke
+						                 + values[(x + halfLength) % length, y] // Wert der rechten Ecke
+						                 + values[x, (y - halfLength + length) % length] // Wert der oberen Ecke
+						                 + values[x, (y + halfLength) % length]) / 4.0f; // Wert der unteren Ecke
+						average += (2f * roughness * (float)random.NextDouble()) - roughness; // Addiert einen zufälligen Wert im Bereich von -roughness bis +roughness zum Mittelwert
+						values[x, y] = average; // Setzt den Wert für den Mittelpunkt des Karos
+						if (x == 0) // Sonderfall für die linke Kante des Quadrats
+						{
+							values[length - 1, y] = average; // Setzt den entsprechenden Punkt auf der rechte Kante auf denselben Wert
+						}
+						if (y == 0) // Sonderfall für die obere Kante des Quadrats
+						{
+							values[x, length - 1] = average; // Setzt den entsprechenden Punkt auf der unteren Kante auf denselben Wert
+						}
+					}
+				}
+			}
+			return values;
+		}
+	}
 }
