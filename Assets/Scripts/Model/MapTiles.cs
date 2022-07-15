@@ -53,11 +53,11 @@ namespace Model
             TestTile = new Tile[heightSteps.Length];
             TestTile2 = new Tile[heightSteps.Length];
 
-            _colorStep = (1.0f - minHeightColor) / (heightSteps.Length - 1);
+            _colorStep = (1.0f - minHeightColor) / heightSteps.Length;
             
             for (int i = 0; i < heightSteps.Length; i++)
             {
-                float colorValue = _colorStep * i + minHeightColor;
+                float colorValue = 1.0f - _colorStep * i;
                 Color newColor = new Color(colorValue, colorValue, colorValue, 1.0f);
                 Tile newTile = CreateInstance<Tile>();
                 newTile.flags = TileFlags.None;
@@ -77,7 +77,7 @@ namespace Model
             {
                 if (heightSteps[i] > elevation)
                 {
-                    float colorValue = _colorStep * Math.Max(i - 1, 0) + minHeightColor;
+                    float colorValue = 1.0f - _colorStep * Math.Max(i - 1, 0);
                     return new Color(colorValue, colorValue, colorValue, 1.0f);
                 }
             }
