@@ -1,43 +1,41 @@
 ﻿using System;
 using System.Linq;
 using Base;
+using Model.Generators;
 using UnityEngine;
 using UnityEngine.Serialization;
-using Util;
 
 namespace Model
 {
-    [Serializable]
-    public class Map : IUpdatable
+    [CreateAssetMenu(fileName = "Map", menuName = "ScriptableObjects/Map", order = 1)]
+    public class Map : ScriptableObject, IUpdatable
     {
         [field: SerializeField] public int SizeX { get; private set; } = 1025;
         [field: SerializeField] public int SizeY { get; private set; } = 1025;
 
+        [SerializeField] 
+        private BaseGenerator generator;
+
         public MapUnit[,] MapUnits { get; private set; }
 
-        public Map()
+        private void OnEnable()
         {
-            float[,] diamondSquare = DiamondSquare.CalculateValues(SizeX, 1024, DateTime.Now.Millisecond);
-            float min = diamondSquare.Cast<float>().Min();
-            float max = diamondSquare.Cast<float>().Max();
-
-            for (int x = 0; x < diamondSquare.GetLength(0); x++)
+            if (generator == null)
             {
-                for (int y = 0; y < diamondSquare.GetLength(1); y++)
-                {
-                    diamondSquare[x, y] = (((diamondSquare[x, y] - min) / max) * 18000) - 8000;
-                }
+                throw new MissingReferenceException("MissingReferenceException: Illegal Map. Generator missing!");
             }
-            
-            Debug.Log(diamondSquare.Cast<float>().Min());
-            Debug.Log(diamondSquare.Cast<float>().Max());
+
+            (int sizeX, int sizeY) clippedSizes = generator.LimitMapSizes(SizeX, SizeY);
+            SizeX = clippedSizes.sizeX;
+            SizeY = clippedSizes.sizeY;
+            float[,] mapElevation = generator.GenerateElevation(SizeX, SizeY);
             MapUnits = new MapUnit[SizeX, SizeY];
             for (var x = 0; x < MapUnits.GetLength(0); x++)
             {
                 for (var y = 0; y < MapUnits.GetLength(1); y++)
                 {
                     (float lat, float lon) latLong = CalculateLatLong(x, y);
-                    MapUnits[x, y] = new MapUnit(0.0f, 0.0f, new MapUnit.MapPosition(latLong.lat, latLong.lon, diamondSquare[x, y]));
+                    MapUnits[x, y] = new MapUnit(0.0f, 0.0f, new MapUnit.MapPosition(latLong.lat, latLong.lon, mapElevation[x, y]));
                 }
             }
         }

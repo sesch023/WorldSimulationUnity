@@ -716,9 +716,7 @@ MonoBehaviour:
   <MapController>k__BackingField:
     <TileMap>k__BackingField: {fileID: 1827302178}
     tiles: {fileID: 11400000, guid: c047b8477c3f6c84cbf3d3dadba7c87f, type: 2}
-    <UnitMap>k__BackingField:
-      <SizeX>k__BackingField: 1025
-      <SizeY>k__BackingField: 1025
+    <UnitMap>k__BackingField: {fileID: 11400000, guid: 91eba5138358d5142a305d9dd80a0692, type: 2}
 --- !u!4 &900914461
 Transform:
   m_ObjectHideFlags: 0

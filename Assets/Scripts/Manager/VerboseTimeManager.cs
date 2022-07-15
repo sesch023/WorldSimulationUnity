@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using Util;
+using Utils;
 
 namespace Manager
 {

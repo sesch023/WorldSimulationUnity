@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Util
+namespace Utils
 {
     public class MovingAverageLong
     {

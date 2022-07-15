@@ -2,7 +2,6 @@
 using Base;
 using Manager;
 using Model;
-using ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 

@@ -1,16 +1,12 @@
 using System;
-using System.Linq;
 using JetBrains.Annotations;
-using Model;
-using Unity.VisualScripting.FullSerializer;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
 
-namespace ScriptableObjects
+namespace Model
 {
-    [CreateAssetMenu(fileName = "MapTiles", menuName = "ScriptableObjects/SpawnManagerScriptableObject", order = 1)]
+    [CreateAssetMenu(fileName = "MapTiles", menuName = "ScriptableObjects/MapTiles", order = 1)]
     public class MapTiles : ScriptableObject
     {
         [Serializable]
@@ -36,7 +32,7 @@ namespace ScriptableObjects
         private float[] heightSteps = 
         {
             -8000, -6000, -4000, -2000, -1000, -500, -200, -100, -50,
-            0, 50, 100, 200, 500, 1000, 2000, 4000, 6000, 8000
+            0, 50, 100, 200, 500, 1000, 2000, 4000, 6000, 8000, 10000
         };
 
         [SerializeField]

@@ -1,15 +1,38 @@
 ﻿using System;
+using UnityEngine;
+using Utils;
+using Random = System.Random;
 
-namespace Util
+namespace Model.Generators
 {
-    // https://gist.github.com/awilki01/83b65ad852a0ab30192af07cda3d7c0b
-    public static class DiamondSquare
-	{
-		// Diese Methode berechnet die Werte mit dem Diamond-square Algorithmus
-		// Gegen ist die Seitenlänge des Quadrats, der Bereich für die zufälligen Werte und der Wert für die 4 Ecken des Quadrats
-		public static float[,] CalculateValues(int length, float roughness, float seed)
-		{
-			// Initialisiert den Wert der 4 Ecken des Quadrats
+	[Serializable]
+    [CreateAssetMenu(fileName = "DiamondSquareGenerator", menuName = "ScriptableObjects/DiamondSquareGenerator", order = 1)]
+    public class DiamondSquareGenerator : BaseGenerator
+    {
+	    [SerializeField]
+	    private float maxHeight = 10000;
+	    [SerializeField]
+	    private float minHeight = -8000;
+	    [SerializeField] 
+	    private float seed = 0;
+	    [SerializeField] 
+	    private float roughness = 1024;
+
+	    public DiamondSquareGenerator()
+	    {
+		    if (seed == 0)
+		    {
+			    seed = DateTime.Now.Ticks % int.MaxValue;
+		    }
+	    }
+	    
+        public override float[,] GenerateElevation(int sizeX, int sizeY)
+        {
+	        int length = LimitMapSizes(sizeX, sizeY).sizeX;
+	        // ReSharper disable once LocalVariableHidesMember
+	        float roughness = this.roughness;
+	        
+            // Initialisiert den Wert der 4 Ecken des Quadrats
 			float[,] values = new float[length, length]; // Initialisiert das zweidimensionale Array für die Werte des quadratischen Rasters
 			values[0, 0] = seed; // Wert der Ecke links oben
 			values[0, length - 1] = seed; // Wert der Ecke links unten
@@ -58,7 +81,21 @@ namespace Util
 					}
 				}
 			}
-			return values;
-		}
-	}
+			return NormalizeElevation(values, minHeight, maxHeight);
+        }
+
+        public override (int sizeX, int sizeY) LimitMapSizes(int sizeX, int sizeY)
+        {
+	        int bigger = Math.Max(sizeX, sizeY);
+
+	        if (MathUtil.IsPowerOfTwo(bigger - 1))
+	        {
+		        return (bigger, bigger);
+	        }
+            int biggerLog = ((int)Math.Log(bigger, 2.0)) + 1;
+            int newSize = ((int)Math.Pow(2, biggerLog)) + 1;
+
+            return (newSize, newSize);
+        }
+    }
 }

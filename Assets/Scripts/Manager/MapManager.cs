@@ -1,6 +1,5 @@
 using Controllers;
 using Model;
-using ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
