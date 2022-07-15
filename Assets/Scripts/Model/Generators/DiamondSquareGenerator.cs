@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Utils;
 using Random = System.Random;
 
@@ -9,20 +10,23 @@ namespace Model.Generators
     [CreateAssetMenu(fileName = "DiamondSquareGenerator", menuName = "ScriptableObjects/DiamondSquareGenerator", order = 1)]
     public class DiamondSquareGenerator : BaseGenerator
     {
-	    [SerializeField]
-	    private float maxHeight = 10000;
-	    [SerializeField]
-	    private float minHeight = -8000;
 	    [SerializeField] 
-	    private float seed = 0;
+	    private float cornerSeed = 0;
+	    [SerializeField] 
+	    private int randomSeed = 0;
 	    [SerializeField] 
 	    private float roughness = 1024;
 
-	    public DiamondSquareGenerator()
+	    private void OnEnable()
 	    {
-		    if (seed == 0)
+		    if (cornerSeed == 0)
 		    {
-			    seed = DateTime.Now.Ticks % int.MaxValue;
+			    cornerSeed = DateTime.Now.Ticks % 2000 - 1000;
+		    }
+		    
+		    if (randomSeed == 0)
+		    {
+			    randomSeed = (int)(DateTime.Now.Ticks % int.MaxValue);
 		    }
 	    }
 	    
@@ -34,11 +38,11 @@ namespace Model.Generators
 	        
             // Initialisiert den Wert der 4 Ecken des Quadrats
 			float[,] values = new float[length, length]; // Initialisiert das zweidimensionale Array für die Werte des quadratischen Rasters
-			values[0, 0] = seed; // Wert der Ecke links oben
-			values[0, length - 1] = seed; // Wert der Ecke links unten
-			values[length - 1, 0] = seed; // Wert der Ecke rechts oben
-			values[length - 1, length - 1] = seed; // Wert der Ecke rechts unten
-			Random random = new Random(); // Initialisiert den Zufallsgenerator
+			values[0, 0] = cornerSeed; // Wert der Ecke links oben
+			values[0, length - 1] = cornerSeed; // Wert der Ecke links unten
+			values[length - 1, 0] = cornerSeed; // Wert der Ecke rechts oben
+			values[length - 1, length - 1] = cornerSeed; // Wert der Ecke rechts unten
+			Random random = new Random(randomSeed); // Initialisiert den Zufallsgenerator
 			// Diese for-Schleife definiert die Iterationsschritte des Algorithmus
 			// In jedem Iterationsschritt wird die Seitenlänge der Teilquadrate und der Bereich für die zufälligen Werte halbiert, bis die Seitenlänge kleiner als 2 ist
 			for (int sideLength = length - 1; sideLength >= 2; sideLength /= 2, roughness /= 2.0f)

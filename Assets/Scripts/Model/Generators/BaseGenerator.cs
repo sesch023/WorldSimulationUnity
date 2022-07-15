@@ -8,6 +8,11 @@ namespace Model.Generators
     [Serializable]
     public abstract class BaseGenerator : ScriptableObject, IGenerator
     {
+        [SerializeField]
+        protected float maxHeight = 10000;
+        [SerializeField]
+        protected float minHeight = -8000;
+        
         public abstract float[,] GenerateElevation(int sizeX, int sizeY);
 
         public virtual (int sizeX, int sizeY) LimitMapSizes(int sizeX, int sizeY)

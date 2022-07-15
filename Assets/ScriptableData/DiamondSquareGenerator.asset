@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHeight: 10000
   minHeight: -8000
-  seed: 1.1036161e+9
-  roughness: 1
+  cornerSeed: 239
+  randomSeed: 1156538508
+  roughness: 512

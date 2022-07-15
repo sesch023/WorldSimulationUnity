@@ -7,11 +7,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23fe967fc13341499d33cb5c3c761b12, type: 3}
-  m_Name: Map
+  m_Script: {fileID: 11500000, guid: 2f1da279f80644d7b3e216aa3bda9732, type: 3}
+  m_Name: PerlinGenerator
   m_EditorClassIdentifier: 
-  <SizeX>k__BackingField: 1025
-  <SizeY>k__BackingField: 1025
-  generator: {fileID: 11400000, guid: 85eea03c1c9613b49aab840cc231b123, type: 2}
+  randomSeed: 195807793
+  scale: 1000
+  octaves: 100
+  persistence: 0.5
+  lacunarity: 1.6
