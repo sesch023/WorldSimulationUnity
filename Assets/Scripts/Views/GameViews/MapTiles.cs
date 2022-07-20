@@ -1,10 +1,11 @@
 using System;
 using JetBrains.Annotations;
+using Model;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
 
-namespace Model
+namespace Views.GameViews
 {
     [CreateAssetMenu(fileName = "MapTiles", menuName = "ScriptableObjects/MapTiles", order = 1)]
     public class MapTiles : ScriptableObject

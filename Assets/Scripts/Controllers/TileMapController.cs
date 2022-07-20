@@ -4,6 +4,7 @@ using Manager;
 using Model;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using Views.GameViews;
 
 namespace Controllers
 {
