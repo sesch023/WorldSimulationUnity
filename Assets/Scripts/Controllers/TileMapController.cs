@@ -3,6 +3,7 @@ using Base;
 using Manager;
 using Model;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
 using Views.GameViews;
 
@@ -13,14 +14,14 @@ namespace Controllers
     {
         [field: SerializeField] public Tilemap TileMap { get; private set; }
         
-        [SerializeField]
-        private MapTiles tiles;
+        [FormerlySerializedAs("tiles")] [SerializeField]
+        private MapTileViews tileViews;
 
         [field: SerializeField] public Map UnitMap { get; private set; }
 
         public void Init()
         {
-            if (tiles == null)
+            if (tileViews == null)
             {
                 throw new MissingReferenceException($"MissingReferenceException: {GetType().Name}. MapTiles missing!");
             }
@@ -40,7 +41,7 @@ namespace Controllers
                 for (var y = 0; y < UnitMap.SizeY; y++)
                 {
                     MapUnit unit = UnitMap.MapUnits[x, y];
-                    Tile tile = tiles.GetTileByMapUnit(unit);
+                    Tile tile = tileViews.GetTileByMapUnit(unit);
                     TileMap.SetTile(new(x, y, 0), tile);
                 }
             }
@@ -51,11 +52,11 @@ namespace Controllers
             UnitMap.Update();
         }
         
-        public (MapUnit, Vector3Int) GetMapUnitByGlobalPosition(Vector3 pos)
+        public (MapUnit, Vector2Int) GetMapUnitByGlobalPosition(Vector3 pos)
         {
             // This is in Tile Units
             Vector3Int tilemapPos = TileMap.WorldToCell(pos);
-            return (UnitMap.MapUnits[tilemapPos.x, tilemapPos.y], tilemapPos);
+            return (UnitMap.MapUnits[tilemapPos.x, tilemapPos.y], (Vector2Int)tilemapPos);
         }
     }
 }

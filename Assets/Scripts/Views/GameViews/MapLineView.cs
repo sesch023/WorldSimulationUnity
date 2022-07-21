@@ -10,7 +10,7 @@ using Utils;
 
 namespace Views.GameViews
 {
-    public class MapLine : MonoBehaviour
+    public class MapLineView : MonoBehaviour
     {
         private static readonly AnimationCurve DefaultCurve = AnimationCurve.Constant(0f, 0f, 1f);
         private static Material _defaultMaterial = null;
@@ -99,6 +99,16 @@ namespace Views.GameViews
             position.Set(position.x, position.y, ZIndex);
 
             SetColorGradient();
+        }
+
+        public void DisableLine()
+        {
+            _lineRenderer.enabled = false;
+        }
+        
+        public void EnableLine()
+        {
+            _lineRenderer.enabled = true;
         }
         
         private void SetColorGradient()

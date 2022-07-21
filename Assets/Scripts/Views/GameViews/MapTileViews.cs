@@ -8,7 +8,7 @@ using UnityEngine.Tilemaps;
 namespace Views.GameViews
 {
     [CreateAssetMenu(fileName = "MapTiles", menuName = "ScriptableObjects/MapTiles", order = 1)]
-    public class MapTiles : ScriptableObject
+    public class MapTileViews : ScriptableObject
     {
         [Serializable]
         private struct TileData

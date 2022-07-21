@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Base;
@@ -8,7 +9,16 @@ namespace Manager
 {
     public sealed class SimulationManager : MonoBehaviour
     {
+        public enum InteractionMode
+        {
+            SelectTile,
+            HeightLineSelection,
+            SlopeSelection
+        } 
+        
         public Camera MainCamera { get; private set; }
+
+        public InteractionMode CurrentInteractionMode { get; set; } = InteractionMode.SelectTile;
         public static SimulationManager Instance { get; private set; }
         
         private SimulationManager(){}

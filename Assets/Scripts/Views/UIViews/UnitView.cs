@@ -57,7 +57,7 @@ namespace Views.UIViews
             tileHightlight.SetActive(false);
         }
         
-        public void EnableUnit((MapUnit unit, Vector3Int vec) shownUnit)
+        public void EnableUnit((MapUnit unit, Vector2Int vec) shownUnit)
         {
             _shownUnit = shownUnit.unit;
             SetTextData();

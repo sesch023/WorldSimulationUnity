@@ -1,9 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using Base;
 using Model.Generators;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Utils;
+using Vector2 = UnityEngine.Vector2;
 
 namespace Model
 {
@@ -51,6 +55,56 @@ namespace Model
             {
                 unit.Update();
             }
+        }
+
+        public Vector2Int[][] GetHeightLine(Vector2Int position)
+        {
+            MapUnit startTile = MapUnits[position.x, position.y];
+            Vector2Int[] firstLine = FindHeightLine(position, startTile.Position.Elevation);
+
+            return new[] { firstLine };
+        }
+
+        private Vector2Int[] FindHeightLine(Vector2Int start, float elevation)
+        {
+            List<Vector2Int> heightLine = new List<Vector2Int>();
+            heightLine.Add(start);
+
+            Vector2Int currentPos = start;
+            int borderCounter = 0;
+            int iterations = 0;
+            bool nextFound;
+            
+            do
+            {
+                Vector2Int[] neighbors = MathUtil.GetNeighborPositionsIn2DArray(currentPos, SizeX, SizeY);
+                Vector2Int next = neighbors[0];
+                float error = float.PositiveInfinity;
+                nextFound = false;
+
+                foreach (var neighbor in neighbors)
+                {
+                    float nextError = Mathf.Abs(MapUnits[neighbor.x, neighbor.y].Position.Elevation - elevation);
+                    if (nextError < error && !heightLine.Contains(neighbor) && !MathUtil.NextPointCrossesLineDiagonally(neighbor, heightLine))
+                    {
+                        error = nextError;
+                        next = neighbor;
+                        nextFound = true;
+                    }
+                }
+
+                if (!nextFound)
+                {
+                    break;
+                }
+                
+                currentPos = next;
+                heightLine.Add(currentPos);
+                borderCounter = MathUtil.At2DArrayBorder(currentPos, SizeX, SizeY) ? borderCounter + 1 : 0;
+                iterations++;
+            } while (iterations < 10000 && currentPos != start);
+
+            return heightLine.ToArray();
         }
     }
 }
