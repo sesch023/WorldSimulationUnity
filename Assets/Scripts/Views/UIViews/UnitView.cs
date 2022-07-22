@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using Manager;
 using Model;
 using TMPro;
 using UnityEngine;
@@ -61,7 +62,9 @@ namespace Views.UIViews
         {
             _shownUnit = shownUnit.unit;
             SetTextData();
-            tileHightlight.transform.position = new Vector3(shownUnit.vec.x + 0.5f, shownUnit.vec.y + 0.5f, 0);
+            Vector3 tileScale = MapManager.Instance.MapController.TileMap.transform.localScale;
+            tileHightlight.transform.localScale = tileScale;
+            tileHightlight.transform.position = new Vector3(tileScale.x / 2, tileScale.y / 2, 0) + MapManager.Instance.MapController.TileMapPositionToGlobalPosition(shownUnit.vec);
             positionView.enabled = true;
             temperatureView.enabled = true;
             humidityView.enabled = true;

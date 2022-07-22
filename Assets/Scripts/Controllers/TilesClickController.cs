@@ -2,6 +2,7 @@
 using Manager;
 using Model;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
@@ -16,8 +17,8 @@ namespace Controllers {
         [FormerlySerializedAs("_unitView")] [SerializeField]
         private UnitView unitView;
 
-        [SerializeField]
-        private HeightLineView heightLineView;
+        [FormerlySerializedAs("heightLineView")] [SerializeField]
+        private TileLineView tileLineView;
 
         [FormerlySerializedAs("_clickCamera")] [SerializeField]
         private Camera clickCamera;
@@ -29,7 +30,7 @@ namespace Controllers {
                 throw new MissingReferenceException($"MissingReferenceException: {GetType()} - UnitView missing!");
             }
             
-            if (heightLineView == null)
+            if (tileLineView == null)
             {
                 throw new MissingReferenceException($"MissingReferenceException: {GetType()} - UnitView missing!");
             }
@@ -42,6 +43,9 @@ namespace Controllers {
 
         private void OnLeftMouse()
         {
+            if (SimulationManager.Instance.PointerOverUI)
+                return;
+            
             DeselectAll();
             
             if (SimulationManager.Instance.CurrentInteractionMode == SimulationManager.InteractionMode.HeightLineSelection)
@@ -61,6 +65,9 @@ namespace Controllers {
 
         private void OnRightMouse()
         {
+            if (SimulationManager.Instance.PointerOverUI)
+                return;
+            
             DeselectAll();
         }
 
@@ -85,26 +92,30 @@ namespace Controllers {
 
         private void SelectHeightLineMode()
         {
-            heightLineView.DisableLine();
             (MapUnit unit, Vector2Int vec) unit = GetMapUnitAndPosition();
-            Debug.Log("hello");
             Vector2Int[][] heightLine = MapManager.Instance.MapController.UnitMap.GetHeightLine(unit.vec);
-            heightLineView.SetHeightLinePoints(heightLine[0]);
+            tileLineView.SetTileLinePoints(heightLine[0]);
         }
         
         private void DeselectHeightLineMode()
         {
-            heightLineView.DisableLine();
+            tileLineView.DisableLine();
         }
 
         private void SelectSlopeLineMode()
         {
+            (MapUnit unit, Vector2Int vec) unit = GetMapUnitAndPosition();
+            Vector2Int[] slopeLine = MapManager.Instance.MapController.UnitMap.GetSlopeLine(unit.vec);
+            Debug.Log(slopeLine.Length);
+            foreach(Vector2Int vec in slopeLine)
+                Debug.Log(vec);
             
+            tileLineView.SetTileLinePoints(slopeLine);
         }
         
         private void DeselectSlopeLineMode()
         {
-            
+            tileLineView.DisableLine();
         }
 
         private (MapUnit, Vector2Int) GetMapUnitAndPosition()

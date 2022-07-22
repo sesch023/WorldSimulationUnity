@@ -58,5 +58,13 @@ namespace Controllers
             Vector3Int tilemapPos = TileMap.WorldToCell(pos);
             return (UnitMap.MapUnits[tilemapPos.x, tilemapPos.y], (Vector2Int)tilemapPos);
         }
+
+        public Vector3 TileMapPositionToGlobalPosition(Vector2Int position)
+        {
+            var transform = TileMap.transform;
+            Vector3 basePosition = transform.position;
+            var localScale = transform.localScale;
+            return (new Vector3(position.x * localScale.x, position.y *  localScale.y, 0)) + basePosition;
+        }
     }
 }
