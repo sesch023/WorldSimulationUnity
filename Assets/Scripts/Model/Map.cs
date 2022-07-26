@@ -60,112 +60,15 @@ namespace Model
         public Vector2Int[][] GetHeightLine(Vector2Int position)
         {
             MapUnit startTile = MapUnits[position.x, position.y];
-            Vector2Int[] firstLine = FindHeightLine(position, startTile.Position.Elevation);
+            Vector2Int[] firstLine = MapUtil.FindHeightLine(position, MapUnits, startTile.Position.Elevation);
 
             return new[] { firstLine };
         }
 
-        // Algorithmus ist nicht zielführend in den meisten Fällen.
-        private Vector2Int[] FindHeightLine(Vector2Int start, float elevation)
+        public Vector2Int[] GetSlopeLine(Vector2Int start, float momentumMultiplier = 1.0f,
+            float maxMomentumFraction = 1.0f)
         {
-            List<Vector2Int> heightLine = new List<Vector2Int>();
-            heightLine.Add(start);
-
-            Vector2Int currentPos = start;
-            int borderCounter = 0;
-            int iterations = 0;
-            bool nextFound;
-            
-            do
-            {
-                Vector2Int[] neighbors = MathUtil.GetNeighborPositionsIn2DArray(currentPos, SizeX, SizeY);
-                Vector2Int next = neighbors[0];
-                float error = float.PositiveInfinity;
-                nextFound = false;
-
-                foreach (var neighbor in neighbors)
-                {
-                    float nextError = Mathf.Abs(MapUnits[neighbor.x, neighbor.y].Position.Elevation - elevation);
-                    if (nextError < error && !heightLine.Contains(neighbor) && !MathUtil.NextPointCrossesLineDiagonally(neighbor, heightLine))
-                    {
-                        error = nextError;
-                        next = neighbor;
-                        nextFound = true;
-                    }
-                }
-
-                if (!nextFound)
-                {
-                    break;
-                }
-                
-                currentPos = next;
-                heightLine.Add(currentPos);
-                borderCounter = MathUtil.At2DArrayBorder(currentPos, SizeX, SizeY) ? borderCounter + 1 : 0;
-                iterations++;
-            } while (iterations < 10000 && currentPos != start);
-
-            return heightLine.ToArray();
-        }
-
-        public Vector2Int[] GetSlopeLine(Vector2Int start, float momentumMultiplier=1.0f, float maxMomentumFraction=1.0f)
-        {
-            List<Vector2Int> slopeLine = new List<Vector2Int>();
-            slopeLine.Add(start);
-            bool found;
-            Vector2Int currentPos = start;
-            float previousElevation = float.PositiveInfinity;
-            float momentumLeft = 0;
-            int momentumPopCounter = 0;
-            
-            do
-            {
-                found = false;
-                bool foundNeighbor = false;
-                Vector2Int[] neighbors = MathUtil.GetNeighborPositionsIn2DArray(currentPos, SizeX, SizeY);
-                Vector2Int next = neighbors[0];
-                float nextElevation = float.PositiveInfinity;
-                
-                foreach (var neighbor in neighbors)
-                {
-                    float neightborElevation = MapUnits[neighbor.x, neighbor.y].Position.Elevation;
-                    if (neightborElevation < nextElevation && !slopeLine.Contains(neighbor) && !MathUtil.NextPointCrossesLineDiagonally(neighbor, slopeLine))
-                    {
-                        nextElevation = neightborElevation;
-                        next = neighbor;
-                        foundNeighbor = true;
-                    }
-                }
-
-                if (!foundNeighbor)
-                    break;
-
-                currentPos = next;
-                float momentumTerm = momentumLeft * maxMomentumFraction;
-                
-                if ((nextElevation - momentumLeft) <= previousElevation)
-                {
-                    if (nextElevation <= previousElevation)
-                    {
-                        momentumLeft += Mathf.Abs((float.IsPositiveInfinity(previousElevation)) ? maxMomentumFraction * nextElevation : previousElevation - nextElevation);
-                        momentumLeft *= momentumMultiplier;
-                        momentumPopCounter = 0;
-                    }
-                    else
-                    {
-                        momentumLeft -= momentumTerm;
-                        momentumPopCounter++;
-                    }
-                    found = true;
-                    slopeLine.Add(currentPos);
-                    previousElevation = nextElevation;
-                }
-            } while (found);
-            
-            if(momentumPopCounter > 0)
-                slopeLine.RemoveRange(slopeLine.Count - momentumPopCounter, momentumPopCounter);
-            
-            return slopeLine.ToArray();
+            return MapUtil.GetSlopeLine(start, MapUnits, momentumMultiplier, maxMomentumFraction);
         }
     }
 }

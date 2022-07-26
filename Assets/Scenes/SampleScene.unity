@@ -1783,7 +1783,7 @@ GameObject:
   - component: {fileID: 1468657471}
   - component: {fileID: 1468657472}
   m_Layer: 0
-  m_Name: HeightLineHighlight
+  m_Name: TileLineHightlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2278,7 +2278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitView: {fileID: 1161668988}
-  heightLineView: {fileID: 1468657472}
+  tileLineView: {fileID: 1468657472}
   clickCamera: {fileID: 519420031}
 --- !u!114 &1827302181
 MonoBehaviour:
