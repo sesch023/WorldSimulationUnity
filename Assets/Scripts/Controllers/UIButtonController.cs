@@ -17,7 +17,7 @@ namespace Controllers
         {
             if(SimulationManager.Instance.CurrentInteractionMode == SimulationManager.InteractionMode.SelectTile)
                 SelectButtonClick();
-            else if(SimulationManager.Instance.CurrentInteractionMode == SimulationManager.InteractionMode.HeightLineSelection)
+            else if(SimulationManager.Instance.CurrentInteractionMode == SimulationManager.InteractionMode.ValleySelection)
                 HeightLineButtonClick();
             else if(SimulationManager.Instance.CurrentInteractionMode == SimulationManager.InteractionMode.SlopeSelection)
                 SlopeButtonClick();
@@ -34,7 +34,7 @@ namespace Controllers
         {
             EnableAll();
             heightLineButton.interactable = false;
-            SimulationManager.Instance.CurrentInteractionMode = SimulationManager.InteractionMode.HeightLineSelection;
+            SimulationManager.Instance.CurrentInteractionMode = SimulationManager.InteractionMode.ValleySelection;
         }
 
         public void SlopeButtonClick()

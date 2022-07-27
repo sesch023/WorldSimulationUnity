@@ -1,7 +1,9 @@
 ﻿using Base;
+using Derelict.Model.Map;
 using Model.Generators;
 using UnityEngine;
 using Utils.BaseUtils;
+using Views.GameViews;
 
 namespace Model.Map
 {
@@ -51,18 +53,18 @@ namespace Model.Map
             }
         }
 
-        public Vector2Int[][] GetHeightLine(Vector2Int position)
+        public (Vector2Int[] valley, Vector2Int[] valleyBorder, Vector2Int[] valleyOpenings) GetValley(Vector2Int position)
         {
             MapUnit startTile = MapUnits[position.x, position.y];
-            Vector2Int[] firstLine = new HeightLine(position, MapUnits, startTile.Position.Elevation).CalculatedHeightLine;
-
-            return new[] { firstLine };
+            Valley valley = new Valley(position, MapUnits, startTile.Position.Elevation);
+            
+            return (valley.CalculatedValleyPositions, valley.CalculatedValleyBorder, valley.CalculatedValleyOpenings);
         }
 
         public Vector2Int[] GetSlopeLine(Vector2Int start, float momentumMultiplier = 1.0f,
             float maxMomentumFraction = 1.0f)
         {
-            return new SlopeLine(start, MapUnits, momentumMultiplier, maxMomentumFraction).CalculatedSlope;
+            return new Slope(start, MapUnits, momentumMultiplier, maxMomentumFraction).CalculatedSlope;
         }
     }
 }

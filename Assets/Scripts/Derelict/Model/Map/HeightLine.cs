@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
+using Model.Map;
 using UnityEngine;
 using Utils.Array2D;
 using Utils.BaseUtils;
 
-namespace Model.Map
+namespace Derelict.Model.Map
 {
     public class HeightLine
     {
@@ -26,7 +27,7 @@ namespace Model.Map
 
         public void Reset(Vector2Int start, I2DArray<float> mapElevations, float elevation)
         {
-            _elevation = elevation;
+            _start = start;
             _mapElevations = mapElevations;
             _elevation = elevation;
 

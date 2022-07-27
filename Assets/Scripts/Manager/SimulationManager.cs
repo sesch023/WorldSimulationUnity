@@ -13,7 +13,7 @@ namespace Manager
         public enum InteractionMode
         {
             SelectTile,
-            HeightLineSelection,
+            ValleySelection,
             SlopeSelection
         } 
         

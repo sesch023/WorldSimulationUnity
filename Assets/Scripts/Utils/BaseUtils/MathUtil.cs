@@ -23,6 +23,18 @@ namespace Utils.BaseUtils
                 return check.CompareTo(_start) > 0 && check.CompareTo(_end) >= 0;
             }
         }
+
+        public static List<Vector2> Vector2IntListToVector2List(List<Vector2Int> list)
+        {
+            var items = from vec in list select ((Vector2) vec);
+            return items.ToList();
+        }
+        
+        public static Vector2[] Vector2IntArrayToVector2Array(Vector2Int[] arr)
+        {
+            var items = from vec in arr select ((Vector2) vec);
+            return items.ToArray();
+        }
         
         public static bool AlmostEquals(double double1, double double2, double precision)
         {

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lowestHeight: -8000
   heighestHeight: 10000
-  heightStep: 400
+  heightStep: 1000
   minHeightColor: 0.3
   testTile1Data:
     sprite: {fileID: 21300000, guid: 97b552bd75fb66b47b69ea3103bc97af, type: 3}

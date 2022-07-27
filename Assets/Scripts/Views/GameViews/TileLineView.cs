@@ -1,12 +1,18 @@
 ﻿using Controllers;
 using Manager;
 using UnityEngine;
+using Utils.BaseUtils;
 
 namespace Views.GameViews
 {
-    public class TileLineView : MapLineView
+    public class TileLineView : LineView
     {
         public void SetTileLinePoints(Vector2Int[] points)
+        {
+            SetTileLinePoints(MathUtil.Vector2IntArrayToVector2Array(points));
+        }
+        
+        public void SetTileLinePoints(Vector2[] points)
         {
             DisableLine();
             Vector3 scale = MapManager.Instance.MapController.TileMap.transform.localScale;

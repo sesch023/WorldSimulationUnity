@@ -62,6 +62,11 @@ namespace Controllers
 
         public Vector3 TileMapPositionToGlobalPosition(Vector2Int position)
         {
+            return TileMapPositionToGlobalPosition((Vector2) position);
+        }
+        
+        public Vector3 TileMapPositionToGlobalPosition(Vector2 position)
+        {
             var transform = TileMap.transform;
             Vector3 basePosition = transform.position;
             var localScale = transform.localScale;

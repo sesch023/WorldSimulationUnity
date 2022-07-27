@@ -5,7 +5,7 @@ using Utils.BaseUtils;
 
 namespace Model.Map
 {
-    public class SlopeLine
+    public class Slope
     {
         private Vector2Int _start;
         private I2DArray<float> _elevations;
@@ -14,14 +14,14 @@ namespace Model.Map
         
         public Vector2Int[] CalculatedSlope { get; private set; }
 
-        public SlopeLine(Vector2Int start, MapUnit[,] mapUnits, float momentumMultiplier = 1.0f,
+        public Slope(Vector2Int start, MapUnit[,] mapUnits, float momentumMultiplier = 1.0f,
             float maxMomentumFraction = 1.0f)
         {
             ArrayView2D<MapUnit, float> view = new ArrayView2D<MapUnit, float>(mapUnits, unit => unit.Position.Elevation);
             Reset(start, view, momentumMultiplier, maxMomentumFraction);
         }
         
-        public SlopeLine(Vector2Int start, I2DArray<float> elevations, 
+        public Slope(Vector2Int start, I2DArray<float> elevations, 
             float momentumMultiplier=1.0f, float maxMomentumFraction=1.0f)
         {
             Reset(start, elevations, momentumMultiplier, maxMomentumFraction);

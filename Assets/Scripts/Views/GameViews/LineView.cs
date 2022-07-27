@@ -11,7 +11,7 @@ using Utils.BaseUtils;
 
 namespace Views.GameViews
 {
-    public class MapLineView : MonoBehaviour
+    public class LineView : MonoBehaviour
     {
         private static readonly AnimationCurve DefaultCurve = AnimationCurve.Constant(0f, 0f, 1f);
         private static Material _defaultMaterial = null;

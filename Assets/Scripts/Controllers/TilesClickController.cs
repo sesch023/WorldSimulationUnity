@@ -17,7 +17,16 @@ namespace Controllers {
         [FormerlySerializedAs("_unitView")] [SerializeField]
         private UnitView unitView;
 
-        [FormerlySerializedAs("heightLineView")] [SerializeField]
+        [FormerlySerializedAs("tileGroupView")] [SerializeField]
+        private TileGroupView tileGroupViewValley;
+        
+        [SerializeField]
+        private TileGroupView tileGroupViewValleyOpenings;
+        
+        [SerializeField]
+        private TileGroupView tileGroupViewValleyBorder;
+
+        [SerializeField] 
         private TileLineView tileLineView;
 
         [FormerlySerializedAs("_clickCamera")] [SerializeField]
@@ -30,9 +39,24 @@ namespace Controllers {
                 throw new MissingReferenceException($"MissingReferenceException: {GetType()} - UnitView missing!");
             }
             
+            if (tileGroupViewValley == null)
+            {
+                throw new MissingReferenceException($"MissingReferenceException: {GetType()} - Tile Group View missing!");
+            }
+            
+            if (tileGroupViewValleyOpenings == null)
+            {
+                throw new MissingReferenceException($"MissingReferenceException: {GetType()} - Tile Group View missing!");
+            }
+            
+            if (tileGroupViewValleyBorder == null)
+            {
+                throw new MissingReferenceException($"MissingReferenceException: {GetType()} - Tile Group View missing!");
+            }
+            
             if (tileLineView == null)
             {
-                throw new MissingReferenceException($"MissingReferenceException: {GetType()} - UnitView missing!");
+                throw new MissingReferenceException($"MissingReferenceException: {GetType()} - Tile Line View missing!");
             }
             
             if (clickCamera == null)
@@ -48,9 +72,9 @@ namespace Controllers {
             
             DeselectAll();
             
-            if (SimulationManager.Instance.CurrentInteractionMode == SimulationManager.InteractionMode.HeightLineSelection)
+            if (SimulationManager.Instance.CurrentInteractionMode == SimulationManager.InteractionMode.ValleySelection)
             {
-                SelectHeightLineMode();
+                SelectValleyMode();
             } 
             else if (SimulationManager.Instance.CurrentInteractionMode ==
                      SimulationManager.InteractionMode.SlopeSelection)
@@ -73,7 +97,7 @@ namespace Controllers {
 
         private void DeselectAll()
         {
-            DeselectHeightLineMode();
+            DeselectValley();
             DeselectSlopeLineMode();
             DeselectTileMode();
         }
@@ -90,25 +114,29 @@ namespace Controllers {
             unitView.DisableUnit();
         }
 
-        private void SelectHeightLineMode()
+        private void SelectValleyMode()
         {
             (MapUnit unit, Vector2Int vec) unit = GetMapUnitAndPosition();
-            Vector2Int[][] heightLine = MapManager.Instance.MapController.UnitMap.GetHeightLine(unit.vec);
-            tileLineView.SetTileLinePoints(heightLine[0]);
+            var valleyDef = MapManager.Instance.MapController.UnitMap.GetValley(unit.vec);
+            tileGroupViewValley.tiles = valleyDef.valley;
+            tileGroupViewValleyOpenings.tiles = valleyDef.valleyOpenings;
+            tileGroupViewValleyBorder.tiles = valleyDef.valleyBorder;
+            tileGroupViewValleyBorder.Enable();
+            tileGroupViewValley.Enable();
+            tileGroupViewValleyOpenings.Enable();
         }
         
-        private void DeselectHeightLineMode()
+        private void DeselectValley()
         {
-            tileLineView.DisableLine();
+            tileGroupViewValley.Disable();
+            tileGroupViewValleyOpenings.Disable();
+            tileGroupViewValleyBorder.Disable();
         }
 
         private void SelectSlopeLineMode()
         {
             (MapUnit unit, Vector2Int vec) unit = GetMapUnitAndPosition();
             Vector2Int[] slopeLine = MapManager.Instance.MapController.UnitMap.GetSlopeLine(unit.vec);
-            Debug.Log(slopeLine.Length);
-            foreach(Vector2Int vec in slopeLine)
-                Debug.Log(vec);
             
             tileLineView.SetTileLinePoints(slopeLine);
         }
