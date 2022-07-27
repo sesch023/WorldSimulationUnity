@@ -733,7 +733,7 @@ GameObject:
   - component: {fileID: 794007693}
   - component: {fileID: 794007694}
   m_Layer: 0
-  m_Name: TileGroupViewValley
+  m_Name: TileGroupView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -934,7 +934,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MapController>k__BackingField:
     <TileMap>k__BackingField: {fileID: 1827302178}
-    tileViews: {fileID: 11400000, guid: c047b8477c3f6c84cbf3d3dadba7c87f, type: 2}
+    <TileViews>k__BackingField: {fileID: 11400000, guid: c047b8477c3f6c84cbf3d3dadba7c87f, type: 2}
     <UnitMap>k__BackingField: {fileID: 11400000, guid: 91eba5138358d5142a305d9dd80a0692, type: 2}
 --- !u!4 &900914461
 Transform:
@@ -1232,7 +1232,7 @@ GameObject:
   - component: {fileID: 1000310730}
   - component: {fileID: 1000310731}
   m_Layer: 0
-  m_Name: TileGroupViewValleyBorder
+  m_Name: TileGroupViewBorder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2491,9 +2491,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitView: {fileID: 1161668988}
-  tileGroupViewValley: {fileID: 794007694}
-  tileGroupViewValleyOpenings: {fileID: 1895139626}
-  tileGroupViewValleyBorder: {fileID: 1000310731}
+  tileGroupView: {fileID: 794007694}
+  tileGroupViewExits: {fileID: 1895139626}
+  tileGroupViewBorder: {fileID: 1000310731}
   tileLineView: {fileID: 1468657472}
   clickCamera: {fileID: 519420031}
 --- !u!114 &1827302181
@@ -2894,7 +2894,7 @@ GameObject:
   - component: {fileID: 1895139625}
   - component: {fileID: 1895139626}
   m_Layer: 0
-  m_Name: TileGroupViewValleyOpenings
+  m_Name: TileGroupViewOpenings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
