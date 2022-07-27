@@ -1,0 +1,73 @@
+\hypertarget{class_base_1_1_conditional_update}{}\doxysection{Base.\+Conditional\+Update Class Reference}
+\label{class_base_1_1_conditional_update}\index{Base.ConditionalUpdate@{Base.ConditionalUpdate}}
+
+
+Abstract Uptatable which executes a Conditioned Update on a given Condition. Implement \mbox{\hyperlink{class_base_1_1_conditional_update_a31acfc5bde32d05abd49eef86b71b200}{Conditioned\+Update()}} and \mbox{\hyperlink{class_base_1_1_conditional_update_a74dc2c3aac9a2fc0731e21799e597a39}{Condition()}} in derived classes. Implements IUptatable.  
+
+
+Inheritance diagram for Base.\+Conditional\+Update\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_base_1_1_conditional_update}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_base_1_1_conditional_update_a6a0b2eb8983352ff854188e1d58188af}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Basic Update method. \end{DoxyCompactList}\item 
+abstract bool \mbox{\hyperlink{class_base_1_1_conditional_update_a74dc2c3aac9a2fc0731e21799e597a39}{Condition}} ()
+\begin{DoxyCompactList}\small\item\em Condition to met, before \mbox{\hyperlink{class_base_1_1_conditional_update_a31acfc5bde32d05abd49eef86b71b200}{Conditioned\+Update()}} is executed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract void \mbox{\hyperlink{class_base_1_1_conditional_update_a31acfc5bde32d05abd49eef86b71b200}{Conditioned\+Update}} ()
+\begin{DoxyCompactList}\small\item\em Code which is executed, if the condition is met. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract Uptatable which executes a Conditioned Update on a given Condition. Implement \mbox{\hyperlink{class_base_1_1_conditional_update_a31acfc5bde32d05abd49eef86b71b200}{Conditioned\+Update()}} and \mbox{\hyperlink{class_base_1_1_conditional_update_a74dc2c3aac9a2fc0731e21799e597a39}{Condition()}} in derived classes. Implements IUptatable. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_base_1_1_conditional_update_a74dc2c3aac9a2fc0731e21799e597a39}\label{class_base_1_1_conditional_update_a74dc2c3aac9a2fc0731e21799e597a39}} 
+\index{Base.ConditionalUpdate@{Base.ConditionalUpdate}!Condition@{Condition}}
+\index{Condition@{Condition}!Base.ConditionalUpdate@{Base.ConditionalUpdate}}
+\doxysubsubsection{\texorpdfstring{Condition()}{Condition()}}
+{\footnotesize\ttfamily abstract bool Base.\+Conditional\+Update.\+Condition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Condition to met, before \mbox{\hyperlink{class_base_1_1_conditional_update_a31acfc5bde32d05abd49eef86b71b200}{Conditioned\+Update()}} is executed. 
+
+\begin{DoxyReturn}{Returns}
+True, if the condition is met.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_base_1_1_conditional_update_a31acfc5bde32d05abd49eef86b71b200}\label{class_base_1_1_conditional_update_a31acfc5bde32d05abd49eef86b71b200}} 
+\index{Base.ConditionalUpdate@{Base.ConditionalUpdate}!ConditionedUpdate@{ConditionedUpdate}}
+\index{ConditionedUpdate@{ConditionedUpdate}!Base.ConditionalUpdate@{Base.ConditionalUpdate}}
+\doxysubsubsection{\texorpdfstring{ConditionedUpdate()}{ConditionedUpdate()}}
+{\footnotesize\ttfamily abstract void Base.\+Conditional\+Update.\+Conditioned\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Code which is executed, if the condition is met. 
+
+\mbox{\Hypertarget{class_base_1_1_conditional_update_a6a0b2eb8983352ff854188e1d58188af}\label{class_base_1_1_conditional_update_a6a0b2eb8983352ff854188e1d58188af}} 
+\index{Base.ConditionalUpdate@{Base.ConditionalUpdate}!Update@{Update}}
+\index{Update@{Update}!Base.ConditionalUpdate@{Base.ConditionalUpdate}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Base.\+Conditional\+Update.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Basic Update method. 
+
+
+
+Implements \mbox{\hyperlink{interface_base_1_1_i_updatable_a1983d03de50becea9925ab50db45752d}{Base.\+IUpdatable}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Base/\mbox{\hyperlink{_conditional_update_8cs}{Conditional\+Update.\+cs}}\end{DoxyCompactItemize}

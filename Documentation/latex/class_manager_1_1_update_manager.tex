@@ -1,0 +1,105 @@
+\hypertarget{class_manager_1_1_update_manager}{}\doxysection{Manager.\+Update\+Manager Class Reference}
+\label{class_manager_1_1_update_manager}\index{Manager.UpdateManager@{Manager.UpdateManager}}
+Inheritance diagram for Manager.\+Update\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_manager_1_1_update_manager}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_manager_1_1_update_manager_afe7ba198ed8274ffae5303d6b75ab82b}{Register\+Updatable}} (\mbox{\hyperlink{interface_base_1_1_i_updatable}{IUpdatable}} updatable)
+\item 
+void \mbox{\hyperlink{class_manager_1_1_update_manager_a8a73616a5b99bf712fddfd1509a21b24}{Remove\+Updatable}} (\mbox{\hyperlink{interface_base_1_1_i_updatable}{IUpdatable}} updatable)
+\item 
+void \mbox{\hyperlink{class_manager_1_1_update_manager_aa0eaab5b588cd4642f65e90168750b2e}{Mark\+Updatable\+For\+Removal}} (\mbox{\hyperlink{interface_base_1_1_i_updatable}{IUpdatable}} updatable)
+\item 
+void \mbox{\hyperlink{class_manager_1_1_update_manager_a7ae39a94e85b1152c37b673f295cbc85}{Mark\+Removable\+For\+Removal}} (\mbox{\hyperlink{interface_base_1_1_i_managed_removal}{IManaged\+Removal}} managed\+Removal)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_manager_1_1_update_manager_a7ad0aa808c9181479fc409d758eec4c3}{Update\+Manager}} ()
+\item 
+virtual void \mbox{\hyperlink{class_manager_1_1_update_manager_a6f34dd241ca6c72c17a3e6f10c19a831}{Removal\+Run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Queue$<$ \mbox{\hyperlink{interface_base_1_1_i_updatable}{IUpdatable}} $>$ \mbox{\hyperlink{class_manager_1_1_update_manager_ac97219da34f00a39471222df5031eae1}{Marked\+For\+Removal}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_manager_1_1_update_manager}{Update\+Manager}} \mbox{\hyperlink{class_manager_1_1_update_manager_aa7243ce84dea5c5471b1d00731613e96}{Instance}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_manager_1_1_update_manager_a7ad0aa808c9181479fc409d758eec4c3}\label{class_manager_1_1_update_manager_a7ad0aa808c9181479fc409d758eec4c3}} 
+\index{Manager.UpdateManager@{Manager.UpdateManager}!UpdateManager@{UpdateManager}}
+\index{UpdateManager@{UpdateManager}!Manager.UpdateManager@{Manager.UpdateManager}}
+\doxysubsubsection{\texorpdfstring{UpdateManager()}{UpdateManager()}}
+{\footnotesize\ttfamily Manager.\+Update\+Manager.\+Update\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_manager_1_1_update_manager_a7ae39a94e85b1152c37b673f295cbc85}\label{class_manager_1_1_update_manager_a7ae39a94e85b1152c37b673f295cbc85}} 
+\index{Manager.UpdateManager@{Manager.UpdateManager}!MarkRemovableForRemoval@{MarkRemovableForRemoval}}
+\index{MarkRemovableForRemoval@{MarkRemovableForRemoval}!Manager.UpdateManager@{Manager.UpdateManager}}
+\doxysubsubsection{\texorpdfstring{MarkRemovableForRemoval()}{MarkRemovableForRemoval()}}
+{\footnotesize\ttfamily void Manager.\+Update\+Manager.\+Mark\+Removable\+For\+Removal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_base_1_1_i_managed_removal}{IManaged\+Removal}}}]{managed\+Removal }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_manager_1_1_update_manager_aa0eaab5b588cd4642f65e90168750b2e}\label{class_manager_1_1_update_manager_aa0eaab5b588cd4642f65e90168750b2e}} 
+\index{Manager.UpdateManager@{Manager.UpdateManager}!MarkUpdatableForRemoval@{MarkUpdatableForRemoval}}
+\index{MarkUpdatableForRemoval@{MarkUpdatableForRemoval}!Manager.UpdateManager@{Manager.UpdateManager}}
+\doxysubsubsection{\texorpdfstring{MarkUpdatableForRemoval()}{MarkUpdatableForRemoval()}}
+{\footnotesize\ttfamily void Manager.\+Update\+Manager.\+Mark\+Updatable\+For\+Removal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_base_1_1_i_updatable}{IUpdatable}}}]{updatable }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_manager_1_1_update_manager_afe7ba198ed8274ffae5303d6b75ab82b}\label{class_manager_1_1_update_manager_afe7ba198ed8274ffae5303d6b75ab82b}} 
+\index{Manager.UpdateManager@{Manager.UpdateManager}!RegisterUpdatable@{RegisterUpdatable}}
+\index{RegisterUpdatable@{RegisterUpdatable}!Manager.UpdateManager@{Manager.UpdateManager}}
+\doxysubsubsection{\texorpdfstring{RegisterUpdatable()}{RegisterUpdatable()}}
+{\footnotesize\ttfamily void Manager.\+Update\+Manager.\+Register\+Updatable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_base_1_1_i_updatable}{IUpdatable}}}]{updatable }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_manager_1_1_update_manager_a6f34dd241ca6c72c17a3e6f10c19a831}\label{class_manager_1_1_update_manager_a6f34dd241ca6c72c17a3e6f10c19a831}} 
+\index{Manager.UpdateManager@{Manager.UpdateManager}!RemovalRun@{RemovalRun}}
+\index{RemovalRun@{RemovalRun}!Manager.UpdateManager@{Manager.UpdateManager}}
+\doxysubsubsection{\texorpdfstring{RemovalRun()}{RemovalRun()}}
+{\footnotesize\ttfamily virtual void Manager.\+Update\+Manager.\+Removal\+Run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_manager_1_1_verbose_update_manager_a589a3ef49aafd2c493bf970c46deda23}{Manager.\+Verbose\+Update\+Manager}}.
+
+\mbox{\Hypertarget{class_manager_1_1_update_manager_a8a73616a5b99bf712fddfd1509a21b24}\label{class_manager_1_1_update_manager_a8a73616a5b99bf712fddfd1509a21b24}} 
+\index{Manager.UpdateManager@{Manager.UpdateManager}!RemoveUpdatable@{RemoveUpdatable}}
+\index{RemoveUpdatable@{RemoveUpdatable}!Manager.UpdateManager@{Manager.UpdateManager}}
+\doxysubsubsection{\texorpdfstring{RemoveUpdatable()}{RemoveUpdatable()}}
+{\footnotesize\ttfamily void Manager.\+Update\+Manager.\+Remove\+Updatable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_base_1_1_i_updatable}{IUpdatable}}}]{updatable }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_manager_1_1_update_manager_ac97219da34f00a39471222df5031eae1}\label{class_manager_1_1_update_manager_ac97219da34f00a39471222df5031eae1}} 
+\index{Manager.UpdateManager@{Manager.UpdateManager}!MarkedForRemoval@{MarkedForRemoval}}
+\index{MarkedForRemoval@{MarkedForRemoval}!Manager.UpdateManager@{Manager.UpdateManager}}
+\doxysubsubsection{\texorpdfstring{MarkedForRemoval}{MarkedForRemoval}}
+{\footnotesize\ttfamily Queue$<$\mbox{\hyperlink{interface_base_1_1_i_updatable}{IUpdatable}}$>$ Manager.\+Update\+Manager.\+Marked\+For\+Removal\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_manager_1_1_update_manager_aa7243ce84dea5c5471b1d00731613e96}\label{class_manager_1_1_update_manager_aa7243ce84dea5c5471b1d00731613e96}} 
+\index{Manager.UpdateManager@{Manager.UpdateManager}!Instance@{Instance}}
+\index{Instance@{Instance}!Manager.UpdateManager@{Manager.UpdateManager}}
+\doxysubsubsection{\texorpdfstring{Instance}{Instance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_manager_1_1_update_manager}{Update\+Manager}} Manager.\+Update\+Manager.\+Instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Manager/\mbox{\hyperlink{_update_manager_8cs}{Update\+Manager.\+cs}}\end{DoxyCompactItemize}

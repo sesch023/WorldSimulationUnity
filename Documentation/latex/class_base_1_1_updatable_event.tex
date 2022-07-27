@@ -1,0 +1,96 @@
+\hypertarget{class_base_1_1_updatable_event}{}\doxysection{Base.\+Updatable\+Event Class Reference}
+\label{class_base_1_1_updatable_event}\index{Base.UpdatableEvent@{Base.UpdatableEvent}}
+
+
+Abstract Updatable \mbox{\hyperlink{class_base_1_1_event}{Event}} which can be triggered on certain conditions in the update method.  
+
+
+Inheritance diagram for Base.\+Updatable\+Event\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_base_1_1_updatable_event}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_base_1_1_updatable_event_a4a7733332001e538dd05ea1343d69f40}{Updatable\+Event}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{class_base_1_1_updatable_event}{Updatable\+Event}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_base_1_1_updatable_event_a7af282ff6e0f67464d704f69e6480b17}{Updatable\+Event}} (\mbox{\hyperlink{namespace_base_af392a9a499fa47067aca11daa63c0843}{Subscriber}} subscriber)
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{class_base_1_1_updatable_event}{Updatable\+Event}} initializing the base event with a single subscriber. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_base_1_1_updatable_event_aaadb0e1d62354d449a88ffa4c25d8e21}{Updatable\+Event}} (IEnumerable$<$ \mbox{\hyperlink{namespace_base_af392a9a499fa47067aca11daa63c0843}{Subscriber}} $>$ subscribers)
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{class_base_1_1_updatable_event}{Updatable\+Event}} initializing the base event with multiple subscribers. \end{DoxyCompactList}\item 
+abstract void \mbox{\hyperlink{class_base_1_1_updatable_event_a51cff57b805fceda5dc7c4b973fd9960}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Method to be called by the Update\+Manager every single update. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract Updatable \mbox{\hyperlink{class_base_1_1_event}{Event}} which can be triggered on certain conditions in the update method. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_base_1_1_updatable_event_a4a7733332001e538dd05ea1343d69f40}\label{class_base_1_1_updatable_event_a4a7733332001e538dd05ea1343d69f40}} 
+\index{Base.UpdatableEvent@{Base.UpdatableEvent}!UpdatableEvent@{UpdatableEvent}}
+\index{UpdatableEvent@{UpdatableEvent}!Base.UpdatableEvent@{Base.UpdatableEvent}}
+\doxysubsubsection{\texorpdfstring{UpdatableEvent()}{UpdatableEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Base.\+Updatable\+Event.\+Updatable\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor for \mbox{\hyperlink{class_base_1_1_updatable_event}{Updatable\+Event}}. 
+
+\mbox{\Hypertarget{class_base_1_1_updatable_event_a7af282ff6e0f67464d704f69e6480b17}\label{class_base_1_1_updatable_event_a7af282ff6e0f67464d704f69e6480b17}} 
+\index{Base.UpdatableEvent@{Base.UpdatableEvent}!UpdatableEvent@{UpdatableEvent}}
+\index{UpdatableEvent@{UpdatableEvent}!Base.UpdatableEvent@{Base.UpdatableEvent}}
+\doxysubsubsection{\texorpdfstring{UpdatableEvent()}{UpdatableEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Base.\+Updatable\+Event.\+Updatable\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_base_af392a9a499fa47067aca11daa63c0843}{Subscriber}}}]{subscriber }\end{DoxyParamCaption})}
+
+
+
+Constructor for \mbox{\hyperlink{class_base_1_1_updatable_event}{Updatable\+Event}} initializing the base event with a single subscriber. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em subscriber} & One subscriber to the event.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_base_1_1_updatable_event_aaadb0e1d62354d449a88ffa4c25d8e21}\label{class_base_1_1_updatable_event_aaadb0e1d62354d449a88ffa4c25d8e21}} 
+\index{Base.UpdatableEvent@{Base.UpdatableEvent}!UpdatableEvent@{UpdatableEvent}}
+\index{UpdatableEvent@{UpdatableEvent}!Base.UpdatableEvent@{Base.UpdatableEvent}}
+\doxysubsubsection{\texorpdfstring{UpdatableEvent()}{UpdatableEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Base.\+Updatable\+Event.\+Updatable\+Event (\begin{DoxyParamCaption}\item[{IEnumerable$<$ \mbox{\hyperlink{namespace_base_af392a9a499fa47067aca11daa63c0843}{Subscriber}} $>$}]{subscribers }\end{DoxyParamCaption})}
+
+
+
+Constructor for \mbox{\hyperlink{class_base_1_1_updatable_event}{Updatable\+Event}} initializing the base event with multiple subscribers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em subscribers} & IEnumerable of subscribers to the event.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_base_1_1_updatable_event_a51cff57b805fceda5dc7c4b973fd9960}\label{class_base_1_1_updatable_event_a51cff57b805fceda5dc7c4b973fd9960}} 
+\index{Base.UpdatableEvent@{Base.UpdatableEvent}!Update@{Update}}
+\index{Update@{Update}!Base.UpdatableEvent@{Base.UpdatableEvent}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily abstract void Base.\+Updatable\+Event.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Method to be called by the Update\+Manager every single update. 
+
+
+
+Implements \mbox{\hyperlink{interface_base_1_1_i_updatable_a1983d03de50becea9925ab50db45752d}{Base.\+IUpdatable}}.
+
+
+
+Implemented in \mbox{\hyperlink{class_base_1_1_tick_event_a2804eb48d51c8e854d8048186d7fc91c}{Base.\+Tick\+Event}}, and \mbox{\hyperlink{class_base_1_1_tick_spaced_event_a3d5d2e38298b891e9f6daf3ea524c2bd}{Base.\+Tick\+Spaced\+Event}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Base/\mbox{\hyperlink{_updatable_event_8cs}{Updatable\+Event.\+cs}}\end{DoxyCompactItemize}

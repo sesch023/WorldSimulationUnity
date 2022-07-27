@@ -1,0 +1,155 @@
+\hypertarget{class_base_1_1_event}{}\doxysection{Base.\+Event Class Reference}
+\label{class_base_1_1_event}\index{Base.Event@{Base.Event}}
+
+
+\mbox{\hyperlink{class_base_1_1_event}{Event}}, which triggers subscribers, which can be registered and unregistered. Implements \mbox{\hyperlink{interface_base_1_1_i_event}{IEvent}}.  
+
+
+Inheritance diagram for Base.\+Event\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_base_1_1_event}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_base_1_1_event_ab79b525f1d3e341183a6cb4edb9f450d}{Event}} ()
+\begin{DoxyCompactList}\small\item\em Constructor of the \mbox{\hyperlink{class_base_1_1_event}{Event}}. Initializes the list of subscribers. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_base_1_1_event_a4e60d687bf305404a2c2400900b42fcb}{Event}} (\mbox{\hyperlink{namespace_base_af392a9a499fa47067aca11daa63c0843}{Subscriber}} subscriber)
+\begin{DoxyCompactList}\small\item\em Constructor of the \mbox{\hyperlink{class_base_1_1_event}{Event}}. Initializes the list of subscribers with a single given subscriber. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_base_1_1_event_a9dc1ab632074a3ef66ab6322b2f35fd4}{Event}} (IEnumerable$<$ \mbox{\hyperlink{namespace_base_af392a9a499fa47067aca11daa63c0843}{Subscriber}} $>$ subscribers)
+\begin{DoxyCompactList}\small\item\em Constructor of the \mbox{\hyperlink{class_base_1_1_event}{Event}}. Initializes the list of subscribers with a IEnumerable of given subscribers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_base_1_1_event_aef1172edbf5ff740d0e57742d64ebec3}{Trigger\+Subscribers}} ()
+\begin{DoxyCompactList}\small\item\em Triggers the subscribers of the event, with a method call. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_base_1_1_event_ae9a939ab9bedaa27ec8bef3a33400a5d}{Add\+Subscriber}} (\mbox{\hyperlink{namespace_base_af392a9a499fa47067aca11daa63c0843}{Subscriber}} subscriber)
+\begin{DoxyCompactList}\small\item\em Adds a single subscriber to the list of subscribers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_base_1_1_event_ad2b648008fa2645a009acbd981e857be}{Add\+Subscribers}} (IEnumerable$<$ \mbox{\hyperlink{namespace_base_af392a9a499fa47067aca11daa63c0843}{Subscriber}} $>$ subscribers)
+\begin{DoxyCompactList}\small\item\em Adds a IEnumerable of subscribers to the list of subscribers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_base_1_1_event_a69b2c0c9ff52d92c6504c482dae35051}{Remove\+Subscriber}} (\mbox{\hyperlink{namespace_base_af392a9a499fa47067aca11daa63c0843}{Subscriber}} subscriber)
+\begin{DoxyCompactList}\small\item\em Removes a subscriber from the list of subscribers by address. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_base_1_1_event}{Event}}, which triggers subscribers, which can be registered and unregistered. Implements \mbox{\hyperlink{interface_base_1_1_i_event}{IEvent}}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_base_1_1_event_ab79b525f1d3e341183a6cb4edb9f450d}\label{class_base_1_1_event_ab79b525f1d3e341183a6cb4edb9f450d}} 
+\index{Base.Event@{Base.Event}!Event@{Event}}
+\index{Event@{Event}!Base.Event@{Base.Event}}
+\doxysubsubsection{\texorpdfstring{Event()}{Event()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Base.\+Event.\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor of the \mbox{\hyperlink{class_base_1_1_event}{Event}}. Initializes the list of subscribers. 
+
+\mbox{\Hypertarget{class_base_1_1_event_a4e60d687bf305404a2c2400900b42fcb}\label{class_base_1_1_event_a4e60d687bf305404a2c2400900b42fcb}} 
+\index{Base.Event@{Base.Event}!Event@{Event}}
+\index{Event@{Event}!Base.Event@{Base.Event}}
+\doxysubsubsection{\texorpdfstring{Event()}{Event()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Base.\+Event.\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_base_af392a9a499fa47067aca11daa63c0843}{Subscriber}}}]{subscriber }\end{DoxyParamCaption})}
+
+
+
+Constructor of the \mbox{\hyperlink{class_base_1_1_event}{Event}}. Initializes the list of subscribers with a single given subscriber. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em subscriber} & Single Subscriber to add on construction.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_base_1_1_event_a9dc1ab632074a3ef66ab6322b2f35fd4}\label{class_base_1_1_event_a9dc1ab632074a3ef66ab6322b2f35fd4}} 
+\index{Base.Event@{Base.Event}!Event@{Event}}
+\index{Event@{Event}!Base.Event@{Base.Event}}
+\doxysubsubsection{\texorpdfstring{Event()}{Event()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Base.\+Event.\+Event (\begin{DoxyParamCaption}\item[{IEnumerable$<$ \mbox{\hyperlink{namespace_base_af392a9a499fa47067aca11daa63c0843}{Subscriber}} $>$}]{subscribers }\end{DoxyParamCaption})}
+
+
+
+Constructor of the \mbox{\hyperlink{class_base_1_1_event}{Event}}. Initializes the list of subscribers with a IEnumerable of given subscribers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em subscribers} & List of subscribers to add on construction.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_base_1_1_event_ae9a939ab9bedaa27ec8bef3a33400a5d}\label{class_base_1_1_event_ae9a939ab9bedaa27ec8bef3a33400a5d}} 
+\index{Base.Event@{Base.Event}!AddSubscriber@{AddSubscriber}}
+\index{AddSubscriber@{AddSubscriber}!Base.Event@{Base.Event}}
+\doxysubsubsection{\texorpdfstring{AddSubscriber()}{AddSubscriber()}}
+{\footnotesize\ttfamily void Base.\+Event.\+Add\+Subscriber (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_base_af392a9a499fa47067aca11daa63c0843}{Subscriber}}}]{subscriber }\end{DoxyParamCaption})}
+
+
+
+Adds a single subscriber to the list of subscribers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em subscriber} & Subscriber to add.\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_base_1_1_i_event_a34e267c4993f45696d702b8fa44ccf1a}{Base.\+IEvent}}.
+
+\mbox{\Hypertarget{class_base_1_1_event_ad2b648008fa2645a009acbd981e857be}\label{class_base_1_1_event_ad2b648008fa2645a009acbd981e857be}} 
+\index{Base.Event@{Base.Event}!AddSubscribers@{AddSubscribers}}
+\index{AddSubscribers@{AddSubscribers}!Base.Event@{Base.Event}}
+\doxysubsubsection{\texorpdfstring{AddSubscribers()}{AddSubscribers()}}
+{\footnotesize\ttfamily void Base.\+Event.\+Add\+Subscribers (\begin{DoxyParamCaption}\item[{IEnumerable$<$ \mbox{\hyperlink{namespace_base_af392a9a499fa47067aca11daa63c0843}{Subscriber}} $>$}]{subscribers }\end{DoxyParamCaption})}
+
+
+
+Adds a IEnumerable of subscribers to the list of subscribers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em subscribers} & IEnumerable of subscribers to add.\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_base_1_1_i_event_aa0c6b8dfaf428f31b00a1b55b681f7be}{Base.\+IEvent}}.
+
+\mbox{\Hypertarget{class_base_1_1_event_a69b2c0c9ff52d92c6504c482dae35051}\label{class_base_1_1_event_a69b2c0c9ff52d92c6504c482dae35051}} 
+\index{Base.Event@{Base.Event}!RemoveSubscriber@{RemoveSubscriber}}
+\index{RemoveSubscriber@{RemoveSubscriber}!Base.Event@{Base.Event}}
+\doxysubsubsection{\texorpdfstring{RemoveSubscriber()}{RemoveSubscriber()}}
+{\footnotesize\ttfamily void Base.\+Event.\+Remove\+Subscriber (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_base_af392a9a499fa47067aca11daa63c0843}{Subscriber}}}]{subscriber }\end{DoxyParamCaption})}
+
+
+
+Removes a subscriber from the list of subscribers by address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em subscriber} & Subscriber to remove.\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_base_1_1_i_event_a90b44af457f6f5e4091aade52fa4da36}{Base.\+IEvent}}.
+
+\mbox{\Hypertarget{class_base_1_1_event_aef1172edbf5ff740d0e57742d64ebec3}\label{class_base_1_1_event_aef1172edbf5ff740d0e57742d64ebec3}} 
+\index{Base.Event@{Base.Event}!TriggerSubscribers@{TriggerSubscribers}}
+\index{TriggerSubscribers@{TriggerSubscribers}!Base.Event@{Base.Event}}
+\doxysubsubsection{\texorpdfstring{TriggerSubscribers()}{TriggerSubscribers()}}
+{\footnotesize\ttfamily void Base.\+Event.\+Trigger\+Subscribers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Triggers the subscribers of the event, with a method call. 
+
+
+
+Implements \mbox{\hyperlink{interface_base_1_1_i_event_a3b1062e04f1645dd74f8f2bc081d7ca7}{Base.\+IEvent}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Base/\mbox{\hyperlink{_event_8cs}{Event.\+cs}}\end{DoxyCompactItemize}

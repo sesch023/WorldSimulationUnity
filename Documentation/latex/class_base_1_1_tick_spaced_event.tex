@@ -1,0 +1,158 @@
+\hypertarget{class_base_1_1_tick_spaced_event}{}\doxysection{Base.\+Tick\+Spaced\+Event Class Reference}
+\label{class_base_1_1_tick_spaced_event}\index{Base.TickSpacedEvent@{Base.TickSpacedEvent}}
+
+
+\mbox{\hyperlink{class_base_1_1_tick_spaced_event}{Tick\+Spaced\+Event}} which continously fires the event at a given interval. Automatically registers itself with the Update\+Manager.  
+
+
+Inheritance diagram for Base.\+Tick\+Spaced\+Event\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_base_1_1_tick_spaced_event}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_base_1_1_tick_spaced_event_a3a44fab8339d1ec03a9c4d4de83eaf0f}{Tick\+Spaced\+Event}} (long tick\+Spacing)
+\begin{DoxyCompactList}\small\item\em Constructor of a \mbox{\hyperlink{class_base_1_1_tick_spaced_event}{Tick\+Spaced\+Event}} which continously fires the event at a given interval. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_base_1_1_tick_spaced_event_a9aafbd41884d66388b4a39222851d923}{Tick\+Spaced\+Event}} (long tick\+Spacing, \mbox{\hyperlink{namespace_base_af392a9a499fa47067aca11daa63c0843}{Subscriber}} subscriber)
+\begin{DoxyCompactList}\small\item\em Constructor of a \mbox{\hyperlink{class_base_1_1_tick_spaced_event}{Tick\+Spaced\+Event}} which continously fires the event at a given interval. Also adds a subscriber to the event. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_base_1_1_tick_spaced_event_a347855d466babfd5f772a7b111966ba4}{Tick\+Spaced\+Event}} (long tick\+Spacing, IEnumerable$<$ \mbox{\hyperlink{namespace_base_af392a9a499fa47067aca11daa63c0843}{Subscriber}} $>$ subscribers)
+\begin{DoxyCompactList}\small\item\em Constructor of a \mbox{\hyperlink{class_base_1_1_tick_spaced_event}{Tick\+Spaced\+Event}} which continously fires the event at a given interval. Also adds subscribers to the event. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_base_1_1_tick_spaced_event_a3d5d2e38298b891e9f6daf3ea524c2bd}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Triggers the subscribes if the condition is met. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual long \mbox{\hyperlink{class_base_1_1_tick_spaced_event_aa8d37b017dfce490a6684d2a8e611b22}{Get\+Time\+Condition}} (long last\+Tick)
+\begin{DoxyCompactList}\small\item\em Conditional number for the firing check. Asks the Time\+Manager for the passed ticks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+long \mbox{\hyperlink{class_base_1_1_tick_spaced_event_a3b155ff05a87f5e56cb5d309ad6a0bd3}{Last\+Tick}}
+\begin{DoxyCompactList}\small\item\em Last tick the event was fired. \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{class_base_1_1_tick_spaced_event_a25efe5622e04f728cc57c10a8598b55d}{Tick\+Spacing}}
+\begin{DoxyCompactList}\small\item\em Spacings between ticks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_base_1_1_tick_spaced_event}{Tick\+Spaced\+Event}} which continously fires the event at a given interval. Automatically registers itself with the Update\+Manager. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_base_1_1_tick_spaced_event_a3a44fab8339d1ec03a9c4d4de83eaf0f}\label{class_base_1_1_tick_spaced_event_a3a44fab8339d1ec03a9c4d4de83eaf0f}} 
+\index{Base.TickSpacedEvent@{Base.TickSpacedEvent}!TickSpacedEvent@{TickSpacedEvent}}
+\index{TickSpacedEvent@{TickSpacedEvent}!Base.TickSpacedEvent@{Base.TickSpacedEvent}}
+\doxysubsubsection{\texorpdfstring{TickSpacedEvent()}{TickSpacedEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Base.\+Tick\+Spaced\+Event.\+Tick\+Spaced\+Event (\begin{DoxyParamCaption}\item[{long}]{tick\+Spacing }\end{DoxyParamCaption})}
+
+
+
+Constructor of a \mbox{\hyperlink{class_base_1_1_tick_spaced_event}{Tick\+Spaced\+Event}} which continously fires the event at a given interval. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tick\+Spacing} & Spacing between fired ticks.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_base_1_1_tick_spaced_event_a9aafbd41884d66388b4a39222851d923}\label{class_base_1_1_tick_spaced_event_a9aafbd41884d66388b4a39222851d923}} 
+\index{Base.TickSpacedEvent@{Base.TickSpacedEvent}!TickSpacedEvent@{TickSpacedEvent}}
+\index{TickSpacedEvent@{TickSpacedEvent}!Base.TickSpacedEvent@{Base.TickSpacedEvent}}
+\doxysubsubsection{\texorpdfstring{TickSpacedEvent()}{TickSpacedEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Base.\+Tick\+Spaced\+Event.\+Tick\+Spaced\+Event (\begin{DoxyParamCaption}\item[{long}]{tick\+Spacing,  }\item[{\mbox{\hyperlink{namespace_base_af392a9a499fa47067aca11daa63c0843}{Subscriber}}}]{subscriber }\end{DoxyParamCaption})}
+
+
+
+Constructor of a \mbox{\hyperlink{class_base_1_1_tick_spaced_event}{Tick\+Spaced\+Event}} which continously fires the event at a given interval. Also adds a subscriber to the event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tick\+Spacing} & Spacing between fired ticks.\\
+\hline
+{\em subscriber} & A Subscriber to the event.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_base_1_1_tick_spaced_event_a347855d466babfd5f772a7b111966ba4}\label{class_base_1_1_tick_spaced_event_a347855d466babfd5f772a7b111966ba4}} 
+\index{Base.TickSpacedEvent@{Base.TickSpacedEvent}!TickSpacedEvent@{TickSpacedEvent}}
+\index{TickSpacedEvent@{TickSpacedEvent}!Base.TickSpacedEvent@{Base.TickSpacedEvent}}
+\doxysubsubsection{\texorpdfstring{TickSpacedEvent()}{TickSpacedEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Base.\+Tick\+Spaced\+Event.\+Tick\+Spaced\+Event (\begin{DoxyParamCaption}\item[{long}]{tick\+Spacing,  }\item[{IEnumerable$<$ \mbox{\hyperlink{namespace_base_af392a9a499fa47067aca11daa63c0843}{Subscriber}} $>$}]{subscribers }\end{DoxyParamCaption})}
+
+
+
+Constructor of a \mbox{\hyperlink{class_base_1_1_tick_spaced_event}{Tick\+Spaced\+Event}} which continously fires the event at a given interval. Also adds subscribers to the event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tick\+Spacing} & \\
+\hline
+{\em subscribers} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_base_1_1_tick_spaced_event_aa8d37b017dfce490a6684d2a8e611b22}\label{class_base_1_1_tick_spaced_event_aa8d37b017dfce490a6684d2a8e611b22}} 
+\index{Base.TickSpacedEvent@{Base.TickSpacedEvent}!GetTimeCondition@{GetTimeCondition}}
+\index{GetTimeCondition@{GetTimeCondition}!Base.TickSpacedEvent@{Base.TickSpacedEvent}}
+\doxysubsubsection{\texorpdfstring{GetTimeCondition()}{GetTimeCondition()}}
+{\footnotesize\ttfamily virtual long Base.\+Tick\+Spaced\+Event.\+Get\+Time\+Condition (\begin{DoxyParamCaption}\item[{long}]{last\+Tick }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Conditional number for the firing check. Asks the Time\+Manager for the passed ticks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em last\+Tick} & Last tick the event was fired.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Passed Ticks since the last firing.
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_base_1_1_time_spaced_event_afa6790447907ed6be1bf96460e79cdd2}{Base.\+Time\+Spaced\+Event}}.
+
+\mbox{\Hypertarget{class_base_1_1_tick_spaced_event_a3d5d2e38298b891e9f6daf3ea524c2bd}\label{class_base_1_1_tick_spaced_event_a3d5d2e38298b891e9f6daf3ea524c2bd}} 
+\index{Base.TickSpacedEvent@{Base.TickSpacedEvent}!Update@{Update}}
+\index{Update@{Update}!Base.TickSpacedEvent@{Base.TickSpacedEvent}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily override void Base.\+Tick\+Spaced\+Event.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Triggers the subscribes if the condition is met. 
+
+
+
+Implements \mbox{\hyperlink{class_base_1_1_updatable_event_a51cff57b805fceda5dc7c4b973fd9960}{Base.\+Updatable\+Event}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_base_1_1_tick_spaced_event_a3b155ff05a87f5e56cb5d309ad6a0bd3}\label{class_base_1_1_tick_spaced_event_a3b155ff05a87f5e56cb5d309ad6a0bd3}} 
+\index{Base.TickSpacedEvent@{Base.TickSpacedEvent}!LastTick@{LastTick}}
+\index{LastTick@{LastTick}!Base.TickSpacedEvent@{Base.TickSpacedEvent}}
+\doxysubsubsection{\texorpdfstring{LastTick}{LastTick}}
+{\footnotesize\ttfamily long Base.\+Tick\+Spaced\+Event.\+Last\+Tick\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Last tick the event was fired. 
+
+\mbox{\Hypertarget{class_base_1_1_tick_spaced_event_a25efe5622e04f728cc57c10a8598b55d}\label{class_base_1_1_tick_spaced_event_a25efe5622e04f728cc57c10a8598b55d}} 
+\index{Base.TickSpacedEvent@{Base.TickSpacedEvent}!TickSpacing@{TickSpacing}}
+\index{TickSpacing@{TickSpacing}!Base.TickSpacedEvent@{Base.TickSpacedEvent}}
+\doxysubsubsection{\texorpdfstring{TickSpacing}{TickSpacing}}
+{\footnotesize\ttfamily long Base.\+Tick\+Spaced\+Event.\+Tick\+Spacing\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Spacings between ticks. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Base/\mbox{\hyperlink{_tick_spaced_event_8cs}{Tick\+Spaced\+Event.\+cs}}\end{DoxyCompactItemize}
