@@ -54,7 +54,7 @@ namespace Model.Map
         public Vector2Int[][] GetHeightLine(Vector2Int position)
         {
             MapUnit startTile = MapUnits[position.x, position.y];
-            Vector2Int[] firstLine = MapUtil.FindHeightLine(position, MapUnits, startTile.Position.Elevation);
+            Vector2Int[] firstLine = new HeightLine(position, MapUnits, startTile.Position.Elevation).CalculatedHeightLine;
 
             return new[] { firstLine };
         }
@@ -62,7 +62,7 @@ namespace Model.Map
         public Vector2Int[] GetSlopeLine(Vector2Int start, float momentumMultiplier = 1.0f,
             float maxMomentumFraction = 1.0f)
         {
-            return MapUtil.GetSlopeLine(start, MapUnits, momentumMultiplier, maxMomentumFraction);
+            return new SlopeLine(start, MapUnits, momentumMultiplier, maxMomentumFraction).CalculatedSlope;
         }
     }
 }
