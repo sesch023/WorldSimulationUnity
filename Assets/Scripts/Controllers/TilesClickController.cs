@@ -1,6 +1,6 @@
 ﻿using System;
 using Manager;
-using Model;
+using Model.Map;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;

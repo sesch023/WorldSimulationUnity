@@ -1,6 +1,6 @@
 using System;
 using JetBrains.Annotations;
-using Model;
+using Model.Map;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;

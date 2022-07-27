@@ -1,11 +1,9 @@
 ﻿using System.Collections.Generic;
-using System.IO;
-using Model;
-using Unity.VisualScripting;
+using Model.Map;
 using UnityEngine;
 using Utils.Array2D;
 
-namespace Utils
+namespace Utils.BaseUtils
 {
     public static class MapUtil
     {
@@ -30,14 +28,16 @@ namespace Utils
             {
                 found = false;
                 bool foundNeighbor = false;
-                Vector2Int[] neighbors = MathUtil.GetNeighborPositionsIn2DArray(currentPos, elevations.GetLength(0), elevations.GetLength(1));
+                Vector2Int[] neighbors = MathUtil.GetNeighborPositionsIn2DArray(currentPos, 
+                    elevations.GetLength(0), elevations.GetLength(1));
                 Vector2Int next = neighbors[0];
                 float nextElevation = float.PositiveInfinity;
                 
                 foreach (var neighbor in neighbors)
                 {
                     float neightborElevation = elevations[neighbor.x, neighbor.y];
-                    if (neightborElevation < nextElevation && !slopeLine.Contains(neighbor) && !MathUtil.NextPointCrossesLineDiagonally(neighbor, slopeLine))
+                    if (neightborElevation < nextElevation && 
+                        !slopeLine.Contains(neighbor) && !MathUtil.NextPointCrossesLineDiagonally(neighbor, slopeLine))
                     {
                         nextElevation = neightborElevation;
                         next = neighbor;
@@ -55,7 +55,8 @@ namespace Utils
                 {
                     if (nextElevation <= previousElevation)
                     {
-                        momentumLeft += Mathf.Abs((float.IsPositiveInfinity(previousElevation)) ? maxMomentumFraction * nextElevation : previousElevation - nextElevation);
+                        momentumLeft += Mathf.Abs((float.IsPositiveInfinity(previousElevation)) 
+                            ? maxMomentumFraction * nextElevation : previousElevation - nextElevation);
                         momentumLeft *= momentumMultiplier;
                         momentumPopCounter = 0;
                     }

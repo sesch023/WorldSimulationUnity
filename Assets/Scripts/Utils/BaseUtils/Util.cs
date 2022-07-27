@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Utils
+namespace Utils.BaseUtils
 {
     public static class Util
     {

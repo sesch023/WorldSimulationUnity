@@ -4,9 +4,8 @@ using Base;
 using JetBrains.Annotations;
 using Model.UnitBehaviors;
 using Unity.VisualScripting;
-using UnityEngine.Tilemaps;
 
-namespace Model
+namespace Model.Map
 {
     public class MapUnit : IUpdatable
     {
