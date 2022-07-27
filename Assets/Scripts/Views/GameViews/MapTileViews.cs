@@ -31,10 +31,13 @@ namespace Views.GameViews
         }
 
         private List<float> _heightSteps = new();
-        [SerializeField]
-        private float lowestHeight = -8000;
-        [SerializeField] 
-        private float heighestHeight = 10000;
+
+        [field: SerializeField] 
+        public float LowestHeight { get; } = -8000;
+
+        [field: SerializeField] 
+        public float HeighestHeight { get; } = 10000;
+        
         [SerializeField] 
         private float heightStep = 1000;
 
@@ -80,12 +83,12 @@ namespace Views.GameViews
         private void CalculateHeightSteps()
         {
             _heightSteps = new List<float>();
-            float currentHeight = lowestHeight;
+            float currentHeight = LowestHeight;
             do
             {
                 _heightSteps.Add(currentHeight);
                 currentHeight += heightStep;
-            } while (currentHeight < heighestHeight);
+            } while (currentHeight < HeighestHeight);
             _heightSteps.Add(currentHeight);
         }
 
@@ -93,7 +96,7 @@ namespace Views.GameViews
         {
             for (int i = 0; i < _heightSteps.Count; i++)
             {
-                if (_heightSteps[i] > elevation)
+                if (_heightSteps[i] >= elevation)
                 {
                     float colorValue = 1.0f - _colorStep * Math.Max(i - 1, 0);
                     return new Color(colorValue, colorValue, colorValue, 1.0f);
@@ -107,7 +110,7 @@ namespace Views.GameViews
         {
             for (int i = 0; i < _heightSteps.Count; i++)
             {
-                if (_heightSteps[i] > mapUnit.Position.Elevation)
+                if (_heightSteps[i] >= mapUnit.Position.Elevation)
                 {
                     int take = Math.Max(i - 1, 0);
                     return TestTile[take];

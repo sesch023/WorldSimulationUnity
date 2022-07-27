@@ -11,22 +11,24 @@ namespace Model.Map
 {
     public class Valley
     {
-        public Vector2Int[] CalculatedValleyPositions { get; private set; }
-        public Vector2Int[] CalculatedValleyOpenings { get; private set; }
+        public Vector2Int[] CalculatedPositions { get; private set; }
+        public Vector2Int[] CalculatedExits { get; private set; }
         
-        public Vector2Int[] CalculatedValleyBorder { get; private set; }
+        public Vector2Int[] CalculatedBorder { get; private set; }
         
         private float _elevation;
-        private I2DArray<float> _mapElevations;
+        protected I2DArray<float> MapElevations;
         private Vector2Int _start;
-
-        private float _openingElevation;
-        private List<Vector2Int> _currentOpeningPositions;
+        
+        private float _exitElevation;
+        private List<Vector2Int> _currentExitPositions;
         private List<Vector2Int> _valleyPositions;
         private HashSet<Vector2Int> _borderPositions;
         private Queue<Vector2Int> _nextPositions;
         private HashSet<Vector2Int> _visited;
-
+        
+        protected virtual float ExitElevationStart => float.PositiveInfinity;
+        
         public Valley(Vector2Int start, MapUnit[,] mapUnits)
         {
             ArrayView2D<MapUnit, float> view = new ArrayView2D<MapUnit, float>(mapUnits, unit => unit.Position.Elevation);
@@ -57,19 +59,19 @@ namespace Model.Map
         public void Reset(Vector2Int start, I2DArray<float> mapElevations, float elevation)
         {
             _start = start;
-            _mapElevations = mapElevations;
+            MapElevations = mapElevations;
             _elevation = elevation;
             
-            FloodFillValley();
+            FloodFill();
         }
 
-        private void FloodFillValley()
+        private void FloodFill()
         {
             _valleyPositions = new List<Vector2Int>();
             _nextPositions = new Queue<Vector2Int>();
             _visited = new HashSet<Vector2Int>();
-            _openingElevation = float.PositiveInfinity;
-            _currentOpeningPositions = new List<Vector2Int>();
+            _exitElevation = ExitElevationStart;
+            _currentExitPositions = new List<Vector2Int>();
             _borderPositions = new HashSet<Vector2Int>();
             _nextPositions.Enqueue(_start);
             _visited.Add(_start);
@@ -79,32 +81,32 @@ namespace Model.Map
                 FloodFillStep();
             }
             
-            CalculatedValleyPositions = _valleyPositions.ToArray();
-            CalculatedValleyOpenings = _currentOpeningPositions.ToArray();
-            CalculatedValleyBorder = _borderPositions.ToArray();
+            CalculatedPositions = _valleyPositions.ToArray();
+            CalculatedExits = _currentExitPositions.ToArray();
+            CalculatedBorder = _borderPositions.ToArray();
         }
 
         private void FloodFillStep()
         {
-            int sizeX = _mapElevations.GetLength(0);
-            int sizeY = _mapElevations.GetLength(1);
+            int sizeX = MapElevations.GetLength(0);
+            int sizeY = MapElevations.GetLength(1);
             bool hasNext = _nextPositions.TryDequeue(out var nextPosition);
 
             if (hasNext)
             {
-                if (_mapElevations[nextPosition.x, nextPosition.y] <= _elevation)
+                if (ElevationCondition(nextPosition, _elevation))
                 {
                     NextElevationStep(nextPosition, sizeX, sizeY);
                 }
-                else if (MathUtil.AlmostEquals(_openingElevation, _mapElevations[nextPosition.x, nextPosition.y], 1f))
+                else if (MathUtil.AlmostEquals(_exitElevation, MapElevations[nextPosition.x, nextPosition.y], 1f))
                 {
-                    _currentOpeningPositions.Add(nextPosition);
+                    _currentExitPositions.Add(nextPosition);
                 }
-                else if(_openingElevation > _mapElevations[nextPosition.x, nextPosition.y])
+                else if(ElevationCondition(nextPosition, _exitElevation))
                 {
-                    _currentOpeningPositions.Clear();
-                    _currentOpeningPositions.Add(nextPosition);
-                    _openingElevation = _mapElevations[nextPosition.x, nextPosition.y];
+                    _currentExitPositions.Clear();
+                    _currentExitPositions.Add(nextPosition);
+                    _exitElevation = MapElevations[nextPosition.x, nextPosition.y];
                 }
             }
         }
@@ -117,7 +119,7 @@ namespace Model.Map
             bool isBorder = false;
             foreach (Vector2Int neighbor in neighbors)
             {
-                if (!isBorder && _mapElevations[neighbor.x, neighbor.y] > _elevation)
+                if (!isBorder && !ElevationCondition(neighbor, _elevation))
                 {
                     _borderPositions.Add(nextPosition);
                     isBorder = true;
@@ -129,6 +131,23 @@ namespace Model.Map
                     _visited.Add(neighbor);
                 }
             }
+        }
+        
+        protected virtual bool ElevationCondition(Vector2Int position, float elevation)
+        {
+            return MapElevations[position.x, position.y] <= elevation;
+        }
+        
+        public static float CalculateValleyVolume(Vector2Int[] valleyPositions, I2DArray<float> mapElevations, float tileArea=1.0f)
+        {
+            float volume = 0f;
+            for (int i = 0; i < valleyPositions.Length; i++)
+            {
+                Vector2Int position = valleyPositions[i];
+                float elevation = mapElevations[position.x, position.y];
+                volume += elevation * tileArea;
+            }
+            return volume;
         }
     }
 }

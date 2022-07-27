@@ -1,5 +1,6 @@
 ﻿using Base;
 using Derelict.Model.Map;
+using Manager;
 using Model.Generators;
 using UnityEngine;
 using Utils.BaseUtils;
@@ -53,13 +54,35 @@ namespace Model.Map
             }
         }
 
-        public (Vector2Int[] valley, Vector2Int[] valleyBorder, Vector2Int[] valleyOpenings) GetValley(Vector2Int position)
+        public (Vector2Int[] valley, Vector2Int[] valleyBorder, Vector2Int[] valleyExits) GetValley(Vector2Int position)
         {
             MapUnit startTile = MapUnits[position.x, position.y];
             Valley valley = new Valley(position, MapUnits, startTile.Position.Elevation);
             
-            return (valley.CalculatedValleyPositions, valley.CalculatedValleyBorder, valley.CalculatedValleyOpenings);
+            return (valley.CalculatedPositions, valley.CalculatedBorder, valley.CalculatedExits);
         }
+        
+        public (Vector2Int[] peak, Vector2Int[] peakBorder, Vector2Int[] peakExits) GetPeak(Vector2Int position)
+        {
+            MapUnit startTile = MapUnits[position.x, position.y];
+            Valley valley = new Peak(position, MapUnits, startTile.Position.Elevation);
+            
+            return (valley.CalculatedPositions, valley.CalculatedBorder, valley.CalculatedExits);
+        }
+        
+        public (Vector2Int[] group, Vector2Int[] groupBorder, Vector2Int[] groupExits) GetTerrainGroup(Vector2Int position)
+        {
+            float startTileElevation = MapUnits[position.x, position.y].Position.Elevation;
+            MapTileViews view = MapManager.Instance.MapController.TileViews;
+            float middleElevation = (view.HeighestHeight - view.LowestHeight) / 2 + view.LowestHeight;
+
+            if (startTileElevation <= middleElevation)
+            {
+                return GetValley(position);
+            }
+
+            return GetPeak(position);
+        } 
 
         public Vector2Int[] GetSlopeLine(Vector2Int start, float momentumMultiplier = 1.0f,
             float maxMomentumFraction = 1.0f)

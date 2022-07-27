@@ -14,15 +14,15 @@ namespace Controllers
     public class TileMapController : IUpdatable
     {
         [field: SerializeField] public Tilemap TileMap { get; private set; }
-        
-        [FormerlySerializedAs("tiles")] [SerializeField]
-        private MapTileViews tileViews;
+
+        [field: SerializeField]
+        public MapTileViews TileViews { get; private set; }
 
         [field: SerializeField] public Map UnitMap { get; private set; }
 
         public void Init()
         {
-            if (tileViews == null)
+            if (TileViews == null)
             {
                 throw new MissingReferenceException($"MissingReferenceException: {GetType().Name}. MapTiles missing!");
             }
@@ -42,7 +42,7 @@ namespace Controllers
                 for (var y = 0; y < UnitMap.SizeY; y++)
                 {
                     MapUnit unit = UnitMap.MapUnits[x, y];
-                    Tile tile = tileViews.GetTileByMapUnit(unit);
+                    Tile tile = TileViews.GetTileByMapUnit(unit);
                     TileMap.SetTile(new(x, y, 0), tile);
                 }
             }

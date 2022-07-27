@@ -17,14 +17,14 @@ namespace Controllers {
         [FormerlySerializedAs("_unitView")] [SerializeField]
         private UnitView unitView;
 
-        [FormerlySerializedAs("tileGroupView")] [SerializeField]
-        private TileGroupView tileGroupViewValley;
+        [SerializeField]
+        private TileGroupView tileGroupView;
         
         [SerializeField]
-        private TileGroupView tileGroupViewValleyOpenings;
+        private TileGroupView tileGroupViewExits;
         
         [SerializeField]
-        private TileGroupView tileGroupViewValleyBorder;
+        private TileGroupView tileGroupViewBorder;
 
         [SerializeField] 
         private TileLineView tileLineView;
@@ -39,17 +39,17 @@ namespace Controllers {
                 throw new MissingReferenceException($"MissingReferenceException: {GetType()} - UnitView missing!");
             }
             
-            if (tileGroupViewValley == null)
+            if (tileGroupView == null)
             {
                 throw new MissingReferenceException($"MissingReferenceException: {GetType()} - Tile Group View missing!");
             }
             
-            if (tileGroupViewValleyOpenings == null)
+            if (tileGroupViewExits == null)
             {
                 throw new MissingReferenceException($"MissingReferenceException: {GetType()} - Tile Group View missing!");
             }
             
-            if (tileGroupViewValleyBorder == null)
+            if (tileGroupViewBorder == null)
             {
                 throw new MissingReferenceException($"MissingReferenceException: {GetType()} - Tile Group View missing!");
             }
@@ -117,20 +117,20 @@ namespace Controllers {
         private void SelectValleyMode()
         {
             (MapUnit unit, Vector2Int vec) unit = GetMapUnitAndPosition();
-            var valleyDef = MapManager.Instance.MapController.UnitMap.GetValley(unit.vec);
-            tileGroupViewValley.tiles = valleyDef.valley;
-            tileGroupViewValleyOpenings.tiles = valleyDef.valleyOpenings;
-            tileGroupViewValleyBorder.tiles = valleyDef.valleyBorder;
-            tileGroupViewValleyBorder.Enable();
-            tileGroupViewValley.Enable();
-            tileGroupViewValleyOpenings.Enable();
+            var valleyDef = MapManager.Instance.MapController.UnitMap.GetTerrainGroup(unit.vec);
+            tileGroupView.tiles = valleyDef.group;
+            tileGroupViewExits.tiles = valleyDef.groupExits;
+            tileGroupViewBorder.tiles = valleyDef.groupBorder;
+            tileGroupViewBorder.Enable();
+            tileGroupView.Enable();
+            tileGroupViewExits.Enable();
         }
         
         private void DeselectValley()
         {
-            tileGroupViewValley.Disable();
-            tileGroupViewValleyOpenings.Disable();
-            tileGroupViewValleyBorder.Disable();
+            tileGroupView.Disable();
+            tileGroupViewExits.Disable();
+            tileGroupViewBorder.Disable();
         }
 
         private void SelectSlopeLineMode()
