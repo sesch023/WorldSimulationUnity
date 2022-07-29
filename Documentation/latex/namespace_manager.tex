@@ -1,17 +1,26 @@
 \hypertarget{namespace_manager}{}\doxysection{Manager Namespace Reference}
 \label{namespace_manager}\index{Manager@{Manager}}
+
+
+Namespace for Singleton \mbox{\hyperlink{namespace_manager}{Manager}} Classes.  
+
+
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{class_manager_1_1_map_manager}{Map\+Manager}}
-\item 
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_manager_1_1_map_manager}{Map\+Manager}} Singleton for controlling functions related to the map and its elements. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_manager_1_1_simulation_manager}{Simulation\+Manager}}
-\item 
+\begin{DoxyCompactList}\small\item\em Singleton \mbox{\hyperlink{namespace_manager}{Manager}} class for handling interactions with the simulation. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_manager_1_1_time_manager}{Time\+Manager}}
-\item 
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{namespace_manager}{Manager}} Singleton which can manage time and speed of the simulation. Uses ticks to represent a single step in the simulation. The speed between ticks can be changed during runtime. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_manager_1_1_update_manager}{Update\+Manager}}
-\item 
+\begin{DoxyCompactList}\small\item\em Update \mbox{\hyperlink{namespace_manager}{Manager}} Singleton of the Simulation. It deals with every Updatable in the Simulation that is not dealt with by the unity engine. It also manages the removal of single time events. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_manager_1_1_verbose_time_manager}{Verbose\+Time\+Manager}}
-\item 
+\begin{DoxyCompactList}\small\item\em Verbose Version of the Time \mbox{\hyperlink{namespace_manager}{Manager}}. Calculate average tick time and if in debug mode, prints the average tick time. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_manager_1_1_verbose_update_manager}{Verbose\+Update\+Manager}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Verbose Version of the \mbox{\hyperlink{class_manager_1_1_update_manager}{Update\+Manager}}, which logs the clearing of for removal marked updatables. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Namespace for Singleton \mbox{\hyperlink{namespace_manager}{Manager}} Classes. 

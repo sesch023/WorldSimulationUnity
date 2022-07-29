@@ -91,23 +91,29 @@ $(document).ready(function(){initNavTree('class_manager_1_1_time_manager.html','
   <div class="headertitle"><div class="title">Manager.TimeManager Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><a class="el" href="namespace_manager.html" title="Namespace for Singleton Manager Classes.">Manager</a> Singleton which can manage time and speed of the simulation. Uses ticks to represent a single step in the simulation. The speed between ticks can be changed during runtime.  
+ <a href="class_manager_1_1_time_manager.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Manager.TimeManager:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_manager_1_1_time_manager.png" usemap="#Manager.TimeManager_map" alt=""/>
   <map id="Manager.TimeManager_map" name="Manager.TimeManager_map">
-<area href="class_manager_1_1_verbose_time_manager.html" alt="Manager.VerboseTimeManager" shape="rect" coords="0,112,192,136"/>
+<area href="class_manager_1_1_verbose_time_manager.html" title="Verbose Version of the Time Manager. Calculate average tick time and if in debug mode,..." alt="Manager.VerboseTimeManager" shape="rect" coords="0,112,192,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0f2ad4ec3635fa3eb89d254f761ff71a"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_manager_1_1_time_manager.html#a0f2ad4ec3635fa3eb89d254f761ff71a">TicksPassedSince</a> (long since)</td></tr>
+<tr class="memdesc:a0f2ad4ec3635fa3eb89d254f761ff71a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the ticks between the current ticks and the given ticks.  <a href="class_manager_1_1_time_manager.html#a0f2ad4ec3635fa3eb89d254f761ff71a">More...</a><br /></td></tr>
 <tr class="separator:a0f2ad4ec3635fa3eb89d254f761ff71a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40e264a6ad96329cac8c5ff59e0adfab"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_manager_1_1_time_manager.html#a40e264a6ad96329cac8c5ff59e0adfab">TimePassedSince</a> (long since)</td></tr>
+<tr class="memdesc:a40e264a6ad96329cac8c5ff59e0adfab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the time passed since the given time.  <a href="class_manager_1_1_time_manager.html#a40e264a6ad96329cac8c5ff59e0adfab">More...</a><br /></td></tr>
 <tr class="separator:a40e264a6ad96329cac8c5ff59e0adfab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af29d532e7d4a5ba98edb2abfa7750f02"><td class="memItemLeft" align="right" valign="top">override string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_manager_1_1_time_manager.html#af29d532e7d4a5ba98edb2abfa7750f02">ToString</a> ()</td></tr>
+<tr class="memdesc:af29d532e7d4a5ba98edb2abfa7750f02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple String representation of the <a class="el" href="class_manager_1_1_time_manager.html" title="Manager Singleton which can manage time and speed of the simulation. Uses ticks to represent a single...">TimeManager</a> with the passed ticks.  <a href="class_manager_1_1_time_manager.html#af29d532e7d4a5ba98edb2abfa7750f02">More...</a><br /></td></tr>
 <tr class="separator:af29d532e7d4a5ba98edb2abfa7750f02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
@@ -115,28 +121,38 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:aa9e32833f1d8ff2d3003f0498e2e1540"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_manager_1_1_time_manager.html#aa9e32833f1d8ff2d3003f0498e2e1540">TimeManager</a> ()</td></tr>
 <tr class="separator:aa9e32833f1d8ff2d3003f0498e2e1540"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2645b25b761a3d0f19004a2c227b86b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_manager_1_1_time_manager.html#ae2645b25b761a3d0f19004a2c227b86b">Init</a> ()</td></tr>
+<tr class="memdesc:ae2645b25b761a3d0f19004a2c227b86b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the time manager by starting the stopwatch and setting the delta between tps.  <a href="class_manager_1_1_time_manager.html#ae2645b25b761a3d0f19004a2c227b86b">More...</a><br /></td></tr>
 <tr class="separator:ae2645b25b761a3d0f19004a2c227b86b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb35f34f96cf6a157f5f1e9f0d1d9c2c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_manager_1_1_time_manager.html#adb35f34f96cf6a157f5f1e9f0d1d9c2c">TickPassed</a> (long time)</td></tr>
+<tr class="memdesc:adb35f34f96cf6a157f5f1e9f0d1d9c2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is called every time a tick is passed.  <a href="class_manager_1_1_time_manager.html#adb35f34f96cf6a157f5f1e9f0d1d9c2c">More...</a><br /></td></tr>
 <tr class="separator:adb35f34f96cf6a157f5f1e9f0d1d9c2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a27d11fb6cd1fe007044610e074b4b160"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_manager_1_1_time_manager.html">TimeManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_manager_1_1_time_manager.html#a27d11fb6cd1fe007044610e074b4b160">Instance</a><code> [get]</code></td></tr>
+<tr class="memdesc:a27d11fb6cd1fe007044610e074b4b160"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instance of the <a class="el" href="class_manager_1_1_time_manager.html" title="Manager Singleton which can manage time and speed of the simulation. Uses ticks to represent a single...">TimeManager</a>.  <a href="class_manager_1_1_time_manager.html#a27d11fb6cd1fe007044610e074b4b160">More...</a><br /></td></tr>
 <tr class="separator:a27d11fb6cd1fe007044610e074b4b160"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60662c026f7e3e3efaacc872d73e3b7a"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_manager_1_1_time_manager.html#a60662c026f7e3e3efaacc872d73e3b7a">PassedTime</a><code> [get]</code></td></tr>
+<tr class="memdesc:a60662c026f7e3e3efaacc872d73e3b7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current total passed time in milliseconds.  <a href="class_manager_1_1_time_manager.html#a60662c026f7e3e3efaacc872d73e3b7a">More...</a><br /></td></tr>
 <tr class="separator:a60662c026f7e3e3efaacc872d73e3b7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0aaef517f33b8ad02e7db892f3b98e3"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_manager_1_1_time_manager.html#af0aaef517f33b8ad02e7db892f3b98e3">PassedTicks</a><code> [get]</code></td></tr>
 <tr class="separator:af0aaef517f33b8ad02e7db892f3b98e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a732e3bb0f2abda9853a910e4178121ce"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_manager_1_1_time_manager.html#a732e3bb0f2abda9853a910e4178121ce">LastTickTime</a><code> [get]</code></td></tr>
+<tr class="memdesc:a732e3bb0f2abda9853a910e4178121ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time the last tick was executed.  <a href="class_manager_1_1_time_manager.html#a732e3bb0f2abda9853a910e4178121ce">More...</a><br /></td></tr>
 <tr class="separator:a732e3bb0f2abda9853a910e4178121ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4fff41b16c81731252e9d346f38aa34"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_manager_1_1_time_manager.html#af4fff41b16c81731252e9d346f38aa34">LastUpdateTime</a><code> [get]</code></td></tr>
+<tr class="memdesc:af4fff41b16c81731252e9d346f38aa34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time the last update was executed.  <a href="class_manager_1_1_time_manager.html#af4fff41b16c81731252e9d346f38aa34">More...</a><br /></td></tr>
 <tr class="separator:af4fff41b16c81731252e9d346f38aa34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49bfca62448c93fdf860f517acc137c6"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_manager_1_1_time_manager.html#a49bfca62448c93fdf860f517acc137c6">LastUpdateDuration</a><code> [get]</code></td></tr>
+<tr class="memdesc:a49bfca62448c93fdf860f517acc137c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time between last update.  <a href="class_manager_1_1_time_manager.html#a49bfca62448c93fdf860f517acc137c6">More...</a><br /></td></tr>
 <tr class="separator:a49bfca62448c93fdf860f517acc137c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3423e68e8d1d1393db5b13c9a58dd8cd"><td class="memItemLeft" align="right" valign="top">uint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_manager_1_1_time_manager.html#a3423e68e8d1d1393db5b13c9a58dd8cd">Tps</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a3423e68e8d1d1393db5b13c9a58dd8cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">TPS (ticks per second) of the simulation.  <a href="class_manager_1_1_time_manager.html#a3423e68e8d1d1393db5b13c9a58dd8cd">More...</a><br /></td></tr>
 <tr class="separator:a3423e68e8d1d1393db5b13c9a58dd8cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p ><a class="el" href="namespace_manager.html" title="Namespace for Singleton Manager Classes.">Manager</a> Singleton which can manage time and speed of the simulation. Uses ticks to represent a single step in the simulation. The speed between ticks can be changed during runtime. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa9e32833f1d8ff2d3003f0498e2e1540" name="aa9e32833f1d8ff2d3003f0498e2e1540"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa9e32833f1d8ff2d3003f0498e2e1540">&#9670;&nbsp;</a></span>TimeManager()</h2>
 
@@ -186,6 +202,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Initializes the time manager by starting the stopwatch and setting the delta between tps. </p>
+
 </div>
 </div>
 <a id="adb35f34f96cf6a157f5f1e9f0d1d9c2c" name="adb35f34f96cf6a157f5f1e9f0d1d9c2c"></a>
@@ -212,6 +230,14 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Is called every time a tick is passed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">time</td><td>Current time at which the tick was passed.</td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Reimplemented in <a class="el" href="class_manager_1_1_verbose_time_manager.html#af742ef0541dc65023b3604576ebea59b">Manager.VerboseTimeManager</a>.</p>
 
 </div>
@@ -232,6 +258,15 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Calculates the ticks between the current ticks and the given ticks. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">since</td><td>How many ticks passed since this parameter.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Amount of ticks passed.</dd></dl>
+
 </div>
 </div>
 <a id="a40e264a6ad96329cac8c5ff59e0adfab" name="a40e264a6ad96329cac8c5ff59e0adfab"></a>
@@ -250,6 +285,15 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Calculate the time passed since the given time. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">since</td><td>How much time passed since this parameter.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Amount of time passed.</dd></dl>
+
 </div>
 </div>
 <a id="af29d532e7d4a5ba98edb2abfa7750f02" name="af29d532e7d4a5ba98edb2abfa7750f02"></a>
@@ -266,6 +310,9 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Simple String representation of the <a class="el" href="class_manager_1_1_time_manager.html" title="Manager Singleton which can manage time and speed of the simulation. Uses ticks to represent a single...">TimeManager</a> with the passed ticks. </p>
+<dl class="section return"><dt>Returns</dt><dd>Simple String representation of the <a class="el" href="class_manager_1_1_time_manager.html" title="Manager Singleton which can manage time and speed of the simulation. Uses ticks to represent a single...">TimeManager</a>.</dd></dl>
 
 </div>
 </div>
@@ -290,6 +337,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Instance of the <a class="el" href="class_manager_1_1_time_manager.html" title="Manager Singleton which can manage time and speed of the simulation. Uses ticks to represent a single...">TimeManager</a>. </p>
+
 </div>
 </div>
 <a id="a732e3bb0f2abda9853a910e4178121ce" name="a732e3bb0f2abda9853a910e4178121ce"></a>
@@ -311,6 +360,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Time the last tick was executed. </p>
 
 </div>
 </div>
@@ -334,6 +385,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Time between last update. </p>
+
 </div>
 </div>
 <a id="af4fff41b16c81731252e9d346f38aa34" name="af4fff41b16c81731252e9d346f38aa34"></a>
@@ -355,6 +408,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Time the last update was executed. </p>
 
 </div>
 </div>
@@ -400,6 +455,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Current total passed time in milliseconds. </p>
+
 </div>
 </div>
 <a id="a3423e68e8d1d1393db5b13c9a58dd8cd" name="a3423e68e8d1d1393db5b13c9a58dd8cd"></a>
@@ -421,6 +478,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>TPS (ticks per second) of the simulation. </p>
 
 </div>
 </div>

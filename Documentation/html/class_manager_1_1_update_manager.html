@@ -92,25 +92,32 @@ $(document).ready(function(){initNavTree('class_manager_1_1_update_manager.html'
   <div class="headertitle"><div class="title">Manager.UpdateManager Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Update <a class="el" href="namespace_manager.html" title="Namespace for Singleton Manager Classes.">Manager</a> Singleton of the Simulation. It deals with every Updatable in the Simulation that is not dealt with by the unity engine. It also manages the removal of single time events.  
+ <a href="class_manager_1_1_update_manager.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Manager.UpdateManager:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_manager_1_1_update_manager.png" usemap="#Manager.UpdateManager_map" alt=""/>
   <map id="Manager.UpdateManager_map" name="Manager.UpdateManager_map">
-<area href="class_manager_1_1_verbose_update_manager.html" alt="Manager.VerboseUpdateManager" shape="rect" coords="0,112,205,136"/>
+<area href="class_manager_1_1_verbose_update_manager.html" title="Verbose Version of the UpdateManager, which logs the clearing of for removal marked updatables." alt="Manager.VerboseUpdateManager" shape="rect" coords="0,112,205,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:afe7ba198ed8274ffae5303d6b75ab82b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_manager_1_1_update_manager.html#afe7ba198ed8274ffae5303d6b75ab82b">RegisterUpdatable</a> (<a class="el" href="interface_base_1_1_i_updatable.html">IUpdatable</a> updatable)</td></tr>
+<tr class="memdesc:afe7ba198ed8274ffae5303d6b75ab82b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a new updatable to the <a class="el" href="class_manager_1_1_update_manager.html" title="Update Manager Singleton of the Simulation. It deals with every Updatable in the Simulation that is n...">UpdateManager</a>.  <a href="class_manager_1_1_update_manager.html#afe7ba198ed8274ffae5303d6b75ab82b">More...</a><br /></td></tr>
 <tr class="separator:afe7ba198ed8274ffae5303d6b75ab82b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a73616a5b99bf712fddfd1509a21b24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_manager_1_1_update_manager.html#a8a73616a5b99bf712fddfd1509a21b24">RemoveUpdatable</a> (<a class="el" href="interface_base_1_1_i_updatable.html">IUpdatable</a> updatable)</td></tr>
+<tr class="memdesc:a8a73616a5b99bf712fddfd1509a21b24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an updatable from the <a class="el" href="class_manager_1_1_update_manager.html" title="Update Manager Singleton of the Simulation. It deals with every Updatable in the Simulation that is n...">UpdateManager</a> by address.  <a href="class_manager_1_1_update_manager.html#a8a73616a5b99bf712fddfd1509a21b24">More...</a><br /></td></tr>
 <tr class="separator:a8a73616a5b99bf712fddfd1509a21b24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0eaab5b588cd4642f65e90168750b2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_manager_1_1_update_manager.html#aa0eaab5b588cd4642f65e90168750b2e">MarkUpdatableForRemoval</a> (<a class="el" href="interface_base_1_1_i_updatable.html">IUpdatable</a> updatable)</td></tr>
+<tr class="memdesc:aa0eaab5b588cd4642f65e90168750b2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marks an updatable for removal.  <a href="class_manager_1_1_update_manager.html#aa0eaab5b588cd4642f65e90168750b2e">More...</a><br /></td></tr>
 <tr class="separator:aa0eaab5b588cd4642f65e90168750b2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ae39a94e85b1152c37b673f295cbc85"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_manager_1_1_update_manager.html#a7ae39a94e85b1152c37b673f295cbc85">MarkRemovableForRemoval</a> (<a class="el" href="interface_base_1_1_i_managed_removal.html">IManagedRemoval</a> managedRemoval)</td></tr>
+<tr class="memdesc:a7ae39a94e85b1152c37b673f295cbc85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marks an removable updatable for removal.  <a href="class_manager_1_1_update_manager.html#a7ae39a94e85b1152c37b673f295cbc85">More...</a><br /></td></tr>
 <tr class="separator:a7ae39a94e85b1152c37b673f295cbc85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
@@ -118,19 +125,24 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a7ad0aa808c9181479fc409d758eec4c3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_manager_1_1_update_manager.html#a7ad0aa808c9181479fc409d758eec4c3">UpdateManager</a> ()</td></tr>
 <tr class="separator:a7ad0aa808c9181479fc409d758eec4c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f34dd241ca6c72c17a3e6f10c19a831"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_manager_1_1_update_manager.html#a6f34dd241ca6c72c17a3e6f10c19a831">RemovalRun</a> ()</td></tr>
+<tr class="memdesc:a6f34dd241ca6c72c17a3e6f10c19a831"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the updatables that are marked for removal.  <a href="class_manager_1_1_update_manager.html#a6f34dd241ca6c72c17a3e6f10c19a831">More...</a><br /></td></tr>
 <tr class="separator:a6f34dd241ca6c72c17a3e6f10c19a831"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:ac97219da34f00a39471222df5031eae1"><td class="memItemLeft" align="right" valign="top">Queue&lt; <a class="el" href="interface_base_1_1_i_updatable.html">IUpdatable</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_manager_1_1_update_manager.html#ac97219da34f00a39471222df5031eae1">MarkedForRemoval</a></td></tr>
+<tr class="memdesc:ac97219da34f00a39471222df5031eae1"><td class="mdescLeft">&#160;</td><td class="mdescRight">All Updateables that are to be removed.  <a href="class_manager_1_1_update_manager.html#ac97219da34f00a39471222df5031eae1">More...</a><br /></td></tr>
 <tr class="separator:ac97219da34f00a39471222df5031eae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:aa7243ce84dea5c5471b1d00731613e96"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_manager_1_1_update_manager.html">UpdateManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_manager_1_1_update_manager.html#aa7243ce84dea5c5471b1d00731613e96">Instance</a><code> [get]</code></td></tr>
+<tr class="memdesc:aa7243ce84dea5c5471b1d00731613e96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instance of the <a class="el" href="class_manager_1_1_update_manager.html" title="Update Manager Singleton of the Simulation. It deals with every Updatable in the Simulation that is n...">UpdateManager</a>.  <a href="class_manager_1_1_update_manager.html#aa7243ce84dea5c5471b1d00731613e96">More...</a><br /></td></tr>
 <tr class="separator:aa7243ce84dea5c5471b1d00731613e96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Update <a class="el" href="namespace_manager.html" title="Namespace for Singleton Manager Classes.">Manager</a> Singleton of the Simulation. It deals with every Updatable in the Simulation that is not dealt with by the unity engine. It also manages the removal of single time events. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7ad0aa808c9181479fc409d758eec4c3" name="a7ad0aa808c9181479fc409d758eec4c3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7ad0aa808c9181479fc409d758eec4c3">&#9670;&nbsp;</a></span>UpdateManager()</h2>
 
@@ -173,6 +185,20 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Marks an removable updatable for removal. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">managedRemoval</td><td>Removable Updatable to be marked for removal. Can only be executed if the IManagedRemoval is an IUpdatable.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ArgumentException</td><td>The given IManagedRemoval is not an IUpdatable.</td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="aa0eaab5b588cd4642f65e90168750b2e" name="aa0eaab5b588cd4642f65e90168750b2e"></a>
@@ -191,6 +217,20 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Marks an updatable for removal. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">updatable</td><td>Updatable to be marked for removal.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ArgumentException</td><td>Thrown if the updatable is not registered.</td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="afe7ba198ed8274ffae5303d6b75ab82b" name="afe7ba198ed8274ffae5303d6b75ab82b"></a>
@@ -208,6 +248,14 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Registers a new updatable to the <a class="el" href="class_manager_1_1_update_manager.html" title="Update Manager Singleton of the Simulation. It deals with every Updatable in the Simulation that is n...">UpdateManager</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">updatable</td><td>New updatable to be registered.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -234,6 +282,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Removes the updatables that are marked for removal. </p>
+
 <p>Reimplemented in <a class="el" href="class_manager_1_1_verbose_update_manager.html#a589a3ef49aafd2c493bf970c46deda23">Manager.VerboseUpdateManager</a>.</p>
 
 </div>
@@ -253,6 +303,14 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Removes an updatable from the <a class="el" href="class_manager_1_1_update_manager.html" title="Update Manager Singleton of the Simulation. It deals with every Updatable in the Simulation that is n...">UpdateManager</a> by address. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">updatable</td><td>Updatable to be removed.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -277,6 +335,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>All Updateables that are to be removed. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
@@ -299,6 +359,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Instance of the <a class="el" href="class_manager_1_1_update_manager.html" title="Update Manager Singleton of the Simulation. It deals with every Updatable in the Simulation that is n...">UpdateManager</a>. </p>
 
 </div>
 </div>

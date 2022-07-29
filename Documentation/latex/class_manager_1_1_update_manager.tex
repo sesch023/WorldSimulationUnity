@@ -1,5 +1,10 @@
 \hypertarget{class_manager_1_1_update_manager}{}\doxysection{Manager.\+Update\+Manager Class Reference}
 \label{class_manager_1_1_update_manager}\index{Manager.UpdateManager@{Manager.UpdateManager}}
+
+
+Update \mbox{\hyperlink{namespace_manager}{Manager}} Singleton of the Simulation. It deals with every Updatable in the Simulation that is not dealt with by the unity engine. It also manages the removal of single time events.  
+
+
 Inheritance diagram for Manager.\+Update\+Manager\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,31 +15,34 @@ Inheritance diagram for Manager.\+Update\+Manager\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_manager_1_1_update_manager_afe7ba198ed8274ffae5303d6b75ab82b}{Register\+Updatable}} (\mbox{\hyperlink{interface_base_1_1_i_updatable}{IUpdatable}} updatable)
-\item 
+\begin{DoxyCompactList}\small\item\em Registers a new updatable to the \mbox{\hyperlink{class_manager_1_1_update_manager}{Update\+Manager}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_manager_1_1_update_manager_a8a73616a5b99bf712fddfd1509a21b24}{Remove\+Updatable}} (\mbox{\hyperlink{interface_base_1_1_i_updatable}{IUpdatable}} updatable)
-\item 
+\begin{DoxyCompactList}\small\item\em Removes an updatable from the \mbox{\hyperlink{class_manager_1_1_update_manager}{Update\+Manager}} by address. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_manager_1_1_update_manager_aa0eaab5b588cd4642f65e90168750b2e}{Mark\+Updatable\+For\+Removal}} (\mbox{\hyperlink{interface_base_1_1_i_updatable}{IUpdatable}} updatable)
-\item 
+\begin{DoxyCompactList}\small\item\em Marks an updatable for removal. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_manager_1_1_update_manager_a7ae39a94e85b1152c37b673f295cbc85}{Mark\+Removable\+For\+Removal}} (\mbox{\hyperlink{interface_base_1_1_i_managed_removal}{IManaged\+Removal}} managed\+Removal)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Marks an removable updatable for removal. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_manager_1_1_update_manager_a7ad0aa808c9181479fc409d758eec4c3}{Update\+Manager}} ()
 \item 
 virtual void \mbox{\hyperlink{class_manager_1_1_update_manager_a6f34dd241ca6c72c17a3e6f10c19a831}{Removal\+Run}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Removes the updatables that are marked for removal. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 Queue$<$ \mbox{\hyperlink{interface_base_1_1_i_updatable}{IUpdatable}} $>$ \mbox{\hyperlink{class_manager_1_1_update_manager_ac97219da34f00a39471222df5031eae1}{Marked\+For\+Removal}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em All Updateables that are to be removed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
 static \mbox{\hyperlink{class_manager_1_1_update_manager}{Update\+Manager}} \mbox{\hyperlink{class_manager_1_1_update_manager_aa7243ce84dea5c5471b1d00731613e96}{Instance}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Instance of the \mbox{\hyperlink{class_manager_1_1_update_manager}{Update\+Manager}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Update \mbox{\hyperlink{namespace_manager}{Manager}} Singleton of the Simulation. It deals with every Updatable in the Simulation that is not dealt with by the unity engine. It also manages the removal of single time events. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_manager_1_1_update_manager_a7ad0aa808c9181479fc409d758eec4c3}\label{class_manager_1_1_update_manager_a7ad0aa808c9181479fc409d758eec4c3}} 
@@ -52,23 +60,64 @@ static \mbox{\hyperlink{class_manager_1_1_update_manager}{Update\+Manager}} \mbo
 \doxysubsubsection{\texorpdfstring{MarkRemovableForRemoval()}{MarkRemovableForRemoval()}}
 {\footnotesize\ttfamily void Manager.\+Update\+Manager.\+Mark\+Removable\+For\+Removal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_base_1_1_i_managed_removal}{IManaged\+Removal}}}]{managed\+Removal }\end{DoxyParamCaption})}
 
+
+
+Marks an removable updatable for removal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em managed\+Removal} & Removable Updatable to be marked for removal. Can only be executed if the IManaged\+Removal is an IUpdatable.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Argument\+Exception} & The given IManaged\+Removal is not an IUpdatable.\\
+\hline
+\end{DoxyExceptions}
 \mbox{\Hypertarget{class_manager_1_1_update_manager_aa0eaab5b588cd4642f65e90168750b2e}\label{class_manager_1_1_update_manager_aa0eaab5b588cd4642f65e90168750b2e}} 
 \index{Manager.UpdateManager@{Manager.UpdateManager}!MarkUpdatableForRemoval@{MarkUpdatableForRemoval}}
 \index{MarkUpdatableForRemoval@{MarkUpdatableForRemoval}!Manager.UpdateManager@{Manager.UpdateManager}}
 \doxysubsubsection{\texorpdfstring{MarkUpdatableForRemoval()}{MarkUpdatableForRemoval()}}
 {\footnotesize\ttfamily void Manager.\+Update\+Manager.\+Mark\+Updatable\+For\+Removal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_base_1_1_i_updatable}{IUpdatable}}}]{updatable }\end{DoxyParamCaption})}
 
+
+
+Marks an updatable for removal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em updatable} & Updatable to be marked for removal.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Argument\+Exception} & Thrown if the updatable is not registered.\\
+\hline
+\end{DoxyExceptions}
 \mbox{\Hypertarget{class_manager_1_1_update_manager_afe7ba198ed8274ffae5303d6b75ab82b}\label{class_manager_1_1_update_manager_afe7ba198ed8274ffae5303d6b75ab82b}} 
 \index{Manager.UpdateManager@{Manager.UpdateManager}!RegisterUpdatable@{RegisterUpdatable}}
 \index{RegisterUpdatable@{RegisterUpdatable}!Manager.UpdateManager@{Manager.UpdateManager}}
 \doxysubsubsection{\texorpdfstring{RegisterUpdatable()}{RegisterUpdatable()}}
 {\footnotesize\ttfamily void Manager.\+Update\+Manager.\+Register\+Updatable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_base_1_1_i_updatable}{IUpdatable}}}]{updatable }\end{DoxyParamCaption})}
 
+
+
+Registers a new updatable to the \mbox{\hyperlink{class_manager_1_1_update_manager}{Update\+Manager}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em updatable} & New updatable to be registered.\\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_manager_1_1_update_manager_a6f34dd241ca6c72c17a3e6f10c19a831}\label{class_manager_1_1_update_manager_a6f34dd241ca6c72c17a3e6f10c19a831}} 
 \index{Manager.UpdateManager@{Manager.UpdateManager}!RemovalRun@{RemovalRun}}
 \index{RemovalRun@{RemovalRun}!Manager.UpdateManager@{Manager.UpdateManager}}
 \doxysubsubsection{\texorpdfstring{RemovalRun()}{RemovalRun()}}
 {\footnotesize\ttfamily virtual void Manager.\+Update\+Manager.\+Removal\+Run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Removes the updatables that are marked for removal. 
 
 
 
@@ -82,6 +131,15 @@ Reimplemented in \mbox{\hyperlink{class_manager_1_1_verbose_update_manager_a589a
 
 
 
+Removes an updatable from the \mbox{\hyperlink{class_manager_1_1_update_manager}{Update\+Manager}} by address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em updatable} & Updatable to be removed.\\
+\hline
+\end{DoxyParams}
+
+
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{class_manager_1_1_update_manager_ac97219da34f00a39471222df5031eae1}\label{class_manager_1_1_update_manager_ac97219da34f00a39471222df5031eae1}} 
 \index{Manager.UpdateManager@{Manager.UpdateManager}!MarkedForRemoval@{MarkedForRemoval}}
@@ -91,12 +149,20 @@ Reimplemented in \mbox{\hyperlink{class_manager_1_1_verbose_update_manager_a589a
 
 
 
+All Updateables that are to be removed. 
+
+
+
 \doxysubsection{Property Documentation}
 \mbox{\Hypertarget{class_manager_1_1_update_manager_aa7243ce84dea5c5471b1d00731613e96}\label{class_manager_1_1_update_manager_aa7243ce84dea5c5471b1d00731613e96}} 
 \index{Manager.UpdateManager@{Manager.UpdateManager}!Instance@{Instance}}
 \index{Instance@{Instance}!Manager.UpdateManager@{Manager.UpdateManager}}
 \doxysubsubsection{\texorpdfstring{Instance}{Instance}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_manager_1_1_update_manager}{Update\+Manager}} Manager.\+Update\+Manager.\+Instance\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Instance of the \mbox{\hyperlink{class_manager_1_1_update_manager}{Update\+Manager}}. 
 
 
 

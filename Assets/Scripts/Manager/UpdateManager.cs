@@ -1,18 +1,29 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Base;
 using UnityEngine;
 
 namespace Manager
 {
+    /// <summary>
+    /// Update Manager Singleton of the Simulation. It deals with every Updatable in the Simulation that is
+    /// not dealt with by the unity engine. It also manages the removal of single time events.
+    /// </summary>
     public class UpdateManager : MonoBehaviour
     {
-        private List<IUpdatable> _updatables;
+        /// All the updatables in the simulation.
+        private HashSet<IUpdatable> _updatables;
+        /// All Updateables that are to be removed.
         protected Queue<IUpdatable> MarkedForRemoval;
+        /// Instance of the UpdateManager.
         public static UpdateManager Instance { get; private set; }
 
         protected UpdateManager(){}
         
+        /// <summary>
+        /// Enables the singleton with the current instance or destroys the game object if it already exists.
+        /// </summary>
         void Awake()
         {
             if (Instance == null)
@@ -24,26 +35,36 @@ namespace Manager
                 Destroy(gameObject);
             }
         }
-
+        
+        /// <summary>
+        /// Initializes the UpdateManager.
+        /// </summary>
         private void Start()
         {
             Init();
         }
         
+        /// <summary>
+        /// Initializes the list of updatables and the queue of updatables that are to be removed.
+        /// It also initializes statically coded updatables.
+        /// </summary>
         private void Init()
         {
-            _updatables = new List<IUpdatable>();
+            _updatables = new HashSet<IUpdatable>();
             MarkedForRemoval = new Queue<IUpdatable>();
             InitUpdatables();
         }
         
+        /// <summary>
+        /// Initializes the updatables that are statically coded. In the current implementation, this method
+        /// only initializes test updatables.
+        /// </summary>
         private void InitUpdatables()
         {
             /*
             UpdatableEvent action = new KeyboardAction(Keys.Enter, ActionType.KeyDown, 
                 triggeredBy => { LoggingManager.Instance.Info("Hello Enter!"); });
                 */
-            Debug.Log("Hello!");
             
             var spacedEvent = new TimeSpacedEvent(5000,
                 triggeredBy =>
@@ -68,41 +89,75 @@ namespace Manager
                 });
         }
         
+        /// <summary>
+        /// Update method of the UpdateManager. It updates all updatables and removes the updatables that are marked for removal
+        /// if the queue is not empty.
+        /// </summary>
         void Update()
         {
-            foreach (var variableUpdatable in _updatables.ToList()) variableUpdatable.Update();
-            RemovalRun();
+            foreach (var variableUpdatable in _updatables) 
+                variableUpdatable.Update();
+            if (MarkedForRemoval.Count > 0)
+            {
+                RemovalRun();
+            }
         }
 
+        /// <summary>
+        /// Removes the updatables that are marked for removal.
+        /// </summary>
         protected virtual void RemovalRun()
         {
-            foreach(var updatable in MarkedForRemoval)
+            foreach (var updatable in MarkedForRemoval)
             {
                 RemoveUpdatable(updatable);
             }
-            
+
             MarkedForRemoval.Clear();
         }
 
+        /// <summary>
+        /// Registers a new updatable to the UpdateManager.
+        /// </summary>
+        /// <param name="updatable">New updatable to be registered.</param>
         public void RegisterUpdatable(IUpdatable updatable)
         {
             _updatables.Add(updatable);
         }
 
+        /// <summary>
+        /// Removes an updatable from the UpdateManager by address.
+        /// </summary>
+        /// <param name="updatable">Updatable to be removed.</param>
         public void RemoveUpdatable(IUpdatable updatable)
         {
             _updatables.Remove(updatable);
         }
-
+        
+        /// <summary>
+        /// Marks an updatable for removal.
+        /// </summary>
+        /// <param name="updatable">Updatable to be marked for removal.</param>
+        /// <exception cref="ArgumentException">Thrown if the updatable is not registered.</exception>
         public void MarkUpdatableForRemoval(IUpdatable updatable)
         {
-            MarkedForRemoval.Enqueue(updatable);
+            if(_updatables.Contains(updatable))
+                MarkedForRemoval.Enqueue(updatable);
+            else
+                throw new ArgumentException($"ArgumentException: {GetType()}::MarkUpdatableForRemoval - Updatable {updatable} is not registered!");
         }
-
+        
+        /// <summary>
+        /// Marks an removable updatable for removal.
+        /// </summary>
+        /// <param name="managedRemoval">Removable Updatable to be marked for removal. Can only be executed if the IManagedRemoval is an IUpdatable.</param>
+        /// <exception cref="ArgumentException">The given IManagedRemoval is not an IUpdatable.</exception>
         public void MarkRemovableForRemoval(IManagedRemoval managedRemoval)
         {
             if(managedRemoval is IUpdatable removal)
                 MarkUpdatableForRemoval(removal);
+            else
+                throw new ArgumentException($"ArgumentException: {GetType()}::MarkRemovableForRemoval - Removable is not an updatable!");
         }
     }
 }
