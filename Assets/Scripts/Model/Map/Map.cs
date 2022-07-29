@@ -11,6 +11,8 @@ namespace Model.Map
     [CreateAssetMenu(fileName = "Map", menuName = "ScriptableObjects/Map", order = 1)]
     public class Map : ScriptableObject, IUpdatable
     {
+        public readonly float TileArea = 1.0f;
+        
         [field: SerializeField] public int SizeX { get; private set; } = 1025;
         [field: SerializeField] public int SizeY { get; private set; } = 1025;
 
@@ -18,7 +20,7 @@ namespace Model.Map
         private BaseGenerator generator;
 
         public MapUnit[,] MapUnits { get; private set; }
-
+        
         private void OnEnable()
         {
             if (generator == null)
