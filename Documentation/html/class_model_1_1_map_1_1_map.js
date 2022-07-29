@@ -9,6 +9,7 @@ var class_model_1_1_map_1_1_map =
     [ "groupBorder", "class_model_1_1_map_1_1_map.html#a87e2390c86b556a29da469fdd1de9cb7", null ],
     [ "peak", "class_model_1_1_map_1_1_map.html#a5f4c4ea3fcd131fc68299fc6f4891921", null ],
     [ "peakBorder", "class_model_1_1_map_1_1_map.html#ac804359bb3ed0137e9c167a4cf5a2223", null ],
+    [ "TileArea", "class_model_1_1_map_1_1_map.html#a78aebfb1bb5d334f481cdb0ddbe238ba", null ],
     [ "valley", "class_model_1_1_map_1_1_map.html#a3ad89c09e1a14260930ddd365c5eef71", null ],
     [ "valleyBorder", "class_model_1_1_map_1_1_map.html#a5323989652c43723768c00d7d30e2fea", null ],
     [ "MapUnits", "class_model_1_1_map_1_1_map.html#af452313778eab35d9069d15d267e5ece", null ],

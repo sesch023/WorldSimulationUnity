@@ -7,5 +7,6 @@ var dir_f13b41af88cf68434578284aaf699e39 =
     [ "Manager", "dir_b7efb6267344c1014d476646234dd8bc.html", "dir_b7efb6267344c1014d476646234dd8bc" ],
     [ "Model", "dir_9982d9b0f4ad3ea6cfe45d3d01cb7131.html", "dir_9982d9b0f4ad3ea6cfe45d3d01cb7131" ],
     [ "Utils", "dir_d59928a8991e409486b76da4b2a9995a.html", "dir_d59928a8991e409486b76da4b2a9995a" ],
-    [ "Views", "dir_8843826ee326c825b04a05cef84ccea7.html", "dir_8843826ee326c825b04a05cef84ccea7" ]
+    [ "Views", "dir_8843826ee326c825b04a05cef84ccea7.html", "dir_8843826ee326c825b04a05cef84ccea7" ],
+    [ "Namespaces.cs", "_namespaces_8cs.html", null ]
 ];

@@ -1,7 +1,5 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.Serialization;
-using Utils;
 using Utils.BaseUtils;
 using Random = System.Random;
 

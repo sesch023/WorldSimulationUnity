@@ -1,13 +1,8 @@
-﻿using System;
-using Manager;
+﻿using Manager;
 using Model.Map;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
-using UnityEngine.Tilemaps;
-using UnityEngine.UIElements;
-using Views;
 using Views.GameViews;
 using Views.UIViews;
 

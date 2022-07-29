@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Linq;
 using UnityEngine;
-using Utils;
 using Utils.BaseUtils;
 
 namespace Model.Generators

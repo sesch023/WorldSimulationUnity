@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>WorldSimulationUnity: Base Namespace Reference</title>
+<title>World Simulation Unity: Base Namespace Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,9 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">WorldSimulationUnity
+   <div id="projectname">World Simulation Unity
    </div>
-   <div id="projectbrief">Simulation of a world in unity.</div>
+   <div id="projectbrief">World Simulation in Unity.</div>
   </td>
  </tr>
  </tbody>
@@ -89,6 +89,9 @@ $(document).ready(function(){initNavTree('namespace_base.html',''); initResizabl
   <div class="headertitle"><div class="title">Base Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Namespace for basic classes which don't use unity's provided classes and provide base functionality.  
+<a href="namespace_base.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -99,13 +102,13 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_base_1_1_event.html" title="Event, which triggers subscribers, which can be registered and unregistered. Implements IEvent.">Event</a>, which triggers subscribers, which can be registered and unregistered. Implements <a class="el" href="interface_base_1_1_i_event.html" title="Base Interface for all Events.">IEvent</a>.  <a href="class_base_1_1_event.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_base_1_1_i_event.html">IEvent</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespace_base.html">Base</a> Interface for all Events.  <a href="interface_base_1_1_i_event.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespace_base.html" title="Namespace for basic classes which don&#39;t use unity&#39;s provided classes and provide base functionality.">Base</a> Interface for all Events.  <a href="interface_base_1_1_i_event.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_base_1_1_i_managed_removal.html">IManagedRemoval</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespace_base.html">Base</a> Interface for objects which require a active removal on certain conditions.  <a href="interface_base_1_1_i_managed_removal.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespace_base.html" title="Namespace for basic classes which don&#39;t use unity&#39;s provided classes and provide base functionality.">Base</a> Interface for objects which require a active removal on certain conditions.  <a href="interface_base_1_1_i_managed_removal.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_base_1_1_i_updatable.html">IUpdatable</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespace_base.html">Base</a> Interface for Updateable Objects independent of the Game Engines MonoBehavior and managed by an UpdateManager.  <a href="interface_base_1_1_i_updatable.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespace_base.html" title="Namespace for basic classes which don&#39;t use unity&#39;s provided classes and provide base functionality.">Base</a> Interface for Updateable Objects independent of the Game Engines MonoBehavior and managed by an UpdateManager.  <a href="interface_base_1_1_i_updatable.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_1_1_tick_event.html">TickEvent</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_base_1_1_tick_event.html" title="TickEvent which is triggered at a certain tick number once. Needs to be removed after it has been tri...">TickEvent</a> which is triggered at a certain tick number once. Needs to be removed after it has been triggered, by giving a proper OnRemoval delegate. UpdateManager deals with triggering and will automatically call managed removal of the <a class="el" href="class_base_1_1_tick_event.html" title="TickEvent which is triggered at a certain tick number once. Needs to be removed after it has been tri...">TickEvent</a>. Automatically registers itself with the UpdateManager.  <a href="class_base_1_1_tick_event.html#details">More...</a><br /></td></tr>
@@ -132,7 +135,9 @@ Functions</h2></td></tr>
 <tr class="memdesc:aa12f13919235980f402a8fe36026b017"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delegate, executed when a <a class="el" href="interface_base_1_1_i_managed_removal.html" title="Base Interface for objects which require a active removal on certain conditions.">IManagedRemoval</a> is triggered.  <a href="namespace_base.html#aa12f13919235980f402a8fe36026b017">More...</a><br /></td></tr>
 <tr class="separator:aa12f13919235980f402a8fe36026b017"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Namespace for basic classes which don't use unity's provided classes and provide base functionality. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="aa12f13919235980f402a8fe36026b017" name="aa12f13919235980f402a8fe36026b017"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa12f13919235980f402a8fe36026b017">&#9670;&nbsp;</a></span>OnRemoval()</h2>
 

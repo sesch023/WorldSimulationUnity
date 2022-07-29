@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>WorldSimulationUnity: Controllers.TileMapController Class Reference</title>
+<title>World Simulation Unity: Controllers.TileMapController Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,9 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">WorldSimulationUnity
+   <div id="projectname">World Simulation Unity
    </div>
-   <div id="projectbrief">Simulation of a world in unity.</div>
+   <div id="projectbrief">World Simulation in Unity.</div>
   </td>
  </tr>
  </tbody>
@@ -91,6 +91,9 @@ $(document).ready(function(){initNavTree('class_controllers_1_1_tile_map_control
   <div class="headertitle"><div class="title">Controllers.TileMapController Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Controller of a Tilemap. Delegates between a Map, Tilemap and a TileView Container class for tile textures. Is an updateable controlled by the MapManager.  
+ <a href="class_controllers_1_1_tile_map_controller.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Controllers.TileMapController:</div>
 <div class="dyncontent">
@@ -104,15 +107,18 @@ Inheritance diagram for Controllers.TileMapController:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac76670a4b59c1df0daf1960b8e859cb0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controllers_1_1_tile_map_controller.html#ac76670a4b59c1df0daf1960b8e859cb0">Init</a> ()</td></tr>
+<tr class="memdesc:ac76670a4b59c1df0daf1960b8e859cb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the <a class="el" href="class_controllers_1_1_tile_map_controller.html" title="Controller of a Tilemap. Delegates between a Map, Tilemap and a TileView Container class for tile tex...">TileMapController</a>. Delegates the texture exchange between the Tilemap and the TileViews under conditions set by the unit map. This code cannot be called from the constructor, because at the point of construction the Monobehaviours and ScriptableData are not yet initialized.  <a href="class_controllers_1_1_tile_map_controller.html#ac76670a4b59c1df0daf1960b8e859cb0">More...</a><br /></td></tr>
 <tr class="separator:ac76670a4b59c1df0daf1960b8e859cb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2335b71cc295b54851e8b6ed739de67b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controllers_1_1_tile_map_controller.html#a2335b71cc295b54851e8b6ed739de67b">Update</a> ()</td></tr>
-<tr class="memdesc:a2335b71cc295b54851e8b6ed739de67b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to be called to update the object.  <a href="class_controllers_1_1_tile_map_controller.html#a2335b71cc295b54851e8b6ed739de67b">More...</a><br /></td></tr>
+<tr class="memdesc:a2335b71cc295b54851e8b6ed739de67b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls the Update method of the Map.  <a href="class_controllers_1_1_tile_map_controller.html#a2335b71cc295b54851e8b6ed739de67b">More...</a><br /></td></tr>
 <tr class="separator:a2335b71cc295b54851e8b6ed739de67b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8c81857359226ef3f7d24fcde144702"><td class="memItemLeft" align="right" valign="top">Vector2Int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controllers_1_1_tile_map_controller.html#aa8c81857359226ef3f7d24fcde144702">GetMapUnitByGlobalPosition</a> (Vector3 pos)</td></tr>
 <tr class="separator:aa8c81857359226ef3f7d24fcde144702"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a567a4fb0a9c8421a3d1cbdf0b89515e3"><td class="memItemLeft" align="right" valign="top">Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controllers_1_1_tile_map_controller.html#a567a4fb0a9c8421a3d1cbdf0b89515e3">TileMapPositionToGlobalPosition</a> (Vector2Int position)</td></tr>
+<tr class="memdesc:a567a4fb0a9c8421a3d1cbdf0b89515e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a int position on the tilemap to a global position in the world space.  <a href="class_controllers_1_1_tile_map_controller.html#a567a4fb0a9c8421a3d1cbdf0b89515e3">More...</a><br /></td></tr>
 <tr class="separator:a567a4fb0a9c8421a3d1cbdf0b89515e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a530f896214e2ab5da5bcc950af2d2e18"><td class="memItemLeft" align="right" valign="top">Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controllers_1_1_tile_map_controller.html#a530f896214e2ab5da5bcc950af2d2e18">TileMapPositionToGlobalPosition</a> (Vector2 position)</td></tr>
+<tr class="memdesc:a530f896214e2ab5da5bcc950af2d2e18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a float position on the tilemap to a global position in the world space.  <a href="class_controllers_1_1_tile_map_controller.html#a530f896214e2ab5da5bcc950af2d2e18">More...</a><br /></td></tr>
 <tr class="separator:a530f896214e2ab5da5bcc950af2d2e18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1983d03de50becea9925ab50db45752d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_base_1_1_i_updatable.html#a1983d03de50becea9925ab50db45752d">Update</a> ()</td></tr>
 <tr class="memdesc:a1983d03de50becea9925ab50db45752d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to be called to update the object.  <a href="interface_base_1_1_i_updatable.html#a1983d03de50becea9925ab50db45752d">More...</a><br /></td></tr>
@@ -121,18 +127,24 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:ac23ccdad4153a71ee14e7515eaa6404e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controllers_1_1_tile_map_controller.html#ac23ccdad4153a71ee14e7515eaa6404e">MapUnit</a></td></tr>
+<tr class="memdesc:ac23ccdad4153a71ee14e7515eaa6404e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a global position, returns the map unit at that position if possible and the position itself. If not, throws an IndexOutOfRangeException.  <a href="class_controllers_1_1_tile_map_controller.html#ac23ccdad4153a71ee14e7515eaa6404e">More...</a><br /></td></tr>
 <tr class="separator:ac23ccdad4153a71ee14e7515eaa6404e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a1e7c8e8c163630e3241de4790e403411"><td class="memItemLeft" align="right" valign="top">Tilemap&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controllers_1_1_tile_map_controller.html#a1e7c8e8c163630e3241de4790e403411">TileMap</a><code> [get]</code></td></tr>
+<tr class="memdesc:a1e7c8e8c163630e3241de4790e403411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tilemap to which a map is displayed.  <a href="class_controllers_1_1_tile_map_controller.html#a1e7c8e8c163630e3241de4790e403411">More...</a><br /></td></tr>
 <tr class="separator:a1e7c8e8c163630e3241de4790e403411"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a114e6d4550616e89cc8e35db31b6cd19"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_views_1_1_game_views_1_1_map_tile_views.html">MapTileViews</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controllers_1_1_tile_map_controller.html#a114e6d4550616e89cc8e35db31b6cd19">TileViews</a><code> [get]</code></td></tr>
+<tr class="memdesc:a114e6d4550616e89cc8e35db31b6cd19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Container class for tile textures. Decides on which texture to display on a tile depending on map unit conditions.  <a href="class_controllers_1_1_tile_map_controller.html#a114e6d4550616e89cc8e35db31b6cd19">More...</a><br /></td></tr>
 <tr class="separator:a114e6d4550616e89cc8e35db31b6cd19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a0f7b04e4570ee32100eccbd291ff52"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_model_1_1_map_1_1_map.html">Map</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controllers_1_1_tile_map_controller.html#a9a0f7b04e4570ee32100eccbd291ff52">UnitMap</a><code> [get]</code></td></tr>
+<tr class="memdesc:a9a0f7b04e4570ee32100eccbd291ff52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map of the world. Contains all map units and their conditions.  <a href="class_controllers_1_1_tile_map_controller.html#a9a0f7b04e4570ee32100eccbd291ff52">More...</a><br /></td></tr>
 <tr class="separator:a9a0f7b04e4570ee32100eccbd291ff52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Controller of a Tilemap. Delegates between a Map, Tilemap and a TileView Container class for tile textures. Is an updateable controlled by the MapManager. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aa8c81857359226ef3f7d24fcde144702" name="aa8c81857359226ef3f7d24fcde144702"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa8c81857359226ef3f7d24fcde144702">&#9670;&nbsp;</a></span>GetMapUnitByGlobalPosition()</h2>
 
@@ -166,6 +178,14 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Initializes the <a class="el" href="class_controllers_1_1_tile_map_controller.html" title="Controller of a Tilemap. Delegates between a Map, Tilemap and a TileView Container class for tile tex...">TileMapController</a>. Delegates the texture exchange between the Tilemap and the TileViews under conditions set by the unit map. This code cannot be called from the constructor, because at the point of construction the Monobehaviours and ScriptableData are not yet initialized. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">MissingReferenceException</td><td>Thrown if the TileMap, TileViews or UnitMap are not set.</td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a530f896214e2ab5da5bcc950af2d2e18" name="a530f896214e2ab5da5bcc950af2d2e18"></a>
@@ -183,6 +203,15 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Converts a float position on the tilemap to a global position in the world space. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td>Vector2 position on the tilemap.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Vector3 position in the world space.</dd></dl>
 
 </div>
 </div>
@@ -202,6 +231,15 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Converts a int position on the tilemap to a global position in the world space. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td>Vector2 position on the tilemap.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Vector3 position in the world space.</dd></dl>
+
 </div>
 </div>
 <a id="a2335b71cc295b54851e8b6ed739de67b" name="a2335b71cc295b54851e8b6ed739de67b"></a>
@@ -219,7 +257,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Method to be called to update the object. </p>
+<p>Calls the Update method of the Map. </p>
 
 <p>Implements <a class="el" href="interface_base_1_1_i_updatable.html#a1983d03de50becea9925ab50db45752d">Base.IUpdatable</a>.</p>
 
@@ -237,6 +275,21 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Given a global position, returns the map unit at that position if possible and the position itself. If not, throws an IndexOutOfRangeException. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>Global Position that is converted.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>MapUnit and position on the tilemap as 0 based integer vector.</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IndexOutOfRangeException</td><td>Thrown if the position is out of bounds.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -261,6 +314,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Tilemap to which a map is displayed. </p>
+
 </div>
 </div>
 <a id="a114e6d4550616e89cc8e35db31b6cd19" name="a114e6d4550616e89cc8e35db31b6cd19"></a>
@@ -283,6 +338,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Container class for tile textures. Decides on which texture to display on a tile depending on map unit conditions. </p>
+
 </div>
 </div>
 <a id="a9a0f7b04e4570ee32100eccbd291ff52" name="a9a0f7b04e4570ee32100eccbd291ff52"></a>
@@ -304,6 +361,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Map of the world. Contains all map units and their conditions. </p>
 
 </div>
 </div>

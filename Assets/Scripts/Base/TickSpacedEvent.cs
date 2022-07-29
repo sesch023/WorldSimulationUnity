@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Manager;
-using UnityEngine;
 
 namespace Base
 {

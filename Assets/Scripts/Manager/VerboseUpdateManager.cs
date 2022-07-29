@@ -1,6 +1,4 @@
-﻿using System.Reflection.Emit;
-using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Manager
 {

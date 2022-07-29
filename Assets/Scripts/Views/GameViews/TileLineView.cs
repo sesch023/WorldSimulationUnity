@@ -1,5 +1,4 @@
-﻿using Controllers;
-using Manager;
+﻿using Manager;
 using UnityEngine;
 using Utils.BaseUtils;
 

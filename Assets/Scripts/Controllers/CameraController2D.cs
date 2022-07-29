@@ -1,11 +1,7 @@
 ﻿using System;
 using Manager;
-using Model.Map;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Composites;
-using UnityEngine.InputSystem.Controls;
-using UnityEngine.Serialization;
 
 namespace Controllers
 {

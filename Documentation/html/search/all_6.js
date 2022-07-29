@@ -19,5 +19,6 @@ var searchData=
   ['gettps_16',['GetTps',['../class_manager_1_1_verbose_time_manager.html#aece4f8cfd8406868d2705987929b314c',1,'Manager::VerboseTimeManager']]],
   ['getvalley_17',['GetValley',['../class_model_1_1_map_1_1_map.html#a61bf9a5ff5d815c52c8923cbddececee',1,'Model::Map::Map']]],
   ['group_18',['group',['../class_model_1_1_map_1_1_map.html#abdd2ca0b3d915590443842ea9623560a',1,'Model::Map::Map']]],
-  ['groupborder_19',['groupBorder',['../class_model_1_1_map_1_1_map.html#a87e2390c86b556a29da469fdd1de9cb7',1,'Model::Map::Map']]]
+  ['groupborder_19',['groupBorder',['../class_model_1_1_map_1_1_map.html#a87e2390c86b556a29da469fdd1de9cb7',1,'Model::Map::Map']]],
+  ['groupselection_20',['GroupSelection',['../class_manager_1_1_simulation_manager.html#a9ed95d6d213db45e44f780e064b71177a4c1979c5d68df408bbb583944e677960',1,'Manager::SimulationManager']]]
 ];

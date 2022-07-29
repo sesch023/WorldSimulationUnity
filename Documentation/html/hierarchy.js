@@ -66,7 +66,7 @@ var hierarchy =
     ] ],
     [ "Model.Map.MapUnit.MapPosition", "struct_model_1_1_map_1_1_map_unit_1_1_map_position.html", null ],
     [ "MonoBehaviour", null, [
-      [ "Controllers.CameraController", "class_controllers_1_1_camera_controller.html", null ],
+      [ "Controllers.CameraController2D", "class_controllers_1_1_camera_controller2_d.html", null ],
       [ "Controllers.TilesClickController", "class_controllers_1_1_tiles_click_controller.html", null ],
       [ "Controllers.UIButtonController", "class_controllers_1_1_u_i_button_controller.html", null ],
       [ "Manager.MapManager", "class_manager_1_1_map_manager.html", null ],

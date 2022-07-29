@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using Manager;
-using Unity.VisualScripting;
 using UnityEngine;
 using Utils.Array2D;
 using Utils.BaseUtils;

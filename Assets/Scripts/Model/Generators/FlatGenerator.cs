@@ -1,6 +1,5 @@
 ﻿using System;
 using UnityEngine;
-using Utils;
 using Utils.BaseUtils;
 
 namespace Model.Generators

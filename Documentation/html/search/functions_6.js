@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['heightline_0',['HeightLine',['../class_derelict_1_1_model_1_1_map_1_1_height_line.html#afcb5b247f5f347e90aa7a5f28f022f56',1,'Derelict.Model.Map.HeightLine.HeightLine(Vector2Int start, MapUnit[,] mapUnits, float elevation)'],['../class_derelict_1_1_model_1_1_map_1_1_height_line.html#a45829c89c9a7827a8923da4cc298f116',1,'Derelict.Model.Map.HeightLine.HeightLine(Vector2Int start, I2DArray&lt; float &gt; mapUnits, float elevation)']]],
-  ['heightlinebuttonclick_1',['HeightLineButtonClick',['../class_controllers_1_1_u_i_button_controller.html#af45a4054627ae622c3300a7d6da98e18',1,'Controllers::UIButtonController']]]
+  ['heightline_0',['HeightLine',['../class_derelict_1_1_model_1_1_map_1_1_height_line.html#afcb5b247f5f347e90aa7a5f28f022f56',1,'Derelict.Model.Map.HeightLine.HeightLine(Vector2Int start, MapUnit[,] mapUnits, float elevation)'],['../class_derelict_1_1_model_1_1_map_1_1_height_line.html#a45829c89c9a7827a8923da4cc298f116',1,'Derelict.Model.Map.HeightLine.HeightLine(Vector2Int start, I2DArray&lt; float &gt; mapUnits, float elevation)']]]
 ];

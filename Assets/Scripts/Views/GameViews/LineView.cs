@@ -1,10 +1,5 @@
-﻿using System;
-using System.ComponentModel;
-using CustomEditors.CustomAttributes;
-using UnityEditor;
+﻿using CustomEditors.CustomAttributes;
 using UnityEngine;
-using UnityEngine.Serialization;
-using Utils;
 using Utils.BaseUtils;
 
 //https://answers.unity.com/questions/682285/editor-script-for-setting-the-sorting-layer-of-an.html

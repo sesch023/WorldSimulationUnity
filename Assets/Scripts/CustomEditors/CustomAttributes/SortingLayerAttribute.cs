@@ -3,8 +3,17 @@ using UnityEngine;
 
 namespace CustomEditors.CustomAttributes
 {
+    /// <summary>
+    /// A custom attribute for selecting sorting layers in the editor, based on the
+    /// provided list of sorting layer names.
+    /// Based on: https://answers.unity.com/questions/682285/editor-script-for-setting-the-sorting-layer-of-an.html
+    /// </summary>
     public class SortingLayerAttribute : PropertyAttribute
     {
+        /// <summary>
+        /// A custom property attribute for selecting sorting layers in the editor, based on the
+        /// provided list of sorting layer names.
+        /// </summary>
         [CustomPropertyDrawer(typeof(SortingLayerAttribute))]
         public class SortingLayerDrawer : PropertyDrawer
         {

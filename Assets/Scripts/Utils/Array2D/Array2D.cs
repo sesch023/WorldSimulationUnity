@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Text;
-
-namespace Utils.Array2D
+﻿namespace Utils.Array2D
 {
     public class Array2D<TReal> : I2DArray<TReal>
     {

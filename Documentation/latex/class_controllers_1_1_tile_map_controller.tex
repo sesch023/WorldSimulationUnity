@@ -1,5 +1,10 @@
 \hypertarget{class_controllers_1_1_tile_map_controller}{}\doxysection{Controllers.\+Tile\+Map\+Controller Class Reference}
 \label{class_controllers_1_1_tile_map_controller}\index{Controllers.TileMapController@{Controllers.TileMapController}}
+
+
+Controller of a Tilemap. Delegates between a Map, Tilemap and a Tile\+View Container class for tile textures. Is an updateable controlled by the Map\+Manager.  
+
+
 Inheritance diagram for Controllers.\+Tile\+Map\+Controller\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,30 +15,33 @@ Inheritance diagram for Controllers.\+Tile\+Map\+Controller\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_controllers_1_1_tile_map_controller_ac76670a4b59c1df0daf1960b8e859cb0}{Init}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Initializes the \mbox{\hyperlink{class_controllers_1_1_tile_map_controller}{Tile\+Map\+Controller}}. Delegates the texture exchange between the Tilemap and the Tile\+Views under conditions set by the unit map. This code cannot be called from the constructor, because at the point of construction the Monobehaviours and Scriptable\+Data are not yet initialized. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_controllers_1_1_tile_map_controller_a2335b71cc295b54851e8b6ed739de67b}{Update}} ()
-\begin{DoxyCompactList}\small\item\em Method to be called to update the object. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Calls the Update method of the Map. \end{DoxyCompactList}\item 
 Vector2\+Int \mbox{\hyperlink{class_controllers_1_1_tile_map_controller_aa8c81857359226ef3f7d24fcde144702}{Get\+Map\+Unit\+By\+Global\+Position}} (Vector3 pos)
 \item 
 Vector3 \mbox{\hyperlink{class_controllers_1_1_tile_map_controller_a567a4fb0a9c8421a3d1cbdf0b89515e3}{Tile\+Map\+Position\+To\+Global\+Position}} (Vector2\+Int position)
-\item 
+\begin{DoxyCompactList}\small\item\em Converts a int position on the tilemap to a global position in the world space. \end{DoxyCompactList}\item 
 Vector3 \mbox{\hyperlink{class_controllers_1_1_tile_map_controller_a530f896214e2ab5da5bcc950af2d2e18}{Tile\+Map\+Position\+To\+Global\+Position}} (Vector2 position)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Converts a float position on the tilemap to a global position in the world space. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_controllers_1_1_tile_map_controller_ac23ccdad4153a71ee14e7515eaa6404e}{Map\+Unit}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Given a global position, returns the map unit at that position if possible and the position itself. If not, throws an Index\+Out\+Of\+Range\+Exception. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
 Tilemap \mbox{\hyperlink{class_controllers_1_1_tile_map_controller_a1e7c8e8c163630e3241de4790e403411}{Tile\+Map}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Tilemap to which a map is displayed. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_views_1_1_game_views_1_1_map_tile_views}{Map\+Tile\+Views}} \mbox{\hyperlink{class_controllers_1_1_tile_map_controller_a114e6d4550616e89cc8e35db31b6cd19}{Tile\+Views}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Container class for tile textures. Decides on which texture to display on a tile depending on map unit conditions. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_model_1_1_map_1_1_map}{Map}} \mbox{\hyperlink{class_controllers_1_1_tile_map_controller_a9a0f7b04e4570ee32100eccbd291ff52}{Unit\+Map}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Map of the world. Contains all map units and their conditions. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Controller of a Tilemap. Delegates between a Map, Tilemap and a Tile\+View Container class for tile textures. Is an updateable controlled by the Map\+Manager. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_controllers_1_1_tile_map_controller_aa8c81857359226ef3f7d24fcde144702}\label{class_controllers_1_1_tile_map_controller_aa8c81857359226ef3f7d24fcde144702}} 
@@ -48,18 +56,51 @@ Tilemap \mbox{\hyperlink{class_controllers_1_1_tile_map_controller_a1e7c8e8c1636
 \doxysubsubsection{\texorpdfstring{Init()}{Init()}}
 {\footnotesize\ttfamily void Controllers.\+Tile\+Map\+Controller.\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Initializes the \mbox{\hyperlink{class_controllers_1_1_tile_map_controller}{Tile\+Map\+Controller}}. Delegates the texture exchange between the Tilemap and the Tile\+Views under conditions set by the unit map. This code cannot be called from the constructor, because at the point of construction the Monobehaviours and Scriptable\+Data are not yet initialized. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Missing\+Reference\+Exception} & Thrown if the Tile\+Map, Tile\+Views or Unit\+Map are not set.\\
+\hline
+\end{DoxyExceptions}
 \mbox{\Hypertarget{class_controllers_1_1_tile_map_controller_a530f896214e2ab5da5bcc950af2d2e18}\label{class_controllers_1_1_tile_map_controller_a530f896214e2ab5da5bcc950af2d2e18}} 
 \index{Controllers.TileMapController@{Controllers.TileMapController}!TileMapPositionToGlobalPosition@{TileMapPositionToGlobalPosition}}
 \index{TileMapPositionToGlobalPosition@{TileMapPositionToGlobalPosition}!Controllers.TileMapController@{Controllers.TileMapController}}
 \doxysubsubsection{\texorpdfstring{TileMapPositionToGlobalPosition()}{TileMapPositionToGlobalPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Vector3 Controllers.\+Tile\+Map\+Controller.\+Tile\+Map\+Position\+To\+Global\+Position (\begin{DoxyParamCaption}\item[{Vector2}]{position }\end{DoxyParamCaption})}
 
+
+
+Converts a float position on the tilemap to a global position in the world space. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Vector2 position on the tilemap.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector3 position in the world space.
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_controllers_1_1_tile_map_controller_a567a4fb0a9c8421a3d1cbdf0b89515e3}\label{class_controllers_1_1_tile_map_controller_a567a4fb0a9c8421a3d1cbdf0b89515e3}} 
 \index{Controllers.TileMapController@{Controllers.TileMapController}!TileMapPositionToGlobalPosition@{TileMapPositionToGlobalPosition}}
 \index{TileMapPositionToGlobalPosition@{TileMapPositionToGlobalPosition}!Controllers.TileMapController@{Controllers.TileMapController}}
 \doxysubsubsection{\texorpdfstring{TileMapPositionToGlobalPosition()}{TileMapPositionToGlobalPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Vector3 Controllers.\+Tile\+Map\+Controller.\+Tile\+Map\+Position\+To\+Global\+Position (\begin{DoxyParamCaption}\item[{Vector2\+Int}]{position }\end{DoxyParamCaption})}
 
+
+
+Converts a int position on the tilemap to a global position in the world space. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Vector2 position on the tilemap.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector3 position in the world space.
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_controllers_1_1_tile_map_controller_a2335b71cc295b54851e8b6ed739de67b}\label{class_controllers_1_1_tile_map_controller_a2335b71cc295b54851e8b6ed739de67b}} 
 \index{Controllers.TileMapController@{Controllers.TileMapController}!Update@{Update}}
 \index{Update@{Update}!Controllers.TileMapController@{Controllers.TileMapController}}
@@ -68,7 +109,7 @@ Tilemap \mbox{\hyperlink{class_controllers_1_1_tile_map_controller_a1e7c8e8c1636
 
 
 
-Method to be called to update the object. 
+Calls the Update method of the Map. 
 
 
 
@@ -85,6 +126,23 @@ Implements \mbox{\hyperlink{interface_base_1_1_i_updatable_a1983d03de50becea9925
 
 
 
+Given a global position, returns the map unit at that position if possible and the position itself. If not, throws an Index\+Out\+Of\+Range\+Exception. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Global Position that is converted.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Map\+Unit and position on the tilemap as 0 based integer vector.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Index\+Out\+Of\+Range\+Exception} & Thrown if the position is out of bounds.\\
+\hline
+\end{DoxyExceptions}
+
+
 \doxysubsection{Property Documentation}
 \mbox{\Hypertarget{class_controllers_1_1_tile_map_controller_a1e7c8e8c163630e3241de4790e403411}\label{class_controllers_1_1_tile_map_controller_a1e7c8e8c163630e3241de4790e403411}} 
 \index{Controllers.TileMapController@{Controllers.TileMapController}!TileMap@{TileMap}}
@@ -92,17 +150,29 @@ Implements \mbox{\hyperlink{interface_base_1_1_i_updatable_a1983d03de50becea9925
 \doxysubsubsection{\texorpdfstring{TileMap}{TileMap}}
 {\footnotesize\ttfamily Tilemap Controllers.\+Tile\+Map\+Controller.\+Tile\+Map\hspace{0.3cm}{\ttfamily [get]}}
 
+
+
+Tilemap to which a map is displayed. 
+
 \mbox{\Hypertarget{class_controllers_1_1_tile_map_controller_a114e6d4550616e89cc8e35db31b6cd19}\label{class_controllers_1_1_tile_map_controller_a114e6d4550616e89cc8e35db31b6cd19}} 
 \index{Controllers.TileMapController@{Controllers.TileMapController}!TileViews@{TileViews}}
 \index{TileViews@{TileViews}!Controllers.TileMapController@{Controllers.TileMapController}}
 \doxysubsubsection{\texorpdfstring{TileViews}{TileViews}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_views_1_1_game_views_1_1_map_tile_views}{Map\+Tile\+Views}} Controllers.\+Tile\+Map\+Controller.\+Tile\+Views\hspace{0.3cm}{\ttfamily [get]}}
 
+
+
+Container class for tile textures. Decides on which texture to display on a tile depending on map unit conditions. 
+
 \mbox{\Hypertarget{class_controllers_1_1_tile_map_controller_a9a0f7b04e4570ee32100eccbd291ff52}\label{class_controllers_1_1_tile_map_controller_a9a0f7b04e4570ee32100eccbd291ff52}} 
 \index{Controllers.TileMapController@{Controllers.TileMapController}!UnitMap@{UnitMap}}
 \index{UnitMap@{UnitMap}!Controllers.TileMapController@{Controllers.TileMapController}}
 \doxysubsubsection{\texorpdfstring{UnitMap}{UnitMap}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_model_1_1_map_1_1_map}{Map}} Controllers.\+Tile\+Map\+Controller.\+Unit\+Map\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Map of the world. Contains all map units and their conditions. 
 
 
 

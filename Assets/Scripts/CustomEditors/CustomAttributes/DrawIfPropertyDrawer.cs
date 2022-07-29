@@ -5,6 +5,7 @@ using UnityEngine;
 namespace CustomEditors.CustomAttributes
 {
     /// <summary>
+    /// Property Drawer for the DrawIfAttribute
     /// Based on: https://forum.unity.com/threads/draw-a-field-only-if-a-condition-is-met.448855/
     /// </summary>
     [CustomPropertyDrawer(typeof(DrawIfAttribute))]

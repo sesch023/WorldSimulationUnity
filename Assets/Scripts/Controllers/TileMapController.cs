@@ -1,10 +1,7 @@
 ﻿using System;
 using Base;
-using Manager;
-using Model;
 using Model.Map;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
 using Views.GameViews;
 

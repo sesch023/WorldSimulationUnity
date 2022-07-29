@@ -1,20 +1,26 @@
 using Controllers;
-using Model;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
 namespace Manager
 {
+    /// <summary>
+    /// MapManager Singleton for controlling functions related to the map and its elements.
+    /// </summary>
     public sealed class MapManager : MonoBehaviour
     {
+        /// Instance of the MapManager.
         public static MapManager Instance { get; private set; }
 
+        /// Instance of the MapController.
         [field: SerializeField]
         public TileMapController MapController { get; private set; }
-
+        
         private MapManager(){}
         
-        void Awake()
+        /// <summary>
+        /// Enables the singleton with the current instance or destroys the game object if it already exists.
+        /// </summary>
+        private void Awake()
         {
             if (Instance == null)
             {
@@ -26,13 +32,17 @@ namespace Manager
             }
         }
         
-        // Start is called before the first frame update
+        /// <summary>
+        /// Initializes the MapManager.
+        /// </summary>
         void Start()
         {
             MapController.Init();
         }
 
-        // Update is called once per frame
+        /// <summary>
+        /// Updates the MapManager.
+        /// </summary>
         void Update()
         {
             MapController.Update();

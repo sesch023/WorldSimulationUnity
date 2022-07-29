@@ -1,9 +1,7 @@
 ﻿using Base;
-using Derelict.Model.Map;
 using Manager;
 using Model.Generators;
 using UnityEngine;
-using Utils.BaseUtils;
 using Views.GameViews;
 
 namespace Model.Map
