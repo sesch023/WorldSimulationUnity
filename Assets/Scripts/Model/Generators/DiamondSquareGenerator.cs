@@ -5,17 +5,26 @@ using Random = System.Random;
 
 namespace Model.Generators
 {
+	/// <summary>
+	/// DiamondSquareGenerator which generates a heightmap using the diamond-square algorithm.
+	/// </summary>
 	[Serializable]
     [CreateAssetMenu(fileName = "DiamondSquareGenerator", menuName = "ScriptableObjects/DiamondSquareGenerator", order = 1)]
     public class DiamondSquareGenerator : BaseGenerator
     {
+	    /// Seeds for the four corners of the map. If zero it will use the time.
 	    [SerializeField] 
-	    private float cornerSeed = 0;
+	    private float cornerSeed;
+	    /// Seeds of the random number generator. If zero it will use the time.
 	    [SerializeField] 
-	    private int randomSeed = 0;
+	    private int randomSeed;
+	    /// Roughness of the map.
 	    [SerializeField] 
 	    private float roughness = 1024;
-
+		
+	    /// <summary>
+	    /// Calculate new seeds if the random seeds were not set.
+	    /// </summary>
 	    private void OnEnable()
 	    {
 		    if (cornerSeed == 0)
@@ -29,6 +38,12 @@ namespace Model.Generators
 		    }
 	    }
 	    
+	    /// <summary>
+	    /// Generate a heightmap using the diamond-square algorithm. Then normalize the heightmap.
+	    /// </summary>
+	    /// <param name="sizeX">Width of the heightmap. Is limited to the next (power of 2) + 1.</param>
+	    /// <param name="sizeY">Height of the heightmap. Is limited to the next (power of 2) + 1.</param>
+	    /// <returns>2D Array of floats as generated elevation.</returns>
         public override float[,] GenerateElevation(int sizeX, int sizeY)
         {
 	        int length = LimitMapSizes(sizeX, sizeY).sizeX;
@@ -86,7 +101,15 @@ namespace Model.Generators
 			}
 			return NormalizeElevation(values, minHeight, maxHeight);
         }
-
+		
+	    /// <summary>
+	    /// Limits the size of the generated map. The diamond square algorithm is not able to generate maps with sizes
+	    /// that are not a (power of 2) + 1. This method ensures that the map size is a (power of 2) + 1 by taking the
+	    /// bigger of the two values and calculating the next (power of 2) + 1.
+	    /// </summary>
+	    /// <param name="sizeX">Desired width of the map.</param>
+	    /// <param name="sizeY">Desired height of the map.</param>
+	    /// <returns>Agreed on size of the map which takes the desired sizes in mind. Is always a (2^x)+1.</returns>
         public override (int sizeX, int sizeY) LimitMapSizes(int sizeX, int sizeY)
         {
 	        int bigger = Math.Max(sizeX, sizeY);

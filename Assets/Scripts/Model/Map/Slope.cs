@@ -5,15 +5,32 @@ using Utils.BaseUtils;
 
 namespace Model.Map
 {
+    /// <summary>
+    /// Finds a slope in a map or 2D array of floats.
+    /// </summary>
     public class Slope
     {
+        /// Start point of the slope.
         private Vector2Int _start;
+        /// Elevations of the map.
         private I2DArray<float> _elevations;
+        /// Momentum multiplier which changes the level of momentum the slope uses for passing local minimals.
         private float _momentumMultiplier;
+        /// Maximum momentum to use in a single step. 
         private float _maxMomentumFraction;
         
+        /// <summary>
+        /// Positions of the slope. Sorted from highest to lowest elevation.
+        /// </summary>
         public Vector2Int[] CalculatedSlope { get; private set; }
 
+        /// <summary>
+        /// Constructor for the slope.
+        /// </summary>
+        /// <param name="start">Start position of the slope.</param>
+        /// <param name="mapUnits">Map of MapUnits.</param>
+        /// <param name="momentumMultiplier">Momentum multiplier which changes the level of momentum the slope uses for passing local minimals.</param>
+        /// <param name="maxMomentumFraction">Maximum momentum to use in a single step.</param>
         public Slope(Vector2Int start, MapUnit[,] mapUnits, float momentumMultiplier = 1.0f,
             float maxMomentumFraction = 1.0f)
         {
@@ -21,13 +38,20 @@ namespace Model.Map
             Reset(start, view, momentumMultiplier, maxMomentumFraction);
         }
         
+        /// <summary>
+        /// Constructor for the slope.
+        /// </summary>
+        /// <param name="start">Start position of the slope.</param>
+        /// <param name="elevations">2d array of floats a elevations.</param>
+        /// <param name="momentumMultiplier">Momentum multiplier which changes the level of momentum the slope uses for passing local minimals.</param>
+        /// <param name="maxMomentumFraction">Maximum momentum to use in a single step.</param>
         public Slope(Vector2Int start, I2DArray<float> elevations, 
             float momentumMultiplier=1.0f, float maxMomentumFraction=1.0f)
         {
             Reset(start, elevations, momentumMultiplier, maxMomentumFraction);
         }
         
-        public void Reset(Vector2Int start, I2DArray<float> elevations, 
+        private void Reset(Vector2Int start, I2DArray<float> elevations, 
             float momentumMultiplier=1.0f, float maxMomentumFraction=1.0f)
         {
             _start = start;
@@ -38,17 +62,24 @@ namespace Model.Map
             CalculatedSlope = GetSlopeLine();
         }
 
+        /// <summary>
+        /// Context for the calculation of the slope.
+        /// </summary>
         private class SlopeCalculationContext
         {
-            public readonly List<Vector2Int> SlopeLine = new List<Vector2Int>();
+            public readonly List<Vector2Int> SlopeLine = new();
             public Vector2Int CurrentPos;
             public Vector2Int NextPos;
             public float NextElevation = float.PositiveInfinity;
             public float PreviousElevation = float.PositiveInfinity;
-            public float MomentumLeft = 0;
-            public int MomentumPopCounter = 0;
+            public float MomentumLeft;
+            public int MomentumPopCounter;
         }
         
+        /// <summary>
+        /// Calculates the slope line.
+        /// </summary>
+        /// <returns>Calculated slope line.</returns>
         private Vector2Int[] GetSlopeLine()
         {
             SlopeCalculationContext context = new SlopeCalculationContext();
@@ -58,25 +89,33 @@ namespace Model.Map
             
             do
             {
+                // Search for a new neighbor with the lowest elevation.
                 if (!FindNextNeighbor(context))
                     break;
 
                 context.CurrentPos = context.NextPos;
+                // Search for a new neighbor with lower elevation or pass it with momentum if enough left.
                 found = NextPointWithMomentum(context);
             } while (found);
             
+            // Remove all tiles that were reached by momentum.
             if(context.MomentumPopCounter > 0)
                 context.SlopeLine.RemoveRange(context.SlopeLine.Count - context.MomentumPopCounter, context.MomentumPopCounter);
             
             return context.SlopeLine.ToArray();
         }
 
+        /// <summary>
+        /// Checks if the next elevation is lower than the current one or if the slope has enough momentum to pass it.
+        /// </summary>
+        /// <param name="context">Context for the calculation.</param>
+        /// <returns>True, if it found a next possible point.</returns>
         private bool NextPointWithMomentum(SlopeCalculationContext context)
         {
             bool found = false;
             float momentumTerm = context.MomentumLeft * _maxMomentumFraction;
 
-            if ((context.NextElevation - context.MomentumLeft) <= context.PreviousElevation)
+            if ((context.NextElevation - momentumTerm) <= context.PreviousElevation)
             {
                 CalculateNewMomentum(context, momentumTerm);
 
@@ -88,8 +127,14 @@ namespace Model.Map
             return found;
         }
 
+        /// <summary>
+        /// Calculates the new momentum left.
+        /// </summary>
+        /// <param name="context">Context to calculate with.</param>
+        /// <param name="momentumTerm">Term of momentum used, that was calculated before.</param>
         private void CalculateNewMomentum(SlopeCalculationContext context, float momentumTerm)
         {
+            // Reset the momentum, if the next elevation is lower than the current one.
             if (context.NextElevation <= context.PreviousElevation)
             {
                 context.MomentumLeft += Mathf.Abs((float.IsPositiveInfinity(context.PreviousElevation))
@@ -105,6 +150,11 @@ namespace Model.Map
             }
         }
 
+        /// <summary>
+        /// Finds a nightbor with the lowest elevation, that was not visited yet and does not cross the slope.
+        /// </summary>
+        /// <param name="context">Context to calculate with.</param>
+        /// <returns>If a neighbor was found.</returns>
         private bool FindNextNeighbor(SlopeCalculationContext context)
         {
             bool foundNeighbor = false;

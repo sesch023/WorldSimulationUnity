@@ -4,10 +4,14 @@ using Random = System.Random;
 
 namespace Model.Generators
 {
+    /// <summary>
+    /// The PerlinGenerator is a MapGenerator that generates a map using Perlin noise.
+    /// </summary>
     [Serializable]
     [CreateAssetMenu(fileName = "PerlinGenerator", menuName = "ScriptableObjects/PerlinGenerator", order = 1)]
     public class PerlinGenerator : BaseGenerator
     {
+        /// Random Seed of the number generator. If zero it will use the time.
         [SerializeField] 
         private int randomSeed = 0;
         [SerializeField]
@@ -21,6 +25,9 @@ namespace Model.Generators
         
         private Vector2[] _offsets;
         
+        /// <summary>
+        /// Initializes the PerlinGenerator by creating the offsets array and the random number generator.
+        /// </summary>
         private void OnEnable()
         {
             if (randomSeed == 0)
@@ -37,6 +44,12 @@ namespace Model.Generators
             }
         }
         
+        /// <summary>
+        /// Generate a heightmap using perlin noise. Then normalize the heightmap.
+        /// </summary>
+        /// <param name="sizeX">Width of the heightmap.</param>
+        /// <param name="sizeY">Height of the heightmap.</param>
+        /// <returns>2D Array of floats as generated elevation.</returns>
         public override float[,] GenerateElevation(int sizeX, int sizeY)
         {
             (int sizeX, int sizeY) newSizes = LimitMapSizes(sizeX, sizeY);

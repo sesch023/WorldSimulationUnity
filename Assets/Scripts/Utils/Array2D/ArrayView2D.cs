@@ -33,6 +33,11 @@ namespace Utils.Array2D
             return _array.GetLength(dimension);
         }
         
+        public TReal[,] GetRealArray()
+        {
+            return _array;
+        }
+        
         public override string ToString()
         {
             return I2DArray<TView>.I2DArrayToString(this);

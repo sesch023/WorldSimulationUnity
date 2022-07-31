@@ -28,6 +28,11 @@
         {
             return _array.GetLength(dimension);
         }
+        
+        public TReal[,] GetRealArray()
+        {
+            return _array;
+        }
 
         public override string ToString()
         {
