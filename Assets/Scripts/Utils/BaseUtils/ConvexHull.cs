@@ -3,9 +3,19 @@ using UnityEngine;
 
 namespace Utils.BaseUtils
 {
-    // https://gist.github.com/dLopreiato/7fd142d0b9728518552188794b8a750c
+    /// <summary>
+    /// Class of calculating a convex hull of a list of points.
+    /// </summary>
     public static class ConvexHull
     {
+        /// <summary>
+        /// Calculates a convex hull of a list of points.
+        ///
+        /// https://gist.github.com/dLopreiato/7fd142d0b9728518552188794b8a750c
+        /// </summary>
+        /// <param name="points">Points to build a convex hull around.</param>
+        /// <param name="sortInPlace">Should be sorted in place?</param>
+        /// <returns>Convex hull of the given points.</returns>
         public static IList<Vector2> ComputeConvexHull(List<Vector2> points, bool sortInPlace = false)
         {
             if (!sortInPlace)

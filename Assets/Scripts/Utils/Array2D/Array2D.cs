@@ -1,5 +1,9 @@
 ﻿namespace Utils.Array2D
 {
+    /// <summary>
+    /// Basic 2d array implementation of the IArray2D interface.
+    /// </summary>
+    /// <typeparam name="TReal"></typeparam>
     public class Array2D<TReal> : I2DArray<TReal>
     {
         private readonly TReal[,] _array;

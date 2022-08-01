@@ -2,6 +2,7 @@
 
 namespace Utils.BaseUtils
 {
+    // https://stackoverflow.com/questions/12884600/how-to-calculate-simple-moving-average-faster-in-c
     public class MovingAverageLong
     {
         private readonly Queue<long> _samples = new Queue<long>();
@@ -16,7 +17,7 @@ namespace Utils.BaseUtils
         public decimal Average { get; private set; }
 
         /// <summary>
-        ///     Computes a new windowed average each time a new sample arrives
+        /// Computes a new windowed average each time a new sample arrives
         /// </summary>
         /// <param name="newSample"></param>
         public decimal ComputeAverage(long newSample)
