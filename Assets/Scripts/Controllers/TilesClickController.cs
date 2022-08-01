@@ -148,9 +148,9 @@ namespace Controllers {
         {
             (MapUnit unit, Vector2Int vec) unit = GetMapUnitAndPosition();
             var valleyDef = MapManager.Instance.MapController.UnitMap.GetTerrainGroup(unit.vec);
-            tileGroupView.tiles = valleyDef.group;
-            tileGroupViewExits.tiles = valleyDef.groupExits;
-            tileGroupViewBorder.tiles = valleyDef.groupBorder;
+            tileGroupView.Tiles = valleyDef.group;
+            tileGroupViewExits.Tiles = valleyDef.groupExits;
+            tileGroupViewBorder.Tiles = valleyDef.groupBorder;
             tileGroupViewBorder.Enable();
             tileGroupView.Enable();
             tileGroupViewExits.Enable();

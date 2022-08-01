@@ -8,9 +8,16 @@ using UnityEngine.Tilemaps;
 
 namespace Views.GameViews
 {
+    /// <summary>
+    /// The MapTileView is responsible for managing the appearance of tiles on the map. It decides which tile is
+    /// used for a map unit depending on the conditions it.
+    /// </summary>
     [CreateAssetMenu(fileName = "MapTiles", menuName = "ScriptableObjects/MapTiles", order = 1)]
     public class MapTileViews : ScriptableObject
     {
+        /// <summary>
+        /// Data to initializes a tile. Contains a sprite and color.
+        /// </summary>
         [Serializable]
         private struct TileData
         {
@@ -30,20 +37,26 @@ namespace Views.GameViews
             }
         }
 
+        /// Steps of heights to be used for the map.
         private List<float> _heightSteps = new();
 
+        /// Minimum height of the map.
         [field: SerializeField] 
         public float LowestHeight { get; } = -8000;
 
+        /// Maximum height of the map.
         [field: SerializeField] 
         public float HeighestHeight { get; } = 10000;
         
+        /// Steps between heights.
         [SerializeField] 
         private float heightStep = 1000;
 
+        /// Minimum darkness heighest elevation.
         [SerializeField]
         private float minHeightColor = 0.3f;
-
+        
+        /// Steps between darkness.
         private float _colorStep;
 
         private Tile[] TestTile { get; set; }
