@@ -53,7 +53,7 @@ namespace Model.Map
         /// </summary>
         public float AtmosphericPressure { get; }
 
-        public MapUnitMaterial Material { get; private set; } = new(1);
+        public MapUnitGroundMaterial GroundMaterial { get; private set; } = new();
         /// <summary>
         /// Position of the unit in the map with longitude, latitude and elevation.
         /// </summary>

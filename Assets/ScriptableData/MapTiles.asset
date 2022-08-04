@@ -12,13 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d00ebca27cf8f824191b73d9a2ea7099, type: 3}
   m_Name: MapTiles
   m_EditorClassIdentifier: 
-  lowestHeight: -8000
-  heighestHeight: 10000
   heightStep: 1000
   minHeightColor: 0.3
-  testTile1Data:
-    sprite: {fileID: 21300000, guid: 97b552bd75fb66b47b69ea3103bc97af, type: 3}
-    color: {r: 1, g: 1, b: 1, a: 1}
-  testTile2Data:
-    sprite: {fileID: 21300000, guid: 97b552bd75fb66b47b69ea3103bc97af, type: 3}
+  tileDefinitions:
+  - sprite: {fileID: 21300000, guid: 4967a0c7d64b8724394a9c17e6bb7f44, type: 3}
     color: {r: 1, g: 1, b: 1, a: 0}
+    materialType: 0
+  - sprite: {fileID: 21300000, guid: cb431c3a4461824409da89482fbb9dae, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 0}
+    materialType: 1
+  - sprite: {fileID: 21300000, guid: 261711fc0a6e7764fb05b2268e21de45, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 0}
+    materialType: 2
+  - sprite: {fileID: 21300000, guid: 9fd60384557047d4fa6f7a9dbdcdb7fa, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 0}
+    materialType: 3
+  - sprite: {fileID: 21300000, guid: a322d1171ee55f0479c23f7413e1f146, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 0}
+    materialType: 4
