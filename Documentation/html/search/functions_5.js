@@ -10,12 +10,13 @@ var searchData=
   ['getmapunitbyglobalposition_7',['GetMapUnitByGlobalPosition',['../class_controllers_1_1_tile_map_controller.html#aa8c81857359226ef3f7d24fcde144702',1,'Controllers::TileMapController']]],
   ['getpeak_8',['GetPeak',['../class_model_1_1_map_1_1_map.html#a2b18f9268cea5466e4bf914241fdfb7c',1,'Model::Map::Map']]],
   ['getpropertyheight_9',['GetPropertyHeight',['../class_custom_editors_1_1_custom_attributes_1_1_draw_if_property_drawer.html#a1a98ddb3818afbaf2c77060b0ab57e25',1,'CustomEditors::CustomAttributes::DrawIfPropertyDrawer']]],
-  ['getrealtypebyindex_10',['GetRealTypeByIndex',['../class_utils_1_1_array2_d_1_1_array_view2_d.html#ad9dbbc586baab6ba662864956e451106',1,'Utils::Array2D::ArrayView2D']]],
-  ['getslopeline_11',['GetSlopeLine',['../class_model_1_1_map_1_1_map.html#a1fc3854fe5d3ef303c184d3169b6b149',1,'Model::Map::Map']]],
-  ['getterraingroup_12',['GetTerrainGroup',['../class_model_1_1_map_1_1_map.html#ab47b7f6e1cccc8df871b0f14831be85b',1,'Model::Map::Map']]],
-  ['gettilebymapunit_13',['GetTileByMapUnit',['../class_views_1_1_game_views_1_1_map_tile_views.html#a66ded1aa53439ed2cda86393d0543e27',1,'Views::GameViews::MapTileViews']]],
-  ['gettilecoloroffsetbyelevation_14',['GetTileColorOffsetByElevation',['../class_views_1_1_game_views_1_1_map_tile_views.html#a464a23cd279bfc451cf1e12585c75bfc',1,'Views::GameViews::MapTileViews']]],
-  ['gettimecondition_15',['GetTimeCondition',['../class_base_1_1_tick_event.html#a50239285376b6ca2b98ab1bf9e2b479a',1,'Base.TickEvent.GetTimeCondition()'],['../class_base_1_1_tick_spaced_event.html#aa8d37b017dfce490a6684d2a8e611b22',1,'Base.TickSpacedEvent.GetTimeCondition()'],['../class_base_1_1_time_event.html#a91164360ffd860de0a692b24b21a1c1b',1,'Base.TimeEvent.GetTimeCondition()'],['../class_base_1_1_time_spaced_event.html#afa6790447907ed6be1bf96460e79cdd2',1,'Base.TimeSpacedEvent.GetTimeCondition()']]],
-  ['gettps_16',['GetTps',['../class_manager_1_1_verbose_time_manager.html#aece4f8cfd8406868d2705987929b314c',1,'Manager::VerboseTimeManager']]],
-  ['getvalley_17',['GetValley',['../class_model_1_1_map_1_1_map.html#a61bf9a5ff5d815c52c8923cbddececee',1,'Model::Map::Map']]]
+  ['getrealarray_10',['GetRealArray',['../class_utils_1_1_array2_d_1_1_array2_d.html#afc479c469bfa0a124215f71be81e352b',1,'Utils.Array2D.Array2D.GetRealArray()'],['../class_utils_1_1_array2_d_1_1_array_view2_d.html#abaebbe0a23eac1320b8dc302bbf433d4',1,'Utils.Array2D.ArrayView2D.GetRealArray()']]],
+  ['getrealtypebyindex_11',['GetRealTypeByIndex',['../class_utils_1_1_array2_d_1_1_array_view2_d.html#ad9dbbc586baab6ba662864956e451106',1,'Utils::Array2D::ArrayView2D']]],
+  ['getslopeline_12',['GetSlopeLine',['../class_model_1_1_map_1_1_map.html#a1fc3854fe5d3ef303c184d3169b6b149',1,'Model::Map::Map']]],
+  ['getterraingroup_13',['GetTerrainGroup',['../class_model_1_1_map_1_1_map.html#ab47b7f6e1cccc8df871b0f14831be85b',1,'Model::Map::Map']]],
+  ['gettilebymapunit_14',['GetTileByMapUnit',['../class_views_1_1_game_views_1_1_map_tile_views.html#a66ded1aa53439ed2cda86393d0543e27',1,'Views::GameViews::MapTileViews']]],
+  ['gettilecoloroffsetbyelevation_15',['GetTileColorOffsetByElevation',['../class_views_1_1_game_views_1_1_map_tile_views.html#a464a23cd279bfc451cf1e12585c75bfc',1,'Views::GameViews::MapTileViews']]],
+  ['gettimecondition_16',['GetTimeCondition',['../class_base_1_1_tick_event.html#a50239285376b6ca2b98ab1bf9e2b479a',1,'Base.TickEvent.GetTimeCondition()'],['../class_base_1_1_tick_spaced_event.html#aa8d37b017dfce490a6684d2a8e611b22',1,'Base.TickSpacedEvent.GetTimeCondition()'],['../class_base_1_1_time_event.html#a91164360ffd860de0a692b24b21a1c1b',1,'Base.TimeEvent.GetTimeCondition()'],['../class_base_1_1_time_spaced_event.html#afa6790447907ed6be1bf96460e79cdd2',1,'Base.TimeSpacedEvent.GetTimeCondition()']]],
+  ['gettps_17',['GetTps',['../class_manager_1_1_verbose_time_manager.html#aece4f8cfd8406868d2705987929b314c',1,'Manager::VerboseTimeManager']]],
+  ['getvalley_18',['GetValley',['../class_model_1_1_map_1_1_map.html#a61bf9a5ff5d815c52c8923cbddececee',1,'Model::Map::Map']]]
 ];

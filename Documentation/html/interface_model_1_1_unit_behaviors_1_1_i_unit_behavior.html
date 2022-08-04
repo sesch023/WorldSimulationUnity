@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>World Simulation Unity: Model.UnitBehaviors.IUnitBehavior Interface Reference</title>
+<title>WorldSimulationUnity: Model.UnitBehaviors.IUnitBehavior Interface Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,9 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">World Simulation Unity
+   <div id="projectname">WorldSimulationUnity
    </div>
-   <div id="projectbrief">World Simulation in Unity.</div>
+   <div id="projectbrief">Simulation of a world in unity.</div>
   </td>
  </tr>
  </tbody>
@@ -89,13 +89,16 @@ $(document).ready(function(){initNavTree('interface_model_1_1_unit_behaviors_1_1
   <div class="headertitle"><div class="title">Model.UnitBehaviors.IUnitBehavior Interface Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Interface for a unit behavior. A unit behavior changes the behavior of a unit and can be added under certain conditions.  
+ <a href="interface_model_1_1_unit_behaviors_1_1_i_unit_behavior.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Model.UnitBehaviors.IUnitBehavior:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="interface_model_1_1_unit_behaviors_1_1_i_unit_behavior.png" usemap="#Model.UnitBehaviors.IUnitBehavior_map" alt=""/>
   <map id="Model.UnitBehaviors.IUnitBehavior_map" name="Model.UnitBehaviors.IUnitBehavior_map">
-<area href="class_model_1_1_unit_behaviors_1_1_base_unit_behavior.html" alt="Model.UnitBehaviors.BaseUnitBehavior" shape="rect" coords="0,56,233,80"/>
+<area href="class_model_1_1_unit_behaviors_1_1_base_unit_behavior.html" title="Base class for all unit behaviors. A unit behavior changes the behavior of a unit and can be added un..." alt="Model.UnitBehaviors.BaseUnitBehavior" shape="rect" coords="0,56,233,80"/>
 <area href="class_model_1_1_unit_behaviors_1_1_test_unit_behavior.html" alt="Model.UnitBehaviors.TestUnitBehavior" shape="rect" coords="0,112,233,136"/>
   </map>
 </div></div>
@@ -103,11 +106,15 @@ Inheritance diagram for Model.UnitBehaviors.IUnitBehavior:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0a555e255e49e5804cff6d0aa82f5c0a"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_model_1_1_unit_behaviors_1_1_i_unit_behavior.html#a0a555e255e49e5804cff6d0aa82f5c0a">GetBehaviorDescription</a> ()</td></tr>
+<tr class="memdesc:a0a555e255e49e5804cff6d0aa82f5c0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a description of the behavior for display purposes.  <a href="interface_model_1_1_unit_behaviors_1_1_i_unit_behavior.html#a0a555e255e49e5804cff6d0aa82f5c0a">More...</a><br /></td></tr>
 <tr class="separator:a0a555e255e49e5804cff6d0aa82f5c0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a393a54f9af295b7c82de2082d07d64ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_model_1_1_unit_behaviors_1_1_i_unit_behavior.html#a393a54f9af295b7c82de2082d07d64ba">TriggerBehavior</a> ()</td></tr>
+<tr class="memdesc:a393a54f9af295b7c82de2082d07d64ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Triggers the behavior.  <a href="interface_model_1_1_unit_behaviors_1_1_i_unit_behavior.html#a393a54f9af295b7c82de2082d07d64ba">More...</a><br /></td></tr>
 <tr class="separator:a393a54f9af295b7c82de2082d07d64ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Interface for a unit behavior. A unit behavior changes the behavior of a unit and can be added under certain conditions. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a0a555e255e49e5804cff6d0aa82f5c0a" name="a0a555e255e49e5804cff6d0aa82f5c0a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0a555e255e49e5804cff6d0aa82f5c0a">&#9670;&nbsp;</a></span>GetBehaviorDescription()</h2>
 
@@ -122,6 +129,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Gets a description of the behavior for display purposes. </p>
+<dl class="section return"><dt>Returns</dt><dd>Description of the behavior.</dd></dl>
 
 <p>Implemented in <a class="el" href="class_model_1_1_unit_behaviors_1_1_base_unit_behavior.html#a8c1aa84c31b8a2d95fbac5530402dacf">Model.UnitBehaviors.BaseUnitBehavior</a>, and <a class="el" href="class_model_1_1_unit_behaviors_1_1_test_unit_behavior.html#a676760042a77e0ec73bcb7e669b3ed11">Model.UnitBehaviors.TestUnitBehavior</a>.</p>
 
@@ -141,6 +151,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Triggers the behavior. </p>
 
 <p>Implemented in <a class="el" href="class_model_1_1_unit_behaviors_1_1_base_unit_behavior.html#ac362faa788b3e4723f27e0d5d29c7ffd">Model.UnitBehaviors.BaseUnitBehavior</a>, and <a class="el" href="class_model_1_1_unit_behaviors_1_1_test_unit_behavior.html#ad42c0e6d645ed8cb1fb7a2abd8744858">Model.UnitBehaviors.TestUnitBehavior</a>.</p>
 

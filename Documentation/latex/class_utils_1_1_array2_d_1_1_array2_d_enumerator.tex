@@ -1,5 +1,10 @@
 \hypertarget{class_utils_1_1_array2_d_1_1_array2_d_enumerator}{}\doxysection{Utils.\+Array2\+D.\+Array2\+DEnumerator\texorpdfstring{$<$}{<} TReal\+Enum \texorpdfstring{$>$}{>} Class Template Reference}
 \label{class_utils_1_1_array2_d_1_1_array2_d_enumerator}\index{Utils.Array2D.Array2DEnumerator$<$ TRealEnum $>$@{Utils.Array2D.Array2DEnumerator$<$ TRealEnum $>$}}
+
+
+Enumerator for a 2D array.  
+
+
 Inheritance diagram for Utils.\+Array2\+D.\+Array2\+DEnumerator\texorpdfstring{$<$}{<} TReal\+Enum \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,38 +15,74 @@ Inheritance diagram for Utils.\+Array2\+D.\+Array2\+DEnumerator\texorpdfstring{$
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d_enumerator_a30d743242192d68fbbf89c0ae011d395}{Array2\+DEnumerator}} (TReal\+Enum\mbox{[},\mbox{]} array)
-\item 
+\begin{DoxyCompactList}\small\item\em Creates a new enumerator for a 2D array. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d_enumerator_a8ce21fee02a3cc89c40e10e3412f1bff}{Array2\+DEnumerator}} (\mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d}{Array2D}}$<$ TReal\+Enum $>$ array)
+\begin{DoxyCompactList}\small\item\em Creates a new enumerator for a \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d}{Array2D}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d_enumerator_a764ced38edc13ea2065297f47748a656}{Reset}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Resets the enumerator. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d_enumerator_a415bde1352fe37789cb2f8feaa02c8f9}{Dispose}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Disposes the enumerator. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{namespace_utils_1_1_array2_d_a8300a7ec296c8d49351305c80d8d85eb}{Enumeration\+Status2D}} \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d_enumerator_a9b9119b47834a5563e93931449437b78}{Move\+Next2D}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Moves the enumerator to the next element. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d_enumerator_a00ed68ae8ec14f934d0e2568305b0bb3}{Move\+Next}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Moves the enumerator to the next element. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 readonly TReal\+Enum\mbox{[},\mbox{]} \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d_enumerator_aee881790abe38c4893b4a9ee93e45834}{Array}}
-\item 
+\begin{DoxyCompactList}\small\item\em Reference to the 2D array. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d_enumerator_a1b7f2080052e2b89ef424a7d83ce716e}{CountX}} = -\/1
-\item 
+\begin{DoxyCompactList}\small\item\em Current position in first dimension. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d_enumerator_a5110fd847365ed0af3c120799ec3d30f}{CountY}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Current position in second dimension. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
 virtual TReal\+Enum \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d_enumerator_ab3ddf547c22088eb37900a0167618d25}{Current}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns the current value of the enumerator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Enumerator for a 2D array. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TReal\+Enum} & Internal Type of the 2D array.\\
+\hline
+\end{DoxyTemplParams}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_utils_1_1_array2_d_1_1_array2_d_enumerator_a30d743242192d68fbbf89c0ae011d395}\label{class_utils_1_1_array2_d_1_1_array2_d_enumerator_a30d743242192d68fbbf89c0ae011d395}} 
 \index{Utils.Array2D.Array2DEnumerator$<$ TRealEnum $>$@{Utils.Array2D.Array2DEnumerator$<$ TRealEnum $>$}!Array2DEnumerator@{Array2DEnumerator}}
 \index{Array2DEnumerator@{Array2DEnumerator}!Utils.Array2D.Array2DEnumerator$<$ TRealEnum $>$@{Utils.Array2D.Array2DEnumerator$<$ TRealEnum $>$}}
-\doxysubsubsection{\texorpdfstring{Array2DEnumerator()}{Array2DEnumerator()}}
+\doxysubsubsection{\texorpdfstring{Array2DEnumerator()}{Array2DEnumerator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d_enumerator}{Utils.\+Array2\+D.\+Array2\+DEnumerator}}$<$ TReal\+Enum $>$.\mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d_enumerator}{Array2\+DEnumerator}} (\begin{DoxyParamCaption}\item[{TReal\+Enum}]{array\mbox{[},\mbox{]} }\end{DoxyParamCaption})}
 
+
+
+Creates a new enumerator for a 2D array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & Reference to the 2d array.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_utils_1_1_array2_d_1_1_array2_d_enumerator_a8ce21fee02a3cc89c40e10e3412f1bff}\label{class_utils_1_1_array2_d_1_1_array2_d_enumerator_a8ce21fee02a3cc89c40e10e3412f1bff}} 
+\index{Utils.Array2D.Array2DEnumerator$<$ TRealEnum $>$@{Utils.Array2D.Array2DEnumerator$<$ TRealEnum $>$}!Array2DEnumerator@{Array2DEnumerator}}
+\index{Array2DEnumerator@{Array2DEnumerator}!Utils.Array2D.Array2DEnumerator$<$ TRealEnum $>$@{Utils.Array2D.Array2DEnumerator$<$ TRealEnum $>$}}
+\doxysubsubsection{\texorpdfstring{Array2DEnumerator()}{Array2DEnumerator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d_enumerator}{Utils.\+Array2\+D.\+Array2\+DEnumerator}}$<$ TReal\+Enum $>$.\mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d_enumerator}{Array2\+DEnumerator}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d}{Array2D}}$<$ TReal\+Enum $>$}]{array }\end{DoxyParamCaption})}
+
+
+
+Creates a new enumerator for a \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d}{Array2D}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & Reference to the \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d}{Array2D}}.\\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
@@ -51,23 +92,45 @@ virtual TReal\+Enum \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d_enume
 \doxysubsubsection{\texorpdfstring{Dispose()}{Dispose()}}
 {\footnotesize\ttfamily void \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d_enumerator}{Utils.\+Array2\+D.\+Array2\+DEnumerator}}$<$ TReal\+Enum $>$.Dispose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Disposes the enumerator. 
+
 \mbox{\Hypertarget{class_utils_1_1_array2_d_1_1_array2_d_enumerator_a00ed68ae8ec14f934d0e2568305b0bb3}\label{class_utils_1_1_array2_d_1_1_array2_d_enumerator_a00ed68ae8ec14f934d0e2568305b0bb3}} 
 \index{Utils.Array2D.Array2DEnumerator$<$ TRealEnum $>$@{Utils.Array2D.Array2DEnumerator$<$ TRealEnum $>$}!MoveNext@{MoveNext}}
 \index{MoveNext@{MoveNext}!Utils.Array2D.Array2DEnumerator$<$ TRealEnum $>$@{Utils.Array2D.Array2DEnumerator$<$ TRealEnum $>$}}
 \doxysubsubsection{\texorpdfstring{MoveNext()}{MoveNext()}}
 {\footnotesize\ttfamily bool \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d_enumerator}{Utils.\+Array2\+D.\+Array2\+DEnumerator}}$<$ TReal\+Enum $>$.Move\+Next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Moves the enumerator to the next element. 
+
+\begin{DoxyReturn}{Returns}
+False, if the enumerator has ended.
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_utils_1_1_array2_d_1_1_array2_d_enumerator_a9b9119b47834a5563e93931449437b78}\label{class_utils_1_1_array2_d_1_1_array2_d_enumerator_a9b9119b47834a5563e93931449437b78}} 
 \index{Utils.Array2D.Array2DEnumerator$<$ TRealEnum $>$@{Utils.Array2D.Array2DEnumerator$<$ TRealEnum $>$}!MoveNext2D@{MoveNext2D}}
 \index{MoveNext2D@{MoveNext2D}!Utils.Array2D.Array2DEnumerator$<$ TRealEnum $>$@{Utils.Array2D.Array2DEnumerator$<$ TRealEnum $>$}}
 \doxysubsubsection{\texorpdfstring{MoveNext2D()}{MoveNext2D()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{namespace_utils_1_1_array2_d_a8300a7ec296c8d49351305c80d8d85eb}{Enumeration\+Status2D}} \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d_enumerator}{Utils.\+Array2\+D.\+Array2\+DEnumerator}}$<$ TReal\+Enum $>$.Move\+Next2D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Moves the enumerator to the next element. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{namespace_utils_1_1_array2_d_a8300a7ec296c8d49351305c80d8d85eba10ac3d04253ef7e1ddc73e6091c0cd55}{Enumeration\+Status2\+D.\+Next}}\+: If the enumerator has moved to the next element. \mbox{\hyperlink{namespace_utils_1_1_array2_d_a8300a7ec296c8d49351305c80d8d85ebaa0df3feb0a6db9fd208ea67b51e68766}{Enumeration\+Status2\+D.\+Next\+Row}}\+: If the enumerator has moved to the next row. \mbox{\hyperlink{namespace_utils_1_1_array2_d_a8300a7ec296c8d49351305c80d8d85eba87557f11575c0ad78e4e28abedc13b6e}{Enumeration\+Status2\+D.\+End}}\+: If the enumerator has ended. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_utils_1_1_array2_d_1_1_array2_d_enumerator_a764ced38edc13ea2065297f47748a656}\label{class_utils_1_1_array2_d_1_1_array2_d_enumerator_a764ced38edc13ea2065297f47748a656}} 
 \index{Utils.Array2D.Array2DEnumerator$<$ TRealEnum $>$@{Utils.Array2D.Array2DEnumerator$<$ TRealEnum $>$}!Reset@{Reset}}
 \index{Reset@{Reset}!Utils.Array2D.Array2DEnumerator$<$ TRealEnum $>$@{Utils.Array2D.Array2DEnumerator$<$ TRealEnum $>$}}
 \doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
 {\footnotesize\ttfamily void \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d_enumerator}{Utils.\+Array2\+D.\+Array2\+DEnumerator}}$<$ TReal\+Enum $>$.Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Resets the enumerator. 
 
 
 
@@ -78,17 +141,29 @@ virtual TReal\+Enum \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d_enume
 \doxysubsubsection{\texorpdfstring{Array}{Array}}
 {\footnotesize\ttfamily readonly TReal\+Enum \mbox{[},\mbox{]} \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d_enumerator}{Utils.\+Array2\+D.\+Array2\+DEnumerator}}$<$ TReal\+Enum $>$.Array\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Reference to the 2D array. 
+
 \mbox{\Hypertarget{class_utils_1_1_array2_d_1_1_array2_d_enumerator_a1b7f2080052e2b89ef424a7d83ce716e}\label{class_utils_1_1_array2_d_1_1_array2_d_enumerator_a1b7f2080052e2b89ef424a7d83ce716e}} 
 \index{Utils.Array2D.Array2DEnumerator$<$ TRealEnum $>$@{Utils.Array2D.Array2DEnumerator$<$ TRealEnum $>$}!CountX@{CountX}}
 \index{CountX@{CountX}!Utils.Array2D.Array2DEnumerator$<$ TRealEnum $>$@{Utils.Array2D.Array2DEnumerator$<$ TRealEnum $>$}}
 \doxysubsubsection{\texorpdfstring{CountX}{CountX}}
 {\footnotesize\ttfamily int \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d_enumerator}{Utils.\+Array2\+D.\+Array2\+DEnumerator}}$<$ TReal\+Enum $>$.CountX = -\/1\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Current position in first dimension. 
+
 \mbox{\Hypertarget{class_utils_1_1_array2_d_1_1_array2_d_enumerator_a5110fd847365ed0af3c120799ec3d30f}\label{class_utils_1_1_array2_d_1_1_array2_d_enumerator_a5110fd847365ed0af3c120799ec3d30f}} 
 \index{Utils.Array2D.Array2DEnumerator$<$ TRealEnum $>$@{Utils.Array2D.Array2DEnumerator$<$ TRealEnum $>$}!CountY@{CountY}}
 \index{CountY@{CountY}!Utils.Array2D.Array2DEnumerator$<$ TRealEnum $>$@{Utils.Array2D.Array2DEnumerator$<$ TRealEnum $>$}}
 \doxysubsubsection{\texorpdfstring{CountY}{CountY}}
 {\footnotesize\ttfamily int \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d_enumerator}{Utils.\+Array2\+D.\+Array2\+DEnumerator}}$<$ TReal\+Enum $>$.CountY\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Current position in second dimension. 
 
 
 
@@ -99,6 +174,15 @@ virtual TReal\+Enum \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d_enume
 \doxysubsubsection{\texorpdfstring{Current}{Current}}
 {\footnotesize\ttfamily virtual TReal\+Enum \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d_enumerator}{Utils.\+Array2\+D.\+Array2\+DEnumerator}}$<$ TReal\+Enum $>$.Current\hspace{0.3cm}{\ttfamily [get]}}
 
+
+
+Returns the current value of the enumerator. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Invalid\+Operation\+Exception} & If the enumerator has ended.\\
+\hline
+\end{DoxyExceptions}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

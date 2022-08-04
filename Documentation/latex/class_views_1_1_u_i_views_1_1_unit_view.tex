@@ -1,5 +1,10 @@
 \hypertarget{class_views_1_1_u_i_views_1_1_unit_view}{}\doxysection{Views.\+UIViews.\+Unit\+View Class Reference}
 \label{class_views_1_1_u_i_views_1_1_unit_view}\index{Views.UIViews.UnitView@{Views.UIViews.UnitView}}
+
+
+UIView for displaying information of a tile.  
+
+
 Inheritance diagram for Views.\+UIViews.\+Unit\+View\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,10 +15,13 @@ Inheritance diagram for Views.\+UIViews.\+Unit\+View\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_views_1_1_u_i_views_1_1_unit_view_a6e5f316351ef6a9a6d3a0864296f9223}{Disable\+Unit}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Disables the unit view and hides all its information. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_views_1_1_u_i_views_1_1_unit_view_ad35802f91159bfc48c64207875460a9e}{Enable\+Unit}} ((\mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}} unit, Vector2\+Int vec) shown\+Unit)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Enables the view with a given map unit and position of it. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+UIView for displaying information of a tile. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_views_1_1_u_i_views_1_1_unit_view_a6e5f316351ef6a9a6d3a0864296f9223}\label{class_views_1_1_u_i_views_1_1_unit_view_a6e5f316351ef6a9a6d3a0864296f9223}} 
@@ -22,12 +30,25 @@ void \mbox{\hyperlink{class_views_1_1_u_i_views_1_1_unit_view_ad35802f91159bfc48
 \doxysubsubsection{\texorpdfstring{DisableUnit()}{DisableUnit()}}
 {\footnotesize\ttfamily void Views.\+UIViews.\+Unit\+View.\+Disable\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Disables the unit view and hides all its information. 
+
 \mbox{\Hypertarget{class_views_1_1_u_i_views_1_1_unit_view_ad35802f91159bfc48c64207875460a9e}\label{class_views_1_1_u_i_views_1_1_unit_view_ad35802f91159bfc48c64207875460a9e}} 
 \index{Views.UIViews.UnitView@{Views.UIViews.UnitView}!EnableUnit@{EnableUnit}}
 \index{EnableUnit@{EnableUnit}!Views.UIViews.UnitView@{Views.UIViews.UnitView}}
 \doxysubsubsection{\texorpdfstring{EnableUnit()}{EnableUnit()}}
 {\footnotesize\ttfamily void Views.\+UIViews.\+Unit\+View.\+Enable\+Unit (\begin{DoxyParamCaption}\item[{(\mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}} unit, Vector2\+Int vec)}]{shown\+Unit }\end{DoxyParamCaption})}
 
+
+
+Enables the view with a given map unit and position of it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shown\+Unit} & Map\+Unit and Position of Map\+Unit to display the information of.\\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

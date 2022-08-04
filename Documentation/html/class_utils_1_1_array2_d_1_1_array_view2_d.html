@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>World Simulation Unity: Utils.Array2D.ArrayView2D&lt; TReal, TView &gt; Class Template Reference</title>
+<title>WorldSimulationUnity: Utils.Array2D.ArrayView2D&lt; TReal, TView &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,9 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">World Simulation Unity
+   <div id="projectname">WorldSimulationUnity
    </div>
-   <div id="projectbrief">World Simulation in Unity.</div>
+   <div id="projectbrief">Simulation of a world in unity.</div>
   </td>
  </tr>
  </tbody>
@@ -90,6 +90,9 @@ $(document).ready(function(){initNavTree('class_utils_1_1_array2_d_1_1_array_vie
   <div class="headertitle"><div class="title">Utils.Array2D.ArrayView2D&lt; TReal, TView &gt; Class Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Creates a view on a 2d array with a type TReal and provides a view of it with type TView using the provided accessor.  
+ <a href="class_utils_1_1_array2_d_1_1_array_view2_d.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Utils.Array2D.ArrayView2D&lt; TReal, TView &gt;:</div>
 <div class="dyncontent">
@@ -103,31 +106,54 @@ Inheritance diagram for Utils.Array2D.ArrayView2D&lt; TReal, TView &gt;:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aae6750d11df7459ef951f406a3ef3b92"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils_1_1_array2_d_1_1_array_view2_d.html#aae6750d11df7459ef951f406a3ef3b92">ArrayView2D</a> (TReal[,] array, Func&lt; TReal, TView &gt; accessor)</td></tr>
+<tr class="memdesc:aae6750d11df7459ef951f406a3ef3b92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a view on a 2d array with a type TReal and provides a view of it with type TView using the provided accessor.  <a href="class_utils_1_1_array2_d_1_1_array_view2_d.html#aae6750d11df7459ef951f406a3ef3b92">More...</a><br /></td></tr>
 <tr class="separator:aae6750d11df7459ef951f406a3ef3b92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9dbbc586baab6ba662864956e451106"><td class="memItemLeft" align="right" valign="top">TReal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils_1_1_array2_d_1_1_array_view2_d.html#ad9dbbc586baab6ba662864956e451106">GetRealTypeByIndex</a> (int indexX, int indexY)</td></tr>
+<tr class="memdesc:ad9dbbc586baab6ba662864956e451106"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value at the given index in the array.  <a href="class_utils_1_1_array2_d_1_1_array_view2_d.html#ad9dbbc586baab6ba662864956e451106">More...</a><br /></td></tr>
 <tr class="separator:ad9dbbc586baab6ba662864956e451106"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2df246cd5b3af1ed35003341c5b164d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_utils_1_1_array2_d_1_1_i2_d_enumerator.html">I2DEnumerator</a>&lt; TView &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils_1_1_array2_d_1_1_array_view2_d.html#ab2df246cd5b3af1ed35003341c5b164d">Get2DEnumerator</a> ()</td></tr>
+<tr class="memdesc:ab2df246cd5b3af1ed35003341c5b164d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a 2d enumerator for the array.  <a href="class_utils_1_1_array2_d_1_1_array_view2_d.html#ab2df246cd5b3af1ed35003341c5b164d">More...</a><br /></td></tr>
 <tr class="separator:ab2df246cd5b3af1ed35003341c5b164d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1636bc5a31290d274c4f325032a5e916"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils_1_1_array2_d_1_1_array_view2_d.html#a1636bc5a31290d274c4f325032a5e916">GetLength</a> (int dimension)</td></tr>
+<tr class="memdesc:a1636bc5a31290d274c4f325032a5e916"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get length of the array in given dimension.  <a href="class_utils_1_1_array2_d_1_1_array_view2_d.html#a1636bc5a31290d274c4f325032a5e916">More...</a><br /></td></tr>
 <tr class="separator:a1636bc5a31290d274c4f325032a5e916"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abaebbe0a23eac1320b8dc302bbf433d4"><td class="memItemLeft" align="right" valign="top">TReal[,]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils_1_1_array2_d_1_1_array_view2_d.html#abaebbe0a23eac1320b8dc302bbf433d4">GetRealArray</a> ()</td></tr>
+<tr class="memdesc:abaebbe0a23eac1320b8dc302bbf433d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the internal array.  <a href="class_utils_1_1_array2_d_1_1_array_view2_d.html#abaebbe0a23eac1320b8dc302bbf433d4">More...</a><br /></td></tr>
+<tr class="separator:abaebbe0a23eac1320b8dc302bbf433d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb6c81d11c4787133417a88475fdfcb2"><td class="memItemLeft" align="right" valign="top">override string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils_1_1_array2_d_1_1_array_view2_d.html#aeb6c81d11c4787133417a88475fdfcb2">ToString</a> ()</td></tr>
+<tr class="memdesc:aeb6c81d11c4787133417a88475fdfcb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a string representation of the array.  <a href="class_utils_1_1_array2_d_1_1_array_view2_d.html#aeb6c81d11c4787133417a88475fdfcb2">More...</a><br /></td></tr>
 <tr class="separator:aeb6c81d11c4787133417a88475fdfcb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
+<tr class="memitem:a8b86b2db8f609cdeb21c6e72efe1d80a"><td class="memItemLeft" align="right" valign="top">Func&lt; TReal, TView &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils_1_1_array2_d_1_1_array_view2_d.html#a8b86b2db8f609cdeb21c6e72efe1d80a">Accessor</a><code> [get]</code></td></tr>
+<tr class="memdesc:a8b86b2db8f609cdeb21c6e72efe1d80a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accessor to convert a TReal to a TView.  <a href="class_utils_1_1_array2_d_1_1_array_view2_d.html#a8b86b2db8f609cdeb21c6e72efe1d80a">More...</a><br /></td></tr>
+<tr class="separator:a8b86b2db8f609cdeb21c6e72efe1d80a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab65cd3b42b1ac259296be15574af3c31"><td class="memItemLeft" align="right" valign="top">TView&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils_1_1_array2_d_1_1_array_view2_d.html#ab65cd3b42b1ac259296be15574af3c31">this[int indexX, int indexY]</a><code> [get]</code></td></tr>
+<tr class="memdesc:ab65cd3b42b1ac259296be15574af3c31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value at the given index in the array using the accessor.  <a href="class_utils_1_1_array2_d_1_1_array_view2_d.html#ab65cd3b42b1ac259296be15574af3c31">More...</a><br /></td></tr>
 <tr class="separator:ab65cd3b42b1ac259296be15574af3c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header properties_interface_utils_1_1_array2_d_1_1_i2_d_array"><td colspan="2" onclick="javascript:toggleInherit('properties_interface_utils_1_1_array2_d_1_1_i2_d_array')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="interface_utils_1_1_array2_d_1_1_i2_d_array.html">Utils.Array2D.I2DArray&lt; TView &gt;</a></td></tr>
 <tr class="memitem:a97efec09fc38e3c7045ecd61032df25d inherit properties_interface_utils_1_1_array2_d_1_1_i2_d_array"><td class="memItemLeft" align="right" valign="top">TReal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_utils_1_1_array2_d_1_1_i2_d_array.html#a97efec09fc38e3c7045ecd61032df25d">this[int x, int y]</a><code> [get]</code></td></tr>
+<tr class="memdesc:a97efec09fc38e3c7045ecd61032df25d inherit properties_interface_utils_1_1_array2_d_1_1_i2_d_array"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value at the given position.  <a href="interface_utils_1_1_array2_d_1_1_i2_d_array.html#a97efec09fc38e3c7045ecd61032df25d">More...</a><br /></td></tr>
 <tr class="separator:a97efec09fc38e3c7045ecd61032df25d inherit properties_interface_utils_1_1_array2_d_1_1_i2_d_array"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_static_methods_interface_utils_1_1_array2_d_1_1_i2_d_array"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_interface_utils_1_1_array2_d_1_1_i2_d_array')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="interface_utils_1_1_array2_d_1_1_i2_d_array.html">Utils.Array2D.I2DArray&lt; TView &gt;</a></td></tr>
 <tr class="memitem:a3b0ab9e7b877df967fea7213c342ae00 inherit pub_static_methods_interface_utils_1_1_array2_d_1_1_i2_d_array"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_utils_1_1_array2_d_1_1_i2_d_array.html#a3b0ab9e7b877df967fea7213c342ae00">I2DArrayToString</a> (<a class="el" href="interface_utils_1_1_array2_d_1_1_i2_d_array.html">I2DArray</a>&lt; TReal &gt; array)</td></tr>
+<tr class="memdesc:a3b0ab9e7b877df967fea7213c342ae00 inherit pub_static_methods_interface_utils_1_1_array2_d_1_1_i2_d_array"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds a string from a I2DArray.  <a href="interface_utils_1_1_array2_d_1_1_i2_d_array.html#a3b0ab9e7b877df967fea7213c342ae00">More...</a><br /></td></tr>
 <tr class="separator:a3b0ab9e7b877df967fea7213c342ae00 inherit pub_static_methods_interface_utils_1_1_array2_d_1_1_i2_d_array"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Creates a view on a 2d array with a type TReal and provides a view of it with type TView using the provided accessor. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TReal</td><td>Real type of the array.</td></tr>
+    <tr><td class="paramname">TView</td><td>View type of the array.</td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aae6750d11df7459ef951f406a3ef3b92" name="aae6750d11df7459ef951f406a3ef3b92"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aae6750d11df7459ef951f406a3ef3b92">&#9670;&nbsp;</a></span>ArrayView2D()</h2>
 
@@ -154,6 +180,15 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Creates a view on a 2d array with a type TReal and provides a view of it with type TView using the provided accessor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">array</td><td>Internal array.</td></tr>
+    <tr><td class="paramname">accessor</td><td>Accessor to convert a TReal to a TView.</td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -172,6 +207,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Creates a 2d enumerator for the array. </p>
+<dl class="section return"><dt>Returns</dt><dd>2d enumerator for the array.</dd></dl>
+
 </div>
 </div>
 <a id="a1636bc5a31290d274c4f325032a5e916" name="a1636bc5a31290d274c4f325032a5e916"></a>
@@ -189,6 +227,35 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Get length of the array in given dimension. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dimension</td><td>Either 0 (outer) or 1 (inner).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Length of the given dimension.</dd></dl>
+
+</div>
+</div>
+<a id="abaebbe0a23eac1320b8dc302bbf433d4" name="abaebbe0a23eac1320b8dc302bbf433d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abaebbe0a23eac1320b8dc302bbf433d4">&#9670;&nbsp;</a></span>GetRealArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TReal[,] <a class="el" href="class_utils_1_1_array2_d_1_1_array_view2_d.html">Utils.Array2D.ArrayView2D</a>&lt; TReal, TView &gt;.GetRealArray </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the internal array. </p>
+<dl class="section return"><dt>Returns</dt><dd>Internal array.</dd></dl>
 
 </div>
 </div>
@@ -218,6 +285,16 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns the value at the given index in the array. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">indexX</td><td>Outer dimension.</td></tr>
+    <tr><td class="paramname">indexY</td><td>Inner dimension.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Value at the given index.</dd></dl>
+
 </div>
 </div>
 <a id="aeb6c81d11c4787133417a88475fdfcb2" name="aeb6c81d11c4787133417a88475fdfcb2"></a>
@@ -235,9 +312,36 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Creates a string representation of the array. </p>
+<dl class="section return"><dt>Returns</dt><dd>String representation of the array.</dd></dl>
+
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
+<a id="a8b86b2db8f609cdeb21c6e72efe1d80a" name="a8b86b2db8f609cdeb21c6e72efe1d80a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b86b2db8f609cdeb21c6e72efe1d80a">&#9670;&nbsp;</a></span>Accessor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Func&lt;TReal, TView&gt; <a class="el" href="class_utils_1_1_array2_d_1_1_array_view2_d.html">Utils.Array2D.ArrayView2D</a>&lt; TReal, TView &gt;.Accessor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Accessor to convert a TReal to a TView. </p>
+
+</div>
+</div>
 <a id="ab65cd3b42b1ac259296be15574af3c31" name="ab65cd3b42b1ac259296be15574af3c31"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab65cd3b42b1ac259296be15574af3c31">&#9670;&nbsp;</a></span>this[int indexX, int indexY]</h2>
 
@@ -257,6 +361,16 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the value at the given index in the array using the accessor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">indexX</td><td>Outer dimension.</td></tr>
+    <tr><td class="paramname">indexY</td><td>Inner dimension.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Converted value at the given index.</dd></dl>
 
 </div>
 </div>

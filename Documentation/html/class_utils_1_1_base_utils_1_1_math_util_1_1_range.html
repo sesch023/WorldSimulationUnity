@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>World Simulation Unity: Utils.BaseUtils.MathUtil.Range&lt; T &gt; Class Template Reference</title>
+<title>WorldSimulationUnity: Utils.BaseUtils.MathUtil.Range&lt; T &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,9 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">World Simulation Unity
+   <div id="projectname">WorldSimulationUnity
    </div>
-   <div id="projectbrief">World Simulation in Unity.</div>
+   <div id="projectbrief">Simulation of a world in unity.</div>
   </td>
  </tr>
  </tbody>
@@ -89,15 +89,37 @@ $(document).ready(function(){initNavTree('class_utils_1_1_base_utils_1_1_math_ut
   <div class="headertitle"><div class="title">Utils.BaseUtils.MathUtil.Range&lt; T &gt; Class Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Defines a range of values and can check if a value is inside the range.  
+ <a href="class_utils_1_1_base_utils_1_1_math_util_1_1_range.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a3ce3d4a8bd85f140efac5f63ae18848d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils_1_1_base_utils_1_1_math_util_1_1_range.html#a3ce3d4a8bd85f140efac5f63ae18848d">Range</a> (T start, T end)</td></tr>
+<tr class="memdesc:a3ce3d4a8bd85f140efac5f63ae18848d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition of the range.  <a href="class_utils_1_1_base_utils_1_1_math_util_1_1_range.html#a3ce3d4a8bd85f140efac5f63ae18848d">More...</a><br /></td></tr>
 <tr class="separator:a3ce3d4a8bd85f140efac5f63ae18848d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a258e73cd7d8a64028ad2d32e1f512272"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utils_1_1_base_utils_1_1_math_util_1_1_range.html#a258e73cd7d8a64028ad2d32e1f512272">InRange</a> (T check)</td></tr>
+<tr class="memdesc:a258e73cd7d8a64028ad2d32e1f512272"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given value is in the range.  <a href="class_utils_1_1_base_utils_1_1_math_util_1_1_range.html#a258e73cd7d8a64028ad2d32e1f512272">More...</a><br /></td></tr>
 <tr class="separator:a258e73cd7d8a64028ad2d32e1f512272"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Defines a range of values and can check if a value is inside the range. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Type which implements IComparable.</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="typeconstraint">
+<dl><dt><b>Type Constraints</b></dt><dd>
+<table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>IComparable</em></td><td>&#160;</td></tr>
+<tr><td valign="top"><em>T</em></td><td>&#160;:</td><td valign="top"><em>IComparable&lt;T&gt;</em></td><td>&#160;</td></tr>
+</table>
+</dd>
+</dl>
+</div>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3ce3d4a8bd85f140efac5f63ae18848d" name="a3ce3d4a8bd85f140efac5f63ae18848d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3ce3d4a8bd85f140efac5f63ae18848d">&#9670;&nbsp;</a></span>Range()</h2>
 
@@ -124,6 +146,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition of the range. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start</td><td>Start of the range (inclusive).</td></tr>
+    <tr><td class="paramname">end</td><td>End of the range (inclusive).</td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -142,6 +173,15 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Checks if the given value is in the range. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">check</td><td>Value to check.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True, if the value is in the range.</dd></dl>
 
 </div>
 </div>

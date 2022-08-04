@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>World Simulation Unity: Model.Map.Slope Class Reference</title>
+<title>WorldSimulationUnity: Model.Map.Slope Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,9 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">World Simulation Unity
+   <div id="projectname">WorldSimulationUnity
    </div>
-   <div id="projectbrief">World Simulation in Unity.</div>
+   <div id="projectbrief">Simulation of a world in unity.</div>
   </td>
  </tr>
  </tbody>
@@ -91,22 +91,28 @@ $(document).ready(function(){initNavTree('class_model_1_1_map_1_1_slope.html',''
   <div class="headertitle"><div class="title">Model.Map.Slope Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Finds a slope in a map or 2D array of floats.  
+ <a href="class_model_1_1_map_1_1_slope.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a6dfaca2a04c3c5cc0889d24da7e460db"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_slope.html#a6dfaca2a04c3c5cc0889d24da7e460db">Slope</a> (Vector2Int start, <a class="el" href="class_model_1_1_map_1_1_map_unit.html">MapUnit</a>[,] mapUnits, float momentumMultiplier=1.0f, float maxMomentumFraction=1.0f)</td></tr>
+<tr class="memdesc:a6dfaca2a04c3c5cc0889d24da7e460db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the slope.  <a href="class_model_1_1_map_1_1_slope.html#a6dfaca2a04c3c5cc0889d24da7e460db">More...</a><br /></td></tr>
 <tr class="separator:a6dfaca2a04c3c5cc0889d24da7e460db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac00cd232f77993a6125c355a67bcc6ea"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_slope.html#ac00cd232f77993a6125c355a67bcc6ea">Slope</a> (Vector2Int start, <a class="el" href="interface_utils_1_1_array2_d_1_1_i2_d_array.html">I2DArray</a>&lt; float &gt; elevations, float momentumMultiplier=1.0f, float maxMomentumFraction=1.0f)</td></tr>
+<tr class="memdesc:ac00cd232f77993a6125c355a67bcc6ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the slope.  <a href="class_model_1_1_map_1_1_slope.html#ac00cd232f77993a6125c355a67bcc6ea">More...</a><br /></td></tr>
 <tr class="separator:ac00cd232f77993a6125c355a67bcc6ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad204120b552e60d26b066cf42f50e39b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_slope.html#ad204120b552e60d26b066cf42f50e39b">Reset</a> (Vector2Int start, <a class="el" href="interface_utils_1_1_array2_d_1_1_i2_d_array.html">I2DArray</a>&lt; float &gt; elevations, float momentumMultiplier=1.0f, float maxMomentumFraction=1.0f)</td></tr>
-<tr class="separator:ad204120b552e60d26b066cf42f50e39b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a287bc45c66860f869425a56205e77d90"><td class="memItemLeft" align="right" valign="top">Vector2Int[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_slope.html#a287bc45c66860f869425a56205e77d90">CalculatedSlope</a><code> [get]</code></td></tr>
+<tr class="memdesc:a287bc45c66860f869425a56205e77d90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Positions of the slope. Sorted from highest to lowest elevation.  <a href="class_model_1_1_map_1_1_slope.html#a287bc45c66860f869425a56205e77d90">More...</a><br /></td></tr>
 <tr class="separator:a287bc45c66860f869425a56205e77d90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Finds a slope in a map or 2D array of floats. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a6dfaca2a04c3c5cc0889d24da7e460db" name="a6dfaca2a04c3c5cc0889d24da7e460db"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6dfaca2a04c3c5cc0889d24da7e460db">&#9670;&nbsp;</a></span>Slope() <span class="overload">[1/2]</span></h2>
 
@@ -144,6 +150,17 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Constructor for the slope. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start</td><td>Start position of the slope.</td></tr>
+    <tr><td class="paramname">mapUnits</td><td><a class="el" href="class_model_1_1_map_1_1_map.html" title="Map in the Game. It represents the entire world.">Map</a> of MapUnits.</td></tr>
+    <tr><td class="paramname">momentumMultiplier</td><td>Momentum multiplier which changes the level of momentum the slope uses for passing local minimals.</td></tr>
+    <tr><td class="paramname">maxMomentumFraction</td><td>Maximum momentum to use in a single step.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -185,46 +202,16 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="ad204120b552e60d26b066cf42f50e39b" name="ad204120b552e60d26b066cf42f50e39b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad204120b552e60d26b066cf42f50e39b">&#9670;&nbsp;</a></span>Reset()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Model.Map.Slope.Reset </td>
-          <td>(</td>
-          <td class="paramtype">Vector2Int&#160;</td>
-          <td class="paramname"><em>start</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="interface_utils_1_1_array2_d_1_1_i2_d_array.html">I2DArray</a>&lt; float &gt;&#160;</td>
-          <td class="paramname"><em>elevations</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>momentumMultiplier</em> = <code>1.0f</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>maxMomentumFraction</em> = <code>1.0f</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Constructor for the slope. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start</td><td>Start position of the slope.</td></tr>
+    <tr><td class="paramname">elevations</td><td>2d array of floats a elevations.</td></tr>
+    <tr><td class="paramname">momentumMultiplier</td><td>Momentum multiplier which changes the level of momentum the slope uses for passing local minimals.</td></tr>
+    <tr><td class="paramname">maxMomentumFraction</td><td>Maximum momentum to use in a single step.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -248,6 +235,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Positions of the slope. Sorted from highest to lowest elevation. </p>
 
 </div>
 </div>

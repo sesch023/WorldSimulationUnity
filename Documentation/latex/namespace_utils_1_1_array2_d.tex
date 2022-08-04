@@ -1,24 +1,29 @@
 \hypertarget{namespace_utils_1_1_array2_d}{}\doxysection{Utils.\+Array2D Namespace Reference}
 \label{namespace_utils_1_1_array2_d}\index{Utils.Array2D@{Utils.Array2D}}
+
+
+Namespace for views on two dimensional arrays.  
+
+
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d}{Array2D}}
-\item 
+\begin{DoxyCompactList}\small\item\em Basic 2d array implementation of the IArray2D interface. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d_enumerator}{Array2\+DEnumerator}}
-\item 
+\begin{DoxyCompactList}\small\item\em Enumerator for a 2D array. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array_view2_d}{Array\+View2D}}
-\item 
+\begin{DoxyCompactList}\small\item\em Creates a view on a 2d array with a type TReal and provides a view of it with type TView using the provided accessor. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array_view2_d_enumerator}{Array\+View2\+DEnumerator}}
-\item 
+\begin{DoxyCompactList}\small\item\em Creates a enumerator on a 2D array view. \end{DoxyCompactList}\item 
 interface \mbox{\hyperlink{interface_utils_1_1_array2_d_1_1_i2_d_array}{I2\+DArray}}
-\item 
+\begin{DoxyCompactList}\small\item\em Interface for a 2D array. \end{DoxyCompactList}\item 
 interface \mbox{\hyperlink{interface_utils_1_1_array2_d_1_1_i2_d_enumerable}{I2\+DEnumerable}}
-\item 
+\begin{DoxyCompactList}\small\item\em Interface for a 2d enumerable. \end{DoxyCompactList}\item 
 interface \mbox{\hyperlink{interface_utils_1_1_array2_d_1_1_i2_d_enumerator}{I2\+DEnumerator}}
-\item 
+\begin{DoxyCompactList}\small\item\em Interface for a 2d enumerator. \end{DoxyCompactList}\item 
 interface \mbox{\hyperlink{interface_utils_1_1_array2_d_1_1_i_fixed_dimensional}{IFixed\+Dimensional}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Interface for data structures with a fixed dimensional size. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
@@ -26,8 +31,11 @@ enum \mbox{\hyperlink{namespace_utils_1_1_array2_d_a8300a7ec296c8d49351305c80d8d
 , \mbox{\hyperlink{namespace_utils_1_1_array2_d_a8300a7ec296c8d49351305c80d8d85eba10ac3d04253ef7e1ddc73e6091c0cd55}{Next}} = 1
 , \mbox{\hyperlink{namespace_utils_1_1_array2_d_a8300a7ec296c8d49351305c80d8d85ebaa0df3feb0a6db9fd208ea67b51e68766}{Next\+Row}} = 2
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Status of a 2d enumerator. End\+: Enumerator has ended. Next\+: Next element is available. Next\+Row\+: Next element is available and the row has changed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Namespace for views on two dimensional arrays. 
 
 \doxysubsection{Enumeration Type Documentation}
 \mbox{\Hypertarget{namespace_utils_1_1_array2_d_a8300a7ec296c8d49351305c80d8d85eb}\label{namespace_utils_1_1_array2_d_a8300a7ec296c8d49351305c80d8d85eb}} 
@@ -35,6 +43,10 @@ enum \mbox{\hyperlink{namespace_utils_1_1_array2_d_a8300a7ec296c8d49351305c80d8d
 \index{EnumerationStatus2D@{EnumerationStatus2D}!Utils.Array2D@{Utils.Array2D}}
 \doxysubsubsection{\texorpdfstring{EnumerationStatus2D}{EnumerationStatus2D}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_utils_1_1_array2_d_a8300a7ec296c8d49351305c80d8d85eb}{Utils.\+Array2\+D.\+Enumeration\+Status2D}}}
+
+
+
+Status of a 2d enumerator. End\+: Enumerator has ended. Next\+: Next element is available. Next\+Row\+: Next element is available and the row has changed. 
 
 \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{End@{End}!Utils.Array2D@{Utils.Array2D}}\index{Utils.Array2D@{Utils.Array2D}!End@{End}}}\mbox{\Hypertarget{namespace_utils_1_1_array2_d_a8300a7ec296c8d49351305c80d8d85eba87557f11575c0ad78e4e28abedc13b6e}\label{namespace_utils_1_1_array2_d_a8300a7ec296c8d49351305c80d8d85eba87557f11575c0ad78e4e28abedc13b6e}} 

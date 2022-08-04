@@ -1,5 +1,10 @@
 \hypertarget{class_model_1_1_generators_1_1_base_generator}{}\doxysection{Model.\+Generators.\+Base\+Generator Class Reference}
 \label{class_model_1_1_generators_1_1_base_generator}\index{Model.Generators.BaseGenerator@{Model.Generators.BaseGenerator}}
+
+
+Abstract base class for all generators. Implements the elevation normalization and a default implementation of the Limit\+Map\+Sizes method, which is used to limit the size of the generated map depending on the generator\textquotesingle{}s algorithm and the given parameters.  
+
+
 Inheritance diagram for Model.\+Generators.\+Base\+Generator\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,27 +15,30 @@ Inheritance diagram for Model.\+Generators.\+Base\+Generator\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 abstract float\mbox{[},\mbox{]} \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_aeca80ef876e5d28fa65da494a1202035}{Generate\+Elevation}} (int \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_a83b4d43f35fdec982ee1710597d04a81}{sizeX}}, int sizeY)
-\item 
+\begin{DoxyCompactList}\small\item\em Abstract method for generating the map as a 2D array of floats. \end{DoxyCompactList}\item 
 virtual int int sizeY \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_a387835d6be15ca3158d9d187bafd96f3}{Limit\+Map\+Sizes}} (int \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_a83b4d43f35fdec982ee1710597d04a81}{sizeX}}, int sizeY)
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 virtual int \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_a83b4d43f35fdec982ee1710597d04a81}{sizeX}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Limits the size of the generated map depending on the generator\textquotesingle{}s algorithm and the given parameters. The default implementation just returns the given size. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static float\mbox{[},\mbox{]} \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_a06c17e7b3a9fd858204a4f751aedb72f}{Normalize\+Elevation}} (float\mbox{[},\mbox{]} elevation, float min, float max)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Normalizes the elevation of the map to the given min and max values. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 float \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_a24987a0d93975f2be88ad8f7140979dc}{max\+Height}} = 10000
-\item 
+\begin{DoxyCompactList}\small\item\em Max elevation of the map. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_a998d9e992c1d7cc4caa2231e66f7e76a}{min\+Height}} = -\/8000
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Min elevation of the map. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Abstract base class for all generators. Implements the elevation normalization and a default implementation of the Limit\+Map\+Sizes method, which is used to limit the size of the generated map depending on the generator\textquotesingle{}s algorithm and the given parameters. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_model_1_1_generators_1_1_base_generator_aeca80ef876e5d28fa65da494a1202035}\label{class_model_1_1_generators_1_1_base_generator_aeca80ef876e5d28fa65da494a1202035}} 
@@ -39,6 +47,20 @@ float \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_a998d9e992c
 \doxysubsubsection{\texorpdfstring{GenerateElevation()}{GenerateElevation()}}
 {\footnotesize\ttfamily abstract float\mbox{[},\mbox{]} Model.\+Generators.\+Base\+Generator.\+Generate\+Elevation (\begin{DoxyParamCaption}\item[{int}]{sizeX,  }\item[{int}]{sizeY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
+
+
+Abstract method for generating the map as a 2D array of floats. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sizeX} & Width of the \mbox{\hyperlink{namespace_model_1_1_map}{Map}}.\\
+\hline
+{\em sizeY} & Height of the \mbox{\hyperlink{namespace_model_1_1_map}{Map}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+2D Array of floats as generated elevation.
+\end{DoxyReturn}
 
 
 Implements \mbox{\hyperlink{interface_model_1_1_generators_1_1_i_generator_ac98be778bcd8726b7e0eb87d0a3db849}{Model.\+Generators.\+IGenerator}}.
@@ -65,6 +87,22 @@ Implements \mbox{\hyperlink{interface_model_1_1_generators_1_1_i_generator_a4578
 
 
 
+Normalizes the elevation of the map to the given min and max values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elevation} & 2D array of floats as elevation.\\
+\hline
+{\em min} & Minimum new value after normalization.\\
+\hline
+{\em max} & Maximum new value after normalization.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Normalized 2D array of floats.
+\end{DoxyReturn}
+
+
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{class_model_1_1_generators_1_1_base_generator_a24987a0d93975f2be88ad8f7140979dc}\label{class_model_1_1_generators_1_1_base_generator_a24987a0d93975f2be88ad8f7140979dc}} 
 \index{Model.Generators.BaseGenerator@{Model.Generators.BaseGenerator}!maxHeight@{maxHeight}}
@@ -72,11 +110,19 @@ Implements \mbox{\hyperlink{interface_model_1_1_generators_1_1_i_generator_a4578
 \doxysubsubsection{\texorpdfstring{maxHeight}{maxHeight}}
 {\footnotesize\ttfamily float Model.\+Generators.\+Base\+Generator.\+max\+Height = 10000\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Max elevation of the map. 
+
 \mbox{\Hypertarget{class_model_1_1_generators_1_1_base_generator_a998d9e992c1d7cc4caa2231e66f7e76a}\label{class_model_1_1_generators_1_1_base_generator_a998d9e992c1d7cc4caa2231e66f7e76a}} 
 \index{Model.Generators.BaseGenerator@{Model.Generators.BaseGenerator}!minHeight@{minHeight}}
 \index{minHeight@{minHeight}!Model.Generators.BaseGenerator@{Model.Generators.BaseGenerator}}
 \doxysubsubsection{\texorpdfstring{minHeight}{minHeight}}
 {\footnotesize\ttfamily float Model.\+Generators.\+Base\+Generator.\+min\+Height = -\/8000\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Min elevation of the map. 
 
 \mbox{\Hypertarget{class_model_1_1_generators_1_1_base_generator_a83b4d43f35fdec982ee1710597d04a81}\label{class_model_1_1_generators_1_1_base_generator_a83b4d43f35fdec982ee1710597d04a81}} 
 \index{Model.Generators.BaseGenerator@{Model.Generators.BaseGenerator}!sizeX@{sizeX}}
@@ -84,6 +130,20 @@ Implements \mbox{\hyperlink{interface_model_1_1_generators_1_1_i_generator_a4578
 \doxysubsubsection{\texorpdfstring{sizeX}{sizeX}}
 {\footnotesize\ttfamily virtual int Model.\+Generators.\+Base\+Generator.\+sizeX}
 
+
+
+Limits the size of the generated map depending on the generator\textquotesingle{}s algorithm and the given parameters. The default implementation just returns the given size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sizeX} & Desired width of the map.\\
+\hline
+{\em sizeY} & Desired height of the map.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Agreed on size of the map which takes the desired sizes in mind.
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

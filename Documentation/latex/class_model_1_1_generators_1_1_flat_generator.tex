@@ -1,5 +1,10 @@
 \hypertarget{class_model_1_1_generators_1_1_flat_generator}{}\doxysection{Model.\+Generators.\+Flat\+Generator Class Reference}
 \label{class_model_1_1_generators_1_1_flat_generator}\index{Model.Generators.FlatGenerator@{Model.Generators.FlatGenerator}}
+
+
+The \mbox{\hyperlink{class_model_1_1_generators_1_1_flat_generator}{Flat\+Generator}} is a generator that generates a flat map.  
+
+
 Inheritance diagram for Model.\+Generators.\+Flat\+Generator\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,9 +15,12 @@ Inheritance diagram for Model.\+Generators.\+Flat\+Generator\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 override float\mbox{[},\mbox{]} \mbox{\hyperlink{class_model_1_1_generators_1_1_flat_generator_acd7abf488625318444806938551457c8}{Generate\+Elevation}} (int \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_a83b4d43f35fdec982ee1710597d04a81}{sizeX}}, int sizeY)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns a flat map. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_model_1_1_generators_1_1_flat_generator}{Flat\+Generator}} is a generator that generates a flat map. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_model_1_1_generators_1_1_flat_generator_acd7abf488625318444806938551457c8}\label{class_model_1_1_generators_1_1_flat_generator_acd7abf488625318444806938551457c8}} 
@@ -21,6 +29,20 @@ override float\mbox{[},\mbox{]} \mbox{\hyperlink{class_model_1_1_generators_1_1_
 \doxysubsubsection{\texorpdfstring{GenerateElevation()}{GenerateElevation()}}
 {\footnotesize\ttfamily override float\mbox{[},\mbox{]} Model.\+Generators.\+Flat\+Generator.\+Generate\+Elevation (\begin{DoxyParamCaption}\item[{int}]{sizeX,  }\item[{int}]{sizeY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
+
+
+Returns a flat map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sizeX} & Width of the \mbox{\hyperlink{namespace_model_1_1_map}{Map}}.\\
+\hline
+{\em sizeY} & Height of the \mbox{\hyperlink{namespace_model_1_1_map}{Map}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A flat 2D map of elevations.
+\end{DoxyReturn}
 
 
 Implements \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_aeca80ef876e5d28fa65da494a1202035}{Model.\+Generators.\+Base\+Generator}}.

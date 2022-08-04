@@ -1,5 +1,10 @@
 \hypertarget{class_utils_1_1_array2_d_1_1_array2_d}{}\doxysection{Utils.\+Array2\+D.\+Array2D\texorpdfstring{$<$}{<} TReal \texorpdfstring{$>$}{>} Class Template Reference}
 \label{class_utils_1_1_array2_d_1_1_array2_d}\index{Utils.Array2D.Array2D$<$ TReal $>$@{Utils.Array2D.Array2D$<$ TReal $>$}}
+
+
+Basic 2d array implementation of the IArray2D interface.  
+
+
 Inheritance diagram for Utils.\+Array2\+D.\+Array2D\texorpdfstring{$<$}{<} TReal \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,21 +15,33 @@ Inheritance diagram for Utils.\+Array2\+D.\+Array2D\texorpdfstring{$<$}{<} TReal
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d_a24c491f7e440e36a9c699f2332cdc9ac}{Array2D}} (TReal\mbox{[},\mbox{]} array)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor of \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d}{Array2D}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d_a203a869fac2eb65a763da3b502de8d49}{Add}} (int x, int y, TReal value)
-\item 
+\begin{DoxyCompactList}\small\item\em Adds a value to the array at the given position. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{interface_utils_1_1_array2_d_1_1_i2_d_enumerator}{I2\+DEnumerator}}$<$ TReal $>$ \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d_a8bd0c1dec0ffafa48cda86ff625e4f93}{Get2\+DEnumerator}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get 2D Enumerator of the array. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d_ae82d7a3651db2c41b86d38ab604bdce3}{Get\+Length}} (int dimension)
-\item 
+\begin{DoxyCompactList}\small\item\em Get length of the array in given dimension. \end{DoxyCompactList}\item 
+TReal\mbox{[},\mbox{]} \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d_afc479c469bfa0a124215f71be81e352b}{Get\+Real\+Array}} ()
+\begin{DoxyCompactList}\small\item\em Returns the internal array. \end{DoxyCompactList}\item 
 override string \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d_a0af5d6fca20085979a008909ed4dc709}{To\+String}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Creates a string representation of the array. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
 TReal \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d_a471bebaa2af89449301c23cb0113649b}{this\mbox{[}int index\+X, int index\+Y\mbox{]}}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns a value at the given position. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Basic 2d array implementation of the IArray2D interface. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TReal} & \\
+\hline
+\end{DoxyTemplParams}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -36,6 +53,15 @@ TReal \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d_a471bebaa2af8944930
 
 
 
+Constructor of \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d}{Array2D}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & The internal Array.\\
+\hline
+\end{DoxyParams}
+
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_utils_1_1_array2_d_1_1_array2_d_a203a869fac2eb65a763da3b502de8d49}\label{class_utils_1_1_array2_d_1_1_array2_d_a203a869fac2eb65a763da3b502de8d49}} 
 \index{Utils.Array2D.Array2D$<$ TReal $>$@{Utils.Array2D.Array2D$<$ TReal $>$}!Add@{Add}}
@@ -43,12 +69,32 @@ TReal \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d_a471bebaa2af8944930
 \doxysubsubsection{\texorpdfstring{Add()}{Add()}}
 {\footnotesize\ttfamily void \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d}{Utils.\+Array2\+D.\+Array2D}}$<$ TReal $>$.Add (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{TReal}]{value }\end{DoxyParamCaption})}
 
+
+
+Adds a value to the array at the given position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Position in first dimension.\\
+\hline
+{\em y} & Position in second dimension.\\
+\hline
+{\em value} & Value at the given position.\\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_utils_1_1_array2_d_1_1_array2_d_a8bd0c1dec0ffafa48cda86ff625e4f93}\label{class_utils_1_1_array2_d_1_1_array2_d_a8bd0c1dec0ffafa48cda86ff625e4f93}} 
 \index{Utils.Array2D.Array2D$<$ TReal $>$@{Utils.Array2D.Array2D$<$ TReal $>$}!Get2DEnumerator@{Get2DEnumerator}}
 \index{Get2DEnumerator@{Get2DEnumerator}!Utils.Array2D.Array2D$<$ TReal $>$@{Utils.Array2D.Array2D$<$ TReal $>$}}
 \doxysubsubsection{\texorpdfstring{Get2DEnumerator()}{Get2DEnumerator()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{interface_utils_1_1_array2_d_1_1_i2_d_enumerator}{I2\+DEnumerator}}$<$ TReal $>$ \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d}{Utils.\+Array2\+D.\+Array2D}}$<$ TReal $>$.Get2\+DEnumerator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Get 2D Enumerator of the array. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_utils_1_1_array2_d_1_1_array2_d_ae82d7a3651db2c41b86d38ab604bdce3}\label{class_utils_1_1_array2_d_1_1_array2_d_ae82d7a3651db2c41b86d38ab604bdce3}} 
 \index{Utils.Array2D.Array2D$<$ TReal $>$@{Utils.Array2D.Array2D$<$ TReal $>$}!GetLength@{GetLength}}
 \index{GetLength@{GetLength}!Utils.Array2D.Array2D$<$ TReal $>$@{Utils.Array2D.Array2D$<$ TReal $>$}}
@@ -57,14 +103,46 @@ TReal \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d_a471bebaa2af8944930
 
 
 
+Get length of the array in given dimension. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dimension} & Either 0 (outer) or 1 (inner).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Length of the given dimension.
+\end{DoxyReturn}
+
+
 Implements \mbox{\hyperlink{interface_utils_1_1_array2_d_1_1_i_fixed_dimensional_a0295a956d29e4c00b44d94de7f503b92}{Utils.\+Array2\+D.\+IFixed\+Dimensional}}.
 
+\mbox{\Hypertarget{class_utils_1_1_array2_d_1_1_array2_d_afc479c469bfa0a124215f71be81e352b}\label{class_utils_1_1_array2_d_1_1_array2_d_afc479c469bfa0a124215f71be81e352b}} 
+\index{Utils.Array2D.Array2D$<$ TReal $>$@{Utils.Array2D.Array2D$<$ TReal $>$}!GetRealArray@{GetRealArray}}
+\index{GetRealArray@{GetRealArray}!Utils.Array2D.Array2D$<$ TReal $>$@{Utils.Array2D.Array2D$<$ TReal $>$}}
+\doxysubsubsection{\texorpdfstring{GetRealArray()}{GetRealArray()}}
+{\footnotesize\ttfamily TReal\mbox{[},\mbox{]} \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d}{Utils.\+Array2\+D.\+Array2D}}$<$ TReal $>$.Get\+Real\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the internal array. 
+
+\begin{DoxyReturn}{Returns}
+Internal array.
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_utils_1_1_array2_d_1_1_array2_d_a0af5d6fca20085979a008909ed4dc709}\label{class_utils_1_1_array2_d_1_1_array2_d_a0af5d6fca20085979a008909ed4dc709}} 
 \index{Utils.Array2D.Array2D$<$ TReal $>$@{Utils.Array2D.Array2D$<$ TReal $>$}!ToString@{ToString}}
 \index{ToString@{ToString}!Utils.Array2D.Array2D$<$ TReal $>$@{Utils.Array2D.Array2D$<$ TReal $>$}}
 \doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
 {\footnotesize\ttfamily override string \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d}{Utils.\+Array2\+D.\+Array2D}}$<$ TReal $>$.To\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Creates a string representation of the array. 
+
+\begin{DoxyReturn}{Returns}
+String representation of the array.
+\end{DoxyReturn}
 
 
 \doxysubsection{Property Documentation}
@@ -74,6 +152,17 @@ Implements \mbox{\hyperlink{interface_utils_1_1_array2_d_1_1_i_fixed_dimensional
 \doxysubsubsection{\texorpdfstring{this[int indexX, int indexY]}{this[int indexX, int indexY]}}
 {\footnotesize\ttfamily TReal \mbox{\hyperlink{class_utils_1_1_array2_d_1_1_array2_d}{Utils.\+Array2\+D.\+Array2D}}$<$ TReal $>$.this\mbox{[}int indexX, int indexY\mbox{]}\hspace{0.3cm}{\ttfamily [get]}}
 
+
+
+Returns a value at the given position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em indexX} & Position in first dimension.\\
+\hline
+{\em indexY} & Position in second dimension.\\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

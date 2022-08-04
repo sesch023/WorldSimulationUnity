@@ -1,5 +1,10 @@
 \hypertarget{class_model_1_1_unit_behaviors_1_1_base_unit_behavior}{}\doxysection{Model.\+Unit\+Behaviors.\+Base\+Unit\+Behavior Class Reference}
 \label{class_model_1_1_unit_behaviors_1_1_base_unit_behavior}\index{Model.UnitBehaviors.BaseUnitBehavior@{Model.UnitBehaviors.BaseUnitBehavior}}
+
+
+\mbox{\hyperlink{namespace_base}{Base}} class for all unit behaviors. A unit behavior changes the behavior of a unit and can be added under certain conditions. The behavior is triggered in the update method.  
+
+
 Inheritance diagram for Model.\+Unit\+Behaviors.\+Base\+Unit\+Behavior\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,12 +15,15 @@ Inheritance diagram for Model.\+Unit\+Behaviors.\+Base\+Unit\+Behavior\+:\begin{
 \begin{DoxyCompactItemize}
 \item 
 abstract string \mbox{\hyperlink{class_model_1_1_unit_behaviors_1_1_base_unit_behavior_a8c1aa84c31b8a2d95fbac5530402dacf}{Get\+Behavior\+Description}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Gets a description of the behavior for display purposes. \end{DoxyCompactList}\item 
 abstract void \mbox{\hyperlink{class_model_1_1_unit_behaviors_1_1_base_unit_behavior_ac362faa788b3e4723f27e0d5d29c7ffd}{Trigger\+Behavior}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Triggers the behavior. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_model_1_1_unit_behaviors_1_1_base_unit_behavior_a100f2330dcd46b4462f2a8bd8aeedd49}{Update}} ()
-\begin{DoxyCompactList}\small\item\em Method to be called to update the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Updates the behavior. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{namespace_base}{Base}} class for all unit behaviors. A unit behavior changes the behavior of a unit and can be added under certain conditions. The behavior is triggered in the update method. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_model_1_1_unit_behaviors_1_1_base_unit_behavior_a8c1aa84c31b8a2d95fbac5530402dacf}\label{class_model_1_1_unit_behaviors_1_1_base_unit_behavior_a8c1aa84c31b8a2d95fbac5530402dacf}} 
@@ -24,6 +32,13 @@ virtual void \mbox{\hyperlink{class_model_1_1_unit_behaviors_1_1_base_unit_behav
 \doxysubsubsection{\texorpdfstring{GetBehaviorDescription()}{GetBehaviorDescription()}}
 {\footnotesize\ttfamily abstract string Model.\+Unit\+Behaviors.\+Base\+Unit\+Behavior.\+Get\+Behavior\+Description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
+
+
+Gets a description of the behavior for display purposes. 
+
+\begin{DoxyReturn}{Returns}
+Description of the behavior.
+\end{DoxyReturn}
 
 
 Implements \mbox{\hyperlink{interface_model_1_1_unit_behaviors_1_1_i_unit_behavior_a0a555e255e49e5804cff6d0aa82f5c0a}{Model.\+Unit\+Behaviors.\+IUnit\+Behavior}}.
@@ -37,6 +52,10 @@ Implemented in \mbox{\hyperlink{class_model_1_1_unit_behaviors_1_1_test_unit_beh
 \index{TriggerBehavior@{TriggerBehavior}!Model.UnitBehaviors.BaseUnitBehavior@{Model.UnitBehaviors.BaseUnitBehavior}}
 \doxysubsubsection{\texorpdfstring{TriggerBehavior()}{TriggerBehavior()}}
 {\footnotesize\ttfamily abstract void Model.\+Unit\+Behaviors.\+Base\+Unit\+Behavior.\+Trigger\+Behavior (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Triggers the behavior. 
 
 
 
@@ -54,7 +73,7 @@ Implemented in \mbox{\hyperlink{class_model_1_1_unit_behaviors_1_1_test_unit_beh
 
 
 
-Method to be called to update the object. 
+Updates the behavior. 
 
 
 

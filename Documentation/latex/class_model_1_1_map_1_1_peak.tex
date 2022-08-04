@@ -1,5 +1,10 @@
 \hypertarget{class_model_1_1_map_1_1_peak}{}\doxysection{Model.\+Map.\+Peak Class Reference}
 \label{class_model_1_1_map_1_1_peak}\index{Model.Map.Peak@{Model.Map.Peak}}
+
+
+Finds and defines a peak in a map or 2D array of floats.  
+
+
 Inheritance diagram for Model.\+Map.\+Peak\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,52 +14,103 @@ Inheritance diagram for Model.\+Map.\+Peak\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_model_1_1_map_1_1_peak_ac529b9273fc45f5d7d3a9083cad6f00e}{Peak}} (Vector2\+Int start, \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}}\mbox{[},\mbox{]} map\+Units)
-\item 
-\mbox{\hyperlink{class_model_1_1_map_1_1_peak_a2c5e6cdb9d5f938f5ed26e6b70b2404e}{Peak}} (Vector2\+Int start, \mbox{\hyperlink{interface_utils_1_1_array2_d_1_1_i2_d_array}{I2\+DArray}}$<$ float $>$ map\+Units)
-\item 
-\mbox{\hyperlink{class_model_1_1_map_1_1_peak_ab8f99d1bc20cd98cd24be5f420914d4b}{Peak}} (Vector2\+Int start, \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}}\mbox{[},\mbox{]} map\+Units, float elevation)
-\item 
-\mbox{\hyperlink{class_model_1_1_map_1_1_peak_a690f1861e571de54a002d853bfaf711c}{Peak}} (Vector2\+Int start, \mbox{\hyperlink{interface_utils_1_1_array2_d_1_1_i2_d_array}{I2\+DArray}}$<$ float $>$ map\+Units, float elevation)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_model_1_1_map_1_1_peak_a6ed8a249a765827983173b421fdeb63d}{Peak}} (Vector2\+Int start, \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}}\mbox{[},\mbox{]} elevations)
+\begin{DoxyCompactList}\small\item\em Finds a peak in a map. Takes the elevation of the start position as minimum elevation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_model_1_1_map_1_1_peak_a45457a88f716c5cc404fe81cf753cbe8}{Peak}} (Vector2\+Int start, \mbox{\hyperlink{interface_utils_1_1_array2_d_1_1_i2_d_array}{I2\+DArray}}$<$ float $>$ elevations)
+\begin{DoxyCompactList}\small\item\em Finds a peak in a 2D array of float elevations. Takes the elevation of the start position as minimum elevation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_model_1_1_map_1_1_peak_a5eb49d9691a4b0d819be46b3a632729a}{Peak}} (Vector2\+Int start, \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}}\mbox{[},\mbox{]} elevations, float min\+Elevation)
+\begin{DoxyCompactList}\small\item\em Finds a peak in a map. Starts at the start point. Takes the given elevation as minimum elevation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_model_1_1_map_1_1_peak_aefc37c2d3e8e5bc7497245b6ec95ba6b}{Peak}} (Vector2\+Int start, \mbox{\hyperlink{interface_utils_1_1_array2_d_1_1_i2_d_array}{I2\+DArray}}$<$ float $>$ elevations, float min\+Elevation)
+\begin{DoxyCompactList}\small\item\em Finds a peak in a 2D array of float elevations. Starts at the start point. Takes the given elevation as minimum elevation. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 override bool \mbox{\hyperlink{class_model_1_1_map_1_1_peak_a890e92e84e27ecb5831227c5e6b49d0f}{Elevation\+Condition}} (Vector2\+Int position, float elevation)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Evaluates if the given position is part of the peak. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
 override float \mbox{\hyperlink{class_model_1_1_map_1_1_peak_ab35ca91686d43e1aa311b444e008507d}{Exit\+Elevation\+Start}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Start value of the exits elevation. Is updated with each closer exit found. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
+\doxysubsection{Detailed Description}
+Finds and defines a peak in a map or 2D array of floats. 
+
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_model_1_1_map_1_1_peak_ac529b9273fc45f5d7d3a9083cad6f00e}\label{class_model_1_1_map_1_1_peak_ac529b9273fc45f5d7d3a9083cad6f00e}} 
+\mbox{\Hypertarget{class_model_1_1_map_1_1_peak_a6ed8a249a765827983173b421fdeb63d}\label{class_model_1_1_map_1_1_peak_a6ed8a249a765827983173b421fdeb63d}} 
 \index{Model.Map.Peak@{Model.Map.Peak}!Peak@{Peak}}
 \index{Peak@{Peak}!Model.Map.Peak@{Model.Map.Peak}}
 \doxysubsubsection{\texorpdfstring{Peak()}{Peak()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
-{\footnotesize\ttfamily Model.\+Map.\+Peak.\+Peak (\begin{DoxyParamCaption}\item[{Vector2\+Int}]{start,  }\item[{\mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}}}]{map\+Units\mbox{[},\mbox{]} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Model.\+Map.\+Peak.\+Peak (\begin{DoxyParamCaption}\item[{Vector2\+Int}]{start,  }\item[{\mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}}}]{elevations\mbox{[},\mbox{]} }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_model_1_1_map_1_1_peak_a2c5e6cdb9d5f938f5ed26e6b70b2404e}\label{class_model_1_1_map_1_1_peak_a2c5e6cdb9d5f938f5ed26e6b70b2404e}} 
+
+
+Finds a peak in a map. Takes the elevation of the start position as minimum elevation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Start point in the map.\\
+\hline
+{\em elevations} & \mbox{\hyperlink{class_model_1_1_map_1_1_map}{Map}} of Map\+Units.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_1_1_map_1_1_peak_a45457a88f716c5cc404fe81cf753cbe8}\label{class_model_1_1_map_1_1_peak_a45457a88f716c5cc404fe81cf753cbe8}} 
 \index{Model.Map.Peak@{Model.Map.Peak}!Peak@{Peak}}
 \index{Peak@{Peak}!Model.Map.Peak@{Model.Map.Peak}}
 \doxysubsubsection{\texorpdfstring{Peak()}{Peak()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
-{\footnotesize\ttfamily Model.\+Map.\+Peak.\+Peak (\begin{DoxyParamCaption}\item[{Vector2\+Int}]{start,  }\item[{\mbox{\hyperlink{interface_utils_1_1_array2_d_1_1_i2_d_array}{I2\+DArray}}$<$ float $>$}]{map\+Units }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Model.\+Map.\+Peak.\+Peak (\begin{DoxyParamCaption}\item[{Vector2\+Int}]{start,  }\item[{\mbox{\hyperlink{interface_utils_1_1_array2_d_1_1_i2_d_array}{I2\+DArray}}$<$ float $>$}]{elevations }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_model_1_1_map_1_1_peak_ab8f99d1bc20cd98cd24be5f420914d4b}\label{class_model_1_1_map_1_1_peak_ab8f99d1bc20cd98cd24be5f420914d4b}} 
+
+
+Finds a peak in a 2D array of float elevations. Takes the elevation of the start position as minimum elevation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Start point in the map.\\
+\hline
+{\em elevations} & 2D array of float elevations.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_1_1_map_1_1_peak_a5eb49d9691a4b0d819be46b3a632729a}\label{class_model_1_1_map_1_1_peak_a5eb49d9691a4b0d819be46b3a632729a}} 
 \index{Model.Map.Peak@{Model.Map.Peak}!Peak@{Peak}}
 \index{Peak@{Peak}!Model.Map.Peak@{Model.Map.Peak}}
 \doxysubsubsection{\texorpdfstring{Peak()}{Peak()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
-{\footnotesize\ttfamily Model.\+Map.\+Peak.\+Peak (\begin{DoxyParamCaption}\item[{Vector2\+Int}]{start,  }\item[{\mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}}}]{map\+Units\mbox{[},\mbox{]},  }\item[{float}]{elevation }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Model.\+Map.\+Peak.\+Peak (\begin{DoxyParamCaption}\item[{Vector2\+Int}]{start,  }\item[{\mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}}}]{elevations\mbox{[},\mbox{]},  }\item[{float}]{min\+Elevation }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_model_1_1_map_1_1_peak_a690f1861e571de54a002d853bfaf711c}\label{class_model_1_1_map_1_1_peak_a690f1861e571de54a002d853bfaf711c}} 
+
+
+Finds a peak in a map. Starts at the start point. Takes the given elevation as minimum elevation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Start point in the map.\\
+\hline
+{\em elevations} & \mbox{\hyperlink{class_model_1_1_map_1_1_map}{Map}} of Map\+Units.\\
+\hline
+{\em min\+Elevation} & Minimum elevation of the peak.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_1_1_map_1_1_peak_aefc37c2d3e8e5bc7497245b6ec95ba6b}\label{class_model_1_1_map_1_1_peak_aefc37c2d3e8e5bc7497245b6ec95ba6b}} 
 \index{Model.Map.Peak@{Model.Map.Peak}!Peak@{Peak}}
 \index{Peak@{Peak}!Model.Map.Peak@{Model.Map.Peak}}
 \doxysubsubsection{\texorpdfstring{Peak()}{Peak()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
-{\footnotesize\ttfamily Model.\+Map.\+Peak.\+Peak (\begin{DoxyParamCaption}\item[{Vector2\+Int}]{start,  }\item[{\mbox{\hyperlink{interface_utils_1_1_array2_d_1_1_i2_d_array}{I2\+DArray}}$<$ float $>$}]{map\+Units,  }\item[{float}]{elevation }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Model.\+Map.\+Peak.\+Peak (\begin{DoxyParamCaption}\item[{Vector2\+Int}]{start,  }\item[{\mbox{\hyperlink{interface_utils_1_1_array2_d_1_1_i2_d_array}{I2\+DArray}}$<$ float $>$}]{elevations,  }\item[{float}]{min\+Elevation }\end{DoxyParamCaption})}
 
+
+
+Finds a peak in a 2D array of float elevations. Starts at the start point. Takes the given elevation as minimum elevation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Start point in the map.\\
+\hline
+{\em elevations} & 2D array of float elevations.\\
+\hline
+{\em min\+Elevation} & Minimum elevation of the peak.\\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
@@ -64,6 +120,20 @@ override float \mbox{\hyperlink{class_model_1_1_map_1_1_peak_ab35ca91686d43e1aa3
 \doxysubsubsection{\texorpdfstring{ElevationCondition()}{ElevationCondition()}}
 {\footnotesize\ttfamily override bool Model.\+Map.\+Peak.\+Elevation\+Condition (\begin{DoxyParamCaption}\item[{Vector2\+Int}]{position,  }\item[{float}]{elevation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
 
+
+
+Evaluates if the given position is part of the peak. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Position of the valley to check.\\
+\hline
+{\em elevation} & Elevation which is checked against.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the current position is greater or equal to the given, return true.
+\end{DoxyReturn}
 
 
 Reimplemented from \mbox{\hyperlink{class_model_1_1_map_1_1_valley_a082b8b5384b54942ebe63ad9d1bce59f}{Model.\+Map.\+Valley}}.
@@ -76,6 +146,10 @@ Reimplemented from \mbox{\hyperlink{class_model_1_1_map_1_1_valley_a082b8b5384b5
 \index{ExitElevationStart@{ExitElevationStart}!Model.Map.Peak@{Model.Map.Peak}}
 \doxysubsubsection{\texorpdfstring{ExitElevationStart}{ExitElevationStart}}
 {\footnotesize\ttfamily override float Model.\+Map.\+Peak.\+Exit\+Elevation\+Start\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected]}}
+
+
+
+Start value of the exits elevation. Is updated with each closer exit found. 
 
 
 

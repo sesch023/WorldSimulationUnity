@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>World Simulation Unity: Model.Generators.BaseGenerator Class Reference</title>
+<title>WorldSimulationUnity: Model.Generators.BaseGenerator Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,9 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">World Simulation Unity
+   <div id="projectname">WorldSimulationUnity
    </div>
-   <div id="projectbrief">World Simulation in Unity.</div>
+   <div id="projectbrief">Simulation of a world in unity.</div>
   </td>
  </tr>
  </tbody>
@@ -92,26 +92,31 @@ $(document).ready(function(){initNavTree('class_model_1_1_generators_1_1_base_ge
   <div class="headertitle"><div class="title">Model.Generators.BaseGenerator Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Abstract base class for all generators. Implements the elevation normalization and a default implementation of the LimitMapSizes method, which is used to limit the size of the generated map depending on the generator's algorithm and the given parameters.  
+ <a href="class_model_1_1_generators_1_1_base_generator.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Model.Generators.BaseGenerator:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_model_1_1_generators_1_1_base_generator.png" usemap="#Model.Generators.BaseGenerator_map" alt=""/>
   <map id="Model.Generators.BaseGenerator_map" name="Model.Generators.BaseGenerator_map">
-<area href="interface_model_1_1_generators_1_1_i_generator.html" alt="Model.Generators.IGenerator" shape="rect" coords="411,0,675,24"/>
-<area href="class_model_1_1_generators_1_1_diamond_square_generator.html" alt="Model.Generators.DiamondSquareGenerator" shape="rect" coords="0,112,264,136"/>
-<area href="class_model_1_1_generators_1_1_flat_generator.html" alt="Model.Generators.FlatGenerator" shape="rect" coords="274,112,538,136"/>
-<area href="class_model_1_1_generators_1_1_perlin_generator.html" alt="Model.Generators.PerlinGenerator" shape="rect" coords="548,112,812,136"/>
+<area href="interface_model_1_1_generators_1_1_i_generator.html" title="Basic interface for a generator." alt="Model.Generators.IGenerator" shape="rect" coords="411,0,675,24"/>
+<area href="class_model_1_1_generators_1_1_diamond_square_generator.html" title="DiamondSquareGenerator which generates a heightmap using the diamond-square algorithm." alt="Model.Generators.DiamondSquareGenerator" shape="rect" coords="0,112,264,136"/>
+<area href="class_model_1_1_generators_1_1_flat_generator.html" title="The FlatGenerator is a generator that generates a flat map." alt="Model.Generators.FlatGenerator" shape="rect" coords="274,112,538,136"/>
+<area href="class_model_1_1_generators_1_1_perlin_generator.html" title="The PerlinGenerator is a MapGenerator that generates a map using Perlin noise." alt="Model.Generators.PerlinGenerator" shape="rect" coords="548,112,812,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aeca80ef876e5d28fa65da494a1202035"><td class="memItemLeft" align="right" valign="top">abstract float[,]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_generators_1_1_base_generator.html#aeca80ef876e5d28fa65da494a1202035">GenerateElevation</a> (int <a class="el" href="class_model_1_1_generators_1_1_base_generator.html#a83b4d43f35fdec982ee1710597d04a81">sizeX</a>, int sizeY)</td></tr>
+<tr class="memdesc:aeca80ef876e5d28fa65da494a1202035"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract method for generating the map as a 2D array of floats.  <a href="class_model_1_1_generators_1_1_base_generator.html#aeca80ef876e5d28fa65da494a1202035">More...</a><br /></td></tr>
 <tr class="separator:aeca80ef876e5d28fa65da494a1202035"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a387835d6be15ca3158d9d187bafd96f3"><td class="memItemLeft" align="right" valign="top">virtual int int sizeY&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_generators_1_1_base_generator.html#a387835d6be15ca3158d9d187bafd96f3">LimitMapSizes</a> (int <a class="el" href="class_model_1_1_generators_1_1_base_generator.html#a83b4d43f35fdec982ee1710597d04a81">sizeX</a>, int sizeY)</td></tr>
 <tr class="separator:a387835d6be15ca3158d9d187bafd96f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac98be778bcd8726b7e0eb87d0a3db849"><td class="memItemLeft" align="right" valign="top">float[,]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_model_1_1_generators_1_1_i_generator.html#ac98be778bcd8726b7e0eb87d0a3db849">GenerateElevation</a> (int <a class="el" href="interface_model_1_1_generators_1_1_i_generator.html#aa853ae6fcce9c972a356be5d304d8178">sizeX</a>, int sizeY)</td></tr>
+<tr class="memdesc:ac98be778bcd8726b7e0eb87d0a3db849"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method for generating the map as a 2D array of floats.  <a href="interface_model_1_1_generators_1_1_i_generator.html#ac98be778bcd8726b7e0eb87d0a3db849">More...</a><br /></td></tr>
 <tr class="separator:ac98be778bcd8726b7e0eb87d0a3db849"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4578fa51731209ecf2558afd97abaf5b"><td class="memItemLeft" align="right" valign="top">int int sizeY&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_model_1_1_generators_1_1_i_generator.html#a4578fa51731209ecf2558afd97abaf5b">LimitMapSizes</a> (int <a class="el" href="interface_model_1_1_generators_1_1_i_generator.html#aa853ae6fcce9c972a356be5d304d8178">sizeX</a>, int sizeY)</td></tr>
 <tr class="separator:a4578fa51731209ecf2558afd97abaf5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -119,24 +124,31 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a83b4d43f35fdec982ee1710597d04a81"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_generators_1_1_base_generator.html#a83b4d43f35fdec982ee1710597d04a81">sizeX</a></td></tr>
+<tr class="memdesc:a83b4d43f35fdec982ee1710597d04a81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Limits the size of the generated map depending on the generator's algorithm and the given parameters. The default implementation just returns the given size.  <a href="class_model_1_1_generators_1_1_base_generator.html#a83b4d43f35fdec982ee1710597d04a81">More...</a><br /></td></tr>
 <tr class="separator:a83b4d43f35fdec982ee1710597d04a81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_interface_model_1_1_generators_1_1_i_generator"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_interface_model_1_1_generators_1_1_i_generator')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="interface_model_1_1_generators_1_1_i_generator.html">Model.Generators.IGenerator</a></td></tr>
 <tr class="memitem:aa853ae6fcce9c972a356be5d304d8178 inherit pub_attribs_interface_model_1_1_generators_1_1_i_generator"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_model_1_1_generators_1_1_i_generator.html#aa853ae6fcce9c972a356be5d304d8178">sizeX</a></td></tr>
+<tr class="memdesc:aa853ae6fcce9c972a356be5d304d8178 inherit pub_attribs_interface_model_1_1_generators_1_1_i_generator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Limits the size of the generated map depending on the generator's algorithm and the given parameters. The default implementation just returns the given size.  <a href="interface_model_1_1_generators_1_1_i_generator.html#aa853ae6fcce9c972a356be5d304d8178">More...</a><br /></td></tr>
 <tr class="separator:aa853ae6fcce9c972a356be5d304d8178 inherit pub_attribs_interface_model_1_1_generators_1_1_i_generator"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
 Static Protected Member Functions</h2></td></tr>
 <tr class="memitem:a06c17e7b3a9fd858204a4f751aedb72f"><td class="memItemLeft" align="right" valign="top">static float[,]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_generators_1_1_base_generator.html#a06c17e7b3a9fd858204a4f751aedb72f">NormalizeElevation</a> (float[,] elevation, float min, float max)</td></tr>
+<tr class="memdesc:a06c17e7b3a9fd858204a4f751aedb72f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalizes the elevation of the map to the given min and max values.  <a href="class_model_1_1_generators_1_1_base_generator.html#a06c17e7b3a9fd858204a4f751aedb72f">More...</a><br /></td></tr>
 <tr class="separator:a06c17e7b3a9fd858204a4f751aedb72f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a24987a0d93975f2be88ad8f7140979dc"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_generators_1_1_base_generator.html#a24987a0d93975f2be88ad8f7140979dc">maxHeight</a> = 10000</td></tr>
+<tr class="memdesc:a24987a0d93975f2be88ad8f7140979dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Max elevation of the map.  <a href="class_model_1_1_generators_1_1_base_generator.html#a24987a0d93975f2be88ad8f7140979dc">More...</a><br /></td></tr>
 <tr class="separator:a24987a0d93975f2be88ad8f7140979dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a998d9e992c1d7cc4caa2231e66f7e76a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_generators_1_1_base_generator.html#a998d9e992c1d7cc4caa2231e66f7e76a">minHeight</a> = -8000</td></tr>
+<tr class="memdesc:a998d9e992c1d7cc4caa2231e66f7e76a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Min elevation of the map.  <a href="class_model_1_1_generators_1_1_base_generator.html#a998d9e992c1d7cc4caa2231e66f7e76a">More...</a><br /></td></tr>
 <tr class="separator:a998d9e992c1d7cc4caa2231e66f7e76a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Abstract base class for all generators. Implements the elevation normalization and a default implementation of the LimitMapSizes method, which is used to limit the size of the generated map depending on the generator's algorithm and the given parameters. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aeca80ef876e5d28fa65da494a1202035" name="aeca80ef876e5d28fa65da494a1202035"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeca80ef876e5d28fa65da494a1202035">&#9670;&nbsp;</a></span>GenerateElevation()</h2>
 
@@ -170,6 +182,16 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Abstract method for generating the map as a 2D array of floats. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sizeX</td><td>Width of the <a class="el" href="namespace_model_1_1_map.html" title="Namespace for the map model">Map</a>.</td></tr>
+    <tr><td class="paramname">sizeY</td><td>Height of the <a class="el" href="namespace_model_1_1_map.html" title="Namespace for the map model">Map</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>2D Array of floats as generated elevation.</dd></dl>
 
 <p>Implements <a class="el" href="interface_model_1_1_generators_1_1_i_generator.html#ac98be778bcd8726b7e0eb87d0a3db849">Model.Generators.IGenerator</a>.</p>
 
@@ -247,6 +269,17 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Normalizes the elevation of the map to the given min and max values. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">elevation</td><td>2D array of floats as elevation.</td></tr>
+    <tr><td class="paramname">min</td><td>Minimum new value after normalization.</td></tr>
+    <tr><td class="paramname">max</td><td>Maximum new value after normalization.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Normalized 2D array of floats.</dd></dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -270,6 +303,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Max elevation of the map. </p>
+
 </div>
 </div>
 <a id="a998d9e992c1d7cc4caa2231e66f7e76a" name="a998d9e992c1d7cc4caa2231e66f7e76a"></a>
@@ -292,6 +327,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Min elevation of the map. </p>
+
 </div>
 </div>
 <a id="a83b4d43f35fdec982ee1710597d04a81" name="a83b4d43f35fdec982ee1710597d04a81"></a>
@@ -305,6 +342,16 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Limits the size of the generated map depending on the generator's algorithm and the given parameters. The default implementation just returns the given size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sizeX</td><td>Desired width of the map.</td></tr>
+    <tr><td class="paramname">sizeY</td><td>Desired height of the map.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Agreed on size of the map which takes the desired sizes in mind.</dd></dl>
 
 </div>
 </div>

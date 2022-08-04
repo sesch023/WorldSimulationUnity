@@ -1,5 +1,10 @@
 \hypertarget{interface_model_1_1_generators_1_1_i_generator}{}\doxysection{Model.\+Generators.\+IGenerator Interface Reference}
 \label{interface_model_1_1_generators_1_1_i_generator}\index{Model.Generators.IGenerator@{Model.Generators.IGenerator}}
+
+
+Basic interface for a generator.  
+
+
 Inheritance diagram for Model.\+Generators.\+IGenerator\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,15 +15,18 @@ Inheritance diagram for Model.\+Generators.\+IGenerator\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 float\mbox{[},\mbox{]} \mbox{\hyperlink{interface_model_1_1_generators_1_1_i_generator_ac98be778bcd8726b7e0eb87d0a3db849}{Generate\+Elevation}} (int \mbox{\hyperlink{interface_model_1_1_generators_1_1_i_generator_aa853ae6fcce9c972a356be5d304d8178}{sizeX}}, int sizeY)
-\item 
+\begin{DoxyCompactList}\small\item\em Method for generating the map as a 2D array of floats. \end{DoxyCompactList}\item 
 int int sizeY \mbox{\hyperlink{interface_model_1_1_generators_1_1_i_generator_a4578fa51731209ecf2558afd97abaf5b}{Limit\+Map\+Sizes}} (int \mbox{\hyperlink{interface_model_1_1_generators_1_1_i_generator_aa853ae6fcce9c972a356be5d304d8178}{sizeX}}, int sizeY)
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{interface_model_1_1_generators_1_1_i_generator_aa853ae6fcce9c972a356be5d304d8178}{sizeX}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Limits the size of the generated map depending on the generator\textquotesingle{}s algorithm and the given parameters. The default implementation just returns the given size. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Basic interface for a generator. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{interface_model_1_1_generators_1_1_i_generator_ac98be778bcd8726b7e0eb87d0a3db849}\label{interface_model_1_1_generators_1_1_i_generator_ac98be778bcd8726b7e0eb87d0a3db849}} 
@@ -27,6 +35,20 @@ int \mbox{\hyperlink{interface_model_1_1_generators_1_1_i_generator_aa853ae6fcce
 \doxysubsubsection{\texorpdfstring{GenerateElevation()}{GenerateElevation()}}
 {\footnotesize\ttfamily float\mbox{[},\mbox{]} Model.\+Generators.\+IGenerator.\+Generate\+Elevation (\begin{DoxyParamCaption}\item[{int}]{sizeX,  }\item[{int}]{sizeY }\end{DoxyParamCaption})}
 
+
+
+Method for generating the map as a 2D array of floats. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sizeX} & Width of the \mbox{\hyperlink{namespace_model_1_1_map}{Map}}.\\
+\hline
+{\em sizeY} & Height of the \mbox{\hyperlink{namespace_model_1_1_map}{Map}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+2D Array of floats as generated elevation.
+\end{DoxyReturn}
 
 
 Implemented in \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_aeca80ef876e5d28fa65da494a1202035}{Model.\+Generators.\+Base\+Generator}}, \mbox{\hyperlink{class_model_1_1_generators_1_1_diamond_square_generator_af48ac5e2c6d843294941f5bde66175ea}{Model.\+Generators.\+Diamond\+Square\+Generator}}, \mbox{\hyperlink{class_model_1_1_generators_1_1_flat_generator_acd7abf488625318444806938551457c8}{Model.\+Generators.\+Flat\+Generator}}, and \mbox{\hyperlink{class_model_1_1_generators_1_1_perlin_generator_ac2bd3743f5b68f86b43b0e2dfb58db79}{Model.\+Generators.\+Perlin\+Generator}}.
@@ -50,6 +72,20 @@ Implemented in \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_a3
 \doxysubsubsection{\texorpdfstring{sizeX}{sizeX}}
 {\footnotesize\ttfamily int Model.\+Generators.\+IGenerator.\+sizeX}
 
+
+
+Limits the size of the generated map depending on the generator\textquotesingle{}s algorithm and the given parameters. The default implementation just returns the given size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sizeX} & Desired width of the map.\\
+\hline
+{\em sizeY} & Desired height of the map.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Agreed on size of the map which takes the desired sizes in mind.
+\end{DoxyReturn}
 
 
 The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}

@@ -1,5 +1,10 @@
 \hypertarget{interface_utils_1_1_array2_d_1_1_i2_d_enumerator}{}\doxysection{Utils.\+Array2\+D.\+I2\+DEnumerator\texorpdfstring{$<$}{<} out T \texorpdfstring{$>$}{>} Interface Template Reference}
 \label{interface_utils_1_1_array2_d_1_1_i2_d_enumerator}\index{Utils.Array2D.I2DEnumerator$<$ out T $>$@{Utils.Array2D.I2DEnumerator$<$ out T $>$}}
+
+
+Interface for a 2d enumerator.  
+
+
 Inheritance diagram for Utils.\+Array2\+D.\+I2\+DEnumerator\texorpdfstring{$<$}{<} out T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,11 +15,21 @@ Inheritance diagram for Utils.\+Array2\+D.\+I2\+DEnumerator\texorpdfstring{$<$}{
 \begin{DoxyCompactItemize}
 \item 
 bool IEnumerator. \mbox{\hyperlink{interface_utils_1_1_array2_d_1_1_i2_d_enumerator_aa62c7f75c7e3c6c8bb82614128a07e7a}{Move\+Next}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Moves to the next element. \end{DoxyCompactList}\item 
 new bool \mbox{\hyperlink{interface_utils_1_1_array2_d_1_1_i2_d_enumerator_aae9c3b78f57c7cfc392d644b829135e4}{Move\+Next}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Moves to the next element. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{namespace_utils_1_1_array2_d_a8300a7ec296c8d49351305c80d8d85eb}{Enumeration\+Status2D}} \mbox{\hyperlink{interface_utils_1_1_array2_d_1_1_i2_d_enumerator_aae6b773be36e59597b9f4b4413dfc729}{Move\+Next2D}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Moves the enumerator to the next element. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for a 2d enumerator. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of the 2d enumerable.\\
+\hline
+\end{DoxyTemplParams}
 
 
 \doxysubsection{Member Function Documentation}
@@ -24,18 +39,39 @@ new bool \mbox{\hyperlink{interface_utils_1_1_array2_d_1_1_i2_d_enumerator_aae9c
 \doxysubsubsection{\texorpdfstring{MoveNext()}{MoveNext()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily bool IEnumerator. \mbox{\hyperlink{interface_utils_1_1_array2_d_1_1_i2_d_enumerator}{Utils.\+Array2\+D.\+I2\+DEnumerator}}$<$ out T $>$.Move\+Next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Moves to the next element. 
+
+\begin{DoxyReturn}{Returns}
+False, if the enumerator has ended.
+\end{DoxyReturn}
 \mbox{\Hypertarget{interface_utils_1_1_array2_d_1_1_i2_d_enumerator_aae9c3b78f57c7cfc392d644b829135e4}\label{interface_utils_1_1_array2_d_1_1_i2_d_enumerator_aae9c3b78f57c7cfc392d644b829135e4}} 
 \index{Utils.Array2D.I2DEnumerator$<$ out T $>$@{Utils.Array2D.I2DEnumerator$<$ out T $>$}!MoveNext@{MoveNext}}
 \index{MoveNext@{MoveNext}!Utils.Array2D.I2DEnumerator$<$ out T $>$@{Utils.Array2D.I2DEnumerator$<$ out T $>$}}
 \doxysubsubsection{\texorpdfstring{MoveNext()}{MoveNext()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily new bool \mbox{\hyperlink{interface_utils_1_1_array2_d_1_1_i2_d_enumerator}{Utils.\+Array2\+D.\+I2\+DEnumerator}}$<$ out T $>$.Move\+Next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Moves to the next element. 
+
+\begin{DoxyReturn}{Returns}
+False, if the enumerator has ended.
+\end{DoxyReturn}
 \mbox{\Hypertarget{interface_utils_1_1_array2_d_1_1_i2_d_enumerator_aae6b773be36e59597b9f4b4413dfc729}\label{interface_utils_1_1_array2_d_1_1_i2_d_enumerator_aae6b773be36e59597b9f4b4413dfc729}} 
 \index{Utils.Array2D.I2DEnumerator$<$ out T $>$@{Utils.Array2D.I2DEnumerator$<$ out T $>$}!MoveNext2D@{MoveNext2D}}
 \index{MoveNext2D@{MoveNext2D}!Utils.Array2D.I2DEnumerator$<$ out T $>$@{Utils.Array2D.I2DEnumerator$<$ out T $>$}}
 \doxysubsubsection{\texorpdfstring{MoveNext2D()}{MoveNext2D()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{namespace_utils_1_1_array2_d_a8300a7ec296c8d49351305c80d8d85eb}{Enumeration\+Status2D}} \mbox{\hyperlink{interface_utils_1_1_array2_d_1_1_i2_d_enumerator}{Utils.\+Array2\+D.\+I2\+DEnumerator}}$<$ out T $>$.Move\+Next2D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Moves the enumerator to the next element. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{namespace_utils_1_1_array2_d_a8300a7ec296c8d49351305c80d8d85eba10ac3d04253ef7e1ddc73e6091c0cd55}{Enumeration\+Status2\+D.\+Next}}\+: If the enumerator has moved to the next element. \mbox{\hyperlink{namespace_utils_1_1_array2_d_a8300a7ec296c8d49351305c80d8d85ebaa0df3feb0a6db9fd208ea67b51e68766}{Enumeration\+Status2\+D.\+Next\+Row}}\+: If the enumerator has moved to the next row. \mbox{\hyperlink{namespace_utils_1_1_array2_d_a8300a7ec296c8d49351305c80d8d85eba87557f11575c0ad78e4e28abedc13b6e}{Enumeration\+Status2\+D.\+End}}\+: If the enumerator has ended. 
+\end{DoxyReturn}
 
 
 The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}

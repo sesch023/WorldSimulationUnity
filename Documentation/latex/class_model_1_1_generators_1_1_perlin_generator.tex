@@ -1,5 +1,10 @@
 \hypertarget{class_model_1_1_generators_1_1_perlin_generator}{}\doxysection{Model.\+Generators.\+Perlin\+Generator Class Reference}
 \label{class_model_1_1_generators_1_1_perlin_generator}\index{Model.Generators.PerlinGenerator@{Model.Generators.PerlinGenerator}}
+
+
+The \mbox{\hyperlink{class_model_1_1_generators_1_1_perlin_generator}{Perlin\+Generator}} is a Map\+Generator that generates a map using Perlin noise.  
+
+
 Inheritance diagram for Model.\+Generators.\+Perlin\+Generator\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,9 +15,12 @@ Inheritance diagram for Model.\+Generators.\+Perlin\+Generator\+:\begin{figure}[
 \begin{DoxyCompactItemize}
 \item 
 override float\mbox{[},\mbox{]} \mbox{\hyperlink{class_model_1_1_generators_1_1_perlin_generator_ac2bd3743f5b68f86b43b0e2dfb58db79}{Generate\+Elevation}} (int \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_a83b4d43f35fdec982ee1710597d04a81}{sizeX}}, int sizeY)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Generate a heightmap using perlin noise. Then normalize the heightmap. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_model_1_1_generators_1_1_perlin_generator}{Perlin\+Generator}} is a Map\+Generator that generates a map using Perlin noise. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_model_1_1_generators_1_1_perlin_generator_ac2bd3743f5b68f86b43b0e2dfb58db79}\label{class_model_1_1_generators_1_1_perlin_generator_ac2bd3743f5b68f86b43b0e2dfb58db79}} 
@@ -21,6 +29,22 @@ override float\mbox{[},\mbox{]} \mbox{\hyperlink{class_model_1_1_generators_1_1_
 \doxysubsubsection{\texorpdfstring{GenerateElevation()}{GenerateElevation()}}
 {\footnotesize\ttfamily override float\mbox{[},\mbox{]} Model.\+Generators.\+Perlin\+Generator.\+Generate\+Elevation (\begin{DoxyParamCaption}\item[{int}]{sizeX,  }\item[{int}]{sizeY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
+
+
+Generate a heightmap using perlin noise. Then normalize the heightmap. 
+
+\href{https://s3.eu-central-1.amazonaws.com/ucu.edu.ua/wp-content/uploads/sites/8/2021/07/Melnychuk-Vladyslav_188572_assignsubmission_file_VladyslavMelnychuk.pdf}{\texttt{ https\+://s3.\+eu-\/central-\/1.\+amazonaws.\+com/ucu.\+edu.\+ua/wp-\/content/uploads/sites/8/2021/07/\+Melnychuk-\/\+Vladyslav\+\_\+188572\+\_\+assignsubmission\+\_\+file\+\_\+\+Vladyslav\+Melnychuk.\+pdf}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sizeX} & Width of the heightmap.\\
+\hline
+{\em sizeY} & Height of the heightmap.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+2D Array of floats as generated elevation.
+\end{DoxyReturn}
 
 
 Implements \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_aeca80ef876e5d28fa65da494a1202035}{Model.\+Generators.\+Base\+Generator}}.

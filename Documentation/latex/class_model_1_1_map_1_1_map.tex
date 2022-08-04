@@ -1,5 +1,10 @@
 \hypertarget{class_model_1_1_map_1_1_map}{}\doxysection{Model.\+Map.\+Map Class Reference}
 \label{class_model_1_1_map_1_1_map}\index{Model.Map.Map@{Model.Map.Map}}
+
+
+\mbox{\hyperlink{class_model_1_1_map_1_1_map}{Map}} in the Game. It represents the entire world.  
+
+
 Inheritance diagram for Model.\+Map.\+Map\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,7 +15,7 @@ Inheritance diagram for Model.\+Map.\+Map\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_model_1_1_map_1_1_map_a489c30f7cfdd35d18eaa396573ada07a}{Update}} ()
-\begin{DoxyCompactList}\small\item\em Method to be called to update the object. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Executes the update method of the map by triggering the update of the units. \end{DoxyCompactList}\item 
 Vector2\+Int\mbox{[}$\,$\mbox{]} Vector2\+Int\mbox{[}$\,$\mbox{]} Vector2\+Int\mbox{[}$\,$\mbox{]} valley\+Exits \mbox{\hyperlink{class_model_1_1_map_1_1_map_a61bf9a5ff5d815c52c8923cbddececee}{Get\+Valley}} (Vector2\+Int position)
 \item 
 Vector2\+Int\mbox{[}$\,$\mbox{]} Vector2\+Int\mbox{[}$\,$\mbox{]} Vector2\+Int\mbox{[}$\,$\mbox{]} peak\+Exits \mbox{\hyperlink{class_model_1_1_map_1_1_map_a2b18f9268cea5466e4bf914241fdfb7c}{Get\+Peak}} (Vector2\+Int position)
@@ -18,34 +23,40 @@ Vector2\+Int\mbox{[}$\,$\mbox{]} Vector2\+Int\mbox{[}$\,$\mbox{]} Vector2\+Int\m
 Vector2\+Int\mbox{[}$\,$\mbox{]} Vector2\+Int\mbox{[}$\,$\mbox{]} Vector2\+Int\mbox{[}$\,$\mbox{]} group\+Exits \mbox{\hyperlink{class_model_1_1_map_1_1_map_ab47b7f6e1cccc8df871b0f14831be85b}{Get\+Terrain\+Group}} (Vector2\+Int position)
 \item 
 Vector2\+Int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_model_1_1_map_1_1_map_a1fc3854fe5d3ef303c184d3169b6b149}{Get\+Slope\+Line}} (Vector2\+Int start, float momentum\+Multiplier=1.\+0f, float max\+Momentum\+Fraction=1.\+0f)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Finds a slope at the given position by trying to find a way to the bottom of a valley. It is not always possible to find a well defined slope at the moment. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-readonly float \mbox{\hyperlink{class_model_1_1_map_1_1_map_a78aebfb1bb5d334f481cdb0ddbe238ba}{Tile\+Area}} = 1.\+0f
-\item 
 Vector2\+Int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_model_1_1_map_1_1_map_a3ad89c09e1a14260930ddd365c5eef71}{valley}}
-\item 
+\begin{DoxyCompactList}\small\item\em Returns a valley at the given position by taking all tiles with lower elevation next to it. Its returns all the tiles in the valley, its borders and exit tiles (lowest positions next to the border). \end{DoxyCompactList}\item 
 Vector2\+Int\mbox{[}$\,$\mbox{]} Vector2\+Int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_model_1_1_map_1_1_map_a5323989652c43723768c00d7d30e2fea}{valley\+Border}}
 \item 
 Vector2\+Int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_model_1_1_map_1_1_map_a5f4c4ea3fcd131fc68299fc6f4891921}{peak}}
-\item 
+\begin{DoxyCompactList}\small\item\em Returns a peak at the given position by taking all tiles with higher elevation next to it. Its returns all the tiles in the peak, its borders and exit tiles (lowest positions next to the border). \end{DoxyCompactList}\item 
 Vector2\+Int\mbox{[}$\,$\mbox{]} Vector2\+Int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_model_1_1_map_1_1_map_ac804359bb3ed0137e9c167a4cf5a2223}{peak\+Border}}
 \item 
 Vector2\+Int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_model_1_1_map_1_1_map_abdd2ca0b3d915590443842ea9623560a}{group}}
-\item 
+\begin{DoxyCompactList}\small\item\em Returns a terrain group at the given position by taking all tiles with certain features next to it. Its returns all the tiles in the group, its borders and exit tiles. \end{DoxyCompactList}\item 
 Vector2\+Int\mbox{[}$\,$\mbox{]} Vector2\+Int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_model_1_1_map_1_1_map_a87e2390c86b556a29da469fdd1de9cb7}{group\+Border}}
 \end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const float \mbox{\hyperlink{class_model_1_1_map_1_1_map_a10db1022e77f573380d5e9999869fae0}{Unit\+Area}} = 1.\+0f
+\begin{DoxyCompactList}\small\item\em Area of a tile in the map. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{class_model_1_1_map_1_1_map_a379b0b30c8166e54ebbb86b054b2281a}{SizeX}} = 1025\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Width of the \mbox{\hyperlink{class_model_1_1_map_1_1_map}{Map}}. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_model_1_1_map_1_1_map_a4a95fb58a087fddaadced5d4ba466bb7}{SizeY}} = 1025\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\item 
+\begin{DoxyCompactList}\small\item\em Height of the \mbox{\hyperlink{class_model_1_1_map_1_1_map}{Map}}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}}\mbox{[},\mbox{]} \mbox{\hyperlink{class_model_1_1_map_1_1_map_af452313778eab35d9069d15d267e5ece}{Map\+Units}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Units of the map. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_model_1_1_map_1_1_map}{Map}} in the Game. It represents the entire world. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_model_1_1_map_1_1_map_a2b18f9268cea5466e4bf914241fdfb7c}\label{class_model_1_1_map_1_1_map_a2b18f9268cea5466e4bf914241fdfb7c}} 
@@ -60,6 +71,22 @@ int \mbox{\hyperlink{class_model_1_1_map_1_1_map_a4a95fb58a087fddaadced5d4ba466b
 \doxysubsubsection{\texorpdfstring{GetSlopeLine()}{GetSlopeLine()}}
 {\footnotesize\ttfamily Vector2\+Int\mbox{[}$\,$\mbox{]} Model.\+Map.\+Map.\+Get\+Slope\+Line (\begin{DoxyParamCaption}\item[{Vector2\+Int}]{start,  }\item[{float}]{momentum\+Multiplier = {\ttfamily 1.0f},  }\item[{float}]{max\+Momentum\+Fraction = {\ttfamily 1.0f} }\end{DoxyParamCaption})}
 
+
+
+Finds a slope at the given position by trying to find a way to the bottom of a valley. It is not always possible to find a well defined slope at the moment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Position to find a slope at.\\
+\hline
+{\em momentum\+Multiplier} & Multiplier of momentum to make the algorithm slip over local minimals.\\
+\hline
+{\em max\+Momentum\+Fraction} & Max fraction of momentum to take from the slope in a single step.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Positions of the slope in order from highest to lowest.
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_model_1_1_map_1_1_map_ab47b7f6e1cccc8df871b0f14831be85b}\label{class_model_1_1_map_1_1_map_ab47b7f6e1cccc8df871b0f14831be85b}} 
 \index{Model.Map.Map@{Model.Map.Map}!GetTerrainGroup@{GetTerrainGroup}}
 \index{GetTerrainGroup@{GetTerrainGroup}!Model.Map.Map@{Model.Map.Map}}
@@ -80,7 +107,7 @@ int \mbox{\hyperlink{class_model_1_1_map_1_1_map_a4a95fb58a087fddaadced5d4ba466b
 
 
 
-Method to be called to update the object. 
+Executes the update method of the map by triggering the update of the units. 
 
 
 
@@ -95,6 +122,20 @@ Implements \mbox{\hyperlink{interface_base_1_1_i_updatable_a1983d03de50becea9925
 \doxysubsubsection{\texorpdfstring{group}{group}}
 {\footnotesize\ttfamily Vector2\+Int \mbox{[}$\,$\mbox{]} Model.\+Map.\+Map.\+group}
 
+
+
+Returns a terrain group at the given position by taking all tiles with certain features next to it. Its returns all the tiles in the group, its borders and exit tiles. 
+
+Currently only works for peaks and valleys. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Position to find a group at.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Tiles of the group, Border of the group, Exits of the group.
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_model_1_1_map_1_1_map_a87e2390c86b556a29da469fdd1de9cb7}\label{class_model_1_1_map_1_1_map_a87e2390c86b556a29da469fdd1de9cb7}} 
 \index{Model.Map.Map@{Model.Map.Map}!groupBorder@{groupBorder}}
 \index{groupBorder@{groupBorder}!Model.Map.Map@{Model.Map.Map}}
@@ -107,17 +148,33 @@ Implements \mbox{\hyperlink{interface_base_1_1_i_updatable_a1983d03de50becea9925
 \doxysubsubsection{\texorpdfstring{peak}{peak}}
 {\footnotesize\ttfamily Vector2\+Int \mbox{[}$\,$\mbox{]} Model.\+Map.\+Map.\+peak}
 
+
+
+Returns a peak at the given position by taking all tiles with higher elevation next to it. Its returns all the tiles in the peak, its borders and exit tiles (lowest positions next to the border). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Position to find a peak at.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Tiles of the peak, Border of the peak, Exits of the peak.
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_model_1_1_map_1_1_map_ac804359bb3ed0137e9c167a4cf5a2223}\label{class_model_1_1_map_1_1_map_ac804359bb3ed0137e9c167a4cf5a2223}} 
 \index{Model.Map.Map@{Model.Map.Map}!peakBorder@{peakBorder}}
 \index{peakBorder@{peakBorder}!Model.Map.Map@{Model.Map.Map}}
 \doxysubsubsection{\texorpdfstring{peakBorder}{peakBorder}}
 {\footnotesize\ttfamily Vector2\+Int \mbox{[}$\,$\mbox{]} Vector2\+Int \mbox{[}$\,$\mbox{]} Model.\+Map.\+Map.\+peak\+Border}
 
-\mbox{\Hypertarget{class_model_1_1_map_1_1_map_a78aebfb1bb5d334f481cdb0ddbe238ba}\label{class_model_1_1_map_1_1_map_a78aebfb1bb5d334f481cdb0ddbe238ba}} 
-\index{Model.Map.Map@{Model.Map.Map}!TileArea@{TileArea}}
-\index{TileArea@{TileArea}!Model.Map.Map@{Model.Map.Map}}
-\doxysubsubsection{\texorpdfstring{TileArea}{TileArea}}
-{\footnotesize\ttfamily readonly float Model.\+Map.\+Map.\+Tile\+Area = 1.\+0f}
+\mbox{\Hypertarget{class_model_1_1_map_1_1_map_a10db1022e77f573380d5e9999869fae0}\label{class_model_1_1_map_1_1_map_a10db1022e77f573380d5e9999869fae0}} 
+\index{Model.Map.Map@{Model.Map.Map}!UnitArea@{UnitArea}}
+\index{UnitArea@{UnitArea}!Model.Map.Map@{Model.Map.Map}}
+\doxysubsubsection{\texorpdfstring{UnitArea}{UnitArea}}
+{\footnotesize\ttfamily const float Model.\+Map.\+Map.\+Unit\+Area = 1.\+0f\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Area of a tile in the map. 
 
 \mbox{\Hypertarget{class_model_1_1_map_1_1_map_a3ad89c09e1a14260930ddd365c5eef71}\label{class_model_1_1_map_1_1_map_a3ad89c09e1a14260930ddd365c5eef71}} 
 \index{Model.Map.Map@{Model.Map.Map}!valley@{valley}}
@@ -125,6 +182,18 @@ Implements \mbox{\hyperlink{interface_base_1_1_i_updatable_a1983d03de50becea9925
 \doxysubsubsection{\texorpdfstring{valley}{valley}}
 {\footnotesize\ttfamily Vector2\+Int \mbox{[}$\,$\mbox{]} Model.\+Map.\+Map.\+valley}
 
+
+
+Returns a valley at the given position by taking all tiles with lower elevation next to it. Its returns all the tiles in the valley, its borders and exit tiles (lowest positions next to the border). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Position to find a valley at.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Tiles of the valley, Border of the valley, Exits of the valley.
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_model_1_1_map_1_1_map_a5323989652c43723768c00d7d30e2fea}\label{class_model_1_1_map_1_1_map_a5323989652c43723768c00d7d30e2fea}} 
 \index{Model.Map.Map@{Model.Map.Map}!valleyBorder@{valleyBorder}}
 \index{valleyBorder@{valleyBorder}!Model.Map.Map@{Model.Map.Map}}
@@ -140,17 +209,29 @@ Implements \mbox{\hyperlink{interface_base_1_1_i_updatable_a1983d03de50becea9925
 \doxysubsubsection{\texorpdfstring{MapUnits}{MapUnits}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}} \mbox{[},\mbox{]} Model.\+Map.\+Map.\+Map\+Units\hspace{0.3cm}{\ttfamily [get]}}
 
+
+
+Units of the map. 
+
 \mbox{\Hypertarget{class_model_1_1_map_1_1_map_a379b0b30c8166e54ebbb86b054b2281a}\label{class_model_1_1_map_1_1_map_a379b0b30c8166e54ebbb86b054b2281a}} 
 \index{Model.Map.Map@{Model.Map.Map}!SizeX@{SizeX}}
 \index{SizeX@{SizeX}!Model.Map.Map@{Model.Map.Map}}
 \doxysubsubsection{\texorpdfstring{SizeX}{SizeX}}
 {\footnotesize\ttfamily int Model.\+Map.\+Map.\+SizeX = 1025\hspace{0.3cm}{\ttfamily [get]}}
 
+
+
+Width of the \mbox{\hyperlink{class_model_1_1_map_1_1_map}{Map}}. 
+
 \mbox{\Hypertarget{class_model_1_1_map_1_1_map_a4a95fb58a087fddaadced5d4ba466bb7}\label{class_model_1_1_map_1_1_map_a4a95fb58a087fddaadced5d4ba466bb7}} 
 \index{Model.Map.Map@{Model.Map.Map}!SizeY@{SizeY}}
 \index{SizeY@{SizeY}!Model.Map.Map@{Model.Map.Map}}
 \doxysubsubsection{\texorpdfstring{SizeY}{SizeY}}
 {\footnotesize\ttfamily int Model.\+Map.\+Map.\+SizeY = 1025\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Height of the \mbox{\hyperlink{class_model_1_1_map_1_1_map}{Map}}. 
 
 
 

@@ -1,6 +1,7 @@
 var class_utils_1_1_array2_d_1_1_array2_d_enumerator =
 [
     [ "Array2DEnumerator", "class_utils_1_1_array2_d_1_1_array2_d_enumerator.html#a30d743242192d68fbbf89c0ae011d395", null ],
+    [ "Array2DEnumerator", "class_utils_1_1_array2_d_1_1_array2_d_enumerator.html#a8ce21fee02a3cc89c40e10e3412f1bff", null ],
     [ "Dispose", "class_utils_1_1_array2_d_1_1_array2_d_enumerator.html#a415bde1352fe37789cb2f8feaa02c8f9", null ],
     [ "MoveNext", "class_utils_1_1_array2_d_1_1_array2_d_enumerator.html#a00ed68ae8ec14f934d0e2568305b0bb3", null ],
     [ "MoveNext2D", "class_utils_1_1_array2_d_1_1_array2_d_enumerator.html#a9b9119b47834a5563e93931449437b78", null ],

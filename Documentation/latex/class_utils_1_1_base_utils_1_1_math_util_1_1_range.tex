@@ -1,12 +1,31 @@
 \hypertarget{class_utils_1_1_base_utils_1_1_math_util_1_1_range}{}\doxysection{Utils.\+Base\+Utils.\+Math\+Util.\+Range\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
 \label{class_utils_1_1_base_utils_1_1_math_util_1_1_range}\index{Utils.BaseUtils.MathUtil.Range$<$ T $>$@{Utils.BaseUtils.MathUtil.Range$<$ T $>$}}
+
+
+Defines a range of values and can check if a value is inside the range.  
+
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_utils_1_1_base_utils_1_1_math_util_1_1_range_a3ce3d4a8bd85f140efac5f63ae18848d}{Range}} (T start, T end)
-\item 
+\begin{DoxyCompactList}\small\item\em Definition of the range. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_utils_1_1_base_utils_1_1_math_util_1_1_range_a258e73cd7d8a64028ad2d32e1f512272}{In\+Range}} (T check)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Checks if the given value is in the range. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines a range of values and can check if a value is inside the range. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type which implements IComparable.\\
+\hline
+\end{DoxyTemplParams}
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em IComparable}]\item[{\em T} : {\em IComparable$<$T$>$}]\end{description}
+\end{Desc}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -18,6 +37,17 @@ bool \mbox{\hyperlink{class_utils_1_1_base_utils_1_1_math_util_1_1_range_a258e73
 
 
 
+Definition of the range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Start of the range (inclusive).\\
+\hline
+{\em end} & End of the range (inclusive).\\
+\hline
+\end{DoxyParams}
+
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_utils_1_1_base_utils_1_1_math_util_1_1_range_a258e73cd7d8a64028ad2d32e1f512272}\label{class_utils_1_1_base_utils_1_1_math_util_1_1_range_a258e73cd7d8a64028ad2d32e1f512272}} 
 \index{Utils.BaseUtils.MathUtil.Range$<$ T $>$@{Utils.BaseUtils.MathUtil.Range$<$ T $>$}!InRange@{InRange}}
@@ -25,6 +55,18 @@ bool \mbox{\hyperlink{class_utils_1_1_base_utils_1_1_math_util_1_1_range_a258e73
 \doxysubsubsection{\texorpdfstring{InRange()}{InRange()}}
 {\footnotesize\ttfamily bool \mbox{\hyperlink{class_utils_1_1_base_utils_1_1_math_util_1_1_range}{Utils.\+Base\+Utils.\+Math\+Util.\+Range}}$<$ T $>$.In\+Range (\begin{DoxyParamCaption}\item[{T}]{check }\end{DoxyParamCaption})}
 
+
+
+Checks if the given value is in the range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em check} & Value to check.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True, if the value is in the range.
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

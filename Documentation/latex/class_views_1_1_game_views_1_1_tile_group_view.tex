@@ -1,5 +1,10 @@
 \hypertarget{class_views_1_1_game_views_1_1_tile_group_view}{}\doxysection{Views.\+Game\+Views.\+Tile\+Group\+View Class Reference}
 \label{class_views_1_1_game_views_1_1_tile_group_view}\index{Views.GameViews.TileGroupView@{Views.GameViews.TileGroupView}}
+
+
+View of a group of tiles.  
+
+
 Inheritance diagram for Views.\+Game\+Views.\+Tile\+Group\+View\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,23 +15,24 @@ Inheritance diagram for Views.\+Game\+Views.\+Tile\+Group\+View\+:\begin{figure}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_views_1_1_game_views_1_1_tile_group_view_a2d30c60b7932314a38dd64d063a581f6}{Awake}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Initialize the view. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_views_1_1_game_views_1_1_tile_group_view_afe1872bdbc69a9c7cbfdff64870e2c8d}{Start}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Start the view and enables the group view, if the group is not empty. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_views_1_1_game_views_1_1_tile_group_view_ade98436662ff92d2471a5ac8cd8e98ad}{Enable}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Enables the group view, if the group is not empty. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_views_1_1_game_views_1_1_tile_group_view_ac5a1f6cc75bb79ec46c25c2f5cf95ffe}{On\+Disable}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em If the group is disabled, remove all children. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_views_1_1_game_views_1_1_tile_group_view_a11688b94e364723ad36146289c52b479}{Disable}} ()
-\end{DoxyCompactItemize}
-\doxysubsection*{Public Attributes}
+\begin{DoxyCompactList}\small\item\em If the group is disabled, remove all children. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-Vector2\+Int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_views_1_1_game_views_1_1_tile_group_view_aa49e69c288b5648a13dcab4f0a3a7c86}{tiles}}
-\item 
-Game\+Object \mbox{\hyperlink{class_views_1_1_game_views_1_1_tile_group_view_a0c01ac98ffda93d8a84a7d81b8251019}{tile\+Highlight}}
-\end{DoxyCompactItemize}
+Vector2\+Int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_views_1_1_game_views_1_1_tile_group_view_a0d2974f55eb9f7330b2fa9169168a3c4}{Tiles}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Tiles of the group. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+View of a group of tiles. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_views_1_1_game_views_1_1_tile_group_view_a2d30c60b7932314a38dd64d063a581f6}\label{class_views_1_1_game_views_1_1_tile_group_view_a2d30c60b7932314a38dd64d063a581f6}} 
@@ -35,11 +41,24 @@ Game\+Object \mbox{\hyperlink{class_views_1_1_game_views_1_1_tile_group_view_a0c
 \doxysubsubsection{\texorpdfstring{Awake()}{Awake()}}
 {\footnotesize\ttfamily void Views.\+Game\+Views.\+Tile\+Group\+View.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Initialize the view. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Missing\+Reference\+Exception} & If the highlight is not set.\\
+\hline
+\end{DoxyExceptions}
 \mbox{\Hypertarget{class_views_1_1_game_views_1_1_tile_group_view_a11688b94e364723ad36146289c52b479}\label{class_views_1_1_game_views_1_1_tile_group_view_a11688b94e364723ad36146289c52b479}} 
 \index{Views.GameViews.TileGroupView@{Views.GameViews.TileGroupView}!Disable@{Disable}}
 \index{Disable@{Disable}!Views.GameViews.TileGroupView@{Views.GameViews.TileGroupView}}
 \doxysubsubsection{\texorpdfstring{Disable()}{Disable()}}
 {\footnotesize\ttfamily void Views.\+Game\+Views.\+Tile\+Group\+View.\+Disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+If the group is disabled, remove all children. 
 
 \mbox{\Hypertarget{class_views_1_1_game_views_1_1_tile_group_view_ade98436662ff92d2471a5ac8cd8e98ad}\label{class_views_1_1_game_views_1_1_tile_group_view_ade98436662ff92d2471a5ac8cd8e98ad}} 
 \index{Views.GameViews.TileGroupView@{Views.GameViews.TileGroupView}!Enable@{Enable}}
@@ -47,11 +66,19 @@ Game\+Object \mbox{\hyperlink{class_views_1_1_game_views_1_1_tile_group_view_a0c
 \doxysubsubsection{\texorpdfstring{Enable()}{Enable()}}
 {\footnotesize\ttfamily void Views.\+Game\+Views.\+Tile\+Group\+View.\+Enable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Enables the group view, if the group is not empty. 
+
 \mbox{\Hypertarget{class_views_1_1_game_views_1_1_tile_group_view_ac5a1f6cc75bb79ec46c25c2f5cf95ffe}\label{class_views_1_1_game_views_1_1_tile_group_view_ac5a1f6cc75bb79ec46c25c2f5cf95ffe}} 
 \index{Views.GameViews.TileGroupView@{Views.GameViews.TileGroupView}!OnDisable@{OnDisable}}
 \index{OnDisable@{OnDisable}!Views.GameViews.TileGroupView@{Views.GameViews.TileGroupView}}
 \doxysubsubsection{\texorpdfstring{OnDisable()}{OnDisable()}}
 {\footnotesize\ttfamily void Views.\+Game\+Views.\+Tile\+Group\+View.\+On\+Disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+If the group is disabled, remove all children. 
 
 \mbox{\Hypertarget{class_views_1_1_game_views_1_1_tile_group_view_afe1872bdbc69a9c7cbfdff64870e2c8d}\label{class_views_1_1_game_views_1_1_tile_group_view_afe1872bdbc69a9c7cbfdff64870e2c8d}} 
 \index{Views.GameViews.TileGroupView@{Views.GameViews.TileGroupView}!Start@{Start}}
@@ -61,18 +88,20 @@ Game\+Object \mbox{\hyperlink{class_views_1_1_game_views_1_1_tile_group_view_a0c
 
 
 
-\doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{class_views_1_1_game_views_1_1_tile_group_view_a0c01ac98ffda93d8a84a7d81b8251019}\label{class_views_1_1_game_views_1_1_tile_group_view_a0c01ac98ffda93d8a84a7d81b8251019}} 
-\index{Views.GameViews.TileGroupView@{Views.GameViews.TileGroupView}!tileHighlight@{tileHighlight}}
-\index{tileHighlight@{tileHighlight}!Views.GameViews.TileGroupView@{Views.GameViews.TileGroupView}}
-\doxysubsubsection{\texorpdfstring{tileHighlight}{tileHighlight}}
-{\footnotesize\ttfamily Game\+Object Views.\+Game\+Views.\+Tile\+Group\+View.\+tile\+Highlight}
+Start the view and enables the group view, if the group is not empty. 
 
-\mbox{\Hypertarget{class_views_1_1_game_views_1_1_tile_group_view_aa49e69c288b5648a13dcab4f0a3a7c86}\label{class_views_1_1_game_views_1_1_tile_group_view_aa49e69c288b5648a13dcab4f0a3a7c86}} 
-\index{Views.GameViews.TileGroupView@{Views.GameViews.TileGroupView}!tiles@{tiles}}
-\index{tiles@{tiles}!Views.GameViews.TileGroupView@{Views.GameViews.TileGroupView}}
-\doxysubsubsection{\texorpdfstring{tiles}{tiles}}
-{\footnotesize\ttfamily Vector2\+Int \mbox{[}$\,$\mbox{]} Views.\+Game\+Views.\+Tile\+Group\+View.\+tiles}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_views_1_1_game_views_1_1_tile_group_view_a0d2974f55eb9f7330b2fa9169168a3c4}\label{class_views_1_1_game_views_1_1_tile_group_view_a0d2974f55eb9f7330b2fa9169168a3c4}} 
+\index{Views.GameViews.TileGroupView@{Views.GameViews.TileGroupView}!Tiles@{Tiles}}
+\index{Tiles@{Tiles}!Views.GameViews.TileGroupView@{Views.GameViews.TileGroupView}}
+\doxysubsubsection{\texorpdfstring{Tiles}{Tiles}}
+{\footnotesize\ttfamily Vector2\+Int \mbox{[}$\,$\mbox{]} Views.\+Game\+Views.\+Tile\+Group\+View.\+Tiles\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Tiles of the group. 
 
 
 

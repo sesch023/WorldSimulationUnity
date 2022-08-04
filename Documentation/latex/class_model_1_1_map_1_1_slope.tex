@@ -1,20 +1,26 @@
 \hypertarget{class_model_1_1_map_1_1_slope}{}\doxysection{Model.\+Map.\+Slope Class Reference}
 \label{class_model_1_1_map_1_1_slope}\index{Model.Map.Slope@{Model.Map.Slope}}
+
+
+Finds a slope in a map or 2D array of floats.  
+
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_model_1_1_map_1_1_slope_a6dfaca2a04c3c5cc0889d24da7e460db}{Slope}} (Vector2\+Int start, \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}}\mbox{[},\mbox{]} map\+Units, float momentum\+Multiplier=1.\+0f, float max\+Momentum\+Fraction=1.\+0f)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor for the slope. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_model_1_1_map_1_1_slope_ac00cd232f77993a6125c355a67bcc6ea}{Slope}} (Vector2\+Int start, \mbox{\hyperlink{interface_utils_1_1_array2_d_1_1_i2_d_array}{I2\+DArray}}$<$ float $>$ elevations, float momentum\+Multiplier=1.\+0f, float max\+Momentum\+Fraction=1.\+0f)
-\item 
-void \mbox{\hyperlink{class_model_1_1_map_1_1_slope_ad204120b552e60d26b066cf42f50e39b}{Reset}} (Vector2\+Int start, \mbox{\hyperlink{interface_utils_1_1_array2_d_1_1_i2_d_array}{I2\+DArray}}$<$ float $>$ elevations, float momentum\+Multiplier=1.\+0f, float max\+Momentum\+Fraction=1.\+0f)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Constructor for the slope. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
 Vector2\+Int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_model_1_1_map_1_1_slope_a287bc45c66860f869425a56205e77d90}{Calculated\+Slope}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Positions of the slope. Sorted from highest to lowest elevation. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Finds a slope in a map or 2D array of floats. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_model_1_1_map_1_1_slope_a6dfaca2a04c3c5cc0889d24da7e460db}\label{class_model_1_1_map_1_1_slope_a6dfaca2a04c3c5cc0889d24da7e460db}} 
@@ -23,6 +29,21 @@ Vector2\+Int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_model_1_1_map_1_1_slope_
 \doxysubsubsection{\texorpdfstring{Slope()}{Slope()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Model.\+Map.\+Slope.\+Slope (\begin{DoxyParamCaption}\item[{Vector2\+Int}]{start,  }\item[{\mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}}}]{map\+Units\mbox{[},\mbox{]},  }\item[{float}]{momentum\+Multiplier = {\ttfamily 1.0f},  }\item[{float}]{max\+Momentum\+Fraction = {\ttfamily 1.0f} }\end{DoxyParamCaption})}
 
+
+
+Constructor for the slope. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Start position of the slope.\\
+\hline
+{\em map\+Units} & \mbox{\hyperlink{class_model_1_1_map_1_1_map}{Map}} of Map\+Units.\\
+\hline
+{\em momentum\+Multiplier} & Momentum multiplier which changes the level of momentum the slope uses for passing local minimals.\\
+\hline
+{\em max\+Momentum\+Fraction} & Maximum momentum to use in a single step.\\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_model_1_1_map_1_1_slope_ac00cd232f77993a6125c355a67bcc6ea}\label{class_model_1_1_map_1_1_slope_ac00cd232f77993a6125c355a67bcc6ea}} 
 \index{Model.Map.Slope@{Model.Map.Slope}!Slope@{Slope}}
 \index{Slope@{Slope}!Model.Map.Slope@{Model.Map.Slope}}
@@ -31,13 +52,19 @@ Vector2\+Int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_model_1_1_map_1_1_slope_
 
 
 
-\doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_model_1_1_map_1_1_slope_ad204120b552e60d26b066cf42f50e39b}\label{class_model_1_1_map_1_1_slope_ad204120b552e60d26b066cf42f50e39b}} 
-\index{Model.Map.Slope@{Model.Map.Slope}!Reset@{Reset}}
-\index{Reset@{Reset}!Model.Map.Slope@{Model.Map.Slope}}
-\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
-{\footnotesize\ttfamily void Model.\+Map.\+Slope.\+Reset (\begin{DoxyParamCaption}\item[{Vector2\+Int}]{start,  }\item[{\mbox{\hyperlink{interface_utils_1_1_array2_d_1_1_i2_d_array}{I2\+DArray}}$<$ float $>$}]{elevations,  }\item[{float}]{momentum\+Multiplier = {\ttfamily 1.0f},  }\item[{float}]{max\+Momentum\+Fraction = {\ttfamily 1.0f} }\end{DoxyParamCaption})}
+Constructor for the slope. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Start position of the slope.\\
+\hline
+{\em elevations} & 2d array of floats a elevations.\\
+\hline
+{\em momentum\+Multiplier} & Momentum multiplier which changes the level of momentum the slope uses for passing local minimals.\\
+\hline
+{\em max\+Momentum\+Fraction} & Maximum momentum to use in a single step.\\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Property Documentation}
@@ -46,6 +73,10 @@ Vector2\+Int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_model_1_1_map_1_1_slope_
 \index{CalculatedSlope@{CalculatedSlope}!Model.Map.Slope@{Model.Map.Slope}}
 \doxysubsubsection{\texorpdfstring{CalculatedSlope}{CalculatedSlope}}
 {\footnotesize\ttfamily Vector2\+Int \mbox{[}$\,$\mbox{]} Model.\+Map.\+Slope.\+Calculated\+Slope\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Positions of the slope. Sorted from highest to lowest elevation. 
 
 
 

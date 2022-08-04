@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>World Simulation Unity: Model.Generators.IGenerator Interface Reference</title>
+<title>WorldSimulationUnity: Model.Generators.IGenerator Interface Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,9 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">World Simulation Unity
+   <div id="projectname">WorldSimulationUnity
    </div>
-   <div id="projectbrief">World Simulation in Unity.</div>
+   <div id="projectbrief">Simulation of a world in unity.</div>
   </td>
  </tr>
  </tbody>
@@ -90,22 +90,26 @@ $(document).ready(function(){initNavTree('interface_model_1_1_generators_1_1_i_g
   <div class="headertitle"><div class="title">Model.Generators.IGenerator Interface Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Basic interface for a generator.  
+ <a href="interface_model_1_1_generators_1_1_i_generator.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Model.Generators.IGenerator:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="interface_model_1_1_generators_1_1_i_generator.png" usemap="#Model.Generators.IGenerator_map" alt=""/>
   <map id="Model.Generators.IGenerator_map" name="Model.Generators.IGenerator_map">
-<area href="class_model_1_1_generators_1_1_base_generator.html" alt="Model.Generators.BaseGenerator" shape="rect" coords="274,56,538,80"/>
-<area href="class_model_1_1_generators_1_1_diamond_square_generator.html" alt="Model.Generators.DiamondSquareGenerator" shape="rect" coords="0,112,264,136"/>
-<area href="class_model_1_1_generators_1_1_flat_generator.html" alt="Model.Generators.FlatGenerator" shape="rect" coords="274,112,538,136"/>
-<area href="class_model_1_1_generators_1_1_perlin_generator.html" alt="Model.Generators.PerlinGenerator" shape="rect" coords="548,112,812,136"/>
+<area href="class_model_1_1_generators_1_1_base_generator.html" title="Abstract base class for all generators. Implements the elevation normalization and a default implemen..." alt="Model.Generators.BaseGenerator" shape="rect" coords="274,56,538,80"/>
+<area href="class_model_1_1_generators_1_1_diamond_square_generator.html" title="DiamondSquareGenerator which generates a heightmap using the diamond-square algorithm." alt="Model.Generators.DiamondSquareGenerator" shape="rect" coords="0,112,264,136"/>
+<area href="class_model_1_1_generators_1_1_flat_generator.html" title="The FlatGenerator is a generator that generates a flat map." alt="Model.Generators.FlatGenerator" shape="rect" coords="274,112,538,136"/>
+<area href="class_model_1_1_generators_1_1_perlin_generator.html" title="The PerlinGenerator is a MapGenerator that generates a map using Perlin noise." alt="Model.Generators.PerlinGenerator" shape="rect" coords="548,112,812,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac98be778bcd8726b7e0eb87d0a3db849"><td class="memItemLeft" align="right" valign="top">float[,]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_model_1_1_generators_1_1_i_generator.html#ac98be778bcd8726b7e0eb87d0a3db849">GenerateElevation</a> (int <a class="el" href="interface_model_1_1_generators_1_1_i_generator.html#aa853ae6fcce9c972a356be5d304d8178">sizeX</a>, int sizeY)</td></tr>
+<tr class="memdesc:ac98be778bcd8726b7e0eb87d0a3db849"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method for generating the map as a 2D array of floats.  <a href="interface_model_1_1_generators_1_1_i_generator.html#ac98be778bcd8726b7e0eb87d0a3db849">More...</a><br /></td></tr>
 <tr class="separator:ac98be778bcd8726b7e0eb87d0a3db849"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4578fa51731209ecf2558afd97abaf5b"><td class="memItemLeft" align="right" valign="top">int int sizeY&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_model_1_1_generators_1_1_i_generator.html#a4578fa51731209ecf2558afd97abaf5b">LimitMapSizes</a> (int <a class="el" href="interface_model_1_1_generators_1_1_i_generator.html#aa853ae6fcce9c972a356be5d304d8178">sizeX</a>, int sizeY)</td></tr>
 <tr class="separator:a4578fa51731209ecf2558afd97abaf5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -113,9 +117,12 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:aa853ae6fcce9c972a356be5d304d8178"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_model_1_1_generators_1_1_i_generator.html#aa853ae6fcce9c972a356be5d304d8178">sizeX</a></td></tr>
+<tr class="memdesc:aa853ae6fcce9c972a356be5d304d8178"><td class="mdescLeft">&#160;</td><td class="mdescRight">Limits the size of the generated map depending on the generator's algorithm and the given parameters. The default implementation just returns the given size.  <a href="interface_model_1_1_generators_1_1_i_generator.html#aa853ae6fcce9c972a356be5d304d8178">More...</a><br /></td></tr>
 <tr class="separator:aa853ae6fcce9c972a356be5d304d8178"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Basic interface for a generator. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ac98be778bcd8726b7e0eb87d0a3db849" name="ac98be778bcd8726b7e0eb87d0a3db849"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac98be778bcd8726b7e0eb87d0a3db849">&#9670;&nbsp;</a></span>GenerateElevation()</h2>
 
@@ -141,6 +148,16 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Method for generating the map as a 2D array of floats. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sizeX</td><td>Width of the <a class="el" href="namespace_model_1_1_map.html" title="Namespace for the map model">Map</a>.</td></tr>
+    <tr><td class="paramname">sizeY</td><td>Height of the <a class="el" href="namespace_model_1_1_map.html" title="Namespace for the map model">Map</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>2D Array of floats as generated elevation.</dd></dl>
 
 <p>Implemented in <a class="el" href="class_model_1_1_generators_1_1_base_generator.html#aeca80ef876e5d28fa65da494a1202035">Model.Generators.BaseGenerator</a>, <a class="el" href="class_model_1_1_generators_1_1_diamond_square_generator.html#af48ac5e2c6d843294941f5bde66175ea">Model.Generators.DiamondSquareGenerator</a>, <a class="el" href="class_model_1_1_generators_1_1_flat_generator.html#acd7abf488625318444806938551457c8">Model.Generators.FlatGenerator</a>, and <a class="el" href="class_model_1_1_generators_1_1_perlin_generator.html#ac2bd3743f5b68f86b43b0e2dfb58db79">Model.Generators.PerlinGenerator</a>.</p>
 
@@ -188,6 +205,16 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Limits the size of the generated map depending on the generator's algorithm and the given parameters. The default implementation just returns the given size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sizeX</td><td>Desired width of the map.</td></tr>
+    <tr><td class="paramname">sizeY</td><td>Desired height of the map.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Agreed on size of the map which takes the desired sizes in mind.</dd></dl>
 
 </div>
 </div>

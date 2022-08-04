@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>World Simulation Unity: Views.GameViews.LineView Class Reference</title>
+<title>WorldSimulationUnity: Views.GameViews.LineView Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,9 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">World Simulation Unity
+   <div id="projectname">WorldSimulationUnity
    </div>
-   <div id="projectbrief">World Simulation in Unity.</div>
+   <div id="projectbrief">Simulation of a world in unity.</div>
   </td>
  </tr>
  </tbody>
@@ -90,53 +90,71 @@ $(document).ready(function(){initNavTree('class_views_1_1_game_views_1_1_line_vi
   <div class="headertitle"><div class="title">Views.GameViews.LineView Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>View for displaying a line on the map between given points. The line is drawn using a line renderer. It can be curved or not and provides other ways of changing the line's looks.  
+ <a href="class_views_1_1_game_views_1_1_line_view.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Views.GameViews.LineView:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_views_1_1_game_views_1_1_line_view.png" usemap="#Views.GameViews.LineView_map" alt=""/>
   <map id="Views.GameViews.LineView_map" name="Views.GameViews.LineView_map">
-<area href="class_views_1_1_game_views_1_1_tile_line_view.html" alt="Views.GameViews.TileLineView" shape="rect" coords="0,112,192,136"/>
+<area href="class_views_1_1_game_views_1_1_tile_line_view.html" title="LineView for displaying a line between tile coordinates." alt="Views.GameViews.TileLineView" shape="rect" coords="0,112,192,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a04a782f399b7f778304463879c266aaf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_views_1_1_game_views_1_1_line_view.html#a04a782f399b7f778304463879c266aaf">SetLineRendererAttributes</a> ()</td></tr>
+<tr class="memdesc:a04a782f399b7f778304463879c266aaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets / Resets attributes of the line renderer. Must be called every time the line is changed.  <a href="class_views_1_1_game_views_1_1_line_view.html#a04a782f399b7f778304463879c266aaf">More...</a><br /></td></tr>
 <tr class="separator:a04a782f399b7f778304463879c266aaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e5cd5a43ee4dbdaa9fc436336903eed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_views_1_1_game_views_1_1_line_view.html#a8e5cd5a43ee4dbdaa9fc436336903eed">DisableLine</a> ()</td></tr>
+<tr class="memdesc:a8e5cd5a43ee4dbdaa9fc436336903eed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables the line.  <a href="class_views_1_1_game_views_1_1_line_view.html#a8e5cd5a43ee4dbdaa9fc436336903eed">More...</a><br /></td></tr>
 <tr class="separator:a8e5cd5a43ee4dbdaa9fc436336903eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35367441845c97bec897edb38f27d0a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_views_1_1_game_views_1_1_line_view.html#a35367441845c97bec897edb38f27d0a6">EnableLine</a> ()</td></tr>
+<tr class="memdesc:a35367441845c97bec897edb38f27d0a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the line.  <a href="class_views_1_1_game_views_1_1_line_view.html#a35367441845c97bec897edb38f27d0a6">More...</a><br /></td></tr>
 <tr class="separator:a35367441845c97bec897edb38f27d0a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3555f490c1d0a7e55cb55de29c3e548f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_views_1_1_game_views_1_1_line_view.html#a3555f490c1d0a7e55cb55de29c3e548f">DoLinePositionChange</a> ()</td></tr>
+<tr class="memdesc:a3555f490c1d0a7e55cb55de29c3e548f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the position of the line.  <a href="class_views_1_1_game_views_1_1_line_view.html#a3555f490c1d0a7e55cb55de29c3e548f">More...</a><br /></td></tr>
 <tr class="separator:a3555f490c1d0a7e55cb55de29c3e548f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:a752f6926aba93eda5ab294bbb34ab000"><td class="memItemLeft" align="right" valign="top">Vector2[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_views_1_1_game_views_1_1_line_view.html#a752f6926aba93eda5ab294bbb34ab000">Points</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a752f6926aba93eda5ab294bbb34ab000"><td class="mdescLeft">&#160;</td><td class="mdescRight">Points of the line.  <a href="class_views_1_1_game_views_1_1_line_view.html#a752f6926aba93eda5ab294bbb34ab000">More...</a><br /></td></tr>
 <tr class="separator:a752f6926aba93eda5ab294bbb34ab000"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac61fdb4c4cee20ad7b2ade1e81f53b58"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_views_1_1_game_views_1_1_line_view.html#ac61fdb4c4cee20ad7b2ade1e81f53b58">CornerVertices</a> = 5<code> [get, set]</code></td></tr>
+<tr class="memdesc:ac61fdb4c4cee20ad7b2ade1e81f53b58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the corner of the line is curved or not.  <a href="class_views_1_1_game_views_1_1_line_view.html#ac61fdb4c4cee20ad7b2ade1e81f53b58">More...</a><br /></td></tr>
 <tr class="separator:ac61fdb4c4cee20ad7b2ade1e81f53b58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14a5a886f9ed881388a5fa6d26605488"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_views_1_1_game_views_1_1_line_view.html#a14a5a886f9ed881388a5fa6d26605488">EndVertices</a> = 5<code> [get, set]</code></td></tr>
+<tr class="memdesc:a14a5a886f9ed881388a5fa6d26605488"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the end of the line is curved or not.  <a href="class_views_1_1_game_views_1_1_line_view.html#a14a5a886f9ed881388a5fa6d26605488">More...</a><br /></td></tr>
 <tr class="separator:a14a5a886f9ed881388a5fa6d26605488"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c647a598bf6b5f53d936737debde7e4"><td class="memItemLeft" align="right" valign="top">Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_views_1_1_game_views_1_1_line_view.html#a4c647a598bf6b5f53d936737debde7e4">LineColor</a> = Color.white<code> [get, set]</code></td></tr>
+<tr class="memdesc:a4c647a598bf6b5f53d936737debde7e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Color of the line.  <a href="class_views_1_1_game_views_1_1_line_view.html#a4c647a598bf6b5f53d936737debde7e4">More...</a><br /></td></tr>
 <tr class="separator:a4c647a598bf6b5f53d936737debde7e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a520c952c0ebb5d4d6e1e03ecbf88f2b3"><td class="memItemLeft" align="right" valign="top">AnimationCurve&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_views_1_1_game_views_1_1_line_view.html#a520c952c0ebb5d4d6e1e03ecbf88f2b3">WidthCurve</a><code> [get]</code></td></tr>
+<tr class="memdesc:a520c952c0ebb5d4d6e1e03ecbf88f2b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Width of the line as a curve.  <a href="class_views_1_1_game_views_1_1_line_view.html#a520c952c0ebb5d4d6e1e03ecbf88f2b3">More...</a><br /></td></tr>
 <tr class="separator:a520c952c0ebb5d4d6e1e03ecbf88f2b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8f88682a1edd4f2d4f1a09baba97e28"><td class="memItemLeft" align="right" valign="top">Material&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_views_1_1_game_views_1_1_line_view.html#aa8f88682a1edd4f2d4f1a09baba97e28">LineMaterial</a> = null<code> [get]</code></td></tr>
+<tr class="memitem:aa8f88682a1edd4f2d4f1a09baba97e28"><td class="memItemLeft" align="right" valign="top">Material&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_views_1_1_game_views_1_1_line_view.html#aa8f88682a1edd4f2d4f1a09baba97e28">LineMaterial</a><code> [get]</code></td></tr>
+<tr class="memdesc:aa8f88682a1edd4f2d4f1a09baba97e28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Material of the line.  <a href="class_views_1_1_game_views_1_1_line_view.html#aa8f88682a1edd4f2d4f1a09baba97e28">More...</a><br /></td></tr>
 <tr class="separator:aa8f88682a1edd4f2d4f1a09baba97e28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b6cd6b2dbcc240ed16669bae07a276e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_views_1_1_game_views_1_1_line_view.html#a3b6cd6b2dbcc240ed16669bae07a276e">ZIndex</a> = -5<code> [get, set]</code></td></tr>
+<tr class="memdesc:a3b6cd6b2dbcc240ed16669bae07a276e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Z-Index of the line (for 3D sorting).  <a href="class_views_1_1_game_views_1_1_line_view.html#a3b6cd6b2dbcc240ed16669bae07a276e">More...</a><br /></td></tr>
 <tr class="separator:a3b6cd6b2dbcc240ed16669bae07a276e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0178b618570722309636af0385e6326c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_views_1_1_game_views_1_1_line_view.html#a0178b618570722309636af0385e6326c">SortingLayerName</a> = &quot;TilemapOn1&quot;<code> [get]</code></td></tr>
+<tr class="memdesc:a0178b618570722309636af0385e6326c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort order of the line (for 2D sorting).  <a href="class_views_1_1_game_views_1_1_line_view.html#a0178b618570722309636af0385e6326c">More...</a><br /></td></tr>
 <tr class="separator:a0178b618570722309636af0385e6326c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24f7474e66a6d03990d9653935a895e1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_views_1_1_game_views_1_1_line_view.html#a24f7474e66a6d03990d9653935a895e1">Smooth</a><code> [get, set]</code></td></tr>
 <tr class="separator:a24f7474e66a6d03990d9653935a895e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0169ddac56148f910ad6af918d063674"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_views_1_1_game_views_1_1_line_view.html#a0169ddac56148f910ad6af918d063674">Smoothness</a><code> [get, set]</code></td></tr>
 <tr class="separator:a0169ddac56148f910ad6af918d063674"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94e9a6bb53d784e970e013f3eb11d65d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_views_1_1_game_views_1_1_line_view.html#a94e9a6bb53d784e970e013f3eb11d65d">Loop</a> = false<code> [get, set]</code></td></tr>
+<tr class="memdesc:a94e9a6bb53d784e970e013f3eb11d65d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Should the line be closed?  <a href="class_views_1_1_game_views_1_1_line_view.html#a94e9a6bb53d784e970e013f3eb11d65d">More...</a><br /></td></tr>
 <tr class="separator:a94e9a6bb53d784e970e013f3eb11d65d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >View for displaying a line on the map between given points. The line is drawn using a line renderer. It can be curved or not and provides other ways of changing the line's looks. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a8e5cd5a43ee4dbdaa9fc436336903eed" name="a8e5cd5a43ee4dbdaa9fc436336903eed"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8e5cd5a43ee4dbdaa9fc436336903eed">&#9670;&nbsp;</a></span>DisableLine()</h2>
 
@@ -151,6 +169,8 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Disables the line. </p>
 
 </div>
 </div>
@@ -169,6 +189,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Changes the position of the line. </p>
+
 </div>
 </div>
 <a id="a35367441845c97bec897edb38f27d0a6" name="a35367441845c97bec897edb38f27d0a6"></a>
@@ -186,6 +208,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Enables the line. </p>
+
 </div>
 </div>
 <a id="a04a782f399b7f778304463879c266aaf" name="a04a782f399b7f778304463879c266aaf"></a>
@@ -202,6 +226,8 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sets / Resets attributes of the line renderer. Must be called every time the line is changed. </p>
 
 </div>
 </div>
@@ -226,6 +252,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Whether the corner of the line is curved or not. </p>
+
 </div>
 </div>
 <a id="a14a5a886f9ed881388a5fa6d26605488" name="a14a5a886f9ed881388a5fa6d26605488"></a>
@@ -247,6 +275,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Whether the end of the line is curved or not. </p>
 
 </div>
 </div>
@@ -270,6 +300,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Color of the line. </p>
+
 </div>
 </div>
 <a id="aa8f88682a1edd4f2d4f1a09baba97e28" name="aa8f88682a1edd4f2d4f1a09baba97e28"></a>
@@ -282,7 +314,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Material Views.GameViews.LineView.LineMaterial = null</td>
+          <td class="memname">Material Views.GameViews.LineView.LineMaterial</td>
         </tr>
       </table>
   </td>
@@ -291,6 +323,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Material of the line. </p>
 
 </div>
 </div>
@@ -314,6 +348,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Should the line be closed? </p>
+
 </div>
 </div>
 <a id="a752f6926aba93eda5ab294bbb34ab000" name="a752f6926aba93eda5ab294bbb34ab000"></a>
@@ -335,6 +371,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Points of the line. </p>
 
 </div>
 </div>
@@ -402,6 +440,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Sort order of the line (for 2D sorting). </p>
+
 </div>
 </div>
 <a id="a520c952c0ebb5d4d6e1e03ecbf88f2b3" name="a520c952c0ebb5d4d6e1e03ecbf88f2b3"></a>
@@ -424,6 +464,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Width of the line as a curve. </p>
+
 </div>
 </div>
 <a id="a3b6cd6b2dbcc240ed16669bae07a276e" name="a3b6cd6b2dbcc240ed16669bae07a276e"></a>
@@ -445,6 +487,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Z-Index of the line (for 3D sorting). </p>
 
 </div>
 </div>

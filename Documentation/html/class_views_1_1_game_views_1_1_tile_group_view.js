@@ -5,6 +5,5 @@ var class_views_1_1_game_views_1_1_tile_group_view =
     [ "Enable", "class_views_1_1_game_views_1_1_tile_group_view.html#ade98436662ff92d2471a5ac8cd8e98ad", null ],
     [ "OnDisable", "class_views_1_1_game_views_1_1_tile_group_view.html#ac5a1f6cc75bb79ec46c25c2f5cf95ffe", null ],
     [ "Start", "class_views_1_1_game_views_1_1_tile_group_view.html#afe1872bdbc69a9c7cbfdff64870e2c8d", null ],
-    [ "tileHighlight", "class_views_1_1_game_views_1_1_tile_group_view.html#a0c01ac98ffda93d8a84a7d81b8251019", null ],
-    [ "tiles", "class_views_1_1_game_views_1_1_tile_group_view.html#aa49e69c288b5648a13dcab4f0a3a7c86", null ]
+    [ "Tiles", "class_views_1_1_game_views_1_1_tile_group_view.html#a0d2974f55eb9f7330b2fa9169168a3c4", null ]
 ];
