@@ -15,3 +15,5 @@ MonoBehaviour:
   <SizeX>k__BackingField: 513
   <SizeY>k__BackingField: 513
   generator: {fileID: 11400000, guid: 85eea03c1c9613b49aab840cc231b123, type: 2}
+  preprocessMapSteps:
+  - {fileID: 11400000, guid: 16939f5ef82f7d345a454ad9d4a3f486, type: 2}

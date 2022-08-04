@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Model.Map;
 using UnityEngine;
-using Utils.Array2D;
+using Utils.Arrays;
 using Utils.BaseUtils;
 
 namespace Derelict.Model.Map

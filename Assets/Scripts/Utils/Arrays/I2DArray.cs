@@ -1,7 +1,8 @@
 ﻿// ReSharper disable once TypeParameterCanBeVariant
+
 using System.Text;
 
-namespace Utils.Array2D
+namespace Utils.Arrays
 {
     /// <summary>
     /// Interface for a 2D array.

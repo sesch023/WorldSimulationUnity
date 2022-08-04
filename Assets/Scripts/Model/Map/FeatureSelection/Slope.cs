@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using Utils.Array2D;
+using Utils.Arrays;
 using Utils.BaseUtils;
 
 namespace Model.Map

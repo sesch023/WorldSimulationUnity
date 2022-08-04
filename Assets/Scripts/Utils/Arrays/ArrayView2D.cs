@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Utils.Array2D
+namespace Utils.Arrays
 {
     /// <summary>
     /// Creates a view on a 2d array with a type TReal and provides a view of it with type TView using

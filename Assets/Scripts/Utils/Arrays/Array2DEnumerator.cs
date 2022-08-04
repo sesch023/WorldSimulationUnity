@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 
-namespace Utils.Array2D
+namespace Utils.Arrays
 {
     /// <summary>
     /// Enumerator for a 2D array.

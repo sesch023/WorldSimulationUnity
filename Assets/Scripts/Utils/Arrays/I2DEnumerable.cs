@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-namespace Utils.Array2D
+namespace Utils.Arrays
 {
     /// <summary>
     /// Interface for a 2d enumerable.

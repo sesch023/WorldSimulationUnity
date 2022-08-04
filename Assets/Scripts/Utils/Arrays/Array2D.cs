@@ -1,4 +1,4 @@
-﻿namespace Utils.Array2D
+﻿namespace Utils.Arrays
 {
     /// <summary>
     /// Basic 2d array implementation of the IArray2D interface.
@@ -16,17 +16,6 @@
         public Array2D(TReal[,] array)
         {
             _array = array;
-        }
-        
-        /// <summary>
-        /// Adds a value to the array at the given position.
-        /// </summary>
-        /// <param name="x">Position in first dimension.</param>
-        /// <param name="y">Position in second dimension.</param>
-        /// <param name="value">Value at the given position.</param>
-        public void Add(int x, int y, TReal value)
-        {
-            _array[x,y] = value;
         }
         
         /// <summary>

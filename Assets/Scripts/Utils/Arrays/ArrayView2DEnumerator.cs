@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Utils.Array2D
+namespace Utils.Arrays
 {
     /// <summary>
     /// Creates a enumerator on a 2D array view.

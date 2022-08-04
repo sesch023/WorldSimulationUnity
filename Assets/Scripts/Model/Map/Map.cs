@@ -1,6 +1,7 @@
 ﻿using Base;
 using Manager;
 using Model.Generators;
+using Model.Map.Preprocessing;
 using UnityEngine;
 using Views.GameViews;
 
@@ -23,6 +24,10 @@ namespace Model.Map
         /// BaseGenerator used to generate the map.
         [SerializeField] 
         private BaseGenerator generator;
+
+        /// Preprocess the map, after it is generated with these rules.
+        [SerializeReference] 
+        private BasePreprocessMapStep[] preprocessMapSteps;
         
         /// Units of the map.
         public MapUnit[,] MapUnits { get; private set; }
@@ -53,6 +58,11 @@ namespace Model.Map
                     (float lat, float lon) latLong = CalculateLatLong(x, y);
                     MapUnits[x, y] = new MapUnit(0.0f, 0.0f, new MapPosition(latLong.lat, latLong.lon, mapElevation[x, y]));
                 }
+            }
+            
+            foreach(BasePreprocessMapStep step in preprocessMapSteps)
+            {
+                step.Preprocess(this);
             }
         }
         

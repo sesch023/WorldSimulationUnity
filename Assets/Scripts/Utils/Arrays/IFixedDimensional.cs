@@ -1,4 +1,4 @@
-﻿namespace Utils.Array2D
+﻿namespace Utils.Arrays
 {
     /// <summary>
     /// Interface for data structures with a fixed dimensional size.
