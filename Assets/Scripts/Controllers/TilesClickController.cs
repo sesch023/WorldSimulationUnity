@@ -189,7 +189,7 @@ namespace Controllers {
         /// Gets the MapUnit and the position of the mouse click.
         /// </summary>
         /// <returns>MapUnit and position of the mouse click.</returns>
-        private (MapUnit, Vector2Int) GetMapUnitAndPosition()
+        private (MapUnit unit, Vector2Int pos) GetMapUnitAndPosition()
         {
             Vector3 worldPosition = clickCamera.ScreenToWorldPoint((Mouse.current.position.ReadValue()));
             return MapManager.Instance.MapController.GetMapUnitByGlobalPosition(worldPosition);

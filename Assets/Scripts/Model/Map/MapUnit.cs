@@ -13,23 +13,6 @@ namespace Model.Map
     /// </summary>
     public class MapUnit : IUpdatable
     {
-        /// <summary>
-        /// A position in the map. Has longitude, latitude and elevation.
-        /// </summary>
-        public struct MapPosition
-        {
-            public MapPosition(float latitude, float longitude, float elevation)
-            {
-                Longitude = longitude;
-                Latitude = latitude;
-                Elevation = elevation;
-            }
-
-            public float Longitude { get; private set; }
-            public float Latitude { get; private set; }
-            public float Elevation { get; private set; }
-        }
-        
         /// Temperature of the unit in Kelvin.
         private float _temperature;
         
@@ -39,6 +22,17 @@ namespace Model.Map
         public float Temperature
         {
             get => _temperature; 
+            private set => Math.Clamp(value, 0, float.MaxValue);
+        }
+        
+        private float _waterLevel;
+        
+        /// <summary>
+        /// Water on top of the unit.
+        /// </summary>
+        public float WaterLevel
+        {
+            get => _waterLevel; 
             private set => Math.Clamp(value, 0, float.MaxValue);
         }
         
@@ -54,6 +48,12 @@ namespace Model.Map
             private set => _humidity = Math.Clamp(value, 0, 100);
         }
 
+        /// <summary>
+        /// Atmospheric pressure of the unit in pascal.
+        /// </summary>
+        public float AtmosphericPressure { get; }
+
+        public MapUnitMaterial Material { get; private set; } = new(1);
         /// <summary>
         /// Position of the unit in the map with longitude, latitude and elevation.
         /// </summary>

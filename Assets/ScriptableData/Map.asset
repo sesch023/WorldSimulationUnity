@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23fe967fc13341499d33cb5c3c761b12, type: 3}
   m_Name: Map
   m_EditorClassIdentifier: 
-  <SizeX>k__BackingField: 1025
-  <SizeY>k__BackingField: 1025
+  <SizeX>k__BackingField: 513
+  <SizeY>k__BackingField: 513
   generator: {fileID: 11400000, guid: 85eea03c1c9613b49aab840cc231b123, type: 2}

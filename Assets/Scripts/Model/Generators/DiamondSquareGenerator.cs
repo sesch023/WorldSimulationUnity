@@ -120,7 +120,7 @@ namespace Model.Generators
 	        {
 		        return (bigger, bigger);
 	        }
-            int biggerLog = ((int)Math.Log(bigger, 2.0)) + 1;
+            int biggerLog = (int)Math.Log(bigger, 2.0);
             int newSize = ((int)Math.Pow(2, biggerLog)) + 1;
 
             return (newSize, newSize);

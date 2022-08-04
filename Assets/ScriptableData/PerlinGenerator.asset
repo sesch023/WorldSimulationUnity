@@ -16,6 +16,6 @@ MonoBehaviour:
   minHeight: -8000
   randomSeed: 195807793
   scale: 100
-  octaves: 100
+  octaves: 10
   persistence: 0.5
   lacunarity: 1.6

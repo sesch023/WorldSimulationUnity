@@ -26,10 +26,23 @@ namespace Views.UIViews
         /// View for displaying humidity information.
         [SerializeField]
         private TextMeshProUGUI humidityView;
+        
+        /// View for displaying water Level.
+        [SerializeField]
+        private TextMeshProUGUI waterLevelView;
+        
+        [SerializeField]
+        private TextMeshProUGUI atmosphericPressureView;
 
         /// View for displaying behavior information.
         [SerializeField] 
         private TextMeshProUGUI behaviorView;
+
+        /// <summary>
+        /// View for displaying ground material information.
+        /// </summary>
+        [SerializeField] 
+        private TextMeshProUGUI materialView;
 
         /// Highlight to display on the tilemap if a tile is clicked.
         [SerializeField]
@@ -50,7 +63,7 @@ namespace Views.UIViews
             if(_baseView == null)
                 throw new MissingComponentException("MissingComponentException: Illegal Unit View. TextMesh missing!");
             
-            if(positionView == null || temperatureView == null || humidityView == null)
+            if(positionView == null || temperatureView == null || humidityView == null || waterLevelView == null || atmosphericPressureView == null)
                 throw new MissingReferenceException("MissingReferenceException: Illegal Unit View. TextMesh Reference missing!");
             
             if(tileHightlight == null)
@@ -58,6 +71,9 @@ namespace Views.UIViews
             
             if(behaviorView == null)
                 throw new MissingReferenceException("MissingReferenceException: Illegal Unit View. BehaviorView Reference missing!");
+            
+            if(materialView == null)
+                throw new MissingReferenceException("MissingReferenceException: Illegal Material View. MaterialView Reference missing!");
             
             DisableUnit();
         }
@@ -71,7 +87,10 @@ namespace Views.UIViews
             positionView.enabled = false;
             temperatureView.enabled = false;
             humidityView.enabled = false;
+            waterLevelView.enabled = false;
+            atmosphericPressureView.enabled = false;
             behaviorView.gameObject.SetActive(false);
+            materialView.gameObject.SetActive(false);
             _baseView.enabled = false;
             tileHightlight.SetActive(false);
         }
@@ -90,7 +109,10 @@ namespace Views.UIViews
             positionView.enabled = true;
             temperatureView.enabled = true;
             humidityView.enabled = true;
+            waterLevelView.enabled = true;
+            atmosphericPressureView.enabled = true;
             behaviorView.gameObject.SetActive(true);
+            materialView.gameObject.SetActive(true);
             _baseView.enabled = true;
             tileHightlight.SetActive(true);
         }
@@ -104,11 +126,14 @@ namespace Views.UIViews
             SetTemperatureData();
             SetHumidityData();
             SetBehaviorData();
+            SetWaterLevelData();
+            SetAtmosphericPressureData();
+            SetMaterialData();
         }
 
         private void SetPositionData()
         {
-            MapUnit.MapPosition position = _shownUnit.Position;
+            MapPosition position = _shownUnit.Position;
             String data = $"Position: ({position.Latitude:0.00}, {position.Longitude:0.00}, {position.Elevation:0.00})";
             positionView.SetText(data);
         }
@@ -120,7 +145,22 @@ namespace Views.UIViews
 
         private void SetHumidityData()
         {
-            humidityView.SetText($"Temperature: {_shownUnit.Humidity:0.00}");
+            humidityView.SetText($"Humidity: {_shownUnit.Humidity:0.00}");
+        }
+
+        private void SetWaterLevelData()
+        {
+            waterLevelView.SetText($"Water Level: {_shownUnit.WaterLevel:0.00}");
+        }
+        
+        private void SetAtmosphericPressureData()
+        {
+            atmosphericPressureView.SetText($"Atmospheric Pressure: {_shownUnit.AtmosphericPressure:0.00}");
+        }
+        
+        private void SetMaterialData()
+        {
+            materialView.SetText(_shownUnit.Material.ToString());
         }
 
         private void SetBehaviorData()
