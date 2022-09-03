@@ -4,7 +4,7 @@ using Utils.Arrays;
 namespace Model.Map
 {
     /// <summary>
-    /// Finds and defines a peak in a map or 2D array of floats.
+    /// Finds and defines a peak in a map or 2D arrayImmutable of floats.
     /// </summary>
     public class Peak : Valley
     {
@@ -21,12 +21,12 @@ namespace Model.Map
         }
 
         /// <summary>
-        /// Finds a peak in a 2D array of float elevations. Takes the elevation of the start position as minimum
+        /// Finds a peak in a 2D arrayImmutable of float elevations. Takes the elevation of the start position as minimum
         /// elevation.
         /// </summary>
         /// <param name="start">Start point in the map.</param>
-        /// <param name="elevations">2D array of float elevations.</param>
-        public Peak(Vector2Int start, I2DArray<float> elevations) : base(start, elevations)
+        /// <param name="elevations">2D arrayImmutable of float elevations.</param>
+        public Peak(Vector2Int start, I2DArrayImmutable<float> elevations) : base(start, elevations)
         {
         }
         
@@ -41,13 +41,13 @@ namespace Model.Map
         }
         
         /// <summary>
-        /// Finds a peak in a 2D array of float elevations. Starts at the start point. Takes the given elevation
+        /// Finds a peak in a 2D arrayImmutable of float elevations. Starts at the start point. Takes the given elevation
         /// as minimum elevation.
         /// </summary>
         /// <param name="start">Start point in the map.</param>
-        /// <param name="elevations">2D array of float elevations.</param>
+        /// <param name="elevations">2D arrayImmutable of float elevations.</param>
         /// <param name="minElevation">Minimum elevation of the peak.</param>
-        public Peak(Vector2Int start, I2DArray<float> elevations, float minElevation) : base(start, elevations, minElevation)
+        public Peak(Vector2Int start, I2DArrayImmutable<float> elevations, float minElevation) : base(start, elevations, minElevation)
         {
         }
         

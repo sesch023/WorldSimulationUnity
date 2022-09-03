@@ -3,39 +3,39 @@
 namespace Utils.Arrays
 {
     /// <summary>
-    /// Creates a enumerator on a 2D array view.
+    /// Creates a enumerator on a 2D array immutableMap.
     /// </summary>
     /// <typeparam name="TRealEnum">Type of the internal array.</typeparam>
-    /// <typeparam name="TViewEnum">Type of the view.</typeparam>
-    public class ArrayView2DEnumerator<TRealEnum, TViewEnum> : Array2DEnumerator<TRealEnum>, I2DEnumerator<TViewEnum>
+    /// <typeparam name="TMappedEnum">Type of the immutableMap.</typeparam>
+    public class ArrayMap2DEnumerator<TRealEnum, TMappedEnum> : Array2DEnumerator<TRealEnum>, I2DEnumerator<TMappedEnum>
     {
         /// Accessor to the internal array.
-        private readonly Func<TRealEnum, TViewEnum> _accessor;
+        private readonly Func<TRealEnum, TMappedEnum> _accessor;
 
         /// <summary>
-        /// Creates a new enumerator on a 2D array view.
+        /// Creates a new enumerator on a 2D array immutableMap.
         /// </summary>
         /// <param name="array">Internal array.</param>
         /// <param name="accessor">Accessor to the internal array.</param>
-        public ArrayView2DEnumerator(TRealEnum[,] array, Func<TRealEnum, TViewEnum> accessor) : base(array)
+        public ArrayMap2DEnumerator(I2DArrayImmutable<TRealEnum> array, Func<TRealEnum, TMappedEnum> accessor) : base(array)
         {
             _accessor = accessor;
         }
         
         /// <summary>
-        /// Creates a new enumerator on a 2D array view.
+        /// Creates a new enumerator on a 2D array immutableMap.
         /// </summary>
-        /// <param name="arrayView2D">ArrayView2D to create an enumerator on.</param>
-        public ArrayView2DEnumerator(ArrayView2D<TRealEnum, TViewEnum> arrayView2D) : base(arrayView2D.GetRealArray())
+        /// <param name="arrayImmutableMap2D">ArrayImmutableMap2D to create an enumerator on.</param>
+        public ArrayMap2DEnumerator(ArrayImmutableMap2D<TRealEnum, TMappedEnum> arrayImmutableMap2D) : base(arrayImmutableMap2D.GetRealArray())
         {
-            _accessor = arrayView2D.Accessor;
+            _accessor = arrayImmutableMap2D.Accessor;
         }
 
         /// <summary>
         /// Returns the current element.
         /// </summary>
         /// <exception cref="InvalidOperationException">If the enumerator has ended.</exception>
-        public new TViewEnum Current
+        public new TMappedEnum Current
         {
             get
             {

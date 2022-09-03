@@ -38,7 +38,7 @@ namespace CustomEditors.CustomAttributes
                     // Look up the layer name using the current layer ID
                     string oldName = property.stringValue;
 
-                    // Use the name to look up our array index into the names list
+                    // Use the name to look up our arrayImmutable index into the names list
                     int oldLayerIndex = -1;
                     for (int a = 0; a < sortingLayerNames.Length; a++)
                         if (sortingLayerNames[a].Equals(oldName))

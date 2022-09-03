@@ -11,21 +11,21 @@ namespace Derelict.Model.Map
         public Vector2Int[] CalculatedHeightLine { get; private set; }
         
         private float _elevation;
-        private I2DArray<float> _mapElevations;
+        private I2DArrayImmutable<float> _mapElevations;
         private Vector2Int _start;
 
         public HeightLine(Vector2Int start, MapUnit[,] mapUnits, float elevation)
         {
-            ArrayView2D<MapUnit, float> view = new ArrayView2D<MapUnit, float>(mapUnits, unit => unit.Position.Elevation);
-            Reset(start, view, elevation);
+            ArrayImmutableMap2D<MapUnit, float> immutableMap = new ArrayImmutableMap2D<MapUnit, float>(mapUnits, unit => unit.Position.Elevation);
+            Reset(start, immutableMap, elevation);
         }
 
-        public HeightLine(Vector2Int start, I2DArray<float> mapUnits, float elevation)
+        public HeightLine(Vector2Int start, I2DArrayImmutable<float> mapUnits, float elevation)
         {
             Reset(start, mapUnits, elevation);
         }
 
-        public void Reset(Vector2Int start, I2DArray<float> mapElevations, float elevation)
+        public void Reset(Vector2Int start, I2DArrayImmutable<float> mapElevations, float elevation)
         {
             _start = start;
             _mapElevations = mapElevations;

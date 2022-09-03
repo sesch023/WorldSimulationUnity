@@ -26,7 +26,7 @@ namespace Model.Generators
         private Vector2[] _offsets;
         
         /// <summary>
-        /// Initializes the PerlinGenerator by creating the offsets array and the random number generator.
+        /// Initializes the PerlinGenerator by creating the offsets arrayImmutable and the random number generator.
         /// </summary>
         private void OnEnable()
         {

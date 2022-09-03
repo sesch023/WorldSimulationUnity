@@ -53,7 +53,7 @@ namespace Utils.BaseUtils
         }
         
         /// <summary>
-        /// Transforms a array of integer vector 2d to a array of float vector 2d.
+        /// Transforms a arrayImmutable of integer vector 2d to a arrayImmutable of float vector 2d.
         /// </summary>
         /// <param name="arr">Array of integer vector 2d.</param>
         /// <returns>Array of float vector 2d.</returns>
@@ -98,7 +98,7 @@ namespace Utils.BaseUtils
         }
 
         /// <summary>
-        /// Calculate a bezier curve between a array of points.
+        /// Calculate a bezier curve between a arrayImmutable of points.
         ///
         /// https://answers.unity.com/questions/392606/line-drawing-how-can-i-interpolate-between-points.html
         /// </summary>
@@ -138,11 +138,11 @@ namespace Utils.BaseUtils
         }
 
         /// <summary>
-        /// Gets all neighbors of a point in a 2d array.
+        /// Gets all neighbors of a point in a 2d arrayImmutable.
         /// </summary>
         /// <param name="position">Position to give neighbors for.</param>
-        /// <param name="sizeX">Width of the 2d array.</param>
-        /// <param name="sizeY">Height of the 2d array.</param>
+        /// <param name="sizeX">Width of the 2d arrayImmutable.</param>
+        /// <param name="sizeY">Height of the 2d arrayImmutable.</param>
         /// <returns>All neighbors of the point.</returns>
         public static Vector2Int[] GetNeighborPositionsIn2DArray(Vector2Int position, int sizeX, int sizeY)
         {
@@ -187,12 +187,12 @@ namespace Utils.BaseUtils
         }
 
         /// <summary>
-        /// Checks if a point is at the edge of a 2d array.
+        /// Checks if a point is at the edge of a 2d arrayImmutable.
         /// </summary>
         /// <param name="position">Position to check.</param>
-        /// <param name="sizeX">Width of array.</param>
-        /// <param name="sizeY">Height of array.</param>
-        /// <returns>If the point is a the border of the 2d array.</returns>
+        /// <param name="sizeX">Width of arrayImmutable.</param>
+        /// <param name="sizeY">Height of arrayImmutable.</param>
+        /// <returns>If the point is a the border of the 2d arrayImmutable.</returns>
         public static bool At2DArrayBorder(Vector2Int position, int sizeX, int sizeY)
         {
             return position.x == 0 || position.y == 0 || position.x == sizeX || position.y == sizeY;

@@ -6,18 +6,18 @@ namespace Utils.Arrays
 {
     public class ArrayView2DTo1D<TReal, TView> : IArray<TView>
     {
-        private TReal[,] _internal;
+        private I2DArrayImmutable<TReal> _internal;
         private Func<TReal, TView> _accessor;
 
-        public ArrayView2DTo1D(TReal[,] internalArray, Func<TReal, TView> accessor)
+        public ArrayView2DTo1D(I2DArrayImmutable<TReal> internalArrayImmutable, Func<TReal, TView> accessor)
         {
-            _internal = internalArray;
+            _internal = internalArrayImmutable;
             _accessor = accessor;
         }
         
         public IEnumerator<TView> GetEnumerator()
         {
-            return new ArrayView2DEnumerator<TReal, TView>(_internal, _accessor);
+            return new ArrayMap2DEnumerator<TReal, TView>(_internal, _accessor);
         }
 
         IEnumerator IEnumerable.GetEnumerator()

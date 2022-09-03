@@ -6,7 +6,7 @@
     public interface IGenerator
     {
         /// <summary>
-        /// Method for generating the map as a 2D array of floats.
+        /// Method for generating the map as a 2D arrayImmutable of floats.
         /// </summary>
         /// <param name="sizeX">Width of the Map.</param>
         /// <param name="sizeY">Height of the Map.</param>

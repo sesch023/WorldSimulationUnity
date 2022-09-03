@@ -1,90 +1,103 @@
 ﻿using System;
+using System.Linq;
+using Unity.VisualScripting;
 
 namespace Utils.Arrays
 {
-    /// <summary>
-    /// Creates a view on a 2d array with a type TReal and provides a view of it with type TView using
-    /// the provided accessor.
-    /// </summary>
-    /// <typeparam name="TReal">Real type of the array.</typeparam>
-    /// <typeparam name="TView">View type of the array.</typeparam>
-    public class ArrayView2D<TReal, TView> : I2DArray<TView>
+    public class ArrayView2D<T> : I2DArray<T>
     {
-        /// Internal array.
-        private readonly TReal[,] _array;
+        private readonly Array2D<T> _array;
+        private readonly int _viewStartX;
+        private readonly int _viewStartY;
+        private readonly int _viewEndX;
+        private readonly int _viewEndY;
 
-        /// Accessor to convert a TReal to a TView.
-        public Func<TReal, TView> Accessor { get; private set; }
-
-        /// <summary>
-        /// Creates a view on a 2d array with a type TReal and provides a view of it with type TView using
-        /// the provided accessor.
-        /// </summary>
-        /// <param name="array">Internal array.</param>
-        /// <param name="accessor">Accessor to convert a TReal to a TView.</param>
-        public ArrayView2D(TReal[,] array, Func<TReal, TView> accessor)
+        public ArrayView2D(Array2D<T> array) 
+            : this(array, 0, 0, 
+                array.GetLength(0), array.GetLength(1))
         {
+            
+        } 
+        
+        public ArrayView2D(T[,] array) : 
+            this(new Array2D<T>(array), 0, 0, 
+                array.GetLength(0), array.GetLength(1))
+        {
+            
+        } 
+        
+        public ArrayView2D(Array2D<T> array, int viewStartX, int viewStartY, int viewEndX, int viewEndY)
+        {
+            if (viewStartX >= viewEndX || viewStartX < 0)
+            {
+                throw new ArgumentException($"ArgumentException: {GetType()} - Illegal value for viewStartX!");
+            }
+            
+            if (viewStartY >= viewEndY || viewStartY < 0)
+            {
+                throw new ArgumentException($"ArgumentException: {GetType()} - Illegal value for viewStartY!");
+            }
+            
+            if (viewEndX > array.GetLength(0) || viewEndX < 0)
+            {
+                throw new ArgumentException($"ArgumentException: {GetType()} - Illegal value for viewEndX!");
+            }
+            
+            if (viewEndY > array.GetLength(1) || viewEndY < 0)
+            {
+                throw new ArgumentException($"ArgumentException: {GetType()} - Illegal value for viewEndY!");
+            }
+            
             _array = array;
-            Accessor = accessor;
-        }
+            this._viewStartX = viewStartX;
+            this._viewStartY = viewStartY;
+            this._viewEndX = viewEndX;
+            this._viewEndY = viewEndY;
+        } 
         
-        /// <summary>
-        /// Returns the value at the given index in the array.
-        /// </summary>
-        /// <param name="indexX">Outer dimension.</param>
-        /// <param name="indexY">Inner dimension.</param>
-        /// <returns>Value at the given index.</returns>
-        public TReal GetRealTypeByIndex(int indexX, int indexY)
+        public ArrayView2D(T[,] array, int viewStartX, int viewStartY, int viewEndX, int viewEndY) 
+            : this(new Array2D<T>(array), viewStartX, viewStartY, viewEndX, viewEndY)
         {
-            return _array[indexX, indexY];
-        }
-        
-        /// <summary>
-        /// Returns the value at the given index in the array using the accessor.
-        /// </summary>
-        /// <param name="indexX">Outer dimension.</param>
-        /// <param name="indexY">Inner dimension.</param>
-        /// <returns>Converted value at the given index.</returns>
-        public TView this[int indexX, int indexY]
-        {
-            get => Accessor(_array[indexX, indexY]);
+            
         }
 
-        /// <summary>
-        /// Creates a 2d enumerator for the array.
-        /// </summary>
-        /// <returns>2d enumerator for the array.</returns>
-        public I2DEnumerator<TView> Get2DEnumerator()
+        public I2DEnumerator<T> Get2DEnumerator()
         {
-            return new ArrayView2DEnumerator<TReal, TView>(_array, Accessor);
+            return new Array2DEnumerator<T>(this);
         }
 
-        /// <summary>
-        /// Get length of the array in given dimension.
-        /// </summary>
-        /// <param name="dimension">Either 0 (outer) or 1 (inner).</param>
-        /// <returns>Length of the given dimension.</returns>
         public int GetLength(int dimension)
         {
-            return _array.GetLength(dimension);
+            if (dimension == 0)
+                return _viewStartX;
+            if (dimension == 1)
+                return _viewStartY;
+            
+            throw new ArgumentException($"ArgumentException: {GetType()}::GetLength - Illegal value for dimension!");
         }
-        
-        /// <summary>
-        /// Returns the internal array.
-        /// </summary>
-        /// <returns>Internal array.</returns>
-        public TReal[,] GetRealArray()
+
+        public T this[int x, int y]
         {
-            return _array;
-        }
-        
-        /// <summary>
-        /// Creates a string representation of the array.
-        /// </summary>
-        /// <returns>String representation of the array.</returns>
-        public override string ToString()
-        {
-            return I2DArray<TView>.I2DArrayToString(this);
+            get
+            {
+                if(x >= _viewEndX)
+                    throw new IndexOutOfRangeException($"IndexOutOfRangeException: {GetType()}::get - X is out of range!");
+                
+                if(y >= _viewEndY)
+                    throw new IndexOutOfRangeException($"IndexOutOfRangeException: {GetType()}::get - Y is out of range!");
+                
+                return _array[_viewStartX + x, _viewStartY + y];
+            }
+            set
+            {
+                if(x >= _viewEndX)
+                    throw new IndexOutOfRangeException($"IndexOutOfRangeException: {GetType()}::set - X is out of range!");
+                
+                if(y >= _viewEndY)
+                    throw new IndexOutOfRangeException($"IndexOutOfRangeException: {GetType()}::set - Y is out of range!");
+                
+                _array[_viewStartX + x, _viewStartY + y] = value;
+            }
         }
     }
 }

@@ -20,7 +20,7 @@ namespace Model.Generators
         protected float minHeight = -8000;
         
         /// <summary>
-        /// Abstract method for generating the map as a 2D array of floats.
+        /// Abstract method for generating the map as a 2D arrayImmutable of floats.
         /// </summary>
         /// <param name="sizeX">Width of the Map.</param>
         /// <param name="sizeY">Height of the Map.</param>
@@ -42,10 +42,10 @@ namespace Model.Generators
         /// <summary>
         /// Normalizes the elevation of the map to the given min and max values.
         /// </summary>
-        /// <param name="elevation">2D array of floats as elevation.</param>
+        /// <param name="elevation">2D arrayImmutable of floats as elevation.</param>
         /// <param name="min">Minimum new value after normalization.</param>
         /// <param name="max">Maximum new value after normalization.</param>
-        /// <returns>Normalized 2D array of floats.</returns>
+        /// <returns>Normalized 2D arrayImmutable of floats.</returns>
         protected static float[,] NormalizeElevation(float[,] elevation, float min, float max)
         {
             float minGenerated = Util.MinIn2DArray(elevation);

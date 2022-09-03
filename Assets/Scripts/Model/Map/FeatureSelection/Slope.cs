@@ -6,14 +6,14 @@ using Utils.BaseUtils;
 namespace Model.Map
 {
     /// <summary>
-    /// Finds a slope in a map or 2D array of floats.
+    /// Finds a slope in a map or 2D arrayImmutable of floats.
     /// </summary>
     public class Slope
     {
         /// Start point of the slope.
         private Vector2Int _start;
         /// Elevations of the map.
-        private I2DArray<float> _elevations;
+        private I2DArrayImmutable<float> _elevations;
         /// Momentum multiplier which changes the level of momentum the slope uses for passing local minimals.
         private float _momentumMultiplier;
         /// Maximum momentum to use in a single step. 
@@ -34,24 +34,24 @@ namespace Model.Map
         public Slope(Vector2Int start, MapUnit[,] mapUnits, float momentumMultiplier = 1.0f,
             float maxMomentumFraction = 1.0f)
         {
-            ArrayView2D<MapUnit, float> view = new ArrayView2D<MapUnit, float>(mapUnits, unit => unit.Position.Elevation);
-            Reset(start, view, momentumMultiplier, maxMomentumFraction);
+            ArrayImmutableMap2D<MapUnit, float> immutableMap = new ArrayImmutableMap2D<MapUnit, float>(mapUnits, unit => unit.Position.Elevation);
+            Reset(start, immutableMap, momentumMultiplier, maxMomentumFraction);
         }
         
         /// <summary>
         /// Constructor for the slope.
         /// </summary>
         /// <param name="start">Start position of the slope.</param>
-        /// <param name="elevations">2d array of floats a elevations.</param>
+        /// <param name="elevations">2d arrayImmutable of floats a elevations.</param>
         /// <param name="momentumMultiplier">Momentum multiplier which changes the level of momentum the slope uses for passing local minimals.</param>
         /// <param name="maxMomentumFraction">Maximum momentum to use in a single step.</param>
-        public Slope(Vector2Int start, I2DArray<float> elevations, 
+        public Slope(Vector2Int start, I2DArrayImmutable<float> elevations, 
             float momentumMultiplier=1.0f, float maxMomentumFraction=1.0f)
         {
             Reset(start, elevations, momentumMultiplier, maxMomentumFraction);
         }
         
-        private void Reset(Vector2Int start, I2DArray<float> elevations, 
+        private void Reset(Vector2Int start, I2DArrayImmutable<float> elevations, 
             float momentumMultiplier=1.0f, float maxMomentumFraction=1.0f)
         {
             _start = start;

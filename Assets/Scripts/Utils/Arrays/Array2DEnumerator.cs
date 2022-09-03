@@ -10,7 +10,7 @@ namespace Utils.Arrays
     public class Array2DEnumerator<TRealEnum> : I2DEnumerator<TRealEnum>
     {
         /// Reference to the 2D array.
-        protected readonly TRealEnum[,] Array;
+        protected readonly I2DArrayImmutable<TRealEnum> Array;
         /// Current position in first dimension.
         protected int CountX = -1;
         /// Current position in second dimension.
@@ -20,20 +20,11 @@ namespace Utils.Arrays
         /// Creates a new enumerator for a 2D array.
         /// </summary>
         /// <param name="array">Reference to the 2d array.</param>
-        public Array2DEnumerator(TRealEnum[,] array)
+        public Array2DEnumerator(I2DArrayImmutable<TRealEnum> array)
         {
             Array = array;
         }
-
-        /// <summary>
-        /// Creates a new enumerator for a Array2D.
-        /// </summary>
-        /// <param name="array">Reference to the Array2D.</param>
-        public Array2DEnumerator(Array2D<TRealEnum> array)
-        {
-            Array = array.GetRealArray();
-        }
-
+        
         /// <summary>
         /// Resets the enumerator.
         /// </summary>

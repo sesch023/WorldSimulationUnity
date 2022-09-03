@@ -7,7 +7,7 @@ using Utils.BaseUtils;
 namespace Model.Map
 {
     /// <summary>
-    /// Finds and defines a valley in a map or 2D array of floats.
+    /// Finds and defines a valley in a map or 2D arrayImmutable of floats.
     /// </summary>
     public class Valley
     {
@@ -30,7 +30,7 @@ namespace Model.Map
         /// Elevation of the start.
         private float _maxElevation;
         /// All elevations in the map.
-        protected I2DArray<float> MapElevations;
+        protected I2DArrayImmutable<float> MapElevations;
         /// Start position.
         private Vector2Int _start;
         
@@ -62,17 +62,17 @@ namespace Model.Map
         /// <param name="elevations">Map of MapUnits.</param>
         public Valley(Vector2Int start, MapUnit[,] elevations)
         {
-            ArrayView2D<MapUnit, float> view = new ArrayView2D<MapUnit, float>(elevations, unit => unit.Position.Elevation);
-            Reset(start, view);
+            ArrayImmutableMap2D<MapUnit, float> immutableMap = new ArrayImmutableMap2D<MapUnit, float>(elevations, unit => unit.Position.Elevation);
+            Reset(start, immutableMap);
         }
         
         /// <summary>
-        /// Finds a valley in a 2D array of float elevations. Takes the elevation of the start position as maximum
+        /// Finds a valley in a 2D arrayImmutable of float elevations. Takes the elevation of the start position as maximum
         /// elevation.
         /// </summary>
         /// <param name="start">Start point in the map.</param>
-        /// <param name="elevations">2D array of float elevations.</param>
-        public Valley(Vector2Int start, I2DArray<float> elevations)
+        /// <param name="elevations">2D arrayImmutable of float elevations.</param>
+        public Valley(Vector2Int start, I2DArrayImmutable<float> elevations)
         {
             Reset(start, elevations);
         }
@@ -85,28 +85,28 @@ namespace Model.Map
         /// <param name="maxElevation">Maximum elevation of the valley.</param>
         public Valley(Vector2Int start, MapUnit[,] elevations, float maxElevation)
         {
-            ArrayView2D<MapUnit, float> view = new ArrayView2D<MapUnit, float>(elevations, unit => unit.Position.Elevation);
-            Reset(start, view, maxElevation);
+            ArrayImmutableMap2D<MapUnit, float> immutableMap = new ArrayImmutableMap2D<MapUnit, float>(elevations, unit => unit.Position.Elevation);
+            Reset(start, immutableMap, maxElevation);
         }
 
         /// <summary>
-        /// Finds a valley in a 2D array of float elevations. Starts at the start point. Takes the given elevation
+        /// Finds a valley in a 2D arrayImmutable of float elevations. Starts at the start point. Takes the given elevation
         /// as maximum elevation.
         /// </summary>
         /// <param name="start">Start point in the map.</param>
-        /// <param name="elevations">2D array of float elevations.</param>
+        /// <param name="elevations">2D arrayImmutable of float elevations.</param>
         /// <param name="maxElevation">Maximum elevation of the valley.</param>
-        public Valley(Vector2Int start, I2DArray<float> elevations, float maxElevation)
+        public Valley(Vector2Int start, I2DArrayImmutable<float> elevations, float maxElevation)
         {
             Reset(start, elevations, maxElevation);
         }
         
-        private void Reset(Vector2Int start, I2DArray<float> mapElevations)
+        private void Reset(Vector2Int start, I2DArrayImmutable<float> mapElevations)
         {
             Reset(start, mapElevations, mapElevations[start.x, start.y]);
         }
         
-        private void Reset(Vector2Int start, I2DArray<float> mapElevations, float maxElevation)
+        private void Reset(Vector2Int start, I2DArrayImmutable<float> mapElevations, float maxElevation)
         {
             _start = start;
             MapElevations = mapElevations;
@@ -223,7 +223,7 @@ namespace Model.Map
         /// <param name="mapElevations">Elevations of the map.</param>
         /// <param name="tileArea">Area of a single tile.</param>
         /// <returns>Volume of the given valley.</returns>
-        public static float CalculateValleyVolume(Vector2Int[] valleyPositions, I2DArray<float> mapElevations, float tileArea=1.0f)
+        public static float CalculateValleyVolume(Vector2Int[] valleyPositions, I2DArrayImmutable<float> mapElevations, float tileArea=1.0f)
         {
             float volume = 0f;
             for (int i = 0; i < valleyPositions.Length; i++)
