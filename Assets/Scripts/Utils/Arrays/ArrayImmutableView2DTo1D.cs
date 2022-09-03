@@ -4,17 +4,15 @@ using System.Collections.Generic;
 
 namespace Utils.Arrays
 {
-    public class ArrayView2DTo1D<TReal, TView> : IArray<TView>
+    public class ArrayImmutableView2DTo1D<TReal, TView> : IArrayImmutable<TView>
     {
-        private I2DArray<TReal> _internal;
+        private I2DArrayImmutable<TReal> _internal;
         private Func<TReal, TView> _accessor;
-        private ArrayMapSetter<TReal, TView> _setter;
 
-        public ArrayView2DTo1D(I2DArray<TReal> internalArray, Func<TReal, TView> accessor, ArrayMapSetter<TReal, TView> setter)
+        public ArrayImmutableView2DTo1D(I2DArrayImmutable<TReal> internalArrayImmutable, Func<TReal, TView> accessor)
         {
-            _internal = internalArray;
+            _internal = internalArrayImmutable;
             _accessor = accessor;
-            _setter = setter;
         }
         
         public IEnumerator<TView> GetEnumerator()
@@ -32,10 +30,6 @@ namespace Utils.Arrays
             return _internal.GetLength(0) * _internal.GetLength(1);
         }
 
-        public TView this[int x]
-        {
-            get => _accessor(_internal[x / _internal.GetLength(1), x % _internal.GetLength(1)]);
-            set => _setter(_internal, x / _internal.GetLength(1), x % _internal.GetLength(1), value);
-        }
+        public TView this[int x] => _accessor(_internal[x / _internal.GetLength(1), x % _internal.GetLength(1)]);
     }
 }
