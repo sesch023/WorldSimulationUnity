@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f1da279f80644d7b3e216aa3bda9732, type: 3}
   m_Name: PerlinGenerator
   m_EditorClassIdentifier: 
-  maxHeight: 10000
-  minHeight: -8000
+  maxHeight: 18000
+  minHeight: 0
   randomSeed: 195807793
   scale: 100
   octaves: 10

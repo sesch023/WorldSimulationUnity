@@ -44,11 +44,11 @@ namespace Views.GameViews
 
         /// Minimum height of the map.
         [field: SerializeField] 
-        public float LowestHeight { get; } = -8000;
+        public float LowestHeight { get; private set; } = -8000;
 
         /// Maximum height of the map.
         [field: SerializeField] 
-        public float HeighestHeight { get; } = 10000;
+        public float HeighestHeight { get; private set; } = 10000;
         
         /// Steps between heights.
         [SerializeField] 

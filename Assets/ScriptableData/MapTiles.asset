@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d00ebca27cf8f824191b73d9a2ea7099, type: 3}
   m_Name: MapTiles
   m_EditorClassIdentifier: 
+  <LowestHeight>k__BackingField: 0
+  <HeighestHeight>k__BackingField: 18000
   heightStep: 1000
   minHeightColor: 0.3
   tileDefinitions:

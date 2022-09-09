@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aca7d8f0b93f45dea7eb7596c1e2c107, type: 3}
   m_Name: DiamondSquareGenerator
   m_EditorClassIdentifier: 
-  maxHeight: 10000
-  minHeight: -8000
+  maxHeight: 0
+  minHeight: 18000
   cornerSeed: 239
   randomSeed: 1156538508
   roughness: 512
