@@ -86,7 +86,7 @@ namespace Views.GameViews
                 }
             }
         }
-
+        
         private void CalculateHeightSteps()
         {
             _heightSteps = new List<float>();
@@ -113,18 +113,26 @@ namespace Views.GameViews
             return new Color(1.0f, 1.0f, 1.0f);
         }
         
-        public Tile GetTileByMapUnit([NotNull] MapUnit mapUnit)
+        public Tile GetTileForMapUnit([NotNull] MapUnit mapUnit)
         {
+            Tile tile = null;
+                
             GroundMaterialType materialType = mapUnit.GroundMaterial.FindMostSignificantMaterial();
             for (int i = 0; i < _heightSteps.Count; i++)
             {
                 if (_heightSteps[i] >= mapUnit.Position.Elevation)
                 {
                     int take = Math.Max(i - 1, 0);
-                    return _tileData[materialType][take];
+                    tile = _tileData[materialType][take];
+                    break;
                 }
             }
-            return _tileData[materialType][0];
+            if(tile == null) 
+                tile =_tileData[materialType][0];
+
+            tile = Instantiate(tile);
+            
+            return tile;
         }
     }
 }

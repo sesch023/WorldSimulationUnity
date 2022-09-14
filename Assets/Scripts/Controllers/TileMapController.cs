@@ -1,6 +1,7 @@
 ﻿using System;
 using Base;
 using Model.Map;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using Views.GameViews;
@@ -52,13 +53,11 @@ namespace Controllers
             {
                 for (var y = 0; y < UnitMap.SizeY; y++)
                 {
-                    MapUnit unit = UnitMap.MapUnits[x, y];
-                    Tile tile = TileViews.GetTileByMapUnit(unit);
-                    TileMap.SetTile(new(x, y, 0), tile);
+                    UpdateTile(x, y);
                 }
             }
         }
-        
+
         /// <summary>
         /// Calls the Update method of the Map.
         /// </summary>
@@ -66,7 +65,14 @@ namespace Controllers
         {
             UnitMap.Update();
         }
-        
+
+        public void UpdateTile(int x, int y)
+        {
+            MapUnit unit = UnitMap.MapUnits[x, y];
+            Tile tile = TileViews.GetTileForMapUnit(unit);
+            TileMap.SetTile(new(x, y, 0), tile);
+        }
+
         /// <summary>
         /// Given a global position, returns the map unit at that position if possible and the position itself.
         /// If not, throws an IndexOutOfRangeException.
