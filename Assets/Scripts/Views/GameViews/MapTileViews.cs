@@ -128,7 +128,7 @@ namespace Views.GameViews
                 }
             }
             if(tile == null) 
-                tile =_tileData[materialType][0];
+                tile =_tileData[materialType][_tileData[materialType].GetLength(0) - 1];
 
             tile = Instantiate(tile);
             

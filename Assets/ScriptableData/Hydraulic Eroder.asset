@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29acb849f9247e09ec5c4d4d5a680bc, type: 3}
   m_Name: Hydraulic Eroder
   m_EditorClassIdentifier: 
+  iterations: 100000
   erosion:
     <InitialWaterVolume>k__BackingField: 1
     <InitialSpeed>k__BackingField: 1
@@ -19,8 +20,8 @@ MonoBehaviour:
     <Inertia>k__BackingField: 0.05
     <SedimentCapacityFactor>k__BackingField: 4
     <MinSedimentCapacity>k__BackingField: 0.01
-    <ErodeSpeed>k__BackingField: 0.5
-    <DepositSpeed>k__BackingField: 0.5
+    <ErodeSpeed>k__BackingField: 0.3
+    <DepositSpeed>k__BackingField: 0.3
     <EvaporateSpeed>k__BackingField: 0.01
     <Gravity>k__BackingField: 4
-    <ErosionRadius>k__BackingField: 3
+    <ErosionRadius>k__BackingField: 5

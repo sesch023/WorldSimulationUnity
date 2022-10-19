@@ -15,7 +15,7 @@ MonoBehaviour:
   <LowestHeight>k__BackingField: 0
   <HeighestHeight>k__BackingField: 18000
   heightStep: 1000
-  minHeightColor: 0.3
+  minHeightColor: 0.2
   tileDefinitions:
   - sprite: {fileID: 21300000, guid: 4967a0c7d64b8724394a9c17e6bb7f44, type: 3}
     color: {r: 1, g: 1, b: 1, a: 0}
