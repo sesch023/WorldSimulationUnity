@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iterations: 100000
   erosion:
-    <InitialWaterVolume>k__BackingField: 1
-    <InitialSpeed>k__BackingField: 1
-    <MaxDropletLifetime>k__BackingField: 30
-    <Inertia>k__BackingField: 0.05
-    <SedimentCapacityFactor>k__BackingField: 4
-    <MinSedimentCapacity>k__BackingField: 0.01
-    <ErodeSpeed>k__BackingField: 0.3
+    <InitialWaterVolume>k__BackingField: 100
+    <InitialSpeed>k__BackingField: 30
+    <MaxDropletLifetime>k__BackingField: 300
+    <Inertia>k__BackingField: 0.1
+    <SedimentCapacityFactor>k__BackingField: 40
+    <MinSedimentCapacity>k__BackingField: 1
+    <ErodeSpeed>k__BackingField: 1
     <DepositSpeed>k__BackingField: 0.3
-    <EvaporateSpeed>k__BackingField: 0.01
+    <EvaporateSpeed>k__BackingField: 0.001
     <Gravity>k__BackingField: 4
-    <ErosionRadius>k__BackingField: 5
+    <ErosionRadius>k__BackingField: 8
