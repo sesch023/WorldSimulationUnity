@@ -70,9 +70,17 @@ namespace Manager
                 triggeredBy =>
                     Debug.Log("This Message should be shown every 5000ms!"));
 
-            var timeEvent = new TimeEvent(5000,
-                triggeredBy =>
-                    Debug.Log("This Message should be shown once at 5s!"),
+            var timeEvent = new TimeEvent(40000,
+                triggeredBy =>  {
+                    Debug.Log("This Message should be shown after 40000ms!");
+                    for (int x = 0; x < 0.1 * MapManager.Instance.MapController.UnitMap.MapUnits.GetLength(0); x++)
+                    {
+                        for (int y = 0; y < 0.1 * MapManager.Instance.MapController.UnitMap.MapUnits.GetLength(1); y++)
+                        {
+                            MapManager.Instance.MapController.UnitMap.MapUnits[x, y].Position.Elevation = 0;
+                        }
+                    }
+                },
                 instance =>
                 {
                     MarkRemovableForRemoval(instance);

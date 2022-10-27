@@ -7,6 +7,8 @@ using Unity.VisualScripting;
 
 namespace Model.Map
 {
+    public delegate void MapUnitChanged(MapUnit unit);
+    
     /// <summary>
     /// A single unit at a position in a map. Has a position with longitude, latitude and elevation. Also has a
     /// temperature, humidity and behaviors which are to be added depending on unit conditions.
@@ -21,21 +23,14 @@ namespace Model.Map
         /// </summary>
         public float Temperature
         {
-            get => _temperature; 
-            private set => Math.Clamp(value, 0, float.MaxValue);
+            get => _temperature;
+            set
+            {
+                Math.Clamp(value, 0, float.MaxValue);
+                Changed();
+            }
         }
-        
-        private float _waterLevel;
-        
-        /// <summary>
-        /// Water on top of the unit.
-        /// </summary>
-        public float WaterLevel
-        {
-            get => _waterLevel; 
-            private set => Math.Clamp(value, 0, float.MaxValue);
-        }
-        
+
         /// Humidity of the unit in percent.
         private float _humidity;
         
@@ -45,13 +40,20 @@ namespace Model.Map
         public float Humidity
         {
             get => _humidity;
-            private set => _humidity = Math.Clamp(value, 0, 100);
+            set
+            {
+                _humidity = Math.Clamp(value, 0, 100);
+                Changed();
+            }
         }
 
         /// <summary>
         /// Atmospheric pressure of the unit in pascal.
         /// </summary>
-        public float AtmosphericPressure { get; }
+        public float AtmosphericPressure
+        {
+            get;
+        }
 
         public MapUnitGroundMaterial GroundMaterial { get; private set; } = new();
         /// <summary>
@@ -63,6 +65,8 @@ namespace Model.Map
         /// Behaviors of the unit. These are to be added depending on unit conditions.
         /// </summary>
         public IList<BaseUnitBehavior> Behaviors { get; private set; }
+        
+        public IList<MapUnitChanged> ChangeSubscribers { get; private set; }
 
         /// <summary>
         /// Initializes the unit empty.
@@ -99,6 +103,7 @@ namespace Model.Map
         private void Init()
         {
             Behaviors = new List<BaseUnitBehavior>();
+            ChangeSubscribers = new List<MapUnitChanged>();
         }
         
         private void Init(float temperature, float humidity, MapPosition position)
@@ -106,6 +111,7 @@ namespace Model.Map
             Temperature = temperature;
             Humidity = humidity;
             Position = position;
+            position.Parent = this;
         }
 
         private void Init(float temperature, float humidity, MapPosition position,
@@ -122,6 +128,7 @@ namespace Model.Map
         public void AddUnitBehavior(BaseUnitBehavior behavior)
         {
             Behaviors.Add(behavior);
+            Changed();
         }
 
         /// <summary>
@@ -131,6 +138,17 @@ namespace Model.Map
         public void RemoveUnitBehavior(BaseUnitBehavior behavior)
         {
             Behaviors.Remove(behavior);
+            Changed();
+        }
+        
+        public void AddChangeSubscriber(MapUnitChanged subscriber)
+        {
+            ChangeSubscribers.Add(subscriber);
+        }
+        
+        public  void RemoveChangeSubscriber(MapUnitChanged subscriber)
+        {
+            ChangeSubscribers.Remove(subscriber);
         }
         
         /// <summary>
@@ -139,6 +157,12 @@ namespace Model.Map
         public void ClearBehaviors()
         {
             Behaviors.Clear();
+            Changed();
+        }
+        
+        public void ClearChangeSubscribers()
+        {
+            ChangeSubscribers.Clear();
         }
         
         /// <summary>
@@ -149,6 +173,14 @@ namespace Model.Map
             foreach (var behavior in Behaviors)
             {
                 behavior.Update();
+            }
+        }
+
+        internal void Changed()
+        {
+            foreach (var subscriber in ChangeSubscribers)
+            {
+                subscriber.Invoke(this);
             }
         }
     }

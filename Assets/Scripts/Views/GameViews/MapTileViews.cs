@@ -131,6 +131,7 @@ namespace Views.GameViews
                 tile =_tileData[materialType][_tileData[materialType].GetLength(0) - 1];
 
             tile = Instantiate(tile);
+            tile.flags = TileFlags.None;
             
             return tile;
         }

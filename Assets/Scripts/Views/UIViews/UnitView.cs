@@ -126,7 +126,6 @@ namespace Views.UIViews
             SetTemperatureData();
             SetHumidityData();
             SetBehaviorData();
-            SetWaterLevelData();
             SetAtmosphericPressureData();
             SetMaterialData();
         }
@@ -148,11 +147,6 @@ namespace Views.UIViews
             humidityView.SetText($"Humidity: {_shownUnit.Humidity:0.00}");
         }
 
-        private void SetWaterLevelData()
-        {
-            waterLevelView.SetText($"Water Level: {_shownUnit.WaterLevel:0.00}");
-        }
-        
         private void SetAtmosphericPressureData()
         {
             atmosphericPressureView.SetText($"Atmospheric Pressure: {_shownUnit.AtmosphericPressure:0.00}");
