@@ -72,16 +72,11 @@ namespace Controllers
             Tile tile = TileViews.GetTileForMapUnit(unit);
             var pos = new Vector3Int(x, y, 0);
             TileMap.SetTile(pos, tile);
-            TileMap.SetTileFlags(pos, TileFlags.None);
             TileMap.RefreshTile(pos);
             unit.AddChangeSubscriber((mapUnit) =>
             {
-                // I Hate This
                 Tile changed = TileViews.GetTileForMapUnit(mapUnit);
-                Tile old = (Tile)TileMap.GetTile(pos);
-                old.color = changed.color;
-                old.sprite = changed.sprite;
-                TileMap.SetTile(pos, old);
+                TileMap.SetTile(pos, changed);
                 TileMap.RefreshTile(pos);
             });
         }

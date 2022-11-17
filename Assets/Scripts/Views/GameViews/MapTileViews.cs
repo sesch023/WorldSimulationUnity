@@ -23,13 +23,13 @@ namespace Views.GameViews
         {
             public Sprite sprite;
             public Color color;
-            public GroundMaterialType materialType;
+            public TileCondition condition;
 
-            public TileData(Sprite sprite, Color color, GroundMaterialType materialType)
+            public TileData(Sprite sprite, Color color, TileCondition condition)
             {
                 this.sprite = sprite;
                 this.color = color;
-                this.materialType = materialType;
+                this.condition = condition;
             }
 
             public static void SetTileData(Tile tile, TileData data)
@@ -61,7 +61,7 @@ namespace Views.GameViews
         /// Steps between darkness.
         private float _colorStep;
 
-        private readonly Dictionary<GroundMaterialType, Tile[]> _tileData = new();
+        private readonly Dictionary<TileCondition, Tile[]> _tileData = new();
 
         [SerializeField]
         private TileData[] tileDefinitions;
@@ -73,16 +73,15 @@ namespace Views.GameViews
             _colorStep = (1.0f - minHeightColor) / _heightSteps.Count;
             for(int k = 0; k < tileDefinitions.Length; k++)
             {
-                _tileData.Add(tileDefinitions[k].materialType, new Tile[_heightSteps.Count]);
+                _tileData.Add(tileDefinitions[k].condition, new Tile[_heightSteps.Count]);
                 
                 for (int i = 0; i < _heightSteps.Count; i++)
                 {
                     float colorValue = 1.0f - _colorStep * i;
                     Color newColor = new Color(colorValue, colorValue, colorValue, 1.0f);
                     Tile newTile = CreateInstance<Tile>();
-                    newTile.flags = TileFlags.None;
-                    TileData.SetTileData(newTile, new TileData(tileDefinitions[k].sprite, newColor, tileDefinitions[k].materialType));
-                    _tileData[tileDefinitions[k].materialType][i] = newTile;
+                    TileData.SetTileData(newTile, new TileData(tileDefinitions[k].sprite, newColor, tileDefinitions[k].condition));
+                    _tileData[tileDefinitions[k].condition][i] = newTile;
                 }
             }
         }
@@ -116,23 +115,29 @@ namespace Views.GameViews
         public Tile GetTileForMapUnit([NotNull] MapUnit mapUnit)
         {
             Tile tile = null;
+
+            TileCondition relevant = null;
+            foreach (var con in _tileData.Keys)
+            {
+                if (con.CheckCondition(mapUnit))
+                {
+                    relevant = con;
+                    break;  
+                }
+            }
                 
-            GroundMaterialType materialType = mapUnit.GroundMaterial.FindMostSignificantMaterial();
             for (int i = 0; i < _heightSteps.Count; i++)
             {
                 if (_heightSteps[i] >= mapUnit.Position.Elevation)
                 {
                     int take = Math.Max(i - 1, 0);
-                    tile = _tileData[materialType][take];
+                    tile = _tileData[relevant][take];
                     break;
                 }
             }
             if(tile == null) 
-                tile =_tileData[materialType][_tileData[materialType].GetLength(0) - 1];
+                tile =_tileData[relevant][_tileData[relevant].GetLength(0) - 1];
 
-            tile = Instantiate(tile);
-            tile.flags = TileFlags.None;
-            
             return tile;
         }
     }

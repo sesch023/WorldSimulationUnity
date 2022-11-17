@@ -47,6 +47,17 @@ namespace Model.Map
             }
         }
 
+        private float _waterLevel;
+        public float WaterLevel
+        {
+            get => _waterLevel;
+            set
+            {
+                _waterLevel = Math.Clamp(value, 0, float.MaxValue);
+                Changed();
+            }
+        }
+
         /// <summary>
         /// Atmospheric pressure of the unit in pascal.
         /// </summary>
