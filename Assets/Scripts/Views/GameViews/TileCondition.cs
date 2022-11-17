@@ -91,9 +91,9 @@ namespace Views.GameViews
             [SerializeField]
             private ComparisionType comparisionType;
             [SerializeField]
-            private UnitValueType unitValueTypeRight;
+            private UnitValueType[] unitValueTypeRight;
             
-            public SoftCondition(UnitValueType unitValueTypeLeft, ComparisionType comparisionType, UnitValueType unitValueTypeRight)
+            public SoftCondition(UnitValueType unitValueTypeLeft, ComparisionType comparisionType, UnitValueType[] unitValueTypeRight)
             {
                 this.unitValueTypeLeft = unitValueTypeLeft;
                 this.comparisionType = comparisionType;
@@ -103,8 +103,15 @@ namespace Views.GameViews
             public bool CheckCondition(MapUnit unit)
             {
                 var valueLeft = _unitValueTypes[unitValueTypeLeft](unit);
-                var valueRight = _unitValueTypes[unitValueTypeRight](unit);
-                return _comparisionTypes[comparisionType](valueLeft, valueRight);
+                bool ret = true;
+                
+                foreach (var unitValueType in unitValueTypeRight)
+                {
+                    var valueRight = _unitValueTypes[unitValueType](unit);
+                    ret &= _comparisionTypes[comparisionType](valueLeft, valueRight);
+                }
+                
+                return ret;
             }
         }
         
