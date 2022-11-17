@@ -38,11 +38,34 @@ namespace Model.Map
         }
 
         public Dictionary<GroundMaterialType, float> Material { get; }
-        public float Soil => Material[GroundMaterialType.Soil];
-        public float Rock => Material[GroundMaterialType.Rock];
-        public float Sand => Material[GroundMaterialType.Sand];
-        public float Gravel => Material[GroundMaterialType.Gravel];
-        public float Clay => Material[GroundMaterialType.Clay];
+        public float Soil
+        {
+            get => Material[GroundMaterialType.Soil];
+            set => Material[GroundMaterialType.Soil] = value;
+        }
+
+        public float Rock
+        {
+            get => Material[GroundMaterialType.Rock];
+            set => Material[GroundMaterialType.Rock] = value;
+        }
+        public float Sand
+        {
+            get => Material[GroundMaterialType.Sand];
+            set => Material[GroundMaterialType.Sand] = value;
+        }
+        
+        public float Gravel
+        {
+            get => Material[GroundMaterialType.Gravel];
+            set => Material[GroundMaterialType.Gravel] = value;
+        }
+        
+        public float Clay
+        {
+            get => Material[GroundMaterialType.Clay];
+            set => Material[GroundMaterialType.Clay] = value;
+        }
 
         /// <summary>
         /// Gets the makeup of the ground normalized.

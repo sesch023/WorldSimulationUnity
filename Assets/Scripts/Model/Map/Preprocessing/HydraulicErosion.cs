@@ -185,7 +185,9 @@ namespace Model.Map.Preprocessing
                         (int x, int y) nodeIndex = _erosionBrushIndices[nodeX, nodeY][brushPointIndex];
                         float weighedErodeAmount = amountToErode * _erosionBrushWeights[nodeX, nodeY][brushPointIndex];
                         float deltaSediment =
-                            (map[nodeIndex.x, nodeIndex.y] < weighedErodeAmount) ? map[nodeIndex.x, nodeIndex.y] : weighedErodeAmount;
+                            (map[nodeIndex.x, nodeIndex.y] < weighedErodeAmount)
+                                ? map[nodeIndex.x, nodeIndex.y]
+                                : weighedErodeAmount;
                         map[nodeIndex.x, nodeIndex.y] -= deltaSediment;
                         sediment += deltaSediment;
                     }

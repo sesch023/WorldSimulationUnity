@@ -72,6 +72,28 @@ namespace Model.Map
         /// </summary>
         public MapPosition Position { get; private set; }
 
+        public void ErodeElevation(float newElevation)
+        {
+            float currentElevation = Position.Elevation;
+            float elevationDifference = currentElevation - newElevation;
+            float percentage = Math.Abs(elevationDifference / currentElevation);
+
+            if (elevationDifference < 0)
+            {
+                GroundMaterial.Gravel -= percentage * 0.75f;
+                GroundMaterial.Sand -= percentage * 0.25f;
+                GroundMaterial.Rock += percentage;
+            }
+            else
+            {
+                GroundMaterial.Gravel += percentage * 0.75f;
+                GroundMaterial.Sand += percentage * 0.25f;
+                GroundMaterial.Rock -= percentage;
+            }
+            
+            Position.Elevation = newElevation;
+        }
+
         /// <summary>
         /// Behaviors of the unit. These are to be added depending on unit conditions.
         /// </summary>
