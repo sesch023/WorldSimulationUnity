@@ -23,5 +23,10 @@ namespace Model.Map.Preprocessing
             
             erosion.Erode(mappedMap, iterations);
         }
+        
+        public override void Preprocess(float[,] map)
+        {
+            erosion.Erode(new Array2D<float>(map), iterations);
+        }
     }
 }

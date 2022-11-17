@@ -25,7 +25,6 @@ namespace Model.Map
         [SerializeField] 
         private BaseGenerator generator;
 
-        /// Preprocess the map, after it is generated with these rules.
         [SerializeReference] 
         private BasePreprocessMapStep[] preprocessMapSteps;
         
@@ -48,7 +47,7 @@ namespace Model.Map
             SizeX = clippedSizes.sizeX;
             SizeY = clippedSizes.sizeY;
             // Generate the map.
-            float[,] mapElevation = generator.GenerateElevation(SizeX, SizeY);
+            (float[,] mapElevation, float minHeight, float maxHeight) = generator.GenerateElevation(SizeX, SizeY);
             MapUnits = new MapUnit[SizeX, SizeY];
             // Create the units.
             for (var x = 0; x < MapUnits.GetLength(0); x++)
@@ -59,8 +58,8 @@ namespace Model.Map
                     MapUnits[x, y] = new MapUnit(0.0f, 0.0f, new MapPosition(latLong.lat, latLong.lon, mapElevation[x, y]));
                 }
             }
-            
-            foreach(BasePreprocessMapStep step in preprocessMapSteps)
+
+            foreach (var step in preprocessMapSteps)
             {
                 step.Preprocess(this);
             }

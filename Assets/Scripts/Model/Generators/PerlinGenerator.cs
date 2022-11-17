@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using UnityEngine;
 using Random = System.Random;
 
@@ -45,14 +46,14 @@ namespace Model.Generators
         }
         
         /// <summary>
-        /// Generate a heightmap using perlin noise. Then normalize the heightmap.
+        /// Generate a heightmap using perlin noise. 
         ///
         /// https://s3.eu-central-1.amazonaws.com/ucu.edu.ua/wp-content/uploads/sites/8/2021/07/Melnychuk-Vladyslav_188572_assignsubmission_file_VladyslavMelnychuk.pdf
         /// </summary>
         /// <param name="sizeX">Width of the heightmap.</param>
         /// <param name="sizeY">Height of the heightmap.</param>
         /// <returns>2D Array of floats as generated elevation.</returns>
-        public override float[,] GenerateElevation(int sizeX, int sizeY)
+        public override (float[,] elevation, float min, float max) GenerateElevation(int sizeX, int sizeY)
         {
             (int sizeX, int sizeY) newSizes = LimitMapSizes(sizeX, sizeY);
             sizeX = newSizes.sizeX;
@@ -75,8 +76,8 @@ namespace Model.Generators
                     noise[x, y] = noiseValue;
                 }
             }
-
-            return NormalizeElevation(noise, minHeight, maxHeight);
+            
+            return (FinishGeneration(noise), MinHeightValue, MaxHeightValue);
         }
     }
 }

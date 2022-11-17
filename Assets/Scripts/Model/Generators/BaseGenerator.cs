@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Linq;
+using Model.Map.Preprocessing;
+using Unity.VisualScripting;
 using UnityEngine;
 using Utils.BaseUtils;
 
@@ -12,12 +15,28 @@ namespace Model.Generators
     [Serializable]
     public abstract class BaseGenerator : ScriptableObject, IGenerator
     {
-        /// Max elevation of the map.
-        [SerializeField]
+
+        [SerializeField] 
         protected float maxHeight = 10000;
-        /// Min elevation of the map.
-        [SerializeField]
+
+        [SerializeField] 
         protected float minHeight = -8000;
+        
+        /// Max elevation of the map
+        protected float MaxHeightValue;
+        /// Min elevation of the map.
+        protected float MinHeightValue;
+
+        public void OnValidate()
+        {
+            MaxHeightValue = maxHeight;
+            MinHeightValue = minHeight;
+        }
+        
+        
+        /// Preprocess the map, after it is generated with these rules.
+        [SerializeReference] 
+        private BasePreprocessMapStep[] preprocessMapSteps;
         
         /// <summary>
         /// Abstract method for generating the map as a 2D arrayImmutable of floats.
@@ -25,7 +44,7 @@ namespace Model.Generators
         /// <param name="sizeX">Width of the Map.</param>
         /// <param name="sizeY">Height of the Map.</param>
         /// <returns>2D Array of floats as generated elevation.</returns>
-        public abstract float[,] GenerateElevation(int sizeX, int sizeY);
+        public abstract (float[,] elevation, float min, float max) GenerateElevation(int sizeX, int sizeY);
 
         /// <summary>
         /// Limits the size of the generated map depending on the generator's algorithm
@@ -37,6 +56,39 @@ namespace Model.Generators
         public virtual (int sizeX, int sizeY) LimitMapSizes(int sizeX, int sizeY)
         {
             return (sizeX, sizeY);
+        }
+
+        protected float[,] ApplyPreprocess(float[,] elevation)
+        {
+            foreach(var step in preprocessMapSteps)
+            {
+                step.Preprocess(elevation);
+            }
+
+            return elevation;
+        }
+        
+        protected float[,] FinishGeneration(float[,] elevation)
+        {
+            elevation = NormalizeElevation(elevation, 0, 1);
+            elevation = ApplyPreprocess(elevation);
+            float newMax = Util.MaxIn2DArray(elevation) * MaxHeightValue; 
+            float newMin = (1.0f - Util.MinIn2DArray(elevation)) * MinHeightValue; 
+            
+            Debug.Log(newMax);
+            Debug.Log(MaxHeightValue);
+            Debug.Log(elevation.Cast<float>().Max());
+            
+            Debug.Log(newMin);
+            Debug.Log(MinHeightValue);
+            Debug.Log(elevation.Cast<float>().Min());
+			
+            if(newMax > MaxHeightValue)
+                MaxHeightValue = newMax;
+            if(newMin < MinHeightValue)
+                MinHeightValue = newMin;
+
+            return NormalizeElevation(elevation, MinHeightValue, MaxHeightValue);
         }
         
         /// <summary>

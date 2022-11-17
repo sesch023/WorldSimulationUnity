@@ -7,5 +7,6 @@ namespace Model.Map.Preprocessing
     public abstract class BasePreprocessMapStep : ScriptableObject, IPreprocessMapStep
     {
         public abstract void Preprocess(Map map);
+        public abstract void Preprocess(float[,] map);
     }
 }

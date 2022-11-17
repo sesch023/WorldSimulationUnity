@@ -34,6 +34,12 @@ namespace Model.Map.Preprocessing
         [field: SerializeField, Range(2, 8)]
         private int ErosionRadius { get; set; } = 3;
         
+        [SerializeField]
+        private float AlgElevationScale = 10f;
+
+        [SerializeField] 
+        private float HeightRange = 18000f;
+        
         private static (int X, int Y)[,][] _erosionBrushIndices;
         private static float[,][] _erosionBrushWeights;
         private static int _currentErosionRadius;
@@ -165,6 +171,7 @@ namespace Model.Map.Preprocessing
 
                     // Add the sediment to the four nodes of the current cell using bilinear interpolation
                     // Deposition is not distributed over a radius (like erosion) so that it can fill small pits
+                    amountToDeposit = (amountToDeposit / AlgElevationScale) * HeightRange;
                     map[nodeX, nodeY] += amountToDeposit * (1 - cellOffsetX) * (1 - cellOffsetY);
                     map[nodeX + 1, nodeY] += amountToDeposit * cellOffsetX * (1 - cellOffsetY);
                     map[nodeX, nodeY + 1] += amountToDeposit * (1 - cellOffsetX) * cellOffsetY;
@@ -188,7 +195,7 @@ namespace Model.Map.Preprocessing
                             (map[nodeIndex.x, nodeIndex.y] < weighedErodeAmount)
                                 ? map[nodeIndex.x, nodeIndex.y]
                                 : weighedErodeAmount;
-                        map[nodeIndex.x, nodeIndex.y] -= deltaSediment;
+                        map[nodeIndex.x, nodeIndex.y] -= ((deltaSediment / AlgElevationScale) * HeightRange);
                         sediment += deltaSediment;
                     }
                 }

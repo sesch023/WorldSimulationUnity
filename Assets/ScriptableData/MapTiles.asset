@@ -19,16 +19,41 @@ MonoBehaviour:
   tileDefinitions:
   - sprite: {fileID: 21300000, guid: 4967a0c7d64b8724394a9c17e6bb7f44, type: 3}
     color: {r: 1, g: 1, b: 1, a: 0}
-    materialType: 0
+    condition:
+      softConditions:
+      - unitValueTypeLeft: 2
+        comparisionType: 0
+        unitValueTypeRight: 01000000000000000300000004000000
+      hardConditions: []
   - sprite: {fileID: 21300000, guid: cb431c3a4461824409da89482fbb9dae, type: 3}
     color: {r: 1, g: 1, b: 1, a: 0}
-    materialType: 1
+    condition:
+      softConditions:
+      - unitValueTypeLeft: 3
+        comparisionType: 0
+        unitValueTypeRight: 01000000000000000200000004000000
+      hardConditions: []
   - sprite: {fileID: 21300000, guid: 261711fc0a6e7764fb05b2268e21de45, type: 3}
     color: {r: 1, g: 1, b: 1, a: 0}
-    materialType: 2
+    condition:
+      softConditions:
+      - unitValueTypeLeft: 1
+        comparisionType: 0
+        unitValueTypeRight: 02000000000000000300000004000000
+      hardConditions: []
   - sprite: {fileID: 21300000, guid: 9fd60384557047d4fa6f7a9dbdcdb7fa, type: 3}
     color: {r: 1, g: 1, b: 1, a: 0}
-    materialType: 3
+    condition:
+      softConditions:
+      - unitValueTypeLeft: 4
+        comparisionType: 0
+        unitValueTypeRight: 01000000000000000300000002000000
+      hardConditions: []
   - sprite: {fileID: 21300000, guid: a322d1171ee55f0479c23f7413e1f146, type: 3}
     color: {r: 1, g: 1, b: 1, a: 0}
-    materialType: 4
+    condition:
+      softConditions:
+      - unitValueTypeLeft: 0
+        comparisionType: 0
+        unitValueTypeRight: 01000000020000000300000004000000
+      hardConditions: []

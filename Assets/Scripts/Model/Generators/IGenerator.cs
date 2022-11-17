@@ -11,7 +11,7 @@
         /// <param name="sizeX">Width of the Map.</param>
         /// <param name="sizeY">Height of the Map.</param>
         /// <returns>2D Array of floats as generated elevation.</returns>
-        public float[,] GenerateElevation(int sizeX, int sizeY);
+        public (float[,] elevation, float min, float max) GenerateElevation(int sizeX, int sizeY);
         
         /// <summary>
         /// Limits the size of the generated map depending on the generator's algorithm

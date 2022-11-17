@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using UnityEngine;
 using Utils.BaseUtils;
 using Random = System.Random;
@@ -39,14 +40,14 @@ namespace Model.Generators
 	    }
 	    
 	    /// <summary>
-	    /// Generate a heightmap using the diamond-square algorithm. Then normalize the heightmap.
+	    /// Generate a heightmap using the diamond-square algorithm.
 	    ///
 	    /// https://de.wikipedia.org/wiki/Diamond-square_Algorithmus
 	    /// </summary>
 	    /// <param name="sizeX">Width of the heightmap. Is limited to the next (power of 2) + 1.</param>
 	    /// <param name="sizeY">Height of the heightmap. Is limited to the next (power of 2) + 1.</param>
 	    /// <returns>2D Array of floats as generated elevation.</returns>
-        public override float[,] GenerateElevation(int sizeX, int sizeY)
+        public override (float[,] elevation, float min, float max) GenerateElevation(int sizeX, int sizeY)
         {
 	        int length = LimitMapSizes(sizeX, sizeY).sizeX;
 	        // ReSharper disable once LocalVariableHidesMember
@@ -101,7 +102,8 @@ namespace Model.Generators
 					}
 				}
 			}
-			return NormalizeElevation(values, minHeight, maxHeight);
+			
+			return (FinishGeneration(values), MinHeightValue, MaxHeightValue);
         }
 		
 	    /// <summary>
