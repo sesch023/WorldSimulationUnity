@@ -2,12 +2,12 @@
 {
     public class NormalizedFloatArray2D : I2DArray<float>, IFixedDimensional
     {
-        public float[,] Data { get; }
+        public I2DArray<float> Data { get; }
         private float _minimum;
         private float _maximum;
         private float _range;
         
-        public NormalizedFloatArray2D(float[,] data)
+        public NormalizedFloatArray2D(I2DArray<float> data)
         {
             Data = data;
             _minimum = BaseUtils.Util.MinIn2DArray(data);
@@ -17,7 +17,7 @@
         
         public I2DEnumerator<float> Get2DEnumerator()
         {
-            return new Array2DEnumerator<float>(new ArrayImmutable2D<float>(Data));
+            return new Array2DEnumerator<float>(Data);
         }
 
         public int GetLength(int dimension)
