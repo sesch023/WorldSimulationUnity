@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHeight: 18000
   minHeight: 0
+  preprocessMapSteps:
+  - {fileID: 11400000, guid: f97c85437a8711848a3cd89804176acc, type: 2}
   randomSeed: 195807793
   scale: 100
   octaves: 10

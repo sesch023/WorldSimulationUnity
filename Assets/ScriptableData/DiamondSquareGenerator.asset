@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aca7d8f0b93f45dea7eb7596c1e2c107, type: 3}
   m_Name: DiamondSquareGenerator
   m_EditorClassIdentifier: 
-  maxHeight: 0
-  minHeight: 18000
+  maxHeight: 18000
+  minHeight: 0
+  preprocessMapSteps:
+  - {fileID: 11400000, guid: f97c85437a8711848a3cd89804176acc, type: 2}
   cornerSeed: 239
   randomSeed: 1156538508
   roughness: 512
