@@ -1,11 +1,13 @@
 ﻿namespace Utils.Arrays
 {
-    public class NormalizedFloatArray2D : I2DArray<float>, IFixedDimensional
+    public class NormalizedFloatArray2D : I2DArray<float>
     {
         public I2DArray<float> Data { get; }
         private float _minimum;
         private float _maximum;
         private float _range;
+
+        public NormalizedFloatArray2D(float[,] data): this(new Array2D<float>(data)){}
         
         public NormalizedFloatArray2D(I2DArray<float> data)
         {

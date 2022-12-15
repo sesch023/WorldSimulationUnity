@@ -4,6 +4,8 @@ using Base;
 using JetBrains.Annotations;
 using Model.UnitBehaviors;
 using Unity.VisualScripting;
+using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Model.Map
 {
@@ -76,19 +78,17 @@ namespace Model.Map
         {
             float currentElevation = Position.Elevation;
             float elevationDifference = currentElevation - newElevation;
-            float percentage = Math.Abs(elevationDifference / currentElevation);
+            float percentage = 25*Math.Abs(elevationDifference / currentElevation);
 
             if (elevationDifference < 0)
             {
-                GroundMaterial.Gravel -= percentage * 0.75f;
-                GroundMaterial.Sand -= percentage * 0.25f;
-                GroundMaterial.Rock += percentage;
+                GroundMaterial.Sand -= percentage * Random.Range(0.3f, 0.80f);
+                GroundMaterial.Gravel -= percentage * Random.Range(0.25f, 0.75f);
             }
             else
             {
-                GroundMaterial.Gravel += percentage * 0.75f;
-                GroundMaterial.Sand += percentage * 0.25f;
-                GroundMaterial.Rock -= percentage;
+                GroundMaterial.Gravel += percentage * Random.Range(0.25f, 0.75f);
+                GroundMaterial.Sand += percentage * Random.Range(0.3f, 0.80f);
             }
             
             Position.Elevation = newElevation;

@@ -20,13 +20,14 @@ namespace Model.Map.Preprocessing
         {
             ArrayMap2D<MapUnit, float> mappedMap = new ArrayMap2D<MapUnit, float>(map.MapUnits, unit => unit.Position.Elevation,
                 (array, x, y, mapped) => array[x, y].ErodeElevation(mapped));
+            I2DArray<float> data = new NormalizedFloatArray2D(mappedMap);
             
-            erosion.Erode(mappedMap, iterations);
+            erosion.Erode(data, iterations);
         }
         
         public override void Preprocess(float[,] map)
         {
-            erosion.Erode(new Array2D<float>(map), iterations);
+            erosion.Erode(new NormalizedFloatArray2D(map), iterations);
         }
     }
 }

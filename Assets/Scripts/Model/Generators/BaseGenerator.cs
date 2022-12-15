@@ -15,7 +15,6 @@ namespace Model.Generators
     [Serializable]
     public abstract class BaseGenerator : ScriptableObject, IGenerator
     {
-
         [SerializeField] 
         protected float maxHeight = 10000;
 
@@ -74,14 +73,6 @@ namespace Model.Generators
             elevation = ApplyPreprocess(elevation);
             float newMax = Util.MaxIn2DArray(elevation) * MaxHeightValue; 
             float newMin = (1.0f - Util.MinIn2DArray(elevation)) * MinHeightValue; 
-            
-            Debug.Log(newMax);
-            Debug.Log(MaxHeightValue);
-            Debug.Log(elevation.Cast<float>().Max());
-            
-            Debug.Log(newMin);
-            Debug.Log(MinHeightValue);
-            Debug.Log(elevation.Cast<float>().Min());
 			
             if(newMax > MaxHeightValue)
                 MaxHeightValue = newMax;

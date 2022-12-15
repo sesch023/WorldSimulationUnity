@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using Model.Map;
 using UnityEngine;
+// ReSharper disable ConditionIsAlwaysTrueOrFalse
+// ReSharper disable ConstantNullCoalescingCondition
 
 namespace Views.GameViews
 {
@@ -120,6 +122,12 @@ namespace Views.GameViews
         [SerializeField]
         private HardCondition[] hardConditions;
 
+        public TileCondition()
+        {
+            softConditions ??= Array.Empty<SoftCondition>();
+            hardConditions ??= Array.Empty<HardCondition>();
+        }
+        
         public bool CheckCondition(MapUnit unit)
         {
             bool result = true;

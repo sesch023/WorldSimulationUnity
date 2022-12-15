@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using JetBrains.Annotations;
 using Model.Map;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
@@ -58,10 +60,14 @@ namespace Views.GameViews
         [SerializeField]
         private float minHeightColor = 0.3f;
         
+        [SerializeField] 
+        private TileData defaultTile;
+        
         /// Steps between darkness.
         private float _colorStep;
 
         private readonly Dictionary<TileCondition, Tile[]> _tileData = new();
+        private TileCondition[] _relevantConditions;
 
         [SerializeField]
         private TileData[] tileDefinitions;
@@ -71,6 +77,7 @@ namespace Views.GameViews
             CalculateHeightSteps();
             
             _colorStep = (1.0f - minHeightColor) / _heightSteps.Count;
+
             for(int k = 0; k < tileDefinitions.Length; k++)
             {
                 _tileData.Add(tileDefinitions[k].condition, new Tile[_heightSteps.Count]);
@@ -83,6 +90,18 @@ namespace Views.GameViews
                     TileData.SetTileData(newTile, new TileData(tileDefinitions[k].sprite, newColor, tileDefinitions[k].condition));
                     _tileData[tileDefinitions[k].condition][i] = newTile;
                 }
+            }
+            
+            _relevantConditions = _tileData.Keys.ToArray();
+            
+            _tileData.Add(defaultTile.condition, new Tile[_heightSteps.Count]);
+            for (int i = 0; i < _heightSteps.Count; i++)
+            {
+                float colorValue = 1.0f - _colorStep * i;
+                Color newColor = new Color(colorValue, colorValue, colorValue, 1.0f);
+                Tile newTile = CreateInstance<Tile>();
+                TileData.SetTileData(newTile, new TileData(defaultTile.sprite, newColor, defaultTile.condition));
+                _tileData[defaultTile.condition][i] = newTile;
             }
         }
         
@@ -116,8 +135,8 @@ namespace Views.GameViews
         {
             Tile tile = null;
 
-            TileCondition relevant = null;
-            foreach (var con in _tileData.Keys)
+            TileCondition relevant = defaultTile.condition;
+            foreach (var con in _relevantConditions)
             {
                 if (con.CheckCondition(mapUnit))
                 {
@@ -125,7 +144,7 @@ namespace Views.GameViews
                     break;  
                 }
             }
-                
+            
             for (int i = 0; i < _heightSteps.Count; i++)
             {
                 if (_heightSteps[i] >= mapUnit.Position.Elevation)

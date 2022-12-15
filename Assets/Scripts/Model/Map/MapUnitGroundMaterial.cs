@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UnityEngine;
 
 namespace Model.Map
 {
@@ -73,8 +74,9 @@ namespace Model.Map
         /// <returns>Tuple of the normalized ground types.</returns>
         public (float soil, float rock, float sand, float gravel, float clay) GetNormalized()
         {
-            float total = Soil + Rock + Sand + Gravel + Clay;
-            return (Soil / total, Rock / total, Sand / total, Gravel / total, Clay / total);
+            float min = Math.Abs(Mathf.Min(Soil, Rock, Sand, Gravel, Clay));
+            float total = Soil + Rock + Sand + Gravel + Clay + 5*min;
+            return ((Soil + min) / total, (Rock + min) / total, (Sand + min) / total, (Gravel + min) / total, (Clay + min) / total);
         }
 
         public GroundMaterialType FindMostSignificantMaterial()
