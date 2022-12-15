@@ -148,9 +148,9 @@ namespace Utils.BaseUtils
         {
             List<Vector2Int> vector2S = new List<Vector2Int>();
             
-            foreach (int x in Enumerable.Range(Math.Max(position.x - 1, 0), Math.Min(3, sizeX - position.x)))
+            foreach (int x in Enumerable.Range(Math.Max(position.x - 1, 0), Math.Min(3, sizeX - position.x + 1)))
             {
-                foreach (int y in Enumerable.Range(Math.Max(position.y - 1, 0), Math.Min(3, sizeY - position.y)))
+                foreach (int y in Enumerable.Range(Math.Max(position.y - 1, 0), Math.Min(3, sizeY - position.y + 1)))
                 {
                     Vector2Int current = new Vector2Int(x, y);
                     if (current != position)

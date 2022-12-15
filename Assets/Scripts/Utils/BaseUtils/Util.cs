@@ -1,4 +1,5 @@
 ﻿using System;
+using Utils.Arrays;
 
 namespace Utils.BaseUtils
 {
@@ -22,6 +23,11 @@ namespace Utils.BaseUtils
             return nums;
         }
 
+        public static T MaxIn2DArray<T>(T[,] array) where T : IComparable, IComparable<T>
+        {
+            return MaxIn2DArray(new Array2D<T>(array));
+        }
+        
         /// <summary>
         /// Returns the maximum value of the given 2d arrayImmutable.
         /// </summary>
@@ -29,7 +35,7 @@ namespace Utils.BaseUtils
         /// <typeparam name="T">Type of the Array.</typeparam>
         /// <returns>Maximum value in the 2d arrayImmutable.</returns>
         /// <exception cref="ArgumentException">If the arrayImmutable is empty.</exception>
-        public static T MaxIn2DArray<T>(T[,] array) where T : IComparable, IComparable<T>
+        public static T MaxIn2DArray<T>(I2DArray<T> array) where T : IComparable, IComparable<T>
         {
             if(array.GetLength(0) == 0 && array.GetLength(1) == 0)
                 throw new ArgumentException($"ArgumentException: {typeof(Util)} - {System.Reflection.MethodBase.GetCurrentMethod()?.Name}: Array empty!");
@@ -48,6 +54,11 @@ namespace Utils.BaseUtils
             return max;
         }
         
+        public static T MinIn2DArray<T>(T[,] array) where T : IComparable, IComparable<T>
+        {
+            return MinIn2DArray(new Array2D<T>(array));
+        }
+        
         /// <summary>
         /// Returns the minimum value of the given 2d arrayImmutable.
         /// </summary>
@@ -55,7 +66,7 @@ namespace Utils.BaseUtils
         /// <typeparam name="T">Type of the Array.</typeparam>
         /// <returns>Minimum value in the 2d arrayImmutable.</returns>
         /// <exception cref="ArgumentException">If the arrayImmutable is empty.</exception>
-        public static T MinIn2DArray<T>(T[,] array) where T : IComparable, IComparable<T>
+        public static T MinIn2DArray<T>(I2DArray<T> array) where T : IComparable, IComparable<T>
         {
             if(array.GetLength(0) == 0 && array.GetLength(1) == 0)
                 throw new ArgumentException($"ArgumentException: {typeof(Util)} - {System.Reflection.MethodBase.GetCurrentMethod()?.Name}: Array empty!");
