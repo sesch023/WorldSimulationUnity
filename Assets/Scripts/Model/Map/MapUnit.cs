@@ -73,22 +73,23 @@ namespace Model.Map
         /// Position of the unit in the map with longitude, latitude and elevation.
         /// </summary>
         public MapPosition Position { get; private set; }
-
-        public void ErodeElevation(float newElevation)
+        
+        /// This Method is a bit hacky and should be changed in the future.
+        public void ErodeElevation(float newElevation, float gravelMultiplier=25f, float sandMultiplier=5f)
         {
             float currentElevation = Position.Elevation;
             float elevationDifference = currentElevation - newElevation;
-            float percentage = 25*Math.Abs(elevationDifference / currentElevation);
+            float percentage = Math.Abs(elevationDifference / currentElevation);
 
             if (elevationDifference < 0)
             {
-                GroundMaterial.Sand -= percentage * Random.Range(0.3f, 0.80f);
-                GroundMaterial.Gravel -= percentage * Random.Range(0.25f, 0.75f);
+                GroundMaterial.Gravel = Math.Max(0, GroundMaterial.Gravel - percentage * gravelMultiplier);
+                GroundMaterial.Sand = Math.Max(0, GroundMaterial.Sand - percentage * GroundMaterial.Gravel * sandMultiplier);
             }
             else
             {
-                GroundMaterial.Gravel += percentage * Random.Range(0.25f, 0.75f);
-                GroundMaterial.Sand += percentage * Random.Range(0.3f, 0.80f);
+                GroundMaterial.Gravel += percentage * gravelMultiplier;
+                GroundMaterial.Sand += percentage * GroundMaterial.Gravel * sandMultiplier;
             }
             
             Position.Elevation = newElevation;

@@ -16,7 +16,21 @@ MonoBehaviour:
   <HeighestHeight>k__BackingField: 18000
   heightStep: 1000
   minHeightColor: 0.2
+  defaultTile:
+    sprite: {fileID: 21300000, guid: 7d2cd2e1bcd0d164e93fe0e5d6cbf89b, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    condition:
+      softConditions: []
+      hardConditions: []
   tileDefinitions:
+  - sprite: {fileID: 21300000, guid: 18072966ea9788c418a87b879831b46f, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 0}
+    condition:
+      softConditions: []
+      hardConditions:
+      - unitValueTypeLeft: 6
+        comparisionType: 1
+        valueRight: 1
   - sprite: {fileID: 21300000, guid: 4967a0c7d64b8724394a9c17e6bb7f44, type: 3}
     color: {r: 1, g: 1, b: 1, a: 0}
     condition:

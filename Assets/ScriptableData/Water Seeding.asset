@@ -9,12 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aca7d8f0b93f45dea7eb7596c1e2c107, type: 3}
-  m_Name: DiamondSquareGenerator
+  m_Script: {fileID: 11500000, guid: f819e99da483421f82bf089a1a88bf84, type: 3}
+  m_Name: Water Seeding
   m_EditorClassIdentifier: 
-  maxHeight: 18000
-  minHeight: 0
-  preprocessMapSteps: []
-  cornerSeed: 239
-  randomSeed: 1156538508
-  roughness: 512
+  waterUnits: 100

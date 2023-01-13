@@ -1,15 +1,16 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Model.Map.Feature;
 using UnityEngine;
 using Utils.Arrays;
 using Utils.BaseUtils;
 
-namespace Model.Map
+namespace Model.Map.VirtualFeatureSelection
 {
     /// <summary>
     /// Finds and defines a valley in a map or 2D arrayImmutable of floats.
     /// </summary>
-    public class Valley
+    public class Valley : IFeature
     {
         /// <summary>
         /// Positions of the valley.
@@ -223,16 +224,28 @@ namespace Model.Map
         /// <param name="mapElevations">Elevations of the map.</param>
         /// <param name="tileArea">Area of a single tile.</param>
         /// <returns>Volume of the given valley.</returns>
-        public static float CalculateValleyVolume(Vector2Int[] valleyPositions, I2DArrayImmutable<float> mapElevations, float tileArea=1.0f)
+        public static float CalculateOpenVolume(Vector2Int[] valleyPositions, I2DArrayImmutable<float> mapElevations, float tileArea=1.0f)
         {
+            float high = 0.0f;
+            foreach (var vec in valleyPositions)
+            {
+                if (mapElevations[vec.x, vec.y] > high)
+                    high = mapElevations[vec.x, vec.y];
+            }
+            
             float volume = 0f;
             for (int i = 0; i < valleyPositions.Length; i++)
             {
                 Vector2Int position = valleyPositions[i];
                 float elevation = mapElevations[position.x, position.y];
-                volume += elevation * tileArea;
+                volume += (high - elevation) * tileArea;
             }
             return volume;
+        }
+
+        public Vector2Int[] GetFeaturePositions()
+        {
+            return CalculatedPositions;
         }
     }
 }

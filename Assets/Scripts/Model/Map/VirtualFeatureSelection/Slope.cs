@@ -1,14 +1,15 @@
 ﻿using System.Collections.Generic;
+using Model.Map.Feature;
 using UnityEngine;
 using Utils.Arrays;
 using Utils.BaseUtils;
 
-namespace Model.Map
+namespace Model.Map.VirtualFeatureSelection
 {
     /// <summary>
     /// Finds a slope in a map or 2D arrayImmutable of floats.
     /// </summary>
-    public class Slope
+    public class Slope : IFeature
     {
         /// Start point of the slope.
         private Vector2Int _start;
@@ -176,6 +177,11 @@ namespace Model.Map
             }
 
             return foundNeighbor;
+        }
+
+        public Vector2Int[] GetFeaturePositions()
+        {
+            return CalculatedSlope;
         }
     }
 }

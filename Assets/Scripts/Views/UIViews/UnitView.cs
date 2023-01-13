@@ -125,6 +125,7 @@ namespace Views.UIViews
             SetPositionData();
             SetTemperatureData();
             SetHumidityData();
+            SetWaterLevelData();
             SetBehaviorData();
             SetAtmosphericPressureData();
             SetMaterialData();
@@ -152,9 +153,15 @@ namespace Views.UIViews
             atmosphericPressureView.SetText($"Atmospheric Pressure: {_shownUnit.AtmosphericPressure:0.00}");
         }
         
+        private void SetWaterLevelData()
+        {
+            waterLevelView.SetText($"Water Level: {_shownUnit.WaterLevel:0.00}");
+        }
+        
         private void SetMaterialData()
         {
             materialView.SetText(_shownUnit.GroundMaterial.ToString());
+            Debug.Log(_shownUnit.GroundMaterial);
         }
 
         private void SetBehaviorData()

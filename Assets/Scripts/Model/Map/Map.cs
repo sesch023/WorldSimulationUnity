@@ -1,7 +1,10 @@
-﻿using Base;
+﻿using System.Collections.Generic;
+using Base;
 using Manager;
 using Model.Generators;
-using Model.Map.Preprocessing;
+using Model.Map.Feature;
+using Model.Map.Processing;
+using Model.Map.VirtualFeatureSelection;
 using UnityEngine;
 using Views.GameViews;
 
@@ -26,10 +29,53 @@ namespace Model.Map
         private BaseGenerator generator;
 
         [SerializeReference] 
-        private BasePreprocessMapStep[] preprocessMapSteps;
+        private BaseGeneralProcessing[] preprocessMapSteps;
         
         /// Units of the map.
         public MapUnit[,] MapUnits { get; private set; }
+        
+        private List<WaterBody> _waterBodies;
+        
+        public void AddWaterBody(WaterBody waterBody)
+        {
+            _waterBodies.Add(waterBody);
+        }
+        
+        public void AddWaterBody(Vector2Int initialPosition, float volume)
+        {
+            var waterBody = new WaterBody(this, initialPosition, volume);
+            AddWaterBody(waterBody);
+        }
+
+        public WaterBody BodyOfWaterByPosition(Vector2Int pos)
+        {
+            foreach(var body in _waterBodies)
+            {
+                if (body.InBody(pos))
+                    return body;
+            }
+            return null;
+        }
+
+        public void MergeBodyOfWater(Vector2Int pos1, Vector2Int pos2)
+        {
+            var body1 = BodyOfWaterByPosition(pos1);
+            var body2 = BodyOfWaterByPosition(pos2);
+            if (body1 == null || body2 == null){
+                Debug.LogWarning("Trying to merge bodies of water that don't exist");
+                return;
+            }
+
+            if (body1 == body2)
+            {
+                Debug.LogWarning("Trying to merge bodies of water that are the same");
+                return;
+            }
+            
+            _waterBodies.Remove(body2);
+            _waterBodies.Remove(body1);
+            _waterBodies.Add(WaterBody.MergeBodiesOfWater(body1, body2));
+        }
         
         /// <summary>
         /// Enables and initializes the map and initializes the units.
@@ -61,7 +107,7 @@ namespace Model.Map
 
             foreach (var step in preprocessMapSteps)
             {
-                step.Preprocess(this);
+                step.ProcessMap(this);
             }
         }
         
@@ -149,6 +195,22 @@ namespace Model.Map
             float maxMomentumFraction = 1.0f)
         {
             return new Slope(start, MapUnits, momentumMultiplier, maxMomentumFraction).CalculatedSlope;
+        }
+        
+        public MapUnit Vector2IntToMapUnit(Vector2Int position)
+        {
+            return MapUnits[position.x, position.y];
+        }
+        
+        public MapUnit[] Vector2IntArrayToMapUnits(Vector2Int[] positions)
+        {
+            MapUnit[] units = new MapUnit[positions.Length];
+            for (int i = 0; i < positions.Length; i++)
+            {
+                units[i] = MapUnits[positions[i].x, positions[i].y];
+            }
+
+            return units;
         }
     }
 }

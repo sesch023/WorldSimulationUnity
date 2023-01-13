@@ -78,6 +78,11 @@ namespace Model.Map
             float total = Soil + Rock + Sand + Gravel + Clay + 5*min;
             return ((Soil + min) / total, (Rock + min) / total, (Sand + min) / total, (Gravel + min) / total, (Clay + min) / total);
         }
+        
+        public (float soil, float rock, float sand, float gravel, float clay) GetValues()
+        {
+            return (Soil, Rock, Sand, Gravel, Clay);
+        }
 
         public GroundMaterialType FindMostSignificantMaterial()
         {
@@ -90,11 +95,11 @@ namespace Model.Map
 
             var (soil, rock, sand, gravel, clay) = GetNormalized();
             
-            stringBuilder.Append($"Soil: {soil:0.00}\n");
-            stringBuilder.Append($"Rock: {rock:0.00}\n");
-            stringBuilder.Append($"Sand: {sand:0.00}\n");
-            stringBuilder.Append($"Gravel: {gravel:0.00}\n");
-            stringBuilder.Append($"Clay: {clay:0.00}\n");
+            stringBuilder.Append($"Soil: {soil:0.00} ({Soil:0.00})\n");
+            stringBuilder.Append($"Rock: {rock:0.00} ({Rock:0.00})\n");
+            stringBuilder.Append($"Sand: {sand:0.00} ({Sand:0.00})\n");
+            stringBuilder.Append($"Gravel: {gravel:0.00} ({Gravel:0.00})\n");
+            stringBuilder.Append($"Clay: {clay:0.00} ({Clay:0.00})\n");
             
             return stringBuilder.ToString();
         }

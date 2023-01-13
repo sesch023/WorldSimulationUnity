@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using Model.Map.Preprocessing;
+using Model.Map.Processing;
 using Unity.VisualScripting;
 using UnityEngine;
 using Utils.BaseUtils;
@@ -33,9 +33,9 @@ namespace Model.Generators
         }
         
         
-        /// Preprocess the map, after it is generated with these rules.
+        /// ProcessMap the map, after it is generated with these rules.
         [SerializeReference] 
-        private BasePreprocessMapStep[] preprocessMapSteps;
+        private BaseGeneralProcessing[] preprocessMapSteps;
         
         /// <summary>
         /// Abstract method for generating the map as a 2D arrayImmutable of floats.
@@ -61,7 +61,7 @@ namespace Model.Generators
         {
             foreach(var step in preprocessMapSteps)
             {
-                step.Preprocess(elevation);
+                step.ProcessGeneratorData(elevation);
             }
 
             return elevation;

@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
 using Utils.Arrays;
 
-namespace Model.Map.Preprocessing
+namespace Model.Map.Processing
 {
     /// <summary>
     /// Auf Basis von:
     /// https://github.com/SebLague/Hydraulic-Erosion/blob/master/Assets/Scripts/Erosion.cs
     /// </summary>
     [CreateAssetMenu(fileName = "Hydraulic Eroder", menuName = "ScriptableObjects/Hydraulic Eroder", order = 1)]
-    public class HydraulicEroder : BasePreprocessMapStep
+    public class HydraulicEroder : BaseGeneralProcessing
     {
         [SerializeField]
         private int iterations = 100000;
@@ -16,7 +16,7 @@ namespace Model.Map.Preprocessing
         [SerializeField]
         private HydraulicErosion erosion;
 
-        public override void Preprocess(Map map)
+        public override void ProcessMap(Map map)
         {
             ArrayMap2D<MapUnit, float> mappedMap = new ArrayMap2D<MapUnit, float>(map.MapUnits, unit => unit.Position.Elevation,
                 (array, x, y, mapped) => array[x, y].ErodeElevation(mapped));
@@ -25,7 +25,7 @@ namespace Model.Map.Preprocessing
             erosion.Erode(data, iterations);
         }
         
-        public override void Preprocess(float[,] map)
+        public override void ProcessGeneratorData(float[,] map)
         {
             erosion.Erode(new NormalizedFloatArray2D(map), iterations);
         }
