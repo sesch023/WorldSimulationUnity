@@ -852,7 +852,7 @@ MonoBehaviour:
   cameraSpeed: 2
   borderCameraSpan: 0.2
   maxZoom: 2
-  minZoom: 150
+  minZoom: 200
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0

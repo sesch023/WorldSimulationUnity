@@ -16,7 +16,7 @@ namespace Model.Map.Feature
         private HashSet<Vector2Int> _points;
         public float WaterVolume { get; set; }
         
-        public static WaterBody MergeBodiesOfWater(WaterBody body1, WaterBody body2)
+        public static WaterBody MergeBodiesOfWaterIntoFirst(WaterBody body1, WaterBody body2)
         {
             var points = new HashSet<Vector2Int>(body1._points.Union(body2._points));
 
@@ -37,16 +37,12 @@ namespace Model.Map.Feature
             
             var waterVolume = body1.WaterVolume + body2.WaterVolume;
 
-            WaterBody newBody = new()
-            {
-                _points = points,
-                ShallowPointElevation = shallowPointElevation,
-                ShallowPoints = shallowPoints,
-                DeepestPoint = deepestPoint,
-                WaterVolume = waterVolume
-            };
-
-            return newBody;
+            body1._points = points;
+            body1.ShallowPointElevation = shallowPointElevation;
+            body1.ShallowPoints = shallowPoints;
+            body1.DeepestPoint = deepestPoint;
+            body1.WaterVolume = waterVolume;
+            return body1;
         }
         
         private WaterBody(){}
@@ -59,8 +55,9 @@ namespace Model.Map.Feature
             ShallowPointElevation = map.MapUnits[ShallowPoints[0].x, ShallowPoints[0].y].Position.Elevation;
             DeepestPoint = ShallowPoints[0];
             _points = new HashSet<Vector2Int>(){ DeepestPoint };
-            WaterVolume = waterVolume;
-            CreateBodyOfWater();
+            WaterVolume = 0;
+            AddVolume(waterVolume);
+            map.AddWaterBody(this);
         }
 
         private Vector2Int DeepestPointFromInitialPosition(Vector2Int initialPosition)
@@ -68,14 +65,37 @@ namespace Model.Map.Feature
             Slope slope = new Slope(initialPosition, _map.MapUnits);
             return slope.CalculatedSlope[^1];
         }
-        
-        private void CreateBodyOfWater()
+
+        private void WaterBodyCollision(Vector2Int[] newShallowPoints)
         {
-            float unassignedWaterVolume = WaterVolume;
+            List<Vector2Int> mergeBodies = new List<Vector2Int>();
+            foreach (var point in newShallowPoints)
+            {
+                WaterBody body = _map.GetBodyOfWaterByPosition(point);
+                if(body != null)
+                    mergeBodies.Add(point);
+            }
+                
+            if (mergeBodies.Count > 0)
+            {
+                foreach (var body in mergeBodies)
+                {
+                    MergeBodiesOfWaterIntoFirst(this, _map.GetBodyOfWaterByPosition(body));
+                }
+            }
+        }
+        
+        public void AddVolume(float volume)
+        {
+            float unassignedWaterVolume = volume;
+            WaterVolume += volume;
             while (unassignedWaterVolume > 0)
             {
                 Valley valley = new Valley(ShallowPoints[0], _map.MapUnits);
                 Vector2Int[] newShallowPoints = valley.CalculatedExits;
+
+                WaterBodyCollision(newShallowPoints);
+                
                 float newElevation = _map.MapUnits[newShallowPoints[0].x, newShallowPoints[0].y].Position.Elevation;
                 float volDiff = (newElevation - ShallowPointElevation) * (_points.Count + newShallowPoints.Length);
                 ShallowPoints = newShallowPoints;

@@ -34,7 +34,7 @@ namespace Model.Map
         /// Units of the map.
         public MapUnit[,] MapUnits { get; private set; }
         
-        private List<WaterBody> _waterBodies;
+        private readonly List<WaterBody> _waterBodies = new ();
         
         public void AddWaterBody(WaterBody waterBody)
         {
@@ -44,10 +44,11 @@ namespace Model.Map
         public void AddWaterBody(Vector2Int initialPosition, float volume)
         {
             var waterBody = new WaterBody(this, initialPosition, volume);
+            Debug.Log(waterBody);
             AddWaterBody(waterBody);
         }
 
-        public WaterBody BodyOfWaterByPosition(Vector2Int pos)
+        public WaterBody GetBodyOfWaterByPosition(Vector2Int pos)
         {
             foreach(var body in _waterBodies)
             {
@@ -59,8 +60,8 @@ namespace Model.Map
 
         public void MergeBodyOfWater(Vector2Int pos1, Vector2Int pos2)
         {
-            var body1 = BodyOfWaterByPosition(pos1);
-            var body2 = BodyOfWaterByPosition(pos2);
+            var body1 = GetBodyOfWaterByPosition(pos1);
+            var body2 = GetBodyOfWaterByPosition(pos2);
             if (body1 == null || body2 == null){
                 Debug.LogWarning("Trying to merge bodies of water that don't exist");
                 return;
@@ -74,7 +75,7 @@ namespace Model.Map
             
             _waterBodies.Remove(body2);
             _waterBodies.Remove(body1);
-            _waterBodies.Add(WaterBody.MergeBodiesOfWater(body1, body2));
+            _waterBodies.Add(WaterBody.MergeBodiesOfWaterIntoFirst(body1, body2));
         }
         
         /// <summary>

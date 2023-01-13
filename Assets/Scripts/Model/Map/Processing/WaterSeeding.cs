@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿using System;
+using Model.Map.Feature;
+using Model.Map.VirtualFeatureSelection;
+using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Model.Map.Processing
 {
@@ -6,11 +10,20 @@ namespace Model.Map.Processing
     public class WaterSeeding : BaseGeneralProcessing
     {
         [SerializeField]
-        private float waterUnits = 100f;
+        private float waterUnitsPerBody = 1000f;
+
+        [SerializeField] 
+        private int waterBodyPlacementAttempts = 10;
         
         public override void ProcessMap(Map map)
         {
-            map.AddWaterBody(new Vector2Int(100, 100), waterUnits);
+            for(int i = 0; i < waterBodyPlacementAttempts; i++)
+            {
+                Vector2Int vec = new Vector2Int(Random.Range(0, map.SizeX), Random.Range(0, map.SizeY));
+                if(map.GetBodyOfWaterByPosition(new Slope(vec, map.MapUnits).CalculatedSlope[^1]) == null)
+                    map.AddWaterBody(vec, waterUnitsPerBody);
+            }
+            
         }
 
         public override void ProcessGeneratorData(float[,] map)
