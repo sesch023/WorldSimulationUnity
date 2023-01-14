@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f819e99da483421f82bf089a1a88bf84, type: 3}
   m_Name: Water Seeding
   m_EditorClassIdentifier: 
-  waterUnitsPerBody: 500
+  waterUnitsPerBody: 50
   waterBodyPlacementAttempts: 50

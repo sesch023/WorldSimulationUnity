@@ -1,25 +1,29 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Model.Map.VirtualFeatureSelection;
 using UnityEngine;
 using System.Linq;
 using Unity.VisualScripting;
+using Utils.BaseUtils;
 
 namespace Model.Map.Feature
 {
     public class WaterBody : IFeature
     {
         private Map _map;
-        public Vector2Int[] ShallowPoints { get; private set; }
+        private Valley _bodyValley;
+        
+        public Vector2Int[] ShallowPoints => _bodyValley.CalculatedExits;
         public float ShallowPointElevation { get; private set; }
         public Vector2Int DeepestPoint { get; private set; }
 
-        private HashSet<Vector2Int> _points;
+        private Dictionary<Vector2Int, WaterBody> _overflows;
         public float WaterVolume { get; set; }
+        
+        public float CurrentAbsoluteWaterLevel { get; set; }
         
         public static WaterBody MergeBodiesOfWaterIntoFirst(WaterBody body1, WaterBody body2)
         {
-            var points = new HashSet<Vector2Int>(body1._points.Union(body2._points));
-
             var shallowPointElevation = body1.ShallowPointElevation;
             var shallowPoints = body1.ShallowPoints;
             if (body1.ShallowPointElevation < body2.ShallowPointElevation)
@@ -37,11 +41,17 @@ namespace Model.Map.Feature
             
             var waterVolume = body1.WaterVolume + body2.WaterVolume;
 
-            body1._points = points;
+            body1._bodyValley = new Valley(shallowPoints[0], body1._map.MapUnits);
             body1.ShallowPointElevation = shallowPointElevation;
-            body1.ShallowPoints = shallowPoints;
             body1.DeepestPoint = deepestPoint;
             body1.WaterVolume = waterVolume;
+            body1._overflows.AddRange(body2._overflows);
+            foreach (var overflow in body1._overflows)
+            {
+                if(overflow.Value == body1 || overflow.Value == body2)
+                    body1._overflows.Remove(overflow.Key);
+            }
+            
             return body1;
         }
         
@@ -49,13 +59,13 @@ namespace Model.Map.Feature
         
         public WaterBody(Map map, Vector2Int initialPosition, float waterVolume)
         {
-            this._map = map;
-
-            ShallowPoints = new []{ DeepestPointFromInitialPosition(initialPosition) };
+            _map = map;
+            DeepestPoint = DeepestPointFromInitialPosition(initialPosition);
+            _bodyValley = new Valley(DeepestPoint, _map.MapUnits);
             ShallowPointElevation = map.MapUnits[ShallowPoints[0].x, ShallowPoints[0].y].Position.Elevation;
-            DeepestPoint = ShallowPoints[0];
-            _points = new HashSet<Vector2Int>(){ DeepestPoint };
+            _overflows = new Dictionary<Vector2Int, WaterBody>();
             WaterVolume = 0;
+            CurrentAbsoluteWaterLevel = map.MapUnits[DeepestPoint.x, DeepestPoint.y].Position.Elevation;
             AddVolume(waterVolume);
             map.AddWaterBody(this);
         }
@@ -66,22 +76,88 @@ namespace Model.Map.Feature
             return slope.CalculatedSlope[^1];
         }
 
-        private void WaterBodyCollision(Vector2Int[] newShallowPoints)
+        private void CreateOverflow(WaterBody secondary, Vector2Int overflowFrom)
         {
-            List<Vector2Int> mergeBodies = new List<Vector2Int>();
-            foreach (var point in newShallowPoints)
+            _overflows.Add(overflowFrom, secondary);
+        }
+
+        private void FindOverflowValley()
+        {
+            foreach (var shallows in ShallowPoints)
             {
-                WaterBody body = _map.GetBodyOfWaterByPosition(point);
-                if(body != null)
-                    mergeBodies.Add(point);
-            }
-                
-            if (mergeBodies.Count > 0)
-            {
-                foreach (var body in mergeBodies)
+                if (_overflows.ContainsKey(shallows))
                 {
-                    MergeBodiesOfWaterIntoFirst(this, _map.GetBodyOfWaterByPosition(body));
+                    continue;
                 }
+
+                Vector2Int[] neighbors = MathUtil.GetNeighborPositionsIn2DArray(shallows, _map.SizeX, _map.SizeY);
+                foreach (var neighbor in neighbors)
+                {
+                    if (_map.MapUnits[neighbor.x, neighbor.y].Position.Elevation < ShallowPointElevation)
+                    {
+                        Slope slope = new Slope(neighbor, _map.MapUnits);
+                        WaterBody body = _map.GetBodyOfWaterByPosition(slope.CalculatedSlope[^1]);
+                        
+                        if(body == null)
+                            body = new WaterBody(_map, neighbor, 0);
+                        CreateOverflow(body, shallows);
+                    }
+                }
+            }
+        }
+        
+        public float GetCapacityBeforeResize()
+        {
+            Vector2Int firstExit = _bodyValley.CalculatedExits[0];
+            float capHeightDiff = (_map.MapUnits[firstExit.x, firstExit.y].Position.Elevation -
+                                   CurrentAbsoluteWaterLevel);
+            return capHeightDiff * _bodyValley.CalculatedPositions.Length;
+        }
+
+        private void SteppedOverflow(ref float unassignedWaterVolume)
+        {
+            float fillPerStepAndOverflow = unassignedWaterVolume / (_overflows.Count * 100);
+            while (unassignedWaterVolume > 0 && _overflows.Count > 0)
+            {
+                foreach (var overflow in _overflows)
+                {
+                    overflow.Value.AddVolume(fillPerStepAndOverflow);
+                    unassignedWaterVolume -= fillPerStepAndOverflow;
+                    if(overflow.Value.ShallowPoints.Intersect(ShallowPoints).Any() || 
+                       overflow.Value.GetFeaturePositions().Intersect(GetFeaturePositions()).Any()){
+                        _overflows.Remove(overflow.Key);
+                        MergeBodiesOfWaterIntoFirst(this, overflow.Value);
+                    }
+                }
+            }
+        }
+
+        private void Overflow(ref float unassignedWaterVolume)
+        {
+            float overflowVolume = 0;
+            float[] caps = new float[_overflows.Count];
+            int i = 0;
+            foreach(var overflow in _overflows)
+            {
+                caps[i] = overflow.Value.GetCapacityBeforeResize();
+                overflowVolume += caps[i];
+                i++;
+            }
+                    
+            if(overflowVolume >= unassignedWaterVolume)
+            {
+                i = 0;
+                foreach (var overflow in _overflows)
+                {
+                    float fillWith = Math.Min(caps[i], unassignedWaterVolume / (i - _overflows.Count));
+                    i++;
+                    overflow.Value.AddVolume(fillWith);
+                    unassignedWaterVolume -= fillWith;
+                }
+            }
+            else
+            {
+                SteppedOverflow(ref unassignedWaterVolume);
             }
         }
         
@@ -91,35 +167,44 @@ namespace Model.Map.Feature
             WaterVolume += volume;
             while (unassignedWaterVolume > 0)
             {
-                Valley valley = new Valley(ShallowPoints[0], _map.MapUnits);
-                Vector2Int[] newShallowPoints = valley.CalculatedExits;
+                float valleyCapLeft = GetCapacityBeforeResize();
 
-                WaterBodyCollision(newShallowPoints);
-                
-                float newElevation = _map.MapUnits[newShallowPoints[0].x, newShallowPoints[0].y].Position.Elevation;
-                float volDiff = (newElevation - ShallowPointElevation) * (_points.Count + newShallowPoints.Length);
-                ShallowPoints = newShallowPoints;
-                ShallowPointElevation = newElevation;
-                _points.AddRange(valley.CalculatedPositions);
-                
-                foreach(var vec in _points)
+                if (valleyCapLeft >= unassignedWaterVolume)
                 {
-                    float pointElevation = _map.MapUnits[vec.x, vec.y].Position.Elevation;
-                    _map.MapUnits[vec.x, vec.y].WaterLevel = ShallowPointElevation - pointElevation;
-                }
+                    float addedHeight = unassignedWaterVolume / _bodyValley.CalculatedPositions.Length;
+                    CurrentAbsoluteWaterLevel += addedHeight;
+                    
+                    foreach(var vec in _bodyValley.CalculatedPositions)
+                    {
+                        float pointElevation = _map.MapUnits[vec.x, vec.y].Position.Elevation;
+                        _map.MapUnits[vec.x, vec.y].WaterLevel = CurrentAbsoluteWaterLevel - pointElevation;
+                    }
+                    
+                    break;
+                } 
                 
-                unassignedWaterVolume -= volDiff;
+                FindOverflowValley();
+                
+                if (_overflows.Count > 0)
+                {
+                    Overflow(ref unassignedWaterVolume);
+                }
+                else
+                {
+                    _bodyValley = new Valley(ShallowPoints[0], _map.MapUnits); 
+                    CurrentAbsoluteWaterLevel = _map.MapUnits[ShallowPoints[0].x, ShallowPoints[0].y].Position.Elevation;
+                }
             }
         }
 
         public Vector2Int[] GetFeaturePositions()
         {
-            return _points.ToArray();
+            return _bodyValley.CalculatedPositions;
         }
         
         public bool InBody(Vector2Int position)
         {
-            return _points.Contains(position);
+            return _bodyValley.CalculatedPositions.Contains(position);
         }
     }
 }

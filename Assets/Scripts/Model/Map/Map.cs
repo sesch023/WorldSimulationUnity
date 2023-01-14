@@ -43,9 +43,8 @@ namespace Model.Map
         
         public void AddWaterBody(Vector2Int initialPosition, float volume)
         {
-            var waterBody = new WaterBody(this, initialPosition, volume);
-            Debug.Log(waterBody);
-            AddWaterBody(waterBody);
+            // ReSharper disable once ObjectCreationAsStatement
+            new WaterBody(this, initialPosition, volume);
         }
 
         public WaterBody GetBodyOfWaterByPosition(Vector2Int pos)
