@@ -48,16 +48,14 @@ namespace Utils.Logging
             {
                 Directory.CreateDirectory(targetPath);
             }
-            else
+            else if (clearLogsAfterRun)
             {
-                if (clearLogsAfterRun)
+                foreach(FileInfo file in new DirectoryInfo(targetPath).GetFiles())
                 {
-                    foreach(FileInfo file in new DirectoryInfo(targetPath).GetFiles())
-                    {
-                        if(file.Extension == ".log" && (LogLevelInfo.Names.Any(file.Name.Contains) || file.Name.Contains("Full")))
-                            file.Delete();
-                    }
+                    if(file.Extension == ".log" && (LogLevelInfo.Names.Any(file.Name.Contains) || file.Name.Contains("Full")))
+                        file.Delete();
                 }
+            
             }
 
             _writerPaths = new Dictionary<LogLevel, string>();
