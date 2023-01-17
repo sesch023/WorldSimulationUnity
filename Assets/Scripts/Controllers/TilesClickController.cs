@@ -84,7 +84,7 @@ namespace Controllers {
             // If the mouse is not over a UI element, execute a mode.
             if (SimulationManager.Instance.PointerOverUI)
                 return;
-            
+
             DeselectAll();
             
             if (SimulationManager.Instance.CurrentInteractionMode == SimulationManager.InteractionMode.GroupSelection)

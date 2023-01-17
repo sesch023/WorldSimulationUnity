@@ -161,7 +161,6 @@ namespace Views.UIViews
         private void SetMaterialData()
         {
             materialView.SetText(_shownUnit.GroundMaterial.ToString());
-            Debug.Log(_shownUnit.GroundMaterial);
         }
 
         private void SetBehaviorData()

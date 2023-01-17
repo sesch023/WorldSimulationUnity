@@ -46,6 +46,11 @@ namespace Model.Map
             // ReSharper disable once ObjectCreationAsStatement
             new WaterBody(this, initialPosition, volume);
         }
+        
+        public void RemoveWaterBody(WaterBody waterBody)
+        {
+            _waterBodies.Remove(waterBody);
+        }
 
         public WaterBody GetBodyOfWaterByPosition(Vector2Int pos)
         {

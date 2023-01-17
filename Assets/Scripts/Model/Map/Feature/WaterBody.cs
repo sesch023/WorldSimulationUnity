@@ -45,13 +45,22 @@ namespace Model.Map.Feature
             body1.ShallowPointElevation = shallowPointElevation;
             body1.DeepestPoint = deepestPoint;
             body1.WaterVolume = waterVolume;
-            body1._overflows.AddRange(body2._overflows);
+
+            body1._overflows.AddRange(body2._overflows.Where(ov => !body1._overflows.ContainsKey(ov.Key)));
+            
+            List<Vector2Int> pointsToRemove = new List<Vector2Int>();
             foreach (var overflow in body1._overflows)
             {
                 if(overflow.Value == body1 || overflow.Value == body2)
-                    body1._overflows.Remove(overflow.Key);
+                    pointsToRemove.Add(overflow.Key);
             }
-            
+            DictUtil.RemoveMultiFromDict(body1._overflows, pointsToRemove);
+
+            if (body1._map == body2._map)
+            {
+                body1._map.RemoveWaterBody(body2);
+            }
+
             return body1;
         }
         
@@ -101,6 +110,8 @@ namespace Model.Map.Feature
                         if(body == null)
                             body = new WaterBody(_map, neighbor, 0);
                         CreateOverflow(body, shallows);
+                        // For now we only allow one overflow per shallow point
+                        break;
                     }
                 }
             }
@@ -119,7 +130,7 @@ namespace Model.Map.Feature
             float fillPerStepAndOverflow = unassignedWaterVolume / (_overflows.Count * 100);
             while (unassignedWaterVolume > 0 && _overflows.Count > 0)
             {
-                foreach (var overflow in _overflows)
+                foreach (var overflow in new Dictionary<Vector2Int, WaterBody>(_overflows))
                 {
                     overflow.Value.AddVolume(fillPerStepAndOverflow);
                     unassignedWaterVolume -= fillPerStepAndOverflow;
@@ -192,6 +203,7 @@ namespace Model.Map.Feature
                 else
                 {
                     _bodyValley = new Valley(ShallowPoints[0], _map.MapUnits); 
+                    Debug.Log(ShallowPoints);
                     CurrentAbsoluteWaterLevel = _map.MapUnits[ShallowPoints[0].x, ShallowPoints[0].y].Position.Elevation;
                 }
             }
