@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.IO;
+using System.Linq;
 using System.Net;
-using JetBrains.Annotations;
 using UnityEngine;
-using UnityEngine.iOS;
 
 namespace Utils.Logging
 {
-    public delegate void LoggingMethod(string message, LogLevel level=LogLevel.Debug);
+    public delegate void LogString(string message, LogLevel level, StreamWriter levelWriter, StreamWriter fullWriter);
     
     public enum LogLevel
     {
@@ -31,34 +29,59 @@ namespace Utils.Logging
     
     public class SimpleLogger
     {
-        private readonly LoggingMethod _method;
-        private readonly Dictionary<LogLevel, StreamWriter> _writers;
-
-        public SimpleLogger(string targetPath="logs/", LoggingMethod loggingMethod=null)
+        private const string FileTimeFormat = "yy-MM-dd-hh-mm-ss";
+        private readonly LogString _logString;
+        private readonly Dictionary<LogLevel, string> _writerPaths;
+        private readonly string _fullLogWriterPath;
+        
+        public SimpleLogger(string targetPath="Logs/", bool useTimeSignature=false, LogString logString=null, bool clearLogsAfterRun=true)
         {
             if(targetPath == null)
                 throw new NullReferenceException($"NullReferenceException: {GetType().Name}. Given Logging Path is null!");
             
-            var path = Path.GetDirectoryName(targetPath);
-            if (path != null && !Directory.Exists(path))
+            var newPath = Path.GetDirectoryName(targetPath);
+            if(newPath == null || new FileInfo(targetPath).Extension != "")
+                throw new ArgumentException($"NullReferenceException: {GetType().Name}. Given Logging Path is illegal!");
+            targetPath = newPath;
+
+            if (!Directory.Exists(targetPath))
             {
-                Directory.CreateDirectory(path);
+                Directory.CreateDirectory(targetPath);
+            }
+            else
+            {
+                if (clearLogsAfterRun)
+                {
+                    foreach(FileInfo file in new DirectoryInfo(targetPath).GetFiles())
+                    {
+                        if(file.Extension == ".log" && (LogLevelInfo.Names.Any(file.Name.Contains) || file.Name.Contains("Full")))
+                            file.Delete();
+                    }
+                }
             }
 
-            _writers = new Dictionary<LogLevel, StreamWriter>();
+            _writerPaths = new Dictionary<LogLevel, string>();
+            var subpath = (useTimeSignature) ? $"Full-{DateTime.Now.ToString(FileTimeFormat)}.log" : "Full.log";
+            _fullLogWriterPath = Path.Join(targetPath,subpath);
             foreach (var key in Enum.GetValues(typeof(LogLevel)))
             {
                 var logLevel = (LogLevel) key;
-                var logPath = Path.Combine(targetPath, $"{logLevel}.log");
-                _writers.Add(logLevel, new StreamWriter(logPath, true));
+                subpath = (useTimeSignature)
+                    ? $"{logLevel}-{DateTime.Now.ToString(FileTimeFormat)}.log"
+                    : $"{logLevel}.log";
+                var logPath = Path.Join(targetPath, subpath);
+                _writerPaths.Add(logLevel, logPath);
             }
             
-            if (loggingMethod == null)
+            if (logString == null)
             {
-                loggingMethod = (msg, level) =>
+                logString = (msg, level, writer, fulLWriter) =>
                 {
                     msg = $"[{level}] {DateTime.Now.ToLongTimeString()}: {msg}";
-                    _writers[level].WriteLine(msg);
+                    
+                    writer.WriteLine(msg);
+                    fulLWriter.WriteLine(msg);
+                    
                     #if UNITY_STANDALONE
                          switch(level)
                          {
@@ -84,24 +107,23 @@ namespace Utils.Logging
                 };
                 
             }
-            else
-            {
-                _method = loggingMethod;
-            }
-            loggingMethod("Logging to " + targetPath, LogLevel.Info);
-        }
-        
-        ~SimpleLogger()
-        {
-            foreach(var writer in _writers)
-            {
-                writer.Value.Close();
-            }
+            _logString = logString;
         }
         
         public void Log(string message, LogLevel level=LogLevel.Debug)
         {
-            _method(message, level);
+            using (StreamWriter currentWriter = new StreamWriter(_writerPaths[level], true))
+            {
+                using (StreamWriter fulLWriter = new StreamWriter(_fullLogWriterPath, true))
+                {
+                    _logString(message, level, currentWriter, fulLWriter);
+                }
+            }
+        }
+        
+        public void Log(object obj, LogLevel level=LogLevel.Debug)
+        {
+            Log(obj.ToString(), level);
         }
     }
 }

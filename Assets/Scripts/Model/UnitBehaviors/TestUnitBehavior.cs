@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Manager;
+using UnityEngine;
 
 namespace Model.UnitBehaviors
 {
@@ -11,7 +12,7 @@ namespace Model.UnitBehaviors
 
         public override void TriggerBehavior()
         {
-            Debug.Log("TestUnitBehavior triggered!");
+            LoggingManager.GetInstance().LogInfo("TestUnitBehavior triggered!");
         }
     }
 }

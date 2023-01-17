@@ -1,4 +1,5 @@
 ﻿using System;
+using Manager;
 using Model.Map.Feature;
 using Model.Map.VirtualFeatureSelection;
 using UnityEngine;
@@ -28,7 +29,7 @@ namespace Model.Map.Processing
 
         public override void ProcessGeneratorData(float[,] map)
         {
-            Debug.LogWarning("Water Seeding not implemented for Generators.");
+            LoggingManager.GetInstance().LogWarning("Water Seeding not implemented for Generators.");
         }
     }
 }

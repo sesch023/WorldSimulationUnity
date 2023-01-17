@@ -33,7 +33,7 @@ namespace Manager
         {
             _mavg.ComputeAverage(time - LastTickTime);
             if(EnableDebug)
-                Debug.Log(this);
+                LoggingManager.GetInstance().LogInfo(this);
         }
 
         /// <summary>

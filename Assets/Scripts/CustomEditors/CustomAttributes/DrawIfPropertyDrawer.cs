@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Manager;
 using UnityEditor;
 using UnityEngine;
 
@@ -70,7 +71,7 @@ namespace CustomEditors.CustomAttributes
      
             if (comparedField == null)
             {
-                Debug.LogError("Cannot find property with name: " + path);
+                LoggingManager.GetInstance().LogError("Cannot find property with name: " + path);
                 return true;
             }
      
@@ -82,7 +83,7 @@ namespace CustomEditors.CustomAttributes
                 case "Enum":
                     return comparedField.enumValueIndex.Equals((int)drawIf.ComparedValue);
                 default:
-                    Debug.LogError("Error: " + comparedField.type + " is not supported of " + path);
+                    LoggingManager.GetInstance().LogError("Error: " + comparedField.type + " is not supported of " + path);
                     return true;
             }
         }

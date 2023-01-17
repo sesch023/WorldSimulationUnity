@@ -67,13 +67,13 @@ namespace Model.Map
             var body1 = GetBodyOfWaterByPosition(pos1);
             var body2 = GetBodyOfWaterByPosition(pos2);
             if (body1 == null || body2 == null){
-                Debug.LogWarning("Trying to merge bodies of water that don't exist");
+                LoggingManager.GetInstance().LogWarning("Trying to merge bodies of water that don't exist");
                 return;
             }
 
             if (body1 == body2)
             {
-                Debug.LogWarning("Trying to merge bodies of water that are the same");
+                LoggingManager.GetInstance().LogWarning("Trying to merge bodies of water that are the same");
                 return;
             }
             

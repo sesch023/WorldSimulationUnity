@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Model.Map.VirtualFeatureSelection;
 using UnityEngine;
 using System.Linq;
+using Manager;
 using Unity.VisualScripting;
 using Utils.BaseUtils;
 
@@ -203,7 +204,7 @@ namespace Model.Map.Feature
                 else
                 {
                     _bodyValley = new Valley(ShallowPoints[0], _map.MapUnits); 
-                    Debug.Log(ShallowPoints);
+                    LoggingManager.GetInstance().LogDebug(ShallowPoints);
                     CurrentAbsoluteWaterLevel = _map.MapUnits[ShallowPoints[0].x, ShallowPoints[0].y].Position.Elevation;
                 }
             }

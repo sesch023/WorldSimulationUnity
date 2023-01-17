@@ -31,7 +31,7 @@ namespace Views.UIViews
 
             if (TimeManager.Instance.GetType() != typeof(VerboseTimeManager))
             {
-                Debug.LogWarning("ApplicationStateWarning: No VerboseTimeManager found. TPSView is disabled.");
+                LoggingManager.GetInstance().LogWarning("ApplicationStateWarning: No VerboseTimeManager found. TPSView is disabled.");
                 gameObject.SetActive(false);
             }
             else

@@ -68,11 +68,11 @@ namespace Manager
             
             var spacedEvent = new TimeSpacedEvent(5000,
                 triggeredBy =>
-                    Debug.Log("This Message should be shown every 5000ms!"));
+                    LoggingManager.GetInstance().LogInfo("This Message should be shown every 5000ms!"));
 
             var timeEvent = new TimeEvent(40000,
                 triggeredBy =>  {
-                    Debug.Log("This Message should be shown after 40000ms!");
+                    LoggingManager.GetInstance().LogInfo("This Message should be shown after 40000ms!");
                     for (int x = 0; x < 0.1 * MapManager.Instance.MapController.UnitMap.MapUnits.GetLength(0); x++)
                     {
                         for (int y = 0; y < 0.1 * MapManager.Instance.MapController.UnitMap.MapUnits.GetLength(1); y++)
@@ -84,16 +84,16 @@ namespace Manager
                 instance =>
                 {
                     MarkRemovableForRemoval(instance);
-                    Debug.Log("Bye Time Event!");
+                    LoggingManager.GetInstance().LogInfo("Bye Time Event!");
                 });
             
             var tickEvent = new TickEvent(10,
                 triggeredBy =>
-                    Debug.Log("This Message should be shown once after 10 ticks!"),
+                    LoggingManager.GetInstance().LogInfo("This Message should be shown once after 10 ticks!"),
                 instance =>
                 {
                     MarkRemovableForRemoval(instance);
-                    Debug.Log("Bye Tick Event!");
+                    LoggingManager.GetInstance().LogInfo("Bye Tick Event!");
                 });
         }
         

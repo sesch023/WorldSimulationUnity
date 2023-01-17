@@ -19,8 +19,8 @@ namespace Manager
         {
             foreach(var updatable in MarkedForRemoval)
             {
-                if(EnableDebug)
-                    Debug.Log("Clearing Updatable: " + updatable);
+                if(EnableDebug) 
+                    LoggingManager.GetInstance().LogDebug("Clearing Updatable: " + updatable);
                 RemoveUpdatable(updatable);
             }
             

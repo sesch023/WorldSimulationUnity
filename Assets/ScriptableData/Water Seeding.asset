@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Water Seeding
   m_EditorClassIdentifier: 
   waterUnitsPerBody: 50
-  waterBodyPlacementAttempts: 50
+  waterBodyPlacementAttempts: 1
