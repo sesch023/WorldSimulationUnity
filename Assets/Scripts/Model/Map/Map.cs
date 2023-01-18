@@ -106,7 +106,8 @@ namespace Model.Map
                 for (var y = 0; y < MapUnits.GetLength(1); y++)
                 {
                     (float lat, float lon) latLong = CalculateLatLong(x, y);
-                    MapUnits[x, y] = new MapUnit(0.0f, 0.0f, new MapPosition(latLong.lat, latLong.lon, mapElevation[x, y]));
+                    Vector2Int vec = new Vector2Int(x, y);
+                    MapUnits[x, y] = new MapUnit(0.0f, 0.0f, new MapPosition(latLong.lat, latLong.lon, mapElevation[x, y], vec));
                 }
             }
 
@@ -119,8 +120,8 @@ namespace Model.Map
         /// <summary>
         /// Calculates the latitude and longitude of a tile by its position in the map.
         /// </summary>
-        /// <param name="x">X-Position of the tile.</param>
-        /// <param name="y">Y-Position of the tile.</param>
+        /// <param name="x">X-MapPositionVec of the tile.</param>
+        /// <param name="y">Y-MapPositionVec of the tile.</param>
         /// <returns>Latitude and longitude of the tile.</returns>
         private (float lat, float lon) CalculateLatLong(int x, int y)
         {
@@ -142,7 +143,7 @@ namespace Model.Map
         /// Returns a valley at the given position by taking all tiles with lower elevation next to it.
         /// Its returns all the tiles in the valley, its borders and exit tiles (lowest positions next to the border).
         /// </summary>
-        /// <param name="position">Position to find a valley at.</param>
+        /// <param name="position">MapPositionVec to find a valley at.</param>
         /// <returns>Tiles of the valley, Border of the valley, Exits of the valley.</returns>
         public (Vector2Int[] valley, Vector2Int[] valleyBorder, Vector2Int[] valleyExits) GetValley(Vector2Int position)
         {
@@ -156,7 +157,7 @@ namespace Model.Map
         /// Returns a peak at the given position by taking all tiles with higher elevation next to it.
         /// Its returns all the tiles in the peak, its borders and exit tiles (lowest positions next to the border).
         /// </summary>
-        /// <param name="position">Position to find a peak at.</param>
+        /// <param name="position">MapPositionVec to find a peak at.</param>
         /// <returns>Tiles of the peak, Border of the peak, Exits of the peak.</returns>
         public (Vector2Int[] peak, Vector2Int[] peakBorder, Vector2Int[] peakExits) GetPeak(Vector2Int position)
         {
@@ -172,7 +173,7 @@ namespace Model.Map
         ///
         /// Currently only works for peaks and valleys.
         /// </summary>
-        /// <param name="position">Position to find a group at.</param>
+        /// <param name="position">MapPositionVec to find a group at.</param>
         /// <returns>Tiles of the group, Border of the group, Exits of the group.</returns>
         public (Vector2Int[] group, Vector2Int[] groupBorder, Vector2Int[] groupExits) GetTerrainGroup(Vector2Int position)
         {
@@ -192,7 +193,7 @@ namespace Model.Map
         /// Finds a slope at the given position by trying to find a way to the bottom of a valley. It is not always
         /// possible to find a well defined slope at the moment.
         /// </summary>
-        /// <param name="start">Position to find a slope at.</param>
+        /// <param name="start">MapPositionVec to find a slope at.</param>
         /// <param name="momentumMultiplier">Multiplier of momentum to make the algorithm slip over local minimals.</param>
         /// <param name="maxMomentumFraction">Max fraction of momentum to take from the slope in a single step.</param>
         /// <returns>Positions of the slope in order from highest to lowest.</returns>

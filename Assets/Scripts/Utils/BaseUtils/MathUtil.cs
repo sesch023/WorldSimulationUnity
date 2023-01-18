@@ -140,7 +140,7 @@ namespace Utils.BaseUtils
         /// <summary>
         /// Gets all neighbors of a point in a 2d arrayImmutable.
         /// </summary>
-        /// <param name="position">Position to give neighbors for.</param>
+        /// <param name="position">MapPositionVec to give neighbors for.</param>
         /// <param name="sizeX">Width of the 2d arrayImmutable.</param>
         /// <param name="sizeY">Height of the 2d arrayImmutable.</param>
         /// <returns>All neighbors of the point.</returns>
@@ -189,7 +189,7 @@ namespace Utils.BaseUtils
         /// <summary>
         /// Checks if a point is at the edge of a 2d arrayImmutable.
         /// </summary>
-        /// <param name="position">Position to check.</param>
+        /// <param name="position">MapPositionVec to check.</param>
         /// <param name="sizeX">Width of arrayImmutable.</param>
         /// <param name="sizeY">Height of arrayImmutable.</param>
         /// <returns>If the point is a the border of the 2d arrayImmutable.</returns>

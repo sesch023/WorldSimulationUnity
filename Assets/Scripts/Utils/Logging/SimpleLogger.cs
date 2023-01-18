@@ -69,6 +69,11 @@ namespace Utils.Logging
                     : $"{logLevel}.log";
                 var logPath = Path.Join(targetPath, subpath);
                 _writerPaths.Add(logLevel, logPath);
+                Debug.Log(logLevel);
+                using (StreamWriter fulLWriter = new StreamWriter(logPath, true))
+                {
+                    fulLWriter.WriteLine($"Start Logging: {DateTime.Now.ToShortTimeString()}");
+                }
             }
             
             if (logString == null)

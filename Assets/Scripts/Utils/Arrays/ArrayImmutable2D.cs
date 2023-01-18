@@ -21,8 +21,8 @@
         /// <summary>
         /// Returns a value at the given position.
         /// </summary>
-        /// <param name="indexX">Position in first dimension.</param>
-        /// <param name="indexY">Position in second dimension.</param>
+        /// <param name="indexX">MapPositionVec in first dimension.</param>
+        /// <param name="indexY">MapPositionVec in second dimension.</param>
         public TReal this[int indexX, int indexY] => _array[indexX, indexY];
 
         public TReal[,] GetArray()

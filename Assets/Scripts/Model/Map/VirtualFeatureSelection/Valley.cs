@@ -181,7 +181,7 @@ namespace Model.Map.VirtualFeatureSelection
         /// The given position is part of the valley. Add it to the valley and add its neighbors to the next positions.
         /// Also checks if the position is part of the border.
         /// </summary>
-        /// <param name="nextPosition">Position to add to the valley and check.</param>
+        /// <param name="nextPosition">MapPositionVec to add to the valley and check.</param>
         private void NextElevationStep(Vector2Int nextPosition)
         {
             _valleyPositions.Add(nextPosition);
@@ -209,7 +209,7 @@ namespace Model.Map.VirtualFeatureSelection
         /// <summary>
         /// Evaluates if the given position is part of the valley. Can be overridden to change the elevation condition.
         /// </summary>
-        /// <param name="position">Position of the valley to check.</param>
+        /// <param name="position">MapPositionVec of the valley to check.</param>
         /// <param name="elevation">Elevation which is checked against.</param>
         /// <returns>If the current position is smaller or equal to the given, return true.</returns>
         protected virtual bool ElevationCondition(Vector2Int position, float elevation)

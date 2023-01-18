@@ -85,7 +85,7 @@ namespace Controllers
         /// Given a global position, returns the map unit at that position if possible and the position itself.
         /// If not, throws an IndexOutOfRangeException.
         /// </summary>
-        /// <param name="pos">Global Position that is converted.</param>
+        /// <param name="pos">Global MapPositionVec that is converted.</param>
         /// <returns>MapUnit and position on the tilemap as 0 based integer vector.</returns>
         /// <exception cref="IndexOutOfRangeException">Thrown if the position is out of bounds.</exception>
         public (MapUnit, Vector2Int) GetMapUnitByGlobalPosition(Vector3 pos)

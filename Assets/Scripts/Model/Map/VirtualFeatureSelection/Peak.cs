@@ -54,7 +54,7 @@ namespace Model.Map.VirtualFeatureSelection
         /// <summary>
         /// Evaluates if the given position is part of the peak. 
         /// </summary>
-        /// <param name="position">Position of the valley to check.</param>
+        /// <param name="position">MapPositionVec of the valley to check.</param>
         /// <param name="elevation">Elevation which is checked against.</param>
         /// <returns>If the current position is greater or equal to the given, return true.</returns>
         protected override bool ElevationCondition(Vector2Int position, float elevation)

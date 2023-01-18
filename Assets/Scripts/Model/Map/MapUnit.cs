@@ -70,7 +70,7 @@ namespace Model.Map
 
         public MapUnitGroundMaterial GroundMaterial { get; private set; } = new();
         /// <summary>
-        /// Position of the unit in the map with longitude, latitude and elevation.
+        /// MapPositionVec of the unit in the map with longitude, latitude and elevation.
         /// </summary>
         public MapPosition Position { get; private set; }
         
@@ -115,7 +115,7 @@ namespace Model.Map
         /// </summary>
         /// <param name="temperature">Temperature of the unit.</param>
         /// <param name="humidity">Humidity of the unit.</param>
-        /// <param name="position">Position of the unit.</param>
+        /// <param name="position">MapPositionVec of the unit.</param>
         public MapUnit(float temperature, float humidity, MapPosition position) : this()
         {
             Init(temperature, humidity, position);
@@ -126,7 +126,7 @@ namespace Model.Map
         /// </summary>
         /// <param name="temperature">Temperature of the unit.</param>
         /// <param name="humidity">Humidity of the unit.</param>
-        /// <param name="position">Position of the unit.</param>
+        /// <param name="position">MapPositionVec of the unit.</param>
         /// <param name="behaviors">Behaviors of the unit.</param>
         public MapUnit(float temperature, float humidity, MapPosition position,
             [NotNull] IList<BaseUnitBehavior> behaviors) : this(temperature, humidity, position)

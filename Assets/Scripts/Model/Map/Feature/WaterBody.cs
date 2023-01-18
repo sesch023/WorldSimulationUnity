@@ -76,8 +76,8 @@ namespace Model.Map.Feature
             _overflows = new Dictionary<Vector2Int, WaterBody>();
             WaterVolume = 0;
             CurrentAbsoluteWaterLevel = map.MapUnits[DeepestPoint.x, DeepestPoint.y].Position.Elevation;
-            AddVolume(waterVolume);
             map.AddWaterBody(this);
+            AddVolume(waterVolume);
         }
 
         private Vector2Int DeepestPointFromInitialPosition(Vector2Int initialPosition)
@@ -106,13 +106,26 @@ namespace Model.Map.Feature
                     if (_map.MapUnits[neighbor.x, neighbor.y].Position.Elevation < ShallowPointElevation)
                     {
                         Slope slope = new Slope(neighbor, _map.MapUnits);
+                        
+                        if(slope.CalculatedSlope[^1] == DeepestPoint)
+                            continue;
+                        
+                        
+                        
+                        LoggingManager.GetInstance().LogDebug("Found overflow from " + shallows + " to " + slope.CalculatedSlope[^1]);
+                        LoggingManager.GetInstance().LogDebug(this.GetHashCode());
+                        
                         WaterBody body = _map.GetBodyOfWaterByPosition(slope.CalculatedSlope[^1]);
                         
-                        if(body == null)
-                            body = new WaterBody(_map, neighbor, 0);
-                        CreateOverflow(body, shallows);
-                        // For now we only allow one overflow per shallow point
-                        break;
+                        if (body != this && !_bodyValley.CalculatedPositions.Contains(slope.CalculatedSlope[^1]))
+                        {
+                            if(body == null)
+                                body = new WaterBody(_map, neighbor, 0);
+                            LoggingManager.GetInstance().LogDebug(body.GetHashCode());
+                            // For now we only allow one overflow per shallow point
+                            CreateOverflow(body, shallows);
+                            break;
+                        }
                     }
                 }
             }
@@ -128,8 +141,10 @@ namespace Model.Map.Feature
 
         private void SteppedOverflow(ref float unassignedWaterVolume)
         {
+            LoggingManager.GetInstance().LogDebug("Stepped overflow");
             float fillPerStepAndOverflow = unassignedWaterVolume / (_overflows.Count * 100);
-            while (unassignedWaterVolume > 0 && _overflows.Count > 0)
+            bool invalidated = false;
+            while (unassignedWaterVolume > 0 && _overflows.Count > 0 && !invalidated)
             {
                 foreach (var overflow in new Dictionary<Vector2Int, WaterBody>(_overflows))
                 {
@@ -139,6 +154,8 @@ namespace Model.Map.Feature
                        overflow.Value.GetFeaturePositions().Intersect(GetFeaturePositions()).Any()){
                         _overflows.Remove(overflow.Key);
                         MergeBodiesOfWaterIntoFirst(this, overflow.Value);
+                        invalidated = true;
+                        break;
                     }
                 }
             }
@@ -156,8 +173,11 @@ namespace Model.Map.Feature
                 i++;
             }
                     
+            LoggingManager.GetInstance().LogDebug("Overflow volume: " + overflowVolume);
+            
             if(overflowVolume >= unassignedWaterVolume)
             {
+                LoggingManager.GetInstance().LogDebug("Normal overflow");
                 i = 0;
                 foreach (var overflow in _overflows)
                 {
@@ -177,10 +197,10 @@ namespace Model.Map.Feature
         {
             float unassignedWaterVolume = volume;
             WaterVolume += volume;
-            while (unassignedWaterVolume > 0)
+            while (unassignedWaterVolume > 0.0)
             {
                 float valleyCapLeft = GetCapacityBeforeResize();
-
+                
                 if (valleyCapLeft >= unassignedWaterVolume)
                 {
                     float addedHeight = unassignedWaterVolume / _bodyValley.CalculatedPositions.Length;
@@ -193,9 +213,27 @@ namespace Model.Map.Feature
                     }
                     
                     break;
-                } 
+                }
                 
+                CurrentAbsoluteWaterLevel = ShallowPointElevation;
+                foreach(var vec in _bodyValley.CalculatedPositions)
+                {
+                    float pointElevation = _map.MapUnits[vec.x, vec.y].Position.Elevation;
+                    _map.MapUnits[vec.x, vec.y].WaterLevel = ShallowPointElevation - pointElevation;
+                }
+                unassignedWaterVolume -= valleyCapLeft;
+
                 FindOverflowValley();
+                
+                LoggingManager.GetInstance().LogDebug($"Body of Water {GetHashCode() % 1000} at: {DeepestPoint}");
+                LoggingManager.GetInstance().LogDebug($"{valleyCapLeft} capacity left in valley");
+                LoggingManager.GetInstance().LogDebug($"{unassignedWaterVolume} water volume left to assign");
+                LoggingManager.GetInstance().LogDebug($"{_overflows.Count} overflows");
+                
+                foreach (var keyValuePair in _overflows)
+                {
+                    LoggingManager.GetInstance().LogDebug($"{keyValuePair}, {keyValuePair.Value.GetHashCode() % 1000}");
+                }
                 
                 if (_overflows.Count > 0)
                 {
@@ -204,8 +242,7 @@ namespace Model.Map.Feature
                 else
                 {
                     _bodyValley = new Valley(ShallowPoints[0], _map.MapUnits); 
-                    LoggingManager.GetInstance().LogDebug(ShallowPoints);
-                    CurrentAbsoluteWaterLevel = _map.MapUnits[ShallowPoints[0].x, ShallowPoints[0].y].Position.Elevation;
+                    ShallowPointElevation = _map.MapUnits[ShallowPoints[0].x, ShallowPoints[0].y].Position.Elevation;
                 }
             }
         }

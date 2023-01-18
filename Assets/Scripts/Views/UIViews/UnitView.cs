@@ -98,7 +98,7 @@ namespace Views.UIViews
         /// <summary>
         /// Enables the view with a given map unit and position of it.
         /// </summary>
-        /// <param name="shownUnit">MapUnit and Position of MapUnit to display the information of.</param>
+        /// <param name="shownUnit">MapUnit and MapPositionVec of MapUnit to display the information of.</param>
         public void EnableUnit((MapUnit unit, Vector2Int vec) shownUnit)
         {
             _shownUnit = shownUnit.unit;
@@ -134,7 +134,7 @@ namespace Views.UIViews
         private void SetPositionData()
         {
             MapPosition position = _shownUnit.Position;
-            String data = $"Position: ({position.Latitude:0.00}, {position.Longitude:0.00}, {position.Elevation:0.00})";
+            String data = $"MapPositionVec: ({position.Latitude:0.00}, {position.Longitude:0.00}, {position.Elevation:0.00}) ({position.MapPositionVec.x}, {position.MapPositionVec.y})";
             positionView.SetText(data);
         }
 

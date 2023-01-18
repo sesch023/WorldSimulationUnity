@@ -84,6 +84,7 @@ namespace Model.Map.VirtualFeatureSelection
         private Vector2Int[] GetSlopeLine()
         {
             SlopeCalculationContext context = new SlopeCalculationContext();
+            context.PreviousElevation = _elevations[_start.x, _start.y];
             context.SlopeLine.Add(_start);
             context.CurrentPos = _start;
             bool found;

@@ -52,7 +52,7 @@ namespace Controllers
         /// Right border of the Camera viewport.
         private float _rightBound;
         
-        // Base Position of the tilemap.
+        // Base MapPositionVec of the tilemap.
         private Vector2 _baseTilemapPos;
         /// Base Scale of the tilemap.
         private Vector2 _tilemapScale;
@@ -169,8 +169,8 @@ namespace Controllers
         /// <summary>
         /// Calculates a clamped position of the camera.
         /// </summary>
-        /// <param name="newPosition">Position to clamp.</param>
-        /// <returns>Clamped Position.</returns>
+        /// <param name="newPosition">MapPositionVec to clamp.</param>
+        /// <returns>Clamped MapPositionVec.</returns>
         private Vector3 ClampedPosition(Vector3 newPosition)
         {
             return new Vector3(
