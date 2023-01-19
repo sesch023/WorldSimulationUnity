@@ -144,7 +144,8 @@ namespace Model.Map.Feature
             LoggingManager.GetInstance().LogDebug("Stepped overflow");
             float fillPerStepAndOverflow = unassignedWaterVolume / (_overflows.Count * 100);
             bool invalidated = false;
-            while (unassignedWaterVolume > 0 && _overflows.Count > 0 && !invalidated)
+            while ((!MathUtil.AlmostEquals(unassignedWaterVolume,0.0f, 0.1f)) && unassignedWaterVolume > 0
+                   && _overflows.Count > 0 && !invalidated)
             {
                 foreach (var overflow in new Dictionary<Vector2Int, WaterBody>(_overflows))
                 {
@@ -186,6 +187,8 @@ namespace Model.Map.Feature
                     overflow.Value.AddVolume(fillWith);
                     unassignedWaterVolume -= fillWith;
                 }
+
+                unassignedWaterVolume = 0;
             }
             else
             {
@@ -197,9 +200,19 @@ namespace Model.Map.Feature
         {
             float unassignedWaterVolume = volume;
             WaterVolume += volume;
-            while (unassignedWaterVolume > 0.0)
+            while ((!MathUtil.AlmostEquals(unassignedWaterVolume,0.0f, 0.1f)) && unassignedWaterVolume > 0)
             {
                 float valleyCapLeft = GetCapacityBeforeResize();
+                
+                LoggingManager.GetInstance().LogDebug($"Body of Water {GetHashCode() % 1000} at: {DeepestPoint}");
+                LoggingManager.GetInstance().LogDebug($"{valleyCapLeft} capacity left in valley");
+                LoggingManager.GetInstance().LogDebug($"{unassignedWaterVolume} water volume left to assign");
+                LoggingManager.GetInstance().LogDebug($"{_overflows.Count} overflows");
+                
+                foreach (var keyValuePair in _overflows)
+                {
+                    LoggingManager.GetInstance().LogDebug($"{keyValuePair}, {keyValuePair.Value.GetHashCode() % 1000}");
+                }
                 
                 if (valleyCapLeft >= unassignedWaterVolume)
                 {
@@ -224,17 +237,7 @@ namespace Model.Map.Feature
                 unassignedWaterVolume -= valleyCapLeft;
 
                 FindOverflowValley();
-                
-                LoggingManager.GetInstance().LogDebug($"Body of Water {GetHashCode() % 1000} at: {DeepestPoint}");
-                LoggingManager.GetInstance().LogDebug($"{valleyCapLeft} capacity left in valley");
-                LoggingManager.GetInstance().LogDebug($"{unassignedWaterVolume} water volume left to assign");
-                LoggingManager.GetInstance().LogDebug($"{_overflows.Count} overflows");
-                
-                foreach (var keyValuePair in _overflows)
-                {
-                    LoggingManager.GetInstance().LogDebug($"{keyValuePair}, {keyValuePair.Value.GetHashCode() % 1000}");
-                }
-                
+
                 if (_overflows.Count > 0)
                 {
                     Overflow(ref unassignedWaterVolume);
