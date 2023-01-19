@@ -78,6 +78,7 @@ namespace Manager
                         for (int y = 0; y < 0.1 * MapManager.Instance.MapController.UnitMap.MapUnits.GetLength(1); y++)
                         {
                             MapManager.Instance.MapController.UnitMap.MapUnits[x, y].Position.Elevation = 0;
+                            MapManager.Instance.MapController.UnitMap.MapUnits[x, y].Temperature = 10;
                         }
                     }
                 },

@@ -28,7 +28,7 @@ namespace Model.Map
             get => _temperature;
             set
             {
-                Math.Clamp(value, 0, float.MaxValue);
+                _temperature = Math.Clamp(value, 0, float.MaxValue);
                 Changed();
             }
         }

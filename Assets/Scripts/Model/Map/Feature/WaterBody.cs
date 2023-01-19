@@ -32,6 +32,26 @@ namespace Model.Map.Feature
                 shallowPointElevation = body2.ShallowPointElevation;
                 shallowPoints = body2.ShallowPoints;
             }
+
+            var shallowest = body1.ShallowPoints[0];
+            foreach (var pt in body1.ShallowPoints)
+            {
+                if (body1._map.MapUnits[pt.x, pt.y].Position.Elevation > shallowPointElevation)
+                {
+                    
+                    shallowPointElevation = body1._map.MapUnits[pt.x, pt.y].Position.Elevation;
+                    shallowest = pt;
+                }
+            }
+            
+            foreach (var pt in body2.ShallowPoints)
+            {
+                if (body2._map.MapUnits[pt.x, pt.y].Position.Elevation > shallowPointElevation)
+                {
+                    shallowPointElevation = body2._map.MapUnits[pt.x, pt.y].Position.Elevation;
+                    shallowest = pt;
+                }
+            }
             
             var deepestPoint = body1.DeepestPoint;
             var deepestElevation1 = body1._map.MapUnits[body1.DeepestPoint.x, body1.DeepestPoint.y].Position.Elevation;
@@ -42,7 +62,7 @@ namespace Model.Map.Feature
             
             var waterVolume = body1.WaterVolume + body2.WaterVolume;
 
-            body1._bodyValley = new Valley(shallowPoints[0], body1._map.MapUnits);
+            body1._bodyValley = new Valley(shallowest, body1._map.MapUnits);
             body1.ShallowPointElevation = shallowPointElevation;
             body1.DeepestPoint = deepestPoint;
             body1.WaterVolume = waterVolume;
@@ -82,7 +102,7 @@ namespace Model.Map.Feature
 
         private Vector2Int DeepestPointFromInitialPosition(Vector2Int initialPosition)
         {
-            Slope slope = new Slope(initialPosition, _map.MapUnits);
+            Slope slope = new Slope(initialPosition, _map.MapUnits, 0, 0);
             return slope.CalculatedSlope[^1];
         }
 
@@ -105,7 +125,7 @@ namespace Model.Map.Feature
                 {
                     if (_map.MapUnits[neighbor.x, neighbor.y].Position.Elevation < ShallowPointElevation)
                     {
-                        Slope slope = new Slope(neighbor, _map.MapUnits);
+                        Slope slope = new Slope(neighbor, _map.MapUnits, 0, 0);
                         
                         if(slope.CalculatedSlope[^1] == DeepestPoint)
                             continue;
@@ -142,9 +162,9 @@ namespace Model.Map.Feature
         private void SteppedOverflow(ref float unassignedWaterVolume)
         {
             LoggingManager.GetInstance().LogDebug("Stepped overflow");
-            float fillPerStepAndOverflow = unassignedWaterVolume / (_overflows.Count * 100);
+            float fillPerStepAndOverflow = unassignedWaterVolume / (_overflows.Count * 10);
             bool invalidated = false;
-            while ((!MathUtil.AlmostEquals(unassignedWaterVolume,0.0f, 0.1f)) && unassignedWaterVolume > 0
+            while ((!MathUtil.AlmostEquals(unassignedWaterVolume,0.0f, 0.5f)) && unassignedWaterVolume > 0
                    && _overflows.Count > 0 && !invalidated)
             {
                 foreach (var overflow in new Dictionary<Vector2Int, WaterBody>(_overflows))
@@ -200,7 +220,7 @@ namespace Model.Map.Feature
         {
             float unassignedWaterVolume = volume;
             WaterVolume += volume;
-            while ((!MathUtil.AlmostEquals(unassignedWaterVolume,0.0f, 0.1f)) && unassignedWaterVolume > 0)
+            while ((!MathUtil.AlmostEquals(unassignedWaterVolume,0.0f, 0.5f)) && unassignedWaterVolume > 0)
             {
                 float valleyCapLeft = GetCapacityBeforeResize();
                 
