@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cb8bc2582b64d23adbe117ce6ba448f, type: 3}
   m_Name: Simple Water Seeding
   m_EditorClassIdentifier: 
-  waterBodyPlacementAttempts: 10
+  waterBodyPlacementAttempts: 100
   randomSeed: 0
-  maxWaterElevation: 4000
+  maxWaterElevation: 10000

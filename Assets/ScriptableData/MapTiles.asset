@@ -23,7 +23,29 @@ MonoBehaviour:
       softConditions: []
       hardConditions: []
   tileDefinitions:
+  - sprite: {fileID: 21300000, guid: fdadf2aa7148e0d41b22e525cfb0d24f, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 0}
+    condition:
+      softConditions: []
+      hardConditions:
+      - unitValueTypeLeft: 6
+        comparisionType: 0
+        valueRight: 2000
+      - unitValueTypeLeft: 7
+        comparisionType: 4
+        valueRight: 273.2
   - sprite: {fileID: 21300000, guid: 8c045a543e97201448c122a177e0604b, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 0}
+    condition:
+      softConditions: []
+      hardConditions:
+      - unitValueTypeLeft: 6
+        comparisionType: 0
+        valueRight: 200
+      - unitValueTypeLeft: 7
+        comparisionType: 4
+        valueRight: 273.2
+  - sprite: {fileID: 21300000, guid: 227f623c8e4f5954aa33f4a97a4f2e1a, type: 3}
     color: {r: 1, g: 1, b: 1, a: 0}
     condition:
       softConditions: []
@@ -33,8 +55,24 @@ MonoBehaviour:
         valueRight: 1
       - unitValueTypeLeft: 7
         comparisionType: 4
-        valueRight: 0
+        valueRight: 273.2
+  - sprite: {fileID: 21300000, guid: 15b39ec7dcd47b340945340a67d9453b, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 0}
+    condition:
+      softConditions: []
+      hardConditions:
+      - unitValueTypeLeft: 6
+        comparisionType: 1
+        valueRight: 2000
   - sprite: {fileID: 21300000, guid: 18072966ea9788c418a87b879831b46f, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 0}
+    condition:
+      softConditions: []
+      hardConditions:
+      - unitValueTypeLeft: 6
+        comparisionType: 1
+        valueRight: 200
+  - sprite: {fileID: 21300000, guid: 16ca15766e9deba41bd3443f96aa1e22, type: 3}
     color: {r: 1, g: 1, b: 1, a: 0}
     condition:
       softConditions: []
