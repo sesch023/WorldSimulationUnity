@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Base;
 using JetBrains.Annotations;
+using Manager;
 using Model.UnitBehaviors;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -74,10 +75,9 @@ namespace Model.Map
         /// </summary>
         public MapPosition Position { get; private set; }
         
-        /// This Method is a bit hacky and should be changed in the future.
-        public void ErodeElevation(float newElevation, float soilMultiplier=25f, float gravelMultiplier=25f, float sandMultiplier=5f)
+        /// This Algorithm is hacky and should be changed in the future.
+        public void ErodeElevation(float newElevation, float soilMultiplier=35f, float gravelMultiplier=35f, float sandMultiplier=10f)
         {
-            // The Material forming algorithm is very simple and should be changed in the future.
             float currentElevation = Position.Elevation;
             float elevationDifference = currentElevation - newElevation;
             float percentage = Math.Abs(elevationDifference / currentElevation);
@@ -86,7 +86,7 @@ namespace Model.Map
             {
                 GroundMaterial.Gravel = Math.Max(0, GroundMaterial.Gravel - percentage * gravelMultiplier);
                 GroundMaterial.Sand = Math.Max(0, GroundMaterial.Sand - percentage * GroundMaterial.Gravel * sandMultiplier);
-                GroundMaterial.Soil = Math.Max(0, GroundMaterial.Gravel - percentage * soilMultiplier);
+                GroundMaterial.Soil = Math.Max(0, GroundMaterial.Soil - percentage * soilMultiplier);
             }
             else
             {
@@ -96,6 +96,7 @@ namespace Model.Map
             }
             
             Position.Elevation = newElevation;
+            Changed();
         }
 
         /// <summary>
@@ -220,8 +221,8 @@ namespace Model.Map
             if(_waterLevel > 0)
                 GroundMaterial.Clay = Random.Range(0.1f, 0.5f) * GroundMaterial.Rock;
             // Soil is formed as a combination of sand and gravel. This is a very simplified model.
-            if (normalizedMaterial.gravel >= 0.1 && normalizedMaterial.sand >= 0.1)
-                GroundMaterial.Soil = Random.Range(1f, 2f) * Math.Max(GroundMaterial.Gravel, GroundMaterial.Sand);
+            if (normalizedMaterial.gravel >= 0.01 && normalizedMaterial.sand >= 0.01)
+                GroundMaterial.Soil = Random.Range(0.5f, 1.5f) * Math.Max(GroundMaterial.Gravel, GroundMaterial.Sand);
             foreach (var subscriber in ChangeSubscribers)
             {
                 subscriber.Invoke(this);

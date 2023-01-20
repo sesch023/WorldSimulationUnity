@@ -20,13 +20,10 @@ namespace Model.Map.Processing
 
         private Random _random;
         
-        public void OnEnable()
-        {
-            _random = new Random(randomSeed);
-        }
-        
         public override void ProcessMap(Map map)
         {
+            _random = new Random(randomSeed);
+            
             for(int i = 0; i < waterBodyPlacementAttempts; i++)
             {
                 int attemptCounter = 0;
