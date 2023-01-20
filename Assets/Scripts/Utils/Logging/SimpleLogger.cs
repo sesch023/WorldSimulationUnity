@@ -41,7 +41,7 @@ namespace Utils.Logging
             
             var newPath = Path.GetDirectoryName(targetPath);
             if(newPath == null || new FileInfo(targetPath).Extension != "")
-                throw new ArgumentException($"NullReferenceException: {GetType().Name}. Given Logging Path is illegal!");
+                throw new ArgumentException($"ArgumentException: {GetType().Name}. Given Logging Path is illegal!");
             targetPath = newPath;
 
             if (!Directory.Exists(targetPath))

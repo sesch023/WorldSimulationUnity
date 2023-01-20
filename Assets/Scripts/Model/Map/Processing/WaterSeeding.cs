@@ -21,7 +21,7 @@ namespace Model.Map.Processing
 
         private Random _random;
         
-        public WaterSeeding()
+        public void OnEnable()
         {
             _random = new Random(randomSeed);
         }

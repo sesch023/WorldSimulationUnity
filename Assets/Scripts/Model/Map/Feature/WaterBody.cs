@@ -9,7 +9,7 @@ using Utils.BaseUtils;
 
 namespace Model.Map.Feature
 {
-    public class WaterBody : IFeature
+    public class WaterBody : IBody
     {
         private Map _map;
         private Valley _bodyValley;
@@ -79,7 +79,7 @@ namespace Model.Map.Feature
 
             if (body1._map == body2._map)
             {
-                body1._map.RemoveWaterBody(body2);
+                body1._map.RemoveBody(body2);
             }
 
             return body1;
@@ -96,7 +96,7 @@ namespace Model.Map.Feature
             _overflows = new Dictionary<Vector2Int, WaterBody>();
             WaterVolume = 0;
             CurrentAbsoluteWaterLevel = map.MapUnits[DeepestPoint.x, DeepestPoint.y].Position.Elevation;
-            map.AddWaterBody(this);
+            map.AddBody(this);
             AddVolume(waterVolume);
         }
 

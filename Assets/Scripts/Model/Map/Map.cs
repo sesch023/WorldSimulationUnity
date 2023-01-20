@@ -34,11 +34,11 @@ namespace Model.Map
         /// Units of the map.
         public MapUnit[,] MapUnits { get; private set; }
         
-        private readonly List<WaterBody> _waterBodies = new ();
+        private readonly List<IBody> _waterBodies = new ();
         
-        public void AddWaterBody(WaterBody waterBody)
+        public void AddBody(IBody body)
         {
-            _waterBodies.Add(waterBody);
+            _waterBodies.Add(body);
         }
         
         public void AddWaterBody(Vector2Int initialPosition, float volume)
@@ -47,17 +47,17 @@ namespace Model.Map
             new WaterBody(this, initialPosition, volume);
         }
         
-        public void RemoveWaterBody(WaterBody waterBody)
+        public void RemoveBody(IBody body)
         {
-            _waterBodies.Remove(waterBody);
+            _waterBodies.Remove(body);
         }
 
         public WaterBody GetBodyOfWaterByPosition(Vector2Int pos)
         {
             foreach(var body in _waterBodies)
             {
-                if (body.InBody(pos))
-                    return body;
+                if (body.InBody(pos) && body is WaterBody)
+                    return (WaterBody)body;
             }
             return null;
         }
