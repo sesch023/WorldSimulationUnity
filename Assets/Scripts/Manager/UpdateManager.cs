@@ -28,6 +28,8 @@ namespace Manager
         {
             if (Instance == null)
             {
+                _updatables = new HashSet<IUpdatable>();
+                MarkedForRemoval = new Queue<IUpdatable>();
                 Instance = this;
             }
             else
@@ -41,17 +43,6 @@ namespace Manager
         /// </summary>
         private void Start()
         {
-            Init();
-        }
-        
-        /// <summary>
-        /// Initializes the list of updatables and the queue of updatables that are to be removed.
-        /// It also initializes statically coded updatables.
-        /// </summary>
-        private void Init()
-        {
-            _updatables = new HashSet<IUpdatable>();
-            MarkedForRemoval = new Queue<IUpdatable>();
             InitUpdatables();
         }
         
@@ -131,6 +122,7 @@ namespace Manager
         /// <param name="updatable">New updatable to be registered.</param>
         public void RegisterUpdatable(IUpdatable updatable)
         {
+            Debug.Log(updatable);
             _updatables.Add(updatable);
         }
 

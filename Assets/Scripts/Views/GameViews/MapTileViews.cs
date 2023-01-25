@@ -59,6 +59,9 @@ namespace Views.GameViews
         /// Minimum darkness heighest elevation.
         [SerializeField]
         private float minHeightColor = 0.3f;
+
+        [SerializeField] 
+        private float maxColor = 0.6f;
         
         [SerializeField] 
         private TileData defaultTile;
@@ -72,11 +75,16 @@ namespace Views.GameViews
         [SerializeField]
         private TileData[] tileDefinitions;
 
+        private float GetColorValue(int step)
+        {
+            return maxColor - _colorStep * step;
+        }
+        
         protected void OnEnable()
         {
             CalculateHeightSteps();
             
-            _colorStep = (1.0f - minHeightColor) / _heightSteps.Count;
+            _colorStep = (maxColor - minHeightColor) / _heightSteps.Count;
 
             for(int k = 0; k < tileDefinitions.Length; k++)
             {
@@ -84,7 +92,7 @@ namespace Views.GameViews
                 
                 for (int i = 0; i < _heightSteps.Count; i++)
                 {
-                    float colorValue = 1.0f - _colorStep * i;
+                    float colorValue = GetColorValue(i);
                     Color newColor = new Color(colorValue, colorValue, colorValue, 1.0f);
                     Tile newTile = CreateInstance<Tile>();
                     TileData.SetTileData(newTile, new TileData(tileDefinitions[k].sprite, newColor, tileDefinitions[k].condition));
@@ -97,7 +105,7 @@ namespace Views.GameViews
             _tileData.Add(defaultTile.condition, new Tile[_heightSteps.Count]);
             for (int i = 0; i < _heightSteps.Count; i++)
             {
-                float colorValue = 1.0f - _colorStep * i;
+                float colorValue = GetColorValue(i);
                 Color newColor = new Color(colorValue, colorValue, colorValue, 1.0f);
                 Tile newTile = CreateInstance<Tile>();
                 TileData.SetTileData(newTile, new TileData(defaultTile.sprite, newColor, defaultTile.condition));
@@ -115,20 +123,6 @@ namespace Views.GameViews
                 currentHeight += heightStep;
             } while (currentHeight < HeighestHeight);
             _heightSteps.Add(currentHeight);
-        }
-
-        public Color GetTileColorOffsetByElevation(float elevation)
-        {
-            for (int i = 0; i < _heightSteps.Count; i++)
-            {
-                if (_heightSteps[i] >= elevation)
-                {
-                    float colorValue = 1.0f - _colorStep * Math.Max(i - 1, 0);
-                    return new Color(colorValue, colorValue, colorValue, 1.0f);
-                }
-            }
-
-            return new Color(1.0f, 1.0f, 1.0f);
         }
         
         public Tile GetTileForMapUnit([NotNull] MapUnit mapUnit)

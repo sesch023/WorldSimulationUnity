@@ -63,7 +63,7 @@ namespace Model.Map.Processing
             for (int xI = 0; xI < _erosionBrushIndices.GetLength(0); xI++) {
                 for (int yK = 0; yK < _erosionBrushIndices.GetLength(1); yK++)
                 {
-                    if (yK <= radius || yK >= mapSizeY - radius || xI <= radius + 1 || xI >= mapSizeX - radius) {
+                    if (yK <= radius || yK >= mapSizeY - radius || xI <= radius || xI >= mapSizeX - radius) {
                         weightSum = 0;
                         addIndex = 0;
                         for (int y = -radius; y <= radius; y++) {
@@ -91,7 +91,7 @@ namespace Model.Map.Processing
                     _erosionBrushWeights[xI, yK] = new float[numEntries];
 
                     for (int j = 0; j < numEntries; j++) {
-                        _erosionBrushIndices[xI, yK][j] = (yOffsets[j] + yK, xOffsets[j] + xI);
+                        _erosionBrushIndices[xI, yK][j] = (xOffsets[j] + xI, yOffsets[j] + yK);
                         _erosionBrushWeights[xI, yK][j] = weights[j] / weightSum;
                     }
                 }

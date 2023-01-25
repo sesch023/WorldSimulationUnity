@@ -1,3 +1,4 @@
+using Base;
 using Controllers;
 using UnityEngine;
 
@@ -38,14 +39,7 @@ namespace Manager
         void Start()
         {
             MapController.Init();
-        }
-
-        /// <summary>
-        /// Updates the MapManager.
-        /// </summary>
-        void Update()
-        {
-            MapController.Update();
+            UpdateManager.Instance.RegisterUpdatable(MapController);
         }
     }
 }

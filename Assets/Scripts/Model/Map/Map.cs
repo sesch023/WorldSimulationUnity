@@ -24,13 +24,24 @@ namespace Model.Map
         /// Height of the Map.
         [field: SerializeField] public int SizeY { get; private set; } = 1025;
         
+        [field: SerializeField] public int TicksPerRotation { get; private set; } = 576;
+        
+        [field: SerializeField] public float AtmosphericGreenhouseFactor { get; private set; } = 1.2f;
+        
+        [field: SerializeField] public float BaseAtmosphericPressure { get; private set; } = 1.0f;
+        
+        [field: SerializeField] public float Albedo { get; private set; } = 0.3f;
+
         /// BaseGenerator used to generate the map.
         [SerializeField] 
         private BaseGenerator generator;
 
         [SerializeReference] 
+        private Sun sun;
+
+        [SerializeReference] 
         private BaseGeneralProcessing[] preprocessMapSteps;
-        
+
         /// Units of the map.
         public MapUnit[,] MapUnits { get; private set; }
         
@@ -89,9 +100,10 @@ namespace Model.Map
         private void OnEnable()
         {
             if (generator == null)
-            {
                 throw new MissingReferenceException($"MissingReferenceException: {GetType()} - Illegal Map. Generator missing!");
-            }
+            
+            if(sun == null)
+                throw new MissingReferenceException($"MissingReferenceException: {GetType()} - Illegal Map. Sun missing!");
             
             // Limit the sizes of the map.
             (int sizeX, int sizeY) clippedSizes = generator.LimitMapSizes(SizeX, SizeY);
@@ -107,7 +119,8 @@ namespace Model.Map
                 {
                     (float lat, float lon) latLong = CalculateLatLong(x, y);
                     Vector2Int vec = new Vector2Int(x, y);
-                    MapUnits[x, y] = new MapUnit(0.0f, 0.0f, new MapPosition(latLong.lat, latLong.lon, mapElevation[x, y], vec));
+                    MapPosition pos = new MapPosition(latLong.lat, latLong.lon, mapElevation[x, y], vec);
+                    MapUnits[x, y] = new MapUnit(this, 0.0f, 0.0f, pos);
                 }
             }
 
@@ -133,6 +146,7 @@ namespace Model.Map
         /// </summary>
         public void Update()
         {
+            sun.Update();
             foreach (MapUnit unit in MapUnits)
             {
                 unit.Update();
@@ -217,6 +231,14 @@ namespace Model.Map
             }
 
             return units;
+        }
+        
+        public MapUnit GetMapUnitByLatLong(float lat, float lon)
+        {
+            int x = Mathf.Clamp((int)((360f / lat) * SizeX), 0, SizeX - 1);
+            int y = Mathf.Clamp((int)(180f / lon * SizeY), 0, SizeY - 1);
+            
+            return MapUnits[x, y];
         }
     }
 }

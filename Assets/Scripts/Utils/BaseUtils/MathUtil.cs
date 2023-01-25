@@ -197,5 +197,10 @@ namespace Utils.BaseUtils
         {
             return position.x == 0 || position.y == 0 || position.x == sizeX || position.y == sizeY;
         }
+        
+        public static float SphereSurfaceArea(float radius)
+        {
+            return 4 * Mathf.PI * radius * radius;
+        }
     }
 }

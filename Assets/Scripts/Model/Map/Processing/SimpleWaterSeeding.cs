@@ -37,7 +37,7 @@ namespace Model.Map.Processing
                             new SimpleWaterBody(map, vec);
                             break;
                         }
-                        catch(ArgumentException err){}
+                        catch(ArgumentException){}
                     }
                     attemptCounter++;
                 } while (attemptCounter < 100);

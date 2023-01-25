@@ -18,6 +18,8 @@ namespace Model.Map
     /// </summary>
     public class MapUnit : IUpdatable
     {
+        private Map _map;
+        
         /// Temperature of the unit in Kelvin.
         private float _temperature;
         
@@ -95,6 +97,14 @@ namespace Model.Map
                 GroundMaterial.Soil += percentage * soilMultiplier;
             }
             
+            var normalizedMaterial = GroundMaterial.GetNormalized();
+            // Clay is formed from rock and water. This is a very simplified model.
+            if(_waterLevel > 0)
+                GroundMaterial.Clay = Random.Range(0.1f, 0.5f) * GroundMaterial.Rock;
+            // Soil is formed as a combination of sand and gravel. This is a very simplified model.
+            if (normalizedMaterial.gravel >= 0.01 && normalizedMaterial.sand >= 0.01)
+                GroundMaterial.Soil = Random.Range(0.5f, 1.5f) * Math.Max(GroundMaterial.Gravel, GroundMaterial.Sand);
+            
             Position.Elevation = newElevation;
             Changed();
         }
@@ -120,9 +130,9 @@ namespace Model.Map
         /// <param name="temperature">Temperature of the unit.</param>
         /// <param name="humidity">Humidity of the unit.</param>
         /// <param name="position">MapPositionVec of the unit.</param>
-        public MapUnit(float temperature, float humidity, MapPosition position) : this()
+        public MapUnit(Map map, float temperature, float humidity, MapPosition position) : this()
         {
-            Init(temperature, humidity, position);
+            Init(map, temperature, humidity, position);
         }
         
         /// <summary>
@@ -132,10 +142,10 @@ namespace Model.Map
         /// <param name="humidity">Humidity of the unit.</param>
         /// <param name="position">MapPositionVec of the unit.</param>
         /// <param name="behaviors">Behaviors of the unit.</param>
-        public MapUnit(float temperature, float humidity, MapPosition position,
-            [NotNull] IList<BaseUnitBehavior> behaviors) : this(temperature, humidity, position)
+        public MapUnit(Map map, float temperature, float humidity, MapPosition position,
+            [NotNull] IList<BaseUnitBehavior> behaviors)
         {
-            Init(temperature, humidity, position, behaviors);
+            Init(map, temperature, humidity, position, behaviors);
         }
 
         private void Init()
@@ -144,18 +154,19 @@ namespace Model.Map
             ChangeSubscribers = new List<MapUnitChanged>();
         }
         
-        private void Init(float temperature, float humidity, MapPosition position)
+        private void Init(Map map, float temperature, float humidity, MapPosition position)
         {
+            _map = map;
             Temperature = temperature;
             Humidity = humidity;
             Position = position;
             position.Parent = this;
         }
 
-        private void Init(float temperature, float humidity, MapPosition position,
+        private void Init(Map map, float temperature, float humidity, MapPosition position,
             [NotNull] IList<BaseUnitBehavior> behaviors)
         {
-            Init(temperature, humidity, position);
+            Init(map, temperature, humidity, position);
             Behaviors.AddRange(behaviors);
         }
 
@@ -216,13 +227,6 @@ namespace Model.Map
 
         internal void Changed()
         {
-            var normalizedMaterial = GroundMaterial.GetNormalized();
-            // Clay is formed from rock and water. This is a very simplified model.
-            if(_waterLevel > 0)
-                GroundMaterial.Clay = Random.Range(0.1f, 0.5f) * GroundMaterial.Rock;
-            // Soil is formed as a combination of sand and gravel. This is a very simplified model.
-            if (normalizedMaterial.gravel >= 0.01 && normalizedMaterial.sand >= 0.01)
-                GroundMaterial.Soil = Random.Range(0.5f, 1.5f) * Math.Max(GroundMaterial.Gravel, GroundMaterial.Sand);
             foreach (var subscriber in ChangeSubscribers)
             {
                 subscriber.Invoke(this);
