@@ -24,16 +24,17 @@ namespace Model.Map.Feature
         private float starRadius = 696340f;
         [SerializeField]
         private float absoluteDayNightTemperatureDifference = 20f;
-
-        private int _currentPlanetNoonPosition;
+        [SerializeField]
+        private int updateInterval = 10;
+        
         private int _unitStepsPerTick;
         private float _kmToPlanet;
         private float _equilibriumSurfaceTemperature;
 
         private int _numberOfPlanetaryTemperatureZones;
-        private float[] _planetaryTemperatureZones;
-        private (int, int)[] _planetaryTemperatureUpdateZoneIndices;
-        
+        public float[] PlanetaryTemperatureZones { get; private set; }
+        public (int start, int end)[] PlanetaryTemperatureUpdateZoneIndices { get; private set; }
+
         public static float GetStarWattage(float starSurfaceTemperature, float starRadius)
         {
             return MathUtil.SphereSurfaceArea(starRadius) * StefanBoltzmannConst * Mathf.Pow(starSurfaceTemperature, 4);
@@ -41,8 +42,9 @@ namespace Model.Map.Feature
         
         public static float GetEffectiveTemperature(float starWattage, float bodyDistanceInKm, float bodyAlbedo)
         {
-            return Mathf.Pow((starWattage * (1 - bodyAlbedo)) / (16*Mathf.PI*bodyDistanceInKm*StefanBoltzmannConst), -4);
+            return Mathf.Pow((starWattage * (1 - bodyAlbedo)) / (16*Mathf.PI*bodyDistanceInKm*bodyDistanceInKm*StefanBoltzmannConst), 1f/4);
         }
+        
 
         public static float GetEffectiveTemperature(float starSurfaceTemperature, float starRadius, float bodyDistanceInKm, float bodyAlbedo)
         {
@@ -59,24 +61,25 @@ namespace Model.Map.Feature
                 GetEffectiveTemperature(surfaceTemperature, starRadius, _kmToPlanet, map.Albedo);
             _unitStepsPerTick = (map.SizeX / map.TicksPerRotation);
             _numberOfPlanetaryTemperatureZones = Math.Max(2, (int)(((float)map.SizeX / _unitStepsPerTick)*simulationAccuracy));
-            _planetaryTemperatureZones = new float[_numberOfPlanetaryTemperatureZones];
+            int planetSteps = map.SizeX / _numberOfPlanetaryTemperatureZones;
+            PlanetaryTemperatureZones = new float[_numberOfPlanetaryTemperatureZones];
             
             float tempStep = absoluteDayNightTemperatureDifference / _numberOfPlanetaryTemperatureZones;
             float noonTemp = _equilibriumSurfaceTemperature + absoluteDayNightTemperatureDifference / 2;
             float midnightTemp = _equilibriumSurfaceTemperature - absoluteDayNightTemperatureDifference / 2;
             for (int i = 0; i < (int)Mathf.Floor(_numberOfPlanetaryTemperatureZones/2f); i++)
             {
-                _planetaryTemperatureZones[i] = noonTemp - tempStep * i;
+                PlanetaryTemperatureZones[i] = noonTemp - tempStep * i;
             }
             for (int i = (int)Mathf.Ceil(_numberOfPlanetaryTemperatureZones/2f); i < _numberOfPlanetaryTemperatureZones; i++)
             {
-                _planetaryTemperatureZones[i] = midnightTemp + tempStep * i;
+                PlanetaryTemperatureZones[i] = midnightTemp + tempStep * i;
             }
             
-            _planetaryTemperatureUpdateZoneIndices = new (int, int)[_numberOfPlanetaryTemperatureZones];
+            PlanetaryTemperatureUpdateZoneIndices = new (int, int)[_numberOfPlanetaryTemperatureZones];
             for (int i = 0; i < _numberOfPlanetaryTemperatureZones; i++)
             {
-                _planetaryTemperatureUpdateZoneIndices[i] = (i * _unitStepsPerTick, (i + 1) * _unitStepsPerTick);
+                PlanetaryTemperatureUpdateZoneIndices[i] = (i * planetSteps , (i + 1) * planetSteps + _unitStepsPerTick);
             }
         }
 
@@ -84,20 +87,25 @@ namespace Model.Map.Feature
 
         public void Update()
         {
-            Debug.Log("Sun: Updating sun position.");
-            
-            if(k % 10 == 0)
+            if (k >= updateInterval)
+            {
+                k = 0;
                 Rotate();
-            k++;
+            }
+            else
+            {
+                k++;
+            }
         }
 
         private void Rotate()
         {
+            Debug.Log(_numberOfPlanetaryTemperatureZones);
             for(int i = 0; i < _numberOfPlanetaryTemperatureZones; i++)
             {
-                (int start, int end) el = _planetaryTemperatureUpdateZoneIndices[i];
-                el.start -= 10*_unitStepsPerTick;
-                el.end -= 10*_unitStepsPerTick;
+                (int start, int end) el = PlanetaryTemperatureUpdateZoneIndices[i];
+                el.start -= updateInterval*_unitStepsPerTick;
+                el.end -= updateInterval*_unitStepsPerTick;
                 if (el.start < 0)
                 {
                     el.start += map.SizeX;
@@ -106,20 +114,22 @@ namespace Model.Map.Feature
                 {
                     el.end += map.SizeX;
                 }
-                _planetaryTemperatureUpdateZoneIndices[i] = el;
+                PlanetaryTemperatureUpdateZoneIndices[i] = el;
             }
 
-            for(int i = 0; i < _planetaryTemperatureZones.Length; i++)
+            for(int i = 0; i < _numberOfPlanetaryTemperatureZones; i++)
             {
-                (int start, int end) current = _planetaryTemperatureUpdateZoneIndices[i];
-                (int start, int end) next = (i + 1 < _planetaryTemperatureZones.Length) ? _planetaryTemperatureUpdateZoneIndices[i+1] : _planetaryTemperatureUpdateZoneIndices[0];
+                (int start, int end) current = PlanetaryTemperatureUpdateZoneIndices[i];
+                (int start, int end) next = (i + 1 < PlanetaryTemperatureZones.Length) ? PlanetaryTemperatureUpdateZoneIndices[i+1] : PlanetaryTemperatureUpdateZoneIndices[0];
                 int currentX = current.start;
-
+                
+                Debug.Log(current);
+                
                 while (currentX != next.start)
                 {
                     for (int y = 0; y < map.SizeY; y++)
                     {
-                        map.MapUnits[currentX, y].Temperature = _planetaryTemperatureZones[i];
+                        map.MapUnits[currentX, y].Temperature = PlanetaryTemperatureZones[i];
                     }
                     currentX++;
                     if (currentX >= map.SizeX)

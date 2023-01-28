@@ -55,10 +55,10 @@ namespace Views.GameViews
             
             if (Tiles is {Length: > 0})
             {
+                Vector3 tileOffset = new Vector3(tileScale.x / 2, tileScale.y / 2, 0);
                 foreach (Vector2Int tile in Tiles)
                 {
-                    Vector3 pos = new Vector3(tileScale.x / 2, tileScale.y / 2, 0) +
-                                  MapManager.Instance.MapController.TileMapPositionToGlobalPosition(tile);
+                    Vector3 pos = tileOffset + MapManager.Instance.MapController.TileMapPositionToGlobalPosition(tile);
                     GameObject go = Instantiate(tileHighlight, pos, Quaternion.identity,transform);
                     go.SetActive(true);
                     _children.Add(go);
