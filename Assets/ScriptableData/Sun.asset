@@ -15,7 +15,7 @@ MonoBehaviour:
   map: {fileID: 11400000, guid: 91eba5138358d5142a305d9dd80a0692, type: 2}
   surfaceTemperature: 6000
   distanceToPlanetAu: 1
-  simulationAccuracy: 0.1
+  simulationAccuracy: 0.01
   starRadius: 696340
   absoluteDayNightTemperatureDifference: 20
   updateInterval: 10

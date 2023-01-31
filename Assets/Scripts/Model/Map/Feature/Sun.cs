@@ -100,7 +100,6 @@ namespace Model.Map.Feature
 
         private void Rotate()
         {
-            Debug.Log(_numberOfPlanetaryTemperatureZones);
             for(int i = 0; i < _numberOfPlanetaryTemperatureZones; i++)
             {
                 (int start, int end) el = PlanetaryTemperatureUpdateZoneIndices[i];
@@ -122,8 +121,6 @@ namespace Model.Map.Feature
                 (int start, int end) current = PlanetaryTemperatureUpdateZoneIndices[i];
                 (int start, int end) next = (i + 1 < PlanetaryTemperatureZones.Length) ? PlanetaryTemperatureUpdateZoneIndices[i+1] : PlanetaryTemperatureUpdateZoneIndices[0];
                 int currentX = current.start;
-                
-                Debug.Log(current);
                 
                 while (currentX != next.start)
                 {

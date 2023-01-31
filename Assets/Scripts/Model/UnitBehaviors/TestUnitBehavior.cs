@@ -1,4 +1,5 @@
 ﻿using Manager;
+using Model.Map;
 using UnityEngine;
 
 namespace Model.UnitBehaviors
@@ -10,7 +11,7 @@ namespace Model.UnitBehaviors
             return "TestUnitBehavior";
         }
 
-        public override void TriggerBehavior()
+        public override void TriggerBehavior(MapUnit unit)
         {
             LoggingManager.GetInstance().LogInfo("TestUnitBehavior triggered!");
         }

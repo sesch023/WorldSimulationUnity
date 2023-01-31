@@ -221,7 +221,7 @@ namespace Model.Map
         {
             foreach (var behavior in Behaviors)
             {
-                behavior.Update();
+                behavior.TriggerBehavior(this);
             }
         }
 

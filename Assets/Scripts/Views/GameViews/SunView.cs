@@ -75,7 +75,9 @@ namespace Views.GameViews
 
         private void SetPositions()
         {
-            float sunPos = sun.PlanetaryTemperatureUpdateZoneIndices[0].start * _tileScale.x;
+            float offset = Mathf.Abs(sun.PlanetaryTemperatureUpdateZoneIndices[0].start -
+                                     sun.PlanetaryTemperatureUpdateZoneIndices[1].start) / 2f;
+            float sunPos = sun.PlanetaryTemperatureUpdateZoneIndices[0].start * _tileScale.x + offset;
             float scaledPos = MapManager.Instance.MapController.UnitMap.SizeX * _tileScale.x;
             float secondaryPos;
             if (sunPos > scaledPos / 2)
