@@ -1,5 +1,4 @@
 ﻿using Base;
-using Model.Map;
 using UnityEngine;
 
 namespace Model.UnitBehaviors

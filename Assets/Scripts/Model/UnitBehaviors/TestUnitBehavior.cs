@@ -1,5 +1,4 @@
 ﻿using Manager;
-using Model.Map;
 using UnityEngine;
 
 namespace Model.UnitBehaviors

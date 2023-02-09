@@ -44,11 +44,6 @@ namespace Model {}
 namespace Model.Generators {}
 
 /// <summary>
-/// Namespace for the map model
-/// </summary>
-namespace Model.Map {}
-
-/// <summary>
 /// Namespace for behaviours.
 /// </summary>
 namespace Model.UnitBehaviors {}

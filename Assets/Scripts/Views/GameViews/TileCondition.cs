@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Model.Map;
+using Model;
 using UnityEngine;
 // ReSharper disable ConditionIsAlwaysTrueOrFalse
 // ReSharper disable ConstantNullCoalescingCondition
