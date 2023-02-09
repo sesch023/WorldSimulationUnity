@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using Base;
 using JetBrains.Annotations;
-using Manager;
-using Model.UnitBehaviors;
+using Model.Map.UnitBehaviors;
 using Unity.VisualScripting;
-using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Model
+namespace Model.Map
 {
     public delegate void MapUnitChanged(MapUnit unit);
     

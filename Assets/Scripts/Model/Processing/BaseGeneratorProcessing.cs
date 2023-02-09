@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Model.Processing
+namespace Model.Map.Processing
 {
     [Serializable]
     public abstract class BaseGeneratorProcessing : ScriptableObject, IDataArrayProcessing

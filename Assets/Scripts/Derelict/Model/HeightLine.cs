@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Model;
+using Model.Map;
 using UnityEngine;
 using Utils.Arrays;
 using Utils.BaseUtils;

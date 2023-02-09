@@ -1,10 +1,10 @@
 using System;
 using Manager;
-using Model.Feature;
+using Model.Map.Feature;
 using UnityEngine;
 using Random = System.Random;
 
-namespace Model.Processing
+namespace Model.Map.Processing
 {
     [CreateAssetMenu(fileName = "Simple Water Seeding", menuName = "ScriptableObjects/Simple Water Seeding", order = 3)]
     public class SimpleWaterSeeding : BaseGeneralProcessing

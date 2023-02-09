@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Linq;
-using Model.Processing;
+using Model.Map.Processing;
 using Unity.VisualScripting;
 using UnityEngine;
 using Utils.BaseUtils;
 
-namespace Model.Generators
+namespace Model.Map.Generators
 {
     /// <summary>
     /// Abstract base class for all generators. Implements the elevation normalization and a default implementation of the

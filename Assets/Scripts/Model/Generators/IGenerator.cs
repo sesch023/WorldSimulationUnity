@@ -1,4 +1,4 @@
-﻿namespace Model.Generators
+﻿namespace Model.Map.Generators
 {
     /// <summary>
     /// Basic interface for a generator.

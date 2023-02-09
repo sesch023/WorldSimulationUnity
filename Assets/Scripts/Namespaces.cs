@@ -36,17 +36,17 @@ namespace Manager { }
 /// <summary>
 /// Namespace for the simulation model.
 /// </summary>
-namespace Model {}
+namespace Model.Map {}
 
 /// <summary>
 /// Namespace for generation model.
 /// </summary>
-namespace Model.Generators {}
+namespace Model.Map.Generators {}
 
 /// <summary>
 /// Namespace for behaviours.
 /// </summary>
-namespace Model.UnitBehaviors {}
+namespace Model.Map.UnitBehaviors {}
 
 /// <summary>
 /// Namespace for utility classes.

@@ -1,9 +1,9 @@
 using System;
 using System.Linq;
-using Model.VirtualFeatureSelection;
+using Model.Map.VirtualFeatureSelection;
 using UnityEngine;
 
-namespace Model.Feature
+namespace Model.Map.Feature
 {
     public class SimpleWaterBody : IBody
     {

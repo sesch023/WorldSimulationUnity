@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 using Manager;
-using Model;
+using Model.Map;
 using TMPro;
 using UnityEngine;
 

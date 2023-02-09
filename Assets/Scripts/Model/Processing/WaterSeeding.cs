@@ -1,11 +1,11 @@
 ﻿using System;
 using Manager;
-using Model.Feature;
-using Model.VirtualFeatureSelection;
+using Model.Map.Feature;
+using Model.Map.VirtualFeatureSelection;
 using UnityEngine;
 using Random = System.Random;
 
-namespace Model.Processing
+namespace Model.Map.Processing
 {
     [CreateAssetMenu(fileName = "Water Seeding", menuName = "ScriptableObjects/Water Seeding", order = 2)]
     public class WaterSeeding : BaseGeneralProcessing

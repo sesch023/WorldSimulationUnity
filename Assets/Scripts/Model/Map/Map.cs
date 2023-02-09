@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
 using Base;
 using Manager;
-using Model.Generators;
-using Model.Feature;
-using Model.Processing;
-using Model.VirtualFeatureSelection;
+using Model.Map.Feature;
+using Model.Map.Generators;
+using Model.Map.Processing;
+using Model.Map.VirtualFeatureSelection;
 using UnityEngine;
 using Views.GameViews;
 
-namespace Model
+namespace Model.Map
 {
     /// <summary>
     /// Map in the Game. It represents the entire world.

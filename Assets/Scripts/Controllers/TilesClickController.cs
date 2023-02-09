@@ -1,5 +1,5 @@
 ﻿using Manager;
-using Model;
+using Model.Map;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;

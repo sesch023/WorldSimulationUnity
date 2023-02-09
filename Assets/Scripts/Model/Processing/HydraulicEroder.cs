@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Utils.Arrays;
 
-namespace Model.Processing
+namespace Model.Map.Processing
 {
     /// <summary>
     /// Auf Basis von:

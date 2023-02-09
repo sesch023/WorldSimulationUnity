@@ -1,7 +1,6 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Model
+namespace Model.Map
 {
     /// <summary>
     /// A mapPositionVec in the map. Has longitude, latitude and elevation.

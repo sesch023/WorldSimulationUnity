@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Model.UnitBehaviors
+namespace Model.Map.UnitBehaviors
 {
     [CreateAssetMenu(fileName = "Vegetation", menuName = "ScriptableObjects/Vegetation", order = 4)]
     public class VegetationBehavior : BaseUnitBehavior

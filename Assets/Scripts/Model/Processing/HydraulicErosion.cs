@@ -4,7 +4,7 @@ using Utils.Arrays;
 using Random = UnityEngine.Random;
 
 
-namespace Model.Processing
+namespace Model.Map.Processing
 {
     [Serializable]
     public class HydraulicErosion

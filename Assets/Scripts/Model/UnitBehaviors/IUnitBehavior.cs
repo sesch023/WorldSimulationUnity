@@ -1,4 +1,4 @@
-﻿namespace Model.UnitBehaviors
+﻿namespace Model.Map.UnitBehaviors
 {
     /// <summary>
     /// Interface for a unit behavior. A unit behavior changes the behavior of a unit and can be added

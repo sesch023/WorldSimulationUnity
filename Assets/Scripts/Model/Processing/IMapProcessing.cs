@@ -1,4 +1,4 @@
-﻿namespace Model.Processing
+﻿namespace Model.Map.Processing
 {
     public interface IMapProcessing
     {

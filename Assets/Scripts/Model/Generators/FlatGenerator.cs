@@ -2,7 +2,7 @@
 using UnityEngine;
 using Utils.BaseUtils;
 
-namespace Model.Generators
+namespace Model.Map.Generators
 {
     /// <summary>
     /// The FlatGenerator is a generator that generates a flat map.

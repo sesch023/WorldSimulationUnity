@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using Model.Feature;
+using Model.Map.Feature;
 using UnityEngine;
 using Utils.Arrays;
 using Utils.BaseUtils;
 
-namespace Model.VirtualFeatureSelection
+namespace Model.Map.VirtualFeatureSelection
 {
     /// <summary>
     /// Finds a slope in a map or 2D arrayImmutable of floats.

@@ -1,6 +1,6 @@
 ﻿using System;
 using Manager;
-using Model.Feature;
+using Model.Map.Feature;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Serialization;

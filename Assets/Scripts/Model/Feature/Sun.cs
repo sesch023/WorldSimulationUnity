@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using Utils.BaseUtils;
 
-namespace Model.Feature
+namespace Model.Map.Feature
 {
     [CreateAssetMenu(fileName = "Sun", menuName = "ScriptableObjects/Sun", order = 4)]
     public class Sun : ScriptableObject, IUpdatable

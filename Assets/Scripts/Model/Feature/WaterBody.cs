@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using Model.VirtualFeatureSelection;
 using UnityEngine;
 using System.Linq;
 using Manager;
+using Model.Map.VirtualFeatureSelection;
 using Unity.VisualScripting;
 using Utils.BaseUtils;
 
-namespace Model.Feature
+namespace Model.Map.Feature
 {
     public class WaterBody : IBody
     {

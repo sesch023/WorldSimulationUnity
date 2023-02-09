@@ -1,7 +1,7 @@
 ﻿using System;
 using Base;
 using Manager;
-using Model;
+using Model.Map;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
