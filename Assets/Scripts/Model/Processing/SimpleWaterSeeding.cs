@@ -1,10 +1,10 @@
 using System;
 using Manager;
-using Model.Map.Feature;
+using Model.Feature;
 using UnityEngine;
 using Random = System.Random;
 
-namespace Model.Map.Processing
+namespace Model.Processing
 {
     [CreateAssetMenu(fileName = "Simple Water Seeding", menuName = "ScriptableObjects/Simple Water Seeding", order = 3)]
     public class SimpleWaterSeeding : BaseGeneralProcessing
@@ -20,7 +20,7 @@ namespace Model.Map.Processing
 
         private Random _random;
         
-        public override void ProcessMap(Map map)
+        public override void ProcessMap(Map.Map map)
         {
             _random = new Random(randomSeed);
             

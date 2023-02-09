@@ -1,18 +1,19 @@
 using System;
 using System.Linq;
-using Model.Map.VirtualFeatureSelection;
+using Model.Map;
+using Model.VirtualFeatureSelection;
 using UnityEngine;
 
-namespace Model.Map.Feature
+namespace Model.Feature
 {
     public class SimpleWaterBody : IBody
     {
-        private Map _map;
+        private Map.Map _map;
         private Valley _bodyValley;
         public float WaterVolume { get; private set; }
         private float _maxElevation;
 
-        public SimpleWaterBody(Map map, Vector2Int initialPosition)
+        public SimpleWaterBody(Map.Map map, Vector2Int initialPosition)
         {
             _map = map;
             WaterVolume = 0;

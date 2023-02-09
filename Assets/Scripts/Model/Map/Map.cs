@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using Base;
 using Manager;
-using Model.Map.Feature;
-using Model.Map.Generators;
-using Model.Map.Processing;
-using Model.Map.VirtualFeatureSelection;
+using Model.Feature;
+using Model.Generators;
+using Model.Processing;
+using Model.VirtualFeatureSelection;
 using UnityEngine;
 using Views.GameViews;
 

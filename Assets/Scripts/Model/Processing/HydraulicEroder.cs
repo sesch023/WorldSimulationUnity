@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+﻿using Model.Map;
+using UnityEngine;
 using Utils.Arrays;
 
-namespace Model.Map.Processing
+namespace Model.Processing
 {
     /// <summary>
     /// Auf Basis von:
@@ -16,7 +17,7 @@ namespace Model.Map.Processing
         [SerializeField]
         private HydraulicErosion erosion;
 
-        public override void ProcessMap(Map map)
+        public override void ProcessMap(Map.Map map)
         {
             ArrayMap2D<MapUnit, float> mappedMap = new ArrayMap2D<MapUnit, float>(map.MapUnits, unit => unit.Position.Elevation,
                 (array, x, y, mapped) => array[x, y].ErodeElevation(mapped));

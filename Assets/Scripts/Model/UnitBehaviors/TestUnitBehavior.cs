@@ -1,7 +1,8 @@
 ﻿using Manager;
+using Model.Map;
 using UnityEngine;
 
-namespace Model.Map.UnitBehaviors
+namespace Model.UnitBehaviors
 {
     public class TestUnitBehavior : BaseUnitBehavior
     {

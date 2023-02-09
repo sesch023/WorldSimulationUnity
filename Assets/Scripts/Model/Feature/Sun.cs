@@ -1,10 +1,11 @@
 using System;
 using Base;
+using Model.Map;
 using Unity.VisualScripting;
 using UnityEngine;
 using Utils.BaseUtils;
 
-namespace Model.Map.Feature
+namespace Model.Feature
 {
     [CreateAssetMenu(fileName = "Sun", menuName = "ScriptableObjects/Sun", order = 4)]
     public class Sun : ScriptableObject, IUpdatable
@@ -13,7 +14,7 @@ namespace Model.Map.Feature
         private const float StefanBoltzmannConst = 5.670367e-8f;
 
         [SerializeField]
-        private Map map;
+        private Map.Map map;
         [SerializeField]
         private float surfaceTemperature = 6000.0f;
         [SerializeField]

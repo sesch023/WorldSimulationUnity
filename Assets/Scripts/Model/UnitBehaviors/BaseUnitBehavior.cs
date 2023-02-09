@@ -1,7 +1,8 @@
 ﻿using Base;
+using Model.Map;
 using UnityEngine;
 
-namespace Model.Map.UnitBehaviors
+namespace Model.UnitBehaviors
 {
     /// <summary>
     /// Base class for all unit behaviors. A unit behavior changes the behavior of a unit and can be added

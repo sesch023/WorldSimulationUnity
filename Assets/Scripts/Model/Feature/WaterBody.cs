@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using Manager;
-using Model.Map.VirtualFeatureSelection;
+using Model.Map;
+using Model.VirtualFeatureSelection;
 using Unity.VisualScripting;
 using Utils.BaseUtils;
 
-namespace Model.Map.Feature
+namespace Model.Feature
 {
     public class WaterBody : IBody
     {
-        private Map _map;
+        private Map.Map _map;
         private Valley _bodyValley;
         
         public Vector2Int[] ShallowPoints => _bodyValley.CalculatedExits;
@@ -87,7 +88,7 @@ namespace Model.Map.Feature
         
         private WaterBody(){}
         
-        public WaterBody(Map map, Vector2Int initialPosition, float waterVolume)
+        public WaterBody(Map.Map map, Vector2Int initialPosition, float waterVolume)
         {
             _map = map;
             DeepestPoint = DeepestPointFromInitialPosition(initialPosition);

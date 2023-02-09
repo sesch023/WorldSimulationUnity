@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Base;
 using JetBrains.Annotations;
-using Model.Map.UnitBehaviors;
+using Model.UnitBehaviors;
 using Unity.VisualScripting;
 using Random = UnityEngine.Random;
 

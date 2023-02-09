@@ -1,4 +1,4 @@
-﻿namespace Model.Map.Processing
+﻿namespace Model.Processing
 {
     public interface IDataArrayProcessing
     {

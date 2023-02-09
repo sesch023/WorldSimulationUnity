@@ -4,7 +4,7 @@ using UnityEngine;
 using Utils.BaseUtils;
 using Random = System.Random;
 
-namespace Model.Map.Generators
+namespace Model.Generators
 {
 	/// <summary>
 	/// DiamondSquareGenerator which generates a heightmap using the diamond-square algorithm.

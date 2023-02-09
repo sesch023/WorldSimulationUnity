@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEngine;
 using Random = System.Random;
 
-namespace Model.Map.Generators
+namespace Model.Generators
 {
     /// <summary>
     /// The PerlinGenerator is a MapGenerator that generates a map using Perlin noise.

@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Model.Map.Feature;
+using Model.Feature;
+using Model.Map;
 using UnityEngine;
 using Utils.Arrays;
 using Utils.BaseUtils;
 
-namespace Model.Map.VirtualFeatureSelection
+namespace Model.VirtualFeatureSelection
 {
     /// <summary>
     /// Finds and defines a valley in a map or 2D arrayImmutable of floats.

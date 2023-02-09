@@ -1,7 +1,7 @@
-﻿namespace Model.Map.Processing
+﻿namespace Model.Processing
 {
     public interface IMapProcessing
     {
-        public void ProcessMap(Map map);
+        public void ProcessMap(Map.Map map);
     }
 }

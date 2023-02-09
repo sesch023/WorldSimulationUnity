@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Model.Map.Processing
+namespace Model.Processing
 {
     [Serializable]
     public abstract class BaseMapProcessing : ScriptableObject, IMapProcessing
     {
-        public abstract void ProcessMap(Map map);
+        public abstract void ProcessMap(Map.Map map);
     }
 }

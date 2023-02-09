@@ -41,12 +41,12 @@ namespace Model.Map {}
 /// <summary>
 /// Namespace for generation model.
 /// </summary>
-namespace Model.Map.Generators {}
+namespace Model.Generators {}
 
 /// <summary>
 /// Namespace for behaviours.
 /// </summary>
-namespace Model.Map.UnitBehaviors {}
+namespace Model.UnitBehaviors {}
 
 /// <summary>
 /// Namespace for utility classes.

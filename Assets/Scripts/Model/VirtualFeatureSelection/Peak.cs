@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+﻿using Model.Map;
+using UnityEngine;
 using Utils.Arrays;
 
-namespace Model.Map.VirtualFeatureSelection
+namespace Model.VirtualFeatureSelection
 {
     /// <summary>
     /// Finds and defines a peak in a map or 2D arrayImmutable of floats.

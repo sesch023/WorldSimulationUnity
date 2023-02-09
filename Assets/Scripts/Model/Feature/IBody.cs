@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Model.Map.Feature
+namespace Model.Feature
 {
     public interface IBody : IFeature
     {
