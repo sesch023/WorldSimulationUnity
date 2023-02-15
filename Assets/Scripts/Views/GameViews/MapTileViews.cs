@@ -46,11 +46,11 @@ namespace Views.GameViews
 
         /// Minimum height of the map.
         [field: SerializeField] 
-        public float LowestHeight { get; private set; } = -8000;
+        public float LowestHeight { get; private set; } = 0;
 
         /// Maximum height of the map.
         [field: SerializeField] 
-        public float HeighestHeight { get; private set; } = 10000;
+        public float HighestHeight { get; private set; } = 18000;
         
         /// Steps between heights.
         [SerializeField] 
@@ -121,7 +121,7 @@ namespace Views.GameViews
             {
                 _heightSteps.Add(currentHeight);
                 currentHeight += heightStep;
-            } while (currentHeight < HeighestHeight);
+            } while (currentHeight < HighestHeight);
             _heightSteps.Add(currentHeight);
         }
         

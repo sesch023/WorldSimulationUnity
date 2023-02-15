@@ -193,7 +193,7 @@ namespace Model.Map
         {
             float startTileElevation = MapUnits[position.x, position.y].Position.Elevation;
             MapTileViews view = MapManager.Instance.MapController.TileViews;
-            float middleElevation = (view.HeighestHeight - view.LowestHeight) / 2 + view.LowestHeight;
+            float middleElevation = (view.HighestHeight - view.LowestHeight) / 2 + view.LowestHeight;
 
             if (startTileElevation <= middleElevation)
             {

@@ -31,11 +31,11 @@ namespace Views.GameViews
         TileHeight,
         TileWaterLevel,
         TileTemperature,
-        TileHumidity,
+        TileHumidity
     }
-    
+
     [Serializable]
-    public class TileCondition
+    public class TileCondition : ITileCondition
     {
         private static Dictionary<ComparisionType, CheckComparision> _comparisionTypes = new()
         {
@@ -58,10 +58,10 @@ namespace Views.GameViews
             {UnitValueType.TileTemperature, unit => unit.Temperature},
             {UnitValueType.TileHumidity, unit => unit.Humidity},
         };
-    
+
         // Keine Generalisierung in Serializable Klassen möglich
         [Serializable]
-        public class HardCondition
+        public class HardCondition : ITileCondition
         {
             [SerializeField]
             private UnitValueType unitValueTypeLeft;
@@ -86,7 +86,7 @@ namespace Views.GameViews
 
         // Keine Generalisierung in Serializable Klassen möglich
         [Serializable]
-        public class SoftCondition
+        public class SoftCondition : ITileCondition
         {
             [SerializeField]
             private UnitValueType unitValueTypeLeft;
