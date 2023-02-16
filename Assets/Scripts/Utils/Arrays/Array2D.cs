@@ -9,7 +9,7 @@
         public new T this[int x, int y]
         {
             get => base[x, y];
-            set => GetRealArray()[x, y] = value;
+            set => GetArray()[x, y] = value;
         }
     }
 }

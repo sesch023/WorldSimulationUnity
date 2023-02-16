@@ -25,11 +25,6 @@
         /// <param name="indexY">MapPositionVec in second dimension.</param>
         public TReal this[int indexX, int indexY] => _array[indexX, indexY];
 
-        public TReal[,] GetArray()
-        {
-            return _array;
-        }
-
         /// <summary>
         /// Get 2D Enumerator of the arrayImmutable.
         /// </summary>
@@ -53,7 +48,7 @@
         /// Returns the internal arrayImmutable.
         /// </summary>
         /// <returns>Internal arrayImmutable.</returns>
-        public TReal[,] GetRealArray()
+        public TReal[,] GetArray()
         {
             return _array;
         }
