@@ -15,10 +15,10 @@ namespace Model.Generators
     {
 	    /// Seeds for the four corners of the map. If zero it will use the time.
 	    [SerializeField] 
-	    private float cornerSeed;
+	    private float cornerSeed = 0;
 	    /// Seeds of the random number generator. If zero it will use the time.
 	    [SerializeField] 
-	    private int randomSeed;
+	    private int randomSeed = 0;
 	    /// Roughness of the map.
 	    [SerializeField] 
 	    private float roughness = 1024;
