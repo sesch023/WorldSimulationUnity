@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8f10313-ae08-4799-8dce-15c7c45c85be" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.WorldSimulationUnity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WorldSimulationUnity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableData/Sun.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableData/Sun.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/Map/Feature/Sun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Map/Feature/Sun.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/Map/MapUnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Map/MapUnit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/UnitBehaviors/BaseUnitBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/UnitBehaviors/BaseUnitBehavior.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/UnitBehaviors/IBehaviorCondition.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/UnitBehaviors/IBehaviorCondition.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/UnitBehaviors/IBehaviorRule.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/UnitBehaviors/IBehaviorRule.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/UnitBehaviors/IUnitBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/UnitBehaviors/IUnitBehavior.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/UnitBehaviors/TestUnitBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/UnitBehaviors/TestUnitBehavior.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Views/GameViews/SunView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Views/GameViews/SunView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/Generators/BaseGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Generators/BaseGenerator.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

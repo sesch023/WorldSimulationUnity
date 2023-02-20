@@ -16,10 +16,10 @@ namespace Model.Generators
     public abstract class BaseGenerator : ScriptableObject, IGenerator
     {
         [SerializeField] 
-        protected float maxHeight = 10000;
+        protected float maxHeight = 18000;
 
         [SerializeField] 
-        protected float minHeight = -8000;
+        protected float minHeight = 0;
         
         /// Max elevation of the map
         protected float MaxHeightValue;
