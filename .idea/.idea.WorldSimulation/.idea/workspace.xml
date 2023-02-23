@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f0a8985-5cec-42a4-b471-62433dc2c3ec" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.WorldSimulation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WorldSimulation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/Arrays/Array2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Arrays/Array2D.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/Arrays/ArrayImmutable2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Arrays/ArrayImmutable2D.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/Generators/DiamondSquareGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Generators/DiamondSquareGenerator.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
