@@ -13,9 +13,9 @@ namespace Model.Generators
     [CreateAssetMenu(fileName = "DiamondSquareGenerator", menuName = "ScriptableObjects/DiamondSquareGenerator", order = 1)]
     public class DiamondSquareGenerator : BaseGenerator
     {
-	    /// Seeds for the four corners of the map. If zero it will use the time.
+	    /// Seeds for the four corners of the map. If zero it will use a random number between 0 and 2000.
 	    [SerializeField] 
-	    private float[] cornerSeeds = {239, 239, 239, 239};
+	    private float[] cornerSeeds = {0, 0, 0, 0};
 	    /// Seeds of the random number generator. If zero it will use the time.
 	    [SerializeField] 
 	    private int randomSeed;
@@ -24,7 +24,9 @@ namespace Model.Generators
 	    private float roughness = 2048;
 	    [SerializeField] 
 	    private float roughnessDecay = 0.85f;
-		
+
+	    private Random _random;
+
 	    /// <summary>
 	    /// Calculate new seeds if the random seeds were not set.
 	    /// </summary>
@@ -34,16 +36,18 @@ namespace Model.Generators
 		    {
 			    throw new ArgumentException($"ArgumentException: {GetType()} - Corner Seeds must have 4 values!");
 		    }
-
-		    for (int i = 0; i < 4; i++)
-		    {
-			    if(cornerSeeds[i] == 0)
-				    cornerSeeds[i] = DateTime.Now.Ticks % 2000 - 1000;
-		    }
-		    
+			
 		    if (randomSeed == 0)
 		    {
 			    randomSeed = (int)(DateTime.Now.Ticks % int.MaxValue);
+		    }
+		    
+		    _random = new Random(randomSeed);
+
+		    for (int i = 0; i < 4; i++)
+		    {
+			    if (cornerSeeds[i] == 0)
+				    cornerSeeds[i] = (float)_random.NextDouble() * 2000f;
 		    }
 	    }
 	    
@@ -67,7 +71,7 @@ namespace Model.Generators
 			values[0, length - 1] = cornerSeeds[1]; // Wert der Ecke links unten
 			values[length - 1, 0] = cornerSeeds[2]; // Wert der Ecke rechts oben
 			values[length - 1, length - 1] = cornerSeeds[3]; // Wert der Ecke rechts unten
-			Random random = new Random(randomSeed); // Initialisiert den Zufallsgenerator
+			Random random = _random; // Initialisiert den Zufallsgenerator
 			// Diese for-Schleife definiert die Iterationsschritte des Algorithmus
 			// In jedem Iterationsschritt wird die Seitenlänge der Teilquadrate und der Bereich für die zufälligen Werte halbiert, bis die Seitenlänge kleiner als 2 ist
 			for (int sideLength = length - 1; sideLength >= 2; sideLength /= 2, roughness /= 2.0f)
