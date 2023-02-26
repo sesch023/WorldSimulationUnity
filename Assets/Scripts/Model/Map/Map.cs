@@ -102,8 +102,6 @@ namespace Model.Map
             if (generator == null)
                 throw new MissingReferenceException($"MissingReferenceException: {GetType()} - Illegal Map. Generator missing!");
             
-            if(sun == null)
-                throw new MissingReferenceException($"MissingReferenceException: {GetType()} - Illegal Map. Sun missing!");
             
             // Limit the sizes of the map.
             (int sizeX, int sizeY) clippedSizes = generator.LimitMapSizes(SizeX, SizeY);
@@ -146,7 +144,7 @@ namespace Model.Map
         /// </summary>
         public void Update()
         {
-            sun.Update();
+            if(sun != null) sun.Update();
             foreach (MapUnit unit in MapUnits)
             {
                 unit.Update();
