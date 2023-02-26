@@ -22,7 +22,7 @@ namespace Model.Feature
         [SerializeField]
         private float simulationAccuracy = 1f;
         [SerializeField]
-        private float starRadius = 696340f;
+        private float starRadius = 696340000f;
         [SerializeField]
         private float absoluteDayNightTemperatureDifference = 20f;
         [SerializeField]
