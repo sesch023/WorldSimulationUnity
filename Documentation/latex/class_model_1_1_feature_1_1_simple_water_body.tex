@@ -1,0 +1,132 @@
+\hypertarget{class_model_1_1_feature_1_1_simple_water_body}{}\doxysection{Model.\+Feature.\+Simple\+Water\+Body Class Reference}
+\label{class_model_1_1_feature_1_1_simple_water_body}\index{Model.Feature.SimpleWaterBody@{Model.Feature.SimpleWaterBody}}
+
+
+A simple body of water, that fills a valley to a certain height of a selected position. Does not support refilling, collision, removing water and creating from a certain volume.  
+
+
+Inheritance diagram for Model.\+Feature.\+Simple\+Water\+Body\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_model_1_1_feature_1_1_simple_water_body}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_model_1_1_feature_1_1_simple_water_body_aa27baf25925ec8757f40c5665f1e2061}{Simple\+Water\+Body}} (\mbox{\hyperlink{class_model_1_1_map_1_1_map}{Map.\+Map}} map, Vector2\+Int initial\+Position)
+\begin{DoxyCompactList}\small\item\em Creates a new water body on the selected position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_model_1_1_feature_1_1_simple_water_body_afe22bf1bbb454fc808575cc9b949bbb4}{Reset\+Valley}} (Vector2\+Int initial\+Position)
+\begin{DoxyCompactList}\small\item\em Resets the valley to the selected position. \end{DoxyCompactList}\item 
+Vector2\+Int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_model_1_1_feature_1_1_simple_water_body_ab9fee9d740f5eff9b1f39c9b145e1ab3}{Get\+Feature\+Positions}} ()
+\begin{DoxyCompactList}\small\item\em Gets the positions of the map units that are part of the body. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_model_1_1_feature_1_1_simple_water_body_a02dfe2f3fd4ef0479eab0476b1f7a528}{In\+Body}} (Vector2\+Int position)
+\begin{DoxyCompactList}\small\item\em Checks if the body contains the selected position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_model_1_1_feature_1_1_simple_water_body_a93e9683a0f7ddd16d45ecffa3bde3b43}{Water\+Volume}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em How much water is in the body. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A simple body of water, that fills a valley to a certain height of a selected position. Does not support refilling, collision, removing water and creating from a certain volume. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_model_1_1_feature_1_1_simple_water_body_aa27baf25925ec8757f40c5665f1e2061}\label{class_model_1_1_feature_1_1_simple_water_body_aa27baf25925ec8757f40c5665f1e2061}} 
+\index{Model.Feature.SimpleWaterBody@{Model.Feature.SimpleWaterBody}!SimpleWaterBody@{SimpleWaterBody}}
+\index{SimpleWaterBody@{SimpleWaterBody}!Model.Feature.SimpleWaterBody@{Model.Feature.SimpleWaterBody}}
+\doxysubsubsection{\texorpdfstring{SimpleWaterBody()}{SimpleWaterBody()}}
+{\footnotesize\ttfamily Model.\+Feature.\+Simple\+Water\+Body.\+Simple\+Water\+Body (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_model_1_1_map_1_1_map}{Map.\+Map}}}]{map,  }\item[{Vector2\+Int}]{initial\+Position }\end{DoxyParamCaption})}
+
+
+
+Creates a new water body on the selected position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & \mbox{\hyperlink{namespace_model_1_1_map}{Map}} on which the body is created.\\
+\hline
+{\em initial\+Position} & Position with the maximum height of the water body.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_model_1_1_feature_1_1_simple_water_body_ab9fee9d740f5eff9b1f39c9b145e1ab3}\label{class_model_1_1_feature_1_1_simple_water_body_ab9fee9d740f5eff9b1f39c9b145e1ab3}} 
+\index{Model.Feature.SimpleWaterBody@{Model.Feature.SimpleWaterBody}!GetFeaturePositions@{GetFeaturePositions}}
+\index{GetFeaturePositions@{GetFeaturePositions}!Model.Feature.SimpleWaterBody@{Model.Feature.SimpleWaterBody}}
+\doxysubsubsection{\texorpdfstring{GetFeaturePositions()}{GetFeaturePositions()}}
+{\footnotesize\ttfamily Vector2\+Int\mbox{[}$\,$\mbox{]} Model.\+Feature.\+Simple\+Water\+Body.\+Get\+Feature\+Positions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the positions of the map units that are part of the body. 
+
+\begin{DoxyReturn}{Returns}
+Array of positions of the body of water on the map.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_model_1_1_feature_1_1_i_feature_a496ed4e35d7f0ae894d4e4866be72ea7}{Model.\+Feature.\+IFeature}}.
+
+\mbox{\Hypertarget{class_model_1_1_feature_1_1_simple_water_body_a02dfe2f3fd4ef0479eab0476b1f7a528}\label{class_model_1_1_feature_1_1_simple_water_body_a02dfe2f3fd4ef0479eab0476b1f7a528}} 
+\index{Model.Feature.SimpleWaterBody@{Model.Feature.SimpleWaterBody}!InBody@{InBody}}
+\index{InBody@{InBody}!Model.Feature.SimpleWaterBody@{Model.Feature.SimpleWaterBody}}
+\doxysubsubsection{\texorpdfstring{InBody()}{InBody()}}
+{\footnotesize\ttfamily bool Model.\+Feature.\+Simple\+Water\+Body.\+In\+Body (\begin{DoxyParamCaption}\item[{Vector2\+Int}]{position }\end{DoxyParamCaption})}
+
+
+
+Checks if the body contains the selected position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Position to check.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True, if the body contains the position.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_model_1_1_feature_1_1_i_body_a5adc2d4e0e1cdbbcd96df32a6e6630f1}{Model.\+Feature.\+IBody}}.
+
+\mbox{\Hypertarget{class_model_1_1_feature_1_1_simple_water_body_afe22bf1bbb454fc808575cc9b949bbb4}\label{class_model_1_1_feature_1_1_simple_water_body_afe22bf1bbb454fc808575cc9b949bbb4}} 
+\index{Model.Feature.SimpleWaterBody@{Model.Feature.SimpleWaterBody}!ResetValley@{ResetValley}}
+\index{ResetValley@{ResetValley}!Model.Feature.SimpleWaterBody@{Model.Feature.SimpleWaterBody}}
+\doxysubsubsection{\texorpdfstring{ResetValley()}{ResetValley()}}
+{\footnotesize\ttfamily void Model.\+Feature.\+Simple\+Water\+Body.\+Reset\+Valley (\begin{DoxyParamCaption}\item[{Vector2\+Int}]{initial\+Position }\end{DoxyParamCaption})}
+
+
+
+Resets the valley to the selected position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em initial\+Position} & New position of the valley.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Argument\+Exception} & If there is already a body of water at the position.\\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_model_1_1_feature_1_1_simple_water_body_a93e9683a0f7ddd16d45ecffa3bde3b43}\label{class_model_1_1_feature_1_1_simple_water_body_a93e9683a0f7ddd16d45ecffa3bde3b43}} 
+\index{Model.Feature.SimpleWaterBody@{Model.Feature.SimpleWaterBody}!WaterVolume@{WaterVolume}}
+\index{WaterVolume@{WaterVolume}!Model.Feature.SimpleWaterBody@{Model.Feature.SimpleWaterBody}}
+\doxysubsubsection{\texorpdfstring{WaterVolume}{WaterVolume}}
+{\footnotesize\ttfamily float Model.\+Feature.\+Simple\+Water\+Body.\+Water\+Volume\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+How much water is in the body. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Model/\+Feature/\mbox{\hyperlink{_simple_water_body_8cs}{Simple\+Water\+Body.\+cs}}\end{DoxyCompactItemize}

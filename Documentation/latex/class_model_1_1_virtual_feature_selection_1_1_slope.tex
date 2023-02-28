@@ -1,0 +1,113 @@
+\hypertarget{class_model_1_1_virtual_feature_selection_1_1_slope}{}\doxysection{Model.\+Virtual\+Feature\+Selection.\+Slope Class Reference}
+\label{class_model_1_1_virtual_feature_selection_1_1_slope}\index{Model.VirtualFeatureSelection.Slope@{Model.VirtualFeatureSelection.Slope}}
+
+
+Finds a slope in a map or 2D array\+Immutable of floats.  
+
+
+Inheritance diagram for Model.\+Virtual\+Feature\+Selection.\+Slope\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_model_1_1_virtual_feature_selection_1_1_slope}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_model_1_1_virtual_feature_selection_1_1_slope_a20dabf444680d5992b3020a176c51ac8}{Slope}} (Vector2\+Int start, \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}}\mbox{[},\mbox{]} map\+Units, float momentum\+Multiplier=1.\+0f, float max\+Momentum\+Fraction=1.\+0f)
+\begin{DoxyCompactList}\small\item\em Constructor for the slope. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_model_1_1_virtual_feature_selection_1_1_slope_a812dae24aee0332cdd9bc345c5ad9c79}{Slope}} (Vector2\+Int start, \mbox{\hyperlink{interface_utils_1_1_arrays_1_1_i2_d_array_immutable}{I2\+DArray\+Immutable}}$<$ float $>$ elevations, float momentum\+Multiplier=1.\+0f, float max\+Momentum\+Fraction=1.\+0f)
+\begin{DoxyCompactList}\small\item\em Constructor for the slope. \end{DoxyCompactList}\item 
+Vector2\+Int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_model_1_1_virtual_feature_selection_1_1_slope_a14cb278590e48e84ca602cba2160eb1d}{Get\+Feature\+Positions}} ()
+\begin{DoxyCompactList}\small\item\em Collection of points that make up the feature. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Vector2\+Int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_model_1_1_virtual_feature_selection_1_1_slope_aa555766f576f25e025e4c58e85788fb0}{Calculated\+Slope}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Positions of the slope. Sorted from highest to lowest elevation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Finds a slope in a map or 2D array\+Immutable of floats. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_model_1_1_virtual_feature_selection_1_1_slope_a20dabf444680d5992b3020a176c51ac8}\label{class_model_1_1_virtual_feature_selection_1_1_slope_a20dabf444680d5992b3020a176c51ac8}} 
+\index{Model.VirtualFeatureSelection.Slope@{Model.VirtualFeatureSelection.Slope}!Slope@{Slope}}
+\index{Slope@{Slope}!Model.VirtualFeatureSelection.Slope@{Model.VirtualFeatureSelection.Slope}}
+\doxysubsubsection{\texorpdfstring{Slope()}{Slope()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Model.\+Virtual\+Feature\+Selection.\+Slope.\+Slope (\begin{DoxyParamCaption}\item[{Vector2\+Int}]{start,  }\item[{\mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}}}]{map\+Units\mbox{[},\mbox{]},  }\item[{float}]{momentum\+Multiplier = {\ttfamily 1.0f},  }\item[{float}]{max\+Momentum\+Fraction = {\ttfamily 1.0f} }\end{DoxyParamCaption})}
+
+
+
+Constructor for the slope. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Start position of the slope.\\
+\hline
+{\em map\+Units} & \mbox{\hyperlink{namespace_model_1_1_map}{Map}} of Map\+Units.\\
+\hline
+{\em momentum\+Multiplier} & Momentum multiplier which changes the level of momentum the slope uses for passing local minimals.\\
+\hline
+{\em max\+Momentum\+Fraction} & Maximum momentum to use in a single step.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_1_1_virtual_feature_selection_1_1_slope_a812dae24aee0332cdd9bc345c5ad9c79}\label{class_model_1_1_virtual_feature_selection_1_1_slope_a812dae24aee0332cdd9bc345c5ad9c79}} 
+\index{Model.VirtualFeatureSelection.Slope@{Model.VirtualFeatureSelection.Slope}!Slope@{Slope}}
+\index{Slope@{Slope}!Model.VirtualFeatureSelection.Slope@{Model.VirtualFeatureSelection.Slope}}
+\doxysubsubsection{\texorpdfstring{Slope()}{Slope()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Model.\+Virtual\+Feature\+Selection.\+Slope.\+Slope (\begin{DoxyParamCaption}\item[{Vector2\+Int}]{start,  }\item[{\mbox{\hyperlink{interface_utils_1_1_arrays_1_1_i2_d_array_immutable}{I2\+DArray\+Immutable}}$<$ float $>$}]{elevations,  }\item[{float}]{momentum\+Multiplier = {\ttfamily 1.0f},  }\item[{float}]{max\+Momentum\+Fraction = {\ttfamily 1.0f} }\end{DoxyParamCaption})}
+
+
+
+Constructor for the slope. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Start position of the slope.\\
+\hline
+{\em elevations} & 2d array\+Immutable of floats a elevations.\\
+\hline
+{\em momentum\+Multiplier} & Momentum multiplier which changes the level of momentum the slope uses for passing local minimals.\\
+\hline
+{\em max\+Momentum\+Fraction} & Maximum momentum to use in a single step.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_model_1_1_virtual_feature_selection_1_1_slope_a14cb278590e48e84ca602cba2160eb1d}\label{class_model_1_1_virtual_feature_selection_1_1_slope_a14cb278590e48e84ca602cba2160eb1d}} 
+\index{Model.VirtualFeatureSelection.Slope@{Model.VirtualFeatureSelection.Slope}!GetFeaturePositions@{GetFeaturePositions}}
+\index{GetFeaturePositions@{GetFeaturePositions}!Model.VirtualFeatureSelection.Slope@{Model.VirtualFeatureSelection.Slope}}
+\doxysubsubsection{\texorpdfstring{GetFeaturePositions()}{GetFeaturePositions()}}
+{\footnotesize\ttfamily Vector2\+Int\mbox{[}$\,$\mbox{]} Model.\+Virtual\+Feature\+Selection.\+Slope.\+Get\+Feature\+Positions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Collection of points that make up the feature. 
+
+\begin{DoxyReturn}{Returns}
+Collection of points that make up the feature.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_model_1_1_feature_1_1_i_feature_a496ed4e35d7f0ae894d4e4866be72ea7}{Model.\+Feature.\+IFeature}}.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_model_1_1_virtual_feature_selection_1_1_slope_aa555766f576f25e025e4c58e85788fb0}\label{class_model_1_1_virtual_feature_selection_1_1_slope_aa555766f576f25e025e4c58e85788fb0}} 
+\index{Model.VirtualFeatureSelection.Slope@{Model.VirtualFeatureSelection.Slope}!CalculatedSlope@{CalculatedSlope}}
+\index{CalculatedSlope@{CalculatedSlope}!Model.VirtualFeatureSelection.Slope@{Model.VirtualFeatureSelection.Slope}}
+\doxysubsubsection{\texorpdfstring{CalculatedSlope}{CalculatedSlope}}
+{\footnotesize\ttfamily Vector2\+Int \mbox{[}$\,$\mbox{]} Model.\+Virtual\+Feature\+Selection.\+Slope.\+Calculated\+Slope\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Positions of the slope. Sorted from highest to lowest elevation. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Model/\+Virtual\+Feature\+Selection/\mbox{\hyperlink{_slope_8cs}{Slope.\+cs}}\end{DoxyCompactItemize}

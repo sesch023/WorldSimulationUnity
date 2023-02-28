@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>WorldSimulationUnity: Views.GameViews Namespace Reference</title>
+<title>World Simulation Unity: Views.GameViews Namespace Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,9 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">WorldSimulationUnity
+   <div id="projectname">World Simulation Unity
    </div>
-   <div id="projectbrief">Simulation of a world in unity.</div>
+   <div id="projectbrief">World Simulation in Unity.</div>
   </td>
  </tr>
  </tbody>
@@ -84,7 +84,9 @@ $(document).ready(function(){initNavTree('namespace_views_1_1_game_views.html','
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">Views.GameViews Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -94,11 +96,20 @@ $(document).ready(function(){initNavTree('namespace_views_1_1_game_views.html','
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">interface &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_views_1_1_game_views_1_1_i_map_unit_condition.html">IMapUnitCondition</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Condition of a Map Unit.  <a href="interface_views_1_1_game_views_1_1_i_map_unit_condition.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_views_1_1_game_views_1_1_line_view.html">LineView</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">View for displaying a line on the map between given points. The line is drawn using a line renderer. It can be curved or not and provides other ways of changing the line's looks.  <a href="class_views_1_1_game_views_1_1_line_view.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_views_1_1_game_views_1_1_map_tile_views.html">MapTileViews</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The MapTileView is responsible for managing the appearance of tiles on the map. It decides which tile is used for a map unit depending on the conditions it.  <a href="class_views_1_1_game_views_1_1_map_tile_views.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_views_1_1_game_views_1_1_map_unit_condition.html">MapUnitCondition</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A condition for map units, which contain multiple hard and soft conditions.  <a href="class_views_1_1_game_views_1_1_map_unit_condition.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_views_1_1_game_views_1_1_sun_view.html">SunView</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">View for a sun in the simulation.  <a href="class_views_1_1_game_views_1_1_sun_view.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_views_1_1_game_views_1_1_tile_group_view.html">TileGroupView</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">View of a group of tiles.  <a href="class_views_1_1_game_views_1_1_tile_group_view.html#details">More...</a><br /></td></tr>
@@ -106,10 +117,151 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_views_1_1_game_views_1_1_tile_line_view.html">TileLineView</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_views_1_1_game_views_1_1_line_view.html" title="View for displaying a line on the map between given points. The line is drawn using a line renderer....">LineView</a> for displaying a line between tile coordinates.  <a href="class_views_1_1_game_views_1_1_tile_line_view.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a3d514fef54084a6a34fccaa68ac4ab29"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_views_1_1_game_views.html#a3d514fef54084a6a34fccaa68ac4ab29">ComparisionType</a> { <br />
+&#160;&#160;<a class="el" href="namespace_views_1_1_game_views.html#a3d514fef54084a6a34fccaa68ac4ab29af6d044fe1f01fb0c956b80099e2a3072">GreaterThan</a>
+, <a class="el" href="namespace_views_1_1_game_views.html#a3d514fef54084a6a34fccaa68ac4ab29a25c44812e9d75f685d2a0b815dea1ebe">GreaterThanOrEqual</a>
+, <a class="el" href="namespace_views_1_1_game_views.html#a3d514fef54084a6a34fccaa68ac4ab29af5f286e73bda105e538310b3190f75c5">Equal</a>
+, <a class="el" href="namespace_views_1_1_game_views.html#a3d514fef54084a6a34fccaa68ac4ab29ac6d9d7bb9939f62f01c80f8b1251501c">LessThan</a>
+, <br />
+&#160;&#160;<a class="el" href="namespace_views_1_1_game_views.html#a3d514fef54084a6a34fccaa68ac4ab29a4ab671acbbaacb0db7d8477cfe4f4e0b">LessThanOrEqual</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:a3d514fef54084a6a34fccaa68ac4ab29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of a comparison.  <a href="namespace_views_1_1_game_views.html#a3d514fef54084a6a34fccaa68ac4ab29">More...</a><br /></td></tr>
+<tr class="separator:a3d514fef54084a6a34fccaa68ac4ab29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d19d4e08b5e471bba0c3b43bbd3753b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_views_1_1_game_views.html#a1d19d4e08b5e471bba0c3b43bbd3753b">UnitValueType</a> { <br />
+&#160;&#160;<a class="el" href="namespace_views_1_1_game_views.html#a1d19d4e08b5e471bba0c3b43bbd3753bab8e9fa0ec3c1213dadb02b1093128241">TileMaterialClay</a>
+, <a class="el" href="namespace_views_1_1_game_views.html#a1d19d4e08b5e471bba0c3b43bbd3753bad703583afeb253295be91ef972c7c600">TileMaterialSand</a>
+, <a class="el" href="namespace_views_1_1_game_views.html#a1d19d4e08b5e471bba0c3b43bbd3753ba03d55d0579018587212c6fea6afb00a9">TileMaterialSoil</a>
+, <a class="el" href="namespace_views_1_1_game_views.html#a1d19d4e08b5e471bba0c3b43bbd3753ba2578e2852491ccb9346ee0c3a93f32b0">TileMaterialRock</a>
+, <br />
+&#160;&#160;<a class="el" href="namespace_views_1_1_game_views.html#a1d19d4e08b5e471bba0c3b43bbd3753ba420c49306b78a88a3ab5afbfcda230f9">TileMaterialGravel</a>
+, <a class="el" href="namespace_views_1_1_game_views.html#a1d19d4e08b5e471bba0c3b43bbd3753ba5ec51b0d184dba9cef902af37ca2a166">TileHeight</a>
+, <a class="el" href="namespace_views_1_1_game_views.html#a1d19d4e08b5e471bba0c3b43bbd3753bab3ffbe02d54acf01f42c1e1dc4ff075d">TileWaterLevel</a>
+, <a class="el" href="namespace_views_1_1_game_views.html#a1d19d4e08b5e471bba0c3b43bbd3753bac2be6ffcfcce71af349b4b2c60635b98">TileTemperature</a>
+, <br />
+&#160;&#160;<a class="el" href="namespace_views_1_1_game_views.html#a1d19d4e08b5e471bba0c3b43bbd3753bac13af185bfeff92236be2eeba3138793">TileHumidity</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:a1d19d4e08b5e471bba0c3b43bbd3753b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Types of values that can be put into a condition. This cannot be done in a dynamic way, since the unity editor does not support it.  <a href="namespace_views_1_1_game_views.html#a1d19d4e08b5e471bba0c3b43bbd3753b">More...</a><br /></td></tr>
+<tr class="separator:a1d19d4e08b5e471bba0c3b43bbd3753b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a86404ca2f912c792c8f55ed52ca3f87b"><td class="memItemLeft" align="right" valign="top">delegate bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_views_1_1_game_views.html#a86404ca2f912c792c8f55ed52ca3f87b">CheckComparision</a> (IComparable valueA, IComparable valueB)</td></tr>
+<tr class="memdesc:a86404ca2f912c792c8f55ed52ca3f87b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delegate for a comparison function.  <a href="namespace_views_1_1_game_views.html#a86404ca2f912c792c8f55ed52ca3f87b">More...</a><br /></td></tr>
+<tr class="separator:a86404ca2f912c792c8f55ed52ca3f87b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2aade1c27a05a178f0a4cc45bdac325"><td class="memItemLeft" align="right" valign="top">delegate IComparable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_views_1_1_game_views.html#ae2aade1c27a05a178f0a4cc45bdac325">GetUnitValue</a> (<a class="el" href="class_model_1_1_map_1_1_map_unit.html">MapUnit</a> unit)</td></tr>
+<tr class="memdesc:ae2aade1c27a05a178f0a4cc45bdac325"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delegate for returning a comparable value.  <a href="namespace_views_1_1_game_views.html#ae2aade1c27a05a178f0a4cc45bdac325">More...</a><br /></td></tr>
+<tr class="separator:ae2aade1c27a05a178f0a4cc45bdac325"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Namespace for views in the simulation world. </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a3d514fef54084a6a34fccaa68ac4ab29" name="a3d514fef54084a6a34fccaa68ac4ab29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d514fef54084a6a34fccaa68ac4ab29">&#9670;&nbsp;</a></span>ComparisionType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespace_views_1_1_game_views.html#a3d514fef54084a6a34fccaa68ac4ab29">Views.GameViews.ComparisionType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Type of a comparison. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a3d514fef54084a6a34fccaa68ac4ab29af6d044fe1f01fb0c956b80099e2a3072" name="a3d514fef54084a6a34fccaa68ac4ab29af6d044fe1f01fb0c956b80099e2a3072"></a>GreaterThan&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3d514fef54084a6a34fccaa68ac4ab29a25c44812e9d75f685d2a0b815dea1ebe" name="a3d514fef54084a6a34fccaa68ac4ab29a25c44812e9d75f685d2a0b815dea1ebe"></a>GreaterThanOrEqual&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3d514fef54084a6a34fccaa68ac4ab29af5f286e73bda105e538310b3190f75c5" name="a3d514fef54084a6a34fccaa68ac4ab29af5f286e73bda105e538310b3190f75c5"></a>Equal&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3d514fef54084a6a34fccaa68ac4ab29ac6d9d7bb9939f62f01c80f8b1251501c" name="a3d514fef54084a6a34fccaa68ac4ab29ac6d9d7bb9939f62f01c80f8b1251501c"></a>LessThan&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3d514fef54084a6a34fccaa68ac4ab29a4ab671acbbaacb0db7d8477cfe4f4e0b" name="a3d514fef54084a6a34fccaa68ac4ab29a4ab671acbbaacb0db7d8477cfe4f4e0b"></a>LessThanOrEqual&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a1d19d4e08b5e471bba0c3b43bbd3753b" name="a1d19d4e08b5e471bba0c3b43bbd3753b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d19d4e08b5e471bba0c3b43bbd3753b">&#9670;&nbsp;</a></span>UnitValueType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespace_views_1_1_game_views.html#a1d19d4e08b5e471bba0c3b43bbd3753b">Views.GameViews.UnitValueType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Types of values that can be put into a condition. This cannot be done in a dynamic way, since the unity editor does not support it. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a1d19d4e08b5e471bba0c3b43bbd3753bab8e9fa0ec3c1213dadb02b1093128241" name="a1d19d4e08b5e471bba0c3b43bbd3753bab8e9fa0ec3c1213dadb02b1093128241"></a>TileMaterialClay&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a1d19d4e08b5e471bba0c3b43bbd3753bad703583afeb253295be91ef972c7c600" name="a1d19d4e08b5e471bba0c3b43bbd3753bad703583afeb253295be91ef972c7c600"></a>TileMaterialSand&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a1d19d4e08b5e471bba0c3b43bbd3753ba03d55d0579018587212c6fea6afb00a9" name="a1d19d4e08b5e471bba0c3b43bbd3753ba03d55d0579018587212c6fea6afb00a9"></a>TileMaterialSoil&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a1d19d4e08b5e471bba0c3b43bbd3753ba2578e2852491ccb9346ee0c3a93f32b0" name="a1d19d4e08b5e471bba0c3b43bbd3753ba2578e2852491ccb9346ee0c3a93f32b0"></a>TileMaterialRock&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a1d19d4e08b5e471bba0c3b43bbd3753ba420c49306b78a88a3ab5afbfcda230f9" name="a1d19d4e08b5e471bba0c3b43bbd3753ba420c49306b78a88a3ab5afbfcda230f9"></a>TileMaterialGravel&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a1d19d4e08b5e471bba0c3b43bbd3753ba5ec51b0d184dba9cef902af37ca2a166" name="a1d19d4e08b5e471bba0c3b43bbd3753ba5ec51b0d184dba9cef902af37ca2a166"></a>TileHeight&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a1d19d4e08b5e471bba0c3b43bbd3753bab3ffbe02d54acf01f42c1e1dc4ff075d" name="a1d19d4e08b5e471bba0c3b43bbd3753bab3ffbe02d54acf01f42c1e1dc4ff075d"></a>TileWaterLevel&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a1d19d4e08b5e471bba0c3b43bbd3753bac2be6ffcfcce71af349b4b2c60635b98" name="a1d19d4e08b5e471bba0c3b43bbd3753bac2be6ffcfcce71af349b4b2c60635b98"></a>TileTemperature&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a1d19d4e08b5e471bba0c3b43bbd3753bac13af185bfeff92236be2eeba3138793" name="a1d19d4e08b5e471bba0c3b43bbd3753bac13af185bfeff92236be2eeba3138793"></a>TileHumidity&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a86404ca2f912c792c8f55ed52ca3f87b" name="a86404ca2f912c792c8f55ed52ca3f87b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86404ca2f912c792c8f55ed52ca3f87b">&#9670;&nbsp;</a></span>CheckComparision()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">delegate bool Views.GameViews.CheckComparision </td>
+          <td>(</td>
+          <td class="paramtype">IComparable&#160;</td>
+          <td class="paramname"><em>valueA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IComparable&#160;</td>
+          <td class="paramname"><em>valueB</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Delegate for a comparison function. </p>
+
+</div>
+</div>
+<a id="ae2aade1c27a05a178f0a4cc45bdac325" name="ae2aade1c27a05a178f0a4cc45bdac325"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2aade1c27a05a178f0a4cc45bdac325">&#9670;&nbsp;</a></span>GetUnitValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">delegate IComparable Views.GameViews.GetUnitValue </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_model_1_1_map_1_1_map_unit.html">MapUnit</a>&#160;</td>
+          <td class="paramname"><em>unit</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Delegate for returning a comparable value. </p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

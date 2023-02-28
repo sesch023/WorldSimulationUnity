@@ -8,15 +8,159 @@ Namespace for views in the simulation world.
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
+interface \mbox{\hyperlink{interface_views_1_1_game_views_1_1_i_map_unit_condition}{IMap\+Unit\+Condition}}
+\begin{DoxyCompactList}\small\item\em Condition of a Map Unit. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_views_1_1_game_views_1_1_line_view}{Line\+View}}
 \begin{DoxyCompactList}\small\item\em View for displaying a line on the map between given points. The line is drawn using a line renderer. It can be curved or not and provides other ways of changing the line\textquotesingle{}s looks. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_views_1_1_game_views_1_1_map_tile_views}{Map\+Tile\+Views}}
 \begin{DoxyCompactList}\small\item\em The Map\+Tile\+View is responsible for managing the appearance of tiles on the map. It decides which tile is used for a map unit depending on the conditions it. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_views_1_1_game_views_1_1_map_unit_condition}{Map\+Unit\+Condition}}
+\begin{DoxyCompactList}\small\item\em A condition for map units, which contain multiple hard and soft conditions. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_views_1_1_game_views_1_1_sun_view}{Sun\+View}}
+\begin{DoxyCompactList}\small\item\em View for a sun in the simulation. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_views_1_1_game_views_1_1_tile_group_view}{Tile\+Group\+View}}
 \begin{DoxyCompactList}\small\item\em View of a group of tiles. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_views_1_1_game_views_1_1_tile_line_view}{Tile\+Line\+View}}
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_views_1_1_game_views_1_1_line_view}{Line\+View}} for displaying a line between tile coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_views_1_1_game_views_a3d514fef54084a6a34fccaa68ac4ab29}{Comparision\+Type}} \{ \newline
+\mbox{\hyperlink{namespace_views_1_1_game_views_a3d514fef54084a6a34fccaa68ac4ab29af6d044fe1f01fb0c956b80099e2a3072}{Greater\+Than}}
+, \mbox{\hyperlink{namespace_views_1_1_game_views_a3d514fef54084a6a34fccaa68ac4ab29a25c44812e9d75f685d2a0b815dea1ebe}{Greater\+Than\+Or\+Equal}}
+, \mbox{\hyperlink{namespace_views_1_1_game_views_a3d514fef54084a6a34fccaa68ac4ab29af5f286e73bda105e538310b3190f75c5}{Equal}}
+, \mbox{\hyperlink{namespace_views_1_1_game_views_a3d514fef54084a6a34fccaa68ac4ab29ac6d9d7bb9939f62f01c80f8b1251501c}{Less\+Than}}
+, \newline
+\mbox{\hyperlink{namespace_views_1_1_game_views_a3d514fef54084a6a34fccaa68ac4ab29a4ab671acbbaacb0db7d8477cfe4f4e0b}{Less\+Than\+Or\+Equal}}
+ \}
+\begin{DoxyCompactList}\small\item\em Type of a comparison. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespace_views_1_1_game_views_a1d19d4e08b5e471bba0c3b43bbd3753b}{Unit\+Value\+Type}} \{ \newline
+\mbox{\hyperlink{namespace_views_1_1_game_views_a1d19d4e08b5e471bba0c3b43bbd3753bab8e9fa0ec3c1213dadb02b1093128241}{Tile\+Material\+Clay}}
+, \mbox{\hyperlink{namespace_views_1_1_game_views_a1d19d4e08b5e471bba0c3b43bbd3753bad703583afeb253295be91ef972c7c600}{Tile\+Material\+Sand}}
+, \mbox{\hyperlink{namespace_views_1_1_game_views_a1d19d4e08b5e471bba0c3b43bbd3753ba03d55d0579018587212c6fea6afb00a9}{Tile\+Material\+Soil}}
+, \mbox{\hyperlink{namespace_views_1_1_game_views_a1d19d4e08b5e471bba0c3b43bbd3753ba2578e2852491ccb9346ee0c3a93f32b0}{Tile\+Material\+Rock}}
+, \newline
+\mbox{\hyperlink{namespace_views_1_1_game_views_a1d19d4e08b5e471bba0c3b43bbd3753ba420c49306b78a88a3ab5afbfcda230f9}{Tile\+Material\+Gravel}}
+, \mbox{\hyperlink{namespace_views_1_1_game_views_a1d19d4e08b5e471bba0c3b43bbd3753ba5ec51b0d184dba9cef902af37ca2a166}{Tile\+Height}}
+, \mbox{\hyperlink{namespace_views_1_1_game_views_a1d19d4e08b5e471bba0c3b43bbd3753bab3ffbe02d54acf01f42c1e1dc4ff075d}{Tile\+Water\+Level}}
+, \mbox{\hyperlink{namespace_views_1_1_game_views_a1d19d4e08b5e471bba0c3b43bbd3753bac2be6ffcfcce71af349b4b2c60635b98}{Tile\+Temperature}}
+, \newline
+\mbox{\hyperlink{namespace_views_1_1_game_views_a1d19d4e08b5e471bba0c3b43bbd3753bac13af185bfeff92236be2eeba3138793}{Tile\+Humidity}}
+ \}
+\begin{DoxyCompactList}\small\item\em Types of values that can be put into a condition. This cannot be done in a dynamic way, since the unity editor does not support it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+delegate bool \mbox{\hyperlink{namespace_views_1_1_game_views_a86404ca2f912c792c8f55ed52ca3f87b}{Check\+Comparision}} (IComparable valueA, IComparable valueB)
+\begin{DoxyCompactList}\small\item\em Delegate for a comparison function. \end{DoxyCompactList}\item 
+delegate IComparable \mbox{\hyperlink{namespace_views_1_1_game_views_ae2aade1c27a05a178f0a4cc45bdac325}{Get\+Unit\+Value}} (\mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}} unit)
+\begin{DoxyCompactList}\small\item\em Delegate for returning a comparable value. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Namespace for views in the simulation world. 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespace_views_1_1_game_views_a3d514fef54084a6a34fccaa68ac4ab29}\label{namespace_views_1_1_game_views_a3d514fef54084a6a34fccaa68ac4ab29}} 
+\index{Views.GameViews@{Views.GameViews}!ComparisionType@{ComparisionType}}
+\index{ComparisionType@{ComparisionType}!Views.GameViews@{Views.GameViews}}
+\doxysubsubsection{\texorpdfstring{ComparisionType}{ComparisionType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_views_1_1_game_views_a3d514fef54084a6a34fccaa68ac4ab29}{Views.\+Game\+Views.\+Comparision\+Type}}}
+
+
+
+Type of a comparison. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GreaterThan@{GreaterThan}!Views.GameViews@{Views.GameViews}}\index{Views.GameViews@{Views.GameViews}!GreaterThan@{GreaterThan}}}\mbox{\Hypertarget{namespace_views_1_1_game_views_a3d514fef54084a6a34fccaa68ac4ab29af6d044fe1f01fb0c956b80099e2a3072}\label{namespace_views_1_1_game_views_a3d514fef54084a6a34fccaa68ac4ab29af6d044fe1f01fb0c956b80099e2a3072}} 
+Greater\+Than&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GreaterThanOrEqual@{GreaterThanOrEqual}!Views.GameViews@{Views.GameViews}}\index{Views.GameViews@{Views.GameViews}!GreaterThanOrEqual@{GreaterThanOrEqual}}}\mbox{\Hypertarget{namespace_views_1_1_game_views_a3d514fef54084a6a34fccaa68ac4ab29a25c44812e9d75f685d2a0b815dea1ebe}\label{namespace_views_1_1_game_views_a3d514fef54084a6a34fccaa68ac4ab29a25c44812e9d75f685d2a0b815dea1ebe}} 
+Greater\+Than\+Or\+Equal&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Equal@{Equal}!Views.GameViews@{Views.GameViews}}\index{Views.GameViews@{Views.GameViews}!Equal@{Equal}}}\mbox{\Hypertarget{namespace_views_1_1_game_views_a3d514fef54084a6a34fccaa68ac4ab29af5f286e73bda105e538310b3190f75c5}\label{namespace_views_1_1_game_views_a3d514fef54084a6a34fccaa68ac4ab29af5f286e73bda105e538310b3190f75c5}} 
+Equal&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LessThan@{LessThan}!Views.GameViews@{Views.GameViews}}\index{Views.GameViews@{Views.GameViews}!LessThan@{LessThan}}}\mbox{\Hypertarget{namespace_views_1_1_game_views_a3d514fef54084a6a34fccaa68ac4ab29ac6d9d7bb9939f62f01c80f8b1251501c}\label{namespace_views_1_1_game_views_a3d514fef54084a6a34fccaa68ac4ab29ac6d9d7bb9939f62f01c80f8b1251501c}} 
+Less\+Than&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LessThanOrEqual@{LessThanOrEqual}!Views.GameViews@{Views.GameViews}}\index{Views.GameViews@{Views.GameViews}!LessThanOrEqual@{LessThanOrEqual}}}\mbox{\Hypertarget{namespace_views_1_1_game_views_a3d514fef54084a6a34fccaa68ac4ab29a4ab671acbbaacb0db7d8477cfe4f4e0b}\label{namespace_views_1_1_game_views_a3d514fef54084a6a34fccaa68ac4ab29a4ab671acbbaacb0db7d8477cfe4f4e0b}} 
+Less\+Than\+Or\+Equal&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespace_views_1_1_game_views_a1d19d4e08b5e471bba0c3b43bbd3753b}\label{namespace_views_1_1_game_views_a1d19d4e08b5e471bba0c3b43bbd3753b}} 
+\index{Views.GameViews@{Views.GameViews}!UnitValueType@{UnitValueType}}
+\index{UnitValueType@{UnitValueType}!Views.GameViews@{Views.GameViews}}
+\doxysubsubsection{\texorpdfstring{UnitValueType}{UnitValueType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_views_1_1_game_views_a1d19d4e08b5e471bba0c3b43bbd3753b}{Views.\+Game\+Views.\+Unit\+Value\+Type}}}
+
+
+
+Types of values that can be put into a condition. This cannot be done in a dynamic way, since the unity editor does not support it. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TileMaterialClay@{TileMaterialClay}!Views.GameViews@{Views.GameViews}}\index{Views.GameViews@{Views.GameViews}!TileMaterialClay@{TileMaterialClay}}}\mbox{\Hypertarget{namespace_views_1_1_game_views_a1d19d4e08b5e471bba0c3b43bbd3753bab8e9fa0ec3c1213dadb02b1093128241}\label{namespace_views_1_1_game_views_a1d19d4e08b5e471bba0c3b43bbd3753bab8e9fa0ec3c1213dadb02b1093128241}} 
+Tile\+Material\+Clay&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TileMaterialSand@{TileMaterialSand}!Views.GameViews@{Views.GameViews}}\index{Views.GameViews@{Views.GameViews}!TileMaterialSand@{TileMaterialSand}}}\mbox{\Hypertarget{namespace_views_1_1_game_views_a1d19d4e08b5e471bba0c3b43bbd3753bad703583afeb253295be91ef972c7c600}\label{namespace_views_1_1_game_views_a1d19d4e08b5e471bba0c3b43bbd3753bad703583afeb253295be91ef972c7c600}} 
+Tile\+Material\+Sand&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TileMaterialSoil@{TileMaterialSoil}!Views.GameViews@{Views.GameViews}}\index{Views.GameViews@{Views.GameViews}!TileMaterialSoil@{TileMaterialSoil}}}\mbox{\Hypertarget{namespace_views_1_1_game_views_a1d19d4e08b5e471bba0c3b43bbd3753ba03d55d0579018587212c6fea6afb00a9}\label{namespace_views_1_1_game_views_a1d19d4e08b5e471bba0c3b43bbd3753ba03d55d0579018587212c6fea6afb00a9}} 
+Tile\+Material\+Soil&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TileMaterialRock@{TileMaterialRock}!Views.GameViews@{Views.GameViews}}\index{Views.GameViews@{Views.GameViews}!TileMaterialRock@{TileMaterialRock}}}\mbox{\Hypertarget{namespace_views_1_1_game_views_a1d19d4e08b5e471bba0c3b43bbd3753ba2578e2852491ccb9346ee0c3a93f32b0}\label{namespace_views_1_1_game_views_a1d19d4e08b5e471bba0c3b43bbd3753ba2578e2852491ccb9346ee0c3a93f32b0}} 
+Tile\+Material\+Rock&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TileMaterialGravel@{TileMaterialGravel}!Views.GameViews@{Views.GameViews}}\index{Views.GameViews@{Views.GameViews}!TileMaterialGravel@{TileMaterialGravel}}}\mbox{\Hypertarget{namespace_views_1_1_game_views_a1d19d4e08b5e471bba0c3b43bbd3753ba420c49306b78a88a3ab5afbfcda230f9}\label{namespace_views_1_1_game_views_a1d19d4e08b5e471bba0c3b43bbd3753ba420c49306b78a88a3ab5afbfcda230f9}} 
+Tile\+Material\+Gravel&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TileHeight@{TileHeight}!Views.GameViews@{Views.GameViews}}\index{Views.GameViews@{Views.GameViews}!TileHeight@{TileHeight}}}\mbox{\Hypertarget{namespace_views_1_1_game_views_a1d19d4e08b5e471bba0c3b43bbd3753ba5ec51b0d184dba9cef902af37ca2a166}\label{namespace_views_1_1_game_views_a1d19d4e08b5e471bba0c3b43bbd3753ba5ec51b0d184dba9cef902af37ca2a166}} 
+Tile\+Height&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TileWaterLevel@{TileWaterLevel}!Views.GameViews@{Views.GameViews}}\index{Views.GameViews@{Views.GameViews}!TileWaterLevel@{TileWaterLevel}}}\mbox{\Hypertarget{namespace_views_1_1_game_views_a1d19d4e08b5e471bba0c3b43bbd3753bab3ffbe02d54acf01f42c1e1dc4ff075d}\label{namespace_views_1_1_game_views_a1d19d4e08b5e471bba0c3b43bbd3753bab3ffbe02d54acf01f42c1e1dc4ff075d}} 
+Tile\+Water\+Level&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TileTemperature@{TileTemperature}!Views.GameViews@{Views.GameViews}}\index{Views.GameViews@{Views.GameViews}!TileTemperature@{TileTemperature}}}\mbox{\Hypertarget{namespace_views_1_1_game_views_a1d19d4e08b5e471bba0c3b43bbd3753bac2be6ffcfcce71af349b4b2c60635b98}\label{namespace_views_1_1_game_views_a1d19d4e08b5e471bba0c3b43bbd3753bac2be6ffcfcce71af349b4b2c60635b98}} 
+Tile\+Temperature&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TileHumidity@{TileHumidity}!Views.GameViews@{Views.GameViews}}\index{Views.GameViews@{Views.GameViews}!TileHumidity@{TileHumidity}}}\mbox{\Hypertarget{namespace_views_1_1_game_views_a1d19d4e08b5e471bba0c3b43bbd3753bac13af185bfeff92236be2eeba3138793}\label{namespace_views_1_1_game_views_a1d19d4e08b5e471bba0c3b43bbd3753bac13af185bfeff92236be2eeba3138793}} 
+Tile\+Humidity&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespace_views_1_1_game_views_a86404ca2f912c792c8f55ed52ca3f87b}\label{namespace_views_1_1_game_views_a86404ca2f912c792c8f55ed52ca3f87b}} 
+\index{Views.GameViews@{Views.GameViews}!CheckComparision@{CheckComparision}}
+\index{CheckComparision@{CheckComparision}!Views.GameViews@{Views.GameViews}}
+\doxysubsubsection{\texorpdfstring{CheckComparision()}{CheckComparision()}}
+{\footnotesize\ttfamily delegate bool Views.\+Game\+Views.\+Check\+Comparision (\begin{DoxyParamCaption}\item[{IComparable}]{valueA,  }\item[{IComparable}]{valueB }\end{DoxyParamCaption})}
+
+
+
+Delegate for a comparison function. 
+
+\mbox{\Hypertarget{namespace_views_1_1_game_views_ae2aade1c27a05a178f0a4cc45bdac325}\label{namespace_views_1_1_game_views_ae2aade1c27a05a178f0a4cc45bdac325}} 
+\index{Views.GameViews@{Views.GameViews}!GetUnitValue@{GetUnitValue}}
+\index{GetUnitValue@{GetUnitValue}!Views.GameViews@{Views.GameViews}}
+\doxysubsubsection{\texorpdfstring{GetUnitValue()}{GetUnitValue()}}
+{\footnotesize\ttfamily delegate IComparable Views.\+Game\+Views.\+Get\+Unit\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}}}]{unit }\end{DoxyParamCaption})}
+
+
+
+Delegate for returning a comparable value. 
+

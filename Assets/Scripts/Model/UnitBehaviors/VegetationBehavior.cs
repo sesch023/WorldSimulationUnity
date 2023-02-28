@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace Model.UnitBehaviors
 {
+    /// <summary>
+    /// This class was not finished.
+    /// </summary>
     [CreateAssetMenu(fileName = "Vegetation", menuName = "ScriptableObjects/Vegetation", order = 4)]
     public class VegetationBehavior : BaseUnitBehavior
     {

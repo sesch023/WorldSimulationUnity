@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>WorldSimulationUnity: Model.Generators.IGenerator Interface Reference</title>
+<title>World Simulation Unity: Model.Generators.IGenerator Interface Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,9 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">WorldSimulationUnity
+   <div id="projectname">World Simulation Unity
    </div>
-   <div id="projectbrief">Simulation of a world in unity.</div>
+   <div id="projectbrief">World Simulation in Unity.</div>
   </td>
  </tr>
  </tbody>
@@ -108,14 +108,18 @@ Inheritance diagram for Model.Generators.IGenerator:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac98be778bcd8726b7e0eb87d0a3db849"><td class="memItemLeft" align="right" valign="top">float[,]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_model_1_1_generators_1_1_i_generator.html#ac98be778bcd8726b7e0eb87d0a3db849">GenerateElevation</a> (int <a class="el" href="interface_model_1_1_generators_1_1_i_generator.html#aa853ae6fcce9c972a356be5d304d8178">sizeX</a>, int sizeY)</td></tr>
-<tr class="memdesc:ac98be778bcd8726b7e0eb87d0a3db849"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method for generating the map as a 2D array of floats.  <a href="interface_model_1_1_generators_1_1_i_generator.html#ac98be778bcd8726b7e0eb87d0a3db849">More...</a><br /></td></tr>
-<tr class="separator:ac98be778bcd8726b7e0eb87d0a3db849"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae445edc2e0ac48eaf204faa81d953ee1"><td class="memItemLeft" align="right" valign="top">float[,] float float max&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_model_1_1_generators_1_1_i_generator.html#ae445edc2e0ac48eaf204faa81d953ee1">GenerateElevation</a> (int <a class="el" href="interface_model_1_1_generators_1_1_i_generator.html#aa853ae6fcce9c972a356be5d304d8178">sizeX</a>, int sizeY)</td></tr>
+<tr class="separator:ae445edc2e0ac48eaf204faa81d953ee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4578fa51731209ecf2558afd97abaf5b"><td class="memItemLeft" align="right" valign="top">int int sizeY&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_model_1_1_generators_1_1_i_generator.html#a4578fa51731209ecf2558afd97abaf5b">LimitMapSizes</a> (int <a class="el" href="interface_model_1_1_generators_1_1_i_generator.html#aa853ae6fcce9c972a356be5d304d8178">sizeX</a>, int sizeY)</td></tr>
 <tr class="separator:a4578fa51731209ecf2558afd97abaf5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
+<tr class="memitem:aff05c10568883927cb7b48239fe67117"><td class="memItemLeft" align="right" valign="top">float[,]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_model_1_1_generators_1_1_i_generator.html#aff05c10568883927cb7b48239fe67117">elevation</a></td></tr>
+<tr class="memdesc:aff05c10568883927cb7b48239fe67117"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method for generating the map as a 2D arrayImmutable of floats.  <a href="interface_model_1_1_generators_1_1_i_generator.html#aff05c10568883927cb7b48239fe67117">More...</a><br /></td></tr>
+<tr class="separator:aff05c10568883927cb7b48239fe67117"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a877d23857cca7ce5bffa63e4c169d7cb"><td class="memItemLeft" align="right" valign="top">float[,] float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_model_1_1_generators_1_1_i_generator.html#a877d23857cca7ce5bffa63e4c169d7cb">min</a></td></tr>
+<tr class="separator:a877d23857cca7ce5bffa63e4c169d7cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa853ae6fcce9c972a356be5d304d8178"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_model_1_1_generators_1_1_i_generator.html#aa853ae6fcce9c972a356be5d304d8178">sizeX</a></td></tr>
 <tr class="memdesc:aa853ae6fcce9c972a356be5d304d8178"><td class="mdescLeft">&#160;</td><td class="mdescRight">Limits the size of the generated map depending on the generator's algorithm and the given parameters. The default implementation just returns the given size.  <a href="interface_model_1_1_generators_1_1_i_generator.html#aa853ae6fcce9c972a356be5d304d8178">More...</a><br /></td></tr>
 <tr class="separator:aa853ae6fcce9c972a356be5d304d8178"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -123,14 +127,14 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Basic interface for a generator. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ac98be778bcd8726b7e0eb87d0a3db849" name="ac98be778bcd8726b7e0eb87d0a3db849"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac98be778bcd8726b7e0eb87d0a3db849">&#9670;&nbsp;</a></span>GenerateElevation()</h2>
+<a id="ae445edc2e0ac48eaf204faa81d953ee1" name="ae445edc2e0ac48eaf204faa81d953ee1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae445edc2e0ac48eaf204faa81d953ee1">&#9670;&nbsp;</a></span>GenerateElevation()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float[,] Model.Generators.IGenerator.GenerateElevation </td>
+          <td class="memname">float[,] float float max Model.Generators.IGenerator.GenerateElevation </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>sizeX</em>, </td>
@@ -149,17 +153,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Method for generating the map as a 2D array of floats. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">sizeX</td><td>Width of the <a class="el" href="namespace_model_1_1_map.html" title="Namespace for the map model">Map</a>.</td></tr>
-    <tr><td class="paramname">sizeY</td><td>Height of the <a class="el" href="namespace_model_1_1_map.html" title="Namespace for the map model">Map</a>.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>2D Array of floats as generated elevation.</dd></dl>
-
-<p>Implemented in <a class="el" href="class_model_1_1_generators_1_1_base_generator.html#aeca80ef876e5d28fa65da494a1202035">Model.Generators.BaseGenerator</a>, <a class="el" href="class_model_1_1_generators_1_1_diamond_square_generator.html#af48ac5e2c6d843294941f5bde66175ea">Model.Generators.DiamondSquareGenerator</a>, <a class="el" href="class_model_1_1_generators_1_1_flat_generator.html#acd7abf488625318444806938551457c8">Model.Generators.FlatGenerator</a>, and <a class="el" href="class_model_1_1_generators_1_1_perlin_generator.html#ac2bd3743f5b68f86b43b0e2dfb58db79">Model.Generators.PerlinGenerator</a>.</p>
+<p>Implemented in <a class="el" href="class_model_1_1_generators_1_1_base_generator.html#af9f83de260b2a28fa0d28174ece0de5c">Model.Generators.BaseGenerator</a>.</p>
 
 </div>
 </div>
@@ -194,6 +188,44 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="aff05c10568883927cb7b48239fe67117" name="aff05c10568883927cb7b48239fe67117"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff05c10568883927cb7b48239fe67117">&#9670;&nbsp;</a></span>elevation</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float [,] Model.Generators.IGenerator.elevation</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Method for generating the map as a 2D arrayImmutable of floats. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sizeX</td><td>Width of the <a class="el" href="namespace_model_1_1_map.html" title="Namespace for the simulation model.">Map</a>.</td></tr>
+    <tr><td class="paramname">sizeY</td><td>Height of the <a class="el" href="namespace_model_1_1_map.html" title="Namespace for the simulation model.">Map</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>2D Array of floats as generated elevation.</dd></dl>
+
+</div>
+</div>
+<a id="a877d23857cca7ce5bffa63e4c169d7cb" name="a877d23857cca7ce5bffa63e4c169d7cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a877d23857cca7ce5bffa63e4c169d7cb">&#9670;&nbsp;</a></span>min</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float [,] float Model.Generators.IGenerator.min</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aa853ae6fcce9c972a356be5d304d8178" name="aa853ae6fcce9c972a356be5d304d8178"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa853ae6fcce9c972a356be5d304d8178">&#9670;&nbsp;</a></span>sizeX</h2>
 

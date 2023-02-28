@@ -1,0 +1,219 @@
+\hypertarget{class_model_1_1_feature_1_1_water_body}{}\doxysection{Model.\+Feature.\+Water\+Body Class Reference}
+\label{class_model_1_1_feature_1_1_water_body}\index{Model.Feature.WaterBody@{Model.Feature.WaterBody}}
+
+
+A complex water body that can be filled by a specific amount of water. It will create overflows if the water would in nature flow over the edge of the water body. It also supports merging with other water bodies. Does not support splitting or removing water.  
+
+
+Inheritance diagram for Model.\+Feature.\+Water\+Body\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_model_1_1_feature_1_1_water_body}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_model_1_1_feature_1_1_water_body_a3885f14e4eeeb1463bb778c914f7d203}{Water\+Body}} (\mbox{\hyperlink{class_model_1_1_map_1_1_map}{Map.\+Map}} map, Vector2\+Int initial\+Position, float water\+Volume)
+\begin{DoxyCompactList}\small\item\em Create a new water body at the given position with the given volume on the given map. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_model_1_1_feature_1_1_water_body_a7c074bb4207679af8b0502f157da3822}{Get\+Capacity\+Before\+Resize}} ()
+\begin{DoxyCompactList}\small\item\em Gets the capacity of the next resizing step. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_model_1_1_feature_1_1_water_body_ae32d8c7c7ddfdd0188ca5e940cf78ffe}{Add\+Volume}} (float volume)
+\begin{DoxyCompactList}\small\item\em Adds water volume to the water body. \end{DoxyCompactList}\item 
+Vector2\+Int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_model_1_1_feature_1_1_water_body_a57a7b6b75b114fcfd0dd7d7ae9bb58b0}{Get\+Feature\+Positions}} ()
+\begin{DoxyCompactList}\small\item\em Collection of points that make up the feature. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_model_1_1_feature_1_1_water_body_a4028f64faa0170a2e7f341d63e3eb305}{In\+Body}} (Vector2\+Int position)
+\begin{DoxyCompactList}\small\item\em Checks if the given point is inside the body. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_model_1_1_feature_1_1_water_body}{Water\+Body}} \mbox{\hyperlink{class_model_1_1_feature_1_1_water_body_a3281dbf6024ea9d18bf8bf1f68f9b8aa}{Merge\+Bodies\+Of\+Water\+Into\+First}} (\mbox{\hyperlink{class_model_1_1_feature_1_1_water_body}{Water\+Body}} body1, \mbox{\hyperlink{class_model_1_1_feature_1_1_water_body}{Water\+Body}} body2)
+\begin{DoxyCompactList}\small\item\em Merge the water body with another water body. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Vector2\+Int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_model_1_1_feature_1_1_water_body_ae061ab559b6bfbc435c45decc3001835}{Shallow\+Points}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Shallow points of the water body. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_model_1_1_feature_1_1_water_body_a45c1f74919c236055bf7be2a096b1dc3}{Shallow\+Point\+Elevation}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Elevations of the shallow points. \end{DoxyCompactList}\item 
+Vector2\+Int \mbox{\hyperlink{class_model_1_1_feature_1_1_water_body_af44aca591ff92e48493c40c974d5f477}{Deepest\+Point}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Deep points of the water body. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_model_1_1_feature_1_1_water_body_a732691b4e9b810b4b768aba2fbd91ea2}{Water\+Volume}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Total volume of water in the water body. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_model_1_1_feature_1_1_water_body_a9729a25ffd05dfb593c0a01e39952b2e}{Current\+Absolute\+Water\+Level}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Absolut water level over the ground level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A complex water body that can be filled by a specific amount of water. It will create overflows if the water would in nature flow over the edge of the water body. It also supports merging with other water bodies. Does not support splitting or removing water. 
+
+Currently there is still a bug where the water bodies multiply water volume when merging and overflowing. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_model_1_1_feature_1_1_water_body_a3885f14e4eeeb1463bb778c914f7d203}\label{class_model_1_1_feature_1_1_water_body_a3885f14e4eeeb1463bb778c914f7d203}} 
+\index{Model.Feature.WaterBody@{Model.Feature.WaterBody}!WaterBody@{WaterBody}}
+\index{WaterBody@{WaterBody}!Model.Feature.WaterBody@{Model.Feature.WaterBody}}
+\doxysubsubsection{\texorpdfstring{WaterBody()}{WaterBody()}}
+{\footnotesize\ttfamily Model.\+Feature.\+Water\+Body.\+Water\+Body (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_model_1_1_map_1_1_map}{Map.\+Map}}}]{map,  }\item[{Vector2\+Int}]{initial\+Position,  }\item[{float}]{water\+Volume }\end{DoxyParamCaption})}
+
+
+
+Create a new water body at the given position with the given volume on the given map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & \mbox{\hyperlink{namespace_model_1_1_map}{Map}} the body is created on.\\
+\hline
+{\em initial\+Position} & \\
+\hline
+{\em water\+Volume} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_model_1_1_feature_1_1_water_body_ae32d8c7c7ddfdd0188ca5e940cf78ffe}\label{class_model_1_1_feature_1_1_water_body_ae32d8c7c7ddfdd0188ca5e940cf78ffe}} 
+\index{Model.Feature.WaterBody@{Model.Feature.WaterBody}!AddVolume@{AddVolume}}
+\index{AddVolume@{AddVolume}!Model.Feature.WaterBody@{Model.Feature.WaterBody}}
+\doxysubsubsection{\texorpdfstring{AddVolume()}{AddVolume()}}
+{\footnotesize\ttfamily void Model.\+Feature.\+Water\+Body.\+Add\+Volume (\begin{DoxyParamCaption}\item[{float}]{volume }\end{DoxyParamCaption})}
+
+
+
+Adds water volume to the water body. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em volume} & Amount of volume to add.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_1_1_feature_1_1_water_body_a7c074bb4207679af8b0502f157da3822}\label{class_model_1_1_feature_1_1_water_body_a7c074bb4207679af8b0502f157da3822}} 
+\index{Model.Feature.WaterBody@{Model.Feature.WaterBody}!GetCapacityBeforeResize@{GetCapacityBeforeResize}}
+\index{GetCapacityBeforeResize@{GetCapacityBeforeResize}!Model.Feature.WaterBody@{Model.Feature.WaterBody}}
+\doxysubsubsection{\texorpdfstring{GetCapacityBeforeResize()}{GetCapacityBeforeResize()}}
+{\footnotesize\ttfamily float Model.\+Feature.\+Water\+Body.\+Get\+Capacity\+Before\+Resize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the capacity of the next resizing step. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_model_1_1_feature_1_1_water_body_a57a7b6b75b114fcfd0dd7d7ae9bb58b0}\label{class_model_1_1_feature_1_1_water_body_a57a7b6b75b114fcfd0dd7d7ae9bb58b0}} 
+\index{Model.Feature.WaterBody@{Model.Feature.WaterBody}!GetFeaturePositions@{GetFeaturePositions}}
+\index{GetFeaturePositions@{GetFeaturePositions}!Model.Feature.WaterBody@{Model.Feature.WaterBody}}
+\doxysubsubsection{\texorpdfstring{GetFeaturePositions()}{GetFeaturePositions()}}
+{\footnotesize\ttfamily Vector2\+Int\mbox{[}$\,$\mbox{]} Model.\+Feature.\+Water\+Body.\+Get\+Feature\+Positions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Collection of points that make up the feature. 
+
+\begin{DoxyReturn}{Returns}
+Collection of points that make up the feature.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_model_1_1_feature_1_1_i_feature_a496ed4e35d7f0ae894d4e4866be72ea7}{Model.\+Feature.\+IFeature}}.
+
+\mbox{\Hypertarget{class_model_1_1_feature_1_1_water_body_a4028f64faa0170a2e7f341d63e3eb305}\label{class_model_1_1_feature_1_1_water_body_a4028f64faa0170a2e7f341d63e3eb305}} 
+\index{Model.Feature.WaterBody@{Model.Feature.WaterBody}!InBody@{InBody}}
+\index{InBody@{InBody}!Model.Feature.WaterBody@{Model.Feature.WaterBody}}
+\doxysubsubsection{\texorpdfstring{InBody()}{InBody()}}
+{\footnotesize\ttfamily bool Model.\+Feature.\+Water\+Body.\+In\+Body (\begin{DoxyParamCaption}\item[{Vector2\+Int}]{position }\end{DoxyParamCaption})}
+
+
+
+Checks if the given point is inside the body. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Vector2 to check.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True, if the point is inside the body.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_model_1_1_feature_1_1_i_body_a5adc2d4e0e1cdbbcd96df32a6e6630f1}{Model.\+Feature.\+IBody}}.
+
+\mbox{\Hypertarget{class_model_1_1_feature_1_1_water_body_a3281dbf6024ea9d18bf8bf1f68f9b8aa}\label{class_model_1_1_feature_1_1_water_body_a3281dbf6024ea9d18bf8bf1f68f9b8aa}} 
+\index{Model.Feature.WaterBody@{Model.Feature.WaterBody}!MergeBodiesOfWaterIntoFirst@{MergeBodiesOfWaterIntoFirst}}
+\index{MergeBodiesOfWaterIntoFirst@{MergeBodiesOfWaterIntoFirst}!Model.Feature.WaterBody@{Model.Feature.WaterBody}}
+\doxysubsubsection{\texorpdfstring{MergeBodiesOfWaterIntoFirst()}{MergeBodiesOfWaterIntoFirst()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_model_1_1_feature_1_1_water_body}{Water\+Body}} Model.\+Feature.\+Water\+Body.\+Merge\+Bodies\+Of\+Water\+Into\+First (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_model_1_1_feature_1_1_water_body}{Water\+Body}}}]{body1,  }\item[{\mbox{\hyperlink{class_model_1_1_feature_1_1_water_body}{Water\+Body}}}]{body2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Merge the water body with another water body. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em body1} & Body to merge into.\\
+\hline
+{\em body2} & Body that merges.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Merged body of water.
+\end{DoxyReturn}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_model_1_1_feature_1_1_water_body_a9729a25ffd05dfb593c0a01e39952b2e}\label{class_model_1_1_feature_1_1_water_body_a9729a25ffd05dfb593c0a01e39952b2e}} 
+\index{Model.Feature.WaterBody@{Model.Feature.WaterBody}!CurrentAbsoluteWaterLevel@{CurrentAbsoluteWaterLevel}}
+\index{CurrentAbsoluteWaterLevel@{CurrentAbsoluteWaterLevel}!Model.Feature.WaterBody@{Model.Feature.WaterBody}}
+\doxysubsubsection{\texorpdfstring{CurrentAbsoluteWaterLevel}{CurrentAbsoluteWaterLevel}}
+{\footnotesize\ttfamily float Model.\+Feature.\+Water\+Body.\+Current\+Absolute\+Water\+Level\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Absolut water level over the ground level. 
+
+\mbox{\Hypertarget{class_model_1_1_feature_1_1_water_body_af44aca591ff92e48493c40c974d5f477}\label{class_model_1_1_feature_1_1_water_body_af44aca591ff92e48493c40c974d5f477}} 
+\index{Model.Feature.WaterBody@{Model.Feature.WaterBody}!DeepestPoint@{DeepestPoint}}
+\index{DeepestPoint@{DeepestPoint}!Model.Feature.WaterBody@{Model.Feature.WaterBody}}
+\doxysubsubsection{\texorpdfstring{DeepestPoint}{DeepestPoint}}
+{\footnotesize\ttfamily Vector2\+Int Model.\+Feature.\+Water\+Body.\+Deepest\+Point\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Deep points of the water body. 
+
+\mbox{\Hypertarget{class_model_1_1_feature_1_1_water_body_a45c1f74919c236055bf7be2a096b1dc3}\label{class_model_1_1_feature_1_1_water_body_a45c1f74919c236055bf7be2a096b1dc3}} 
+\index{Model.Feature.WaterBody@{Model.Feature.WaterBody}!ShallowPointElevation@{ShallowPointElevation}}
+\index{ShallowPointElevation@{ShallowPointElevation}!Model.Feature.WaterBody@{Model.Feature.WaterBody}}
+\doxysubsubsection{\texorpdfstring{ShallowPointElevation}{ShallowPointElevation}}
+{\footnotesize\ttfamily float Model.\+Feature.\+Water\+Body.\+Shallow\+Point\+Elevation\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Elevations of the shallow points. 
+
+\mbox{\Hypertarget{class_model_1_1_feature_1_1_water_body_ae061ab559b6bfbc435c45decc3001835}\label{class_model_1_1_feature_1_1_water_body_ae061ab559b6bfbc435c45decc3001835}} 
+\index{Model.Feature.WaterBody@{Model.Feature.WaterBody}!ShallowPoints@{ShallowPoints}}
+\index{ShallowPoints@{ShallowPoints}!Model.Feature.WaterBody@{Model.Feature.WaterBody}}
+\doxysubsubsection{\texorpdfstring{ShallowPoints}{ShallowPoints}}
+{\footnotesize\ttfamily Vector2\+Int \mbox{[}$\,$\mbox{]} Model.\+Feature.\+Water\+Body.\+Shallow\+Points\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Shallow points of the water body. 
+
+\mbox{\Hypertarget{class_model_1_1_feature_1_1_water_body_a732691b4e9b810b4b768aba2fbd91ea2}\label{class_model_1_1_feature_1_1_water_body_a732691b4e9b810b4b768aba2fbd91ea2}} 
+\index{Model.Feature.WaterBody@{Model.Feature.WaterBody}!WaterVolume@{WaterVolume}}
+\index{WaterVolume@{WaterVolume}!Model.Feature.WaterBody@{Model.Feature.WaterBody}}
+\doxysubsubsection{\texorpdfstring{WaterVolume}{WaterVolume}}
+{\footnotesize\ttfamily float Model.\+Feature.\+Water\+Body.\+Water\+Volume\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Total volume of water in the water body. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Model/\+Feature/\mbox{\hyperlink{_water_body_8cs}{Water\+Body.\+cs}}\end{DoxyCompactItemize}

@@ -14,6 +14,16 @@ Inheritance diagram for Model.\+Map.\+Map\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+void \mbox{\hyperlink{class_model_1_1_map_1_1_map_ae267613278fd49505cfc2a027e37bee3}{Add\+Body}} (\mbox{\hyperlink{interface_model_1_1_feature_1_1_i_body}{IBody}} body)
+\item 
+void \mbox{\hyperlink{class_model_1_1_map_1_1_map_a27f2da423f303977aa94f394b5af86e4}{Add\+Water\+Body}} (Vector2\+Int initial\+Position, float volume)
+\item 
+void \mbox{\hyperlink{class_model_1_1_map_1_1_map_a51a472c5b05b6a7da53cd940c68025a8}{Remove\+Body}} (\mbox{\hyperlink{interface_model_1_1_feature_1_1_i_body}{IBody}} body)
+\item 
+\mbox{\hyperlink{class_model_1_1_feature_1_1_water_body}{Water\+Body}} \mbox{\hyperlink{class_model_1_1_map_1_1_map_a796a7194d11e1a68c441e187c5bf0665}{Get\+Body\+Of\+Water\+By\+Position}} (Vector2\+Int pos)
+\item 
+void \mbox{\hyperlink{class_model_1_1_map_1_1_map_a69ff596a966e1ed3a0e27d1256050687}{Merge\+Body\+Of\+Water}} (Vector2\+Int pos1, Vector2\+Int pos2)
+\item 
 void \mbox{\hyperlink{class_model_1_1_map_1_1_map_a489c30f7cfdd35d18eaa396573ada07a}{Update}} ()
 \begin{DoxyCompactList}\small\item\em Executes the update method of the map by triggering the update of the units. \end{DoxyCompactList}\item 
 Vector2\+Int\mbox{[}$\,$\mbox{]} Vector2\+Int\mbox{[}$\,$\mbox{]} Vector2\+Int\mbox{[}$\,$\mbox{]} valley\+Exits \mbox{\hyperlink{class_model_1_1_map_1_1_map_a61bf9a5ff5d815c52c8923cbddececee}{Get\+Valley}} (Vector2\+Int position)
@@ -23,7 +33,13 @@ Vector2\+Int\mbox{[}$\,$\mbox{]} Vector2\+Int\mbox{[}$\,$\mbox{]} Vector2\+Int\m
 Vector2\+Int\mbox{[}$\,$\mbox{]} Vector2\+Int\mbox{[}$\,$\mbox{]} Vector2\+Int\mbox{[}$\,$\mbox{]} group\+Exits \mbox{\hyperlink{class_model_1_1_map_1_1_map_ab47b7f6e1cccc8df871b0f14831be85b}{Get\+Terrain\+Group}} (Vector2\+Int position)
 \item 
 Vector2\+Int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_model_1_1_map_1_1_map_a1fc3854fe5d3ef303c184d3169b6b149}{Get\+Slope\+Line}} (Vector2\+Int start, float momentum\+Multiplier=1.\+0f, float max\+Momentum\+Fraction=1.\+0f)
-\begin{DoxyCompactList}\small\item\em Finds a slope at the given position by trying to find a way to the bottom of a valley. It is not always possible to find a well defined slope at the moment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Finds a slope at the given position by trying to find a way to the bottom of a valley. It is not always possible to find a well defined slope at the moment. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}} \mbox{\hyperlink{class_model_1_1_map_1_1_map_af78d1c2c56733d5cddf0c2ef94ae21c0}{Vector2\+Int\+To\+Map\+Unit}} (Vector2\+Int position)
+\item 
+\mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}}\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_model_1_1_map_1_1_map_ad7912966773f1119e244c55120eea700}{Vector2\+Int\+Array\+To\+Map\+Units}} (Vector2\+Int\mbox{[}$\,$\mbox{]} positions)
+\item 
+\mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}} \mbox{\hyperlink{class_model_1_1_map_1_1_map_a1f23a2989fbc22aa880d3a6fa533f5fa}{Get\+Map\+Unit\+By\+Lat\+Long}} (float lat, float lon)
+\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -51,6 +67,14 @@ int \mbox{\hyperlink{class_model_1_1_map_1_1_map_a379b0b30c8166e54ebbb86b054b228
 \begin{DoxyCompactList}\small\item\em Width of the \mbox{\hyperlink{class_model_1_1_map_1_1_map}{Map}}. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_model_1_1_map_1_1_map_a4a95fb58a087fddaadced5d4ba466bb7}{SizeY}} = 1025\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Height of the \mbox{\hyperlink{class_model_1_1_map_1_1_map}{Map}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_model_1_1_map_1_1_map_a4f5ba9d3fd9e0f24a7d8e2281627dda6}{Ticks\+Per\+Rotation}} = 576\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+float \mbox{\hyperlink{class_model_1_1_map_1_1_map_a42f3d982c43cd5b22ce43b0c5e282985}{Atmospheric\+Greenhouse\+Factor}} = 1.\+2f\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+float \mbox{\hyperlink{class_model_1_1_map_1_1_map_a5094fa54a987f1dc26b172067a171b54}{Base\+Atmospheric\+Pressure}} = 1.\+0f\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+float \mbox{\hyperlink{class_model_1_1_map_1_1_map_a4d056f41d80cb84dc46deaff602bff23}{Albedo}} = 0.\+3f\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
 \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}}\mbox{[},\mbox{]} \mbox{\hyperlink{class_model_1_1_map_1_1_map_af452313778eab35d9069d15d267e5ece}{Map\+Units}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Units of the map. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -59,6 +83,30 @@ int \mbox{\hyperlink{class_model_1_1_map_1_1_map_a4a95fb58a087fddaadced5d4ba466b
 \mbox{\hyperlink{class_model_1_1_map_1_1_map}{Map}} in the Game. It represents the entire world. 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_model_1_1_map_1_1_map_ae267613278fd49505cfc2a027e37bee3}\label{class_model_1_1_map_1_1_map_ae267613278fd49505cfc2a027e37bee3}} 
+\index{Model.Map.Map@{Model.Map.Map}!AddBody@{AddBody}}
+\index{AddBody@{AddBody}!Model.Map.Map@{Model.Map.Map}}
+\doxysubsubsection{\texorpdfstring{AddBody()}{AddBody()}}
+{\footnotesize\ttfamily void Model.\+Map.\+Map.\+Add\+Body (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_model_1_1_feature_1_1_i_body}{IBody}}}]{body }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_model_1_1_map_1_1_map_a27f2da423f303977aa94f394b5af86e4}\label{class_model_1_1_map_1_1_map_a27f2da423f303977aa94f394b5af86e4}} 
+\index{Model.Map.Map@{Model.Map.Map}!AddWaterBody@{AddWaterBody}}
+\index{AddWaterBody@{AddWaterBody}!Model.Map.Map@{Model.Map.Map}}
+\doxysubsubsection{\texorpdfstring{AddWaterBody()}{AddWaterBody()}}
+{\footnotesize\ttfamily void Model.\+Map.\+Map.\+Add\+Water\+Body (\begin{DoxyParamCaption}\item[{Vector2\+Int}]{initial\+Position,  }\item[{float}]{volume }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_model_1_1_map_1_1_map_a796a7194d11e1a68c441e187c5bf0665}\label{class_model_1_1_map_1_1_map_a796a7194d11e1a68c441e187c5bf0665}} 
+\index{Model.Map.Map@{Model.Map.Map}!GetBodyOfWaterByPosition@{GetBodyOfWaterByPosition}}
+\index{GetBodyOfWaterByPosition@{GetBodyOfWaterByPosition}!Model.Map.Map@{Model.Map.Map}}
+\doxysubsubsection{\texorpdfstring{GetBodyOfWaterByPosition()}{GetBodyOfWaterByPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_model_1_1_feature_1_1_water_body}{Water\+Body}} Model.\+Map.\+Map.\+Get\+Body\+Of\+Water\+By\+Position (\begin{DoxyParamCaption}\item[{Vector2\+Int}]{pos }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_model_1_1_map_1_1_map_a1f23a2989fbc22aa880d3a6fa533f5fa}\label{class_model_1_1_map_1_1_map_a1f23a2989fbc22aa880d3a6fa533f5fa}} 
+\index{Model.Map.Map@{Model.Map.Map}!GetMapUnitByLatLong@{GetMapUnitByLatLong}}
+\index{GetMapUnitByLatLong@{GetMapUnitByLatLong}!Model.Map.Map@{Model.Map.Map}}
+\doxysubsubsection{\texorpdfstring{GetMapUnitByLatLong()}{GetMapUnitByLatLong()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}} Model.\+Map.\+Map.\+Get\+Map\+Unit\+By\+Lat\+Long (\begin{DoxyParamCaption}\item[{float}]{lat,  }\item[{float}]{lon }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{class_model_1_1_map_1_1_map_a2b18f9268cea5466e4bf914241fdfb7c}\label{class_model_1_1_map_1_1_map_a2b18f9268cea5466e4bf914241fdfb7c}} 
 \index{Model.Map.Map@{Model.Map.Map}!GetPeak@{GetPeak}}
 \index{GetPeak@{GetPeak}!Model.Map.Map@{Model.Map.Map}}
@@ -77,7 +125,7 @@ Finds a slope at the given position by trying to find a way to the bottom of a v
 
 
 \begin{DoxyParams}{Parameters}
-{\em start} & Position to find a slope at.\\
+{\em start} & Map\+Position\+Vec to find a slope at.\\
 \hline
 {\em momentum\+Multiplier} & Multiplier of momentum to make the algorithm slip over local minimals.\\
 \hline
@@ -99,6 +147,18 @@ Positions of the slope in order from highest to lowest.
 \doxysubsubsection{\texorpdfstring{GetValley()}{GetValley()}}
 {\footnotesize\ttfamily Vector2\+Int\mbox{[}$\,$\mbox{]} Vector2\+Int\mbox{[}$\,$\mbox{]} Vector2\+Int\mbox{[}$\,$\mbox{]} valley\+Exits Model.\+Map.\+Map.\+Get\+Valley (\begin{DoxyParamCaption}\item[{Vector2\+Int}]{position }\end{DoxyParamCaption})}
 
+\mbox{\Hypertarget{class_model_1_1_map_1_1_map_a69ff596a966e1ed3a0e27d1256050687}\label{class_model_1_1_map_1_1_map_a69ff596a966e1ed3a0e27d1256050687}} 
+\index{Model.Map.Map@{Model.Map.Map}!MergeBodyOfWater@{MergeBodyOfWater}}
+\index{MergeBodyOfWater@{MergeBodyOfWater}!Model.Map.Map@{Model.Map.Map}}
+\doxysubsubsection{\texorpdfstring{MergeBodyOfWater()}{MergeBodyOfWater()}}
+{\footnotesize\ttfamily void Model.\+Map.\+Map.\+Merge\+Body\+Of\+Water (\begin{DoxyParamCaption}\item[{Vector2\+Int}]{pos1,  }\item[{Vector2\+Int}]{pos2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_model_1_1_map_1_1_map_a51a472c5b05b6a7da53cd940c68025a8}\label{class_model_1_1_map_1_1_map_a51a472c5b05b6a7da53cd940c68025a8}} 
+\index{Model.Map.Map@{Model.Map.Map}!RemoveBody@{RemoveBody}}
+\index{RemoveBody@{RemoveBody}!Model.Map.Map@{Model.Map.Map}}
+\doxysubsubsection{\texorpdfstring{RemoveBody()}{RemoveBody()}}
+{\footnotesize\ttfamily void Model.\+Map.\+Map.\+Remove\+Body (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_model_1_1_feature_1_1_i_body}{IBody}}}]{body }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{class_model_1_1_map_1_1_map_a489c30f7cfdd35d18eaa396573ada07a}\label{class_model_1_1_map_1_1_map_a489c30f7cfdd35d18eaa396573ada07a}} 
 \index{Model.Map.Map@{Model.Map.Map}!Update@{Update}}
 \index{Update@{Update}!Model.Map.Map@{Model.Map.Map}}
@@ -112,6 +172,18 @@ Executes the update method of the map by triggering the update of the units.
 
 
 Implements \mbox{\hyperlink{interface_base_1_1_i_updatable_a1983d03de50becea9925ab50db45752d}{Base.\+IUpdatable}}.
+
+\mbox{\Hypertarget{class_model_1_1_map_1_1_map_ad7912966773f1119e244c55120eea700}\label{class_model_1_1_map_1_1_map_ad7912966773f1119e244c55120eea700}} 
+\index{Model.Map.Map@{Model.Map.Map}!Vector2IntArrayToMapUnits@{Vector2IntArrayToMapUnits}}
+\index{Vector2IntArrayToMapUnits@{Vector2IntArrayToMapUnits}!Model.Map.Map@{Model.Map.Map}}
+\doxysubsubsection{\texorpdfstring{Vector2IntArrayToMapUnits()}{Vector2IntArrayToMapUnits()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}}\mbox{[}$\,$\mbox{]} Model.\+Map.\+Map.\+Vector2\+Int\+Array\+To\+Map\+Units (\begin{DoxyParamCaption}\item[{Vector2\+Int\mbox{[}$\,$\mbox{]}}]{positions }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_model_1_1_map_1_1_map_af78d1c2c56733d5cddf0c2ef94ae21c0}\label{class_model_1_1_map_1_1_map_af78d1c2c56733d5cddf0c2ef94ae21c0}} 
+\index{Model.Map.Map@{Model.Map.Map}!Vector2IntToMapUnit@{Vector2IntToMapUnit}}
+\index{Vector2IntToMapUnit@{Vector2IntToMapUnit}!Model.Map.Map@{Model.Map.Map}}
+\doxysubsubsection{\texorpdfstring{Vector2IntToMapUnit()}{Vector2IntToMapUnit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}} Model.\+Map.\+Map.\+Vector2\+Int\+To\+Map\+Unit (\begin{DoxyParamCaption}\item[{Vector2\+Int}]{position }\end{DoxyParamCaption})}
 
 
 
@@ -130,7 +202,7 @@ Currently only works for peaks and valleys.
 
 
 \begin{DoxyParams}{Parameters}
-{\em position} & Position to find a group at.\\
+{\em position} & Map\+Position\+Vec to find a group at.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -154,7 +226,7 @@ Returns a peak at the given position by taking all tiles with higher elevation n
 
 
 \begin{DoxyParams}{Parameters}
-{\em position} & Position to find a peak at.\\
+{\em position} & Map\+Position\+Vec to find a peak at.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -188,7 +260,7 @@ Returns a valley at the given position by taking all tiles with lower elevation 
 
 
 \begin{DoxyParams}{Parameters}
-{\em position} & Position to find a valley at.\\
+{\em position} & Map\+Position\+Vec to find a valley at.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -203,6 +275,24 @@ Tiles of the valley, Border of the valley, Exits of the valley.
 
 
 \doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_model_1_1_map_1_1_map_a4d056f41d80cb84dc46deaff602bff23}\label{class_model_1_1_map_1_1_map_a4d056f41d80cb84dc46deaff602bff23}} 
+\index{Model.Map.Map@{Model.Map.Map}!Albedo@{Albedo}}
+\index{Albedo@{Albedo}!Model.Map.Map@{Model.Map.Map}}
+\doxysubsubsection{\texorpdfstring{Albedo}{Albedo}}
+{\footnotesize\ttfamily float Model.\+Map.\+Map.\+Albedo = 0.\+3f\hspace{0.3cm}{\ttfamily [get]}}
+
+\mbox{\Hypertarget{class_model_1_1_map_1_1_map_a42f3d982c43cd5b22ce43b0c5e282985}\label{class_model_1_1_map_1_1_map_a42f3d982c43cd5b22ce43b0c5e282985}} 
+\index{Model.Map.Map@{Model.Map.Map}!AtmosphericGreenhouseFactor@{AtmosphericGreenhouseFactor}}
+\index{AtmosphericGreenhouseFactor@{AtmosphericGreenhouseFactor}!Model.Map.Map@{Model.Map.Map}}
+\doxysubsubsection{\texorpdfstring{AtmosphericGreenhouseFactor}{AtmosphericGreenhouseFactor}}
+{\footnotesize\ttfamily float Model.\+Map.\+Map.\+Atmospheric\+Greenhouse\+Factor = 1.\+2f\hspace{0.3cm}{\ttfamily [get]}}
+
+\mbox{\Hypertarget{class_model_1_1_map_1_1_map_a5094fa54a987f1dc26b172067a171b54}\label{class_model_1_1_map_1_1_map_a5094fa54a987f1dc26b172067a171b54}} 
+\index{Model.Map.Map@{Model.Map.Map}!BaseAtmosphericPressure@{BaseAtmosphericPressure}}
+\index{BaseAtmosphericPressure@{BaseAtmosphericPressure}!Model.Map.Map@{Model.Map.Map}}
+\doxysubsubsection{\texorpdfstring{BaseAtmosphericPressure}{BaseAtmosphericPressure}}
+{\footnotesize\ttfamily float Model.\+Map.\+Map.\+Base\+Atmospheric\+Pressure = 1.\+0f\hspace{0.3cm}{\ttfamily [get]}}
+
 \mbox{\Hypertarget{class_model_1_1_map_1_1_map_af452313778eab35d9069d15d267e5ece}\label{class_model_1_1_map_1_1_map_af452313778eab35d9069d15d267e5ece}} 
 \index{Model.Map.Map@{Model.Map.Map}!MapUnits@{MapUnits}}
 \index{MapUnits@{MapUnits}!Model.Map.Map@{Model.Map.Map}}
@@ -232,6 +322,12 @@ Width of the \mbox{\hyperlink{class_model_1_1_map_1_1_map}{Map}}.
 
 
 Height of the \mbox{\hyperlink{class_model_1_1_map_1_1_map}{Map}}. 
+
+\mbox{\Hypertarget{class_model_1_1_map_1_1_map_a4f5ba9d3fd9e0f24a7d8e2281627dda6}\label{class_model_1_1_map_1_1_map_a4f5ba9d3fd9e0f24a7d8e2281627dda6}} 
+\index{Model.Map.Map@{Model.Map.Map}!TicksPerRotation@{TicksPerRotation}}
+\index{TicksPerRotation@{TicksPerRotation}!Model.Map.Map@{Model.Map.Map}}
+\doxysubsubsection{\texorpdfstring{TicksPerRotation}{TicksPerRotation}}
+{\footnotesize\ttfamily int Model.\+Map.\+Map.\+Ticks\+Per\+Rotation = 576\hspace{0.3cm}{\ttfamily [get]}}
 
 
 

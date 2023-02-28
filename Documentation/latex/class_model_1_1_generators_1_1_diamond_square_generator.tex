@@ -14,8 +14,8 @@ Inheritance diagram for Model.\+Generators.\+Diamond\+Square\+Generator\+:\begin
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_model_1_1_generators_1_1_diamond_square_generator_a77e39eb650f38bddd6da130f0af5e83f}{override}} float\mbox{[},\mbox{]} \mbox{\hyperlink{class_model_1_1_generators_1_1_diamond_square_generator_af48ac5e2c6d843294941f5bde66175ea}{Generate\+Elevation}} (int \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_a83b4d43f35fdec982ee1710597d04a81}{sizeX}}, int sizeY)
-\begin{DoxyCompactList}\small\item\em Generate a heightmap using the diamond-\/square algorithm. Then normalize the heightmap. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_model_1_1_generators_1_1_diamond_square_generator_ae1a1f11b084876d05f54345eea01b997}{override}} (float\mbox{[},\mbox{]} \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_acb45ab3982c73ab8f897f2ac677515de}{elevation}}, float \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_a4fe0fca7c834c903847f74a19c625fdc}{min}}, float max) \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_af9f83de260b2a28fa0d28174ece0de5c}{Generate\+Elevation}}(int \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_a83b4d43f35fdec982ee1710597d04a81}{sizeX}}
+\begin{DoxyCompactList}\small\item\em Generate a heightmap using the diamond-\/square algorithm. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_model_1_1_generators_1_1_diamond_square_generator_a77e39eb650f38bddd6da130f0af5e83f}{override}} (int \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_a83b4d43f35fdec982ee1710597d04a81}{sizeX}}, int sizeY) \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_a387835d6be15ca3158d9d187bafd96f3}{Limit\+Map\+Sizes}}(int \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_a83b4d43f35fdec982ee1710597d04a81}{sizeX}}
 \begin{DoxyCompactList}\small\item\em Limits the size of the generated map. The diamond square algorithm is not able to generate maps with sizes that are not a (power of 2) + 1. This method ensures that the map size is a (power of 2) + 1 by taking the bigger of the two values and calculating the next (power of 2) + 1. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
@@ -25,17 +25,17 @@ Inheritance diagram for Model.\+Generators.\+Diamond\+Square\+Generator\+:\begin
 \mbox{\hyperlink{class_model_1_1_generators_1_1_diamond_square_generator}{Diamond\+Square\+Generator}} which generates a heightmap using the diamond-\/square algorithm. 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_model_1_1_generators_1_1_diamond_square_generator_af48ac5e2c6d843294941f5bde66175ea}\label{class_model_1_1_generators_1_1_diamond_square_generator_af48ac5e2c6d843294941f5bde66175ea}} 
-\index{Model.Generators.DiamondSquareGenerator@{Model.Generators.DiamondSquareGenerator}!GenerateElevation@{GenerateElevation}}
-\index{GenerateElevation@{GenerateElevation}!Model.Generators.DiamondSquareGenerator@{Model.Generators.DiamondSquareGenerator}}
-\doxysubsubsection{\texorpdfstring{GenerateElevation()}{GenerateElevation()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_model_1_1_generators_1_1_diamond_square_generator_a77e39eb650f38bddd6da130f0af5e83f}{override}} float\mbox{[},\mbox{]} Model.\+Generators.\+Diamond\+Square\+Generator.\+Generate\+Elevation (\begin{DoxyParamCaption}\item[{int}]{sizeX,  }\item[{int}]{sizeY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+\mbox{\Hypertarget{class_model_1_1_generators_1_1_diamond_square_generator_ae1a1f11b084876d05f54345eea01b997}\label{class_model_1_1_generators_1_1_diamond_square_generator_ae1a1f11b084876d05f54345eea01b997}} 
+\index{Model.Generators.DiamondSquareGenerator@{Model.Generators.DiamondSquareGenerator}!override@{override}}
+\index{override@{override}!Model.Generators.DiamondSquareGenerator@{Model.Generators.DiamondSquareGenerator}}
+\doxysubsubsection{\texorpdfstring{override()}{override()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Model.\+Generators.\+Diamond\+Square\+Generator.\+override (\begin{DoxyParamCaption}\item[{float}]{elevation\mbox{[},\mbox{]},  }\item[{float}]{min,  }\item[{float}]{max }\end{DoxyParamCaption})}
 
 
 
-Generate a heightmap using the diamond-\/square algorithm. Then normalize the heightmap. 
+Generate a heightmap using the diamond-\/square algorithm. 
 
-\href{https://de.wikipedia.org/wiki/Diamond-square_Algorithmus}{\texttt{ https\+://de.\+wikipedia.\+org/wiki/\+Diamond-\/square\+\_\+\+Algorithmus}} 
+Basierend auf\+: \href{https://de.wikipedia.org/wiki/Diamond-square_Algorithmus}{\texttt{ https\+://de.\+wikipedia.\+org/wiki/\+Diamond-\/square\+\_\+\+Algorithmus}} 
 
 
 \begin{DoxyParams}{Parameters}
@@ -47,14 +47,10 @@ Generate a heightmap using the diamond-\/square algorithm. Then normalize the he
 \begin{DoxyReturn}{Returns}
 2D Array of floats as generated elevation.
 \end{DoxyReturn}
-
-
-Implements \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_aeca80ef876e5d28fa65da494a1202035}{Model.\+Generators.\+Base\+Generator}}.
-
 \mbox{\Hypertarget{class_model_1_1_generators_1_1_diamond_square_generator_a77e39eb650f38bddd6da130f0af5e83f}\label{class_model_1_1_generators_1_1_diamond_square_generator_a77e39eb650f38bddd6da130f0af5e83f}} 
 \index{Model.Generators.DiamondSquareGenerator@{Model.Generators.DiamondSquareGenerator}!override@{override}}
 \index{override@{override}!Model.Generators.DiamondSquareGenerator@{Model.Generators.DiamondSquareGenerator}}
-\doxysubsubsection{\texorpdfstring{override()}{override()}}
+\doxysubsubsection{\texorpdfstring{override()}{override()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Model.\+Generators.\+Diamond\+Square\+Generator.\+override (\begin{DoxyParamCaption}\item[{int}]{sizeX,  }\item[{int}]{sizeY }\end{DoxyParamCaption})}
 
 

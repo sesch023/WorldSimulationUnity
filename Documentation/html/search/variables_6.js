@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['sizex_0',['sizeX',['../class_model_1_1_generators_1_1_base_generator.html#a83b4d43f35fdec982ee1710597d04a81',1,'Model.Generators.BaseGenerator.sizeX()'],['../interface_model_1_1_generators_1_1_i_generator.html#aa853ae6fcce9c972a356be5d304d8178',1,'Model.Generators.IGenerator.sizeX()']]]
+  ['peak_0',['peak',['../class_model_1_1_map_1_1_map.html#a5f4c4ea3fcd131fc68299fc6f4891921',1,'Model::Map::Map']]],
+  ['peakborder_1',['peakBorder',['../class_model_1_1_map_1_1_map.html#ac804359bb3ed0137e9c167a4cf5a2223',1,'Model::Map::Map']]]
 ];

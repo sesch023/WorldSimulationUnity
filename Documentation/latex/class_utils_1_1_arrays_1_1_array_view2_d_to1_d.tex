@@ -1,0 +1,110 @@
+\hypertarget{class_utils_1_1_arrays_1_1_array_view2_d_to1_d}{}\doxysection{Utils.\+Arrays.\+Array\+View2\+DTo1D\texorpdfstring{$<$}{<} TReal, TView \texorpdfstring{$>$}{>} Class Template Reference}
+\label{class_utils_1_1_arrays_1_1_array_view2_d_to1_d}\index{Utils.Arrays.ArrayView2DTo1D$<$ TReal, TView $>$@{Utils.Arrays.ArrayView2DTo1D$<$ TReal, TView $>$}}
+
+
+A view of a 2D array as a 1D array.  
+
+
+Inheritance diagram for Utils.\+Arrays.\+Array\+View2\+DTo1D\texorpdfstring{$<$}{<} TReal, TView \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_utils_1_1_arrays_1_1_array_view2_d_to1_d}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_utils_1_1_arrays_1_1_array_view2_d_to1_d_ab5250102ac36a356f2f9c773b376b61c}{Array\+View2\+DTo1D}} (\mbox{\hyperlink{interface_utils_1_1_arrays_1_1_i2_d_array}{I2\+DArray}}$<$ TReal $>$ internal\+Array, Func$<$ TReal, TView $>$ accessor, Array\+Map\+Setter$<$ TReal, TView $>$ setter)
+\begin{DoxyCompactList}\small\item\em Constructs a new view of a 2D array as a 1D array. \end{DoxyCompactList}\item 
+IEnumerator$<$ TView $>$ \mbox{\hyperlink{class_utils_1_1_arrays_1_1_array_view2_d_to1_d_ac5c76c5873d60c01e4d3bc4f87da0d0c}{Get\+Enumerator}} ()
+\begin{DoxyCompactList}\small\item\em Returns the enumerator for the array. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_utils_1_1_arrays_1_1_array_view2_d_to1_d_a91085f19cd7f28a2b467e60e0818cdde}{Get\+Length}} (int dimension)
+\begin{DoxyCompactList}\small\item\em Returns the length of the array in one dimension. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+TView \mbox{\hyperlink{class_utils_1_1_arrays_1_1_array_view2_d_to1_d_a77e1cde3fa643c714229a27f1277a5cb}{this\mbox{[}int x\mbox{]}}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Accesses the element at the given index through the accessor or setter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A view of a 2D array as a 1D array. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TReal} & \\
+\hline
+{\em TView} & \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_utils_1_1_arrays_1_1_array_view2_d_to1_d_ab5250102ac36a356f2f9c773b376b61c}\label{class_utils_1_1_arrays_1_1_array_view2_d_to1_d_ab5250102ac36a356f2f9c773b376b61c}} 
+\index{Utils.Arrays.ArrayView2DTo1D$<$ TReal, TView $>$@{Utils.Arrays.ArrayView2DTo1D$<$ TReal, TView $>$}!ArrayView2DTo1D@{ArrayView2DTo1D}}
+\index{ArrayView2DTo1D@{ArrayView2DTo1D}!Utils.Arrays.ArrayView2DTo1D$<$ TReal, TView $>$@{Utils.Arrays.ArrayView2DTo1D$<$ TReal, TView $>$}}
+\doxysubsubsection{\texorpdfstring{ArrayView2DTo1D()}{ArrayView2DTo1D()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_utils_1_1_arrays_1_1_array_view2_d_to1_d}{Utils.\+Arrays.\+Array\+View2\+DTo1D}}$<$ TReal, TView $>$.\mbox{\hyperlink{class_utils_1_1_arrays_1_1_array_view2_d_to1_d}{Array\+View2\+DTo1D}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_utils_1_1_arrays_1_1_i2_d_array}{I2\+DArray}}$<$ TReal $>$}]{internal\+Array,  }\item[{Func$<$ TReal, TView $>$}]{accessor,  }\item[{Array\+Map\+Setter$<$ TReal, TView $>$}]{setter }\end{DoxyParamCaption})}
+
+
+
+Constructs a new view of a 2D array as a 1D array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em internal\+Array} & 2D Array\\
+\hline
+{\em accessor} & How to access the array.\\
+\hline
+{\em setter} & How the set elements in the array.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_utils_1_1_arrays_1_1_array_view2_d_to1_d_ac5c76c5873d60c01e4d3bc4f87da0d0c}\label{class_utils_1_1_arrays_1_1_array_view2_d_to1_d_ac5c76c5873d60c01e4d3bc4f87da0d0c}} 
+\index{Utils.Arrays.ArrayView2DTo1D$<$ TReal, TView $>$@{Utils.Arrays.ArrayView2DTo1D$<$ TReal, TView $>$}!GetEnumerator@{GetEnumerator}}
+\index{GetEnumerator@{GetEnumerator}!Utils.Arrays.ArrayView2DTo1D$<$ TReal, TView $>$@{Utils.Arrays.ArrayView2DTo1D$<$ TReal, TView $>$}}
+\doxysubsubsection{\texorpdfstring{GetEnumerator()}{GetEnumerator()}}
+{\footnotesize\ttfamily IEnumerator$<$ TView $>$ \mbox{\hyperlink{class_utils_1_1_arrays_1_1_array_view2_d_to1_d}{Utils.\+Arrays.\+Array\+View2\+DTo1D}}$<$ TReal, TView $>$.Get\+Enumerator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the enumerator for the array. 
+
+\begin{DoxyReturn}{Returns}
+Enumerator for the array.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_utils_1_1_arrays_1_1_array_view2_d_to1_d_a91085f19cd7f28a2b467e60e0818cdde}\label{class_utils_1_1_arrays_1_1_array_view2_d_to1_d_a91085f19cd7f28a2b467e60e0818cdde}} 
+\index{Utils.Arrays.ArrayView2DTo1D$<$ TReal, TView $>$@{Utils.Arrays.ArrayView2DTo1D$<$ TReal, TView $>$}!GetLength@{GetLength}}
+\index{GetLength@{GetLength}!Utils.Arrays.ArrayView2DTo1D$<$ TReal, TView $>$@{Utils.Arrays.ArrayView2DTo1D$<$ TReal, TView $>$}}
+\doxysubsubsection{\texorpdfstring{GetLength()}{GetLength()}}
+{\footnotesize\ttfamily int \mbox{\hyperlink{class_utils_1_1_arrays_1_1_array_view2_d_to1_d}{Utils.\+Arrays.\+Array\+View2\+DTo1D}}$<$ TReal, TView $>$.Get\+Length (\begin{DoxyParamCaption}\item[{int}]{dimension }\end{DoxyParamCaption})}
+
+
+
+Returns the length of the array in one dimension. 
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_utils_1_1_arrays_1_1_array_view2_d_to1_d_a77e1cde3fa643c714229a27f1277a5cb}\label{class_utils_1_1_arrays_1_1_array_view2_d_to1_d_a77e1cde3fa643c714229a27f1277a5cb}} 
+\index{Utils.Arrays.ArrayView2DTo1D$<$ TReal, TView $>$@{Utils.Arrays.ArrayView2DTo1D$<$ TReal, TView $>$}!this\mbox{[}int x\mbox{]}@{this[int x]}}
+\index{this\mbox{[}int x\mbox{]}@{this[int x]}!Utils.Arrays.ArrayView2DTo1D$<$ TReal, TView $>$@{Utils.Arrays.ArrayView2DTo1D$<$ TReal, TView $>$}}
+\doxysubsubsection{\texorpdfstring{this[int x]}{this[int x]}}
+{\footnotesize\ttfamily TView \mbox{\hyperlink{class_utils_1_1_arrays_1_1_array_view2_d_to1_d}{Utils.\+Arrays.\+Array\+View2\+DTo1D}}$<$ TReal, TView $>$.this\mbox{[}int x\mbox{]}\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Accesses the element at the given index through the accessor or setter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Given index.\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Utils/\+Arrays/\mbox{\hyperlink{_array_view2_d_to1_d_8cs}{Array\+View2\+DTo1\+D.\+cs}}\end{DoxyCompactItemize}

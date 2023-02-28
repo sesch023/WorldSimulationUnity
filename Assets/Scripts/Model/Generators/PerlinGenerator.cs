@@ -48,7 +48,7 @@ namespace Model.Generators
         /// <summary>
         /// Generate a heightmap using perlin noise. 
         ///
-        /// https://s3.eu-central-1.amazonaws.com/ucu.edu.ua/wp-content/uploads/sites/8/2021/07/Melnychuk-Vladyslav_188572_assignsubmission_file_VladyslavMelnychuk.pdf
+        /// Basierend auf: https://s3.eu-central-1.amazonaws.com/ucu.edu.ua/wp-content/uploads/sites/8/2021/07/Melnychuk-Vladyslav_188572_assignsubmission_file_VladyslavMelnychuk.pdf
         /// </summary>
         /// <param name="sizeX">Width of the heightmap.</param>
         /// <param name="sizeY">Height of the heightmap.</param>

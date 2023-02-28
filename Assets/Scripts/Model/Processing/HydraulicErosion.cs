@@ -6,6 +6,10 @@ using Random = UnityEngine.Random;
 
 namespace Model.Processing
 {
+    /// <summary>
+    /// Auf Basis von:
+    /// https://github.com/SebLague/Hydraulic-Erosion/blob/master/Assets/Scripts/Erosion.cs
+    /// </summary>
     [Serializable]
     public class HydraulicErosion
     {

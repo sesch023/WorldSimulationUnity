@@ -10,20 +10,42 @@ using Utils.BaseUtils;
 
 namespace Model.Feature
 {
+    /// <summary>
+    /// A complex water body that can be filled by a specific amount of water. It will create overflows if
+    /// the water would in nature flow over the edge of the water body. It also supports merging with
+    /// other water bodies. Does not support splitting or removing water.
+    ///
+    /// Currently there is still a bug where the water bodies multiply water volume when merging and overflowing.
+    /// </summary>
     public class WaterBody : IBody
     {
         private Map.Map _map;
         private Valley _bodyValley;
         
+        /// Shallow points of the water body.
         public Vector2Int[] ShallowPoints => _bodyValley.CalculatedExits;
+        
+        /// Elevations of the shallow points.
         public float ShallowPointElevation { get; private set; }
+        
+        /// Deep points of the water body.
         public Vector2Int DeepestPoint { get; private set; }
 
+        /// Overflows of the water body.
         private Dictionary<Vector2Int, WaterBody> _overflows;
+        
+        /// Total volume of water in the water body.
         public float WaterVolume { get; set; }
         
+        /// Absolut water level over the ground level.
         public float CurrentAbsoluteWaterLevel { get; set; }
         
+        /// <summary>
+        /// Merge the water body with another water body.
+        /// </summary>
+        /// <param name="body1">Body to merge into.</param>
+        /// <param name="body2">Body that merges.</param>
+        /// <returns>Merged body of water.</returns>
         public static WaterBody MergeBodiesOfWaterIntoFirst(WaterBody body1, WaterBody body2)
         {
             var shallowPointElevation = body1.ShallowPointElevation;
@@ -88,6 +110,12 @@ namespace Model.Feature
         
         private WaterBody(){}
         
+        /// <summary>
+        /// Create a new water body at the given position with the given volume on the given map.
+        /// </summary>
+        /// <param name="map">Map the body is created on.</param>
+        /// <param name="initialPosition"></param>
+        /// <param name="waterVolume"></param>
         public WaterBody(Map.Map map, Vector2Int initialPosition, float waterVolume)
         {
             _map = map;
@@ -101,26 +129,42 @@ namespace Model.Feature
             AddVolume(waterVolume);
         }
 
+        /// <summary>
+        /// Find the deepest point from the initial position without momentum.
+        /// </summary>
+        /// <param name="initialPosition">Position to find the deepest point from.</param>
+        /// <returns>Deepest point</returns>
         private Vector2Int DeepestPointFromInitialPosition(Vector2Int initialPosition)
         {
             Slope slope = new Slope(initialPosition, _map.MapUnits, 0, 0);
             return slope.CalculatedSlope[^1];
         }
 
+        /// <summary>
+        /// Creates an overflow from the given point to the given water body.
+        /// </summary>
+        /// <param name="secondary">Overflow body.</param>
+        /// <param name="overflowFrom">Position to overflow from.</param>
         private void CreateOverflow(WaterBody secondary, Vector2Int overflowFrom)
         {
             _overflows.Add(overflowFrom, secondary);
         }
 
+        /// <summary>
+        ///  Finds an overflow from the shallow points.
+        /// </summary>
         private void FindOverflowValley()
         {
             foreach (var shallows in ShallowPoints)
             {
+                // Already overflowing from this point.
                 if (_overflows.ContainsKey(shallows))
                 {
                     continue;
                 }
-
+                
+                
+                // Do any neighbors of the shallow point lead into a valley or different water body?
                 Vector2Int[] neighbors = MathUtil.GetNeighborPositionsIn2DArray(shallows, _map.SizeX, _map.SizeY);
                 foreach (var neighbor in neighbors)
                 {
@@ -128,6 +172,7 @@ namespace Model.Feature
                     {
                         Slope slope = new Slope(neighbor, _map.MapUnits, 0, 0);
                         
+                        // Does not lead into a different valley.
                         if(slope.CalculatedSlope[^1] == DeepestPoint)
                             continue;
                         
@@ -152,6 +197,10 @@ namespace Model.Feature
             }
         }
         
+        /// <summary>
+        /// Gets the capacity of the next resizing step.
+        /// </summary>
+        /// <returns></returns>
         public float GetCapacityBeforeResize()
         {
             Vector2Int firstExit = _bodyValley.CalculatedExits[0];
@@ -160,6 +209,10 @@ namespace Model.Feature
             return capHeightDiff * _bodyValley.CalculatedPositions.Length;
         }
 
+        /// <summary>
+        /// Step by step overflow from this body to the overflow bodies.
+        /// </summary>
+        /// <param name="unassignedWaterVolume"></param>
         private void SteppedOverflow(ref float unassignedWaterVolume)
         {
             LoggingManager.GetInstance().LogDebug("Stepped overflow");
@@ -183,6 +236,10 @@ namespace Model.Feature
             }
         }
 
+        /// <summary>
+        /// Overflow all unassigned water volume to the overflow bodies.
+        /// </summary>
+        /// <param name="unassignedWaterVolume"></param>
         private void Overflow(ref float unassignedWaterVolume)
         {
             float overflowVolume = 0;
@@ -217,6 +274,10 @@ namespace Model.Feature
             }
         }
         
+        /// <summary>
+        /// Adds water volume to the water body.
+        /// </summary>
+        /// <param name="volume">Amount of volume to add.</param>
         public void AddVolume(float volume)
         {
             float unassignedWaterVolume = volume;

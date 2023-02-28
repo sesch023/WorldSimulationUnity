@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['interactionmode_0',['InteractionMode',['../class_manager_1_1_simulation_manager.html#a9ed95d6d213db45e44f780e064b71177',1,'Manager::SimulationManager']]]
+  ['enumerationstatus2d_0',['EnumerationStatus2D',['../namespace_utils_1_1_arrays.html#a5c97aae0eded1e68b2707b3fc8e22d29',1,'Utils::Arrays']]]
 ];

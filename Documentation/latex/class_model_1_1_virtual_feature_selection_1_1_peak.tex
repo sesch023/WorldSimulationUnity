@@ -1,0 +1,158 @@
+\hypertarget{class_model_1_1_virtual_feature_selection_1_1_peak}{}\doxysection{Model.\+Virtual\+Feature\+Selection.\+Peak Class Reference}
+\label{class_model_1_1_virtual_feature_selection_1_1_peak}\index{Model.VirtualFeatureSelection.Peak@{Model.VirtualFeatureSelection.Peak}}
+
+
+Finds and defines a peak in a map or 2D array\+Immutable of floats.  
+
+
+Inheritance diagram for Model.\+Virtual\+Feature\+Selection.\+Peak\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_model_1_1_virtual_feature_selection_1_1_peak}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_model_1_1_virtual_feature_selection_1_1_peak_a89f519ac3227c7d7647e001da71253da}{Peak}} (Vector2\+Int start, \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}}\mbox{[},\mbox{]} elevations)
+\begin{DoxyCompactList}\small\item\em Finds a peak in a map. Takes the elevation of the start position as minimum elevation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_model_1_1_virtual_feature_selection_1_1_peak_affb5ad2940cb9050be525a8edc766a51}{Peak}} (Vector2\+Int start, \mbox{\hyperlink{interface_utils_1_1_arrays_1_1_i2_d_array_immutable}{I2\+DArray\+Immutable}}$<$ float $>$ elevations)
+\begin{DoxyCompactList}\small\item\em Finds a peak in a 2D array\+Immutable of float elevations. Takes the elevation of the start position as minimum elevation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_model_1_1_virtual_feature_selection_1_1_peak_a8533e3cdc99557760f2b68ae7168f5e4}{Peak}} (Vector2\+Int start, \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}}\mbox{[},\mbox{]} elevations, float min\+Elevation)
+\begin{DoxyCompactList}\small\item\em Finds a peak in a map. Starts at the start point. Takes the given elevation as minimum elevation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_model_1_1_virtual_feature_selection_1_1_peak_a34b3f187418bedd74137c75ab969a8b1}{Peak}} (Vector2\+Int start, \mbox{\hyperlink{interface_utils_1_1_arrays_1_1_i2_d_array_immutable}{I2\+DArray\+Immutable}}$<$ float $>$ elevations, float min\+Elevation)
+\begin{DoxyCompactList}\small\item\em Finds a peak in a 2D array\+Immutable of float elevations. Starts at the start point. Takes the given elevation as minimum elevation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override bool \mbox{\hyperlink{class_model_1_1_virtual_feature_selection_1_1_peak_a769d617a36a4066a4bd6bdb8d3d0c746}{Elevation\+Condition}} (Vector2\+Int position, float elevation)
+\begin{DoxyCompactList}\small\item\em Evaluates if the given position is part of the peak. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+override float \mbox{\hyperlink{class_model_1_1_virtual_feature_selection_1_1_peak_a082cfea522490df43c791947afacfaaf}{Exit\+Elevation\+Start}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Start value of the exits elevation. Is updated with each closer exit found. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Finds and defines a peak in a map or 2D array\+Immutable of floats. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_model_1_1_virtual_feature_selection_1_1_peak_a89f519ac3227c7d7647e001da71253da}\label{class_model_1_1_virtual_feature_selection_1_1_peak_a89f519ac3227c7d7647e001da71253da}} 
+\index{Model.VirtualFeatureSelection.Peak@{Model.VirtualFeatureSelection.Peak}!Peak@{Peak}}
+\index{Peak@{Peak}!Model.VirtualFeatureSelection.Peak@{Model.VirtualFeatureSelection.Peak}}
+\doxysubsubsection{\texorpdfstring{Peak()}{Peak()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Model.\+Virtual\+Feature\+Selection.\+Peak.\+Peak (\begin{DoxyParamCaption}\item[{Vector2\+Int}]{start,  }\item[{\mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}}}]{elevations\mbox{[},\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Finds a peak in a map. Takes the elevation of the start position as minimum elevation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Start point in the map.\\
+\hline
+{\em elevations} & \mbox{\hyperlink{namespace_model_1_1_map}{Map}} of Map\+Units.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_1_1_virtual_feature_selection_1_1_peak_affb5ad2940cb9050be525a8edc766a51}\label{class_model_1_1_virtual_feature_selection_1_1_peak_affb5ad2940cb9050be525a8edc766a51}} 
+\index{Model.VirtualFeatureSelection.Peak@{Model.VirtualFeatureSelection.Peak}!Peak@{Peak}}
+\index{Peak@{Peak}!Model.VirtualFeatureSelection.Peak@{Model.VirtualFeatureSelection.Peak}}
+\doxysubsubsection{\texorpdfstring{Peak()}{Peak()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Model.\+Virtual\+Feature\+Selection.\+Peak.\+Peak (\begin{DoxyParamCaption}\item[{Vector2\+Int}]{start,  }\item[{\mbox{\hyperlink{interface_utils_1_1_arrays_1_1_i2_d_array_immutable}{I2\+DArray\+Immutable}}$<$ float $>$}]{elevations }\end{DoxyParamCaption})}
+
+
+
+Finds a peak in a 2D array\+Immutable of float elevations. Takes the elevation of the start position as minimum elevation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Start point in the map.\\
+\hline
+{\em elevations} & 2D array\+Immutable of float elevations.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_1_1_virtual_feature_selection_1_1_peak_a8533e3cdc99557760f2b68ae7168f5e4}\label{class_model_1_1_virtual_feature_selection_1_1_peak_a8533e3cdc99557760f2b68ae7168f5e4}} 
+\index{Model.VirtualFeatureSelection.Peak@{Model.VirtualFeatureSelection.Peak}!Peak@{Peak}}
+\index{Peak@{Peak}!Model.VirtualFeatureSelection.Peak@{Model.VirtualFeatureSelection.Peak}}
+\doxysubsubsection{\texorpdfstring{Peak()}{Peak()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Model.\+Virtual\+Feature\+Selection.\+Peak.\+Peak (\begin{DoxyParamCaption}\item[{Vector2\+Int}]{start,  }\item[{\mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}}}]{elevations\mbox{[},\mbox{]},  }\item[{float}]{min\+Elevation }\end{DoxyParamCaption})}
+
+
+
+Finds a peak in a map. Starts at the start point. Takes the given elevation as minimum elevation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Start point in the map.\\
+\hline
+{\em elevations} & \mbox{\hyperlink{namespace_model_1_1_map}{Map}} of Map\+Units.\\
+\hline
+{\em min\+Elevation} & Minimum elevation of the peak.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_1_1_virtual_feature_selection_1_1_peak_a34b3f187418bedd74137c75ab969a8b1}\label{class_model_1_1_virtual_feature_selection_1_1_peak_a34b3f187418bedd74137c75ab969a8b1}} 
+\index{Model.VirtualFeatureSelection.Peak@{Model.VirtualFeatureSelection.Peak}!Peak@{Peak}}
+\index{Peak@{Peak}!Model.VirtualFeatureSelection.Peak@{Model.VirtualFeatureSelection.Peak}}
+\doxysubsubsection{\texorpdfstring{Peak()}{Peak()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Model.\+Virtual\+Feature\+Selection.\+Peak.\+Peak (\begin{DoxyParamCaption}\item[{Vector2\+Int}]{start,  }\item[{\mbox{\hyperlink{interface_utils_1_1_arrays_1_1_i2_d_array_immutable}{I2\+DArray\+Immutable}}$<$ float $>$}]{elevations,  }\item[{float}]{min\+Elevation }\end{DoxyParamCaption})}
+
+
+
+Finds a peak in a 2D array\+Immutable of float elevations. Starts at the start point. Takes the given elevation as minimum elevation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Start point in the map.\\
+\hline
+{\em elevations} & 2D array\+Immutable of float elevations.\\
+\hline
+{\em min\+Elevation} & Minimum elevation of the peak.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_model_1_1_virtual_feature_selection_1_1_peak_a769d617a36a4066a4bd6bdb8d3d0c746}\label{class_model_1_1_virtual_feature_selection_1_1_peak_a769d617a36a4066a4bd6bdb8d3d0c746}} 
+\index{Model.VirtualFeatureSelection.Peak@{Model.VirtualFeatureSelection.Peak}!ElevationCondition@{ElevationCondition}}
+\index{ElevationCondition@{ElevationCondition}!Model.VirtualFeatureSelection.Peak@{Model.VirtualFeatureSelection.Peak}}
+\doxysubsubsection{\texorpdfstring{ElevationCondition()}{ElevationCondition()}}
+{\footnotesize\ttfamily override bool Model.\+Virtual\+Feature\+Selection.\+Peak.\+Elevation\+Condition (\begin{DoxyParamCaption}\item[{Vector2\+Int}]{position,  }\item[{float}]{elevation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Evaluates if the given position is part of the peak. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Map\+Position\+Vec of the valley to check.\\
+\hline
+{\em elevation} & Elevation which is checked against.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the current position is greater or equal to the given, return true.
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_model_1_1_virtual_feature_selection_1_1_valley_a861591c8fe2edfd8b3f707b14b0cae0b}{Model.\+Virtual\+Feature\+Selection.\+Valley}}.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_model_1_1_virtual_feature_selection_1_1_peak_a082cfea522490df43c791947afacfaaf}\label{class_model_1_1_virtual_feature_selection_1_1_peak_a082cfea522490df43c791947afacfaaf}} 
+\index{Model.VirtualFeatureSelection.Peak@{Model.VirtualFeatureSelection.Peak}!ExitElevationStart@{ExitElevationStart}}
+\index{ExitElevationStart@{ExitElevationStart}!Model.VirtualFeatureSelection.Peak@{Model.VirtualFeatureSelection.Peak}}
+\doxysubsubsection{\texorpdfstring{ExitElevationStart}{ExitElevationStart}}
+{\footnotesize\ttfamily override float Model.\+Virtual\+Feature\+Selection.\+Peak.\+Exit\+Elevation\+Start\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected]}}
+
+
+
+Start value of the exits elevation. Is updated with each closer exit found. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Model/\+Virtual\+Feature\+Selection/\mbox{\hyperlink{_peak_8cs}{Peak.\+cs}}\end{DoxyCompactItemize}

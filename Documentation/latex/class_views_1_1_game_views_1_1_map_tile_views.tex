@@ -14,10 +14,8 @@ Inheritance diagram for Views.\+Game\+Views.\+Map\+Tile\+Views\+:\begin{figure}[
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-Color \mbox{\hyperlink{class_views_1_1_game_views_1_1_map_tile_views_a464a23cd279bfc451cf1e12585c75bfc}{Get\+Tile\+Color\+Offset\+By\+Elevation}} (float elevation)
-\item 
-Tile \mbox{\hyperlink{class_views_1_1_game_views_1_1_map_tile_views_a66ded1aa53439ed2cda86393d0543e27}{Get\+Tile\+By\+Map\+Unit}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}} map\+Unit)
-\end{DoxyCompactItemize}
+Tile \mbox{\hyperlink{class_views_1_1_game_views_1_1_map_tile_views_a9d5841e2fb2ca57f2ca1aab371499b05}{Get\+Tile\+For\+Map\+Unit}} (\mbox{[}Not\+Null\mbox{]} \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}} map\+Unit)
+\begin{DoxyCompactList}\small\item\em Returns a fitting view tile for the given map unit. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -26,9 +24,9 @@ void \mbox{\hyperlink{class_views_1_1_game_views_1_1_map_tile_views_a8476f934bcc
 \doxysubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-float \mbox{\hyperlink{class_views_1_1_game_views_1_1_map_tile_views_af39d2e866805a4257fd6a39ba729c5a1}{Lowest\+Height}} = -\/8000\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+float \mbox{\hyperlink{class_views_1_1_game_views_1_1_map_tile_views_af39d2e866805a4257fd6a39ba729c5a1}{Lowest\+Height}} = 0\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Minimum height of the map. \end{DoxyCompactList}\item 
-float \mbox{\hyperlink{class_views_1_1_game_views_1_1_map_tile_views_aeb77a425dc7204397b7e7d204a1509a7}{Heighest\+Height}} = 10000\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+float \mbox{\hyperlink{class_views_1_1_game_views_1_1_map_tile_views_a1d610ecc11574dc15926f8eb842a37ab}{Highest\+Height}} = 18000\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Maximum height of the map. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -36,18 +34,24 @@ float \mbox{\hyperlink{class_views_1_1_game_views_1_1_map_tile_views_aeb77a425dc
 The Map\+Tile\+View is responsible for managing the appearance of tiles on the map. It decides which tile is used for a map unit depending on the conditions it. 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_views_1_1_game_views_1_1_map_tile_views_a66ded1aa53439ed2cda86393d0543e27}\label{class_views_1_1_game_views_1_1_map_tile_views_a66ded1aa53439ed2cda86393d0543e27}} 
-\index{Views.GameViews.MapTileViews@{Views.GameViews.MapTileViews}!GetTileByMapUnit@{GetTileByMapUnit}}
-\index{GetTileByMapUnit@{GetTileByMapUnit}!Views.GameViews.MapTileViews@{Views.GameViews.MapTileViews}}
-\doxysubsubsection{\texorpdfstring{GetTileByMapUnit()}{GetTileByMapUnit()}}
-{\footnotesize\ttfamily Tile Views.\+Game\+Views.\+Map\+Tile\+Views.\+Get\+Tile\+By\+Map\+Unit (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}}}]{map\+Unit }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_views_1_1_game_views_1_1_map_tile_views_a9d5841e2fb2ca57f2ca1aab371499b05}\label{class_views_1_1_game_views_1_1_map_tile_views_a9d5841e2fb2ca57f2ca1aab371499b05}} 
+\index{Views.GameViews.MapTileViews@{Views.GameViews.MapTileViews}!GetTileForMapUnit@{GetTileForMapUnit}}
+\index{GetTileForMapUnit@{GetTileForMapUnit}!Views.GameViews.MapTileViews@{Views.GameViews.MapTileViews}}
+\doxysubsubsection{\texorpdfstring{GetTileForMapUnit()}{GetTileForMapUnit()}}
+{\footnotesize\ttfamily Tile Views.\+Game\+Views.\+Map\+Tile\+Views.\+Get\+Tile\+For\+Map\+Unit (\begin{DoxyParamCaption}\item[{\mbox{[}\+Not\+Null\mbox{]} \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}}}]{map\+Unit }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_views_1_1_game_views_1_1_map_tile_views_a464a23cd279bfc451cf1e12585c75bfc}\label{class_views_1_1_game_views_1_1_map_tile_views_a464a23cd279bfc451cf1e12585c75bfc}} 
-\index{Views.GameViews.MapTileViews@{Views.GameViews.MapTileViews}!GetTileColorOffsetByElevation@{GetTileColorOffsetByElevation}}
-\index{GetTileColorOffsetByElevation@{GetTileColorOffsetByElevation}!Views.GameViews.MapTileViews@{Views.GameViews.MapTileViews}}
-\doxysubsubsection{\texorpdfstring{GetTileColorOffsetByElevation()}{GetTileColorOffsetByElevation()}}
-{\footnotesize\ttfamily Color Views.\+Game\+Views.\+Map\+Tile\+Views.\+Get\+Tile\+Color\+Offset\+By\+Elevation (\begin{DoxyParamCaption}\item[{float}]{elevation }\end{DoxyParamCaption})}
 
+
+Returns a fitting view tile for the given map unit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map\+Unit} & Map Unit to check.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Fitting view tile for the map unit.
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_views_1_1_game_views_1_1_map_tile_views_a8476f934bccd187fa0396538cfde61f4}\label{class_views_1_1_game_views_1_1_map_tile_views_a8476f934bccd187fa0396538cfde61f4}} 
 \index{Views.GameViews.MapTileViews@{Views.GameViews.MapTileViews}!OnEnable@{OnEnable}}
 \index{OnEnable@{OnEnable}!Views.GameViews.MapTileViews@{Views.GameViews.MapTileViews}}
@@ -57,11 +61,11 @@ The Map\+Tile\+View is responsible for managing the appearance of tiles on the m
 
 
 \doxysubsection{Property Documentation}
-\mbox{\Hypertarget{class_views_1_1_game_views_1_1_map_tile_views_aeb77a425dc7204397b7e7d204a1509a7}\label{class_views_1_1_game_views_1_1_map_tile_views_aeb77a425dc7204397b7e7d204a1509a7}} 
-\index{Views.GameViews.MapTileViews@{Views.GameViews.MapTileViews}!HeighestHeight@{HeighestHeight}}
-\index{HeighestHeight@{HeighestHeight}!Views.GameViews.MapTileViews@{Views.GameViews.MapTileViews}}
-\doxysubsubsection{\texorpdfstring{HeighestHeight}{HeighestHeight}}
-{\footnotesize\ttfamily float Views.\+Game\+Views.\+Map\+Tile\+Views.\+Heighest\+Height = 10000\hspace{0.3cm}{\ttfamily [get]}}
+\mbox{\Hypertarget{class_views_1_1_game_views_1_1_map_tile_views_a1d610ecc11574dc15926f8eb842a37ab}\label{class_views_1_1_game_views_1_1_map_tile_views_a1d610ecc11574dc15926f8eb842a37ab}} 
+\index{Views.GameViews.MapTileViews@{Views.GameViews.MapTileViews}!HighestHeight@{HighestHeight}}
+\index{HighestHeight@{HighestHeight}!Views.GameViews.MapTileViews@{Views.GameViews.MapTileViews}}
+\doxysubsubsection{\texorpdfstring{HighestHeight}{HighestHeight}}
+{\footnotesize\ttfamily float Views.\+Game\+Views.\+Map\+Tile\+Views.\+Highest\+Height = 18000\hspace{0.3cm}{\ttfamily [get]}}
 
 
 
@@ -71,7 +75,7 @@ Maximum height of the map.
 \index{Views.GameViews.MapTileViews@{Views.GameViews.MapTileViews}!LowestHeight@{LowestHeight}}
 \index{LowestHeight@{LowestHeight}!Views.GameViews.MapTileViews@{Views.GameViews.MapTileViews}}
 \doxysubsubsection{\texorpdfstring{LowestHeight}{LowestHeight}}
-{\footnotesize\ttfamily float Views.\+Game\+Views.\+Map\+Tile\+Views.\+Lowest\+Height = -\/8000\hspace{0.3cm}{\ttfamily [get]}}
+{\footnotesize\ttfamily float Views.\+Game\+Views.\+Map\+Tile\+Views.\+Lowest\+Height = 0\hspace{0.3cm}{\ttfamily [get]}}
 
 
 

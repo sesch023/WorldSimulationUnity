@@ -5,7 +5,7 @@
 %%For: 
 %Magnification: 1.00
 %%Orientation: Portrait
-%%BoundingBox: 0 0 500 55.325035
+%%BoundingBox: 0 0 500 71.301247
 %%Pages: 0
 %%BeginSetup
 %%EndSetup
@@ -19,7 +19,7 @@
 /marginwidth 10 def
 /distx 20 def
 /disty 40 def
-/boundaspect 9.037500 def  % aspect ratio of the BoundingBox (width/height)
+/boundaspect 7.012500 def  % aspect ratio of the BoundingBox (width/height)
 /boundx 500 def
 /boundy boundx boundaspect div def
 /xspacing 0 def
@@ -177,12 +177,11 @@ boxfont setfont
 (Base.ConditionalUpdate) cw
 (Base.UpdatableEvent) cw
 (Controllers.TileMapController) cw
+(Model.Feature.Sun) cw
 (Model.Map.Map) cw
 (Model.Map.MapUnit) cw
-(Model.UnitBehaviors.BaseUnitBehavior) cw
 (Base.TickEvent) cw
 (Base.TickSpacedEvent) cw
-(Model.UnitBehaviors.TestUnitBehavior) cw
 (Base.TimeEvent) cw
 (Base.TimeSpacedEvent) cw
 /boxwidth boxwidth marginwidth 2 mul add def
@@ -200,12 +199,11 @@ boundx scalefactor div boundy scalefactor div scale
  (Base.ConditionalUpdate) 0.000000 2.000000 box
  (Base.UpdatableEvent) 1.000000 2.000000 box
  (Controllers.TileMapController) 2.000000 2.000000 box
- (Model.Map.Map) 3.000000 2.000000 box
- (Model.Map.MapUnit) 4.000000 2.000000 box
- (Model.UnitBehaviors.BaseUnitBehavior) 5.000000 2.000000 box
+ (Model.Feature.Sun) 3.000000 2.000000 box
+ (Model.Map.Map) 4.000000 2.000000 box
+ (Model.Map.MapUnit) 5.000000 2.000000 box
  (Base.TickEvent) 0.500000 1.000000 box
  (Base.TickSpacedEvent) 1.500000 1.000000 box
- (Model.UnitBehaviors.TestUnitBehavior) 5.000000 1.000000 box
  (Base.TimeEvent) 0.500000 0.000000 box
  (Base.TimeSpacedEvent) 1.500000 0.000000 box
 
@@ -232,8 +230,6 @@ solid
 solid
 0 5.000000 2.750000 in
 solid
-1 5.000000 1.250000 out
-solid
 0 0.500000 1.750000 in
 solid
 1 0.500000 0.250000 out
@@ -241,8 +237,6 @@ solid
 0 1.500000 1.750000 in
 solid
 1 1.500000 0.250000 out
-solid
-0 5.000000 1.750000 in
 solid
 0 0.500000 0.750000 in
 solid

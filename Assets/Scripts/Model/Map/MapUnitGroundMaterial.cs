@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace Model.Map
 {
+    /// <summary>
+    /// Type of ground materials.
+    /// </summary>
     public enum GroundMaterialType
     {
         Soil,
@@ -37,30 +40,48 @@ namespace Model.Map
             Material.Add(GroundMaterialType.Clay, clay);
         }
 
+        /// The amount of each material on the unit.
         public Dictionary<GroundMaterialType, float> Material { get; }
+        
+        /// <summary>
+        /// Amount of soil.
+        /// </summary>
         public float Soil
         {
             get => Material[GroundMaterialType.Soil];
             set => Material[GroundMaterialType.Soil] = value;
         }
-
+        
+        /// <summary>
+        /// Amount of rock.
+        /// </summary>
         public float Rock
         {
             get => Material[GroundMaterialType.Rock];
             set => Material[GroundMaterialType.Rock] = value;
         }
+        
+        /// <summary>
+        /// Amount of sand.
+        /// </summary>
         public float Sand
         {
             get => Material[GroundMaterialType.Sand];
             set => Material[GroundMaterialType.Sand] = value;
         }
         
+        /// <summary>
+        /// Amount of gravel.
+        /// </summary>
         public float Gravel
         {
             get => Material[GroundMaterialType.Gravel];
             set => Material[GroundMaterialType.Gravel] = value;
         }
         
+        /// <summary>
+        /// Amount of clay.
+        /// </summary>
         public float Clay
         {
             get => Material[GroundMaterialType.Clay];
@@ -78,11 +99,19 @@ namespace Model.Map
             return ((Soil + min) / total, (Rock + min) / total, (Sand + min) / total, (Gravel + min) / total, (Clay + min) / total);
         }
         
+        /// <summary>
+        /// Gets the makeup of the ground unnormalized.
+        /// </summary>
+        /// <returns>Tuple of the ground types.</returns>
         public (float soil, float rock, float sand, float gravel, float clay) GetValues()
         {
             return (Soil, Rock, Sand, Gravel, Clay);
         }
 
+        /// <summary>
+        /// Returns the ground material type that is most present.
+        /// </summary>
+        /// <returns>Ground material that is the most present.</returns>
         public GroundMaterialType FindMostSignificantMaterial()
         {
             return Material.Aggregate((l, r) => l.Value > r.Value ? l : r).Key;

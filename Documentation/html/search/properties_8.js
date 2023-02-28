@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['maincamera_0',['MainCamera',['../class_manager_1_1_simulation_manager.html#a4ceafcd389e981195f21be99ac3b3a95',1,'Manager::SimulationManager']]],
-  ['mapcontroller_1',['MapController',['../class_manager_1_1_map_manager.html#ac10c21a3ccfca963c81af429f1d472a0',1,'Manager::MapManager']]],
-  ['mapunits_2',['MapUnits',['../class_model_1_1_map_1_1_map.html#af452313778eab35d9069d15d267e5ece',1,'Model::Map::Map']]]
+  ['instance_0',['Instance',['../class_manager_1_1_map_manager.html#a66ffbdb999e5b0a775ab272172206010',1,'Manager.MapManager.Instance()'],['../class_manager_1_1_simulation_manager.html#a1bdbab0b54366116ac714e8590dbae9c',1,'Manager.SimulationManager.Instance()'],['../class_manager_1_1_time_manager.html#a27d11fb6cd1fe007044610e074b4b160',1,'Manager.TimeManager.Instance()'],['../class_manager_1_1_update_manager.html#aa7243ce84dea5c5471b1d00731613e96',1,'Manager.UpdateManager.Instance()']]]
 ];

@@ -2,6 +2,10 @@
 
 namespace Utils.BaseUtils
 {
+    /// <summary>
+    /// A circular list.
+    /// </summary>
+    /// <typeparam name="T">Type of the items.</typeparam>
     public class CircularList<T> : List<T>
     {
         public T Last

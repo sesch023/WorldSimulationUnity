@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['peak_0',['Peak',['../class_model_1_1_map_1_1_peak.html',1,'Model::Map']]],
-  ['perlingenerator_1',['PerlinGenerator',['../class_model_1_1_generators_1_1_perlin_generator.html',1,'Model::Generators']]]
+  ['normalizedfloatarray_0',['NormalizedFloatArray',['../class_utils_1_1_arrays_1_1_normalized_float_array.html',1,'Utils::Arrays']]],
+  ['normalizedfloatarray2d_1',['NormalizedFloatArray2D',['../class_utils_1_1_arrays_1_1_normalized_float_array2_d.html',1,'Utils::Arrays']]]
 ];

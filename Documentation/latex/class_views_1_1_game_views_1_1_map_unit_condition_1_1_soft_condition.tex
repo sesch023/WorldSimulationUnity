@@ -1,0 +1,75 @@
+\hypertarget{class_views_1_1_game_views_1_1_map_unit_condition_1_1_soft_condition}{}\doxysection{Views.\+Game\+Views.\+Map\+Unit\+Condition.\+Soft\+Condition Class Reference}
+\label{class_views_1_1_game_views_1_1_map_unit_condition_1_1_soft_condition}\index{Views.GameViews.MapUnitCondition.SoftCondition@{Views.GameViews.MapUnitCondition.SoftCondition}}
+
+
+A condition between a dynamic value and multiple other dynamic values. This class cannot have a abstract base class, since unity does not support serializing abstract classes.  
+
+
+Inheritance diagram for Views.\+Game\+Views.\+Map\+Unit\+Condition.\+Soft\+Condition\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_views_1_1_game_views_1_1_map_unit_condition_1_1_soft_condition}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_views_1_1_game_views_1_1_map_unit_condition_1_1_soft_condition_a24da15623f068857bb5726e1646b885e}{Soft\+Condition}} (\mbox{\hyperlink{namespace_views_1_1_game_views_a1d19d4e08b5e471bba0c3b43bbd3753b}{Unit\+Value\+Type}} unit\+Value\+Type\+Left, \mbox{\hyperlink{namespace_views_1_1_game_views_a3d514fef54084a6a34fccaa68ac4ab29}{Comparision\+Type}} comparision\+Type, \mbox{\hyperlink{namespace_views_1_1_game_views_a1d19d4e08b5e471bba0c3b43bbd3753b}{Unit\+Value\+Type}}\mbox{[}$\,$\mbox{]} unit\+Value\+Type\+Right)
+\begin{DoxyCompactList}\small\item\em Constructor for a soft condition. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_views_1_1_game_views_1_1_map_unit_condition_1_1_soft_condition_aa7ab42f003394864b50881cd7e7f1cfc}{Check\+Condition}} (\mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}} unit)
+\begin{DoxyCompactList}\small\item\em Checks if the condition is true for the given unit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A condition between a dynamic value and multiple other dynamic values. This class cannot have a abstract base class, since unity does not support serializing abstract classes. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_views_1_1_game_views_1_1_map_unit_condition_1_1_soft_condition_a24da15623f068857bb5726e1646b885e}\label{class_views_1_1_game_views_1_1_map_unit_condition_1_1_soft_condition_a24da15623f068857bb5726e1646b885e}} 
+\index{Views.GameViews.MapUnitCondition.SoftCondition@{Views.GameViews.MapUnitCondition.SoftCondition}!SoftCondition@{SoftCondition}}
+\index{SoftCondition@{SoftCondition}!Views.GameViews.MapUnitCondition.SoftCondition@{Views.GameViews.MapUnitCondition.SoftCondition}}
+\doxysubsubsection{\texorpdfstring{SoftCondition()}{SoftCondition()}}
+{\footnotesize\ttfamily Views.\+Game\+Views.\+Map\+Unit\+Condition.\+Soft\+Condition.\+Soft\+Condition (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_views_1_1_game_views_a1d19d4e08b5e471bba0c3b43bbd3753b}{Unit\+Value\+Type}}}]{unit\+Value\+Type\+Left,  }\item[{\mbox{\hyperlink{namespace_views_1_1_game_views_a3d514fef54084a6a34fccaa68ac4ab29}{Comparision\+Type}}}]{comparision\+Type,  }\item[{\mbox{\hyperlink{namespace_views_1_1_game_views_a1d19d4e08b5e471bba0c3b43bbd3753b}{Unit\+Value\+Type}}\mbox{[}$\,$\mbox{]}}]{unit\+Value\+Type\+Right }\end{DoxyParamCaption})}
+
+
+
+Constructor for a soft condition. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unit\+Value\+Type\+Left} & Type of the left values to compare all right values to.\\
+\hline
+{\em comparision\+Type} & Type of the comparision.\\
+\hline
+{\em unit\+Value\+Type\+Right} & Type of the right values to compare the single left value to.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_views_1_1_game_views_1_1_map_unit_condition_1_1_soft_condition_aa7ab42f003394864b50881cd7e7f1cfc}\label{class_views_1_1_game_views_1_1_map_unit_condition_1_1_soft_condition_aa7ab42f003394864b50881cd7e7f1cfc}} 
+\index{Views.GameViews.MapUnitCondition.SoftCondition@{Views.GameViews.MapUnitCondition.SoftCondition}!CheckCondition@{CheckCondition}}
+\index{CheckCondition@{CheckCondition}!Views.GameViews.MapUnitCondition.SoftCondition@{Views.GameViews.MapUnitCondition.SoftCondition}}
+\doxysubsubsection{\texorpdfstring{CheckCondition()}{CheckCondition()}}
+{\footnotesize\ttfamily bool Views.\+Game\+Views.\+Map\+Unit\+Condition.\+Soft\+Condition.\+Check\+Condition (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}}}]{unit }\end{DoxyParamCaption})}
+
+
+
+Checks if the condition is true for the given unit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unit} & Given unit.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True, if condition is true.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_views_1_1_game_views_1_1_i_map_unit_condition_a71207b491ae711e735d522b4f3f0f7d2}{Views.\+Game\+Views.\+IMap\+Unit\+Condition}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Views/\+Game\+Views/\mbox{\hyperlink{_map_unit_condition_8cs}{Map\+Unit\+Condition.\+cs}}\end{DoxyCompactItemize}

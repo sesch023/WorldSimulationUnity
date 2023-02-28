@@ -54,7 +54,7 @@ namespace Model.Generators
 	    /// <summary>
 	    /// Generate a heightmap using the diamond-square algorithm.
 	    ///
-	    /// https://de.wikipedia.org/wiki/Diamond-square_Algorithmus
+	    /// Basierend auf: https://de.wikipedia.org/wiki/Diamond-square_Algorithmus
 	    /// </summary>
 	    /// <param name="sizeX">Width of the heightmap. Is limited to the next (power of 2) + 1.</param>
 	    /// <param name="sizeY">Height of the heightmap. Is limited to the next (power of 2) + 1.</param>

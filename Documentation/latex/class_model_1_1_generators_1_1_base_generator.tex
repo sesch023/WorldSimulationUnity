@@ -14,26 +14,43 @@ Inheritance diagram for Model.\+Generators.\+Base\+Generator\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-abstract float\mbox{[},\mbox{]} \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_aeca80ef876e5d28fa65da494a1202035}{Generate\+Elevation}} (int \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_a83b4d43f35fdec982ee1710597d04a81}{sizeX}}, int sizeY)
-\begin{DoxyCompactList}\small\item\em Abstract method for generating the map as a 2D array of floats. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_a8bc3f3f0c0af3279d87d80e3642bb182}{On\+Validate}} ()
+\item 
+abstract float\mbox{[},\mbox{]} float float max \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_af9f83de260b2a28fa0d28174ece0de5c}{Generate\+Elevation}} (int \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_a83b4d43f35fdec982ee1710597d04a81}{sizeX}}, int sizeY)
+\item 
 virtual int int sizeY \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_a387835d6be15ca3158d9d187bafd96f3}{Limit\+Map\+Sizes}} (int \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_a83b4d43f35fdec982ee1710597d04a81}{sizeX}}, int sizeY)
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
+abstract float\mbox{[},\mbox{]} \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_acb45ab3982c73ab8f897f2ac677515de}{elevation}}
+\begin{DoxyCompactList}\small\item\em Abstract method for generating the map as a 2D array\+Immutable of floats. \end{DoxyCompactList}\item 
+abstract float\mbox{[},\mbox{]} float \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_a4fe0fca7c834c903847f74a19c625fdc}{min}}
+\item 
 virtual int \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_a83b4d43f35fdec982ee1710597d04a81}{sizeX}}
 \begin{DoxyCompactList}\small\item\em Limits the size of the generated map depending on the generator\textquotesingle{}s algorithm and the given parameters. The default implementation just returns the given size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+float\mbox{[},\mbox{]} \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_a072ea193469974123fa4d30b98e772e8}{Apply\+Preprocess}} (float\mbox{[},\mbox{]} \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_acb45ab3982c73ab8f897f2ac677515de}{elevation}})
+\item 
+float\mbox{[},\mbox{]} \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_a253c36811daa7ef462c37ebb88751ada}{Finish\+Generation}} (float\mbox{[},\mbox{]} \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_acb45ab3982c73ab8f897f2ac677515de}{elevation}})
+\end{DoxyCompactItemize}
 \doxysubsection*{Static Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static float\mbox{[},\mbox{]} \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_a06c17e7b3a9fd858204a4f751aedb72f}{Normalize\+Elevation}} (float\mbox{[},\mbox{]} elevation, float min, float max)
+static float\mbox{[},\mbox{]} \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_a06c17e7b3a9fd858204a4f751aedb72f}{Normalize\+Elevation}} (float\mbox{[},\mbox{]} \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_acb45ab3982c73ab8f897f2ac677515de}{elevation}}, float \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_a4fe0fca7c834c903847f74a19c625fdc}{min}}, float max)
 \begin{DoxyCompactList}\small\item\em Normalizes the elevation of the map to the given min and max values. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-float \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_a24987a0d93975f2be88ad8f7140979dc}{max\+Height}} = 10000
+float \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_a24987a0d93975f2be88ad8f7140979dc}{max\+Height}} = 18000
+\item 
+float \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_a998d9e992c1d7cc4caa2231e66f7e76a}{min\+Height}} = 0
+\item 
+float \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_a3e792a8c0002edf9fd8144b50bfab510}{Max\+Height\+Value}}
 \begin{DoxyCompactList}\small\item\em Max elevation of the map. \end{DoxyCompactList}\item 
-float \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_a998d9e992c1d7cc4caa2231e66f7e76a}{min\+Height}} = -\/8000
+float \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_a4ad828dfd44c5b19d7f01c208069ace4}{Min\+Height\+Value}}
 \begin{DoxyCompactList}\small\item\em Min elevation of the map. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -41,33 +58,27 @@ float \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_a998d9e992c
 Abstract base class for all generators. Implements the elevation normalization and a default implementation of the Limit\+Map\+Sizes method, which is used to limit the size of the generated map depending on the generator\textquotesingle{}s algorithm and the given parameters. 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_model_1_1_generators_1_1_base_generator_aeca80ef876e5d28fa65da494a1202035}\label{class_model_1_1_generators_1_1_base_generator_aeca80ef876e5d28fa65da494a1202035}} 
+\mbox{\Hypertarget{class_model_1_1_generators_1_1_base_generator_a072ea193469974123fa4d30b98e772e8}\label{class_model_1_1_generators_1_1_base_generator_a072ea193469974123fa4d30b98e772e8}} 
+\index{Model.Generators.BaseGenerator@{Model.Generators.BaseGenerator}!ApplyPreprocess@{ApplyPreprocess}}
+\index{ApplyPreprocess@{ApplyPreprocess}!Model.Generators.BaseGenerator@{Model.Generators.BaseGenerator}}
+\doxysubsubsection{\texorpdfstring{ApplyPreprocess()}{ApplyPreprocess()}}
+{\footnotesize\ttfamily float\mbox{[},\mbox{]} Model.\+Generators.\+Base\+Generator.\+Apply\+Preprocess (\begin{DoxyParamCaption}\item[{float}]{elevation\mbox{[},\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_model_1_1_generators_1_1_base_generator_a253c36811daa7ef462c37ebb88751ada}\label{class_model_1_1_generators_1_1_base_generator_a253c36811daa7ef462c37ebb88751ada}} 
+\index{Model.Generators.BaseGenerator@{Model.Generators.BaseGenerator}!FinishGeneration@{FinishGeneration}}
+\index{FinishGeneration@{FinishGeneration}!Model.Generators.BaseGenerator@{Model.Generators.BaseGenerator}}
+\doxysubsubsection{\texorpdfstring{FinishGeneration()}{FinishGeneration()}}
+{\footnotesize\ttfamily float\mbox{[},\mbox{]} Model.\+Generators.\+Base\+Generator.\+Finish\+Generation (\begin{DoxyParamCaption}\item[{float}]{elevation\mbox{[},\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_model_1_1_generators_1_1_base_generator_af9f83de260b2a28fa0d28174ece0de5c}\label{class_model_1_1_generators_1_1_base_generator_af9f83de260b2a28fa0d28174ece0de5c}} 
 \index{Model.Generators.BaseGenerator@{Model.Generators.BaseGenerator}!GenerateElevation@{GenerateElevation}}
 \index{GenerateElevation@{GenerateElevation}!Model.Generators.BaseGenerator@{Model.Generators.BaseGenerator}}
 \doxysubsubsection{\texorpdfstring{GenerateElevation()}{GenerateElevation()}}
-{\footnotesize\ttfamily abstract float\mbox{[},\mbox{]} Model.\+Generators.\+Base\+Generator.\+Generate\+Elevation (\begin{DoxyParamCaption}\item[{int}]{sizeX,  }\item[{int}]{sizeY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily abstract float\mbox{[},\mbox{]} float float max Model.\+Generators.\+Base\+Generator.\+Generate\+Elevation (\begin{DoxyParamCaption}\item[{int}]{sizeX,  }\item[{int}]{sizeY }\end{DoxyParamCaption})}
 
 
 
-Abstract method for generating the map as a 2D array of floats. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em sizeX} & Width of the \mbox{\hyperlink{namespace_model_1_1_map}{Map}}.\\
-\hline
-{\em sizeY} & Height of the \mbox{\hyperlink{namespace_model_1_1_map}{Map}}.\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-2D Array of floats as generated elevation.
-\end{DoxyReturn}
-
-
-Implements \mbox{\hyperlink{interface_model_1_1_generators_1_1_i_generator_ac98be778bcd8726b7e0eb87d0a3db849}{Model.\+Generators.\+IGenerator}}.
-
-
-
-Implemented in \mbox{\hyperlink{class_model_1_1_generators_1_1_diamond_square_generator_af48ac5e2c6d843294941f5bde66175ea}{Model.\+Generators.\+Diamond\+Square\+Generator}}, \mbox{\hyperlink{class_model_1_1_generators_1_1_flat_generator_acd7abf488625318444806938551457c8}{Model.\+Generators.\+Flat\+Generator}}, and \mbox{\hyperlink{class_model_1_1_generators_1_1_perlin_generator_ac2bd3743f5b68f86b43b0e2dfb58db79}{Model.\+Generators.\+Perlin\+Generator}}.
+Implements \mbox{\hyperlink{interface_model_1_1_generators_1_1_i_generator_ae445edc2e0ac48eaf204faa81d953ee1}{Model.\+Generators.\+IGenerator}}.
 
 \mbox{\Hypertarget{class_model_1_1_generators_1_1_base_generator_a387835d6be15ca3158d9d187bafd96f3}\label{class_model_1_1_generators_1_1_base_generator_a387835d6be15ca3158d9d187bafd96f3}} 
 \index{Model.Generators.BaseGenerator@{Model.Generators.BaseGenerator}!LimitMapSizes@{LimitMapSizes}}
@@ -91,7 +102,7 @@ Normalizes the elevation of the map to the given min and max values.
 
 
 \begin{DoxyParams}{Parameters}
-{\em elevation} & 2D array of floats as elevation.\\
+{\em elevation} & 2D array\+Immutable of floats as elevation.\\
 \hline
 {\em min} & Minimum new value after normalization.\\
 \hline
@@ -99,26 +110,70 @@ Normalizes the elevation of the map to the given min and max values.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Normalized 2D array of floats.
+Normalized 2D array\+Immutable of floats.
 \end{DoxyReturn}
+\mbox{\Hypertarget{class_model_1_1_generators_1_1_base_generator_a8bc3f3f0c0af3279d87d80e3642bb182}\label{class_model_1_1_generators_1_1_base_generator_a8bc3f3f0c0af3279d87d80e3642bb182}} 
+\index{Model.Generators.BaseGenerator@{Model.Generators.BaseGenerator}!OnValidate@{OnValidate}}
+\index{OnValidate@{OnValidate}!Model.Generators.BaseGenerator@{Model.Generators.BaseGenerator}}
+\doxysubsubsection{\texorpdfstring{OnValidate()}{OnValidate()}}
+{\footnotesize\ttfamily void Model.\+Generators.\+Base\+Generator.\+On\+Validate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
 
 
 \doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_model_1_1_generators_1_1_base_generator_acb45ab3982c73ab8f897f2ac677515de}\label{class_model_1_1_generators_1_1_base_generator_acb45ab3982c73ab8f897f2ac677515de}} 
+\index{Model.Generators.BaseGenerator@{Model.Generators.BaseGenerator}!elevation@{elevation}}
+\index{elevation@{elevation}!Model.Generators.BaseGenerator@{Model.Generators.BaseGenerator}}
+\doxysubsubsection{\texorpdfstring{elevation}{elevation}}
+{\footnotesize\ttfamily abstract float \mbox{[},\mbox{]} Model.\+Generators.\+Base\+Generator.\+elevation}
+
+
+
+Abstract method for generating the map as a 2D array\+Immutable of floats. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sizeX} & Width of the \mbox{\hyperlink{namespace_model_1_1_map}{Map}}.\\
+\hline
+{\em sizeY} & Height of the \mbox{\hyperlink{namespace_model_1_1_map}{Map}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+2D Array of floats as generated elevation.
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_model_1_1_generators_1_1_base_generator_a24987a0d93975f2be88ad8f7140979dc}\label{class_model_1_1_generators_1_1_base_generator_a24987a0d93975f2be88ad8f7140979dc}} 
 \index{Model.Generators.BaseGenerator@{Model.Generators.BaseGenerator}!maxHeight@{maxHeight}}
 \index{maxHeight@{maxHeight}!Model.Generators.BaseGenerator@{Model.Generators.BaseGenerator}}
 \doxysubsubsection{\texorpdfstring{maxHeight}{maxHeight}}
-{\footnotesize\ttfamily float Model.\+Generators.\+Base\+Generator.\+max\+Height = 10000\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily float Model.\+Generators.\+Base\+Generator.\+max\+Height = 18000\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_model_1_1_generators_1_1_base_generator_a3e792a8c0002edf9fd8144b50bfab510}\label{class_model_1_1_generators_1_1_base_generator_a3e792a8c0002edf9fd8144b50bfab510}} 
+\index{Model.Generators.BaseGenerator@{Model.Generators.BaseGenerator}!MaxHeightValue@{MaxHeightValue}}
+\index{MaxHeightValue@{MaxHeightValue}!Model.Generators.BaseGenerator@{Model.Generators.BaseGenerator}}
+\doxysubsubsection{\texorpdfstring{MaxHeightValue}{MaxHeightValue}}
+{\footnotesize\ttfamily float Model.\+Generators.\+Base\+Generator.\+Max\+Height\+Value\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
 Max elevation of the map. 
 
+\mbox{\Hypertarget{class_model_1_1_generators_1_1_base_generator_a4fe0fca7c834c903847f74a19c625fdc}\label{class_model_1_1_generators_1_1_base_generator_a4fe0fca7c834c903847f74a19c625fdc}} 
+\index{Model.Generators.BaseGenerator@{Model.Generators.BaseGenerator}!min@{min}}
+\index{min@{min}!Model.Generators.BaseGenerator@{Model.Generators.BaseGenerator}}
+\doxysubsubsection{\texorpdfstring{min}{min}}
+{\footnotesize\ttfamily abstract float \mbox{[},\mbox{]} float Model.\+Generators.\+Base\+Generator.\+min}
+
 \mbox{\Hypertarget{class_model_1_1_generators_1_1_base_generator_a998d9e992c1d7cc4caa2231e66f7e76a}\label{class_model_1_1_generators_1_1_base_generator_a998d9e992c1d7cc4caa2231e66f7e76a}} 
 \index{Model.Generators.BaseGenerator@{Model.Generators.BaseGenerator}!minHeight@{minHeight}}
 \index{minHeight@{minHeight}!Model.Generators.BaseGenerator@{Model.Generators.BaseGenerator}}
 \doxysubsubsection{\texorpdfstring{minHeight}{minHeight}}
-{\footnotesize\ttfamily float Model.\+Generators.\+Base\+Generator.\+min\+Height = -\/8000\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily float Model.\+Generators.\+Base\+Generator.\+min\+Height = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_model_1_1_generators_1_1_base_generator_a4ad828dfd44c5b19d7f01c208069ace4}\label{class_model_1_1_generators_1_1_base_generator_a4ad828dfd44c5b19d7f01c208069ace4}} 
+\index{Model.Generators.BaseGenerator@{Model.Generators.BaseGenerator}!MinHeightValue@{MinHeightValue}}
+\index{MinHeightValue@{MinHeightValue}!Model.Generators.BaseGenerator@{Model.Generators.BaseGenerator}}
+\doxysubsubsection{\texorpdfstring{MinHeightValue}{MinHeightValue}}
+{\footnotesize\ttfamily float Model.\+Generators.\+Base\+Generator.\+Min\+Height\+Value\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 

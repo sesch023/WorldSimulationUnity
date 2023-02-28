@@ -2,6 +2,9 @@
 
 namespace Manager
 {
+    /// <summary>
+    /// Singleton class for central logging.
+    /// </summary>
     public class LoggingManager
     {
         private const string LOGPath = "Logs/";

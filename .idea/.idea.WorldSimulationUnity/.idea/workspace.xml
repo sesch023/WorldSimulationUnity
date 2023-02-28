@@ -3,7 +3,36 @@
   <component name="ChangeListManager">
     <list default="true" id="c8f10313-ae08-4799-8dce-15c7c45c85be" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WorldSimulationUnity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WorldSimulationUnity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/LoggingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/LoggingManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/Feature/IBody.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Feature/IBody.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/Feature/IFeature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Feature/IFeature.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/Feature/SimpleWaterBody.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Feature/SimpleWaterBody.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/Feature/Sun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Feature/Sun.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/Feature/WaterBody.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Feature/WaterBody.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/Generators/DiamondSquareGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Generators/DiamondSquareGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/Generators/PerlinGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Generators/PerlinGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/Map/MapUnitGroundMaterial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Map/MapUnitGroundMaterial.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/Processing/HydraulicErosion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Processing/HydraulicErosion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/UnitBehaviors/VegetationBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/UnitBehaviors/VegetationBehavior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Namespaces.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Namespaces.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/Arrays/ArrayMap2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Arrays/ArrayMap2D.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/Arrays/ArrayView2DTo1D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Arrays/ArrayView2DTo1D.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/Arrays/IArray.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Arrays/IArray.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/Arrays/IArrayImmutable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Arrays/IArrayImmutable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/Arrays/NormalizedFloatArray.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Arrays/NormalizedFloatArray.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/Arrays/NormalizedFloatArray2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Arrays/NormalizedFloatArray2D.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/BaseUtils/CircularList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/BaseUtils/CircularList.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/BaseUtils/DictUtil.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/BaseUtils/DictUtil.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/BaseUtils/MathUtil.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/BaseUtils/MathUtil.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/BaseUtils/MovingAverage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/BaseUtils/MovingAverage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/Logging/SimpleLogger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Logging/SimpleLogger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Views/GameViews/ITileCondition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Views/GameViews/IMapUnitCondition.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Views/GameViews/ITileCondition.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Views/GameViews/IMapUnitCondition.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Views/GameViews/MapTileViews.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Views/GameViews/MapTileViews.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Views/GameViews/SunView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Views/GameViews/SunView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Views/GameViews/TileCondition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Views/GameViews/MapUnitCondition.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Views/GameViews/TileCondition.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Views/GameViews/MapUnitCondition.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +184,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Views/GameViews/ITileCondition.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Views/GameViews/IMapUnitCondition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.path@5.0.2/Editor/EditorTool/PathEditorTool.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.path@5.0.2/Editor/IMGUI/GUIFramework/Control.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.path@5.0.2/Editor/IMGUI/GUIFramework/GUIAction.cs" root0="SKIP_HIGHLIGHTING" />
@@ -228,7 +257,10 @@
       <workItem from="1675170947125" duration="2840000" />
       <workItem from="1676981703029" duration="1416000" />
       <workItem from="1677416991189" duration="840000" />
-      <workItem from="1677417907485" duration="396000" />
+      <workItem from="1677417907485" duration="2525000" />
+      <workItem from="1677434243334" duration="606000" />
+      <workItem from="1677498441774" duration="662000" />
+      <workItem from="1677585051303" duration="8918000" />
     </task>
     <servers />
   </component>

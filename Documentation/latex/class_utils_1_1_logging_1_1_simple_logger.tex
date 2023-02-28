@@ -1,0 +1,92 @@
+\hypertarget{class_utils_1_1_logging_1_1_simple_logger}{}\doxysection{Utils.\+Logging.\+Simple\+Logger Class Reference}
+\label{class_utils_1_1_logging_1_1_simple_logger}\index{Utils.Logging.SimpleLogger@{Utils.Logging.SimpleLogger}}
+
+
+Simple Logger class that logs to multiple log files depending on the log level.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_utils_1_1_logging_1_1_simple_logger_ad18b6ebe530f1d116f36730839663b76}{Simple\+Logger}} (string target\+Path=\char`\"{}Logs/\char`\"{}, bool use\+Time\+Signature=false, \mbox{\hyperlink{namespace_utils_1_1_logging_ae6ddb0589251628f2c2c43899d84a9e5}{Log\+String}} log\+String=null, bool clear\+Logs\+Before\+Run=true)
+\begin{DoxyCompactList}\small\item\em Creates a new \mbox{\hyperlink{class_utils_1_1_logging_1_1_simple_logger}{Simple\+Logger}} instance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_utils_1_1_logging_1_1_simple_logger_ac24a5ff996c300d31df3c3f21931ab70}{Log}} (string message, \mbox{\hyperlink{namespace_utils_1_1_logging_a9af82e04c4ffd4eb51218687b908944f}{Log\+Level}} level=\mbox{\hyperlink{namespace_utils_1_1_logging_a9af82e04c4ffd4eb51218687b908944faa603905470e2a5b8c13e96b579ef0dba}{Log\+Level.\+Debug}})
+\begin{DoxyCompactList}\small\item\em Logs a message with a given log level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_utils_1_1_logging_1_1_simple_logger_afca3e1532e1e5d1703068d56b79529e8}{Log}} (object obj, \mbox{\hyperlink{namespace_utils_1_1_logging_a9af82e04c4ffd4eb51218687b908944f}{Log\+Level}} level=\mbox{\hyperlink{namespace_utils_1_1_logging_a9af82e04c4ffd4eb51218687b908944faa603905470e2a5b8c13e96b579ef0dba}{Log\+Level.\+Debug}})
+\begin{DoxyCompactList}\small\item\em Logs a object with a given log level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Simple Logger class that logs to multiple log files depending on the log level. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_utils_1_1_logging_1_1_simple_logger_ad18b6ebe530f1d116f36730839663b76}\label{class_utils_1_1_logging_1_1_simple_logger_ad18b6ebe530f1d116f36730839663b76}} 
+\index{Utils.Logging.SimpleLogger@{Utils.Logging.SimpleLogger}!SimpleLogger@{SimpleLogger}}
+\index{SimpleLogger@{SimpleLogger}!Utils.Logging.SimpleLogger@{Utils.Logging.SimpleLogger}}
+\doxysubsubsection{\texorpdfstring{SimpleLogger()}{SimpleLogger()}}
+{\footnotesize\ttfamily Utils.\+Logging.\+Simple\+Logger.\+Simple\+Logger (\begin{DoxyParamCaption}\item[{string}]{target\+Path = {\ttfamily \char`\"{}Logs/\char`\"{}},  }\item[{bool}]{use\+Time\+Signature = {\ttfamily false},  }\item[{\mbox{\hyperlink{namespace_utils_1_1_logging_ae6ddb0589251628f2c2c43899d84a9e5}{Log\+String}}}]{log\+String = {\ttfamily null},  }\item[{bool}]{clear\+Logs\+Before\+Run = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Creates a new \mbox{\hyperlink{class_utils_1_1_logging_1_1_simple_logger}{Simple\+Logger}} instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target\+Path} & Path to log to.\\
+\hline
+{\em use\+Time\+Signature} & Use time signature on log files, to not overwrite old files.\\
+\hline
+{\em log\+String} & Delegate for logging a string. Null uses default. Use default way if unsure.\\
+\hline
+{\em clear\+Logs\+Before\+Run} & Removes all log files in the given folder before starting.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Null\+Reference\+Exception} & If path is null.\\
+\hline
+{\em Argument\+Exception} & If path is illegal.\\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_utils_1_1_logging_1_1_simple_logger_afca3e1532e1e5d1703068d56b79529e8}\label{class_utils_1_1_logging_1_1_simple_logger_afca3e1532e1e5d1703068d56b79529e8}} 
+\index{Utils.Logging.SimpleLogger@{Utils.Logging.SimpleLogger}!Log@{Log}}
+\index{Log@{Log}!Utils.Logging.SimpleLogger@{Utils.Logging.SimpleLogger}}
+\doxysubsubsection{\texorpdfstring{Log()}{Log()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Utils.\+Logging.\+Simple\+Logger.\+Log (\begin{DoxyParamCaption}\item[{object}]{obj,  }\item[{\mbox{\hyperlink{namespace_utils_1_1_logging_a9af82e04c4ffd4eb51218687b908944f}{Log\+Level}}}]{level = {\ttfamily \mbox{\hyperlink{namespace_utils_1_1_logging_a9af82e04c4ffd4eb51218687b908944faa603905470e2a5b8c13e96b579ef0dba}{Log\+Level.\+Debug}}} }\end{DoxyParamCaption})}
+
+
+
+Logs a object with a given log level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & Object to log.\\
+\hline
+{\em level} & Level to log with.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_utils_1_1_logging_1_1_simple_logger_ac24a5ff996c300d31df3c3f21931ab70}\label{class_utils_1_1_logging_1_1_simple_logger_ac24a5ff996c300d31df3c3f21931ab70}} 
+\index{Utils.Logging.SimpleLogger@{Utils.Logging.SimpleLogger}!Log@{Log}}
+\index{Log@{Log}!Utils.Logging.SimpleLogger@{Utils.Logging.SimpleLogger}}
+\doxysubsubsection{\texorpdfstring{Log()}{Log()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Utils.\+Logging.\+Simple\+Logger.\+Log (\begin{DoxyParamCaption}\item[{string}]{message,  }\item[{\mbox{\hyperlink{namespace_utils_1_1_logging_a9af82e04c4ffd4eb51218687b908944f}{Log\+Level}}}]{level = {\ttfamily \mbox{\hyperlink{namespace_utils_1_1_logging_a9af82e04c4ffd4eb51218687b908944faa603905470e2a5b8c13e96b579ef0dba}{Log\+Level.\+Debug}}} }\end{DoxyParamCaption})}
+
+
+
+Logs a message with a given log level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Message to log.\\
+\hline
+{\em level} & Level to log with.\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Utils/\+Logging/\mbox{\hyperlink{_simple_logger_8cs}{Simple\+Logger.\+cs}}\end{DoxyCompactItemize}

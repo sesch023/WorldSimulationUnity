@@ -1,0 +1,194 @@
+\hypertarget{class_utils_1_1_arrays_1_1_array_immutable_map2_d}{}\doxysection{Utils.\+Arrays.\+Array\+Immutable\+Map2D\texorpdfstring{$<$}{<} TReal, TMapped \texorpdfstring{$>$}{>} Class Template Reference}
+\label{class_utils_1_1_arrays_1_1_array_immutable_map2_d}\index{Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$@{Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$}}
+
+
+Creates a map on a 2d array\+Immutable with a type TReal and provides a map of it with type TMapped using the provided accessor.  
+
+
+Inheritance diagram for Utils.\+Arrays.\+Array\+Immutable\+Map2D\texorpdfstring{$<$}{<} TReal, TMapped \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_utils_1_1_arrays_1_1_array_immutable_map2_d}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_utils_1_1_arrays_1_1_array_immutable_map2_d_afaec18cfbd99998f5375241ce85ad832}{Array\+Immutable\+Map2D}} (\mbox{\hyperlink{interface_utils_1_1_arrays_1_1_i2_d_array_immutable}{I2\+DArray\+Immutable}}$<$ TReal $>$ array, Func$<$ TReal, TMapped $>$ accessor)
+\begin{DoxyCompactList}\small\item\em Creates a map on a 2d array\+Immutable with a type TReal and provides a map of it with type TMapped using the provided accessor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_utils_1_1_arrays_1_1_array_immutable_map2_d_a233dfa4c518f3cd4ee6a12bf60038531}{Array\+Immutable\+Map2D}} (TReal\mbox{[},\mbox{]} array, Func$<$ TReal, TMapped $>$ accessor)
+\item 
+TReal \mbox{\hyperlink{class_utils_1_1_arrays_1_1_array_immutable_map2_d_ab8c540c58f80f31fca7410f34596f91d}{Get\+Real\+Type\+By\+Index}} (int indexX, int indexY)
+\begin{DoxyCompactList}\small\item\em Returns the value at the given index in the array\+Immutable. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{interface_utils_1_1_arrays_1_1_i2_d_enumerator}{I2\+DEnumerator}}$<$ TMapped $>$ \mbox{\hyperlink{class_utils_1_1_arrays_1_1_array_immutable_map2_d_ad7bc5755d0126deb89e58c386e666d95}{Get2\+DEnumerator}} ()
+\begin{DoxyCompactList}\small\item\em Creates a 2d enumerator for the array\+Immutable. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_utils_1_1_arrays_1_1_array_immutable_map2_d_aa8432058edb7faba2fe52f909429d59c}{Get\+Length}} (int dimension)
+\begin{DoxyCompactList}\small\item\em Get length of the array\+Immutable in given dimension. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{interface_utils_1_1_arrays_1_1_i2_d_array_immutable}{I2\+DArray\+Immutable}}$<$ TReal $>$ \mbox{\hyperlink{class_utils_1_1_arrays_1_1_array_immutable_map2_d_afd357486845d943487896407f6e522c2}{Get\+Real\+Array}} ()
+\begin{DoxyCompactList}\small\item\em Returns the internal array\+Immutable. \end{DoxyCompactList}\item 
+override string \mbox{\hyperlink{class_utils_1_1_arrays_1_1_array_immutable_map2_d_aba90bd1a8356567aae211d3cd1ddc28a}{To\+String}} ()
+\begin{DoxyCompactList}\small\item\em Creates a string representation of the array\+Immutable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Func$<$ TReal, TMapped $>$ \mbox{\hyperlink{class_utils_1_1_arrays_1_1_array_immutable_map2_d_a8f40193931324daaad18d081e65bb6e8}{Accessor}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Accessor to convert a TReal to a TMapped. \end{DoxyCompactList}\item 
+TMapped \mbox{\hyperlink{class_utils_1_1_arrays_1_1_array_immutable_map2_d_a55d58700780bb42dc26f4dc82023f5c0}{this\mbox{[}int index\+X, int index\+Y\mbox{]}}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the value at the given index in the array\+Immutable using the accessor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Creates a map on a 2d array\+Immutable with a type TReal and provides a map of it with type TMapped using the provided accessor. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TReal} & Real type of the array\+Immutable.\\
+\hline
+{\em TMapped} & Map type of the array\+Immutable.\\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_utils_1_1_arrays_1_1_array_immutable_map2_d_afaec18cfbd99998f5375241ce85ad832}\label{class_utils_1_1_arrays_1_1_array_immutable_map2_d_afaec18cfbd99998f5375241ce85ad832}} 
+\index{Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$@{Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$}!ArrayImmutableMap2D@{ArrayImmutableMap2D}}
+\index{ArrayImmutableMap2D@{ArrayImmutableMap2D}!Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$@{Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$}}
+\doxysubsubsection{\texorpdfstring{ArrayImmutableMap2D()}{ArrayImmutableMap2D()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_utils_1_1_arrays_1_1_array_immutable_map2_d}{Utils.\+Arrays.\+Array\+Immutable\+Map2D}}$<$ TReal, TMapped $>$.\mbox{\hyperlink{class_utils_1_1_arrays_1_1_array_immutable_map2_d}{Array\+Immutable\+Map2D}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_utils_1_1_arrays_1_1_i2_d_array_immutable}{I2\+DArray\+Immutable}}$<$ TReal $>$}]{array,  }\item[{Func$<$ TReal, TMapped $>$}]{accessor }\end{DoxyParamCaption})}
+
+
+
+Creates a map on a 2d array\+Immutable with a type TReal and provides a map of it with type TMapped using the provided accessor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & Internal array\+Immutable.\\
+\hline
+{\em accessor} & Accessor to convert a TReal to a TMapped.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_utils_1_1_arrays_1_1_array_immutable_map2_d_a233dfa4c518f3cd4ee6a12bf60038531}\label{class_utils_1_1_arrays_1_1_array_immutable_map2_d_a233dfa4c518f3cd4ee6a12bf60038531}} 
+\index{Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$@{Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$}!ArrayImmutableMap2D@{ArrayImmutableMap2D}}
+\index{ArrayImmutableMap2D@{ArrayImmutableMap2D}!Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$@{Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$}}
+\doxysubsubsection{\texorpdfstring{ArrayImmutableMap2D()}{ArrayImmutableMap2D()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_utils_1_1_arrays_1_1_array_immutable_map2_d}{Utils.\+Arrays.\+Array\+Immutable\+Map2D}}$<$ TReal, TMapped $>$.\mbox{\hyperlink{class_utils_1_1_arrays_1_1_array_immutable_map2_d}{Array\+Immutable\+Map2D}} (\begin{DoxyParamCaption}\item[{TReal}]{array\mbox{[},\mbox{]},  }\item[{Func$<$ TReal, TMapped $>$}]{accessor }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_utils_1_1_arrays_1_1_array_immutable_map2_d_ad7bc5755d0126deb89e58c386e666d95}\label{class_utils_1_1_arrays_1_1_array_immutable_map2_d_ad7bc5755d0126deb89e58c386e666d95}} 
+\index{Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$@{Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$}!Get2DEnumerator@{Get2DEnumerator}}
+\index{Get2DEnumerator@{Get2DEnumerator}!Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$@{Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$}}
+\doxysubsubsection{\texorpdfstring{Get2DEnumerator()}{Get2DEnumerator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interface_utils_1_1_arrays_1_1_i2_d_enumerator}{I2\+DEnumerator}}$<$ TMapped $>$ \mbox{\hyperlink{class_utils_1_1_arrays_1_1_array_immutable_map2_d}{Utils.\+Arrays.\+Array\+Immutable\+Map2D}}$<$ TReal, TMapped $>$.Get2\+DEnumerator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates a 2d enumerator for the array\+Immutable. 
+
+\begin{DoxyReturn}{Returns}
+2d enumerator for the array\+Immutable.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_utils_1_1_arrays_1_1_array_immutable_map2_d_aa8432058edb7faba2fe52f909429d59c}\label{class_utils_1_1_arrays_1_1_array_immutable_map2_d_aa8432058edb7faba2fe52f909429d59c}} 
+\index{Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$@{Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$}!GetLength@{GetLength}}
+\index{GetLength@{GetLength}!Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$@{Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$}}
+\doxysubsubsection{\texorpdfstring{GetLength()}{GetLength()}}
+{\footnotesize\ttfamily int \mbox{\hyperlink{class_utils_1_1_arrays_1_1_array_immutable_map2_d}{Utils.\+Arrays.\+Array\+Immutable\+Map2D}}$<$ TReal, TMapped $>$.Get\+Length (\begin{DoxyParamCaption}\item[{int}]{dimension }\end{DoxyParamCaption})}
+
+
+
+Get length of the array\+Immutable in given dimension. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dimension} & Either 0 (outer) or 1 (inner).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Length of the given dimension.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_utils_1_1_arrays_1_1_array_immutable_map2_d_afd357486845d943487896407f6e522c2}\label{class_utils_1_1_arrays_1_1_array_immutable_map2_d_afd357486845d943487896407f6e522c2}} 
+\index{Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$@{Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$}!GetRealArray@{GetRealArray}}
+\index{GetRealArray@{GetRealArray}!Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$@{Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$}}
+\doxysubsubsection{\texorpdfstring{GetRealArray()}{GetRealArray()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interface_utils_1_1_arrays_1_1_i2_d_array_immutable}{I2\+DArray\+Immutable}}$<$ TReal $>$ \mbox{\hyperlink{class_utils_1_1_arrays_1_1_array_immutable_map2_d}{Utils.\+Arrays.\+Array\+Immutable\+Map2D}}$<$ TReal, TMapped $>$.Get\+Real\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the internal array\+Immutable. 
+
+\begin{DoxyReturn}{Returns}
+Internal array\+Immutable.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_utils_1_1_arrays_1_1_array_immutable_map2_d_ab8c540c58f80f31fca7410f34596f91d}\label{class_utils_1_1_arrays_1_1_array_immutable_map2_d_ab8c540c58f80f31fca7410f34596f91d}} 
+\index{Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$@{Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$}!GetRealTypeByIndex@{GetRealTypeByIndex}}
+\index{GetRealTypeByIndex@{GetRealTypeByIndex}!Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$@{Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$}}
+\doxysubsubsection{\texorpdfstring{GetRealTypeByIndex()}{GetRealTypeByIndex()}}
+{\footnotesize\ttfamily TReal \mbox{\hyperlink{class_utils_1_1_arrays_1_1_array_immutable_map2_d}{Utils.\+Arrays.\+Array\+Immutable\+Map2D}}$<$ TReal, TMapped $>$.Get\+Real\+Type\+By\+Index (\begin{DoxyParamCaption}\item[{int}]{indexX,  }\item[{int}]{indexY }\end{DoxyParamCaption})}
+
+
+
+Returns the value at the given index in the array\+Immutable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em indexX} & Outer dimension.\\
+\hline
+{\em indexY} & Inner dimension.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value at the given index.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_utils_1_1_arrays_1_1_array_immutable_map2_d_aba90bd1a8356567aae211d3cd1ddc28a}\label{class_utils_1_1_arrays_1_1_array_immutable_map2_d_aba90bd1a8356567aae211d3cd1ddc28a}} 
+\index{Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$@{Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$}!ToString@{ToString}}
+\index{ToString@{ToString}!Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$@{Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily override string \mbox{\hyperlink{class_utils_1_1_arrays_1_1_array_immutable_map2_d}{Utils.\+Arrays.\+Array\+Immutable\+Map2D}}$<$ TReal, TMapped $>$.To\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates a string representation of the array\+Immutable. 
+
+\begin{DoxyReturn}{Returns}
+String representation of the array\+Immutable.
+\end{DoxyReturn}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_utils_1_1_arrays_1_1_array_immutable_map2_d_a8f40193931324daaad18d081e65bb6e8}\label{class_utils_1_1_arrays_1_1_array_immutable_map2_d_a8f40193931324daaad18d081e65bb6e8}} 
+\index{Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$@{Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$}!Accessor@{Accessor}}
+\index{Accessor@{Accessor}!Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$@{Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$}}
+\doxysubsubsection{\texorpdfstring{Accessor}{Accessor}}
+{\footnotesize\ttfamily Func$<$TReal, TMapped$>$ \mbox{\hyperlink{class_utils_1_1_arrays_1_1_array_immutable_map2_d}{Utils.\+Arrays.\+Array\+Immutable\+Map2D}}$<$ TReal, TMapped $>$.Accessor\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Accessor to convert a TReal to a TMapped. 
+
+\mbox{\Hypertarget{class_utils_1_1_arrays_1_1_array_immutable_map2_d_a55d58700780bb42dc26f4dc82023f5c0}\label{class_utils_1_1_arrays_1_1_array_immutable_map2_d_a55d58700780bb42dc26f4dc82023f5c0}} 
+\index{Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$@{Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$}!this\mbox{[}int indexX, int indexY\mbox{]}@{this[int indexX, int indexY]}}
+\index{this\mbox{[}int indexX, int indexY\mbox{]}@{this[int indexX, int indexY]}!Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$@{Utils.Arrays.ArrayImmutableMap2D$<$ TReal, TMapped $>$}}
+\doxysubsubsection{\texorpdfstring{this[int indexX, int indexY]}{this[int indexX, int indexY]}}
+{\footnotesize\ttfamily TMapped \mbox{\hyperlink{class_utils_1_1_arrays_1_1_array_immutable_map2_d}{Utils.\+Arrays.\+Array\+Immutable\+Map2D}}$<$ TReal, TMapped $>$.this\mbox{[}int indexX, int indexY\mbox{]}\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Returns the value at the given index in the array\+Immutable using the accessor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em indexX} & Outer dimension.\\
+\hline
+{\em indexY} & Inner dimension.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Converted value at the given index.
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Utils/\+Arrays/\mbox{\hyperlink{_array_immutable_map2_d_8cs}{Array\+Immutable\+Map2\+D.\+cs}}\end{DoxyCompactItemize}

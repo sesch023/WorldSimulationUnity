@@ -2,7 +2,10 @@
 
 namespace Utils.BaseUtils
 {
-    // https://stackoverflow.com/questions/12884600/how-to-calculate-simple-moving-average-faster-in-c
+    /// <summary>
+    /// Class for calculating a moving average on a window of values.
+    /// https://stackoverflow.com/questions/12884600/how-to-calculate-simple-moving-average-faster-in-c
+    /// </summary>
     public class MovingAverageLong
     {
         private readonly Queue<long> _samples = new Queue<long>();
@@ -14,6 +17,7 @@ namespace Utils.BaseUtils
             _windowSize = windowSize;
         }
 
+        /// Current average.
         public decimal Average { get; private set; }
 
         /// <summary>

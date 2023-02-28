@@ -11,48 +11,59 @@ Inheritance diagram for Model.\+Map.\+Map\+Unit\+:\begin{figure}[H]
 \includegraphics[height=2.000000cm]{class_model_1_1_map_1_1_map_unit}
 \end{center}
 \end{figure}
-\doxysubsection*{Classes}
-\begin{DoxyCompactItemize}
-\item 
-struct \mbox{\hyperlink{struct_model_1_1_map_1_1_map_unit_1_1_map_position}{Map\+Position}}
-\begin{DoxyCompactList}\small\item\em A position in the map. Has longitude, latitude and elevation. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_model_1_1_map_1_1_map_unit_af7396fac4d4eb386014fcd90419f5d99}{Map\+Unit}} (float temperature, float humidity, \mbox{\hyperlink{struct_model_1_1_map_1_1_map_unit_1_1_map_position}{Map\+Position}} position)
+void \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit_a1c76e3354eda9de941b4d4de1f2f306a}{Erode\+Elevation}} (float new\+Elevation, float soil\+Multiplier=35f, float gravel\+Multiplier=35f, float sand\+Multiplier=10f)
+\begin{DoxyCompactList}\small\item\em This Algorithm is hacky and should be changed in the future. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_model_1_1_map_1_1_map_unit_a66691648091ef42fcaf962ac2cc35689}{Map\+Unit}} (\mbox{\hyperlink{class_model_1_1_map_1_1_map}{Map}} map, float temperature, float humidity, \mbox{\hyperlink{class_model_1_1_map_1_1_map_position}{Map\+Position}} position)
 \begin{DoxyCompactList}\small\item\em Initializes the unit with a temperature, humidity and position. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_model_1_1_map_1_1_map_unit_aaf61c8b281a612258a3ef1f545143b19}{Map\+Unit}} (float temperature, float humidity, \mbox{\hyperlink{struct_model_1_1_map_1_1_map_unit_1_1_map_position}{Map\+Position}} position, \mbox{[}Not\+Null\mbox{]} IList$<$ \mbox{\hyperlink{class_model_1_1_unit_behaviors_1_1_base_unit_behavior}{Base\+Unit\+Behavior}} $>$ behaviors)
+\mbox{\hyperlink{class_model_1_1_map_1_1_map_unit_ace903f1fd3df24ff952bbde68b2589db}{Map\+Unit}} (\mbox{\hyperlink{class_model_1_1_map_1_1_map}{Map}} map, float temperature, float humidity, \mbox{\hyperlink{class_model_1_1_map_1_1_map_position}{Map\+Position}} position, \mbox{[}Not\+Null\mbox{]} IList$<$ \mbox{\hyperlink{class_model_1_1_unit_behaviors_1_1_base_unit_behavior}{Base\+Unit\+Behavior}} $>$ behaviors)
 \begin{DoxyCompactList}\small\item\em Initializes the unit with a temperature, humidity, position and a list of behaviors. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit_adf8deac4ac910358f259ff374bb92b32}{Add\+Unit\+Behavior}} (\mbox{\hyperlink{class_model_1_1_unit_behaviors_1_1_base_unit_behavior}{Base\+Unit\+Behavior}} behavior)
 \begin{DoxyCompactList}\small\item\em Adds a behavior to the unit. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit_a980c8c758480173de7d5f5292e4bedc5}{Remove\+Unit\+Behavior}} (\mbox{\hyperlink{class_model_1_1_unit_behaviors_1_1_base_unit_behavior}{Base\+Unit\+Behavior}} behavior)
 \begin{DoxyCompactList}\small\item\em Removes a behavior from the unit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit_a947a3528562a74ed3d76f30ac7ddbfd7}{Add\+Change\+Subscriber}} (\mbox{\hyperlink{namespace_model_1_1_map_a1235ccfa505531e09604505ef8238c65}{Map\+Unit\+Changed}} subscriber)
+\item 
+void \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit_a335c2cc54e27524a51cafd1af33bce27}{Remove\+Change\+Subscriber}} (\mbox{\hyperlink{namespace_model_1_1_map_a1235ccfa505531e09604505ef8238c65}{Map\+Unit\+Changed}} subscriber)
+\item 
 void \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit_ae94f205ecdcd529376274cfebcc94877}{Clear\+Behaviors}} ()
 \begin{DoxyCompactList}\small\item\em Clears all behaviors from the unit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit_a8d0cb9457c87ad668fee5f2f9b85bf65}{Clear\+Change\+Subscribers}} ()
+\item 
 void \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit_ae19ac5cf64c7556ce1b24fd310a3e8d2}{Update}} ()
 \begin{DoxyCompactList}\small\item\em Updates the unit. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-float \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit_aad7480853c4a136b8ca69ccab17f9d17}{Temperature}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+float \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit_aad7480853c4a136b8ca69ccab17f9d17}{Temperature}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Temperature of the unit in Kelvin. \end{DoxyCompactList}\item 
-float \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit_a601f7a90c7c98021b51d932dec7f51dd}{Humidity}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+float \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit_a601f7a90c7c98021b51d932dec7f51dd}{Humidity}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Humidity of the unit in percent. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{struct_model_1_1_map_1_1_map_unit_1_1_map_position}{Map\+Position}} \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit_a74519e0d15c673f924fd786a31a85e4e}{Position}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\begin{DoxyCompactList}\small\item\em Position of the unit in the map with longitude, latitude and elevation. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit_a583c3d0fc8568b2bf550332b2c666ad5}{Water\+Level}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+float \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit_a6f2e2e37a280d2e02d0ebce555d2822f}{Atmospheric\+Pressure}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Atmospheric pressure of the unit in pascal. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_model_1_1_map_1_1_map_unit_ground_material}{Map\+Unit\+Ground\+Material}} \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit_a2d84931c8307ae20ff56f2029a36d798}{Ground\+Material}} = new()\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\hyperlink{class_model_1_1_map_1_1_map_position}{Map\+Position}} \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit_a74519e0d15c673f924fd786a31a85e4e}{Position}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Map\+Position\+Vec of the unit in the map with longitude, latitude and elevation. \end{DoxyCompactList}\item 
 IList$<$ \mbox{\hyperlink{class_model_1_1_unit_behaviors_1_1_base_unit_behavior}{Base\+Unit\+Behavior}} $>$ \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit_a24866351d643032f6866ad19778bd98b}{Behaviors}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
-\begin{DoxyCompactList}\small\item\em Behaviors of the unit. These are to be added depending on unit conditions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Behaviors of the unit. These are to be added depending on unit conditions. \end{DoxyCompactList}\item 
+IList$<$ \mbox{\hyperlink{namespace_model_1_1_map_a1235ccfa505531e09604505ef8238c65}{Map\+Unit\+Changed}} $>$ \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit_af0727278150bdfc50a063424ff848a0c}{Change\+Subscribers}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 A single unit at a position in a map. Has a position with longitude, latitude and elevation. Also has a temperature, humidity and behaviors which are to be added depending on unit conditions. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_model_1_1_map_1_1_map_unit_af7396fac4d4eb386014fcd90419f5d99}\label{class_model_1_1_map_1_1_map_unit_af7396fac4d4eb386014fcd90419f5d99}} 
+\mbox{\Hypertarget{class_model_1_1_map_1_1_map_unit_a66691648091ef42fcaf962ac2cc35689}\label{class_model_1_1_map_1_1_map_unit_a66691648091ef42fcaf962ac2cc35689}} 
 \index{Model.Map.MapUnit@{Model.Map.MapUnit}!MapUnit@{MapUnit}}
 \index{MapUnit@{MapUnit}!Model.Map.MapUnit@{Model.Map.MapUnit}}
 \doxysubsubsection{\texorpdfstring{MapUnit()}{MapUnit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily Model.\+Map.\+Map\+Unit.\+Map\+Unit (\begin{DoxyParamCaption}\item[{float}]{temperature,  }\item[{float}]{humidity,  }\item[{\mbox{\hyperlink{struct_model_1_1_map_1_1_map_unit_1_1_map_position}{Map\+Position}}}]{position }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Model.\+Map.\+Map\+Unit.\+Map\+Unit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_model_1_1_map_1_1_map}{Map}}}]{map,  }\item[{float}]{temperature,  }\item[{float}]{humidity,  }\item[{\mbox{\hyperlink{class_model_1_1_map_1_1_map_position}{Map\+Position}}}]{position }\end{DoxyParamCaption})}
 
 
 
@@ -64,14 +75,14 @@ Initializes the unit with a temperature, humidity and position.
 \hline
 {\em humidity} & Humidity of the unit.\\
 \hline
-{\em position} & Position of the unit.\\
+{\em position} & Map\+Position\+Vec of the unit.\\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_model_1_1_map_1_1_map_unit_aaf61c8b281a612258a3ef1f545143b19}\label{class_model_1_1_map_1_1_map_unit_aaf61c8b281a612258a3ef1f545143b19}} 
+\mbox{\Hypertarget{class_model_1_1_map_1_1_map_unit_ace903f1fd3df24ff952bbde68b2589db}\label{class_model_1_1_map_1_1_map_unit_ace903f1fd3df24ff952bbde68b2589db}} 
 \index{Model.Map.MapUnit@{Model.Map.MapUnit}!MapUnit@{MapUnit}}
 \index{MapUnit@{MapUnit}!Model.Map.MapUnit@{Model.Map.MapUnit}}
 \doxysubsubsection{\texorpdfstring{MapUnit()}{MapUnit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily Model.\+Map.\+Map\+Unit.\+Map\+Unit (\begin{DoxyParamCaption}\item[{float}]{temperature,  }\item[{float}]{humidity,  }\item[{\mbox{\hyperlink{struct_model_1_1_map_1_1_map_unit_1_1_map_position}{Map\+Position}}}]{position,  }\item[{\mbox{[}\+Not\+Null\mbox{]} IList$<$ \mbox{\hyperlink{class_model_1_1_unit_behaviors_1_1_base_unit_behavior}{Base\+Unit\+Behavior}} $>$}]{behaviors }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Model.\+Map.\+Map\+Unit.\+Map\+Unit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_model_1_1_map_1_1_map}{Map}}}]{map,  }\item[{float}]{temperature,  }\item[{float}]{humidity,  }\item[{\mbox{\hyperlink{class_model_1_1_map_1_1_map_position}{Map\+Position}}}]{position,  }\item[{\mbox{[}\+Not\+Null\mbox{]} IList$<$ \mbox{\hyperlink{class_model_1_1_unit_behaviors_1_1_base_unit_behavior}{Base\+Unit\+Behavior}} $>$}]{behaviors }\end{DoxyParamCaption})}
 
 
 
@@ -83,7 +94,7 @@ Initializes the unit with a temperature, humidity, position and a list of behavi
 \hline
 {\em humidity} & Humidity of the unit.\\
 \hline
-{\em position} & Position of the unit.\\
+{\em position} & Map\+Position\+Vec of the unit.\\
 \hline
 {\em behaviors} & Behaviors of the unit.\\
 \hline
@@ -91,6 +102,12 @@ Initializes the unit with a temperature, humidity, position and a list of behavi
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_model_1_1_map_1_1_map_unit_a947a3528562a74ed3d76f30ac7ddbfd7}\label{class_model_1_1_map_1_1_map_unit_a947a3528562a74ed3d76f30ac7ddbfd7}} 
+\index{Model.Map.MapUnit@{Model.Map.MapUnit}!AddChangeSubscriber@{AddChangeSubscriber}}
+\index{AddChangeSubscriber@{AddChangeSubscriber}!Model.Map.MapUnit@{Model.Map.MapUnit}}
+\doxysubsubsection{\texorpdfstring{AddChangeSubscriber()}{AddChangeSubscriber()}}
+{\footnotesize\ttfamily void Model.\+Map.\+Map\+Unit.\+Add\+Change\+Subscriber (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_model_1_1_map_a1235ccfa505531e09604505ef8238c65}{Map\+Unit\+Changed}}}]{subscriber }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{class_model_1_1_map_1_1_map_unit_adf8deac4ac910358f259ff374bb92b32}\label{class_model_1_1_map_1_1_map_unit_adf8deac4ac910358f259ff374bb92b32}} 
 \index{Model.Map.MapUnit@{Model.Map.MapUnit}!AddUnitBehavior@{AddUnitBehavior}}
 \index{AddUnitBehavior@{AddUnitBehavior}!Model.Map.MapUnit@{Model.Map.MapUnit}}
@@ -115,6 +132,28 @@ Adds a behavior to the unit.
 
 
 Clears all behaviors from the unit. 
+
+\mbox{\Hypertarget{class_model_1_1_map_1_1_map_unit_a8d0cb9457c87ad668fee5f2f9b85bf65}\label{class_model_1_1_map_1_1_map_unit_a8d0cb9457c87ad668fee5f2f9b85bf65}} 
+\index{Model.Map.MapUnit@{Model.Map.MapUnit}!ClearChangeSubscribers@{ClearChangeSubscribers}}
+\index{ClearChangeSubscribers@{ClearChangeSubscribers}!Model.Map.MapUnit@{Model.Map.MapUnit}}
+\doxysubsubsection{\texorpdfstring{ClearChangeSubscribers()}{ClearChangeSubscribers()}}
+{\footnotesize\ttfamily void Model.\+Map.\+Map\+Unit.\+Clear\+Change\+Subscribers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_model_1_1_map_1_1_map_unit_a1c76e3354eda9de941b4d4de1f2f306a}\label{class_model_1_1_map_1_1_map_unit_a1c76e3354eda9de941b4d4de1f2f306a}} 
+\index{Model.Map.MapUnit@{Model.Map.MapUnit}!ErodeElevation@{ErodeElevation}}
+\index{ErodeElevation@{ErodeElevation}!Model.Map.MapUnit@{Model.Map.MapUnit}}
+\doxysubsubsection{\texorpdfstring{ErodeElevation()}{ErodeElevation()}}
+{\footnotesize\ttfamily void Model.\+Map.\+Map\+Unit.\+Erode\+Elevation (\begin{DoxyParamCaption}\item[{float}]{new\+Elevation,  }\item[{float}]{soil\+Multiplier = {\ttfamily 35f},  }\item[{float}]{gravel\+Multiplier = {\ttfamily 35f},  }\item[{float}]{sand\+Multiplier = {\ttfamily 10f} }\end{DoxyParamCaption})}
+
+
+
+This Algorithm is hacky and should be changed in the future. 
+
+\mbox{\Hypertarget{class_model_1_1_map_1_1_map_unit_a335c2cc54e27524a51cafd1af33bce27}\label{class_model_1_1_map_1_1_map_unit_a335c2cc54e27524a51cafd1af33bce27}} 
+\index{Model.Map.MapUnit@{Model.Map.MapUnit}!RemoveChangeSubscriber@{RemoveChangeSubscriber}}
+\index{RemoveChangeSubscriber@{RemoveChangeSubscriber}!Model.Map.MapUnit@{Model.Map.MapUnit}}
+\doxysubsubsection{\texorpdfstring{RemoveChangeSubscriber()}{RemoveChangeSubscriber()}}
+{\footnotesize\ttfamily void Model.\+Map.\+Map\+Unit.\+Remove\+Change\+Subscriber (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_model_1_1_map_a1235ccfa505531e09604505ef8238c65}{Map\+Unit\+Changed}}}]{subscriber }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{class_model_1_1_map_1_1_map_unit_a980c8c758480173de7d5f5292e4bedc5}\label{class_model_1_1_map_1_1_map_unit_a980c8c758480173de7d5f5292e4bedc5}} 
 \index{Model.Map.MapUnit@{Model.Map.MapUnit}!RemoveUnitBehavior@{RemoveUnitBehavior}}
@@ -148,6 +187,16 @@ Implements \mbox{\hyperlink{interface_base_1_1_i_updatable_a1983d03de50becea9925
 
 
 \doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_model_1_1_map_1_1_map_unit_a6f2e2e37a280d2e02d0ebce555d2822f}\label{class_model_1_1_map_1_1_map_unit_a6f2e2e37a280d2e02d0ebce555d2822f}} 
+\index{Model.Map.MapUnit@{Model.Map.MapUnit}!AtmosphericPressure@{AtmosphericPressure}}
+\index{AtmosphericPressure@{AtmosphericPressure}!Model.Map.MapUnit@{Model.Map.MapUnit}}
+\doxysubsubsection{\texorpdfstring{AtmosphericPressure}{AtmosphericPressure}}
+{\footnotesize\ttfamily float Model.\+Map.\+Map\+Unit.\+Atmospheric\+Pressure\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Atmospheric pressure of the unit in pascal. 
+
 \mbox{\Hypertarget{class_model_1_1_map_1_1_map_unit_a24866351d643032f6866ad19778bd98b}\label{class_model_1_1_map_1_1_map_unit_a24866351d643032f6866ad19778bd98b}} 
 \index{Model.Map.MapUnit@{Model.Map.MapUnit}!Behaviors@{Behaviors}}
 \index{Behaviors@{Behaviors}!Model.Map.MapUnit@{Model.Map.MapUnit}}
@@ -158,11 +207,23 @@ Implements \mbox{\hyperlink{interface_base_1_1_i_updatable_a1983d03de50becea9925
 
 Behaviors of the unit. These are to be added depending on unit conditions. 
 
+\mbox{\Hypertarget{class_model_1_1_map_1_1_map_unit_af0727278150bdfc50a063424ff848a0c}\label{class_model_1_1_map_1_1_map_unit_af0727278150bdfc50a063424ff848a0c}} 
+\index{Model.Map.MapUnit@{Model.Map.MapUnit}!ChangeSubscribers@{ChangeSubscribers}}
+\index{ChangeSubscribers@{ChangeSubscribers}!Model.Map.MapUnit@{Model.Map.MapUnit}}
+\doxysubsubsection{\texorpdfstring{ChangeSubscribers}{ChangeSubscribers}}
+{\footnotesize\ttfamily IList$<$\mbox{\hyperlink{namespace_model_1_1_map_a1235ccfa505531e09604505ef8238c65}{Map\+Unit\+Changed}}$>$ Model.\+Map.\+Map\+Unit.\+Change\+Subscribers\hspace{0.3cm}{\ttfamily [get]}}
+
+\mbox{\Hypertarget{class_model_1_1_map_1_1_map_unit_a2d84931c8307ae20ff56f2029a36d798}\label{class_model_1_1_map_1_1_map_unit_a2d84931c8307ae20ff56f2029a36d798}} 
+\index{Model.Map.MapUnit@{Model.Map.MapUnit}!GroundMaterial@{GroundMaterial}}
+\index{GroundMaterial@{GroundMaterial}!Model.Map.MapUnit@{Model.Map.MapUnit}}
+\doxysubsubsection{\texorpdfstring{GroundMaterial}{GroundMaterial}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit_ground_material}{Map\+Unit\+Ground\+Material}} Model.\+Map.\+Map\+Unit.\+Ground\+Material = new()\hspace{0.3cm}{\ttfamily [get]}}
+
 \mbox{\Hypertarget{class_model_1_1_map_1_1_map_unit_a601f7a90c7c98021b51d932dec7f51dd}\label{class_model_1_1_map_1_1_map_unit_a601f7a90c7c98021b51d932dec7f51dd}} 
 \index{Model.Map.MapUnit@{Model.Map.MapUnit}!Humidity@{Humidity}}
 \index{Humidity@{Humidity}!Model.Map.MapUnit@{Model.Map.MapUnit}}
 \doxysubsubsection{\texorpdfstring{Humidity}{Humidity}}
-{\footnotesize\ttfamily float Model.\+Map.\+Map\+Unit.\+Humidity\hspace{0.3cm}{\ttfamily [get]}}
+{\footnotesize\ttfamily float Model.\+Map.\+Map\+Unit.\+Humidity\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
 
 
@@ -172,21 +233,27 @@ Humidity of the unit in percent.
 \index{Model.Map.MapUnit@{Model.Map.MapUnit}!Position@{Position}}
 \index{Position@{Position}!Model.Map.MapUnit@{Model.Map.MapUnit}}
 \doxysubsubsection{\texorpdfstring{Position}{Position}}
-{\footnotesize\ttfamily \mbox{\hyperlink{struct_model_1_1_map_1_1_map_unit_1_1_map_position}{Map\+Position}} Model.\+Map.\+Map\+Unit.\+Position\hspace{0.3cm}{\ttfamily [get]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_model_1_1_map_1_1_map_position}{Map\+Position}} Model.\+Map.\+Map\+Unit.\+Position\hspace{0.3cm}{\ttfamily [get]}}
 
 
 
-Position of the unit in the map with longitude, latitude and elevation. 
+Map\+Position\+Vec of the unit in the map with longitude, latitude and elevation. 
 
 \mbox{\Hypertarget{class_model_1_1_map_1_1_map_unit_aad7480853c4a136b8ca69ccab17f9d17}\label{class_model_1_1_map_1_1_map_unit_aad7480853c4a136b8ca69ccab17f9d17}} 
 \index{Model.Map.MapUnit@{Model.Map.MapUnit}!Temperature@{Temperature}}
 \index{Temperature@{Temperature}!Model.Map.MapUnit@{Model.Map.MapUnit}}
 \doxysubsubsection{\texorpdfstring{Temperature}{Temperature}}
-{\footnotesize\ttfamily float Model.\+Map.\+Map\+Unit.\+Temperature\hspace{0.3cm}{\ttfamily [get]}}
+{\footnotesize\ttfamily float Model.\+Map.\+Map\+Unit.\+Temperature\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
 
 
 Temperature of the unit in Kelvin. 
+
+\mbox{\Hypertarget{class_model_1_1_map_1_1_map_unit_a583c3d0fc8568b2bf550332b2c666ad5}\label{class_model_1_1_map_1_1_map_unit_a583c3d0fc8568b2bf550332b2c666ad5}} 
+\index{Model.Map.MapUnit@{Model.Map.MapUnit}!WaterLevel@{WaterLevel}}
+\index{WaterLevel@{WaterLevel}!Model.Map.MapUnit@{Model.Map.MapUnit}}
+\doxysubsubsection{\texorpdfstring{WaterLevel}{WaterLevel}}
+{\footnotesize\ttfamily float Model.\+Map.\+Map\+Unit.\+Water\+Level\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
 
 

@@ -2,7 +2,7 @@
 \label{namespace_model_1_1_map}\index{Model.Map@{Model.Map}}
 
 
-Namespace for the map model  
+Namespace for the simulation model.  
 
 
 \doxysubsection*{Classes}
@@ -10,15 +10,73 @@ Namespace for the map model
 \item 
 class \mbox{\hyperlink{class_model_1_1_map_1_1_map}{Map}}
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_model_1_1_map_1_1_map}{Map}} in the Game. It represents the entire world. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_model_1_1_map_1_1_map_position}{Map\+Position}}
+\begin{DoxyCompactList}\small\item\em A map\+Position\+Vec in the map. Has longitude, latitude and elevation. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}}
 \begin{DoxyCompactList}\small\item\em A single unit at a position in a map. Has a position with longitude, latitude and elevation. Also has a temperature, humidity and behaviors which are to be added depending on unit conditions. \end{DoxyCompactList}\item 
-class \mbox{\hyperlink{class_model_1_1_map_1_1_peak}{Peak}}
-\begin{DoxyCompactList}\small\item\em Finds and defines a peak in a map or 2D array of floats. \end{DoxyCompactList}\item 
-class \mbox{\hyperlink{class_model_1_1_map_1_1_slope}{Slope}}
-\begin{DoxyCompactList}\small\item\em Finds a slope in a map or 2D array of floats. \end{DoxyCompactList}\item 
-class \mbox{\hyperlink{class_model_1_1_map_1_1_valley}{Valley}}
-\begin{DoxyCompactList}\small\item\em Finds and defines a valley in a map or 2D array of floats. \end{DoxyCompactList}\end{DoxyCompactItemize}
+class \mbox{\hyperlink{class_model_1_1_map_1_1_map_unit_ground_material}{Map\+Unit\+Ground\+Material}}
+\begin{DoxyCompactList}\small\item\em Represents the Ground makeup of the unit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_model_1_1_map_a6b2273ec1e6216f2ebdf53544538b491}{Ground\+Material\+Type}} \{ \newline
+\mbox{\hyperlink{namespace_model_1_1_map_a6b2273ec1e6216f2ebdf53544538b491ae4b9dca2448724ca25e388a0317a09c8}{Soil}}
+, \mbox{\hyperlink{namespace_model_1_1_map_a6b2273ec1e6216f2ebdf53544538b491a4cfbb125e9878528bab91d12421134d8}{Rock}}
+, \mbox{\hyperlink{namespace_model_1_1_map_a6b2273ec1e6216f2ebdf53544538b491acec7ca178e2f7b1ae3a4600868c57aca}{Sand}}
+, \mbox{\hyperlink{namespace_model_1_1_map_a6b2273ec1e6216f2ebdf53544538b491a3fac7288dbc045b234fde61225fae806}{Gravel}}
+, \newline
+\mbox{\hyperlink{namespace_model_1_1_map_a6b2273ec1e6216f2ebdf53544538b491aed5eace1bd098cdced7685864b09c291}{Clay}}
+ \}
+\begin{DoxyCompactList}\small\item\em Type of ground materials. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+delegate void \mbox{\hyperlink{namespace_model_1_1_map_a1235ccfa505531e09604505ef8238c65}{Map\+Unit\+Changed}} (\mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}} unit)
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Namespace for the map model 
+Namespace for the simulation model. 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespace_model_1_1_map_a6b2273ec1e6216f2ebdf53544538b491}\label{namespace_model_1_1_map_a6b2273ec1e6216f2ebdf53544538b491}} 
+\index{Model.Map@{Model.Map}!GroundMaterialType@{GroundMaterialType}}
+\index{GroundMaterialType@{GroundMaterialType}!Model.Map@{Model.Map}}
+\doxysubsubsection{\texorpdfstring{GroundMaterialType}{GroundMaterialType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_model_1_1_map_a6b2273ec1e6216f2ebdf53544538b491}{Model.\+Map.\+Ground\+Material\+Type}}}
+
+
+
+Type of ground materials. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Soil@{Soil}!Model.Map@{Model.Map}}\index{Model.Map@{Model.Map}!Soil@{Soil}}}\mbox{\Hypertarget{namespace_model_1_1_map_a6b2273ec1e6216f2ebdf53544538b491ae4b9dca2448724ca25e388a0317a09c8}\label{namespace_model_1_1_map_a6b2273ec1e6216f2ebdf53544538b491ae4b9dca2448724ca25e388a0317a09c8}} 
+Soil&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Rock@{Rock}!Model.Map@{Model.Map}}\index{Model.Map@{Model.Map}!Rock@{Rock}}}\mbox{\Hypertarget{namespace_model_1_1_map_a6b2273ec1e6216f2ebdf53544538b491a4cfbb125e9878528bab91d12421134d8}\label{namespace_model_1_1_map_a6b2273ec1e6216f2ebdf53544538b491a4cfbb125e9878528bab91d12421134d8}} 
+Rock&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Sand@{Sand}!Model.Map@{Model.Map}}\index{Model.Map@{Model.Map}!Sand@{Sand}}}\mbox{\Hypertarget{namespace_model_1_1_map_a6b2273ec1e6216f2ebdf53544538b491acec7ca178e2f7b1ae3a4600868c57aca}\label{namespace_model_1_1_map_a6b2273ec1e6216f2ebdf53544538b491acec7ca178e2f7b1ae3a4600868c57aca}} 
+Sand&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Gravel@{Gravel}!Model.Map@{Model.Map}}\index{Model.Map@{Model.Map}!Gravel@{Gravel}}}\mbox{\Hypertarget{namespace_model_1_1_map_a6b2273ec1e6216f2ebdf53544538b491a3fac7288dbc045b234fde61225fae806}\label{namespace_model_1_1_map_a6b2273ec1e6216f2ebdf53544538b491a3fac7288dbc045b234fde61225fae806}} 
+Gravel&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Clay@{Clay}!Model.Map@{Model.Map}}\index{Model.Map@{Model.Map}!Clay@{Clay}}}\mbox{\Hypertarget{namespace_model_1_1_map_a6b2273ec1e6216f2ebdf53544538b491aed5eace1bd098cdced7685864b09c291}\label{namespace_model_1_1_map_a6b2273ec1e6216f2ebdf53544538b491aed5eace1bd098cdced7685864b09c291}} 
+Clay&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespace_model_1_1_map_a1235ccfa505531e09604505ef8238c65}\label{namespace_model_1_1_map_a1235ccfa505531e09604505ef8238c65}} 
+\index{Model.Map@{Model.Map}!MapUnitChanged@{MapUnitChanged}}
+\index{MapUnitChanged@{MapUnitChanged}!Model.Map@{Model.Map}}
+\doxysubsubsection{\texorpdfstring{MapUnitChanged()}{MapUnitChanged()}}
+{\footnotesize\ttfamily delegate void Model.\+Map.\+Map\+Unit\+Changed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_model_1_1_map_1_1_map_unit}{Map\+Unit}}}]{unit }\end{DoxyParamCaption})}
+

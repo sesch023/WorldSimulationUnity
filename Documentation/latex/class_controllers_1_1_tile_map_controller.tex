@@ -18,6 +18,8 @@ void \mbox{\hyperlink{class_controllers_1_1_tile_map_controller_ac76670a4b59c1df
 \begin{DoxyCompactList}\small\item\em Initializes the \mbox{\hyperlink{class_controllers_1_1_tile_map_controller}{Tile\+Map\+Controller}}. Delegates the texture exchange between the Tilemap and the Tile\+Views under conditions set by the unit map. This code cannot be called from the constructor, because at the point of construction the Monobehaviours and Scriptable\+Data are not yet initialized. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_controllers_1_1_tile_map_controller_a2335b71cc295b54851e8b6ed739de67b}{Update}} ()
 \begin{DoxyCompactList}\small\item\em Calls the Update method of the Map. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_controllers_1_1_tile_map_controller_a7e9f33250f42644900a1ade2f084c97a}{Update\+Tile}} (int x, int y)
+\item 
 Vector2\+Int \mbox{\hyperlink{class_controllers_1_1_tile_map_controller_aa8c81857359226ef3f7d24fcde144702}{Get\+Map\+Unit\+By\+Global\+Position}} (Vector3 pos)
 \item 
 Vector3 \mbox{\hyperlink{class_controllers_1_1_tile_map_controller_a567a4fb0a9c8421a3d1cbdf0b89515e3}{Tile\+Map\+Position\+To\+Global\+Position}} (Vector2\+Int position)
@@ -115,6 +117,12 @@ Calls the Update method of the Map.
 
 Implements \mbox{\hyperlink{interface_base_1_1_i_updatable_a1983d03de50becea9925ab50db45752d}{Base.\+IUpdatable}}.
 
+\mbox{\Hypertarget{class_controllers_1_1_tile_map_controller_a7e9f33250f42644900a1ade2f084c97a}\label{class_controllers_1_1_tile_map_controller_a7e9f33250f42644900a1ade2f084c97a}} 
+\index{Controllers.TileMapController@{Controllers.TileMapController}!UpdateTile@{UpdateTile}}
+\index{UpdateTile@{UpdateTile}!Controllers.TileMapController@{Controllers.TileMapController}}
+\doxysubsubsection{\texorpdfstring{UpdateTile()}{UpdateTile()}}
+{\footnotesize\ttfamily void Controllers.\+Tile\+Map\+Controller.\+Update\+Tile (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
 
 
 \doxysubsection{Member Data Documentation}
@@ -130,7 +138,7 @@ Given a global position, returns the map unit at that position if possible and t
 
 
 \begin{DoxyParams}{Parameters}
-{\em pos} & Global Position that is converted.\\
+{\em pos} & Global Map\+Position\+Vec that is converted.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

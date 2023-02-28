@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['range_0',['Range',['../class_utils_1_1_base_utils_1_1_math_util_1_1_range.html',1,'Utils::BaseUtils::MathUtil']]]
+  ['peak_0',['Peak',['../class_model_1_1_virtual_feature_selection_1_1_peak.html',1,'Model::VirtualFeatureSelection']]],
+  ['perlingenerator_1',['PerlinGenerator',['../class_model_1_1_generators_1_1_perlin_generator.html',1,'Model::Generators']]]
 ];

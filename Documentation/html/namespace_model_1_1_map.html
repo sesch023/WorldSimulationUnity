@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>WorldSimulationUnity: Model.Map Namespace Reference</title>
+<title>World Simulation Unity: Model.Map Namespace Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,9 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">WorldSimulationUnity
+   <div id="projectname">World Simulation Unity
    </div>
-   <div id="projectbrief">Simulation of a world in unity.</div>
+   <div id="projectbrief">World Simulation in Unity.</div>
   </td>
  </tr>
  </tbody>
@@ -84,12 +84,14 @@ $(document).ready(function(){initNavTree('namespace_model_1_1_map.html',''); ini
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">Model.Map Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Namespace for the map model  
+<p>Namespace for the simulation model.  
 <a href="namespace_model_1_1_map.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
@@ -97,22 +99,81 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map.html">Map</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_model_1_1_map_1_1_map.html" title="Map in the Game. It represents the entire world.">Map</a> in the Game. It represents the entire world.  <a href="class_model_1_1_map_1_1_map.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map_position.html">MapPosition</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A mapPositionVec in the map. Has longitude, latitude and elevation.  <a href="class_model_1_1_map_1_1_map_position.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map_unit.html">MapUnit</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A single unit at a position in a map. Has a position with longitude, latitude and elevation. Also has a temperature, humidity and behaviors which are to be added depending on unit conditions.  <a href="class_model_1_1_map_1_1_map_unit.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_peak.html">Peak</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds and defines a peak in a map or 2D array of floats.  <a href="class_model_1_1_map_1_1_peak.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map_unit_ground_material.html">MapUnitGroundMaterial</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the Ground makeup of the unit.  <a href="class_model_1_1_map_1_1_map_unit_ground_material.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_slope.html">Slope</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds a slope in a map or 2D array of floats.  <a href="class_model_1_1_map_1_1_slope.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_valley.html">Valley</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds and defines a valley in a map or 2D array of floats.  <a href="class_model_1_1_map_1_1_valley.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a6b2273ec1e6216f2ebdf53544538b491"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_model_1_1_map.html#a6b2273ec1e6216f2ebdf53544538b491">GroundMaterialType</a> { <br />
+&#160;&#160;<a class="el" href="namespace_model_1_1_map.html#a6b2273ec1e6216f2ebdf53544538b491ae4b9dca2448724ca25e388a0317a09c8">Soil</a>
+, <a class="el" href="namespace_model_1_1_map.html#a6b2273ec1e6216f2ebdf53544538b491a4cfbb125e9878528bab91d12421134d8">Rock</a>
+, <a class="el" href="namespace_model_1_1_map.html#a6b2273ec1e6216f2ebdf53544538b491acec7ca178e2f7b1ae3a4600868c57aca">Sand</a>
+, <a class="el" href="namespace_model_1_1_map.html#a6b2273ec1e6216f2ebdf53544538b491a3fac7288dbc045b234fde61225fae806">Gravel</a>
+, <br />
+&#160;&#160;<a class="el" href="namespace_model_1_1_map.html#a6b2273ec1e6216f2ebdf53544538b491aed5eace1bd098cdced7685864b09c291">Clay</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:a6b2273ec1e6216f2ebdf53544538b491"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of ground materials.  <a href="namespace_model_1_1_map.html#a6b2273ec1e6216f2ebdf53544538b491">More...</a><br /></td></tr>
+<tr class="separator:a6b2273ec1e6216f2ebdf53544538b491"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a1235ccfa505531e09604505ef8238c65"><td class="memItemLeft" align="right" valign="top">delegate void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_model_1_1_map.html#a1235ccfa505531e09604505ef8238c65">MapUnitChanged</a> (<a class="el" href="class_model_1_1_map_1_1_map_unit.html">MapUnit</a> unit)</td></tr>
+<tr class="separator:a1235ccfa505531e09604505ef8238c65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Namespace for the map model </p>
-</div></div><!-- contents -->
+<div class="textblock"><p >Namespace for the simulation model. </p>
+</div><h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a6b2273ec1e6216f2ebdf53544538b491" name="a6b2273ec1e6216f2ebdf53544538b491"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b2273ec1e6216f2ebdf53544538b491">&#9670;&nbsp;</a></span>GroundMaterialType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespace_model_1_1_map.html#a6b2273ec1e6216f2ebdf53544538b491">Model.Map.GroundMaterialType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Type of ground materials. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a6b2273ec1e6216f2ebdf53544538b491ae4b9dca2448724ca25e388a0317a09c8" name="a6b2273ec1e6216f2ebdf53544538b491ae4b9dca2448724ca25e388a0317a09c8"></a>Soil&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6b2273ec1e6216f2ebdf53544538b491a4cfbb125e9878528bab91d12421134d8" name="a6b2273ec1e6216f2ebdf53544538b491a4cfbb125e9878528bab91d12421134d8"></a>Rock&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6b2273ec1e6216f2ebdf53544538b491acec7ca178e2f7b1ae3a4600868c57aca" name="a6b2273ec1e6216f2ebdf53544538b491acec7ca178e2f7b1ae3a4600868c57aca"></a>Sand&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6b2273ec1e6216f2ebdf53544538b491a3fac7288dbc045b234fde61225fae806" name="a6b2273ec1e6216f2ebdf53544538b491a3fac7288dbc045b234fde61225fae806"></a>Gravel&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6b2273ec1e6216f2ebdf53544538b491aed5eace1bd098cdced7685864b09c291" name="a6b2273ec1e6216f2ebdf53544538b491aed5eace1bd098cdced7685864b09c291"></a>Clay&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a1235ccfa505531e09604505ef8238c65" name="a1235ccfa505531e09604505ef8238c65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1235ccfa505531e09604505ef8238c65">&#9670;&nbsp;</a></span>MapUnitChanged()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">delegate void Model.Map.MapUnitChanged </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_model_1_1_map_1_1_map_unit.html">MapUnit</a>&#160;</td>
+          <td class="paramname"><em>unit</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

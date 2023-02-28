@@ -1,0 +1,170 @@
+\hypertarget{class_model_1_1_feature_1_1_sun}{}\doxysection{Model.\+Feature.\+Sun Class Reference}
+\label{class_model_1_1_feature_1_1_sun}\index{Model.Feature.Sun@{Model.Feature.Sun}}
+
+
+This class represents a sun in the game, which is a feature of a map, and heats up the map depending on different parameters.  
+
+
+Inheritance diagram for Model.\+Feature.\+Sun\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_model_1_1_feature_1_1_sun}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_model_1_1_feature_1_1_sun_a2abc60c1de9b18f4ef776cb935dcf553}{On\+Validate}} ()
+\item 
+void \mbox{\hyperlink{class_model_1_1_feature_1_1_sun_afbbd5588744297815c7fa726fef6d0a5}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the temperature of the map, every update\+Interval ticks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static float \mbox{\hyperlink{class_model_1_1_feature_1_1_sun_aa1724fa1972ee55c0ca2005695abf88e}{Get\+Star\+Wattage}} (float star\+Surface\+Temperature, float star\+Radius)
+\begin{DoxyCompactList}\small\item\em Gets the wattage of the star. \end{DoxyCompactList}\item 
+static float \mbox{\hyperlink{class_model_1_1_feature_1_1_sun_a3fdfdddd46241ec06599aeeeb7764a81}{Get\+Effective\+Temperature}} (float star\+Wattage, float body\+Distance\+In\+Meters, float body\+Albedo)
+\begin{DoxyCompactList}\small\item\em The equilibrium temperature of the given body. \end{DoxyCompactList}\item 
+static float \mbox{\hyperlink{class_model_1_1_feature_1_1_sun_a0cf4500d5284cdb90a2181cc478e57fe}{Get\+Effective\+Temperature}} (float star\+Surface\+Temperature, float star\+Radius, float body\+Distance\+In\+Meters, float body\+Albedo)
+\begin{DoxyCompactList}\small\item\em The equilibrium temperature of the given body. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_model_1_1_feature_1_1_sun_a71c10b9c737c91c864e6b012165a368a}{start}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{namespace_model_1_1_map}{Map}} indices of the different daycycle zones of the planet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+float\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_model_1_1_feature_1_1_sun_a625ee103f214b76b6ba33880b1be2b93}{Planetary\+Temperature\+Zones}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Temperatures of the different daycycle zones of the planet. \end{DoxyCompactList}\item 
+int int end\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_model_1_1_feature_1_1_sun_aee7a26ef66719d0365900b80652809e8}{Planetary\+Temperature\+Update\+Zone\+Indices}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class represents a sun in the game, which is a feature of a map, and heats up the map depending on different parameters. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_model_1_1_feature_1_1_sun_a0cf4500d5284cdb90a2181cc478e57fe}\label{class_model_1_1_feature_1_1_sun_a0cf4500d5284cdb90a2181cc478e57fe}} 
+\index{Model.Feature.Sun@{Model.Feature.Sun}!GetEffectiveTemperature@{GetEffectiveTemperature}}
+\index{GetEffectiveTemperature@{GetEffectiveTemperature}!Model.Feature.Sun@{Model.Feature.Sun}}
+\doxysubsubsection{\texorpdfstring{GetEffectiveTemperature()}{GetEffectiveTemperature()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static float Model.\+Feature.\+Sun.\+Get\+Effective\+Temperature (\begin{DoxyParamCaption}\item[{float}]{star\+Surface\+Temperature,  }\item[{float}]{star\+Radius,  }\item[{float}]{body\+Distance\+In\+Meters,  }\item[{float}]{body\+Albedo }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The equilibrium temperature of the given body. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em star\+Surface\+Temperature} & Surface Temperature of the star.\\
+\hline
+{\em star\+Radius} & Radius of the star in meters.\\
+\hline
+{\em body\+Distance\+In\+Meters} & Distance from the planet to the start in meters.\\
+\hline
+{\em body\+Albedo} & Albedo of the body.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Effective Temperature of the map.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_model_1_1_feature_1_1_sun_a3fdfdddd46241ec06599aeeeb7764a81}\label{class_model_1_1_feature_1_1_sun_a3fdfdddd46241ec06599aeeeb7764a81}} 
+\index{Model.Feature.Sun@{Model.Feature.Sun}!GetEffectiveTemperature@{GetEffectiveTemperature}}
+\index{GetEffectiveTemperature@{GetEffectiveTemperature}!Model.Feature.Sun@{Model.Feature.Sun}}
+\doxysubsubsection{\texorpdfstring{GetEffectiveTemperature()}{GetEffectiveTemperature()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static float Model.\+Feature.\+Sun.\+Get\+Effective\+Temperature (\begin{DoxyParamCaption}\item[{float}]{star\+Wattage,  }\item[{float}]{body\+Distance\+In\+Meters,  }\item[{float}]{body\+Albedo }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The equilibrium temperature of the given body. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em star\+Wattage} & Wattage of the star.\\
+\hline
+{\em body\+Distance\+In\+Meters} & Distance from the planet to the start in meters.\\
+\hline
+{\em body\+Albedo} & Albedo of the body.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Effective Temperature of the map.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_model_1_1_feature_1_1_sun_aa1724fa1972ee55c0ca2005695abf88e}\label{class_model_1_1_feature_1_1_sun_aa1724fa1972ee55c0ca2005695abf88e}} 
+\index{Model.Feature.Sun@{Model.Feature.Sun}!GetStarWattage@{GetStarWattage}}
+\index{GetStarWattage@{GetStarWattage}!Model.Feature.Sun@{Model.Feature.Sun}}
+\doxysubsubsection{\texorpdfstring{GetStarWattage()}{GetStarWattage()}}
+{\footnotesize\ttfamily static float Model.\+Feature.\+Sun.\+Get\+Star\+Wattage (\begin{DoxyParamCaption}\item[{float}]{star\+Surface\+Temperature,  }\item[{float}]{star\+Radius }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the wattage of the star. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em star\+Surface\+Temperature} & Surface temperature of the star.\\
+\hline
+{\em star\+Radius} & Radius of the star.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Wattage of the star.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_model_1_1_feature_1_1_sun_a2abc60c1de9b18f4ef776cb935dcf553}\label{class_model_1_1_feature_1_1_sun_a2abc60c1de9b18f4ef776cb935dcf553}} 
+\index{Model.Feature.Sun@{Model.Feature.Sun}!OnValidate@{OnValidate}}
+\index{OnValidate@{OnValidate}!Model.Feature.Sun@{Model.Feature.Sun}}
+\doxysubsubsection{\texorpdfstring{OnValidate()}{OnValidate()}}
+{\footnotesize\ttfamily void Model.\+Feature.\+Sun.\+On\+Validate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_model_1_1_feature_1_1_sun_afbbd5588744297815c7fa726fef6d0a5}\label{class_model_1_1_feature_1_1_sun_afbbd5588744297815c7fa726fef6d0a5}} 
+\index{Model.Feature.Sun@{Model.Feature.Sun}!Update@{Update}}
+\index{Update@{Update}!Model.Feature.Sun@{Model.Feature.Sun}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Model.\+Feature.\+Sun.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Updates the temperature of the map, every update\+Interval ticks. 
+
+
+
+Implements \mbox{\hyperlink{interface_base_1_1_i_updatable_a1983d03de50becea9925ab50db45752d}{Base.\+IUpdatable}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_model_1_1_feature_1_1_sun_a71c10b9c737c91c864e6b012165a368a}\label{class_model_1_1_feature_1_1_sun_a71c10b9c737c91c864e6b012165a368a}} 
+\index{Model.Feature.Sun@{Model.Feature.Sun}!start@{start}}
+\index{start@{start}!Model.Feature.Sun@{Model.Feature.Sun}}
+\doxysubsubsection{\texorpdfstring{start}{start}}
+{\footnotesize\ttfamily int Model.\+Feature.\+Sun.\+start}
+
+
+
+\mbox{\hyperlink{namespace_model_1_1_map}{Map}} indices of the different daycycle zones of the planet. 
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_model_1_1_feature_1_1_sun_aee7a26ef66719d0365900b80652809e8}\label{class_model_1_1_feature_1_1_sun_aee7a26ef66719d0365900b80652809e8}} 
+\index{Model.Feature.Sun@{Model.Feature.Sun}!PlanetaryTemperatureUpdateZoneIndices@{PlanetaryTemperatureUpdateZoneIndices}}
+\index{PlanetaryTemperatureUpdateZoneIndices@{PlanetaryTemperatureUpdateZoneIndices}!Model.Feature.Sun@{Model.Feature.Sun}}
+\doxysubsubsection{\texorpdfstring{PlanetaryTemperatureUpdateZoneIndices}{PlanetaryTemperatureUpdateZoneIndices}}
+{\footnotesize\ttfamily int int end \mbox{[}$\,$\mbox{]} Model.\+Feature.\+Sun.\+Planetary\+Temperature\+Update\+Zone\+Indices\hspace{0.3cm}{\ttfamily [get]}}
+
+\mbox{\Hypertarget{class_model_1_1_feature_1_1_sun_a625ee103f214b76b6ba33880b1be2b93}\label{class_model_1_1_feature_1_1_sun_a625ee103f214b76b6ba33880b1be2b93}} 
+\index{Model.Feature.Sun@{Model.Feature.Sun}!PlanetaryTemperatureZones@{PlanetaryTemperatureZones}}
+\index{PlanetaryTemperatureZones@{PlanetaryTemperatureZones}!Model.Feature.Sun@{Model.Feature.Sun}}
+\doxysubsubsection{\texorpdfstring{PlanetaryTemperatureZones}{PlanetaryTemperatureZones}}
+{\footnotesize\ttfamily float \mbox{[}$\,$\mbox{]} Model.\+Feature.\+Sun.\+Planetary\+Temperature\+Zones\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Temperatures of the different daycycle zones of the planet. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/\+Model/\+Feature/\mbox{\hyperlink{_sun_8cs}{Sun.\+cs}}\end{DoxyCompactItemize}

@@ -49,19 +49,34 @@ namespace Model.Generators {}
 namespace Model.UnitBehaviors {}
 
 /// <summary>
+/// Namespace for processing map.
+/// </summary>
+namespace Model.Processing {}
+
+/// <summary>
+/// Namespace for virtual features of a map.
+/// </summary>
+namespace Model.VirtualFeatureSelection {}
+
+/// <summary>
 /// Namespace for utility classes.
 /// </summary>
 namespace Utils {}
 
 /// <summary>
-/// Namespace for views on two dimensional arrays.
+/// Namespace for views on (two dimensional) arrays.
 /// </summary>
-namespace Utils.Array2D {}
+namespace Utils.Arrays {}
 
 /// <summary>
 /// Namespace for basic utility classes.
 /// </summary>
 namespace Utils.BaseUtils {}
+
+/// <summary>
+/// Namespace for logging utils.
+/// </summary>
+namespace Utils.Logging {}
 
 /// <summary>
 /// Namespace for views in unity.

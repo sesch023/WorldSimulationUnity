@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>WorldSimulationUnity: Model.Map.MapUnit Class Reference</title>
+<title>World Simulation Unity: Model.Map.MapUnit Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,9 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">WorldSimulationUnity
+   <div id="projectname">World Simulation Unity
    </div>
-   <div id="projectbrief">Simulation of a world in unity.</div>
+   <div id="projectbrief">World Simulation in Unity.</div>
   </td>
  </tr>
  </tbody>
@@ -84,7 +84,6 @@ $(document).ready(function(){initNavTree('class_model_1_1_map_1_1_map_unit.html'
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#properties">Properties</a> &#124;
 <a href="class_model_1_1_map_1_1_map_unit-members.html">List of all members</a>  </div>
@@ -104,29 +103,32 @@ Inheritance diagram for Model.Map.MapUnit:</div>
   </map>
 </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_model_1_1_map_1_1_map_unit_1_1_map_position.html">MapPosition</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A position in the map. Has longitude, latitude and elevation.  <a href="struct_model_1_1_map_1_1_map_unit_1_1_map_position.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af7396fac4d4eb386014fcd90419f5d99"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map_unit.html#af7396fac4d4eb386014fcd90419f5d99">MapUnit</a> (float temperature, float humidity, <a class="el" href="struct_model_1_1_map_1_1_map_unit_1_1_map_position.html">MapPosition</a> position)</td></tr>
-<tr class="memdesc:af7396fac4d4eb386014fcd90419f5d99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the unit with a temperature, humidity and position.  <a href="class_model_1_1_map_1_1_map_unit.html#af7396fac4d4eb386014fcd90419f5d99">More...</a><br /></td></tr>
-<tr class="separator:af7396fac4d4eb386014fcd90419f5d99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf61c8b281a612258a3ef1f545143b19"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map_unit.html#aaf61c8b281a612258a3ef1f545143b19">MapUnit</a> (float temperature, float humidity, <a class="el" href="struct_model_1_1_map_1_1_map_unit_1_1_map_position.html">MapPosition</a> position, [NotNull] IList&lt; <a class="el" href="class_model_1_1_unit_behaviors_1_1_base_unit_behavior.html">BaseUnitBehavior</a> &gt; behaviors)</td></tr>
-<tr class="memdesc:aaf61c8b281a612258a3ef1f545143b19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the unit with a temperature, humidity, position and a list of behaviors.  <a href="class_model_1_1_map_1_1_map_unit.html#aaf61c8b281a612258a3ef1f545143b19">More...</a><br /></td></tr>
-<tr class="separator:aaf61c8b281a612258a3ef1f545143b19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c76e3354eda9de941b4d4de1f2f306a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map_unit.html#a1c76e3354eda9de941b4d4de1f2f306a">ErodeElevation</a> (float newElevation, float soilMultiplier=35f, float gravelMultiplier=35f, float sandMultiplier=10f)</td></tr>
+<tr class="memdesc:a1c76e3354eda9de941b4d4de1f2f306a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This Algorithm is hacky and should be changed in the future.  <a href="class_model_1_1_map_1_1_map_unit.html#a1c76e3354eda9de941b4d4de1f2f306a">More...</a><br /></td></tr>
+<tr class="separator:a1c76e3354eda9de941b4d4de1f2f306a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66691648091ef42fcaf962ac2cc35689"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map_unit.html#a66691648091ef42fcaf962ac2cc35689">MapUnit</a> (<a class="el" href="class_model_1_1_map_1_1_map.html">Map</a> map, float temperature, float humidity, <a class="el" href="class_model_1_1_map_1_1_map_position.html">MapPosition</a> position)</td></tr>
+<tr class="memdesc:a66691648091ef42fcaf962ac2cc35689"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the unit with a temperature, humidity and position.  <a href="class_model_1_1_map_1_1_map_unit.html#a66691648091ef42fcaf962ac2cc35689">More...</a><br /></td></tr>
+<tr class="separator:a66691648091ef42fcaf962ac2cc35689"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace903f1fd3df24ff952bbde68b2589db"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map_unit.html#ace903f1fd3df24ff952bbde68b2589db">MapUnit</a> (<a class="el" href="class_model_1_1_map_1_1_map.html">Map</a> map, float temperature, float humidity, <a class="el" href="class_model_1_1_map_1_1_map_position.html">MapPosition</a> position, [NotNull] IList&lt; <a class="el" href="class_model_1_1_unit_behaviors_1_1_base_unit_behavior.html">BaseUnitBehavior</a> &gt; behaviors)</td></tr>
+<tr class="memdesc:ace903f1fd3df24ff952bbde68b2589db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the unit with a temperature, humidity, position and a list of behaviors.  <a href="class_model_1_1_map_1_1_map_unit.html#ace903f1fd3df24ff952bbde68b2589db">More...</a><br /></td></tr>
+<tr class="separator:ace903f1fd3df24ff952bbde68b2589db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf8deac4ac910358f259ff374bb92b32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map_unit.html#adf8deac4ac910358f259ff374bb92b32">AddUnitBehavior</a> (<a class="el" href="class_model_1_1_unit_behaviors_1_1_base_unit_behavior.html">BaseUnitBehavior</a> behavior)</td></tr>
 <tr class="memdesc:adf8deac4ac910358f259ff374bb92b32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a behavior to the unit.  <a href="class_model_1_1_map_1_1_map_unit.html#adf8deac4ac910358f259ff374bb92b32">More...</a><br /></td></tr>
 <tr class="separator:adf8deac4ac910358f259ff374bb92b32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a980c8c758480173de7d5f5292e4bedc5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map_unit.html#a980c8c758480173de7d5f5292e4bedc5">RemoveUnitBehavior</a> (<a class="el" href="class_model_1_1_unit_behaviors_1_1_base_unit_behavior.html">BaseUnitBehavior</a> behavior)</td></tr>
 <tr class="memdesc:a980c8c758480173de7d5f5292e4bedc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a behavior from the unit.  <a href="class_model_1_1_map_1_1_map_unit.html#a980c8c758480173de7d5f5292e4bedc5">More...</a><br /></td></tr>
 <tr class="separator:a980c8c758480173de7d5f5292e4bedc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a947a3528562a74ed3d76f30ac7ddbfd7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map_unit.html#a947a3528562a74ed3d76f30ac7ddbfd7">AddChangeSubscriber</a> (<a class="el" href="namespace_model_1_1_map.html#a1235ccfa505531e09604505ef8238c65">MapUnitChanged</a> subscriber)</td></tr>
+<tr class="separator:a947a3528562a74ed3d76f30ac7ddbfd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a335c2cc54e27524a51cafd1af33bce27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map_unit.html#a335c2cc54e27524a51cafd1af33bce27">RemoveChangeSubscriber</a> (<a class="el" href="namespace_model_1_1_map.html#a1235ccfa505531e09604505ef8238c65">MapUnitChanged</a> subscriber)</td></tr>
+<tr class="separator:a335c2cc54e27524a51cafd1af33bce27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae94f205ecdcd529376274cfebcc94877"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map_unit.html#ae94f205ecdcd529376274cfebcc94877">ClearBehaviors</a> ()</td></tr>
 <tr class="memdesc:ae94f205ecdcd529376274cfebcc94877"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears all behaviors from the unit.  <a href="class_model_1_1_map_1_1_map_unit.html#ae94f205ecdcd529376274cfebcc94877">More...</a><br /></td></tr>
 <tr class="separator:ae94f205ecdcd529376274cfebcc94877"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d0cb9457c87ad668fee5f2f9b85bf65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map_unit.html#a8d0cb9457c87ad668fee5f2f9b85bf65">ClearChangeSubscribers</a> ()</td></tr>
+<tr class="separator:a8d0cb9457c87ad668fee5f2f9b85bf65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae19ac5cf64c7556ce1b24fd310a3e8d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map_unit.html#ae19ac5cf64c7556ce1b24fd310a3e8d2">Update</a> ()</td></tr>
 <tr class="memdesc:ae19ac5cf64c7556ce1b24fd310a3e8d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the unit.  <a href="class_model_1_1_map_1_1_map_unit.html#ae19ac5cf64c7556ce1b24fd310a3e8d2">More...</a><br /></td></tr>
 <tr class="separator:ae19ac5cf64c7556ce1b24fd310a3e8d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,24 +138,33 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:aad7480853c4a136b8ca69ccab17f9d17"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map_unit.html#aad7480853c4a136b8ca69ccab17f9d17">Temperature</a><code> [get]</code></td></tr>
+<tr class="memitem:aad7480853c4a136b8ca69ccab17f9d17"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map_unit.html#aad7480853c4a136b8ca69ccab17f9d17">Temperature</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:aad7480853c4a136b8ca69ccab17f9d17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Temperature of the unit in Kelvin.  <a href="class_model_1_1_map_1_1_map_unit.html#aad7480853c4a136b8ca69ccab17f9d17">More...</a><br /></td></tr>
 <tr class="separator:aad7480853c4a136b8ca69ccab17f9d17"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a601f7a90c7c98021b51d932dec7f51dd"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map_unit.html#a601f7a90c7c98021b51d932dec7f51dd">Humidity</a><code> [get]</code></td></tr>
+<tr class="memitem:a601f7a90c7c98021b51d932dec7f51dd"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map_unit.html#a601f7a90c7c98021b51d932dec7f51dd">Humidity</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:a601f7a90c7c98021b51d932dec7f51dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Humidity of the unit in percent.  <a href="class_model_1_1_map_1_1_map_unit.html#a601f7a90c7c98021b51d932dec7f51dd">More...</a><br /></td></tr>
 <tr class="separator:a601f7a90c7c98021b51d932dec7f51dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74519e0d15c673f924fd786a31a85e4e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_model_1_1_map_1_1_map_unit_1_1_map_position.html">MapPosition</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map_unit.html#a74519e0d15c673f924fd786a31a85e4e">Position</a><code> [get]</code></td></tr>
-<tr class="memdesc:a74519e0d15c673f924fd786a31a85e4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Position of the unit in the map with longitude, latitude and elevation.  <a href="class_model_1_1_map_1_1_map_unit.html#a74519e0d15c673f924fd786a31a85e4e">More...</a><br /></td></tr>
+<tr class="memitem:a583c3d0fc8568b2bf550332b2c666ad5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map_unit.html#a583c3d0fc8568b2bf550332b2c666ad5">WaterLevel</a><code> [get, set]</code></td></tr>
+<tr class="separator:a583c3d0fc8568b2bf550332b2c666ad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f2e2e37a280d2e02d0ebce555d2822f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map_unit.html#a6f2e2e37a280d2e02d0ebce555d2822f">AtmosphericPressure</a><code> [get]</code></td></tr>
+<tr class="memdesc:a6f2e2e37a280d2e02d0ebce555d2822f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Atmospheric pressure of the unit in pascal.  <a href="class_model_1_1_map_1_1_map_unit.html#a6f2e2e37a280d2e02d0ebce555d2822f">More...</a><br /></td></tr>
+<tr class="separator:a6f2e2e37a280d2e02d0ebce555d2822f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d84931c8307ae20ff56f2029a36d798"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_model_1_1_map_1_1_map_unit_ground_material.html">MapUnitGroundMaterial</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map_unit.html#a2d84931c8307ae20ff56f2029a36d798">GroundMaterial</a> = new()<code> [get]</code></td></tr>
+<tr class="separator:a2d84931c8307ae20ff56f2029a36d798"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74519e0d15c673f924fd786a31a85e4e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_model_1_1_map_1_1_map_position.html">MapPosition</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map_unit.html#a74519e0d15c673f924fd786a31a85e4e">Position</a><code> [get]</code></td></tr>
+<tr class="memdesc:a74519e0d15c673f924fd786a31a85e4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">MapPositionVec of the unit in the map with longitude, latitude and elevation.  <a href="class_model_1_1_map_1_1_map_unit.html#a74519e0d15c673f924fd786a31a85e4e">More...</a><br /></td></tr>
 <tr class="separator:a74519e0d15c673f924fd786a31a85e4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24866351d643032f6866ad19778bd98b"><td class="memItemLeft" align="right" valign="top">IList&lt; <a class="el" href="class_model_1_1_unit_behaviors_1_1_base_unit_behavior.html">BaseUnitBehavior</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map_unit.html#a24866351d643032f6866ad19778bd98b">Behaviors</a><code> [get]</code></td></tr>
 <tr class="memdesc:a24866351d643032f6866ad19778bd98b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Behaviors of the unit. These are to be added depending on unit conditions.  <a href="class_model_1_1_map_1_1_map_unit.html#a24866351d643032f6866ad19778bd98b">More...</a><br /></td></tr>
 <tr class="separator:a24866351d643032f6866ad19778bd98b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0727278150bdfc50a063424ff848a0c"><td class="memItemLeft" align="right" valign="top">IList&lt; <a class="el" href="namespace_model_1_1_map.html#a1235ccfa505531e09604505ef8238c65">MapUnitChanged</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map_unit.html#af0727278150bdfc50a063424ff848a0c">ChangeSubscribers</a><code> [get]</code></td></tr>
+<tr class="separator:af0727278150bdfc50a063424ff848a0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >A single unit at a position in a map. Has a position with longitude, latitude and elevation. Also has a temperature, humidity and behaviors which are to be added depending on unit conditions. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="af7396fac4d4eb386014fcd90419f5d99" name="af7396fac4d4eb386014fcd90419f5d99"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af7396fac4d4eb386014fcd90419f5d99">&#9670;&nbsp;</a></span>MapUnit() <span class="overload">[1/2]</span></h2>
+<a id="a66691648091ef42fcaf962ac2cc35689" name="a66691648091ef42fcaf962ac2cc35689"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66691648091ef42fcaf962ac2cc35689">&#9670;&nbsp;</a></span>MapUnit() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -161,6 +172,12 @@ Properties</h2></td></tr>
         <tr>
           <td class="memname">Model.Map.MapUnit.MapUnit </td>
           <td>(</td>
+          <td class="paramtype"><a class="el" href="class_model_1_1_map_1_1_map.html">Map</a>&#160;</td>
+          <td class="paramname"><em>map</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>temperature</em>, </td>
         </tr>
@@ -173,7 +190,7 @@ Properties</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="struct_model_1_1_map_1_1_map_unit_1_1_map_position.html">MapPosition</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_model_1_1_map_1_1_map_position.html">MapPosition</a>&#160;</td>
           <td class="paramname"><em>position</em>&#160;</td>
         </tr>
         <tr>
@@ -189,15 +206,15 @@ Properties</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">temperature</td><td>Temperature of the unit.</td></tr>
     <tr><td class="paramname">humidity</td><td>Humidity of the unit.</td></tr>
-    <tr><td class="paramname">position</td><td>Position of the unit.</td></tr>
+    <tr><td class="paramname">position</td><td>MapPositionVec of the unit.</td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="aaf61c8b281a612258a3ef1f545143b19" name="aaf61c8b281a612258a3ef1f545143b19"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf61c8b281a612258a3ef1f545143b19">&#9670;&nbsp;</a></span>MapUnit() <span class="overload">[2/2]</span></h2>
+<a id="ace903f1fd3df24ff952bbde68b2589db" name="ace903f1fd3df24ff952bbde68b2589db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace903f1fd3df24ff952bbde68b2589db">&#9670;&nbsp;</a></span>MapUnit() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -205,6 +222,12 @@ Properties</h2></td></tr>
         <tr>
           <td class="memname">Model.Map.MapUnit.MapUnit </td>
           <td>(</td>
+          <td class="paramtype"><a class="el" href="class_model_1_1_map_1_1_map.html">Map</a>&#160;</td>
+          <td class="paramname"><em>map</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>temperature</em>, </td>
         </tr>
@@ -217,7 +240,7 @@ Properties</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="struct_model_1_1_map_1_1_map_unit_1_1_map_position.html">MapPosition</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_model_1_1_map_1_1_map_position.html">MapPosition</a>&#160;</td>
           <td class="paramname"><em>position</em>, </td>
         </tr>
         <tr>
@@ -239,7 +262,7 @@ Properties</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">temperature</td><td>Temperature of the unit.</td></tr>
     <tr><td class="paramname">humidity</td><td>Humidity of the unit.</td></tr>
-    <tr><td class="paramname">position</td><td>Position of the unit.</td></tr>
+    <tr><td class="paramname">position</td><td>MapPositionVec of the unit.</td></tr>
     <tr><td class="paramname">behaviors</td><td>Behaviors of the unit.</td></tr>
   </table>
   </dd>
@@ -248,6 +271,24 @@ Properties</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a947a3528562a74ed3d76f30ac7ddbfd7" name="a947a3528562a74ed3d76f30ac7ddbfd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a947a3528562a74ed3d76f30ac7ddbfd7">&#9670;&nbsp;</a></span>AddChangeSubscriber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Model.Map.MapUnit.AddChangeSubscriber </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_model_1_1_map.html#a1235ccfa505531e09604505ef8238c65">MapUnitChanged</a>&#160;</td>
+          <td class="paramname"><em>subscriber</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="adf8deac4ac910358f259ff374bb92b32" name="adf8deac4ac910358f259ff374bb92b32"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adf8deac4ac910358f259ff374bb92b32">&#9670;&nbsp;</a></span>AddUnitBehavior()</h2>
 
@@ -290,6 +331,83 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Clears all behaviors from the unit. </p>
+
+</div>
+</div>
+<a id="a8d0cb9457c87ad668fee5f2f9b85bf65" name="a8d0cb9457c87ad668fee5f2f9b85bf65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d0cb9457c87ad668fee5f2f9b85bf65">&#9670;&nbsp;</a></span>ClearChangeSubscribers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Model.Map.MapUnit.ClearChangeSubscribers </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1c76e3354eda9de941b4d4de1f2f306a" name="a1c76e3354eda9de941b4d4de1f2f306a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c76e3354eda9de941b4d4de1f2f306a">&#9670;&nbsp;</a></span>ErodeElevation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Model.Map.MapUnit.ErodeElevation </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>newElevation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>soilMultiplier</em> = <code>35f</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>gravelMultiplier</em> = <code>35f</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>sandMultiplier</em> = <code>10f</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This Algorithm is hacky and should be changed in the future. </p>
+
+</div>
+</div>
+<a id="a335c2cc54e27524a51cafd1af33bce27" name="a335c2cc54e27524a51cafd1af33bce27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a335c2cc54e27524a51cafd1af33bce27">&#9670;&nbsp;</a></span>RemoveChangeSubscriber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Model.Map.MapUnit.RemoveChangeSubscriber </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_model_1_1_map.html#a1235ccfa505531e09604505ef8238c65">MapUnitChanged</a>&#160;</td>
+          <td class="paramname"><em>subscriber</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -341,6 +459,30 @@ Properties</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
+<a id="a6f2e2e37a280d2e02d0ebce555d2822f" name="a6f2e2e37a280d2e02d0ebce555d2822f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f2e2e37a280d2e02d0ebce555d2822f">&#9670;&nbsp;</a></span>AtmosphericPressure</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Model.Map.MapUnit.AtmosphericPressure</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Atmospheric pressure of the unit in pascal. </p>
+
+</div>
+</div>
 <a id="a24866351d643032f6866ad19778bd98b" name="a24866351d643032f6866ad19778bd98b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a24866351d643032f6866ad19778bd98b">&#9670;&nbsp;</a></span>Behaviors</h2>
 
@@ -365,6 +507,50 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a id="af0727278150bdfc50a063424ff848a0c" name="af0727278150bdfc50a063424ff848a0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0727278150bdfc50a063424ff848a0c">&#9670;&nbsp;</a></span>ChangeSubscribers</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IList&lt;<a class="el" href="namespace_model_1_1_map.html#a1235ccfa505531e09604505ef8238c65">MapUnitChanged</a>&gt; Model.Map.MapUnit.ChangeSubscribers</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2d84931c8307ae20ff56f2029a36d798" name="a2d84931c8307ae20ff56f2029a36d798"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d84931c8307ae20ff56f2029a36d798">&#9670;&nbsp;</a></span>GroundMaterial</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model_1_1_map_1_1_map_unit_ground_material.html">MapUnitGroundMaterial</a> Model.Map.MapUnit.GroundMaterial = new()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a601f7a90c7c98021b51d932dec7f51dd" name="a601f7a90c7c98021b51d932dec7f51dd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a601f7a90c7c98021b51d932dec7f51dd">&#9670;&nbsp;</a></span>Humidity</h2>
 
@@ -380,7 +566,7 @@ Properties</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -399,7 +585,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_model_1_1_map_1_1_map_unit_1_1_map_position.html">MapPosition</a> Model.Map.MapUnit.Position</td>
+          <td class="memname"><a class="el" href="class_model_1_1_map_1_1_map_position.html">MapPosition</a> Model.Map.MapUnit.Position</td>
         </tr>
       </table>
   </td>
@@ -409,7 +595,7 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Position of the unit in the map with longitude, latitude and elevation. </p>
+<p>MapPositionVec of the unit in the map with longitude, latitude and elevation. </p>
 
 </div>
 </div>
@@ -428,12 +614,34 @@ Properties</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Temperature of the unit in Kelvin. </p>
+
+</div>
+</div>
+<a id="a583c3d0fc8568b2bf550332b2c666ad5" name="a583c3d0fc8568b2bf550332b2c666ad5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a583c3d0fc8568b2bf550332b2c666ad5">&#9670;&nbsp;</a></span>WaterLevel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Model.Map.MapUnit.WaterLevel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

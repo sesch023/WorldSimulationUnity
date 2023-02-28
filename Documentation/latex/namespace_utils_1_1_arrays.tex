@@ -1,0 +1,109 @@
+\hypertarget{namespace_utils_1_1_arrays}{}\doxysection{Utils.\+Arrays Namespace Reference}
+\label{namespace_utils_1_1_arrays}\index{Utils.Arrays@{Utils.Arrays}}
+
+
+Namespace for views on (two dimensional) arrays.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_utils_1_1_arrays_1_1_array2_d}{Array2D}}
+\item 
+class \mbox{\hyperlink{class_utils_1_1_arrays_1_1_array2_d_enumerator}{Array2\+DEnumerator}}
+\begin{DoxyCompactList}\small\item\em Enumerator for a 2D array. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_utils_1_1_arrays_1_1_array_immutable2_d}{Array\+Immutable2D}}
+\begin{DoxyCompactList}\small\item\em Basic 2d array\+Immutable implementation of the IArray2D interface. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_utils_1_1_arrays_1_1_array_immutable_map2_d}{Array\+Immutable\+Map2D}}
+\begin{DoxyCompactList}\small\item\em Creates a map on a 2d array\+Immutable with a type TReal and provides a map of it with type TMapped using the provided accessor. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_utils_1_1_arrays_1_1_array_immutable_view2_d_to1_d}{Array\+Immutable\+View2\+DTo1D}}
+\item 
+class \mbox{\hyperlink{class_utils_1_1_arrays_1_1_array_map2_d}{Array\+Map2D}}
+\begin{DoxyCompactList}\small\item\em Creates a Map in a 2d array between two types. This requires that a conversion between TReal and TMapped is possible. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_utils_1_1_arrays_1_1_array_map2_d_enumerator}{Array\+Map2\+DEnumerator}}
+\begin{DoxyCompactList}\small\item\em Creates a enumerator on a 2D array immutable\+Map. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_utils_1_1_arrays_1_1_array_view2_d}{Array\+View2D}}
+\item 
+class \mbox{\hyperlink{class_utils_1_1_arrays_1_1_array_view2_d_to1_d}{Array\+View2\+DTo1D}}
+\begin{DoxyCompactList}\small\item\em A view of a 2D array as a 1D array. \end{DoxyCompactList}\item 
+interface \mbox{\hyperlink{interface_utils_1_1_arrays_1_1_i2_d_array}{I2\+DArray}}
+\begin{DoxyCompactList}\small\item\em Interface for a 2D array\+Immutable. \end{DoxyCompactList}\item 
+interface \mbox{\hyperlink{interface_utils_1_1_arrays_1_1_i2_d_array_immutable}{I2\+DArray\+Immutable}}
+\begin{DoxyCompactList}\small\item\em Interface for a 2D array\+Immutable. \end{DoxyCompactList}\item 
+interface \mbox{\hyperlink{interface_utils_1_1_arrays_1_1_i2_d_enumerable}{I2\+DEnumerable}}
+\begin{DoxyCompactList}\small\item\em Interface for a 2d enumerable. \end{DoxyCompactList}\item 
+interface \mbox{\hyperlink{interface_utils_1_1_arrays_1_1_i2_d_enumerator}{I2\+DEnumerator}}
+\begin{DoxyCompactList}\small\item\em Interface for a 2d enumerator. \end{DoxyCompactList}\item 
+interface \mbox{\hyperlink{interface_utils_1_1_arrays_1_1_i_array}{IArray}}
+\begin{DoxyCompactList}\small\item\em A array, which is a enumerable with a fixed size and dimension. Also provides a setter. \end{DoxyCompactList}\item 
+interface \mbox{\hyperlink{interface_utils_1_1_arrays_1_1_i_array_immutable}{IArray\+Immutable}}
+\begin{DoxyCompactList}\small\item\em A immutable array, which is a enumerable with a fixed size and dimension. \end{DoxyCompactList}\item 
+interface \mbox{\hyperlink{interface_utils_1_1_arrays_1_1_i_fixed_dimensional}{IFixed\+Dimensional}}
+\begin{DoxyCompactList}\small\item\em Interface for data structures with a fixed dimensional size. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_utils_1_1_arrays_1_1_normalized_float_array}{Normalized\+Float\+Array}}
+\begin{DoxyCompactList}\small\item\em A one dimensional array which values are visualized in a normalized way. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_utils_1_1_arrays_1_1_normalized_float_array2_d}{Normalized\+Float\+Array2D}}
+\begin{DoxyCompactList}\small\item\em A one dimensional array which values are visualized in a normalized way. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_utils_1_1_arrays_a5c97aae0eded1e68b2707b3fc8e22d29}{Enumeration\+Status2D}} \{ \mbox{\hyperlink{namespace_utils_1_1_arrays_a5c97aae0eded1e68b2707b3fc8e22d29a87557f11575c0ad78e4e28abedc13b6e}{End}} = 0
+, \mbox{\hyperlink{namespace_utils_1_1_arrays_a5c97aae0eded1e68b2707b3fc8e22d29a10ac3d04253ef7e1ddc73e6091c0cd55}{Next}} = 1
+, \mbox{\hyperlink{namespace_utils_1_1_arrays_a5c97aae0eded1e68b2707b3fc8e22d29aa0df3feb0a6db9fd208ea67b51e68766}{Next\+Row}} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em Status of a 2d enumerator. End\+: Enumerator has ended. Next\+: Next element is available. Next\+Row\+: Next element is available and the row has changed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+delegate void \mbox{\hyperlink{namespace_utils_1_1_arrays_a6705e85558a8ba73bdd5405aec446832}{Array\+Map\+Setter$<$ TReal, TMapped $>$}} (\mbox{\hyperlink{interface_utils_1_1_arrays_1_1_i2_d_array}{I2\+DArray}}$<$ TReal $>$ array, int x, int y, TMapped mapped)
+\begin{DoxyCompactList}\small\item\em Setting a element in a 2d array at position (x,y) to a value. This requires that a conversion between TReal and TMapped is possible. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Namespace for views on (two dimensional) arrays. 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespace_utils_1_1_arrays_a5c97aae0eded1e68b2707b3fc8e22d29}\label{namespace_utils_1_1_arrays_a5c97aae0eded1e68b2707b3fc8e22d29}} 
+\index{Utils.Arrays@{Utils.Arrays}!EnumerationStatus2D@{EnumerationStatus2D}}
+\index{EnumerationStatus2D@{EnumerationStatus2D}!Utils.Arrays@{Utils.Arrays}}
+\doxysubsubsection{\texorpdfstring{EnumerationStatus2D}{EnumerationStatus2D}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_utils_1_1_arrays_a5c97aae0eded1e68b2707b3fc8e22d29}{Utils.\+Arrays.\+Enumeration\+Status2D}}}
+
+
+
+Status of a 2d enumerator. End\+: Enumerator has ended. Next\+: Next element is available. Next\+Row\+: Next element is available and the row has changed. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{End@{End}!Utils.Arrays@{Utils.Arrays}}\index{Utils.Arrays@{Utils.Arrays}!End@{End}}}\mbox{\Hypertarget{namespace_utils_1_1_arrays_a5c97aae0eded1e68b2707b3fc8e22d29a87557f11575c0ad78e4e28abedc13b6e}\label{namespace_utils_1_1_arrays_a5c97aae0eded1e68b2707b3fc8e22d29a87557f11575c0ad78e4e28abedc13b6e}} 
+End&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Next@{Next}!Utils.Arrays@{Utils.Arrays}}\index{Utils.Arrays@{Utils.Arrays}!Next@{Next}}}\mbox{\Hypertarget{namespace_utils_1_1_arrays_a5c97aae0eded1e68b2707b3fc8e22d29a10ac3d04253ef7e1ddc73e6091c0cd55}\label{namespace_utils_1_1_arrays_a5c97aae0eded1e68b2707b3fc8e22d29a10ac3d04253ef7e1ddc73e6091c0cd55}} 
+Next&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NextRow@{NextRow}!Utils.Arrays@{Utils.Arrays}}\index{Utils.Arrays@{Utils.Arrays}!NextRow@{NextRow}}}\mbox{\Hypertarget{namespace_utils_1_1_arrays_a5c97aae0eded1e68b2707b3fc8e22d29aa0df3feb0a6db9fd208ea67b51e68766}\label{namespace_utils_1_1_arrays_a5c97aae0eded1e68b2707b3fc8e22d29aa0df3feb0a6db9fd208ea67b51e68766}} 
+Next\+Row&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespace_utils_1_1_arrays_a6705e85558a8ba73bdd5405aec446832}\label{namespace_utils_1_1_arrays_a6705e85558a8ba73bdd5405aec446832}} 
+\index{Utils.Arrays@{Utils.Arrays}!ArrayMapSetter$<$ TReal, TMapped $>$@{ArrayMapSetter$<$ TReal, TMapped $>$}}
+\index{ArrayMapSetter$<$ TReal, TMapped $>$@{ArrayMapSetter$<$ TReal, TMapped $>$}!Utils.Arrays@{Utils.Arrays}}
+\doxysubsubsection{\texorpdfstring{ArrayMapSetter$<$ TReal, TMapped $>$()}{ArrayMapSetter< TReal, TMapped >()}}
+{\footnotesize\ttfamily delegate void Utils.\+Arrays.\+Array\+Map\+Setter$<$ TReal, TMapped $>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_utils_1_1_arrays_1_1_i2_d_array}{I2\+DArray}}$<$ TReal $>$}]{array,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{TMapped}]{mapped }\end{DoxyParamCaption})}
+
+
+
+Setting a element in a 2d array at position (x,y) to a value. This requires that a conversion between TReal and TMapped is possible. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em TReal} & Type of the underlying array.\\
+\hline
+{\em TMapped} & Type that the array is looked at with.\\
+\hline
+\end{DoxyTemplParams}

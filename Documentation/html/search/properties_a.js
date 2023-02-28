@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['sizex_0',['SizeX',['../class_model_1_1_map_1_1_map.html#a379b0b30c8166e54ebbb86b054b2281a',1,'Model::Map::Map']]],
-  ['sizey_1',['SizeY',['../class_model_1_1_map_1_1_map.html#a4a95fb58a087fddaadced5d4ba466bb7',1,'Model::Map::Map']]],
-  ['smooth_2',['Smooth',['../class_views_1_1_game_views_1_1_line_view.html#a24f7474e66a6d03990d9653935a895e1',1,'Views::GameViews::LineView']]],
-  ['smoothness_3',['Smoothness',['../class_views_1_1_game_views_1_1_line_view.html#a0169ddac56148f910ad6af918d063674',1,'Views::GameViews::LineView']]],
-  ['sortinglayername_4',['SortingLayerName',['../class_views_1_1_game_views_1_1_line_view.html#a0178b618570722309636af0385e6326c',1,'Views::GameViews::LineView']]]
+  ['maincamera_0',['MainCamera',['../class_manager_1_1_simulation_manager.html#a4ceafcd389e981195f21be99ac3b3a95',1,'Manager::SimulationManager']]],
+  ['mapcontroller_1',['MapController',['../class_manager_1_1_map_manager.html#ac10c21a3ccfca963c81af429f1d472a0',1,'Manager::MapManager']]],
+  ['mappositionvec_2',['MapPositionVec',['../class_model_1_1_map_1_1_map_position.html#a699e2e371709f67e82b6bfce7d1f3a5a',1,'Model::Map::MapPosition']]],
+  ['mapunits_3',['MapUnits',['../class_model_1_1_map_1_1_map.html#af452313778eab35d9069d15d267e5ece',1,'Model::Map::Map']]],
+  ['material_4',['Material',['../class_model_1_1_map_1_1_map_unit_ground_material.html#ab228880a61bf7e9358a7dc9306b609f2',1,'Model::Map::MapUnitGroundMaterial']]]
 ];

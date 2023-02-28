@@ -7,17 +7,24 @@ using UnityEngine.Serialization;
 
 namespace Views.GameViews
 {
+    /// <summary>
+    /// View for a sun in the simulation.
+    /// </summary>
     public class SunView : MonoBehaviour
     {
+        /// Sun that is visualized by this view.
         [SerializeField]
         private Sun sun;
+        /// Separates temperature zones.
         [SerializeField] 
         private GameObject borderView;
-
+        
         private GameObject[] _views;
         private Vector3 _tileOffset;
         
+        /// Light that represents the sun.
         private Light2D _light;
+        /// Light that represents the sun wrapping around the other side of the world.
         private Light2D _secondaryLight;
         private Vector3 _tileScale;
 
@@ -73,6 +80,9 @@ namespace Views.GameViews
             SetPositions();
         }
 
+        /// <summary>
+        /// Sets the positions of the temperature zones and the sun.
+        /// </summary>
         private void SetPositions()
         {
             float offset = Mathf.Abs(sun.PlanetaryTemperatureUpdateZoneIndices[0].start -

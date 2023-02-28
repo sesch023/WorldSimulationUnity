@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>WorldSimulationUnity: Model.Map.Map Class Reference</title>
+<title>World Simulation Unity: Model.Map.Map Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,9 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">WorldSimulationUnity
+   <div id="projectname">World Simulation Unity
    </div>
-   <div id="projectbrief">Simulation of a world in unity.</div>
+   <div id="projectbrief">World Simulation in Unity.</div>
   </td>
  </tr>
  </tbody>
@@ -107,6 +107,16 @@ Inheritance diagram for Model.Map.Map:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:ae267613278fd49505cfc2a027e37bee3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map.html#ae267613278fd49505cfc2a027e37bee3">AddBody</a> (<a class="el" href="interface_model_1_1_feature_1_1_i_body.html">IBody</a> body)</td></tr>
+<tr class="separator:ae267613278fd49505cfc2a027e37bee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27f2da423f303977aa94f394b5af86e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map.html#a27f2da423f303977aa94f394b5af86e4">AddWaterBody</a> (Vector2Int initialPosition, float volume)</td></tr>
+<tr class="separator:a27f2da423f303977aa94f394b5af86e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51a472c5b05b6a7da53cd940c68025a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map.html#a51a472c5b05b6a7da53cd940c68025a8">RemoveBody</a> (<a class="el" href="interface_model_1_1_feature_1_1_i_body.html">IBody</a> body)</td></tr>
+<tr class="separator:a51a472c5b05b6a7da53cd940c68025a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a796a7194d11e1a68c441e187c5bf0665"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_model_1_1_feature_1_1_water_body.html">WaterBody</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map.html#a796a7194d11e1a68c441e187c5bf0665">GetBodyOfWaterByPosition</a> (Vector2Int pos)</td></tr>
+<tr class="separator:a796a7194d11e1a68c441e187c5bf0665"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69ff596a966e1ed3a0e27d1256050687"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map.html#a69ff596a966e1ed3a0e27d1256050687">MergeBodyOfWater</a> (Vector2Int pos1, Vector2Int pos2)</td></tr>
+<tr class="separator:a69ff596a966e1ed3a0e27d1256050687"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a489c30f7cfdd35d18eaa396573ada07a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map.html#a489c30f7cfdd35d18eaa396573ada07a">Update</a> ()</td></tr>
 <tr class="memdesc:a489c30f7cfdd35d18eaa396573ada07a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the update method of the map by triggering the update of the units.  <a href="class_model_1_1_map_1_1_map.html#a489c30f7cfdd35d18eaa396573ada07a">More...</a><br /></td></tr>
 <tr class="separator:a489c30f7cfdd35d18eaa396573ada07a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -119,6 +129,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1fc3854fe5d3ef303c184d3169b6b149"><td class="memItemLeft" align="right" valign="top">Vector2Int[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map.html#a1fc3854fe5d3ef303c184d3169b6b149">GetSlopeLine</a> (Vector2Int start, float momentumMultiplier=1.0f, float maxMomentumFraction=1.0f)</td></tr>
 <tr class="memdesc:a1fc3854fe5d3ef303c184d3169b6b149"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds a slope at the given position by trying to find a way to the bottom of a valley. It is not always possible to find a well defined slope at the moment.  <a href="class_model_1_1_map_1_1_map.html#a1fc3854fe5d3ef303c184d3169b6b149">More...</a><br /></td></tr>
 <tr class="separator:a1fc3854fe5d3ef303c184d3169b6b149"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af78d1c2c56733d5cddf0c2ef94ae21c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_model_1_1_map_1_1_map_unit.html">MapUnit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map.html#af78d1c2c56733d5cddf0c2ef94ae21c0">Vector2IntToMapUnit</a> (Vector2Int position)</td></tr>
+<tr class="separator:af78d1c2c56733d5cddf0c2ef94ae21c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7912966773f1119e244c55120eea700"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_model_1_1_map_1_1_map_unit.html">MapUnit</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map.html#ad7912966773f1119e244c55120eea700">Vector2IntArrayToMapUnits</a> (Vector2Int[] positions)</td></tr>
+<tr class="separator:ad7912966773f1119e244c55120eea700"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f23a2989fbc22aa880d3a6fa533f5fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_model_1_1_map_1_1_map_unit.html">MapUnit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map.html#a1f23a2989fbc22aa880d3a6fa533f5fa">GetMapUnitByLatLong</a> (float lat, float lon)</td></tr>
+<tr class="separator:a1f23a2989fbc22aa880d3a6fa533f5fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1983d03de50becea9925ab50db45752d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_base_1_1_i_updatable.html#a1983d03de50becea9925ab50db45752d">Update</a> ()</td></tr>
 <tr class="memdesc:a1983d03de50becea9925ab50db45752d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to be called to update the object.  <a href="interface_base_1_1_i_updatable.html#a1983d03de50becea9925ab50db45752d">More...</a><br /></td></tr>
 <tr class="separator:a1983d03de50becea9925ab50db45752d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -155,6 +171,14 @@ Properties</h2></td></tr>
 <tr class="memitem:a4a95fb58a087fddaadced5d4ba466bb7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map.html#a4a95fb58a087fddaadced5d4ba466bb7">SizeY</a> = 1025<code> [get]</code></td></tr>
 <tr class="memdesc:a4a95fb58a087fddaadced5d4ba466bb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Height of the <a class="el" href="class_model_1_1_map_1_1_map.html" title="Map in the Game. It represents the entire world.">Map</a>.  <a href="class_model_1_1_map_1_1_map.html#a4a95fb58a087fddaadced5d4ba466bb7">More...</a><br /></td></tr>
 <tr class="separator:a4a95fb58a087fddaadced5d4ba466bb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f5ba9d3fd9e0f24a7d8e2281627dda6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map.html#a4f5ba9d3fd9e0f24a7d8e2281627dda6">TicksPerRotation</a> = 576<code> [get]</code></td></tr>
+<tr class="separator:a4f5ba9d3fd9e0f24a7d8e2281627dda6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42f3d982c43cd5b22ce43b0c5e282985"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map.html#a42f3d982c43cd5b22ce43b0c5e282985">AtmosphericGreenhouseFactor</a> = 1.2f<code> [get]</code></td></tr>
+<tr class="separator:a42f3d982c43cd5b22ce43b0c5e282985"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5094fa54a987f1dc26b172067a171b54"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map.html#a5094fa54a987f1dc26b172067a171b54">BaseAtmosphericPressure</a> = 1.0f<code> [get]</code></td></tr>
+<tr class="separator:a5094fa54a987f1dc26b172067a171b54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d056f41d80cb84dc46deaff602bff23"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map.html#a4d056f41d80cb84dc46deaff602bff23">Albedo</a> = 0.3f<code> [get]</code></td></tr>
+<tr class="separator:a4d056f41d80cb84dc46deaff602bff23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af452313778eab35d9069d15d267e5ece"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_model_1_1_map_1_1_map_unit.html">MapUnit</a>[,]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_map_1_1_map.html#af452313778eab35d9069d15d267e5ece">MapUnits</a><code> [get]</code></td></tr>
 <tr class="memdesc:af452313778eab35d9069d15d267e5ece"><td class="mdescLeft">&#160;</td><td class="mdescRight">Units of the map.  <a href="class_model_1_1_map_1_1_map.html#af452313778eab35d9069d15d267e5ece">More...</a><br /></td></tr>
 <tr class="separator:af452313778eab35d9069d15d267e5ece"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -162,6 +186,98 @@ Properties</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p ><a class="el" href="class_model_1_1_map_1_1_map.html" title="Map in the Game. It represents the entire world.">Map</a> in the Game. It represents the entire world. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae267613278fd49505cfc2a027e37bee3" name="ae267613278fd49505cfc2a027e37bee3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae267613278fd49505cfc2a027e37bee3">&#9670;&nbsp;</a></span>AddBody()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Model.Map.Map.AddBody </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="interface_model_1_1_feature_1_1_i_body.html">IBody</a>&#160;</td>
+          <td class="paramname"><em>body</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a27f2da423f303977aa94f394b5af86e4" name="a27f2da423f303977aa94f394b5af86e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27f2da423f303977aa94f394b5af86e4">&#9670;&nbsp;</a></span>AddWaterBody()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Model.Map.Map.AddWaterBody </td>
+          <td>(</td>
+          <td class="paramtype">Vector2Int&#160;</td>
+          <td class="paramname"><em>initialPosition</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>volume</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a796a7194d11e1a68c441e187c5bf0665" name="a796a7194d11e1a68c441e187c5bf0665"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a796a7194d11e1a68c441e187c5bf0665">&#9670;&nbsp;</a></span>GetBodyOfWaterByPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model_1_1_feature_1_1_water_body.html">WaterBody</a> Model.Map.Map.GetBodyOfWaterByPosition </td>
+          <td>(</td>
+          <td class="paramtype">Vector2Int&#160;</td>
+          <td class="paramname"><em>pos</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1f23a2989fbc22aa880d3a6fa533f5fa" name="a1f23a2989fbc22aa880d3a6fa533f5fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f23a2989fbc22aa880d3a6fa533f5fa">&#9670;&nbsp;</a></span>GetMapUnitByLatLong()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model_1_1_map_1_1_map_unit.html">MapUnit</a> Model.Map.Map.GetMapUnitByLatLong </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>lat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>lon</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a2b18f9268cea5466e4bf914241fdfb7c" name="a2b18f9268cea5466e4bf914241fdfb7c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2b18f9268cea5466e4bf914241fdfb7c">&#9670;&nbsp;</a></span>GetPeak()</h2>
 
@@ -215,7 +331,7 @@ Properties</h2></td></tr>
 <p>Finds a slope at the given position by trying to find a way to the bottom of a valley. It is not always possible to find a well defined slope at the moment. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">start</td><td>Position to find a slope at.</td></tr>
+    <tr><td class="paramname">start</td><td>MapPositionVec to find a slope at.</td></tr>
     <tr><td class="paramname">momentumMultiplier</td><td>Multiplier of momentum to make the algorithm slip over local minimals.</td></tr>
     <tr><td class="paramname">maxMomentumFraction</td><td>Max fraction of momentum to take from the slope in a single step.</td></tr>
   </table>
@@ -261,6 +377,52 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a id="a69ff596a966e1ed3a0e27d1256050687" name="a69ff596a966e1ed3a0e27d1256050687"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69ff596a966e1ed3a0e27d1256050687">&#9670;&nbsp;</a></span>MergeBodyOfWater()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Model.Map.Map.MergeBodyOfWater </td>
+          <td>(</td>
+          <td class="paramtype">Vector2Int&#160;</td>
+          <td class="paramname"><em>pos1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector2Int&#160;</td>
+          <td class="paramname"><em>pos2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a51a472c5b05b6a7da53cd940c68025a8" name="a51a472c5b05b6a7da53cd940c68025a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51a472c5b05b6a7da53cd940c68025a8">&#9670;&nbsp;</a></span>RemoveBody()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Model.Map.Map.RemoveBody </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="interface_model_1_1_feature_1_1_i_body.html">IBody</a>&#160;</td>
+          <td class="paramname"><em>body</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a489c30f7cfdd35d18eaa396573ada07a" name="a489c30f7cfdd35d18eaa396573ada07a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a489c30f7cfdd35d18eaa396573ada07a">&#9670;&nbsp;</a></span>Update()</h2>
 
@@ -282,6 +444,42 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a id="ad7912966773f1119e244c55120eea700" name="ad7912966773f1119e244c55120eea700"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7912966773f1119e244c55120eea700">&#9670;&nbsp;</a></span>Vector2IntArrayToMapUnits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model_1_1_map_1_1_map_unit.html">MapUnit</a>[] Model.Map.Map.Vector2IntArrayToMapUnits </td>
+          <td>(</td>
+          <td class="paramtype">Vector2Int[]&#160;</td>
+          <td class="paramname"><em>positions</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af78d1c2c56733d5cddf0c2ef94ae21c0" name="af78d1c2c56733d5cddf0c2ef94ae21c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af78d1c2c56733d5cddf0c2ef94ae21c0">&#9670;&nbsp;</a></span>Vector2IntToMapUnit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model_1_1_map_1_1_map_unit.html">MapUnit</a> Model.Map.Map.Vector2IntToMapUnit </td>
+          <td>(</td>
+          <td class="paramtype">Vector2Int&#160;</td>
+          <td class="paramname"><em>position</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="abdd2ca0b3d915590443842ea9623560a" name="abdd2ca0b3d915590443842ea9623560a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abdd2ca0b3d915590443842ea9623560a">&#9670;&nbsp;</a></span>group</h2>
@@ -299,7 +497,7 @@ Properties</h2></td></tr>
 <p >Currently only works for peaks and valleys. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">position</td><td>Position to find a group at.</td></tr>
+    <tr><td class="paramname">position</td><td>MapPositionVec to find a group at.</td></tr>
   </table>
   </dd>
 </dl>
@@ -336,7 +534,7 @@ Properties</h2></td></tr>
 <p>Returns a peak at the given position by taking all tiles with higher elevation next to it. Its returns all the tiles in the peak, its borders and exit tiles (lowest positions next to the border). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">position</td><td>Position to find a peak at.</td></tr>
+    <tr><td class="paramname">position</td><td>MapPositionVec to find a peak at.</td></tr>
   </table>
   </dd>
 </dl>
@@ -397,7 +595,7 @@ Properties</h2></td></tr>
 <p>Returns a valley at the given position by taking all tiles with lower elevation next to it. Its returns all the tiles in the valley, its borders and exit tiles (lowest positions next to the border). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">position</td><td>Position to find a valley at.</td></tr>
+    <tr><td class="paramname">position</td><td>MapPositionVec to find a valley at.</td></tr>
   </table>
   </dd>
 </dl>
@@ -420,6 +618,72 @@ Properties</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Property Documentation</h2>
+<a id="a4d056f41d80cb84dc46deaff602bff23" name="a4d056f41d80cb84dc46deaff602bff23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d056f41d80cb84dc46deaff602bff23">&#9670;&nbsp;</a></span>Albedo</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Model.Map.Map.Albedo = 0.3f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a42f3d982c43cd5b22ce43b0c5e282985" name="a42f3d982c43cd5b22ce43b0c5e282985"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42f3d982c43cd5b22ce43b0c5e282985">&#9670;&nbsp;</a></span>AtmosphericGreenhouseFactor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Model.Map.Map.AtmosphericGreenhouseFactor = 1.2f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5094fa54a987f1dc26b172067a171b54" name="a5094fa54a987f1dc26b172067a171b54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5094fa54a987f1dc26b172067a171b54">&#9670;&nbsp;</a></span>BaseAtmosphericPressure</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Model.Map.Map.BaseAtmosphericPressure = 1.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="af452313778eab35d9069d15d267e5ece" name="af452313778eab35d9069d15d267e5ece"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af452313778eab35d9069d15d267e5ece">&#9670;&nbsp;</a></span>MapUnits</h2>
 
@@ -489,6 +753,28 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Height of the <a class="el" href="class_model_1_1_map_1_1_map.html" title="Map in the Game. It represents the entire world.">Map</a>. </p>
+
+</div>
+</div>
+<a id="a4f5ba9d3fd9e0f24a7d8e2281627dda6" name="a4f5ba9d3fd9e0f24a7d8e2281627dda6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f5ba9d3fd9e0f24a7d8e2281627dda6">&#9670;&nbsp;</a></span>TicksPerRotation</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Model.Map.Map.TicksPerRotation = 576</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

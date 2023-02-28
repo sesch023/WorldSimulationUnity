@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "WorldSimulationUnity", "index.html", [
+  [ "World Simulation Unity", "index.html", [
     [ "Packages", "namespaces.html", [
       [ "Package List", "namespaces.html", "namespaces_dup" ],
       [ "Package Members", "namespacemembers.html", [
@@ -39,7 +39,7 @@ var NAVTREE =
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
-        [ "Functions", "functions_func.html", null ],
+        [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", null ],
         [ "Enumerations", "functions_enum.html", null ],
         [ "Properties", "functions_prop.html", null ]
@@ -58,9 +58,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_array2_d_8cs.html",
-"class_manager_1_1_simulation_manager.html#af264956f2df15268bdeac48443eb80bd",
-"class_utils_1_1_array2_d_1_1_array_view2_d.html#ad9dbbc586baab6ba662864956e451106",
-"struct_model_1_1_map_1_1_map_unit_1_1_map_position.html#a4060abdb65d62a1b88e086f26d542534"
+"class_controllers_1_1_tile_map_controller.html#ac23ccdad4153a71ee14e7515eaa6404e",
+"class_model_1_1_map_1_1_map.html#a489c30f7cfdd35d18eaa396573ada07a",
+"class_utils_1_1_arrays_1_1_array_immutable2_d.html",
+"dir_84bbf7b3c7f28a5a18725745e1505219.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

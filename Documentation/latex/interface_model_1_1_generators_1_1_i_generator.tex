@@ -14,12 +14,16 @@ Inheritance diagram for Model.\+Generators.\+IGenerator\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-float\mbox{[},\mbox{]} \mbox{\hyperlink{interface_model_1_1_generators_1_1_i_generator_ac98be778bcd8726b7e0eb87d0a3db849}{Generate\+Elevation}} (int \mbox{\hyperlink{interface_model_1_1_generators_1_1_i_generator_aa853ae6fcce9c972a356be5d304d8178}{sizeX}}, int sizeY)
-\begin{DoxyCompactList}\small\item\em Method for generating the map as a 2D array of floats. \end{DoxyCompactList}\item 
+float\mbox{[},\mbox{]} float float max \mbox{\hyperlink{interface_model_1_1_generators_1_1_i_generator_ae445edc2e0ac48eaf204faa81d953ee1}{Generate\+Elevation}} (int \mbox{\hyperlink{interface_model_1_1_generators_1_1_i_generator_aa853ae6fcce9c972a356be5d304d8178}{sizeX}}, int sizeY)
+\item 
 int int sizeY \mbox{\hyperlink{interface_model_1_1_generators_1_1_i_generator_a4578fa51731209ecf2558afd97abaf5b}{Limit\+Map\+Sizes}} (int \mbox{\hyperlink{interface_model_1_1_generators_1_1_i_generator_aa853ae6fcce9c972a356be5d304d8178}{sizeX}}, int sizeY)
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
+\item 
+float\mbox{[},\mbox{]} \mbox{\hyperlink{interface_model_1_1_generators_1_1_i_generator_aff05c10568883927cb7b48239fe67117}{elevation}}
+\begin{DoxyCompactList}\small\item\em Method for generating the map as a 2D array\+Immutable of floats. \end{DoxyCompactList}\item 
+float\mbox{[},\mbox{]} float \mbox{\hyperlink{interface_model_1_1_generators_1_1_i_generator_a877d23857cca7ce5bffa63e4c169d7cb}{min}}
 \item 
 int \mbox{\hyperlink{interface_model_1_1_generators_1_1_i_generator_aa853ae6fcce9c972a356be5d304d8178}{sizeX}}
 \begin{DoxyCompactList}\small\item\em Limits the size of the generated map depending on the generator\textquotesingle{}s algorithm and the given parameters. The default implementation just returns the given size. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -29,29 +33,15 @@ int \mbox{\hyperlink{interface_model_1_1_generators_1_1_i_generator_aa853ae6fcce
 Basic interface for a generator. 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{interface_model_1_1_generators_1_1_i_generator_ac98be778bcd8726b7e0eb87d0a3db849}\label{interface_model_1_1_generators_1_1_i_generator_ac98be778bcd8726b7e0eb87d0a3db849}} 
+\mbox{\Hypertarget{interface_model_1_1_generators_1_1_i_generator_ae445edc2e0ac48eaf204faa81d953ee1}\label{interface_model_1_1_generators_1_1_i_generator_ae445edc2e0ac48eaf204faa81d953ee1}} 
 \index{Model.Generators.IGenerator@{Model.Generators.IGenerator}!GenerateElevation@{GenerateElevation}}
 \index{GenerateElevation@{GenerateElevation}!Model.Generators.IGenerator@{Model.Generators.IGenerator}}
 \doxysubsubsection{\texorpdfstring{GenerateElevation()}{GenerateElevation()}}
-{\footnotesize\ttfamily float\mbox{[},\mbox{]} Model.\+Generators.\+IGenerator.\+Generate\+Elevation (\begin{DoxyParamCaption}\item[{int}]{sizeX,  }\item[{int}]{sizeY }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily float\mbox{[},\mbox{]} float float max Model.\+Generators.\+IGenerator.\+Generate\+Elevation (\begin{DoxyParamCaption}\item[{int}]{sizeX,  }\item[{int}]{sizeY }\end{DoxyParamCaption})}
 
 
 
-Method for generating the map as a 2D array of floats. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em sizeX} & Width of the \mbox{\hyperlink{namespace_model_1_1_map}{Map}}.\\
-\hline
-{\em sizeY} & Height of the \mbox{\hyperlink{namespace_model_1_1_map}{Map}}.\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-2D Array of floats as generated elevation.
-\end{DoxyReturn}
-
-
-Implemented in \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_aeca80ef876e5d28fa65da494a1202035}{Model.\+Generators.\+Base\+Generator}}, \mbox{\hyperlink{class_model_1_1_generators_1_1_diamond_square_generator_af48ac5e2c6d843294941f5bde66175ea}{Model.\+Generators.\+Diamond\+Square\+Generator}}, \mbox{\hyperlink{class_model_1_1_generators_1_1_flat_generator_acd7abf488625318444806938551457c8}{Model.\+Generators.\+Flat\+Generator}}, and \mbox{\hyperlink{class_model_1_1_generators_1_1_perlin_generator_ac2bd3743f5b68f86b43b0e2dfb58db79}{Model.\+Generators.\+Perlin\+Generator}}.
+Implemented in \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_af9f83de260b2a28fa0d28174ece0de5c}{Model.\+Generators.\+Base\+Generator}}.
 
 \mbox{\Hypertarget{interface_model_1_1_generators_1_1_i_generator_a4578fa51731209ecf2558afd97abaf5b}\label{interface_model_1_1_generators_1_1_i_generator_a4578fa51731209ecf2558afd97abaf5b}} 
 \index{Model.Generators.IGenerator@{Model.Generators.IGenerator}!LimitMapSizes@{LimitMapSizes}}
@@ -66,6 +56,32 @@ Implemented in \mbox{\hyperlink{class_model_1_1_generators_1_1_base_generator_a3
 
 
 \doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{interface_model_1_1_generators_1_1_i_generator_aff05c10568883927cb7b48239fe67117}\label{interface_model_1_1_generators_1_1_i_generator_aff05c10568883927cb7b48239fe67117}} 
+\index{Model.Generators.IGenerator@{Model.Generators.IGenerator}!elevation@{elevation}}
+\index{elevation@{elevation}!Model.Generators.IGenerator@{Model.Generators.IGenerator}}
+\doxysubsubsection{\texorpdfstring{elevation}{elevation}}
+{\footnotesize\ttfamily float \mbox{[},\mbox{]} Model.\+Generators.\+IGenerator.\+elevation}
+
+
+
+Method for generating the map as a 2D array\+Immutable of floats. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sizeX} & Width of the \mbox{\hyperlink{namespace_model_1_1_map}{Map}}.\\
+\hline
+{\em sizeY} & Height of the \mbox{\hyperlink{namespace_model_1_1_map}{Map}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+2D Array of floats as generated elevation.
+\end{DoxyReturn}
+\mbox{\Hypertarget{interface_model_1_1_generators_1_1_i_generator_a877d23857cca7ce5bffa63e4c169d7cb}\label{interface_model_1_1_generators_1_1_i_generator_a877d23857cca7ce5bffa63e4c169d7cb}} 
+\index{Model.Generators.IGenerator@{Model.Generators.IGenerator}!min@{min}}
+\index{min@{min}!Model.Generators.IGenerator@{Model.Generators.IGenerator}}
+\doxysubsubsection{\texorpdfstring{min}{min}}
+{\footnotesize\ttfamily float \mbox{[},\mbox{]} float Model.\+Generators.\+IGenerator.\+min}
+
 \mbox{\Hypertarget{interface_model_1_1_generators_1_1_i_generator_aa853ae6fcce9c972a356be5d304d8178}\label{interface_model_1_1_generators_1_1_i_generator_aa853ae6fcce9c972a356be5d304d8178}} 
 \index{Model.Generators.IGenerator@{Model.Generators.IGenerator}!sizeX@{sizeX}}
 \index{sizeX@{sizeX}!Model.Generators.IGenerator@{Model.Generators.IGenerator}}

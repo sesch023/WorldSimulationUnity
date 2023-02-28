@@ -7,8 +7,14 @@ using UnityEngine;
 
 namespace Utils.Logging
 {
+    /// <summary>
+    /// Delegate for logging a message with a log level into stream writers.
+    /// </summary>
     public delegate void LogString(string message, LogLevel level, StreamWriter levelWriter, StreamWriter fullWriter);
     
+    /// <summary>
+    /// Log Level of a message.
+    /// </summary>
     public enum LogLevel
     {
         Debug = 0,
@@ -18,6 +24,9 @@ namespace Utils.Logging
         Fatal = 4
     }
     
+    /// <summary>
+    /// Translates a log level into a string.
+    /// </summary>
     public static class LogLevelInfo
     {
         public static readonly string[] Names = {"Debug", "Info", "Warning", "Error", "Fatal"};
@@ -27,6 +36,9 @@ namespace Utils.Logging
         }
     }
     
+    /// <summary>
+    /// Simple Logger class that logs to multiple log files depending on the log level.
+    /// </summary>
     public class SimpleLogger
     {
         private const string FileTimeFormat = "yy-MM-dd-hh-mm-ss";
@@ -34,7 +46,16 @@ namespace Utils.Logging
         private readonly Dictionary<LogLevel, string> _writerPaths;
         private readonly string _fullLogWriterPath;
         
-        public SimpleLogger(string targetPath="Logs/", bool useTimeSignature=false, LogString logString=null, bool clearLogsAfterRun=true)
+        /// <summary>
+        /// Creates a new SimpleLogger instance.
+        /// </summary>
+        /// <param name="targetPath">Path to log to.</param>
+        /// <param name="useTimeSignature">Use time signature on log files, to not overwrite old files.</param>
+        /// <param name="logString">Delegate for logging a string. Null uses default. Use default way if unsure.</param>
+        /// <param name="clearLogsBeforeRun">Removes all log files in the given folder before starting.</param>
+        /// <exception cref="NullReferenceException">If path is null.</exception>
+        /// <exception cref="ArgumentException">If path is illegal.</exception>
+        public SimpleLogger(string targetPath="Logs/", bool useTimeSignature=false, LogString logString=null, bool clearLogsBeforeRun=true)
         {
             if(targetPath == null)
                 throw new NullReferenceException($"NullReferenceException: {GetType().Name}. Given Logging Path is null!");
@@ -48,7 +69,7 @@ namespace Utils.Logging
             {
                 Directory.CreateDirectory(targetPath);
             }
-            else if (clearLogsAfterRun)
+            else if (clearLogsBeforeRun)
             {
                 foreach(FileInfo file in new DirectoryInfo(targetPath).GetFiles())
                 {
@@ -113,6 +134,11 @@ namespace Utils.Logging
             _logString = logString;
         }
         
+        /// <summary>
+        /// Logs a message with a given log level.
+        /// </summary>
+        /// <param name="message">Message to log.</param>
+        /// <param name="level">Level to log with.</param>
         public void Log(string message, LogLevel level=LogLevel.Debug)
         {
             using (StreamWriter currentWriter = new StreamWriter(_writerPaths[level], true))
@@ -124,6 +150,11 @@ namespace Utils.Logging
             }
         }
         
+        /// <summary>
+        /// Logs a object with a given log level.
+        /// </summary>
+        /// <param name="obj">Object to log.</param>
+        /// <param name="level">Level to log with.</param>
         public void Log(object obj, LogLevel level=LogLevel.Debug)
         {
             Log(obj.ToString(), level);

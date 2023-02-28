@@ -1,0 +1,33 @@
+\hypertarget{_simple_logger_8cs}{}\doxysection{Assets/\+Scripts/\+Utils/\+Logging/\+Simple\+Logger.cs File Reference}
+\label{_simple_logger_8cs}\index{Assets/Scripts/Utils/Logging/SimpleLogger.cs@{Assets/Scripts/Utils/Logging/SimpleLogger.cs}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries Utils.\+Logging.\+Log\+Level\+Info}
+\begin{DoxyCompactList}\small\item\em Translates a log level into a string. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_utils_1_1_logging_1_1_simple_logger}{Utils.\+Logging.\+Simple\+Logger}}
+\begin{DoxyCompactList}\small\item\em Simple Logger class that logs to multiple log files depending on the log level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_utils}{Utils}}
+\begin{DoxyCompactList}\small\item\em Namespace for utility classes. \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{namespace_utils_1_1_logging}{Utils.\+Logging}}
+\begin{DoxyCompactList}\small\item\em Namespace for logging utils. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_utils_1_1_logging_a9af82e04c4ffd4eb51218687b908944f}{Utils.\+Logging.\+Log\+Level}} \{ \newline
+\mbox{\hyperlink{namespace_utils_1_1_logging_a9af82e04c4ffd4eb51218687b908944faa603905470e2a5b8c13e96b579ef0dba}{Utils.\+Logging.\+Debug}} = 0
+, \mbox{\hyperlink{namespace_utils_1_1_logging_a9af82e04c4ffd4eb51218687b908944fa4059b0251f66a18cb56f544728796875}{Utils.\+Logging.\+Info}} = 1
+, \mbox{\hyperlink{namespace_utils_1_1_logging_a9af82e04c4ffd4eb51218687b908944fa0eaadb4fcb48a0a0ed7bc9868be9fbaa}{Utils.\+Logging.\+Warning}} = 2
+, \mbox{\hyperlink{namespace_utils_1_1_logging_a9af82e04c4ffd4eb51218687b908944fa902b0d55fddef6f8d651fe1035b7d4bd}{Utils.\+Logging.\+Error}} = 3
+, \newline
+\mbox{\hyperlink{namespace_utils_1_1_logging_a9af82e04c4ffd4eb51218687b908944fa882384ec38ce8d9582b57e70861730e4}{Utils.\+Logging.\+Fatal}} = 4
+ \}
+\begin{DoxyCompactList}\small\item\em Log Level of a message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+delegate void \mbox{\hyperlink{namespace_utils_1_1_logging_ae6ddb0589251628f2c2c43899d84a9e5}{Utils.\+Logging.\+Log\+String}} (string message, Log\+Level level, Stream\+Writer level\+Writer, Stream\+Writer full\+Writer)
+\begin{DoxyCompactList}\small\item\em Delegate for logging a message with a log level into stream writers. \end{DoxyCompactList}\end{DoxyCompactItemize}

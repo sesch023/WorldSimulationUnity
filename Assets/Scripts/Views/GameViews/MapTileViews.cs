@@ -25,9 +25,9 @@ namespace Views.GameViews
         {
             public Sprite sprite;
             public Color color;
-            public TileCondition condition;
+            public MapUnitCondition condition;
 
-            public TileData(Sprite sprite, Color color, TileCondition condition)
+            public TileData(Sprite sprite, Color color, MapUnitCondition condition)
             {
                 this.sprite = sprite;
                 this.color = color;
@@ -69,8 +69,8 @@ namespace Views.GameViews
         /// Steps between darkness.
         private float _colorStep;
 
-        private readonly Dictionary<TileCondition, Tile[]> _tileData = new();
-        private TileCondition[] _relevantConditions;
+        private readonly Dictionary<MapUnitCondition, Tile[]> _tileData = new();
+        private MapUnitCondition[] _relevantConditions;
 
         [SerializeField]
         private TileData[] tileDefinitions;
@@ -113,6 +113,9 @@ namespace Views.GameViews
             }
         }
         
+        /// <summary>
+        /// Calculates the height steps for the map.
+        /// </summary>
         private void CalculateHeightSteps()
         {
             _heightSteps = new List<float>();
@@ -125,11 +128,16 @@ namespace Views.GameViews
             _heightSteps.Add(currentHeight);
         }
         
+        /// <summary>
+        /// Returns a fitting view tile for the given map unit.
+        /// </summary>
+        /// <param name="mapUnit">Map Unit to check.</param>
+        /// <returns>Fitting view tile for the map unit.</returns>
         public Tile GetTileForMapUnit([NotNull] MapUnit mapUnit)
         {
             Tile tile = null;
 
-            TileCondition relevant = defaultTile.condition;
+            MapUnitCondition relevant = defaultTile.condition;
             foreach (var con in _relevantConditions)
             {
                 if (con.CheckCondition(mapUnit))
