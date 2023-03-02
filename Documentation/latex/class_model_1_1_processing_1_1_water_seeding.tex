@@ -1,5 +1,10 @@
 \hypertarget{class_model_1_1_processing_1_1_water_seeding}{}\doxysection{Model.\+Processing.\+Water\+Seeding Class Reference}
 \label{class_model_1_1_processing_1_1_water_seeding}\index{Model.Processing.WaterSeeding@{Model.Processing.WaterSeeding}}
+
+
+General Processor for Seeding with Water Bodies.  
+
+
 Inheritance diagram for Model.\+Processing.\+Water\+Seeding\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,10 +15,13 @@ Inheritance diagram for Model.\+Processing.\+Water\+Seeding\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 override void \mbox{\hyperlink{class_model_1_1_processing_1_1_water_seeding_ad9eca8fa2a9371f5c35fa655095b80d3}{Process\+Map}} (\mbox{\hyperlink{class_model_1_1_map_1_1_map}{Map.\+Map}} map)
-\item 
+\begin{DoxyCompactList}\small\item\em Tries to seed the map with water bodies with the given attempts and seed. \end{DoxyCompactList}\item 
 override void \mbox{\hyperlink{class_model_1_1_processing_1_1_water_seeding_abc38d84227a38fbd3ef59c5e5c05b658}{Process\+Generator\+Data}} (float\mbox{[},\mbox{]} map)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This Algorithm is not executable for simple arrays. Because Unity cannot serialize different base types in their dependendies, it is not possible to use the \mbox{\hyperlink{interface_model_1_1_processing_1_1_i_map_processing}{IMap\+Processing}} interface only. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+General Processor for Seeding with Water Bodies. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_model_1_1_processing_1_1_water_seeding_abc38d84227a38fbd3ef59c5e5c05b658}\label{class_model_1_1_processing_1_1_water_seeding_abc38d84227a38fbd3ef59c5e5c05b658}} 
@@ -24,6 +32,15 @@ override void \mbox{\hyperlink{class_model_1_1_processing_1_1_water_seeding_abc3
 
 
 
+This Algorithm is not executable for simple arrays. Because Unity cannot serialize different base types in their dependendies, it is not possible to use the \mbox{\hyperlink{interface_model_1_1_processing_1_1_i_map_processing}{IMap\+Processing}} interface only. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & \\
+\hline
+\end{DoxyParams}
+
+
 Implements \mbox{\hyperlink{class_model_1_1_processing_1_1_base_general_processing_a407605be2765c53d7f80c44b2dbc9bd9}{Model.\+Processing.\+Base\+General\+Processing}}.
 
 \mbox{\Hypertarget{class_model_1_1_processing_1_1_water_seeding_ad9eca8fa2a9371f5c35fa655095b80d3}\label{class_model_1_1_processing_1_1_water_seeding_ad9eca8fa2a9371f5c35fa655095b80d3}} 
@@ -32,6 +49,15 @@ Implements \mbox{\hyperlink{class_model_1_1_processing_1_1_base_general_processi
 \doxysubsubsection{\texorpdfstring{ProcessMap()}{ProcessMap()}}
 {\footnotesize\ttfamily override void Model.\+Processing.\+Water\+Seeding.\+Process\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_model_1_1_map_1_1_map}{Map.\+Map}}}]{map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
+
+
+Tries to seed the map with water bodies with the given attempts and seed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & \mbox{\hyperlink{namespace_model_1_1_map}{Map}} to seed water bodies on.\\
+\hline
+\end{DoxyParams}
 
 
 Implements \mbox{\hyperlink{class_model_1_1_processing_1_1_base_general_processing_ad3c6c674c67426e8be7c79cc77359be5}{Model.\+Processing.\+Base\+General\+Processing}}.

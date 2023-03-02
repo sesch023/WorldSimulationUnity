@@ -89,34 +89,45 @@ $(document).ready(function(){initNavTree('class_model_1_1_processing_1_1_water_s
   <div class="headertitle"><div class="title">Model.Processing.WaterSeeding Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>General Processor for Seeding with Water Bodies.  
+ <a href="class_model_1_1_processing_1_1_water_seeding.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Model.Processing.WaterSeeding:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_model_1_1_processing_1_1_water_seeding.png" usemap="#Model.Processing.WaterSeeding_map" alt=""/>
   <map id="Model.Processing.WaterSeeding_map" name="Model.Processing.WaterSeeding_map">
-<area href="class_model_1_1_processing_1_1_base_general_processing.html" alt="Model.Processing.BaseGeneralProcessing" shape="rect" coords="264,56,518,80"/>
-<area href="interface_model_1_1_processing_1_1_i_map_processing.html" alt="Model.Processing.IMapProcessing" shape="rect" coords="264,0,518,24"/>
-<area href="interface_model_1_1_processing_1_1_i_data_array_processing.html" alt="Model.Processing.IDataArrayProcessing" shape="rect" coords="528,0,782,24"/>
+<area href="class_model_1_1_processing_1_1_base_general_processing.html" title="Base Class for Processing a Map or a Data Array." alt="Model.Processing.BaseGeneralProcessing" shape="rect" coords="264,56,518,80"/>
+<area href="interface_model_1_1_processing_1_1_i_map_processing.html" title="Interface for processing a map." alt="Model.Processing.IMapProcessing" shape="rect" coords="264,0,518,24"/>
+<area href="interface_model_1_1_processing_1_1_i_data_array_processing.html" title="Interface for processing a data array." alt="Model.Processing.IDataArrayProcessing" shape="rect" coords="528,0,782,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad9eca8fa2a9371f5c35fa655095b80d3"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_processing_1_1_water_seeding.html#ad9eca8fa2a9371f5c35fa655095b80d3">ProcessMap</a> (<a class="el" href="class_model_1_1_map_1_1_map.html">Map.Map</a> map)</td></tr>
+<tr class="memdesc:ad9eca8fa2a9371f5c35fa655095b80d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to seed the map with water bodies with the given attempts and seed.  <a href="class_model_1_1_processing_1_1_water_seeding.html#ad9eca8fa2a9371f5c35fa655095b80d3">More...</a><br /></td></tr>
 <tr class="separator:ad9eca8fa2a9371f5c35fa655095b80d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc38d84227a38fbd3ef59c5e5c05b658"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_processing_1_1_water_seeding.html#abc38d84227a38fbd3ef59c5e5c05b658">ProcessGeneratorData</a> (float[,] map)</td></tr>
+<tr class="memdesc:abc38d84227a38fbd3ef59c5e5c05b658"><td class="mdescLeft">&#160;</td><td class="mdescRight">This Algorithm is not executable for simple arrays. Because Unity cannot serialize different base types in their dependendies, it is not possible to use the <a class="el" href="interface_model_1_1_processing_1_1_i_map_processing.html" title="Interface for processing a map.">IMapProcessing</a> interface only.  <a href="class_model_1_1_processing_1_1_water_seeding.html#abc38d84227a38fbd3ef59c5e5c05b658">More...</a><br /></td></tr>
 <tr class="separator:abc38d84227a38fbd3ef59c5e5c05b658"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3c6c674c67426e8be7c79cc77359be5"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_processing_1_1_base_general_processing.html#ad3c6c674c67426e8be7c79cc77359be5">ProcessMap</a> (<a class="el" href="class_model_1_1_map_1_1_map.html">Map.Map</a> map)</td></tr>
+<tr class="memdesc:ad3c6c674c67426e8be7c79cc77359be5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes a given map.  <a href="class_model_1_1_processing_1_1_base_general_processing.html#ad3c6c674c67426e8be7c79cc77359be5">More...</a><br /></td></tr>
 <tr class="separator:ad3c6c674c67426e8be7c79cc77359be5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a407605be2765c53d7f80c44b2dbc9bd9"><td class="memItemLeft" align="right" valign="top">abstract void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_processing_1_1_base_general_processing.html#a407605be2765c53d7f80c44b2dbc9bd9">ProcessGeneratorData</a> (float[,] map)</td></tr>
+<tr class="memdesc:a407605be2765c53d7f80c44b2dbc9bd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes a given <a class="el" href="namespace_model_1_1_map.html" title="Namespace for the simulation model.">Map</a> Array.  <a href="class_model_1_1_processing_1_1_base_general_processing.html#a407605be2765c53d7f80c44b2dbc9bd9">More...</a><br /></td></tr>
 <tr class="separator:a407605be2765c53d7f80c44b2dbc9bd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28ec612ba75445db56aa8eb5862b6bfc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_model_1_1_processing_1_1_i_map_processing.html#a28ec612ba75445db56aa8eb5862b6bfc">ProcessMap</a> (<a class="el" href="class_model_1_1_map_1_1_map.html">Map.Map</a> map)</td></tr>
+<tr class="memdesc:a28ec612ba75445db56aa8eb5862b6bfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes a given map.  <a href="interface_model_1_1_processing_1_1_i_map_processing.html#a28ec612ba75445db56aa8eb5862b6bfc">More...</a><br /></td></tr>
 <tr class="separator:a28ec612ba75445db56aa8eb5862b6bfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24471bda7a94e45151b3cecbe6dab7cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_model_1_1_processing_1_1_i_data_array_processing.html#a24471bda7a94e45151b3cecbe6dab7cb">ProcessGeneratorData</a> (float[,] map)</td></tr>
+<tr class="memdesc:a24471bda7a94e45151b3cecbe6dab7cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes a given array.  <a href="interface_model_1_1_processing_1_1_i_data_array_processing.html#a24471bda7a94e45151b3cecbe6dab7cb">More...</a><br /></td></tr>
 <tr class="separator:a24471bda7a94e45151b3cecbe6dab7cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >General Processor for Seeding with Water Bodies. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="abc38d84227a38fbd3ef59c5e5c05b658" name="abc38d84227a38fbd3ef59c5e5c05b658"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abc38d84227a38fbd3ef59c5e5c05b658">&#9670;&nbsp;</a></span>ProcessGeneratorData()</h2>
 
@@ -140,6 +151,14 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>This Algorithm is not executable for simple arrays. Because Unity cannot serialize different base types in their dependendies, it is not possible to use the <a class="el" href="interface_model_1_1_processing_1_1_i_map_processing.html" title="Interface for processing a map.">IMapProcessing</a> interface only. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">map</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implements <a class="el" href="class_model_1_1_processing_1_1_base_general_processing.html#a407605be2765c53d7f80c44b2dbc9bd9">Model.Processing.BaseGeneralProcessing</a>.</p>
 
@@ -168,6 +187,14 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Tries to seed the map with water bodies with the given attempts and seed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">map</td><td><a class="el" href="namespace_model_1_1_map.html" title="Namespace for the simulation model.">Map</a> to seed water bodies on.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implements <a class="el" href="class_model_1_1_processing_1_1_base_general_processing.html#ad3c6c674c67426e8be7c79cc77359be5">Model.Processing.BaseGeneralProcessing</a>.</p>
 

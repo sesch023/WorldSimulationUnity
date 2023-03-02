@@ -2,7 +2,7 @@
 \label{class_model_1_1_processing_1_1_hydraulic_eroder}\index{Model.Processing.HydraulicEroder@{Model.Processing.HydraulicEroder}}
 
 
-Auf Basis von\+: \href{https://github.com/SebLague/Hydraulic-Erosion/blob/master/Assets/Scripts/Erosion.cs}{\texttt{ https\+://github.\+com/\+Seb\+Lague/\+Hydraulic-\/\+Erosion/blob/master/\+Assets/\+Scripts/\+Erosion.\+cs}}  
+Eroder Processor Scriptable Object for executing erosion on a map.  
 
 
 Inheritance diagram for Model.\+Processing.\+Hydraulic\+Eroder\+:\begin{figure}[H]
@@ -15,13 +15,15 @@ Inheritance diagram for Model.\+Processing.\+Hydraulic\+Eroder\+:\begin{figure}[
 \begin{DoxyCompactItemize}
 \item 
 override void \mbox{\hyperlink{class_model_1_1_processing_1_1_hydraulic_eroder_a1e223ddaa09d3c0c690154d1e1e6376d}{Process\+Map}} (\mbox{\hyperlink{class_model_1_1_map_1_1_map}{Map.\+Map}} map)
-\item 
+\begin{DoxyCompactList}\small\item\em Processes the map with the Hydraulic Eroder and the given numbers of iterations. \end{DoxyCompactList}\item 
 override void \mbox{\hyperlink{class_model_1_1_processing_1_1_hydraulic_eroder_a1231dfdd1605111d2a92e578781a8fe3}{Process\+Generator\+Data}} (float\mbox{[},\mbox{]} map)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Processes the array with the Hydraulic Eroder and the given numbers of iterations. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Auf Basis von\+: \href{https://github.com/SebLague/Hydraulic-Erosion/blob/master/Assets/Scripts/Erosion.cs}{\texttt{ https\+://github.\+com/\+Seb\+Lague/\+Hydraulic-\/\+Erosion/blob/master/\+Assets/\+Scripts/\+Erosion.\+cs}} 
+Eroder Processor Scriptable Object for executing erosion on a map. 
+
+Based on\+: \href{https://github.com/SebLague/Hydraulic-Erosion/blob/master/Assets/Scripts/Erosion.cs}{\texttt{ https\+://github.\+com/\+Seb\+Lague/\+Hydraulic-\/\+Erosion/blob/master/\+Assets/\+Scripts/\+Erosion.\+cs}} 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_model_1_1_processing_1_1_hydraulic_eroder_a1231dfdd1605111d2a92e578781a8fe3}\label{class_model_1_1_processing_1_1_hydraulic_eroder_a1231dfdd1605111d2a92e578781a8fe3}} 
@@ -32,6 +34,15 @@ Auf Basis von\+: \href{https://github.com/SebLague/Hydraulic-Erosion/blob/master
 
 
 
+Processes the array with the Hydraulic Eroder and the given numbers of iterations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & Array to process.\\
+\hline
+\end{DoxyParams}
+
+
 Implements \mbox{\hyperlink{class_model_1_1_processing_1_1_base_general_processing_a407605be2765c53d7f80c44b2dbc9bd9}{Model.\+Processing.\+Base\+General\+Processing}}.
 
 \mbox{\Hypertarget{class_model_1_1_processing_1_1_hydraulic_eroder_a1e223ddaa09d3c0c690154d1e1e6376d}\label{class_model_1_1_processing_1_1_hydraulic_eroder_a1e223ddaa09d3c0c690154d1e1e6376d}} 
@@ -40,6 +51,15 @@ Implements \mbox{\hyperlink{class_model_1_1_processing_1_1_base_general_processi
 \doxysubsubsection{\texorpdfstring{ProcessMap()}{ProcessMap()}}
 {\footnotesize\ttfamily override void Model.\+Processing.\+Hydraulic\+Eroder.\+Process\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_model_1_1_map_1_1_map}{Map.\+Map}}}]{map }\end{DoxyParamCaption})}
 
+
+
+Processes the map with the Hydraulic Eroder and the given numbers of iterations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & \mbox{\hyperlink{namespace_model_1_1_map}{Map}} to process.\\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

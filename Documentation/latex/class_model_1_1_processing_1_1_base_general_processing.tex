@@ -1,5 +1,10 @@
 \hypertarget{class_model_1_1_processing_1_1_base_general_processing}{}\doxysection{Model.\+Processing.\+Base\+General\+Processing Class Reference}
 \label{class_model_1_1_processing_1_1_base_general_processing}\index{Model.Processing.BaseGeneralProcessing@{Model.Processing.BaseGeneralProcessing}}
+
+
+\mbox{\hyperlink{namespace_base}{Base}} Class for \mbox{\hyperlink{namespace_model_1_1_processing}{Processing}} a \mbox{\hyperlink{namespace_model_1_1_map}{Map}} or a Data Array.  
+
+
 Inheritance diagram for Model.\+Processing.\+Base\+General\+Processing\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,10 +15,13 @@ Inheritance diagram for Model.\+Processing.\+Base\+General\+Processing\+:\begin{
 \begin{DoxyCompactItemize}
 \item 
 abstract void \mbox{\hyperlink{class_model_1_1_processing_1_1_base_general_processing_ad3c6c674c67426e8be7c79cc77359be5}{Process\+Map}} (\mbox{\hyperlink{class_model_1_1_map_1_1_map}{Map.\+Map}} map)
-\item 
+\begin{DoxyCompactList}\small\item\em Processes a given map. \end{DoxyCompactList}\item 
 abstract void \mbox{\hyperlink{class_model_1_1_processing_1_1_base_general_processing_a407605be2765c53d7f80c44b2dbc9bd9}{Process\+Generator\+Data}} (float\mbox{[},\mbox{]} map)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Processes a given \mbox{\hyperlink{namespace_model_1_1_map}{Map}} Array. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{namespace_base}{Base}} Class for \mbox{\hyperlink{namespace_model_1_1_processing}{Processing}} a \mbox{\hyperlink{namespace_model_1_1_map}{Map}} or a Data Array. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_model_1_1_processing_1_1_base_general_processing_a407605be2765c53d7f80c44b2dbc9bd9}\label{class_model_1_1_processing_1_1_base_general_processing_a407605be2765c53d7f80c44b2dbc9bd9}} 
@@ -22,6 +30,15 @@ abstract void \mbox{\hyperlink{class_model_1_1_processing_1_1_base_general_proce
 \doxysubsubsection{\texorpdfstring{ProcessGeneratorData()}{ProcessGeneratorData()}}
 {\footnotesize\ttfamily abstract void Model.\+Processing.\+Base\+General\+Processing.\+Process\+Generator\+Data (\begin{DoxyParamCaption}\item[{float}]{map\mbox{[},\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
+
+
+Processes a given \mbox{\hyperlink{namespace_model_1_1_map}{Map}} Array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & \mbox{\hyperlink{namespace_model_1_1_map}{Map}} Array to process.\\
+\hline
+\end{DoxyParams}
 
 
 Implements \mbox{\hyperlink{interface_model_1_1_processing_1_1_i_data_array_processing_a24471bda7a94e45151b3cecbe6dab7cb}{Model.\+Processing.\+IData\+Array\+Processing}}.
@@ -36,6 +53,15 @@ Implemented in \mbox{\hyperlink{class_model_1_1_processing_1_1_hydraulic_eroder_
 \doxysubsubsection{\texorpdfstring{ProcessMap()}{ProcessMap()}}
 {\footnotesize\ttfamily abstract void Model.\+Processing.\+Base\+General\+Processing.\+Process\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_model_1_1_map_1_1_map}{Map.\+Map}}}]{map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
+
+
+Processes a given map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & \mbox{\hyperlink{namespace_model_1_1_map}{Map}} to Process.\\
+\hline
+\end{DoxyParams}
 
 
 Implements \mbox{\hyperlink{interface_model_1_1_processing_1_1_i_map_processing_a28ec612ba75445db56aa8eb5862b6bfc}{Model.\+Processing.\+IMap\+Processing}}.

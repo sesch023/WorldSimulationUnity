@@ -2,26 +2,39 @@
 \label{class_model_1_1_processing_1_1_hydraulic_erosion}\index{Model.Processing.HydraulicErosion@{Model.Processing.HydraulicErosion}}
 
 
-Auf Basis von\+: \href{https://github.com/SebLague/Hydraulic-Erosion/blob/master/Assets/Scripts/Erosion.cs}{\texttt{ https\+://github.\+com/\+Seb\+Lague/\+Hydraulic-\/\+Erosion/blob/master/\+Assets/\+Scripts/\+Erosion.\+cs}}  
+Particle based hydraulic erosion simulation. Can execute multiple iterations of erosion.  
 
 
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_model_1_1_processing_1_1_hydraulic_erosion_a89a69af8292f00eb672ffe9d200ebeb7}{Erode}} (\mbox{\hyperlink{interface_utils_1_1_arrays_1_1_i2_d_array}{I2\+DArray}}$<$ float $>$ map, int num\+Iterations=1)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_model_1_1_processing_1_1_hydraulic_erosion_a813ab1ad59d1a14ccca4223f429d8acd}{Erode}} (\mbox{\hyperlink{interface_utils_1_1_arrays_1_1_i2_d_array}{I2\+DArray}}$<$ float $>$ map, int num\+Iterations=10000)
+\begin{DoxyCompactList}\small\item\em Erodes by the hydraulic erosion algorithm with the given iteartions. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Auf Basis von\+: \href{https://github.com/SebLague/Hydraulic-Erosion/blob/master/Assets/Scripts/Erosion.cs}{\texttt{ https\+://github.\+com/\+Seb\+Lague/\+Hydraulic-\/\+Erosion/blob/master/\+Assets/\+Scripts/\+Erosion.\+cs}} 
+Particle based hydraulic erosion simulation. Can execute multiple iterations of erosion. 
+
+Based on\+: \href{https://github.com/SebLague/Hydraulic-Erosion/blob/master/Assets/Scripts/Erosion.cs}{\texttt{ https\+://github.\+com/\+Seb\+Lague/\+Hydraulic-\/\+Erosion/blob/master/\+Assets/\+Scripts/\+Erosion.\+cs}} 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_model_1_1_processing_1_1_hydraulic_erosion_a89a69af8292f00eb672ffe9d200ebeb7}\label{class_model_1_1_processing_1_1_hydraulic_erosion_a89a69af8292f00eb672ffe9d200ebeb7}} 
+\mbox{\Hypertarget{class_model_1_1_processing_1_1_hydraulic_erosion_a813ab1ad59d1a14ccca4223f429d8acd}\label{class_model_1_1_processing_1_1_hydraulic_erosion_a813ab1ad59d1a14ccca4223f429d8acd}} 
 \index{Model.Processing.HydraulicErosion@{Model.Processing.HydraulicErosion}!Erode@{Erode}}
 \index{Erode@{Erode}!Model.Processing.HydraulicErosion@{Model.Processing.HydraulicErosion}}
 \doxysubsubsection{\texorpdfstring{Erode()}{Erode()}}
-{\footnotesize\ttfamily void Model.\+Processing.\+Hydraulic\+Erosion.\+Erode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_utils_1_1_arrays_1_1_i2_d_array}{I2\+DArray}}$<$ float $>$}]{map,  }\item[{int}]{num\+Iterations = {\ttfamily 1} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Model.\+Processing.\+Hydraulic\+Erosion.\+Erode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_utils_1_1_arrays_1_1_i2_d_array}{I2\+DArray}}$<$ float $>$}]{map,  }\item[{int}]{num\+Iterations = {\ttfamily 10000} }\end{DoxyParamCaption})}
 
+
+
+Erodes by the hydraulic erosion algorithm with the given iteartions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & Data array to erode.\\
+\hline
+{\em num\+Iterations} & Number of erode iterations.\\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

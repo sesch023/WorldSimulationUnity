@@ -91,19 +91,21 @@ $(document).ready(function(){initNavTree('class_model_1_1_processing_1_1_hydraul
 </div><!--header-->
 <div class="contents">
 
-<p>Auf Basis von: <a href="https://github.com/SebLague/Hydraulic-Erosion/blob/master/Assets/Scripts/Erosion.cs">https://github.com/SebLague/Hydraulic-Erosion/blob/master/Assets/Scripts/Erosion.cs</a>  
+<p>Particle based hydraulic erosion simulation. Can execute multiple iterations of erosion.  
  <a href="class_model_1_1_processing_1_1_hydraulic_erosion.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a89a69af8292f00eb672ffe9d200ebeb7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_processing_1_1_hydraulic_erosion.html#a89a69af8292f00eb672ffe9d200ebeb7">Erode</a> (<a class="el" href="interface_utils_1_1_arrays_1_1_i2_d_array.html">I2DArray</a>&lt; float &gt; map, int numIterations=1)</td></tr>
-<tr class="separator:a89a69af8292f00eb672ffe9d200ebeb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a813ab1ad59d1a14ccca4223f429d8acd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_1_1_processing_1_1_hydraulic_erosion.html#a813ab1ad59d1a14ccca4223f429d8acd">Erode</a> (<a class="el" href="interface_utils_1_1_arrays_1_1_i2_d_array.html">I2DArray</a>&lt; float &gt; map, int numIterations=10000)</td></tr>
+<tr class="memdesc:a813ab1ad59d1a14ccca4223f429d8acd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erodes by the hydraulic erosion algorithm with the given iteartions.  <a href="class_model_1_1_processing_1_1_hydraulic_erosion.html#a813ab1ad59d1a14ccca4223f429d8acd">More...</a><br /></td></tr>
+<tr class="separator:a813ab1ad59d1a14ccca4223f429d8acd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Auf Basis von: <a href="https://github.com/SebLague/Hydraulic-Erosion/blob/master/Assets/Scripts/Erosion.cs">https://github.com/SebLague/Hydraulic-Erosion/blob/master/Assets/Scripts/Erosion.cs</a> </p>
+<div class="textblock"><p >Particle based hydraulic erosion simulation. Can execute multiple iterations of erosion. </p>
+<p >Based on: <a href="https://github.com/SebLague/Hydraulic-Erosion/blob/master/Assets/Scripts/Erosion.cs">https://github.com/SebLague/Hydraulic-Erosion/blob/master/Assets/Scripts/Erosion.cs</a> </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a89a69af8292f00eb672ffe9d200ebeb7" name="a89a69af8292f00eb672ffe9d200ebeb7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89a69af8292f00eb672ffe9d200ebeb7">&#9670;&nbsp;</a></span>Erode()</h2>
+<a id="a813ab1ad59d1a14ccca4223f429d8acd" name="a813ab1ad59d1a14ccca4223f429d8acd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a813ab1ad59d1a14ccca4223f429d8acd">&#9670;&nbsp;</a></span>Erode()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -118,7 +120,7 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>numIterations</em> = <code>1</code>&#160;</td>
+          <td class="paramname"><em>numIterations</em> = <code>10000</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -127,6 +129,15 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Erodes by the hydraulic erosion algorithm with the given iteartions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">map</td><td>Data array to erode.</td></tr>
+    <tr><td class="paramname">numIterations</td><td>Number of erode iterations.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

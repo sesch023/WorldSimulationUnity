@@ -7,40 +7,63 @@ using Random = UnityEngine.Random;
 namespace Model.Processing
 {
     /// <summary>
-    /// Auf Basis von:
+    /// Particle based hydraulic erosion simulation. Can execute multiple iterations of erosion.
+    /// 
+    /// Based on:
     /// https://github.com/SebLague/Hydraulic-Erosion/blob/master/Assets/Scripts/Erosion.cs
     /// </summary>
     [Serializable]
     public class HydraulicErosion
     {
+        /// Initial droplet water amount.
         [field: SerializeField]
         private float InitialWaterVolume { get; set; }= 1;
+        
+        /// Intial droplet speed.
         [field: SerializeField]
         private float InitialSpeed { get; set; } = 1;
+        
+        /// Maximum droplet lifetime.
         [field: SerializeField]
         private int MaxDropletLifetime { get; set; }= 30;
+        
+        /// Droplet inertia.
         [field: SerializeField, Range (0, 1)]
         private float Inertia { get; set; } = .05f;
-        [field: SerializeField]
-        private float SedimentCapacityFactor { get; set; } = 4; // Multiplier for how much sediment a droplet can carry
-        [field: SerializeField]
-        private float MinSedimentCapacity { get; set; } = .01f; // Used to prevent carry capacity getting too close to zero on flatter terrain
         
+        /// Multiplier for how much sediment a droplet can carry.
+        [field: SerializeField]
+        private float SedimentCapacityFactor { get; set; } = 4; 
+        
+        /// Used to prevent carry capacity getting too close to zero on flatter terrain.
+        [field: SerializeField]
+        private float MinSedimentCapacity { get; set; } = .01f; 
+        
+        /// How much sediment is eroded each iteration.
         [field: SerializeField, Range (0, 1)]
         private float ErodeSpeed { get; set; } = .3f;
+        
+        /// How much sediment is deposited each iteration.
         [field: SerializeField, Range (0, 1)]
         private float DepositSpeed { get; set; } = .3f;
         
+        /// How much the particle evaporates each iteration.
         [field: SerializeField, Range (0, 1)]
         private float EvaporateSpeed { get; set; } = .01f;
+        
+        /// Gravity multiplier.
         [field: SerializeField]
         private float Gravity { get; set; } = 4;
+        
+        /// Radius of droplet erosion brush.
         [field: SerializeField, Range(2, 8)]
         private int ErosionRadius { get; set; } = 3;
         
+        /// Elevation deposition scale.
         [SerializeField]
         private float AlgElevationScale = 10f;
 
+        /// Height range of the terrain.
         [SerializeField] 
         private float HeightRange = 18000f;
         
@@ -48,12 +71,21 @@ namespace Model.Processing
         private static float[,][] _erosionBrushWeights;
         private static int _currentErosionRadius;
         
+        /// <summary>
+        /// Struct for storing droplet height and gradient.
+        /// </summary>
         private struct HeightAndGradient {
             public float Height;
             public float GradientX;
             public float GradientY;
         }
         
+        /// <summary>
+        /// Initializes the erosion brush indices and weights.
+        /// </summary>
+        /// <param name="mapSizeX">Width of the map.</param>
+        /// <param name="mapSizeY">Height of the map.</param>
+        /// <param name="radius">Radius of the erosion brush.</param>
         private void InitializeBrushIndices (int mapSizeX, int mapSizeY, int radius) {
             _erosionBrushIndices = new (int X, int Y)[mapSizeX, mapSizeY][];
             _erosionBrushWeights = new float[mapSizeX, mapSizeY][];
@@ -102,13 +134,20 @@ namespace Model.Processing
             }
         }
         
-        public void Erode(I2DArray<float> map, int numIterations = 1)
+        /// <summary>
+        /// Erodes by the hydraulic erosion algorithm with the given iteartions.
+        /// </summary>
+        /// <param name="map">Data array to erode.</param>
+        /// <param name="numIterations">Number of erode iterations.</param>
+        public void Erode(I2DArray<float> map, int numIterations = 10000)
         {
+            // Initialize brush indices if necessary
             if (_erosionBrushIndices == null || _currentErosionRadius != ErosionRadius) {
                 InitializeBrushIndices (map.GetLength(0), map.GetLength(1), ErosionRadius);
                 _currentErosionRadius = ErosionRadius;
             }
             
+            // Erodes starting at a random point.
             for (int i = 0; i < numIterations; i++)
             {
                 float xRand = Random.Range(0, map.GetLength(0) - 1);
