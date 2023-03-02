@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿#if UNITY_EDTIOR
+
+using System.Collections;
 using Manager;
 using UnityEditor;
 using UnityEngine;
@@ -131,3 +133,5 @@ namespace CustomEditors.CustomAttributes
      
     }
 }
+
+#endif

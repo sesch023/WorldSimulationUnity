@@ -1,4 +1,6 @@
-﻿using UnityEditor;
+﻿#if UNITY_EDTIOR
+
+using UnityEditor;
 using UnityEngine;
 
 namespace CustomEditors.CustomAttributes
@@ -59,3 +61,5 @@ namespace CustomEditors.CustomAttributes
         }
     }
 }
+
+#endif

@@ -3,16 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="c8f10313-ae08-4799-8dce-15c7c45c85be" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WorldSimulationUnity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WorldSimulationUnity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ScriptableData/Map.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableData/Map.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/Processing/BaseGeneralProcessing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Processing/BaseGeneralProcessing.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/Processing/BaseGeneratorProcessing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Processing/BaseGeneratorProcessing.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/Processing/BaseMapProcessing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Processing/BaseMapProcessing.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/Processing/HydraulicEroder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Processing/HydraulicEroder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/Processing/HydraulicErosion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Processing/HydraulicErosion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/Processing/IDataArrayProcessing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Processing/IDataArrayProcessing.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/Processing/IMapProcessing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Processing/IMapProcessing.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/Processing/SimpleWaterSeeding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Processing/SimpleWaterSeeding.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/Processing/WaterSeeding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Processing/WaterSeeding.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomEditors/CustomAttributes/DrawIfPropertyDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEditors/CustomAttributes/DrawIfPropertyDrawer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomEditors/CustomAttributes/SortingLayerAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEditors/CustomAttributes/SortingLayerAttribute.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/SimulationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/SimulationManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Views/GameViews/LineView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Views/GameViews/LineView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -176,6 +173,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2KJma6qq78EBG0UYyCLv8FOesyJ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -193,6 +193,14 @@
   }
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Build\WorldSimulation.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\sebas\WorldSimulationUnity\Build" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.17f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\sebas\WorldSimulationUnity -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
@@ -243,7 +251,7 @@
       <workItem from="1677498441774" duration="662000" />
       <workItem from="1677585051303" duration="9177000" />
       <workItem from="1677670180402" duration="2084000" />
-      <workItem from="1677761994636" duration="2516000" />
+      <workItem from="1677761994636" duration="5184000" />
     </task>
     <servers />
   </component>

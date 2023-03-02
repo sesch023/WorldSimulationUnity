@@ -51,7 +51,9 @@ namespace Views.GameViews
 
         /// Sort order of the line (for 2D sorting).
         [field: SerializeField]
+        #if UNITY_EDTIOR
         [field: SortingLayer]
+        #endif
         public string SortingLayerName { get; private set; } = "TilemapOn1";
         
         /// Should the line be smoothed? Uses bezier curves.

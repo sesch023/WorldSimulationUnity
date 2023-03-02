@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 namespace Manager
 {
@@ -67,6 +68,12 @@ namespace Manager
         private void Update()
         {
             PointerOverUI = EventSystem.current.IsPointerOverGameObject();
+        }
+
+        public void OnEscape(InputValue input)
+        {
+            LoggingManager.GetInstance().LogInfo("Quitting Game");
+            Application.Quit();
         }
     }
 }

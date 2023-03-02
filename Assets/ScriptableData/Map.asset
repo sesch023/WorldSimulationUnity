@@ -19,7 +19,7 @@ MonoBehaviour:
   <BaseAtmosphericPressure>k__BackingField: 1
   <Albedo>k__BackingField: 0.3
   generator: {fileID: 11400000, guid: 85eea03c1c9613b49aab840cc231b123, type: 2}
-  sun: {fileID: 0}
+  sun: {fileID: 11400000, guid: 6fd3e6757fe6d174e87f17467c69c87f, type: 2}
   preprocessMapSteps:
   - {fileID: 11400000, guid: f97c85437a8711848a3cd89804176acc, type: 2}
   - {fileID: 11400000, guid: 64449cfb5ade10f41ae7a9cb41fc93a2, type: 2}
