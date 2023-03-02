@@ -3,14 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c8f10313-ae08-4799-8dce-15c7c45c85be" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WorldSimulationUnity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WorldSimulationUnity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableData/Map.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableData/Map.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomEditors/CustomAttributes/DrawIfPropertyDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEditors/CustomAttributes/DrawIfPropertyDrawer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomEditors/CustomAttributes/SortingLayerAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomEditors/CustomAttributes/SortingLayerAttribute.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/SimulationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/SimulationManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Views/GameViews/LineView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Views/GameViews/LineView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,7 +244,7 @@
       <workItem from="1677498441774" duration="662000" />
       <workItem from="1677585051303" duration="9177000" />
       <workItem from="1677670180402" duration="2084000" />
-      <workItem from="1677761994636" duration="5184000" />
+      <workItem from="1677761994636" duration="5791000" />
     </task>
     <servers />
   </component>
