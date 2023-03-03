@@ -4,6 +4,8 @@ Alle Skripte lassen sich im Order Assets/Scripts finden. Da Unity als Eingabe
 für Einstellungen des Simulation dient, ist eine Ausführung ohne Unity 
 leider nicht möglich.
 
+Eine Doxygen-Dokumentation findet sich in der Folgenden Datei: Documentation/html/index.html
+
 ## Installation
 
 1. Das Repository klonen oder herunterladen.
