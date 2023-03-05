@@ -1,7 +1,7 @@
 # Masterprojekt: WorldSimulationUnity
 Das GitHub Repository zu meiner Masterprojektarbeit "Prozedurale Generation und Simulation zweidimensionaler Landschaften".
 Alle Skripte lassen sich im Order Assets/Scripts finden. Da Unity als Eingabe
-für Einstellungen des Simulation dient, ist eine Ausführung ohne Unity 
+für Einstellungen der Simulation dient, ist eine Ausführung ohne Unity 
 leider nicht möglich.
 
 Eine Doxygen-Dokumentation findet sich in der Folgenden Datei: Documentation/html/index.html
