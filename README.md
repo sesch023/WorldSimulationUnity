@@ -1,4 +1,4 @@
-# Masterprojekt: WorldSimulationUnity
+# Masterprojekt: Prozedurale Generation und Simulation zweidimensionaler Landschaften
 Das GitHub Repository zu meiner Masterprojektarbeit "Prozedurale Generation und Simulation zweidimensionaler Landschaften".
 Alle Skripte lassen sich im Order Assets/Scripts finden. Da Unity als Eingabe
 für Einstellungen der Simulation dient, ist eine Ausführung ohne Unity 
